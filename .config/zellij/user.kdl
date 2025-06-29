@@ -1,0 +1,5 @@
+simplified_ui true
+default_shell "zsh"
+theme "vanta"
+default_layout "layout"
+scrollback_editor "nvim"
