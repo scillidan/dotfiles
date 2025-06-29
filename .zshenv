@@ -12,7 +12,7 @@ export EDITOR="nvim"
 # export ENHANCD_FILTER="fzy:fzf --height 40%"
 
 ## ollama
-# export OLLAMA_HOST=
+export OLLAMA_HOST="100.111.134.102"
 export OLLAMA_ORIGINES="*"
 
 ## org-hopper

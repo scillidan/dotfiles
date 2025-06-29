@@ -1,1 +1,27 @@
-abbr 'jc'='jsc -s "$1" | xargs -n 1 -r aria2'
+## archwsl
+# abbr syncnvim='rsync -r ~/.config/nvim/ /mnt/c/Users/User/AppData/Local/nvim --include={".*"} --exclude="lazy-lock.json"'
+
+# asciinema
+abbr play='asciinema play'
+abbr rec='asciinema rec'
+
+## dict
+abbr dict='dict --host ubuntu22 --port 2528 -d ecdict'
+
+## sdcv
+abbr sdcv='sdcv --color --data-dir=$HOME/Usr/File/file_sdcv --use-dict=ecdict'
+
+## deep-translator
+abbr trans='deep-translator --translator tencent --source "en" --target "zh" --text'
+
+## gh
+abbr tidy='gh tidy'
+abbr ghdl='gh download'
+
+## git
+abbr gc='git clone --depth=1'
+
+## zellij
+abbr zw='zellij --layout=swap'
+
+abbr binrm='rm $HOME/Usr/bin/'
