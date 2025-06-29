@@ -1,0 +1,1 @@
+abbr 'jc'='jsc -s "$1" | xargs -n 1 -r aria2'
