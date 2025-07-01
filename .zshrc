@@ -5,6 +5,7 @@ fi
 
 source "$ZSH/oh-my-zsh.sh"
 
+export HOME=/home/$USER
 source "$HOME/.zshenv"
 
 ## zinit
@@ -52,4 +53,3 @@ compinit -u
 source "${ZSH_CUSTOM}/themes/minimal/minimal.zsh"
 
 eval "clear"
-

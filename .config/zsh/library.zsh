@@ -1,11 +1,10 @@
 ## cargo
 export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
-export RUSTUP_DIST_SERVER="https://mirrors.sjtug.sjtu.edu.cn/rust-static"
-export RUSTUP_UPDATE_ROOT="https://mirrors.sjtug.sjtu.edu.cn/rust-static/rustup"
+export RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"
+export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
 
 ## go
-export GO111MODULE=on
-export GOPROXY=https://goproxy.cn,direct
+export GOPATH="$HOME/.local/share/go"
 
 ## gvm
 # export GVM_ROOT="$HOME/.gvm"
