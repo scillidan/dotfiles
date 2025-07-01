@@ -10,3 +10,17 @@ fkill() {
   )" || return
   kill -"${1:-9}" "$pid" &>/dev/null
 }
+
+## git
+gitinit() {
+    if [ -z "$1" ]; then
+        echo "Usage: gitinit <repo-name>"
+        return 1
+    fi
+    git init
+    git remote add origin "https://github.com/$USER/$1.git"
+    git branch -M main
+    git add .
+    git commit -m "first commit"
+    git push -u origin main
+}

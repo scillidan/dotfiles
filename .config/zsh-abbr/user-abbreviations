@@ -1,18 +1,27 @@
 ## archwsl
 # abbr syncnvim='rsync -r ~/.config/nvim/ /mnt/c/Users/User/AppData/Local/nvim --include={".*"} --exclude="lazy-lock.json"'
 
-# asciinema
+## abbreviate
+abbr abbrev='abbreviate original'
+
+## asciinema
 abbr play='asciinema play'
 abbr rec='asciinema rec'
 
-## dict
-abbr dict='dict --host ubuntu22 --port 2528 -d ecdict'
-
-## sdcv
-abbr sdcv='sdcv --color --data-dir=$HOME/Usr/File/file_sdcv --use-dict=ecdict'
+## clamav
+abbr scan='clamscan -v -a --max-filesize=1000M --max-scansize=1000M --alert-exceeds-max=yes'
 
 ## deep-translator
 abbr trans='deep-translator --translator tencent --source "en" --target "zh" --text'
+
+## dict
+abbr dict2='dict --host ubuntu22 --port 2528 -d ecdict'
+
+## erdtree
+abbr erd='erd --color --hidden --follow --human --disk-usage line --sort name --dir-order first --layout inverted'
+
+## fzpac
+abbr pac='fzpac S'
 
 ## gh
 abbr tidy='gh tidy'
@@ -21,7 +30,24 @@ abbr ghdl='gh download'
 ## git
 abbr gc='git clone --depth=1'
 
+## gopencc
+abbr t2c='gopencc -c t2s -i'
+abbr c2t='gopencc -c s2t -i'
+
+## jq
+abbr jqp='jq ".scripts" ./package.json'
+
+## sdcv
+abbr sdcv='sdcv --color --use-dict=JianMingYingHanZiDian'
+
+## trashy
+abbr rm='trash'
+
+## yay
+abbr yas='yay -S --noconfirm'
+
 ## zellij
 abbr zw='zellij --layout=swap'
+
 
 abbr binrm='rm $HOME/Usr/bin/'

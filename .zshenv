@@ -6,6 +6,9 @@ export EDITOR="nvim"
 # export TERMUX_ROOT="/data/data/com.termux/files"
 # export TERMUX_HOME="/storage/emulated/0/Download"
 
+## dictd
+export dict="dict -h localhost -p 2528"
+
 ## fzf
 # export FZF_CTRL_T_COMMAND=""
 # export FZF_DEFAULT_COMMAND=""
@@ -23,7 +26,7 @@ export OLLAMA_ORIGINES="*"
 # export ORG_HOPPER_COLOR_OUTDATED=red
 
 ## sdcv
-export STARDICT_DATA_DIR="$HOME/Usr/File/File_sdcv"
+export STARDICT_DATA_DIR="$HOME/Usr/File/file_sdcv"
 
 ## neovim
 ### rime-ls
@@ -57,5 +60,6 @@ ENV_SECRETS=(
 ENV_SECRETS_BACKEND="pass"
 ENV_SECRETS_QUIET=1
 
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Usr/Script/.venv/bin:$HOME/Usr/Lib/lua51/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+# export $HOME/Usr/Script/.venv/bin
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Usr/Lib/lua51/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 

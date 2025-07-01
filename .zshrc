@@ -45,6 +45,9 @@ source "$ZSH_DOTFILES/alias.zsh"
 # bindkey '^ ' expand-or-complete-prefix
 # bindkey -s '^v' 'nvim $(fzf)\n'
 
+autoload -U compinit
+compinit -u
+
 # ZSH_THEME=""
 source "${ZSH_CUSTOM}/themes/minimal/minimal.zsh"
 

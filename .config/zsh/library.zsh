@@ -3,6 +3,10 @@ export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
 export RUSTUP_DIST_SERVER="https://mirrors.sjtug.sjtu.edu.cn/rust-static"
 export RUSTUP_UPDATE_ROOT="https://mirrors.sjtug.sjtu.edu.cn/rust-static/rustup"
 
+## go
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn,direct
+
 ## gvm
 # export GVM_ROOT="$HOME/.gvm"
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
@@ -26,9 +30,9 @@ case ":$PATH:" in
 esac
 
 ## pyenv
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 # eval "$(pyenv virtualenv-init -)"
 
 ## python

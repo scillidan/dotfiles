@@ -8,9 +8,10 @@ alias zgc='git clone --depth=1 $1 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/$2'
 ## jsc
 alias jc='jsc -s "$1" | xargs -n 1 -r aria2'
 
-## trashy
-alias rm='trash'
+## multi-git-status
+alias mgit="mgitstatus"
 
+## zsh
 ## zsh-abbr
 # alias -g ls='eza'
 
