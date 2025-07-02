@@ -1,11 +1,5 @@
-## termux
-if [ ! -n "$ZSH" ]; then
-ZSH=~/.oh-my-zsh
-fi
-
-source "$ZSH/oh-my-zsh.sh"
-
 export HOME=/home/$USER
+source "$HOME/.oh-my-zsh/oh-my-zsh.sh"
 source "$HOME/.zshenv"
 
 ## zinit
@@ -46,8 +40,8 @@ source "$ZSH_DOTFILES/alias.zsh"
 # bindkey '^ ' expand-or-complete-prefix
 # bindkey -s '^v' 'nvim $(fzf)\n'
 
-autoload -U compinit
-compinit -u
+autoload -Uz compinit
+compinit
 
 # ZSH_THEME=""
 source "${ZSH_CUSTOM}/themes/minimal/minimal.zsh"
