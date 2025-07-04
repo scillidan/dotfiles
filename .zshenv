@@ -43,14 +43,7 @@ export TEXLIVE="/usr/local/texlive/2025"
 export ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"
 export ZELLIJ_CONFIG_FILE="$HOME/.config/zellij/user.kdl"
 
-## zsh
-export ZSH_DOTFILES="$HOME/.config/zsh"
-
-### zsh-smart-insert
-export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
-export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
-
-### zsh-env-secrets
+## zsh-env-secrets
 ENV_SECRETS=(
   "TENCENT_SECRET_ID"
   "TENCENT_SECRET_KEY"
@@ -59,7 +52,4 @@ ENV_SECRETS=(
 )
 ENV_SECRETS_BACKEND="pass"
 ENV_SECRETS_QUIET=1
-
-# export $HOME/Usr/Script/.venv/bin
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua51/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 

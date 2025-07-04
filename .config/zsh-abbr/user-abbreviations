@@ -40,9 +40,6 @@ abbr jqp='jq ".scripts" ./package.json'
 ## sdcv
 abbr sdcv='sdcv --color --use-dict=JianMingYingHanZiDian'
 
-## trashy
-abbr rm='trash'
-
 ## yay
 abbr yas='yay -S --noconfirm'
 
@@ -50,4 +47,7 @@ abbr yas='yay -S --noconfirm'
 abbr zw='zellij --layout=swap'
 
 
+abbr proxy='export http_proxy=100.111.134.102:7897 && export https_proxy=100.111.134.102:7897'
+abbr noproxy='http_proxy unset https_proxy'
 abbr binrm='rm $HOME/Usr/bin/'
+
