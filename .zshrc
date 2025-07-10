@@ -38,6 +38,9 @@ source "$HOME/.config/zsh/library.zsh"
 source "$HOME/.config/zsh/function.zsh"
 source "$HOME/.config/zsh/alias.zsh"
 
+export MANPATH="/usr/share/man:$MANPATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua51/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+
 # bindkey '^ ' expand-or-complete-prefix
 # bindkey -s '^v' 'nvim $(fzf)\n'
 

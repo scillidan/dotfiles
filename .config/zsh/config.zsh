@@ -9,6 +9,9 @@ source <(carapace _carapace)
 
 ## fzf
 source <(fzf --zsh)
+# export FZF_CTRL_T_COMMAND=""
+# export FZF_DEFAULT_COMMAND=""
+# export ENHANCD_FILTER="fzy:fzf --height 40%"
 
 ## fzf-tab
 zstyle ':completion:*' ignore-case 'yes'
@@ -26,22 +29,39 @@ zstyle ':completion:*' fzf-search-display true
 ## grc
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
-## starship
-# eval "$(starship init zsh)"
+## neovim
+### rime-ls
+export LIBRIME_LIB_DIR="$HOME/.local/lib/rime/dist/lib"
+export LIBRIME_INCLUDE_DIR="$HOME/.local/lib/rime/dist/include"
+export LIB="$HOME/.local/lib/rime/dist/lib"
 
-## tere
-tere() {
-  local result=$(command tere "$@")
-  [ -n "$result" ] && cd -- "$result"
-}
+## ollama
+export OLLAMA_HOST="revios"
+export OLLAMA_ORIGINES="*"
+
+## sdcv
+export STARDICT_DATA_DIR="$HOME/Usr/File/file_sdcv"
+
+## texlive
+export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
+export MANPATH="$TEXLIVE/texmf-dist/doc/man"
+export TEXLIVE="/usr/local/texlive/2025"
 
 ## tmux
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 export TMUXIFIER_TMUX_OPTS=""
 eval "$(tmuxifier init -)"
 
+## zsh
+### rose-pine-man
+source ${ZSH_CUSTOM}/plugins/rose-pine-man/rose-pine-man.zsh
+
 ### zsh-help
 help_function() {
   bat -plhelp --paging=always --color=always
 }
+
+### zsh-smart-insert
+export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
+export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
 
