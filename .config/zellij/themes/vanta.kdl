@@ -1,0 +1,19 @@
+themes {
+    vanta {
+        fg #f8fafc
+        bg #000000
+        black #000000
+        red #ef4444
+        green #008000
+        yellow #dddd44
+        blue #4444ef
+        magenta #8b008b
+        cyan #2563eb
+        white #f8fafc
+        orange #febb6f
+    }
+}
+
+
+
+
