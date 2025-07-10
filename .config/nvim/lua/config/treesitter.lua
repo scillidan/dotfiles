@@ -8,6 +8,9 @@ require("nvim-treesitter.configs").setup({
 		disable = {},
 	},
 	ensure_installed = {
+		"gitignore",
+		"rasi",
+		"zathurarc",
 		"vim",
 		"vimdoc",
 		"markdown",
@@ -18,7 +21,6 @@ require("nvim-treesitter.configs").setup({
 		"tsv",
 		"regex",
 		"comment",
-		"gitignore",
 		"bash",
 		"tmux",
 		"lua",
