@@ -21,6 +21,7 @@ zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':completion:*' fzf-search-display true
 
 ## grc
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh

@@ -27,6 +27,7 @@ alias tldf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% | 
 ## gh
 alias ghtd='gh tidy'
 alias ghdl='gh download'
+alias ghco='gh clone-org'
 
 ## git
 alias gc='git clone --depth=1'
