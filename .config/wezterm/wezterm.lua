@@ -27,7 +27,7 @@ config.colors = {
 }
 config.font = wezterm.font_with_fallback({
 	"IosevkaTerm Nerd Font Mono",
-	"MonaspaceAr Nerd Font Mono"
+	"MonaspiceAr Nerd Font Mono",
 })
 config.font_size = 10.0
 config.initial_cols = 151
@@ -42,9 +42,9 @@ config.show_tab_index_in_tab_bar = false
 -- config.tab_max_width = 25
 config.window_frame = {
 	font = wezterm.font_with_fallback({
-		"IosevkaTerm Nerd Font Mono",
-		"MonaspaceAr Nerd Font Mono" ),
-	font_size = 10.0,
+		"MonaspiceAr Nerd Font Mono",
+	}),
+	font_size = 9.0,
 	inactive_titlebar_bg = "#0f172a",
 	active_titlebar_bg = "#000000",
 	inactive_titlebar_fg = "#808080",
