@@ -1,6 +1,6 @@
 # https://github.com/rafaqz/.dotfiles/blob/master/.config/zathura/zathurarc
 
-set font "inconsolata 15"
+set font "IosevkaTerm Nerd Font Mono, 10"
 set default-bg "#000000" #00
 set default-fg "#F7F7F6" #01
 set statusbar-fg "#B0B0B0" #04
