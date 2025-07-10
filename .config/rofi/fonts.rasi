@@ -1,0 +1,5 @@
+* {
+  /*font: "IosevkaTerm Nerd Font Mono 10";*/
+  font: "MonaspaceAr Nerd Font Mono 9";
+}
+
