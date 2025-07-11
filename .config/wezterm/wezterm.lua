@@ -27,7 +27,7 @@ config.colors = {
 }
 config.font = wezterm.font_with_fallback({
 	"IosevkaTerm Nerd Font Mono",
-	"MonaspiceAr Nerd Font Mono",
+	"Sarasa Term Nerd Font",
 })
 config.font_size = 10.0
 config.initial_cols = 151
@@ -36,25 +36,26 @@ config.tab_bar_at_bottom = true
 config.window_background_opacity = 1
 config.window_close_confirmation = "NeverPrompt"
 config.show_tab_index_in_tab_bar = false
--- config.window_decorations = "RESIZE"
--- config.hide_tab_bar_if_only_one_tab = true
--- config.use_fancy_tab_bar = false
--- config.tab_max_width = 25
+config.window_decorations = "NONE"
+config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+config.tab_max_width = 25
 config.window_frame = {
 	font = wezterm.font_with_fallback({
-		"MonaspiceAr Nerd Font Mono",
+		"IosevkaTerm Nerd From Mono",
+		"Sarasa Term Nerd Font",
 	}),
 	font_size = 9.0,
-	inactive_titlebar_bg = "#0f172a",
 	active_titlebar_bg = "#000000",
-	inactive_titlebar_fg = "#808080",
 	active_titlebar_fg = "#f8fafc",
-	inactive_titlebar_border_bottom = "#1e3a8a",
+	inactive_titlebar_bg = "#0f172a",
+	inactive_titlebar_fg = "#f8fafc",
 	active_titlebar_border_bottom = "#0000ff",
-	button_fg = "#f8fafc",
+	inactive_titlebar_border_bottom = "#1e3a8a",
 	button_bg = "#000000",
-	button_hover_fg = "#808080",
-	button_hover_bg = "#0f172a",
+	button_fg = "#f8fafc",
+	button_hover_bg = "#1a1a1a",
+	button_hover_fg = "#f8fafc",
 }
 config.window_padding = {
 	left = "1cell",
@@ -71,9 +72,9 @@ config.keys = {
 		action = wezterm.action.ToggleFullScreen,
 	},
 	{
-		key = "c",
+		key = "Enter",
 		mods = "SUPER",
-		action = wezterm.action.CopyTo("Clipboard"),
+		action = wezterm.action.ToggleFullScreen,
 	},
 	{
 		key = "c",
@@ -82,16 +83,11 @@ config.keys = {
 	},
 	{
 		key = "v",
-		mods = "SUPER",
-		action = wezterm.action.PasteFrom("Clipboard"),
-	},
-	{
-		key = "v",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.PasteFrom("Clipboard"),
 	},
 	{
-		key = "RightArrow",
+		key = "l",
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action_callback(function(_, pane)
 			local tab = pane:tab()
@@ -117,12 +113,12 @@ config.keys = {
 	},
 	{
 		key = "n",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.SpawnWindow,
 	},
 	{
 		key = "w",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 }
@@ -142,7 +138,9 @@ config.mouse_bindings = {
 		end),
 	},
 	{
-		event = { Up = { streak = 1, button = "Left" } },
+		event = {
+			Up = { streak = 1, button = "Left" },
+		},
 		mods = "NONE",
 		action = act.CompleteSelection("ClipboardAndPrimarySelection"),
 	},
