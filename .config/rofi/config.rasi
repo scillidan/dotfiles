@@ -122,8 +122,8 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     3;
-    lines:                       20;
+    columns:                     1;
+    lines:                       30;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
