@@ -1,0 +1,3 @@
+# MonsGeek FUN60
+echo "xmodmap -e 'keycode ??? = Super_L'"
+echo "xmodmap -e 'keycode ??? = Super_R'"
