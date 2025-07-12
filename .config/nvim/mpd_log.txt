@@ -1,0 +1,7 @@
+config_file: loading file "/home/scillidan/.config/mpd/mpd.conf"
+libsamplerate: libsamplerate converter "Fastest Sinc Interpolator"
+vorbis: Xiph.Org libVorbis 1.3.7
+opus: libopus 1.5.2
+sndfile: libsndfile-1.2.2
+terminate called after throwing an instance of 'fmt::v11::format_error'
+  what():  unmatched '}' in format string

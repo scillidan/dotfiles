@@ -8,7 +8,10 @@ require("nvim-treesitter.configs").setup({
 		disable = {},
 	},
 	ensure_installed = {
+		"editorconfig",
 		"gitignore",
+		"gitattributes",
+		"muttrc",
 		"rasi",
 		"zathurarc",
 		"vim",
