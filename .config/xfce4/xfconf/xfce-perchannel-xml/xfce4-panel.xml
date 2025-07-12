@@ -16,13 +16,12 @@
         <value type="int" value="1"/>
         <value type="int" value="33"/>
         <value type="int" value="4"/>
-        <value type="int" value="31"/>
         <value type="int" value="3"/>
-        <value type="int" value="25"/>
-        <value type="int" value="21"/>
+        <value type="int" value="31"/>
         <value type="int" value="7"/>
         <value type="int" value="6"/>
         <value type="int" value="23"/>
+        <value type="int" value="21"/>
         <value type="int" value="12"/>
         <value type="int" value="8"/>
         <value type="int" value="15"/>
@@ -54,6 +53,8 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-items" type="array">
+        <value type="string" value="Zeal"/>
+        <value type="string" value="firewall-applet"/>
         <value type="string" value="tray-icon tray app"/>
         <value type="string" value="5WvEOTfQmG"/>
         <value type="string" value="TytyZjmErD"/>
@@ -66,9 +67,12 @@
       <property name="hidden-items" type="array">
         <value type="string" value="Fcitx"/>
         <value type="string" value="blueman"/>
+        <value type="string" value="firewall-applet"/>
+        <value type="string" value="Zeal"/>
       </property>
       <property name="menu-is-primary" type="bool" value="false"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="firewall-applet"/>
         <value type="string" value="java"/>
         <value type="string" value="clash-verge"/>
       </property>
@@ -128,7 +132,6 @@
       <property name="play-sound" type="bool" value="false"/>
     </property>
     <property name="plugin-23" type="string" value="notification-plugin"/>
-    <property name="plugin-25" type="string" value="xfce4-mpc-plugin"/>
     <property name="plugin-31" type="string" value="tasklist">
       <property name="show-handle" type="bool" value="false"/>
       <property name="show-labels" type="bool" value="false"/>

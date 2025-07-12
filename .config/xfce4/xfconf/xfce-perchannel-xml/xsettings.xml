@@ -23,8 +23,8 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="bool" value="false"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="FontName" type="string" value="IosevkaTerm Nerd Font Propo Oblique 10"/>
-    <property name="MonospaceFontName" type="string" value="IosevkaTerm Nerd Font Propo Oblique 10"/>
+    <property name="FontName" type="string" value="IosevkaTerm Nerd Font Propo 9"/>
+    <property name="MonospaceFontName" type="string" value="IosevkaTerm Nerd Font Mono 9"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="MenuImages" type="empty"/>
