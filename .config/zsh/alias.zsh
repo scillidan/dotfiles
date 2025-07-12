@@ -18,7 +18,7 @@ alias trans='deep-translator --translator tencent --source "en" --target "zh" --
 alias dict='dict --host ubuntu22 --port 2528 -d ecdict'
 
 ## erdtree
-alias erd='erd --color --hidden --follow --human --disk-usage line --sort name --dir-order first --layout inverted'
+alias erd='erd --color auto --hidden --follow --human --disk-usage line --sort name --dir-order first --layout inverted'
 
 ## fzf
 # https://dev.to/helderberto/integrating-tldr-with-fzf-2377
@@ -48,6 +48,9 @@ alias mgit="mgitstatus"
 
 ## sdcv
 alias sdcv='sdcv --color --use-dict=JianMingYingHanZiDian'
+
+## trashy
+alias rm="trash"
 
 ## yay
 alias yas='yay -S --noconfirm'
