@@ -1,0 +1,3 @@
+.config/nvim/snippets/**
+.config/nvim/dictionary/**
+.config/nvim/lazy-lock.json

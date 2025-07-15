@@ -1,0 +1,22 @@
+# http://johngodlee.xyz/posts/2022-12-08-cmus_colours
+set aaa_mode=all
+set stop_after_queue=true
+set continue=true
+bind -f common q quit
+unbind -f common C
+set color_separator=white
+set color_statusline_bg=gray
+set color_statusline_fg=black
+set color_win_title_bg=gray
+set color_win_title_fg=black
+set color_titleline_bg=default
+set color_titleline_fg=white
+set color_win_sel_bg=gray
+set color_win_sel_fg=black
+set color_win_inactive_sel_bg=darkgray
+set color_win_inactive_sel_fg=black
+set color_win_cur_sel_bg=gray
+set color_win_cur_sel_fg=black
+set color_win_inactive_cur_sel_bg=darkgray
+set color_win_inactive_cur_sel_fg=black
+set color_win_cur=green

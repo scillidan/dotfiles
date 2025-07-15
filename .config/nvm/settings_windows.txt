@@ -1,0 +1,7 @@
+root: C:\Users\User\.nvm
+arch: 64
+proxy: 
+originalpath: .
+originalversion: 
+node_mirror: 
+npm_mirror: 

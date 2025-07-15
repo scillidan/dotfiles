@@ -1,0 +1,5 @@
+# MonsGeek FUN60
+xmodmap -e "keycode 64 = Super_L"
+xmodmap -e "keycode 108 = Super_R"
+xmodmap -e "keycode 135 = Alt_R"
+xmodmap -e "keycode 133 = Alt_L"
