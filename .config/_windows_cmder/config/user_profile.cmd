@@ -62,6 +62,11 @@ set "ALASS_FFPROBE_PATH=%SCOOP_HOME%\apps\ffmpeg\current\bin\ffprobe.exe"
 set "PHONEMIZER_ESPEAK_LIBRARY=%SCOOP_HOME%\apps\espeak-ng\current\eSpeak NG\libespeak-ng.dll"
 set "PHONEMIZER_ESPEAK_PATH=%USERPROFILE%\Git\cli\espeak-ng.bat"
 
+:: fzf
+set FZF_DEFAULT_COMMAND=rg --files --hidden --follow --glob "!.git"
+set FZF_DEFAULT_OPTS=--color=dark --height ~100% --layout=reverse --border none --preview-border none --no-scrollbar --no-separator --inline-info --walker-skip .github
+set FZF_CTRL_T_COMMAND=fzf --preview "bat --style=numbers --theme=base16-256 --color=always {}"
+
 :: kokoro-tts-cli
 :: set "KOKORO_PATH=%USERPROFILE%\Usr\OptWeb\Kokoro-TTS-Local"
 

@@ -2,6 +2,7 @@ altbacktick: Switch Between Windows Of The Same Program         | A-Bksp
 autohotkey:: AutoHotkey Keyboard Locker                         | C-S-A-k
 autohotkey:: ShortScript                                        | Win-c
 autohotkey:: toggle-screen-autohotkey                           | Win-F2
+autohotkey:: GoldenDictOCR: ToggleMouseTakeWord                 | C-A-g
 cmder:: clink-fzf: Complete                                     | C-Spc
 cmder:: clink-fzf: File                                         | C-t
 cmder:: clink-fzf: fzf_complete_force                           | C-Spc
@@ -118,11 +119,11 @@ rbtray: Minimized to system tray                                | C-A-Down
 rectanglewin: Snap Window                                       | Win-A-Up/Down/Left/Right
 resizer2: autohotkey:: Move Window                              | Win-MBtn_L(drag)
 resizer2: Resize Window                                         | Win-MBtn_R(drag)
-snipaste pro: Disable/enable global hotkeys                     | A-1
-snipaste pro: Hide/Show all images                              | A-S-3
-snipaste pro: Paste                                             | A-2
+snipaste pro: Disable/enable global hotkeys                     | C-A-S-PrtSc
+snipaste pro: Hide/Show all images                              | S-PrtSc
+snipaste pro: Paste                                             | C-PrtSc
 snipaste pro: Scan QRcode                                       | C-A-S-q
-snipaste pro: Snip                                              | C-A-S-1
+snipaste pro: Snip                                              | PrtSc
 snipaste pro: Snip and pin                                      | Win-C-MBtm_L(drag)
 ugrep: Edit                                                     | F2
 ugrep: Help                                                     | C-z
