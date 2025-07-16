@@ -15,7 +15,6 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit lucid wait for \
   nyoungstudios/zsh-history-on-success \
   Freed-Wu/zsh-help \
-  z-shell/zsh-zoxide \
   Aloxaf/fzf-tab \
   mfaerevaag/wd \
   Kikolator/proj-jumper \
@@ -32,6 +31,9 @@ zinit lucid wait for \
   wfxr/forgit \
   Bhupesh-V/ugit \
   andydecleyre/zpy
+
+zi has'zoxide' wait lucid for \
+  z-shell/zsh-zoxide
 
 autoload -Uz compinit
 compinit
