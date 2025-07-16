@@ -1,0 +1,91 @@
+broot: edit                                                | F2/:e
+broot: Edit with sublime text                              | C-e
+broot: Filter                                              | c/<text>
+broot: open                                                | C-o/:ol
+broot: Open with directory opus                            | C-o
+broot: Terminal                                            | C-t
+broot: toggle_preview                                      | C-p
+fluent reader: Hide this post                              | h
+fluent reader: Open in browser                             | b
+lobe chat: Edit message                                    | A-MBtn(2:)_L
+lobe chat: Show/Hide assistant panel                       | C-[
+lobe chat: Show/Hide topic panel                           | C-]
+lobe chat: Start a new topic                               | A-n
+lobe chat: Toggle focus mode                               | C-\\
+omegat: Create alternative translation                     | C-s
+omegat: Insert match pane                                  | C-i
+omegat: Insert tag                                         | C-Spc
+omegat: Next untranslated segment                          | C-u
+omegat: Search                                             | C-f
+readium: Enable touch-to-play                              | Spc
+readium: Next audio phrase                                 | u
+readium: Pause                                             | m
+readium: Previous audio phrase                             | y
+renpy: Autoreload                                          | R
+renpy: Image load log                                      | F4
+tabby: Close window                                        | C-S-w
+tabby: New window                                          | C-S-Up/Down/Left/Right
+tabby:: quick-restart:                                     | C-S-r
+vscodium: Add cursors to line ends                         | C-S-l
+vscodium: Close window                                     | C-S-w
+vscodium: explorer                                         | C-S-e
+vscodium: extensions                                       | C-S-x
+vscodium: Format document                                  | C-A-f
+vscodium: Keyboard shortcuts                               | C-k,C-s
+vscodium: Move line up/down                                | C-S-Up/Down
+vscodium: open                                             | A-o
+vscodium: Primary side bar                                 | C-b
+vscodium: Run and debug                                    | C-S-d
+vscodium: search                                           | C-S-f
+vscodium: Search editor: Toggle use regular expression     | A-r
+vscodium: Secondary side bar                               | C-S-b
+vscodium: Source control                                   | C-S-g
+vscodium: togglefindinselection                            | A-f
+vscodium: View: Split editor                               | C-k,C-Up/Down/Left/Right
+vscodium:: Better Align: Align                             | A-a
+vscodium:: Bracket Select: BraSel: Select                  | /
+vscodium:: Compare Folders: View: CompareFolders           | /
+vscodium:: Data Format Converter: Data Converter           | /
+vscodium:: Database Client:                                | /
+vscodium:: Database Client: Run All SQL Statements         | /
+vscodium:: Database Client: Run Current SQL                | /
+vscodium:: Files2Prompt: Files2Prompt: Focus on Files View | /
+vscodium:: Git History: Git: View History (git log)        | /
+vscodium:: Github Actions: View: Show Github Actions       | /
+vscodium:: GitLab Workflow: GitLab Duo                     | /
+vscodium:: GitLens:                                        | /
+vscodium:: Hungry Delete: Hungry Delete                    | C-Bksp
+vscodium:: Hungry Delete: Smart Backspace                  | Bksp
+vscodium:: indent2tree: Convert Indent to Tree             | /
+vscodium:: indent2tree: Convert Tree to Indent             | /
+vscodium:: LaTeX Workshop:                                 | /
+vscodium:: Markdown Preview Enhanced:                      | /
+vscodium:: Mintlify Doc Writer: Generate Documentation     | /
+vscodium:: novel-writer: Novel:                            | /
+vscodium:: Project Manager: Project Manager                | A-S-p
+vscodium:: SFTP:                                           | /
+vscodium:: Snippets: View: Snippets                        | /
+vscodium:: Sort lines:                                     | /
+vscodium:: SQLite3 Editor: SQLite3 Editor:                 | /
+vscodium:: Syncing: Syncing:                               | /
+vscodium:: Text Marker: TextMarker:                        | /
+vscodium:: VSIX Manager: VSIX Manager: Install extensions  | /
+
+## Arch Linux
+i3: fullscreen                                             | Mod-f
+i3: Open dmenu                                             | Mod-d
+i3: Open terminal                                          | Mod-Etr
+i3: Resize                                                 | Mod-r
+i3: Vertical or horizontal                                 | Mod-e
+zellij: New tab                                            | C-t
+zellij: New window                                         | A-n
+zellij: New window                                         | C-p Up/Down/Left/Right d
+zellij: Paste                                              | C-S-v
+zellij: Resize                                             | C-n Up/Down/Left/Right Etr
+zellij: Swith tab                                          | A-Left/Right
+
+## Windows 10
+niftywindows: Toggle NiftyWindows                          | Win-Esc
+
+## Andriod
+termux: Paste                                              | C-A-v

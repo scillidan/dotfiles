@@ -15,7 +15,6 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit lucid wait for \
   nyoungstudios/zsh-history-on-success \
   Freed-Wu/zsh-help \
-  z-shell/zsh-zoxide \
   Aloxaf/fzf-tab \
   mfaerevaag/wd \
   Kikolator/proj-jumper \
@@ -33,6 +32,9 @@ zinit lucid wait for \
   Bhupesh-V/ugit \
   andydecleyre/zpy
 
+zi has'zoxide' wait lucid for \
+  z-shell/zsh-zoxide
+
 autoload -Uz compinit
 compinit
 
@@ -45,6 +47,7 @@ ENV_SECRETS=(
   "TENCENT_SECRET_KEY"
   "OPENAI_API_KEY"
   "OPENROUTER_API_KEY"
+	"GOWL_TOKEN"
 )
 ENV_SECRETS_BACKEND="pass"
 ENV_SECRETS_QUIET=1
