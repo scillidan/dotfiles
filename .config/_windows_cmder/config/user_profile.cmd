@@ -6,8 +6,8 @@ set "CHANGE_LOG_NAME=User"
 set "SYS_ARCH=64"
 
 rem Lib
-set "NVM_HOME=%USERPROFILE%\Scoop\apps\nvm\current"
-set "NVM_SYMLINK=%USERPROFILE%\Scoop\persist\nvm\nodejs\nodejs"
+set "NVM_HOME=%SCOOP_HOME%\apps\nvm\current"
+set "NVM_SYMLINK=%SCOOP_HOME%\persist\nvm\nodejs\nodejs"
 set "PNPM_HOME=%USERPROFILE%\.pnpm"
 set "PIPX_HOME=%USERPROFILE%\.pipx"
 set "PYENV=%USERPROFILE%\.pyenv\pyenv-win"
@@ -18,7 +18,7 @@ set "CARGO_TARGET_DIR=%USERPROFILE%\.cargo\tmp"
 set "RUSTUP_DIST_SERVER=https://mirror.sjtu.edu.cn/rust-static"
 set "RUSTUP_UPDATE_ROOT=https://mirror.sjtu.edu.cn/rust-static/rustup"
 set "GOPATH=%USERPROFILE%\.go"
-set "GOROOT=%USERPROFILE%\Scoop\apps\go\current"
+set "GOROOT=%SCOOP_HOME%\apps\go\current"
 :: set "GOROOT=%USERPROFILE%\Usr\Lib\go1.20.1"
 set "LUA_PATH_5_3=%USERPROFILE%\Lib\lua53\x64"
 set "LUA_CPATH_5_3=%USERPROFILE%\Lib\lua53\x64"
@@ -55,11 +55,11 @@ rem Opt
 set "FAST_REFRESH=true"
 
 :: alass-cli
-set "ALASS_FFMPEG_PATH=%USERPROFILE%\Scoop\apps\ffmpeg\current\bin\ffmpeg.exe"
-set "ALASS_FFPROBE_PATH=%USERPROFILE%\Scoop\apps\ffmpeg\current\bin\ffprobe.exe"
+set "ALASS_FFMPEG_PATH=%SCOOP_HOME%\apps\ffmpeg\current\bin\ffmpeg.exe"
+set "ALASS_FFPROBE_PATH=%SCOOP_HOME%\apps\ffmpeg\current\bin\ffprobe.exe"
 
 :: espeak-ng
-set "PHONEMIZER_ESPEAK_LIBRARY=%USERPROFILE%\Scoop\apps\espeak-ng\current\eSpeak NG\libespeak-ng.dll"
+set "PHONEMIZER_ESPEAK_LIBRARY=%SCOOP_HOME%\apps\espeak-ng\current\eSpeak NG\libespeak-ng.dll"
 set "PHONEMIZER_ESPEAK_PATH=%USERPROFILE%\Git\cli\espeak-ng.bat"
 
 :: kokoro-tts-cli

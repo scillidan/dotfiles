@@ -3,7 +3,7 @@
       "creator" : "Keypirinha v2.26 (e037f62)",
       "creator_url" : "http://keypirinha.com/",
       "format" : 102,
-      "modified" : "2025-07-16T08:32:48+0000",
+      "modified" : "2025-07-16T09:28:52+0000",
       "type" : "history"
    },
    "history" : [
@@ -324,6 +324,18 @@
          "item" : 262490813395881641,
          "label" : "GitHub Desktop",
          "time" : "2025-07-16T08:32:48+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2145817075178382580,
+         "label" : "Jackett",
+         "time" : "2025-07-16T09:03:48+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6347301413109026547,
+         "label" : "RapidEE",
+         "time" : "2025-07-16T09:28:52+0000"
       }
    ],
    "sets" : {

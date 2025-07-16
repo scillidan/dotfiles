@@ -5,7 +5,7 @@
 ;= goto:eof
 ;= Add aliases below here
 
-_bash=%USERPROFILE%\Scoop\shims\bash.exe $*
+_bash=%SCOOP_HOME%\shims\bash.exe $*
 _ssh=%SCOOP_HOME%\apps\git\current\usr\bin\ssh.exe $*
 e.=explorer .
 pwd=cd
