@@ -3,7 +3,7 @@
       "creator" : "Keypirinha v2.26 (e037f62)",
       "creator_url" : "http://keypirinha.com/",
       "format" : 102,
-      "modified" : "2025-07-16T10:36:25+0000",
+      "modified" : "2025-07-16T10:38:51+0000",
       "type" : "history"
    },
    "history" : [
@@ -480,6 +480,12 @@
          "item" : 6347301413109026547,
          "label" : "RapidEE",
          "time" : "2025-07-16T10:36:25+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11999494575899190589,
+         "label" : "Wezterm",
+         "time" : "2025-07-16T10:38:51+0000"
       }
    ],
    "sets" : {
