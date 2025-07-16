@@ -3,7 +3,7 @@
       "creator" : "Keypirinha v2.26 (e037f62)",
       "creator_url" : "http://keypirinha.com/",
       "format" : 102,
-      "modified" : "2025-07-16T09:28:52+0000",
+      "modified" : "2025-07-16T10:36:25+0000",
       "type" : "history"
    },
    "history" : [
@@ -336,11 +336,174 @@
          "item" : 6347301413109026547,
          "label" : "RapidEE",
          "time" : "2025-07-16T09:28:52+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6347301413109026547,
+         "label" : "RapidEE",
+         "time" : "2025-07-16T09:47:51+0000"
+      },
+      {
+         "action" : null,
+         "item" : 16568526219965853749,
+         "label" : "grep",
+         "time" : "2025-07-16T09:52:43+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1929095120301099312,
+         "label" : "es",
+         "time" : "2025-07-16T09:53:42+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1929095120301099312,
+         "label" : "es",
+         "time" : "2025-07-16T09:56:08+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1929095120301099312,
+         "label" : "es",
+         "time" : "2025-07-16T09:56:37+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1929095120301099312,
+         "label" : "es",
+         "time" : "2025-07-16T09:57:05+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14052828967172103035,
+         "label" : "chk",
+         "time" : "2025-07-16T09:57:54+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14052828967172103035,
+         "label" : "chk",
+         "time" : "2025-07-16T09:58:07+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14052828967172103035,
+         "label" : "chk",
+         "time" : "2025-07-16T09:58:34+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6437383497087328849,
+         "label" : "Cmder",
+         "time" : "2025-07-16T09:59:08+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14052828967172103035,
+         "label" : "chk",
+         "time" : "2025-07-16T10:03:07+0000"
+      },
+      {
+         "action" : null,
+         "item" : 13841943498798767555,
+         "label" : "wssh",
+         "time" : "2025-07-16T10:03:53+0000"
+      },
+      {
+         "action" : null,
+         "item" : 13841943498798767555,
+         "label" : "wssh",
+         "time" : "2025-07-16T10:04:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 13841943498798767555,
+         "label" : "wssh",
+         "time" : "2025-07-16T10:04:56+0000"
+      },
+      {
+         "action" : null,
+         "item" : 286235129053795930,
+         "label" : ".android",
+         "time" : "2025-07-16T10:05:49+0000"
+      },
+      {
+         "action" : 11933390219418939760,
+         "item" : 4056342105522599424,
+         "label" : "bilibili-voice.log -> Edit",
+         "time" : "2025-07-16T10:06:08+0000"
+      },
+      {
+         "action" : 11933390219418939760,
+         "item" : 4056342105522599424,
+         "label" : "bilibili-voice.log -> Edit",
+         "time" : "2025-07-16T10:06:17+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11999494575899190589,
+         "label" : "Wezterm",
+         "time" : "2025-07-16T10:08:07+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11999494575899190589,
+         "label" : "Wezterm",
+         "time" : "2025-07-16T10:24:51+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6347301413109026547,
+         "label" : "RapidEE",
+         "time" : "2025-07-16T10:26:06+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6437383497087328849,
+         "label" : "Cmder",
+         "time" : "2025-07-16T10:26:12+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11999494575899190589,
+         "label" : "Wezterm",
+         "time" : "2025-07-16T10:30:59+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6347301413109026547,
+         "label" : "RapidEE",
+         "time" : "2025-07-16T10:32:21+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6347301413109026547,
+         "label" : "RapidEE",
+         "time" : "2025-07-16T10:36:25+0000"
       }
    ],
    "sets" : {
-      "actions" : [],
+      "actions" : [
+         {
+            "id" : 11933390219418939760,
+            "label" : "Edit",
+            "name" : "edit",
+            "plugin" : "App",
+            "short_desc" : "Edit file using the editor setting or system's default"
+         }
+      ],
       "items" : [
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 286235129053795930,
+            "label" : ".android",
+            "loop_on_suggest" : true,
+            "plugin" : "FileBrowser.FileBrowser",
+            "short_desc" : "",
+            "target" : "C:\\Users\\User\\.android"
+         },
          {
             "args_hint" : "accepted",
             "category" : "file",
@@ -353,6 +516,17 @@
             "target" : "C:\\Users\\User\\Usr\\Data\\keypirinha\\filebrowser\\_windows"
          },
          {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 4056342105522599424,
+            "label" : "bilibili-voice.log",
+            "loop_on_suggest" : false,
+            "plugin" : "FileBrowser.FileBrowser",
+            "short_desc" : "",
+            "target" : "C:\\Users\\User\\.bilibili-voice\\bilibili-voice.log"
+         },
+         {
             "args_hint" : "required",
             "category" : "#1002",
             "hit_hint" : "noargs",
@@ -362,6 +536,28 @@
             "plugin" : "PuzzTools.PuzzTools",
             "short_desc" : "Converts clipboard into case",
             "target" : "case"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "#1001",
+            "hit_hint" : "noargs",
+            "id" : 14052828967172103035,
+            "label" : "chk",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.CustomCmds",
+            "short_desc" : "Custom command: chk",
+            "target" : "chk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 6437383497087328849,
+            "label" : "Cmder",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.Desktop",
+            "short_desc" : "Desktop: Desktop",
+            "target" : "C:\\Users\\User\\Desktop\\Cmder.lnk"
          },
          {
             "args_hint" : "accepted",
@@ -376,6 +572,17 @@
          },
          {
             "args_hint" : "accepted",
+            "category" : "#1001",
+            "hit_hint" : "noargs",
+            "id" : 1929095120301099312,
+            "label" : "es",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.CustomCmds",
+            "short_desc" : "Custom command: C:\\Users\\User\\Scoop\\apps\\everything\\current\\everything.exe {{*}} -path \"C:\\Users\\User\"",
+            "target" : "es"
+         },
+         {
+            "args_hint" : "accepted",
             "category" : "file",
             "hit_hint" : "keepall",
             "id" : 262490813395881641,
@@ -384,6 +591,17 @@
             "plugin" : "Apps.StartMenu",
             "short_desc" : "Start Menu: Programs\\GitHub, Inc",
             "target" : "C:\\Users\\User\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\GitHub, Inc\\GitHub Desktop.lnk"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "#1001",
+            "hit_hint" : "noargs",
+            "id" : 16568526219965853749,
+            "label" : "grep",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.CustomCmds",
+            "short_desc" : "Custom command: dngrep C:\\Users\\User\\Usr\\Git\\cheat",
+            "target" : "grep"
          },
          {
             "args_hint" : "accepted",
@@ -595,6 +813,17 @@
             "target" : "C:\\Users\\User\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Scoop Apps\\WinSSHTerm.lnk"
          },
          {
+            "args_hint" : "forbidden",
+            "category" : "#1001",
+            "hit_hint" : "noargs",
+            "id" : 13841943498798767555,
+            "label" : "wssh",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.CustomCmds",
+            "short_desc" : "Custom command: wezterm ssh scillidan@arch",
+            "target" : "wssh"
+         },
+         {
             "args_hint" : "accepted",
             "category" : "file",
             "hit_hint" : "keepall",
@@ -631,7 +860,7 @@
       ],
       "terms" : [
          {
-            "items" : [ 8936443285612645061 ],
+            "items" : [ 286235129053795930, 8936443285612645061 ],
             "search" : "~"
          },
          {
@@ -647,6 +876,14 @@
             "search" : "case"
          },
          {
+            "items" : [ 14052828967172103035 ],
+            "search" : "chk"
+         },
+         {
+            "items" : [ 6437383497087328849 ],
+            "search" : "cmder"
+         },
+         {
             "items" : [ 4763024300722844681 ],
             "search" : "dngrep"
          },
@@ -655,8 +892,16 @@
             "search" : "ee"
          },
          {
+            "items" : [ 1929095120301099312 ],
+            "search" : "es"
+         },
+         {
             "items" : [ 262490813395881641 ],
             "search" : "github"
+         },
+         {
+            "items" : [ 16568526219965853749 ],
+            "search" : "grep"
          },
          {
             "items" : [ 2937293531568046015 ],
@@ -709,6 +954,10 @@
          {
             "items" : [ 16211224755235149484 ],
             "search" : "winme"
+         },
+         {
+            "items" : [ 13841943498798767555 ],
+            "search" : "wssh"
          },
          {
             "items" : [ 11999494575899190589 ],

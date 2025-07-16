@@ -15,10 +15,10 @@ padding.y = 5
 startup_mode = "Windowed"
 
 [font]
-normal.family = "IosevkaTerm NFM"
-bold.family = "IosevkaTerm NFM"
-italic.family = "IosevkaTerm NFM"
-bold_italic.family = "IosevkaTerm NFM"
+normal = { family = "IosevkaTerm Nerd Font Mono", style="Regular" }
+bold = { family = "IosevkaTerm Nerd Font Mono", style="Bold" }
+italic = { family = "IosevkaTerm Nerd Font Mono", style="Italic" }
+bold_italic = { family = "IosevkaTerm Nerd Font Mono", style="Bold Italic" }
 size = 10
 
 [selection]
@@ -26,8 +26,8 @@ semantic_escape_chars = ",`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
 [terminal.shell]
-program = "/usr/bin/zsh"
-args = ["-l"]
+program = "cmd"
+args = [ "/k", "C:\\Users\\User\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" ]
 
 [mouse]
 bindings = [{ mouse = "Right", action = "PasteSelection" }]
