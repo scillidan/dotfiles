@@ -6,7 +6,7 @@
 ;= Add aliases below here
 
 _bash=%USERPROFILE%\Scoop\shims\bash.exe $*
-_ssh=%USERPROFILE%\Scoop\apps\git\current\usr\bin\ssh.exe $*
+_ssh=%SCOOP_HOME%\apps\git\current\usr\bin\ssh.exe $*
 e.=explorer .
 pwd=cd
 clr=clear
@@ -62,14 +62,14 @@ sslt=git config --global http.sslVerify true
 sslf=git config --global http.sslVerify false
 ;= ghi=gh extension install $*
 ;= ghu=gh extension remove $*
-py310=%USERPROFILE%\Scoop\apps\python310\current\python.exe $*
-pv310=%USERPROFILE%\Scoop\apps\python310\current\python.exe -m venv .venv && .venv\Scripts\activate.bat
-pi310=%USERPROFILE%\Scoop\apps\python310\current\python.exe -m pip install $*
-pu310=%USERPROFILE%\Scoop\apps\python310\current\python.exe -m pip uninstall $*
-py311=%USERPROFILE%\Scoop\apps\python311\current\python.exe $*
-pv311=%USERPROFILE%\Scoop\apps\python311\current\python.exe -m venv .venv && .venv\Scripts\activate.bat
-py312=%USERPROFILE%\Scoop\apps\python312\current\python.exe $*
-pv312=%USERPROFILE%\Scoop\apps\python312\current\python.exe -m venv .venv && .venv\Scripts\activate.bat
+py310=%SCOOP_HOME%\apps\python310\current\python.exe $*
+pv310=%SCOOP_HOME%\apps\python310\current\python.exe -m venv .venv && .venv\Scripts\activate.bat
+pi310=%SCOOP_HOME%\apps\python310\current\python.exe -m pip install $*
+pu310=%SCOOP_HOME%\apps\python310\current\python.exe -m pip uninstall $*
+py311=%SCOOP_HOME%\apps\python311\current\python.exe $*
+pv311=%SCOOP_HOME%\apps\python311\current\python.exe -m venv .venv && .venv\Scripts\activate.bat
+py312=%SCOOP_HOME%\apps\python312\current\python.exe $*
+pv312=%SCOOP_HOME%\apps\python312\current\python.exe -m venv .venv && .venv\Scripts\activate.bat
 pva=.venv\Scripts\activate.bat
 ;= pixy=pip install -e . --index-url https://pypi.org/simple
 pipc=pip cache purge
