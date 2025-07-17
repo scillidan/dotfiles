@@ -98,3 +98,5 @@
 .Xauthority
 .config/sublime-text/Packages/User/Package Control.user-ca-bundle
 /.config/gitify
+/.config/sublime-text/Packages/User/Log Highlight
+/.config/sublime-text/Packages/User/Color Schemes
