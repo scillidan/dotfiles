@@ -2,3 +2,99 @@
 .config/nvim/dictionary/**
 .config/nvim/lazy-lock.json
 .config/_windows_keypirinha/Profile/User/Keypirinha.history
+/.cache
+/.cargo
+/.config/BraveSoftware
+.bash_history
+/.config/sublime-text/Packages/zzz A File Icon zzz
+/Usr
+/Downloads
+/Desktop
+/cache
+/gPodder
+/.var
+/.rustup
+/.pyenv
+/.nvm
+/.npm
+/.local
+/.thunderbird
+/.librewolf
+/.wakatime
+/.tmux
+/.steam
+/.ssh
+/.snipaste
+/.renpy
+/.password-store
+/.oh-my-zsh
+/.java
+/.icons
+/.config/xfce4
+/.gnupg
+/.pki
+/.config/systemd
+/.config/sublime-text/Packages/Pretty YAML
+/.config/sublime-text/Packages/rainbow_csv
+/.config/sublime-text/Packages/Terminal
+/.config/sublime-text/Packages/lsp_utils
+/.config/sublime-text/Packages/JsPrettier
+/.config/sublime-text/Packages/Minify
+/.config/sublime-text/Packages/ChineseOpenConvert
+/.config/sublime-text/Lib/python38
+/.codex
+/.config/chezmoi
+/.config/dconf
+/.config/fcitx
+/.config/fcitx5
+/.config/gh
+/.config/GitHub Desktop
+/.config/go
+/.config/ibus
+/.config/obsidian
+/.config/pulse
+/.config/sublime-text/Installed Packages
+/.config/sublime-text/Lib
+/.config/sublime-text/Backup
+/.config/sublime-text/Packages/Base16 Color Schemes
+/.config/sublime-text/Packages/Color Scheme - Default
+/.config/sublime-text/Packages/CommandsBrowser33
+.gitconfig
+.gitattributes
+.pulse-cookie
+.steampath
+.steampid
+.wakatime-internal.cfg
+.zsh_history
+.zcompdump
+/.tmuxifier
+/.emulationstation
+/.config/Thunar
+.config/user-dirs.dirs
+.config/user-dirs.locale
+/.config/Zeal
+/.config/tigervnc
+/.config/firewall
+/.config/io.github.clash-verge-rev.clash-verge-rev
+/.config/Mousepad
+.config/nvm/nvm-exec
+.config/nvm/nvm.sh
+/.config/qalculate
+/.config/sublime-text/Local
+/.config/sublime-text/Packages/Mirodark Color Scheme
+/.config/sublime-text/Packages/User/Color Schemes/RainbowBrackets
+/.config/sublime-text/Packages/User/Log Highlight
+.config/QtProject.conf
+.config/mimeapps.list
+.config/pavucontrol.ini
+.config/kdeglobals
+/.config/atuin
+.config/arkrc
+.ICEauthority
+.shell.pre-oh-my-zsh
+.viminfo
+/.vim
+.wget-hsts
+.Xauthority
+.config/sublime-text/Packages/User/Package Control.user-ca-bundle
+/.config/gitify
