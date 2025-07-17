@@ -2,3 +2,5 @@
 .config/nvim/dictionary/**
 .config/nvim/lazy-lock.json
 .config/_windows_keypirinha/Profile/User/Keypirinha.history
+/.config/sublime-text/Packages/User/Log Highlight
+/.config/sublime-text/Packages/User/Color Schemes
