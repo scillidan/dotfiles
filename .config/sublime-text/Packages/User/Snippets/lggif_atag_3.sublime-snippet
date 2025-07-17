@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+      <a href="media/$1.jpg" 
+        data-slide-name="" 
+        data-sub-html="">
+          <img src="media/$1.jpg" />
+      </a>
+]]></content>
+  <tabTrigger>gifa3</tabTrigger>
+  <scope>text.html</scope>
+  <description>lg-gif image</description>
+</snippet>

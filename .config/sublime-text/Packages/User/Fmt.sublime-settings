@@ -1,0 +1,9 @@
+{
+  "format_on_save": false,
+  "rules": [
+    {
+      "selector": "text.tex.latex",
+      "cmd": ["tex-fmt", "$file"]
+    },
+  ],
+}

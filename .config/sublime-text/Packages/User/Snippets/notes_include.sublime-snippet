@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+```{include} $1.md
+```
+]]></content>
+  <tabTrigger>includemd</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>notes include file.md</description>
+</snippet>

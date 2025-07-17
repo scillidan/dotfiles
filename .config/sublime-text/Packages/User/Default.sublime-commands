@@ -1,0 +1,21 @@
+[
+    {
+        "caption": "Terminus: Open WSL",
+        "command": "terminus_open",
+	    "args"   : {
+	        "cmd": ["wsl.exe"],
+	        "cwd": "${file_path:${folder}}",
+	        "title": "WSL"
+	    }
+    },
+    {
+        "caption": "Terminus: Open WSL (panel)",
+        "command": "terminus_open",
+	    "args"   : {
+	    	"show_in_panel": true,
+	        "cmd": ["wsl.exe"],
+	        "cwd": "${file_path:${folder}}",
+	        "title": "WSL"
+	    }
+    }
+]

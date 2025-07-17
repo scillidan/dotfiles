@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+---
+layout: blog
+title: ""
+date: $1-$2-$3
+authors:
+  - link: https://jandan.net/p/author/bali
+    name: BALI
+    avatar: https://raw.githubusercontent.com/scillidan/PIDAN-journal/main/asset/yafa.png
+source: https://jandan.net/p/
+origauthor: 
+origsource: 
+order: $1$2$3
+icon: squirrel
+---
+]]></content>
+  <tabTrigger>qown</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>qownnotes meta</description>
+</snippet>

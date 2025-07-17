@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+- LLPart1: $1
+  LLPart2: $2
+  LLKey: 
+  LLShorthand: 
+  LLScript: 
+]]></content>
+  <tabTrigger>lintalistpart</tabTrigger>
+  <scope>text</scope>
+  <description>lintalist part</description>
+</snippet>

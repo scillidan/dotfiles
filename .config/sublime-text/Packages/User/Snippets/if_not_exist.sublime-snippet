@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+if not exist "$1$2" (
+    echo "Decompress $1.zip to $1$2."
+    unzip $1.zip -d $1$2
+)
+]]></content>
+  <tabTrigger>ifnoexist</tabTrigger>
+  <scope>source.dosbatch</scope>
+  <description>if-not-exist</description>
+</snippet>

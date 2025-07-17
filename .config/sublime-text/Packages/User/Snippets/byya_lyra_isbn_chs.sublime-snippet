@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+```
+ISBN13: $1
+标题: $2
+副标题: $3
+作者: $4
+译者: $5
+出版年: $6
+```
+]]></content>
+  <tabTrigger>isbnchs</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>byya lyra isbn-chs</description>
+</snippet>

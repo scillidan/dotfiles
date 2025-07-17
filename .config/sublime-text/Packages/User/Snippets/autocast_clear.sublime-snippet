@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+- !Clear
+]]></content>
+  <tabTrigger>acclr</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>autocast clear</description>
+</snippet>

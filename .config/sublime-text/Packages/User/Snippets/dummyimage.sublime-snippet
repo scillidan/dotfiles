@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+https://dummyimage.com/$1x$2/000/fff
+]]></content>
+  <tabTrigger>dum</tabTrigger>
+  <scope>text</scope>
+  <description>dummyimage</description>
+</snippet>

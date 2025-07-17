@@ -1,0 +1,53 @@
+<snippet>
+  <content><![CDATA[
+{
+    "version": "$4",
+    "description": "$1",
+    "homepage": "$3",
+    "license": "$2",
+    "architecture": {
+        "64bit": {
+            "url": "$3/releases/download/$4/$5",
+            "hash": ""
+        },
+        "32bit": {
+            "url": "$3/releases/download/$4/$5",
+            "hash": ""
+        }$6
+    },
+    "extract_dir": "",
+    "env_add_path": ".",
+    "bin": [
+        [
+            "",
+            ""
+        ]
+    ],
+    "shortcuts": [
+        [
+            "",
+            ""
+        ]
+    ],
+    "checkver": {
+        "url": "$3",
+        "checkver": "github",
+        "url": "$3/releases/latest",
+        "regex": "$5"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "$3/releases/download/\$version/$5"
+            },
+            "32bit": {
+                "url": "$3/releases/download/\$version/$5"
+            }
+        }$6
+    }
+}
+]]></content>
+  <tabTrigger>appmin</tabTrigger>
+  <scope>source.json</scope>
+  <description>scoop bucket app-mini</description>
+</snippet>

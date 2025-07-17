@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+!!!light @$2 #$3
+$1
+!!!
+]]></content>
+  <tabTrigger>qownc</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>qownnotes comment</description>
+</snippet>

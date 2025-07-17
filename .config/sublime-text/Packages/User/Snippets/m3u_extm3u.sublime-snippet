@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+#EXTM3U
+#EXTINF:,$1
+]]></content>
+  <tabTrigger>m3u</tabTrigger>
+  <scope>text.m3u</scope>
+  <description>m3u extm3u</description>
+</snippet>
