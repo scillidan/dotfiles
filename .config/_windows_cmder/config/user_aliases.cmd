@@ -81,9 +81,9 @@ uvi=uv pip install $*
 xpi=pipx install $*
 xpu=pipx uninstall $*
 ns=npms search $*
-xni=pnpm add -g $*
-xnu=pnpm remove -g $*
-xnl=pnpm ls -g
+xni=%SCOOP_HOME%\shims\pnpm.exe add -g $*
+xnu=%SCOOP_HOME%\shims\pnpm.exe remove -g $*
+xnl=%SCOOP_HOME%\shims\pnpm.exe ls -g
 ;= yi=yarn add $*
 ;= yu=yarn remove $*
 ;= yc=yarn cache clean

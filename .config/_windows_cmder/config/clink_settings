@@ -3,6 +3,7 @@ autosuggest.strategy = match_prev_cmd
 clink.autoupdate = false
 fzf.default_bindings = true
 history.dupe_mode = add
+# carapace
 carapace.enable = true
 carapace.exclude = scoop;cmd
 matchicons.enable = true

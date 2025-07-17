@@ -42,13 +42,14 @@ directory-opus: (filetype) srt - event - C-MBtn_L(x2)           | `subtitleedit 
 directory-opus: (filetype) srt - event - MBtn_L(x2)             | `aegisub {allfilepath}`
 directory-opus: (filetype) svg - event - C-MBtn_L(x2)           | `svgtexteditor {allfilepath}`
 directory-opus: (filetype) URL:magnet - open                    | `"qbittorrent.exe" "%1"`
-directory-opus: (User) Edit with Sublime Text                   | C-e
-directory-opus: (User) View in list mode                        | A-S-l
 directory-opus: Close Tab                                       | C-S-w
 directory-opus: Copy                                            | MBtn_L(drag)
+directory-opus: Copy fullpath          (Set by user)            | A-S-v
 directory-opus: Copy Path                                       | C-S-c
+directory-opus: Edit with Sublime Text (Set by user)            | C-e
 directory-opus: Print                                           | C-p
 directory-opus: View in detail mode                             | A-S-d
+directory-opus: View in list mode      (Set by user)            | A-S-l
 directory-opus: View in thumbnail mode                          | A-S-v
 directory-opus:: Extended functionality for F2: Rename          | F2
 directory-opus:: FastCopy: Copy                                 | MBtn-R(drag)
