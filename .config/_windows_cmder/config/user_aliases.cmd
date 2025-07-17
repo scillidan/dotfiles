@@ -102,6 +102,8 @@ cgbi=cargo-binstall install $*
 ;= dsi=datasette install $*
 ;= dsu=datasette uninstall $*
 
+dga=doggo A $* @1.1.1.1
+dgg=doggo A $* @8.8.8.8
 cuda11=set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8"
 cuda12=set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3"
 alas=alass $1.$2 $1.$3 $1.alass.$3
@@ -112,7 +114,7 @@ repo2prompt=code2prompt --remote $1
 
 t2c=gopencc -c t2s -i $*
 c2t=gopencc -c s2t -i $*
-et=erd --color --hidden --follow --human --disk-usage line --sort name --dir-order first --layout inverted $*
+et=erd --color auto --hidden --follow --human --disk-usage line --sort name --dir-order first --layout inverted $*
 jqp=jq ".scripts" package.json
 scan=clamscan -v -a --max-filesize=1000M --max-scansize=1000M --alert-exceeds-max=yes $1
 abbr=abbreviate original $*
