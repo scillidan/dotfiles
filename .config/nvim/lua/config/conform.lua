@@ -2,7 +2,7 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "yapf", "isort", "black" },
-		typst = { "tinymist" },
+		typst = { "typstyle" },
 		tex = { "tex-fmt" },
 		bib = { "bibtex-tidy" },
 		sh = { "shfmt" },
