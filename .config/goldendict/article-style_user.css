@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Sarasa Term SC Nerd Font";
+  src:
+    local('Sarasa Term SC Nerd Font') format('truetype');
+  font-weight: normal;
+  font-style:  normal;
+}
+
+body
+{
+  font-family: "Sarasa Term SC Nerd Font", NotoSans;
+  font-size:   10pt;
+}
+
+.dsl_t
+{
+  font-family: "Sarasa Term SC Nerd Font", NotoSerif;
+}
+
+.gdarticle
+{
+  border-radius: 0;
+}
+
+.programs_plaintext, .programs_html {
+  margin-top: 20px;
+}
+
+.gdactivearticle .gddictname {
+  border: none;
+}
+
+.gddictname {
+  border: none;
+  border-radius: 0;
+}
+
+.voiceengines_play {
+  margin-top: 22.5px;
+}
