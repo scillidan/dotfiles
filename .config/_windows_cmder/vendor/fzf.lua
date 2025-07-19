@@ -676,12 +676,12 @@ local function apply_default_bindings()
 		rl.setbinding([["\M-c"]], [["luafunc:fzf_directory"]])
 		rl.setbinding([["\M-b"]], [["luafunc:fzf_bindings"]])
 		-- C-i / Tab
-		rl.setbinding([["\C-I"]], [["luafunc:fzf_selectcomplete"]])
+		rl.setbinding([["\C-I"]], [["luafunc:fzf_selectcomplete_force"]])
 		-- Tab
-		rl.setbinding([["\t"]], [["luafunc:fzf_complete"]])
+		rl.setbinding([["\t"]], [["luafunc:fzf_complete_force"]])
 		-- C-Spc
-		rl.setbinding([["\e[27;5;32~"]], [["luafunc:fzf_complete_force"]])
-		rl.setbinding([["\C-@"]], [["luafunc:fzf_complete_force"]])
+		rl.setbinding([["\e[27;5;32~"]], [["luafunc:fzf_complete"]])
+		rl.setbinding([["\C-@"]], [["luafunc:fzf_complete"]])
 	end
 end
 
