@@ -59,9 +59,23 @@ directory-opus:: SmartZip: Decompress                           | C-MBtn_L(x2)
 ditto: Activate                                                 | A-S-d
 dngrep: Restore dnGrep window                                   | A-r
 dngrep: Search                                                  | C-Etr
+everything: (Modifier) Match files only                         | `file:`
+everything: (Modifier) Match folders only                       | `folder:`
+everything: (Syntax) AND                                        | Spc
+everything: (Syntax) Grouping                                   | <>
+everything: (Syntax) NOT                                        | !
+everything: (Syntax) OR                                         | \|
+everything: (Syntax) Search for an exact phrase                 | "<str>"
 everything: Copy Full Name to Clipboard                         | C-S-c
+everything: Enable/Disable Regex                                | C-r
+everything: Match Case                                          | C-i
+everything: Match Path                                          | C-u
+everything: Match Whole Word                                    | C-b
 everything: Open                                                | Etr
 everything: Open Selection and Close Everything                 | C-Etr
+everything: Sort by Modified                                    | C-6
+everything: Sort by Name                                        | C-1
+everything: Sort by Path                                        | C-2
 everything: Toggle window Hotkey                                | A-e
 imageglass: Color picker                                        | k
 imageglass: Crop image                                          | c
