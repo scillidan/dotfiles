@@ -100,3 +100,7 @@
 /.config/gitify
 /.config/sublime-text/Packages/User/Log Highlight
 /.config/sublime-text/Packages/User/Color Schemes
+/.config/mpv/mpvc_manga
+/.config/mpv/mpvc_music
+/.config/mpv/mpvc_video
+.config/goldendict/config.linkfile

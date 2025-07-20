@@ -48,7 +48,7 @@ directory-opus: dof.bat (Set by user)                           | A-f
 directory-opus: does.bat (Set by user)                          | A-s
 directory-opus: Close Tab                                       | C-S-w
 directory-opus: Copy                                            | MBtn_L(drag)
-directory-opus: Copy fullpath (Set by user)                     | S-c
+directory-opus: Copy fullpath (Set by user)                     | C
 directory-opus: Edit with Sublime Text (Set by user)            | C-e
 directory-opus: Print                                           | C-p
 directory-opus: View in detail mode                             | A-S-d
