@@ -18,6 +18,9 @@ matches:
     replace: "https://scillidan.github.io/cheat/$|$.html"
   - trigger: ":ce"
     replace: "```sh$|$\n```"
+  - trigger: ":g4"
+    replace: "GPT-4o mini"
+  # command
   - trigger: ":gc"
     replace: "git clone --depth=1 "
   - trigger: ":pv"
@@ -28,6 +31,7 @@ matches:
     replace: "uv pip install torch --index-url https://download.pytorch.org/whl/cu121"
   - trigger: ":yas"
     replace: "yay -S --noconfirm"
+  # regex
   - trigger: ":dup"
     replace: "^(.*)(\\r?\\n\\1)+$"
   - trigger: ":cjk"

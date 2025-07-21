@@ -5,8 +5,8 @@ autohotkey:: toggle-screen-autohotkey                           | Win-F2
 autohotkey:: GoldenDictOCR: ToggleMouseTakeWord                 | C-A-g
 cmder:: clink-fzf: Complete                                     | C-Spc
 cmder:: clink-fzf: File                                         | C-t
-cmder:: clink-fzf: fzf_complete_force                           | C-Spc
-cmder:: clink-fzf: fzf_selectcomplete                           | Tab
+cmder:: clink-fzf: fzf_complete_force                           | Tab
+cmder:: clink-fzf: fzf_selectcomplete                           | C-Spc
 cmder:: clink-fzf: History                                      | C-r
 cmder:: clink-fzf: Subdirectory                                 | A-c
 cmder:: clink-gizmos: cwdhistory.lua                            | C-A-PgUp
@@ -42,14 +42,17 @@ directory-opus: (filetype) srt - event - C-MBtn_L(x2)           | `subtitleedit 
 directory-opus: (filetype) srt - event - MBtn_L(x2)             | `aegisub {allfilepath}`
 directory-opus: (filetype) svg - event - C-MBtn_L(x2)           | `svgtexteditor {allfilepath}`
 directory-opus: (filetype) URL:magnet - open                    | `"qbittorrent.exe" "%1"`
+directory-opus: Close Tab                                       | A-d
+directory-opus: dod.bat (Set by user)                           | A-d
+directory-opus: dof.bat (Set by user)                           | A-f
+directory-opus: does.bat (Set by user)                          | A-s
 directory-opus: Close Tab                                       | C-S-w
 directory-opus: Copy                                            | MBtn_L(drag)
-directory-opus: Copy fullpath          (Set by user)            | A-S-v
-directory-opus: Copy Path                                       | C-S-c
+directory-opus: Copy fullpath (Set by user)                     | C
 directory-opus: Edit with Sublime Text (Set by user)            | C-e
 directory-opus: Print                                           | C-p
 directory-opus: View in detail mode                             | A-S-d
-directory-opus: View in list mode      (Set by user)            | A-S-l
+directory-opus: View in list mode (Set by user)                 | A-S-l
 directory-opus: View in thumbnail mode                          | A-S-v
 directory-opus:: Extended functionality for F2: Rename          | F2
 directory-opus:: FastCopy: Copy                                 | MBtn-R(drag)
@@ -59,9 +62,23 @@ directory-opus:: SmartZip: Decompress                           | C-MBtn_L(x2)
 ditto: Activate                                                 | A-S-d
 dngrep: Restore dnGrep window                                   | A-r
 dngrep: Search                                                  | C-Etr
+everything: (Modifier) Match files only                         | `file:`
+everything: (Modifier) Match folders only                       | `folder:`
+everything: (Syntax) AND                                        | Spc
+everything: (Syntax) Grouping                                   | <>
+everything: (Syntax) NOT                                        | !
+everything: (Syntax) OR                                         | \|
+everything: (Syntax) Search for an exact phrase                 | "<str>"
 everything: Copy Full Name to Clipboard                         | C-S-c
+everything: Enable/Disable Regex                                | C-r
+everything: Match Case                                          | C-i
+everything: Match Path                                          | C-u
+everything: Match Whole Word                                    | C-b
 everything: Open                                                | Etr
 everything: Open Selection and Close Everything                 | C-Etr
+everything: Sort by Modified                                    | C-6
+everything: Sort by Name                                        | C-1
+everything: Sort by Path                                        | C-2
 everything: Toggle window Hotkey                                | A-e
 imageglass: Color picker                                        | k
 imageglass: Crop image                                          | c
