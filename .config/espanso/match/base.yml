@@ -8,6 +8,26 @@ matches:
   #       type: shell
   #       params:
   #         cmd: "expr $ESPANSO_NUM1 + $ESPANSO_NUM2"
+  # Character
+  - trigger: ":1"
+    replace: "→"
+  # Command
+  - trigger: ":gc"
+    replace: "git clone --depth=1 "
+  - trigger: ":pv"
+    replace: "python -m venv .venv\n.venv\\Scripts\\activate.bat"
+  - trigger: ":uv"
+    replace: "uv venv\n.venv\\Scripts\\activate.bat"
+  - trigger: ":torch"
+    replace: "uv pip install torch --index-url https://download.pytorch.org/whl/cu121"
+  - trigger: ":yas"
+    replace: "yay -S --noconfirm"
+  # Regex
+  - trigger: ":dup"
+    replace: "^(.*)(\\r?\\n\\1)+$"
+  - trigger: ":cjk"
+    replace: "[^\\x00-\\xff]+"
+  # Other
   - trigger: ":what"
     replace: "What is $|$? Using metaphors and rhetoric helps me understand."
   - trigger: ":diff"
@@ -19,20 +39,4 @@ matches:
   - trigger: ":ce"
     replace: "```sh$|$\n```"
   - trigger: ":g4"
-    replace: "GPT-4o mini"
-  # command
-  - trigger: ":gc"
-    replace: "git clone --depth=1 "
-  - trigger: ":pv"
-    replace: "python -m venv .venv\n.venv\\Scripts\\activate.bat"
-  - trigger: ":uv"
-    replace: "uv venv\n.venv\\Scripts\\activate.bat"
-  - trigger: ":torch"
-    replace: "uv pip install torch --index-url https://download.pytorch.org/whl/cu121"
-  - trigger: ":yas"
-    replace: "yay -S --noconfirm"
-  # regex
-  - trigger: ":dup"
-    replace: "^(.*)(\\r?\\n\\1)+$"
-  - trigger: ":cjk"
-    replace: "[^\\x00-\\xff]+"
+    replace: "[GPT-4o mini]"

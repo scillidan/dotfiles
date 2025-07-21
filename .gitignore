@@ -102,3 +102,5 @@
 /.config/sublime-text/Packages/User/Color Schemes
 /.config/goldendict/config.linkfile
 /.config/autostart
+.warprc
+/.config/flameshot
