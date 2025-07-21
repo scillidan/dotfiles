@@ -4,11 +4,11 @@ englishLayout := "00000409"  ; English (United States)
 chineseLayout := "00000804"   ; Chinese (Simplified, PRC)
 
 ; Windows 10 → Advanced keyboard settings → Input language hot keys → Advanced key settings
-; Set Crtl+Shift+0 to switch to English
-; Set Crtl+Shift+1 to switch to Chinese
+; Set Alt+Shift+0 to switch to English
+; Set Alt+Shift+1 to switch to Chinese
 
 SetKeyboardLayoutShortcut(shortcut) {
-    SendInput, {Ctrl down}{Shift down}%shortcut%{Shift up}{Ctrl up}
+    SendInput, {Alt down}{Shift down}%shortcut%{Shift up}{Alt up}
 }
 
 CapsLock::
