@@ -1,7 +1,7 @@
-.config/nvim/snippets/**
-.config/nvim/dictionary/**
-.config/nvim/lazy-lock.json
-.config/_windows_keypirinha/Profile/User/Keypirinha.history
+/.config/nvim/snippets/**
+/.config/nvim/dictionary/**
+/.config/nvim/lazy-lock.json
+/.config/_windows_keypirinha/Profile/User/Keypirinha.history
 /.cache
 /.cargo
 /.config/BraveSoftware
@@ -70,37 +70,35 @@
 /.tmuxifier
 /.emulationstation
 /.config/Thunar
-.config/user-dirs.dirs
-.config/user-dirs.locale
+/.config/user-dirs.dirs
+/.config/user-dirs.locale
 /.config/Zeal
 /.config/tigervnc
 /.config/firewall
 /.config/io.github.clash-verge-rev.clash-verge-rev
 /.config/Mousepad
-.config/nvm/nvm-exec
-.config/nvm/nvm.sh
+/.config/nvm/nvm-exec
+/.config/nvm/nvm.sh
 /.config/qalculate
 /.config/sublime-text/Local
 /.config/sublime-text/Packages/Mirodark Color Scheme
 /.config/sublime-text/Packages/User/Color Schemes/RainbowBrackets
 /.config/sublime-text/Packages/User/Log Highlight
-.config/QtProject.conf
-.config/mimeapps.list
-.config/pavucontrol.ini
-.config/kdeglobals
+/.config/QtProject.conf
+/.config/mimeapps.list
+/.config/pavucontrol.ini
+/.config/kdeglobals
 /.config/atuin
-.config/arkrc
+/.config/arkrc
 .ICEauthority
 .shell.pre-oh-my-zsh
 .viminfo
 /.vim
 .wget-hsts
 .Xauthority
-.config/sublime-text/Packages/User/Package Control.user-ca-bundle
+/.config/sublime-text/Packages/User/Package Control.user-ca-bundle
 /.config/gitify
 /.config/sublime-text/Packages/User/Log Highlight
 /.config/sublime-text/Packages/User/Color Schemes
-/.config/mpv/mpvc_manga
-/.config/mpv/mpvc_music
-/.config/mpv/mpvc_video
-.config/goldendict/config.linkfile
+/.config/goldendict/config.linkfile
+/.config/autostart
