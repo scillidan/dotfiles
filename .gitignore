@@ -104,3 +104,5 @@
 /.config/autostart
 .warprc
 /.config/flameshot
+/.config/gtk-3.0
+.xsession-errors

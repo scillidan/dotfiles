@@ -25,15 +25,15 @@ size = 10
 semantic_escape_chars = ",`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
-[terminal.shell]
-program = "/usr/bin/zsh"
-args = ["-l"]
+# [terminal.shell]
+# program = "/usr/bin/zsh"
+# args = ["-l"]
 
 [mouse]
 bindings = [{ mouse = "Right", action = "PasteSelection" }]
 
 [keyboard]
 bindings = [
-	{ key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
-	{ key = "Q", mods = "Control|Shift|Alt", action = "Quit" },
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+  { key = "Q", mods = "Control|Shift|Alt", action = "Quit" },
 ]

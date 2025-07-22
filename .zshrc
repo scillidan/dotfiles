@@ -7,7 +7,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-zi snippet "$HOME/.oh-my-zsh/lib/git.zsh"
+zinit snippet "$HOME/.oh-my-zsh/lib/git.zsh"
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -34,6 +34,9 @@ zinit lucid wait for \
 
 zi has'zoxide' wait lucid for \
   z-shell/zsh-zoxide
+
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 
 autoload -Uz compinit
 compinit
@@ -111,6 +114,10 @@ help_function() {
 ### zsh-smart-insert
 export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
 export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
+
+### zsh-vi-mode
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 ## cargo
 export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
