@@ -108,3 +108,4 @@
 .xsession-errors
 .xsession-errors.old
 /.config/mpv
+/.config/libreoffice
