@@ -42,7 +42,7 @@ autoload -Uz compinit
 compinit
 
 export MANPATH="/usr/share/man:$MANPATH"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua51/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 
 ## zsh-env-secrets
 ENV_SECRETS=(
@@ -160,8 +160,8 @@ export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
 ## rbenv
 # eval "$(rbenv init -)"
-zi snippet "$HOME/.config/zsh/function.zsh"
-zi snippet "$HOME/.config/zsh/alias.zsh"
+zinit snippet "$HOME/.config/zsh/function.zsh"
+zinit snippet "$HOME/.config/zsh/alias.zsh"
 
 # bindkey '^ ' expand-or-complete-prefix
 # bindkey -s '^v' 'nvim $(fzf)\n'

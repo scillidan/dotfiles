@@ -109,3 +109,5 @@
 .xsession-errors.old
 /.config/mpv
 /.config/libreoffice
+/.config/btop
+/.config/qBittorrent

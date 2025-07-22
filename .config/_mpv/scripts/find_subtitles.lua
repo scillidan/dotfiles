@@ -69,7 +69,8 @@ function find_subtitles()
 		command = string.format('subliminal download --provider opensubtitles -l en -v "%s"', fp)
 	else
 		-- Linux
-		command = string.format("subliminal download --provider opensubtitles -l en -v '%s'", fp)
+		command =
+			string.format("/home/scillidan/.local/bin/subliminal download --provider opensubtitles -l en -v '%s'", fp)
 	end
 	local ss = os.capture(command)
 	ss = string.gsub(ss, "(Collecting videos)", "")
@@ -83,5 +84,5 @@ function find_subtitles()
 	mp.commandv("rescan_external_files", "reselect")
 end
 
-mp.add_key_binding("alt+o", "subtitles", find_subtitles)
+mp.add_key_binding("alt+s", "subtitles", find_subtitles)
 -- mp.register_event("start-file", find_subtitles)
