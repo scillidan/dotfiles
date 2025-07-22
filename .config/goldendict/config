@@ -1,318 +1,307 @@
 <config>
  <paths>
-	<path recursive="1">C:/Users/User/Scoop/apps/goldendict/current/content</path>
+  <path recursive="1">C:/Users/User/Scoop/apps/goldendict/current/content</path>
  </paths>
  <sounddirs/>
- <dictionaryOrder id="0" name="">
-	<dictionary name="tencenttrans">7329497dbc359408542863c42e1bff74</dictionary>
-	<dictionary name="Collins English-French French-English Dictionary">4e8dc93d761ab48f804467d594d65e76</dictionary>
-	<dictionary name="Cambridge English-German German-English dictionary">684de750ff8e1f7632e490eb8a4ffbe4</dictionary>
-	<dictionary name="ODE 3e 20191231M">358bc610150416a2c4637aae7462232e</dictionary>
-	<dictionary name="简明英汉字典增强版 - CSS">3d6a994d1743e63788fd7ce47a2eff8c</dictionary>
-	<dictionary name="Collins COBUILD English Usage">a09102f698b9fe6dd63b532f05f20e85</dictionary>
-	<dictionary name="MW11sound">010714777259ef9dc00019b7755090df</dictionary>
-	<dictionary name="LLA">496591ac2f3f17700532e5ae2bb30e18</dictionary>
-	<dictionary name="The Penguin English Dictionary 3rd, 2007">8c9b7d13dd412cd56d7c04f626466dd9</dictionary>
-	<dictionary name="韦氏高阶英汉双解词典2019">58af16e09fac6bfa51a6878f5520b055</dictionary>
-	<dictionary name="語源由来辞典">9d5e178e3fcdb3ee9e76b8d8bea8c684</dictionary>
-	<dictionary name="MOJi辞書">b0eee04b2efa14a8d4987206a8e9a3e5</dictionary>
-	<dictionary name="CB_slang_dictionary">d369ef5065a21dad736f72005427d57b</dictionary>
-	<dictionary name="Black's Medical Dictionary, 43rd Edition">b2baea5204008fcba0858f6dd9b30e0e</dictionary>
-	<dictionary name="Collins Dictionary of Law 2ed">509195120ab9ebba35d6fe3ff1f9d738</dictionary>
-	<dictionary name="Dictionary of Architecture and Construction">395a5ba66310ff97fcde64a45f956867</dictionary>
-	<dictionary name="英汉汉英医学辞典">c14aeab6533ad271cfdf6bcb15213f6b</dictionary>
-	<dictionary name="汉语大词典">a88a3f3e3e5a62deebb4735f81462eff</dictionary>
-	<dictionary name="漢語大詞典">8f890d7eafb0f8c2567db054fa5e3519</dictionary>
-	<dictionary name="Online Etymology Dictionary, ©Douglas Harper/etymonline.com">6aa792efffd64f1d8ddf9185aa954c0e</dictionary>
-	<dictionary name="GNU Collaborative International Dictionary of English">2a249754582cfb6b33c3a98cafd41467</dictionary>
-	<dictionary name="21 century bidirectional dictionary">58ffaa32d37a3b18604275b79096f003</dictionary>
-	<dictionary name="ecdict">19bb758cbb108219b8fea636026c922c</dictionary>
-	<dictionary name="English (US) Morphology">0faabcb720f0a616a82a54ddd03c6931</dictionary>
-	<dictionary name="Forvo Afrikaans">93977e94d2b8ca8a933f56b69c910022</dictionary>
-	<dictionary name="Forvo Albanian">51a39001a5aecb57034a0129cd4f5c62</dictionary>
-	<dictionary name="Forvo Ancient Greek">8aa41429213d7a2a414d7739ccbb0754</dictionary>
-	<dictionary name="Forvo Arabic">e613374166e5570cb77d904a5c397552</dictionary>
-	<dictionary name="Forvo Armenian">5a0b6a43e65dc753376977a2d1fab5d0</dictionary>
-	<dictionary name="Forvo Azerbaijani">50542f3997e86201cf331ab88d80d45c</dictionary>
-	<dictionary name="Forvo Basque">2dc8fbf93f0d83659f6b9d7274e6a718</dictionary>
-	<dictionary name="Forvo Belarusian">1f313dae56853302b6c152bd421cf757</dictionary>
-	<dictionary name="Forvo Bengali">2f062abd8537a7ae082e3affd6a19232</dictionary>
-	<dictionary name="Forvo Breton">b2ccf65ad2e415c0b5030aa360f245d0</dictionary>
-	<dictionary name="Forvo Bulgarian">66959a02b913fab5ba34006c3c59822e</dictionary>
-	<dictionary name="Forvo Cantonese">a4440c6bf2c4405363e0b552dd7947d3</dictionary>
-	<dictionary name="Forvo Catalan">e91b5379043c9a890445cf900d25c44b</dictionary>
-	<dictionary name="Forvo Croatian">e29024d3a448814306e76fdfa94aac43</dictionary>
-	<dictionary name="Forvo Czech">ccded6f12b71805c7742bbd98c702ebb</dictionary>
-	<dictionary name="Forvo Danish">f73abbcd101c08e78bb7cbc865e583cc</dictionary>
-	<dictionary name="Forvo Dutch">3ea907c10bfd65954aa33fb41852481d</dictionary>
-	<dictionary name="Forvo English">20a2a12bb3e62bb3a6df57782d1add2d</dictionary>
-	<dictionary name="Forvo Esperanto">bda1bd36533ae7dec069196400984550</dictionary>
-	<dictionary name="Forvo Estonian">cefe37ebff11d3475a7b3adf71ff3ef4</dictionary>
-	<dictionary name="Forvo Finnish">56cf44fda7bd71527f116d190a04811c</dictionary>
-	<dictionary name="Forvo French">7afd6d408938e437e9027f2a5c3989be</dictionary>
-	<dictionary name="Forvo Frisian">99b9def2a713e2d3a1f9d12c2d17b1c7</dictionary>
-	<dictionary name="Forvo Gan Chinese">acf2bd4ffb1e2dd97c253bd8d3fbeb4e</dictionary>
-	<dictionary name="Forvo Georgian">c8a7029276c6d4cb3319c8f5e9c91361</dictionary>
-	<dictionary name="Forvo German">07a5f1aa3ee5a652d4ce0c117e15fdb7</dictionary>
-	<dictionary name="Forvo Greek">aab7f3c4532e6eb01b829885d286d478</dictionary>
-	<dictionary name="Forvo Hakka">80c9e935a0a934697ff6a12ab508f0a4</dictionary>
-	<dictionary name="Forvo Hebrew">81ffec785ba5a16ef1d0398b584961db</dictionary>
-	<dictionary name="Forvo Hindi">f99040a7f8d80b32533d684a54b6431f</dictionary>
-	<dictionary name="Forvo Hungarian">f8a9a73829d805c87447fdb30a2ed4ce</dictionary>
-	<dictionary name="Forvo Icelandic">7b71d0c896d9cd4b39fa7b1c7c0a426c</dictionary>
-	<dictionary name="Forvo Indonesian">fcc40bc4101e6809f8faafcd67210fe8</dictionary>
-	<dictionary name="Forvo Irish">57639c0dc7609bbca1246c937f7acc50</dictionary>
-	<dictionary name="Forvo Italian">de6b78b9d0b9bbd5602e846e54217fb8</dictionary>
-	<dictionary name="Forvo Japanese">a4edd1cc613cd09e01b48a2763edc458</dictionary>
-	<dictionary name="Forvo Jin Chinese">0cd95e5783184b06b921066a2a7971ea</dictionary>
-	<dictionary name="Forvo Kazakh">5259b645e86e9a68ac0ce9c6959e4f5b</dictionary>
-	<dictionary name="Forvo Korean">93b16cb75fef2b8dd79b9972c6afdf91</dictionary>
-	<dictionary name="Forvo Latin">56dbcc48362b5bd8bc18c5f22a0f6b57</dictionary>
-	<dictionary name="Forvo Latvian">79cd07218f52a4e4736012b61fb724e6</dictionary>
-	<dictionary name="Forvo Lithuanian">2792dc2db737560f0ab576fe1c41aba1</dictionary>
-	<dictionary name="Forvo Luxembourgish">ae641bc28f3239605531995cb5ccae4b</dictionary>
-	<dictionary name="Forvo Malay">f1f1038d4f79638ec9d5fa32b5bfc622</dictionary>
-	<dictionary name="Forvo Mandarin">55142cbf63e478e5423f0cb10d8f3d30</dictionary>
-	<dictionary name="Forvo Min Dong">03c5c514ab5d29dff9bb28fb89fccf63</dictionary>
-	<dictionary name="Forvo Min Nan">78e0a305de47ab544c3b4cc1bd8a4c4e</dictionary>
-	<dictionary name="Forvo Mongolian">d19bee7fcceec0f7adb9057720658561</dictionary>
-	<dictionary name="Forvo Nahuatl">773695cfaefe59ba27541c0e250f1f4f</dictionary>
-	<dictionary name="Forvo Norwegian Bokmål">ccb7e9f0527ed319c512d8371ca29000</dictionary>
-	<dictionary name="Forvo Persian">ed85d324de895b115958e2c25080ce9d</dictionary>
-	<dictionary name="Forvo Polish">bbe46002be01b3c070e38a53ad6727cd</dictionary>
-	<dictionary name="Forvo Portuguese">a51ee1671c913c53fcec8e65a86f9fc7</dictionary>
-	<dictionary name="Forvo Punjabi">2362493c6fabb900f1040c0b60d5215b</dictionary>
-	<dictionary name="Forvo Romanian">7214f6c6bf333fb09a5860c5a54a0eec</dictionary>
-	<dictionary name="Forvo Russian">63694966de0f24a3c8c2b3c5d8a54b0d</dictionary>
-	<dictionary name="Forvo Sanskrit">16560f3ead5c9368176652b3f8cb9fc3</dictionary>
-	<dictionary name="Forvo Scots">c434d507439600ca23b0dfe33b4a1d42</dictionary>
-	<dictionary name="Forvo Scottish Gaelic">867067c9e51d19caa75fd755ccbc8204</dictionary>
-	<dictionary name="Forvo Serbian">2a86066df725706d2cd94ca291c304b6</dictionary>
-	<dictionary name="Forvo Slovak">8d51dd983f9cbb9d5d034a588ea52551</dictionary>
-	<dictionary name="Forvo Slovenian">ed5d3cc3443d4c1646fa90a763370b56</dictionary>
-	<dictionary name="Forvo Southwestern Mandarin">507ff13a69b99c73ec5e57c89ad3e746</dictionary>
-	<dictionary name="Forvo Spanish">46a494570b5a83bfb9d682f69fa3a431</dictionary>
-	<dictionary name="Forvo Swahili">6506a8b5647d7d7fae22fa72e7ed3a02</dictionary>
-	<dictionary name="Forvo Swedish">4cc087f84adb02146c8a238d56c4008d</dictionary>
-	<dictionary name="Forvo Tagalog">81cfd064a2823888adbd1c8ea856786a</dictionary>
-	<dictionary name="Forvo Tamil">9717e19df18efa82bce4154a0408203f</dictionary>
-	<dictionary name="Forvo Tatar">04d298df102f92b5de831a401a2902fc</dictionary>
-	<dictionary name="Forvo Thai">278000eb02d08df014d59d08851600ee</dictionary>
-	<dictionary name="Forvo Toisanese Cantonese">262e6850633ef4d17959d2870435819f</dictionary>
-	<dictionary name="Forvo Turkish">efb661991262a5e3e3358424c0756db7</dictionary>
-	<dictionary name="Forvo Ukrainian">92602d38c272e904e17147ae9abb586d</dictionary>
-	<dictionary name="Forvo Urdu">e9eb86313957dd8753ca917bd0bc35a4</dictionary>
-	<dictionary name="Forvo Uyghur">a6c2af7d482c764ffc5b6a36da341fb8</dictionary>
-	<dictionary name="Forvo Uzbek">0e481e403ca1386a660459367f8a9713</dictionary>
-	<dictionary name="Forvo Vietnamese">a8fe9433f4697aa5e3038c9c2eadd5a5</dictionary>
-	<dictionary name="Forvo Welsh">3573b241fc2bef517fe88f3ffe7d23ed</dictionary>
-	<dictionary name="Forvo Wu (Shanghainese)">75220acfe3d911ad5c1a0aa584fcf6ea</dictionary>
-	<dictionary name="Forvo Xiang">13e6fa299c9c6308420a4c5b61f8479f</dictionary>
-	<dictionary name="Forvo Yiddish">7327fc71331fa4d16aaae9a0065658dd</dictionary>
-	<dictionary name="Forvo Zhuang">dd50b9bdce801881612fd3bd5091678a</dictionary>
-	<dictionary name="pronunciations-en">bf057eec37d456f5c5578c5749555e13</dictionary>
-	<dictionary name="Reader Dict EN-EN">2b1fe010aa14e13694f9dc1500d835bd</dictionary>
-	<dictionary name="English-Zhōngwén FreeDict+WikDict dictionary">0c5ed6f5e20bde0d77be921d30fea38e</dictionary>
-	<dictionary name="Zhōngwén-English FreeDict+WikDict dictionary">05e0dc12f22ebad2d240a109b93091ce</dictionary>
-	<dictionary name="漢語大詞典">8189392848a50d941daedb5793ea44c1</dictionary>
-	<dictionary name="汉语大词典">5654e7d0fa89b7a99efd87c746cf7e24</dictionary>
-	<dictionary name="汉语大词典">b12594efbf2da3751928e19088b750af</dictionary>
-	<dictionary name="didyoumean">593d927bc86da7a3484604a27ae7131e</dictionary>
-	<dictionary name="thes">b633b495c7a75039028d65bd8dc4acba</dictionary>
-	<dictionary name="sentences">1f0036572daf073b5ad90b9b8d5e691d</dictionary>
-	<dictionary name="libretrans">6e1efb6ef055d35e26c6601e18b80c95</dictionary>
-	<mutedDictionaries/>
+ <dictionaryOrder name="" id="0">
+  <dictionary name="tencenttrans">7329497dbc359408542863c42e1bff74</dictionary>
+  <dictionary name="Collins English-French French-English Dictionary">4e8dc93d761ab48f804467d594d65e76</dictionary>
+  <dictionary name="Cambridge English-German German-English dictionary">684de750ff8e1f7632e490eb8a4ffbe4</dictionary>
+  <dictionary name="ODE 3e 20191231M">358bc610150416a2c4637aae7462232e</dictionary>
+  <dictionary name="简明英汉字典增强版 - CSS">3d6a994d1743e63788fd7ce47a2eff8c</dictionary>
+  <dictionary name="Collins COBUILD English Usage">a09102f698b9fe6dd63b532f05f20e85</dictionary>
+  <dictionary name="MW11sound">010714777259ef9dc00019b7755090df</dictionary>
+  <dictionary name="LLA">496591ac2f3f17700532e5ae2bb30e18</dictionary>
+  <dictionary name="The Penguin English Dictionary 3rd, 2007">8c9b7d13dd412cd56d7c04f626466dd9</dictionary>
+  <dictionary name="韦氏高阶英汉双解词典2019">58af16e09fac6bfa51a6878f5520b055</dictionary>
+  <dictionary name="語源由来辞典">9d5e178e3fcdb3ee9e76b8d8bea8c684</dictionary>
+  <dictionary name="MOJi辞書">b0eee04b2efa14a8d4987206a8e9a3e5</dictionary>
+  <dictionary name="CB_slang_dictionary">d369ef5065a21dad736f72005427d57b</dictionary>
+  <dictionary name="Black's Medical Dictionary, 43rd Edition">b2baea5204008fcba0858f6dd9b30e0e</dictionary>
+  <dictionary name="Collins Dictionary of Law 2ed">509195120ab9ebba35d6fe3ff1f9d738</dictionary>
+  <dictionary name="Dictionary of Architecture and Construction">395a5ba66310ff97fcde64a45f956867</dictionary>
+  <dictionary name="英汉汉英医学辞典">c14aeab6533ad271cfdf6bcb15213f6b</dictionary>
+  <dictionary name="汉语大词典">a88a3f3e3e5a62deebb4735f81462eff</dictionary>
+  <dictionary name="漢語大詞典">8f890d7eafb0f8c2567db054fa5e3519</dictionary>
+  <dictionary name="Online Etymology Dictionary, ©Douglas Harper/etymonline.com">6aa792efffd64f1d8ddf9185aa954c0e</dictionary>
+  <dictionary name="GNU Collaborative International Dictionary of English">2a249754582cfb6b33c3a98cafd41467</dictionary>
+  <dictionary name="21 century bidirectional dictionary">58ffaa32d37a3b18604275b79096f003</dictionary>
+  <dictionary name="ecdict">19bb758cbb108219b8fea636026c922c</dictionary>
+  <dictionary name="English (US) Morphology">0faabcb720f0a616a82a54ddd03c6931</dictionary>
+  <dictionary name="Forvo Afrikaans">93977e94d2b8ca8a933f56b69c910022</dictionary>
+  <dictionary name="Forvo Albanian">51a39001a5aecb57034a0129cd4f5c62</dictionary>
+  <dictionary name="Forvo Ancient Greek">8aa41429213d7a2a414d7739ccbb0754</dictionary>
+  <dictionary name="Forvo Arabic">e613374166e5570cb77d904a5c397552</dictionary>
+  <dictionary name="Forvo Armenian">5a0b6a43e65dc753376977a2d1fab5d0</dictionary>
+  <dictionary name="Forvo Azerbaijani">50542f3997e86201cf331ab88d80d45c</dictionary>
+  <dictionary name="Forvo Basque">2dc8fbf93f0d83659f6b9d7274e6a718</dictionary>
+  <dictionary name="Forvo Belarusian">1f313dae56853302b6c152bd421cf757</dictionary>
+  <dictionary name="Forvo Bengali">2f062abd8537a7ae082e3affd6a19232</dictionary>
+  <dictionary name="Forvo Breton">b2ccf65ad2e415c0b5030aa360f245d0</dictionary>
+  <dictionary name="Forvo Bulgarian">66959a02b913fab5ba34006c3c59822e</dictionary>
+  <dictionary name="Forvo Cantonese">a4440c6bf2c4405363e0b552dd7947d3</dictionary>
+  <dictionary name="Forvo Catalan">e91b5379043c9a890445cf900d25c44b</dictionary>
+  <dictionary name="Forvo Croatian">e29024d3a448814306e76fdfa94aac43</dictionary>
+  <dictionary name="Forvo Czech">ccded6f12b71805c7742bbd98c702ebb</dictionary>
+  <dictionary name="Forvo Danish">f73abbcd101c08e78bb7cbc865e583cc</dictionary>
+  <dictionary name="Forvo Dutch">3ea907c10bfd65954aa33fb41852481d</dictionary>
+  <dictionary name="Forvo English">20a2a12bb3e62bb3a6df57782d1add2d</dictionary>
+  <dictionary name="Forvo Esperanto">bda1bd36533ae7dec069196400984550</dictionary>
+  <dictionary name="Forvo Estonian">cefe37ebff11d3475a7b3adf71ff3ef4</dictionary>
+  <dictionary name="Forvo Finnish">56cf44fda7bd71527f116d190a04811c</dictionary>
+  <dictionary name="Forvo French">7afd6d408938e437e9027f2a5c3989be</dictionary>
+  <dictionary name="Forvo Frisian">99b9def2a713e2d3a1f9d12c2d17b1c7</dictionary>
+  <dictionary name="Forvo Gan Chinese">acf2bd4ffb1e2dd97c253bd8d3fbeb4e</dictionary>
+  <dictionary name="Forvo Georgian">c8a7029276c6d4cb3319c8f5e9c91361</dictionary>
+  <dictionary name="Forvo German">07a5f1aa3ee5a652d4ce0c117e15fdb7</dictionary>
+  <dictionary name="Forvo Greek">aab7f3c4532e6eb01b829885d286d478</dictionary>
+  <dictionary name="Forvo Hakka">80c9e935a0a934697ff6a12ab508f0a4</dictionary>
+  <dictionary name="Forvo Hebrew">81ffec785ba5a16ef1d0398b584961db</dictionary>
+  <dictionary name="Forvo Hindi">f99040a7f8d80b32533d684a54b6431f</dictionary>
+  <dictionary name="Forvo Hungarian">f8a9a73829d805c87447fdb30a2ed4ce</dictionary>
+  <dictionary name="Forvo Icelandic">7b71d0c896d9cd4b39fa7b1c7c0a426c</dictionary>
+  <dictionary name="Forvo Indonesian">fcc40bc4101e6809f8faafcd67210fe8</dictionary>
+  <dictionary name="Forvo Irish">57639c0dc7609bbca1246c937f7acc50</dictionary>
+  <dictionary name="Forvo Italian">de6b78b9d0b9bbd5602e846e54217fb8</dictionary>
+  <dictionary name="Forvo Japanese">a4edd1cc613cd09e01b48a2763edc458</dictionary>
+  <dictionary name="Forvo Jin Chinese">0cd95e5783184b06b921066a2a7971ea</dictionary>
+  <dictionary name="Forvo Kazakh">5259b645e86e9a68ac0ce9c6959e4f5b</dictionary>
+  <dictionary name="Forvo Korean">93b16cb75fef2b8dd79b9972c6afdf91</dictionary>
+  <dictionary name="Forvo Latin">56dbcc48362b5bd8bc18c5f22a0f6b57</dictionary>
+  <dictionary name="Forvo Latvian">79cd07218f52a4e4736012b61fb724e6</dictionary>
+  <dictionary name="Forvo Lithuanian">2792dc2db737560f0ab576fe1c41aba1</dictionary>
+  <dictionary name="Forvo Luxembourgish">ae641bc28f3239605531995cb5ccae4b</dictionary>
+  <dictionary name="Forvo Malay">f1f1038d4f79638ec9d5fa32b5bfc622</dictionary>
+  <dictionary name="Forvo Mandarin">55142cbf63e478e5423f0cb10d8f3d30</dictionary>
+  <dictionary name="Forvo Min Dong">03c5c514ab5d29dff9bb28fb89fccf63</dictionary>
+  <dictionary name="Forvo Min Nan">78e0a305de47ab544c3b4cc1bd8a4c4e</dictionary>
+  <dictionary name="Forvo Mongolian">d19bee7fcceec0f7adb9057720658561</dictionary>
+  <dictionary name="Forvo Nahuatl">773695cfaefe59ba27541c0e250f1f4f</dictionary>
+  <dictionary name="Forvo Norwegian Bokmål">ccb7e9f0527ed319c512d8371ca29000</dictionary>
+  <dictionary name="Forvo Persian">ed85d324de895b115958e2c25080ce9d</dictionary>
+  <dictionary name="Forvo Polish">bbe46002be01b3c070e38a53ad6727cd</dictionary>
+  <dictionary name="Forvo Portuguese">a51ee1671c913c53fcec8e65a86f9fc7</dictionary>
+  <dictionary name="Forvo Punjabi">2362493c6fabb900f1040c0b60d5215b</dictionary>
+  <dictionary name="Forvo Romanian">7214f6c6bf333fb09a5860c5a54a0eec</dictionary>
+  <dictionary name="Forvo Russian">63694966de0f24a3c8c2b3c5d8a54b0d</dictionary>
+  <dictionary name="Forvo Sanskrit">16560f3ead5c9368176652b3f8cb9fc3</dictionary>
+  <dictionary name="Forvo Scots">c434d507439600ca23b0dfe33b4a1d42</dictionary>
+  <dictionary name="Forvo Scottish Gaelic">867067c9e51d19caa75fd755ccbc8204</dictionary>
+  <dictionary name="Forvo Serbian">2a86066df725706d2cd94ca291c304b6</dictionary>
+  <dictionary name="Forvo Slovak">8d51dd983f9cbb9d5d034a588ea52551</dictionary>
+  <dictionary name="Forvo Slovenian">ed5d3cc3443d4c1646fa90a763370b56</dictionary>
+  <dictionary name="Forvo Southwestern Mandarin">507ff13a69b99c73ec5e57c89ad3e746</dictionary>
+  <dictionary name="Forvo Spanish">46a494570b5a83bfb9d682f69fa3a431</dictionary>
+  <dictionary name="Forvo Swahili">6506a8b5647d7d7fae22fa72e7ed3a02</dictionary>
+  <dictionary name="Forvo Swedish">4cc087f84adb02146c8a238d56c4008d</dictionary>
+  <dictionary name="Forvo Tagalog">81cfd064a2823888adbd1c8ea856786a</dictionary>
+  <dictionary name="Forvo Tamil">9717e19df18efa82bce4154a0408203f</dictionary>
+  <dictionary name="Forvo Tatar">04d298df102f92b5de831a401a2902fc</dictionary>
+  <dictionary name="Forvo Thai">278000eb02d08df014d59d08851600ee</dictionary>
+  <dictionary name="Forvo Toisanese Cantonese">262e6850633ef4d17959d2870435819f</dictionary>
+  <dictionary name="Forvo Turkish">efb661991262a5e3e3358424c0756db7</dictionary>
+  <dictionary name="Forvo Ukrainian">92602d38c272e904e17147ae9abb586d</dictionary>
+  <dictionary name="Forvo Urdu">e9eb86313957dd8753ca917bd0bc35a4</dictionary>
+  <dictionary name="Forvo Uyghur">a6c2af7d482c764ffc5b6a36da341fb8</dictionary>
+  <dictionary name="Forvo Uzbek">0e481e403ca1386a660459367f8a9713</dictionary>
+  <dictionary name="Forvo Vietnamese">a8fe9433f4697aa5e3038c9c2eadd5a5</dictionary>
+  <dictionary name="Forvo Welsh">3573b241fc2bef517fe88f3ffe7d23ed</dictionary>
+  <dictionary name="Forvo Wu (Shanghainese)">75220acfe3d911ad5c1a0aa584fcf6ea</dictionary>
+  <dictionary name="Forvo Xiang">13e6fa299c9c6308420a4c5b61f8479f</dictionary>
+  <dictionary name="Forvo Yiddish">7327fc71331fa4d16aaae9a0065658dd</dictionary>
+  <dictionary name="Forvo Zhuang">dd50b9bdce801881612fd3bd5091678a</dictionary>
+  <dictionary name="pronunciations-en">bf057eec37d456f5c5578c5749555e13</dictionary>
+  <dictionary name="Reader Dict EN-EN">2b1fe010aa14e13694f9dc1500d835bd</dictionary>
+  <dictionary name="English-Zhōngwén FreeDict+WikDict dictionary">0c5ed6f5e20bde0d77be921d30fea38e</dictionary>
+  <dictionary name="Zhōngwén-English FreeDict+WikDict dictionary">05e0dc12f22ebad2d240a109b93091ce</dictionary>
+  <dictionary name="漢語大詞典">8189392848a50d941daedb5793ea44c1</dictionary>
+  <dictionary name="汉语大词典">5654e7d0fa89b7a99efd87c746cf7e24</dictionary>
+  <dictionary name="汉语大词典">b12594efbf2da3751928e19088b750af</dictionary>
+  <dictionary name="didyoumean">593d927bc86da7a3484604a27ae7131e</dictionary>
+  <dictionary name="thes">b633b495c7a75039028d65bd8dc4acba</dictionary>
+  <dictionary name="sentences">1f0036572daf073b5ad90b9b8d5e691d</dictionary>
+  <dictionary name="libretrans">6e1efb6ef055d35e26c6601e18b80c95</dictionary>
+  <mutedDictionaries/>
  </dictionaryOrder>
- <inactiveDictionaries id="0" name="">
-	<mutedDictionaries/>
+ <inactiveDictionaries name="" id="0">
+  <mutedDictionaries/>
  </inactiveDictionaries>
  <groups nextId="9">
-	<group id="5" name="default">
-	 <dictionary name="tencenttrans">7329497dbc359408542863c42e1bff74</dictionary>
-	 <dictionary name="English (US) Morphology">0faabcb720f0a616a82a54ddd03c6931</dictionary>
-	 <dictionary name="Forvo English">20a2a12bb3e62bb3a6df57782d1add2d</dictionary>
-	 <dictionary name="MW11sound">010714777259ef9dc00019b7755090df</dictionary>
-	 <dictionary name="pronunciations-en">bf057eec37d456f5c5578c5749555e13</dictionary>
-	 <dictionary name="ecdict">19bb758cbb108219b8fea636026c922c</dictionary>
-	 <dictionary name="Black's Medical Dictionary, 43rd Edition">b2baea5204008fcba0858f6dd9b30e0e</dictionary>
-	 <dictionary name="Collins Dictionary of Law 2ed">509195120ab9ebba35d6fe3ff1f9d738</dictionary>
-	 <dictionary name="Dictionary of Architecture and Construction">395a5ba66310ff97fcde64a45f956867</dictionary>
-	 <dictionary name="英汉汉英医学辞典">c14aeab6533ad271cfdf6bcb15213f6b</dictionary>
-	 <dictionary name="汉语大词典">5654e7d0fa89b7a99efd87c746cf7e24</dictionary>
-	 <dictionary name="漢語大詞典">8189392848a50d941daedb5793ea44c1</dictionary>
-	 <mutedDictionaries/>
-	</group>
-	<group id="6" name="expand">
-	 <dictionary name="韦氏高阶英汉双解词典2019">58af16e09fac6bfa51a6878f5520b055</dictionary>
-	 <dictionary name="The Penguin English Dictionary 3rd, 2007">8c9b7d13dd412cd56d7c04f626466dd9</dictionary>
-	 <dictionary name="ODE 3e 20191231M">358bc610150416a2c4637aae7462232e</dictionary>
-	 <dictionary name="Collins COBUILD English Usage">a09102f698b9fe6dd63b532f05f20e85</dictionary>
-	 <dictionary name="LLA">496591ac2f3f17700532e5ae2bb30e18</dictionary>
-	 <dictionary name="Collins English-French French-English Dictionary">4e8dc93d761ab48f804467d594d65e76</dictionary>
-	 <dictionary name="Cambridge English-German German-English dictionary">684de750ff8e1f7632e490eb8a4ffbe4</dictionary>
-	 <dictionary name="語源由来辞典">9d5e178e3fcdb3ee9e76b8d8bea8c684</dictionary>
-	 <dictionary name="MOJi辞書">b0eee04b2efa14a8d4987206a8e9a3e5</dictionary>
-	 <mutedDictionaries/>
-	</group>
-	<group id="8" name="demo">
-	 <dictionary name="libretrans">6e1efb6ef055d35e26c6601e18b80c95</dictionary>
-	 <mutedDictionaries/>
-	</group>
+  <group name="default" id="5">
+   <dictionary name="tencenttrans">7329497dbc359408542863c42e1bff74</dictionary>
+   <dictionary name="English (US) Morphology">0faabcb720f0a616a82a54ddd03c6931</dictionary>
+   <dictionary name="Forvo English">20a2a12bb3e62bb3a6df57782d1add2d</dictionary>
+   <dictionary name="MW11sound">010714777259ef9dc00019b7755090df</dictionary>
+   <dictionary name="pronunciations-en">bf057eec37d456f5c5578c5749555e13</dictionary>
+   <dictionary name="ecdict">19bb758cbb108219b8fea636026c922c</dictionary>
+   <dictionary name="Black's Medical Dictionary, 43rd Edition">b2baea5204008fcba0858f6dd9b30e0e</dictionary>
+   <dictionary name="Collins Dictionary of Law 2ed">509195120ab9ebba35d6fe3ff1f9d738</dictionary>
+   <dictionary name="Dictionary of Architecture and Construction">395a5ba66310ff97fcde64a45f956867</dictionary>
+   <dictionary name="英汉汉英医学辞典">c14aeab6533ad271cfdf6bcb15213f6b</dictionary>
+   <dictionary name="汉语大词典">5654e7d0fa89b7a99efd87c746cf7e24</dictionary>
+   <dictionary name="漢語大詞典">8189392848a50d941daedb5793ea44c1</dictionary>
+   <mutedDictionaries/>
+  </group>
+  <group name="expand" id="6">
+   <dictionary name="韦氏高阶英汉双解词典2019">58af16e09fac6bfa51a6878f5520b055</dictionary>
+   <dictionary name="The Penguin English Dictionary 3rd, 2007">8c9b7d13dd412cd56d7c04f626466dd9</dictionary>
+   <dictionary name="ODE 3e 20191231M">358bc610150416a2c4637aae7462232e</dictionary>
+   <dictionary name="Collins COBUILD English Usage">a09102f698b9fe6dd63b532f05f20e85</dictionary>
+   <dictionary name="LLA">496591ac2f3f17700532e5ae2bb30e18</dictionary>
+   <dictionary name="Collins English-French French-English Dictionary">4e8dc93d761ab48f804467d594d65e76</dictionary>
+   <dictionary name="Cambridge English-German German-English dictionary">684de750ff8e1f7632e490eb8a4ffbe4</dictionary>
+   <dictionary name="語源由来辞典">9d5e178e3fcdb3ee9e76b8d8bea8c684</dictionary>
+   <dictionary name="MOJi辞書">b0eee04b2efa14a8d4987206a8e9a3e5</dictionary>
+   <mutedDictionaries/>
+  </group>
+  <group name="demo" id="8">
+   <dictionary name="libretrans">6e1efb6ef055d35e26c6601e18b80c95</dictionary>
+   <mutedDictionaries/>
+  </group>
  </groups>
  <hunspell dictionariesPath="C:/Users/User/Scoop/apps/goldendict/current/content/morphology">
-	<enabled>en_US</enabled>
+  <enabled>en_US</enabled>
  </hunspell>
  <transliteration>
-	<enableRussianTransliteration>0</enableRussianTransliteration>
-	<enableGermanTransliteration>0</enableGermanTransliteration>
-	<enableGreekTransliteration>0</enableGreekTransliteration>
-	<enableBelarusianTransliteration>0</enableBelarusianTransliteration>
-	<chinese>
-	 <enable>0</enable>
-	 <enableSCToTWConversion>1</enableSCToTWConversion>
-	 <enableSCToHKConversion>1</enableSCToHKConversion>
-	 <enableTCToSCConversion>1</enableTCToSCConversion>
-	</chinese>
-	<romaji>
-	 <enable>0</enable>
-	 <enableHepburn>1</enableHepburn>
-	 <enableNihonShiki>0</enableNihonShiki>
-	 <enableKunreiShiki>0</enableKunreiShiki>
-	 <enableHiragana>1</enableHiragana>
-	 <enableKatakana>1</enableKatakana>
-	</romaji>
+  <enableRussianTransliteration>0</enableRussianTransliteration>
+  <enableGermanTransliteration>0</enableGermanTransliteration>
+  <enableGreekTransliteration>0</enableGreekTransliteration>
+  <enableBelarusianTransliteration>0</enableBelarusianTransliteration>
+  <chinese>
+   <enable>0</enable>
+   <enableSCToTWConversion>1</enableSCToTWConversion>
+   <enableSCToHKConversion>1</enableSCToHKConversion>
+   <enableTCToSCConversion>1</enableTCToSCConversion>
+  </chinese>
+  <romaji>
+   <enable>0</enable>
+   <enableHepburn>1</enableHepburn>
+   <enableNihonShiki>0</enableNihonShiki>
+   <enableKunreiShiki>0</enableKunreiShiki>
+   <enableHiragana>1</enableHiragana>
+   <enableKatakana>1</enableKatakana>
+  </romaji>
  </transliteration>
  <forvo>
-	<enable>0</enable>
-	<apiKey></apiKey>
-	<languageCodes></languageCodes>
+  <enable>0</enable>
+  <apiKey></apiKey>
+  <languageCodes></languageCodes>
  </forvo>
  <mediawikis/>
  <websites/>
  <dictservers>
-	<server strategies="*" icon="" databases="*" id="49813b0748085b06bd9c972abfc1d677" url="dict://ubuntu22:2528" enabled="0" name="dictd"/>
+  <server enabled="0" url="dict://ubuntu22:2528" strategies="*" name="dictd" databases="*" id="49813b0748085b06bd9c972abfc1d677" icon=""/>
  </dictservers>
  <programs>
-	<program icon="" id="7329497dbc359408542863c42e1bff74" commandLine="C:\Users\User\Usr\Source\goldendict\tencenttrans_2zh_zh2en\.venv\Scripts\python.exe C:\Users\User\Usr\Source\goldendict\tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en_user.py &quot;%GDWORD%&quot;" type="1" enabled="1" name="tencenttrans"/>
-	<program icon="" id="652f31dae9a6c2e9cd691172e26a4c56" commandLine="C:\Users\User\Usr\Source\goldendict\cambridge-dictionary\.venv\Scripts\python.exe C:\Users\User\Usr\Source\goldendict\cambridge-dictionary\cambridge.py &quot;%GDWORD%&quot;" type="1" enabled="0" name="cambridge"/>
-	<program icon="" id="1f0036572daf073b5ad90b9b8d5e691d" commandLine="echo-cli.CMD &quot;%GDWORD%&quot; | sentences" type="1" enabled="1" name="sentences"/>
-	<program icon="" id="593d927bc86da7a3484604a27ae7131e" commandLine="dym &quot;%GDWORD%&quot;" type="1" enabled="1" name="didyoumean"/>
-	<program icon="" id="b633b495c7a75039028d65bd8dc4acba" commandLine="thes &quot;%GDWORD%&quot;" type="1" enabled="1" name="thes"/>
-	<program icon="" id="6e1efb6ef055d35e26c6601e18b80c95" commandLine="libretrans -u http://ubuntu22:5000 en:zh &quot;%GDWORD%&quot;" type="1" enabled="0" name="libretrans"/>
+  <program enabled="1" name="tencenttrans" type="1" id="7329497dbc359408542863c42e1bff74" commandLine="C:\Users\User\Usr\Source\goldendict\tencenttrans_2zh_zh2en\.venv\Scripts\python.exe C:\Users\User\Usr\Source\goldendict\tencenttrans_2zh_zh2en\tencenttrans_2zh_zh2en_user.py &quot;%GDWORD%&quot;" icon=""/>
+  <program enabled="0" name="cambridge" type="1" id="652f31dae9a6c2e9cd691172e26a4c56" commandLine="C:\Users\User\Usr\Source\goldendict\cambridge-dictionary\.venv\Scripts\python.exe C:\Users\User\Usr\Source\goldendict\cambridge-dictionary\cambridge.py &quot;%GDWORD%&quot;" icon=""/>
+  <program enabled="1" name="sentences" type="1" id="1f0036572daf073b5ad90b9b8d5e691d" commandLine="echo-cli.CMD &quot;%GDWORD%&quot; | sentences" icon=""/>
+  <program enabled="1" name="didyoumean" type="1" id="593d927bc86da7a3484604a27ae7131e" commandLine="dym &quot;%GDWORD%&quot;" icon=""/>
+  <program enabled="1" name="thes" type="1" id="b633b495c7a75039028d65bd8dc4acba" commandLine="thes &quot;%GDWORD%&quot;" icon=""/>
+  <program enabled="0" name="libretrans" type="1" id="6e1efb6ef055d35e26c6601e18b80c95" commandLine="libretrans -u http://ubuntu22:5000 en:zh &quot;%GDWORD%&quot;" icon=""/>
  </programs>
  <voiceEngines/>
  <mutedDictionaries/>
  <popupMutedDictionaries/>
  <preferences>
-	<interfaceLanguage>en_US</interfaceLanguage>
-	<helpLanguage></helpLanguage>
-	<displayStyle>modern</displayStyle>
-	<newTabsOpenAfterCurrentOne>0</newTabsOpenAfterCurrentOne>
-	<newTabsOpenInBackground>1</newTabsOpenInBackground>
-	<hideSingleTab>1</hideSingleTab>
-	<mruTabOrder>0</mruTabOrder>
-	<hideMenubar>0</hideMenubar>
-	<enableTrayIcon>1</enableTrayIcon>
-	<startToTray>1</startToTray>
-	<closeToTray>1</closeToTray>
-	<autoStart>0</autoStart>
-	<doubleClickTranslates>1</doubleClickTranslates>
-	<selectWordBySingleClick>1</selectWordBySingleClick>
-	<escKeyHidesMainWindow>1</escKeyHidesMainWindow>
-	<zoomFactor>1</zoomFactor>
-	<helpZoomFactor>1</helpZoomFactor>
-	<wordsZoomLevel>0</wordsZoomLevel>
-	<enableMainWindowHotkey>1</enableMainWindowHotkey>
-	<mainWindowHotkey>Alt+Shift+G</mainWindowHotkey>
-	<enableClipboardHotkey>1</enableClipboardHotkey>
-	<clipboardHotkey>Alt+Z</clipboardHotkey>
-	<enableScanPopup>0</enableScanPopup>
-	<startWithScanPopupOn>0</startWithScanPopupOn>
-	<enableScanPopupModifiers>0</enableScanPopupModifiers>
-	<scanPopupModifiers>0</scanPopupModifiers>
-	<scanPopupAltMode>0</scanPopupAltMode>
-	<scanPopupAltModeSecs>3</scanPopupAltModeSecs>
-	<ignoreOwnClipboardChanges>0</ignoreOwnClipboardChanges>
-	<scanToMainWindow>0</scanToMainWindow>
-	<ignoreDiacritics>0</ignoreDiacritics>
-	<scanPopupUseUIAutomation>0</scanPopupUseUIAutomation>
-	<scanPopupUseIAccessibleEx>0</scanPopupUseIAccessibleEx>
-	<scanPopupUseGDMessage>0</scanPopupUseGDMessage>
-	<scanPopupUnpinnedWindowFlags>0</scanPopupUnpinnedWindowFlags>
-	<scanPopupUnpinnedBypassWMHint>0</scanPopupUnpinnedBypassWMHint>
-	<pronounceOnLoadMain>0</pronounceOnLoadMain>
-	<pronounceOnLoadPopup>0</pronounceOnLoadPopup>
-	<useInternalPlayer>1</useInternalPlayer>
-	<internalPlayerBackend>FFmpeg+libao</internalPlayerBackend>
-	<audioPlaybackProgram></audioPlaybackProgram>
-	<alwaysOnTop>0</alwaysOnTop>
-	<searchInDock>1</searchInDock>
-	<historyStoreInterval>0</historyStoreInterval>
-	<favoritesStoreInterval>0</favoritesStoreInterval>
-	<confirmFavoritesDeletion>1</confirmFavoritesDeletion>
-	<proxyserver useSystemProxy="0" enabled="0">
-	 <type>0</type>
-	 <host></host>
-	 <port>3128</port>
-	 <user></user>
-	 <password></password>
-	 <systemProxyUser></systemProxyUser>
-	 <systemProxyPassword></systemProxyPassword>
-	</proxyserver>
-	<checkForNewReleases>0</checkForNewReleases>
-	<disallowContentFromOtherSites>0</disallowContentFromOtherSites>
-	<enableWebPlugins>0</enableWebPlugins>
-	<hideGoldenDictHeader>0</hideGoldenDictHeader>
-	<maxNetworkCacheSize>50</maxNetworkCacheSize>
-	<clearNetworkCacheOnExit>1</clearNetworkCacheOnExit>
-	<maxStringsInHistory>500</maxStringsInHistory>
-	<storeHistory>1</storeHistory>
-	<alwaysExpandOptionalParts>0</alwaysExpandOptionalParts>
-	<addonStyle>Dark</addonStyle>
-	<collapseBigArticles>0</collapseBigArticles>
-	<articleSizeLimit>2000</articleSizeLimit>
-	<limitInputPhraseLength>0</limitInputPhraseLength>
-	<inputPhraseLengthLimit>1000</inputPhraseLengthLimit>
-	<maxDictionaryRefsInContextMenu>20</maxDictionaryRefsInContextMenu>
-	<trackClipboardChanges>0</trackClipboardChanges>
-	<synonymSearchEnabled>1</synonymSearchEnabled>
-	<fullTextSearch>
-	 <searchMode>0</searchMode>
-	 <matchCase>0</matchCase>
-	 <maxArticlesPerDictionary>100</maxArticlesPerDictionary>
-	 <maxDistanceBetweenWords>2</maxDistanceBetweenWords>
-	 <useMaxArticlesPerDictionary>0</useMaxArticlesPerDictionary>
-	 <useMaxDistanceBetweenWords>1</useMaxDistanceBetweenWords>
-	 <dialogGeometry>AdnQywADAAAAAAJsAAAC6gAABFkAAAVaAAACbQAAAwkAAARYAAAFWQAAAAAAAAAACgAAAAJtAAADCQAABFgAAAVZ</dialogGeometry>
-	 <disabledTypes></disabledTypes>
-	 <enabled>1</enabled>
-	 <ignoreWordsOrder>0</ignoreWordsOrder>
-	 <ignoreDiacritics>0</ignoreDiacritics>
-	 <maxDictionarySize>0</maxDictionarySize>
-	</fullTextSearch>
+  <interfaceLanguage>en_US</interfaceLanguage>
+  <helpLanguage></helpLanguage>
+  <displayStyle>modern</displayStyle>
+  <newTabsOpenAfterCurrentOne>0</newTabsOpenAfterCurrentOne>
+  <newTabsOpenInBackground>1</newTabsOpenInBackground>
+  <hideSingleTab>1</hideSingleTab>
+  <mruTabOrder>0</mruTabOrder>
+  <hideMenubar>0</hideMenubar>
+  <enableTrayIcon>1</enableTrayIcon>
+  <startToTray>1</startToTray>
+  <closeToTray>1</closeToTray>
+  <autoStart>0</autoStart>
+  <doubleClickTranslates>1</doubleClickTranslates>
+  <selectWordBySingleClick>1</selectWordBySingleClick>
+  <escKeyHidesMainWindow>1</escKeyHidesMainWindow>
+  <zoomFactor>1</zoomFactor>
+  <helpZoomFactor>1</helpZoomFactor>
+  <wordsZoomLevel>0</wordsZoomLevel>
+  <enableMainWindowHotkey>1</enableMainWindowHotkey>
+  <mainWindowHotkey>Alt+Shift+G</mainWindowHotkey>
+  <enableClipboardHotkey>1</enableClipboardHotkey>
+  <clipboardHotkey>Alt+Z</clipboardHotkey>
+  <enableScanPopup>0</enableScanPopup>
+  <startWithScanPopupOn>0</startWithScanPopupOn>
+  <enableScanPopupModifiers>0</enableScanPopupModifiers>
+  <scanPopupModifiers>0</scanPopupModifiers>
+  <scanPopupAltMode>0</scanPopupAltMode>
+  <scanPopupAltModeSecs>3</scanPopupAltModeSecs>
+  <ignoreOwnClipboardChanges>0</ignoreOwnClipboardChanges>
+  <scanToMainWindow>0</scanToMainWindow>
+  <ignoreDiacritics>0</ignoreDiacritics>
+  <showScanFlag>0</showScanFlag>
+  <scanPopupUseUIAutomation>0</scanPopupUseUIAutomation>
+  <scanPopupUseIAccessibleEx>0</scanPopupUseIAccessibleEx>
+  <scanPopupUseGDMessage>0</scanPopupUseGDMessage>
+  <scanPopupUnpinnedWindowFlags>0</scanPopupUnpinnedWindowFlags>
+  <scanPopupUnpinnedBypassWMHint>0</scanPopupUnpinnedBypassWMHint>
+  <pronounceOnLoadMain>0</pronounceOnLoadMain>
+  <pronounceOnLoadPopup>0</pronounceOnLoadPopup>
+  <useInternalPlayer>1</useInternalPlayer>
+  <internalPlayerBackend>FFmpeg+libao</internalPlayerBackend>
+  <audioPlaybackProgram></audioPlaybackProgram>
+  <alwaysOnTop>0</alwaysOnTop>
+  <searchInDock>1</searchInDock>
+  <historyStoreInterval>0</historyStoreInterval>
+  <favoritesStoreInterval>0</favoritesStoreInterval>
+  <confirmFavoritesDeletion>1</confirmFavoritesDeletion>
+  <proxyserver useSystemProxy="0" enabled="0">
+   <type>0</type>
+   <host></host>
+   <port>3128</port>
+   <user></user>
+   <password></password>
+   <systemProxyUser></systemProxyUser>
+   <systemProxyPassword></systemProxyPassword>
+  </proxyserver>
+  <checkForNewReleases>0</checkForNewReleases>
+  <disallowContentFromOtherSites>0</disallowContentFromOtherSites>
+  <enableWebPlugins>0</enableWebPlugins>
+  <hideGoldenDictHeader>0</hideGoldenDictHeader>
+  <maxNetworkCacheSize>50</maxNetworkCacheSize>
+  <clearNetworkCacheOnExit>1</clearNetworkCacheOnExit>
+  <maxStringsInHistory>500</maxStringsInHistory>
+  <storeHistory>1</storeHistory>
+  <alwaysExpandOptionalParts>0</alwaysExpandOptionalParts>
+  <addonStyle>Dark</addonStyle>
+  <collapseBigArticles>0</collapseBigArticles>
+  <articleSizeLimit>2000</articleSizeLimit>
+  <limitInputPhraseLength>0</limitInputPhraseLength>
+  <inputPhraseLengthLimit>1000</inputPhraseLengthLimit>
+  <maxDictionaryRefsInContextMenu>20</maxDictionaryRefsInContextMenu>
+  <trackClipboardChanges>0</trackClipboardChanges>
+  <synonymSearchEnabled>1</synonymSearchEnabled>
+  <fullTextSearch>
+   <searchMode>0</searchMode>
+   <matchCase>0</matchCase>
+   <maxArticlesPerDictionary>100</maxArticlesPerDictionary>
+   <maxDistanceBetweenWords>2</maxDistanceBetweenWords>
+   <useMaxArticlesPerDictionary>0</useMaxArticlesPerDictionary>
+   <useMaxDistanceBetweenWords>1</useMaxDistanceBetweenWords>
+   <dialogGeometry>AdnQywADAAAAAAJsAAAC6gAABFkAAAVaAAACbQAAAwkAAARYAAAFWQAAAAAAAAAACgAAAAJtAAADCQAABFgAAAVZ</dialogGeometry>
+   <disabledTypes></disabledTypes>
+   <enabled>1</enabled>
+   <ignoreWordsOrder>0</ignoreWordsOrder>
+   <ignoreDiacritics>0</ignoreDiacritics>
+   <maxDictionarySize>0</maxDictionarySize>
+  </fullTextSearch>
  </preferences>
  <lastMainGroupId>5</lastMainGroupId>
  <lastPopupGroupId>5</lastPopupGroupId>
  <popupWindowState>AAAA/wAAAAH9AAAAAAAAAi0AAAGTAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAQAAAAEAAAAaAGQAaQBjAHQAaQBvAG4AYQByAHkAQgBhAHICAAAAAP////8AAAAAAAAAAA==</popupWindowState>
- <popupWindowGeometry>AdnQywADAAAAAAFNAAABPQAAA3kAAALPAAABTQAAAT0AAAN5AAACzwAAAAAAAAAACgAAAAFNAAABPQAAA3kAAALP</popupWindowGeometry>
+ <popupWindowGeometry>AdnQywADAAAAAAAAAAAAAAAAAiwAAAGSAAAAAAAAAAAAAAIsAAABkgAAAAAAAAAAB4AAAAAAAAAAAAAAAiwAAAGS</popupWindowGeometry>
  <pinPopupWindow>0</pinPopupWindow>
  <popupWindowAlwaysOnTop>0</popupWindowAlwaysOnTop>
- <mainWindowState>AAAA/wAAAAH9AAAAAgAAAAAAAADMAAABpPwCAAAAAfsAAAAUAHMAZQBhAHIAYwBoAFAAYQBuAGUBAAAAHAAAAaQAAACbAP///wAAAAEAAAB9AAAB1fwCAAAAA/sAAAASAGQAaQBjAHQAcwBQAGEAbgBlAAAAAEUAAACYAAAAeQD////7AAAAGgBmAGEAdgBvAHIAaQB0AGUAcwBQAGEAbgBlAAAAAEUAAADoAAAAeQD////7AAAAFgBoAGkAcwB0AG8AcgB5AFAAYQBuAGUAAAAARQAAAdUAAAB5AP///wAAAawAAAGkAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAUAG4AYQB2AFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAAAAABoAZABpAGMAdABpAG8AbgBhAHIAeQBCAGEAcgAAAAEQ/////wAAAAAAAAAA</mainWindowState>
- <mainWindowGeometry>AdnQywADAAAAAAVtAAADJQAAB+wAAAUEAAAFbgAAA0QAAAfrAAAFAwAAAAAAAAAACgAAAAVuAAADRAAAB+sAAAUD</mainWindowGeometry>
+ <mainWindowState>AAAA/wAAAAH9AAAAAgAAAAAAAADMAAABpPwCAAAAAfsAAAAUAHMAZQBhAHIAYwBoAFAAYQBuAGUBAAAAHAAAAaQAAACHAP///wAAAAEAAAB9AAAB1fwCAAAAA/sAAAASAGQAaQBjAHQAcwBQAGEAbgBlAAAAAEUAAACYAAAAYgD////7AAAAGgBmAGEAdgBvAHIAaQB0AGUAcwBQAGEAbgBlAAAAAEUAAADoAAAAYgD////7AAAAFgBoAGkAcwB0AG8AcgB5AFAAYQBuAGUAAAAARQAAAdUAAABiAP///wAAAawAAAGkAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAUAG4AYQB2AFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAAAAABoAZABpAGMAdABpAG8AbgBhAHIAeQBCAGEAcgAAAAEQ/////wAAAAAAAAAA</mainWindowState>
+ <mainWindowGeometry>AdnQywADAAAAAAAAAAAAAAAAAowAAAIZAAAAAAAAAAAAAAKMAAACGQAAAAAAAAAAB4AAAAAAAAAAAAAAAowAAAIZ</mainWindowGeometry>
  <helpWindowGeometry>AdnQywADAAAAAANIAAADTgAABaEAAAUvAAADSQAAA20AAAWgAAAFLgAAAAAAAAAACgAAAANJAAADbQAABaAAAAUu</helpWindowGeometry>
  <helpSplitterState>AAAA/wAAAAEAAAACAAABBgAABAAB/////wEAAAABAA==</helpSplitterState>
- <maximizedMainWindowGeometry>
-	<x>0</x>
-	<y>0</y>
-	<width>0</width>
-	<height>0</height>
- </maximizedMainWindowGeometry>
- <normalMainWindowGeometry>
-	<x>1390</x>
-	<y>836</y>
-	<width>638</width>
-	<height>448</height>
- </normalMainWindowGeometry>
  <dictInfoGeometry></dictInfoGeometry>
  <inspectorGeometry></inspectorGeometry>
  <dictionariesDialogGeometry>AdnQywADAAAAAARrAAADGQAACPoAAAWZAAAEbAAAAzgAAAj5AAAFmAAAAAAAAAAACgAAAARsAAADOAAACPkAAAWY</dictionariesDialogGeometry>
@@ -326,10 +315,10 @@
  <maxHeadwordSize>256</maxHeadwordSize>
  <maxHeadwordsToExpand>0</maxHeadwordsToExpand>
  <headwordsDialog>
-	<searchMode>0</searchMode>
-	<matchCase>0</matchCase>
-	<autoApply>0</autoApply>
-	<headwordsExportPath></headwordsExportPath>
-	<headwordsDialogGeometry></headwordsDialogGeometry>
+  <searchMode>0</searchMode>
+  <matchCase>0</matchCase>
+  <autoApply>0</autoApply>
+  <headwordsExportPath></headwordsExportPath>
+  <headwordsDialogGeometry></headwordsDialogGeometry>
  </headwordsDialog>
 </config>
