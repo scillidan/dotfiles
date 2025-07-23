@@ -1,5 +1,5 @@
 export EDITOR="/usr/bin/nvim"
-export BROWSER="/usr/bin/brave"
+# export BROWSER="/usr/bin/brave"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -11,6 +11,9 @@ zinit snippet "$HOME/.oh-my-zsh/lib/git.zsh"
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zdharma-continuum/fast-syntax-highlighting
+
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 
 zinit lucid wait for \
   nyoungstudios/zsh-history-on-success \
@@ -35,16 +38,17 @@ zinit lucid wait for \
 zi has'zoxide' wait lucid for \
   z-shell/zsh-zoxide
 
-zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
-
 autoload -Uz compinit
 compinit
+
+zinit snippet "$HOME/.config/zsh/function.zsh"
+zinit snippet "$HOME/.config/zsh/alias.zsh"
 
 export MANPATH="/usr/share/man:$MANPATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 
-## zsh-env-secrets
+## zsh
+### zsh-env-secrets
 ENV_SECRETS=(
   "TENCENT_SECRET_ID"
   "TENCENT_SECRET_KEY"
@@ -54,6 +58,22 @@ ENV_SECRETS=(
 )
 ENV_SECRETS_BACKEND="pass"
 ENV_SECRETS_QUIET=1
+
+### rose-pine-man
+zinit snippet "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
+
+### zsh-help
+help_function() {
+  bat -plhelp --paging=always --color=always
+}
+
+### zsh-smart-insert
+export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
+export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
+
+### zsh-vi-mode
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 ## atuin
 eval "$(atuin init zsh --disable-up-arrow)"
@@ -102,22 +122,6 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 export TMUXIFIER_TMUX_OPTS=""
 eval "$(tmuxifier init -)"
 
-## zsh
-### rose-pine-man
-zi snippet "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
-
-### zsh-help
-help_function() {
-  bat -plhelp --paging=always --color=always
-}
-
-### zsh-smart-insert
-export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
-export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
-
-### zsh-vi-mode
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 ## cargo
 export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
@@ -160,8 +164,7 @@ export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
 ## rbenv
 # eval "$(rbenv init -)"
-zinit snippet "$HOME/.config/zsh/function.zsh"
-zinit snippet "$HOME/.config/zsh/alias.zsh"
+
 
 # bindkey '^ ' expand-or-complete-prefix
 # bindkey -s '^v' 'nvim $(fzf)\n'

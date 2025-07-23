@@ -12,8 +12,10 @@ alias rec='asciinema rec'
 alias scan='clamscan -v -a --max-filesize=1000M --max-scansize=1000M --alert-exceeds-max=yes'
 
 ## deep-translator
-alias trans='deep-translator --translator tencent --source "en" --target "zh" --text'
-alias trans2='deep-translator --translator tencent --source "zh" --target "en" --text'
+alias c2e='deep-translator --translator google --source "en" --target "zh-CN" --text'
+alias e2c='deep-translator --translator google --source "zh-CN" --target "en" --text'
+alias c2et='deep-translator --translator tencent --source "en" --target "zh" --text'
+alias e2ct='deep-translator --translator tencent --source "zh" --target "en" --text'
 
 ## dict
 alias dict='dict --host ubuntu22 --port 2528 -d ecdict'
