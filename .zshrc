@@ -32,8 +32,8 @@ zinit lucid wait for \
   soimort/translate-shell \
   pressdarling/codex-zsh-plugin \
   wfxr/forgit \
-  Bhupesh-V/ugit
-	# andydecleyre/zpy
+  Bhupesh-V/ugit \
+	andydecleyre/zpy
 
 zi has'zoxide' wait lucid for \
   z-shell/zsh-zoxide
