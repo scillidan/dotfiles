@@ -9,7 +9,7 @@ matches:
   #       params:
   #         cmd: "expr $ESPANSO_NUM1 + $ESPANSO_NUM2"
   # Character
-  - trigger: "#>"
+  - trigger: ":,"
     replace: "→"
   # Command
   - trigger: ":gc"
