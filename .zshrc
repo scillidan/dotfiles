@@ -32,8 +32,8 @@ zinit lucid wait for \
   soimort/translate-shell \
   pressdarling/codex-zsh-plugin \
   wfxr/forgit \
-  Bhupesh-V/ugit \
-  andydecleyre/zpy
+  Bhupesh-V/ugit
+	# andydecleyre/zpy
 
 zi has'zoxide' wait lucid for \
   z-shell/zsh-zoxide
@@ -41,8 +41,8 @@ zi has'zoxide' wait lucid for \
 autoload -Uz compinit
 compinit
 
-zinit snippet "$HOME/.config/zsh/function.zsh"
-zinit snippet "$HOME/.config/zsh/alias.zsh"
+zi snippet "$HOME/.config/zsh/function.zsh"
+zi snippet "$HOME/.config/zsh/alias.zsh"
 
 export MANPATH="/usr/share/man:$MANPATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
@@ -60,7 +60,7 @@ ENV_SECRETS_BACKEND="pass"
 ENV_SECRETS_QUIET=1
 
 ### rose-pine-man
-zinit snippet "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
+zi snippet "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
 
 ### zsh-help
 help_function() {
@@ -72,32 +72,34 @@ export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
 export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
 
 ### zsh-vi-mode
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
-
-## atuin
-eval "$(atuin init zsh --disable-up-arrow)"
-
-## carapace
-export CARAPACE_BRIDGES='zsh'
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
-source <(carapace _carapace)
-
-## fzf
-source <(fzf --zsh)
-# export FZF_CTRL_T_COMMAND=""
-# export FZF_DEFAULT_COMMAND=""
-# export ENHANCD_FILTER="fzy:fzf --height 40%"
-
-## fzf-tab
-zstyle ':completion:*' ignore-case 'yes'
-if [[ -v TMUX ]]; then
-    zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-fi
-
-## grc
-[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+# ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+function zvm_init() {
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+	## atuin
+	eval "$(atuin init zsh --disable-up-arrow)"
+	## carapace
+	export CARAPACE_BRIDGES='zsh'
+	zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+	zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
+	source <(carapace _carapace)
+	## fzf
+	# export FZF_CTRL_T_COMMAND=""
+	# export FZF_DEFAULT_COMMAND=""
+	# export ENHANCD_FILTER="fzy:fzf --height 40%"
+	source <(fzf --zsh)
+	## fzf-tab
+	zstyle ':completion:*' ignore-case 'yes'
+	if [[ -v TMUX ]]; then
+			zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+	fi
+	## grc
+	[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+	## tmux
+	export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
+	export TMUXIFIER_TMUX_OPTS=""
+	eval "$(tmuxifier init -)"
+}
+zvm_after_init_commands+=(zvm_init)
 
 ## neovim
 ### rime-ls
@@ -116,12 +118,6 @@ export STARDICT_DATA_DIR="$HOME/Usr/File/file_sdcv"
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
 export MANPATH="$TEXLIVE/texmf-dist/doc/man"
 export TEXLIVE="/usr/local/texlive/2025"
-
-## tmux
-export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
-export TMUXIFIER_TMUX_OPTS=""
-eval "$(tmuxifier init -)"
-
 
 ## cargo
 export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
@@ -164,7 +160,6 @@ export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
 ## rbenv
 # eval "$(rbenv init -)"
-
 
 # bindkey '^ ' expand-or-complete-prefix
 # bindkey -s '^v' 'nvim $(fzf)\n'
