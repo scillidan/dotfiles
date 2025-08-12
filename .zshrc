@@ -45,33 +45,9 @@ zi snippet "$HOME/.config/zsh/function.zsh"
 zi snippet "$HOME/.config/zsh/alias.zsh"
 
 export MANPATH="/usr/share/man:$MANPATH"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 
-## zsh
-### zsh-env-secrets
-ENV_SECRETS=(
-  "TENCENT_SECRET_ID"
-  "TENCENT_SECRET_KEY"
-  "OPENAI_API_KEY"
-  "OPENROUTER_API_KEY"
-	"GOWL_TOKEN"
-)
-ENV_SECRETS_BACKEND="pass"
-ENV_SECRETS_QUIET=1
-
-### rose-pine-man
-zi snippet "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
-
-### zsh-help
-help_function() {
-  bat -plhelp --paging=always --color=always
-}
-
-### zsh-smart-insert
-export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
-export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
-
-### zsh-vi-mode
+## zsh-vi-mode
 # ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 function zvm_init() {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -98,6 +74,62 @@ function zvm_init() {
 	export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 	export TMUXIFIER_TMUX_OPTS=""
 	eval "$(tmuxifier init -)"
+	## zsh
+	### zsh-env-secrets
+	ENV_SECRETS=(
+  	"TENCENT_SECRET_ID"
+  	"TENCENT_SECRET_KEY"
+  	"OPENAI_API_KEY"
+  	"OPENROUTER_API_KEY"
+		"GOWL_TOKEN"
+	)
+	ENV_SECRETS_BACKEND="pass"
+	ENV_SECRETS_QUIET=1
+	### rose-pine-man
+	zi snippet "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
+	### zsh-help
+	help_function() {
+  	bat -plhelp --paging=always --color=always
+	}
+	### zsh-smart-insert
+	export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
+	export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
+	## cargo
+	export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
+	export RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"
+	export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
+	## go
+	export GOPATH="$HOME/.local/share/go"
+	## gvm
+	# export GVM_ROOT="$HOME/.gvm"
+	# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+	## lua
+	# export LUA_PATH="$ROOT/usr/share/lua/5.1/luarocks/?.lua;$ROOT/usr/share/lua/5.1/luarocks/?/init.lua"
+	# export LUA_CPATH="$ROOT/usr/share/lua/5.1/?.so"
+	source "$HOME/Usr/Lib/lua51/bin/activate"
+	## miniconda
+	[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+	## nvm
+	source "/usr/share/nvm/init-nvm.sh"
+	## pnpm
+	export PNPM_HOME="$HOME/.local/share/pnpm"
+	case ":$PATH:" in
+		*":$PNPM_HOME:"*) ;;
+		*) export PATH="$PNPM_HOME:$PATH" ;;
+	esac
+	## pyenv
+	export PYENV_ROOT="$HOME/.pyenv"
+	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init - zsh)"
+	# eval "$(pyenv virtualenv-init -)"
+	## python
+	export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+	## rbenv
+	export FPATH=$HOME/.rbenv/completions:"$FPATH"
+	eval "$(rbenv init -)"
+	## chruby
+	# source /usr/share/chruby/chruby.sh
+	# RUBIES+=(~/.rbenv/versions/*)
 }
 zvm_after_init_commands+=(zvm_init)
 
@@ -118,48 +150,6 @@ export STARDICT_DATA_DIR="$HOME/Usr/File/file_sdcv"
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
 export MANPATH="$TEXLIVE/texmf-dist/doc/man"
 export TEXLIVE="/usr/local/texlive/2025"
-
-## cargo
-export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
-export RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"
-export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
-
-## go
-export GOPATH="$HOME/.local/share/go"
-
-## gvm
-# export GVM_ROOT="$HOME/.gvm"
-# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-## lua
-# export LUA_PATH="$ROOT/usr/share/lua/5.1/luarocks/?.lua;$ROOT/usr/share/lua/5.1/luarocks/?/init.lua"
-# export LUA_CPATH="$ROOT/usr/share/lua/5.1/?.so"
-source "$HOME/Usr/Lib/lua51/bin/activate"
-
-## miniconda
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-
-## nvm
-source "/usr/share/nvm/init-nvm.sh"
-
-## pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-## pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-# eval "$(pyenv virtualenv-init -)"
-
-## python
-export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
-
-## rbenv
-# eval "$(rbenv init -)"
 
 # bindkey '^ ' expand-or-complete-prefix
 # bindkey -s '^v' 'nvim $(fzf)\n'

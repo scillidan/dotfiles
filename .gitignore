@@ -120,7 +120,13 @@
 /.config/LosslessCut
 /.config/Raspberry Pi
 /.pyglossary
+<<<<<<< Updated upstream
 .config/_goldendict/config.linkfile
 /.asdf
 /.rbenv
 /.config/ghb
+=======
+/.config/ghb
+/.asdf
+/.rbenv
+>>>>>>> Stashed changes
