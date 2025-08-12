@@ -78,6 +78,7 @@ uv310=uv venv --python 3.10 && .venv\Scripts\activate.bat
 uva=.venv\Scripts\activate.bat
 uvv=uv venv $1 --python 3.10 && $1\Scripts\activate.bat
 uvi=uv pip install $*
+mluv=mklink %USERPROFILE%\.local\bin\$1.exe %CD%\.$1\Scripts\$1.exe
 xpi=pipx install $*
 xpu=pipx uninstall $*
 ns=npms search $*
@@ -91,7 +92,7 @@ xnl=%SCOOP_HOME%\shims\pnpm.exe ls -g
 ;= yarnpkg=corepack yarnpkg $*
 ;= fni=fnm install v$*
 ;= fnu=fnm use v$*
-cgi=cargo install $*
+cgi=cargo install --force $*
 cgu=cargo uninstall $*
 cgs=cargo search $* --registry crates-io
 cgbi=cargo-binstall install $*

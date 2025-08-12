@@ -1,8 +1,9 @@
-altbacktick: Switch Between Windows Of The Same Program         | A-Bksp
+altbacktick: Switch Between Windows Of The Same Program         | A-`
 autohotkey:: AutoHotkey Keyboard Locker                         | C-S-A-k
 autohotkey:: ShortScript                                        | Win-c
 autohotkey:: toggle-screen-autohotkey                           | Win-F2
-autohotkey:: GoldenDictOCR: ToggleMouseTakeWord                 | C-A-g
+autohotkey:: GoldenDictOCR: ToggleMouseTakeWord (Set by user)   | C-A-g
+autohotkey:: Vis2 (Set by user)                                 | Win-S-c
 cmder:: clink-fzf: Complete                                     | C-Spc
 cmder:: clink-fzf: File                                         | C-t
 cmder:: clink-fzf: fzf_complete_force                           | Tab
@@ -142,9 +143,8 @@ snipaste pro: Hide/Show all images                              | S-PrtSc
 snipaste pro: Paste                                             | C-PrtSc
 snipaste pro: Scan QRcode                                       | C-A-S-q
 snipaste pro: Snip                                              | PrtSc
-snipaste pro: Snip and pin                                      | Win-C-MBtm_L(drag)
+snipaste pro: Snip and pin                                      | Win-C-MBtn_L(drag)
 ugrep: Edit                                                     | F2
 ugrep: Help                                                     | C-z
 ugrep: Quit                                                     | C-q
 ugrep: Split                                                    | C-t
-umi-ocr: Screenshot OCR                                         | C-A-u

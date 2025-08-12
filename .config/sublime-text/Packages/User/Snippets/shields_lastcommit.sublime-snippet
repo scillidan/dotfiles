@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[
-![](https://img.shields.io/github/last-commit/scillidan/$1/main?label=last%20commit%20(fork)&style=flat-square)
+![](https://img.shields.io/github/last-commit/scillidan/$1/main?label=last%20commit%20(fork))
 ]]></content>
   <tabTrigger>lastcommit</tabTrigger>
   <scope>text.html.markdown</scope>
