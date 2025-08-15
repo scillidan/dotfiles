@@ -43,7 +43,10 @@ alias c2t='gopencc -c s2t -i'
 alias jqp='jq ".scripts" ./package.json'
 
 ## multi-git-status
-alias mgit="mgitstatus"
+alias mgit='mgitstatus'
+
+## pylanguagetool
+alias chk='pylanguagetool --api-url http://ubuntu22:8040/v2/ --input-type html --lang en-US -c'
 
 ## sdcv
 alias sdcv='sdcv --color --use-dict=JianMingYingHanZiDian'

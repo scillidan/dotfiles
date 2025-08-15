@@ -45,7 +45,7 @@ zi snippet "$HOME/.config/zsh/function.zsh"
 zi snippet "$HOME/.config/zsh/alias.zsh"
 
 export MANPATH="/usr/share/man:$MANPATH"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 
 ## zsh-vi-mode
 # ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
@@ -104,9 +104,9 @@ function zvm_init() {
 	# export GVM_ROOT="$HOME/.gvm"
 	# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 	## lua
-	# export LUA_PATH="$ROOT/usr/share/lua/5.1/luarocks/?.lua;$ROOT/usr/share/lua/5.1/luarocks/?/init.lua"
-	# export LUA_CPATH="$ROOT/usr/share/lua/5.1/?.so"
-	source "$HOME/Usr/Lib/lua51/bin/activate"
+	# export LUA_PATH="$ROOT/usr/share/lua/5.3/luarocks/?.lua;$ROOT/usr/share/lua/5.3/luarocks/?/init.lua"
+	# export LUA_CPATH="$ROOT/usr/share/lua/5.3/?.so"
+	source "$HOME/Usr/Lib/lua53/bin/activate"
 	## miniconda
 	[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 	## nvm
@@ -127,9 +127,6 @@ function zvm_init() {
 	## rbenv
 	export FPATH=$HOME/.rbenv/completions:"$FPATH"
 	eval "$(rbenv init -)"
-	## chruby
-	# source /usr/share/chruby/chruby.sh
-	# RUBIES+=(~/.rbenv/versions/*)
 }
 zvm_after_init_commands+=(zvm_init)
 
@@ -144,7 +141,7 @@ export OLLAMA_HOST="revios"
 export OLLAMA_ORIGINES="*"
 
 ## sdcv
-export STARDICT_DATA_DIR="$HOME/Usr/File/file_sdcv"
+export STARDICT_DATA_DIR="$HOME/Usr/Share/file_sdcv"
 
 ## texlive
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
@@ -153,6 +150,9 @@ export TEXLIVE="/usr/local/texlive/2025"
 
 # bindkey '^ ' expand-or-complete-prefix
 # bindkey -s '^v' 'nvim $(fzf)\n'
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 
 zi snippet "$ZSH_CUSTOM/themes/minimal/minimal.zsh"
 
