@@ -141,3 +141,6 @@
 .config/kdenliverc
 .config/kdenlive-layoutsrc
 /.putty
+/.config/yazi
+/.spotdl
+/Game
