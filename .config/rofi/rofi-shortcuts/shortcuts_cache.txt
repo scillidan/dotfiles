@@ -1,3 +1,24 @@
+brave: Focus on search bar                                 | C-l
+brave: Search history                                      | C-h
+brave: Toggle bookmark bar                                 | C-S-b
+brave:: Copy Title and Url as Markdown Style               | A-S-c
+brave:: Dark Reader: Activate the extension                | A-S-d
+brave:: Gitako: Toggle sidebar                             | A-S-t
+brave:: GoFullPage: Activate the extension                 | A-S-p
+brave:: Imageye: Activate the extension                    | A-S-i
+brave:: Kokoro TTS Reader: Activate the extension          | A-S-k
+brave:: Linkclump: Copied to clipboard                     | Mbtn_R-a
+brave:: Linkclump: Opened as New Tabs                      | Mbtn_L-a
+brave:: Monica: Activate the extension                     | A-S-m
+brave:: Open Multiple URLs: Activate the extension         | A-o
+brave:: Read Later: Activate the extension                 | A-S
+brave:: Screenshot Capture: Activate the extension         | A-s
+brave:: Smart TOC: Activate the extension                  | A-t
+brave:: Stylus: Activate the extension                     | A-S-s
+brave:: Tab to Window/Popup: Keyboard Shortcut: Popup      | A-x
+brave:: Tab to Window/Popup: Keyboard Shortcut: Window     | A-p
+brave:: Vimium: Activate the extension                     | A-S-v
+brave:: Yomitan Popup Dictionary: Activate the extension   | A-S-y
 broot: edit                                                | F2/:e
 broot: Edit with sublime text                              | C-e
 broot: Filter                                              | c/<text>
@@ -121,7 +142,6 @@ ranger: (Tab) Previous tab                                 | S-Tab
 ranger: Focus ranger                                       | <CMD>-F1
 ranger: Unzip selected file (Uncompress)                   | 1l
 zellij: New tab                                            | C-t
-
 zellij: New window                                         | C-p Up/Down/Left/Right d
 zellij: Paste                                              | C-S-v
 zellij: Resize                                             | C-n Up/Down/Left/Right Etr

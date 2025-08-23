@@ -149,11 +149,11 @@ Open file or copy url | C-S-u
 LoveRun  | <leader>vv
 LoveStop | <leader>vs
 
-## luasnip
-ls.expand {i}            | C-K
-ls.jump (down) {i} {s}   | C-L
-ls.jump (up) {i} {s}     | C-J
-ls.change_choice {i} {s} | C-E
+# ## luasnip
+# luasnip.expand {i}            | C-l
+# luasnip.jump (down) {i} {s}   | C-j
+# luasnip.jump (up) {i} {s}     | C-k
+# luasnip.change_choice {i} {s} | C-e
 
 ## marksman @lsp @markdown
 Hover preview   | K
@@ -213,14 +213,14 @@ goto_next  | ]h
 goto_last  | ]H
 
 ## mini.move @mini
-line_left {n}  | C-S-Down
-line_right {n} | C-S-Up
-line_down {n}  | C-S-Left
-line_up {n}    | C-S-Right
-left {v}       | C-S-Down
-right {v}      | C-S-Up
-down {v}       | C-S-Left
-up {v}         | C-S-Right
+line_left {n}  | A-h
+line_right {n} | A-l
+line_down {n}  | A-j
+line_up {n}    | A-k
+left {v}       | A-h
+right {v}      | A-l
+down {v}       | A-j
+up {v}         | A-k
 
 ## multiple-cursors.nvim
 MultipleCursorsAddDown {i} {n} {x}    | S-Down

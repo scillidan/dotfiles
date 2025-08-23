@@ -2,7 +2,7 @@
   <content><![CDATA[
 - !Clear
 ]]></content>
-  <tabTrigger>acclr</tabTrigger>
+  <tabTrigger>autocastclear</tabTrigger>
   <scope>source.yaml</scope>
   <description>autocast clear</description>
 </snippet>

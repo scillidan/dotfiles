@@ -106,7 +106,7 @@ function zvm_init() {
 	## lua
 	# export LUA_PATH="$ROOT/usr/share/lua/5.3/luarocks/?.lua;$ROOT/usr/share/lua/5.3/luarocks/?/init.lua"
 	# export LUA_CPATH="$ROOT/usr/share/lua/5.3/?.so"
-	source "$HOME/Usr/Lib/lua53/bin/activate"
+# source "$HOME/Usr/Lib/lua53/bin/activate"  # commented out by conda initialize
 	## miniconda
 	[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 	## nvm
@@ -127,6 +127,9 @@ function zvm_init() {
 	## rbenv
 	export FPATH=$HOME/.rbenv/completions:"$FPATH"
 	eval "$(rbenv init -)"
+
+	zvm_bindkey viins '^R' atuin-search
+	zvm_bindkey vicmd '^R' atuin-search
 }
 zvm_after_init_commands+=(zvm_init)
 
@@ -157,3 +160,4 @@ bindkey  "^[[3~"  delete-char
 zi snippet "$ZSH_CUSTOM/themes/minimal/minimal.zsh"
 
 # eval "clear"
+

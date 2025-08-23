@@ -10,7 +10,7 @@ settings:
 instructions:
   $2
 ]]></content>
-  <tabTrigger>autocast</tabTrigger>
+  <tabTrigger>autocastyaml</tabTrigger>
   <scope>source.yaml</scope>
   <description>autocast yaml</description>
 </snippet>

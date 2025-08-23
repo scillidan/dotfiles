@@ -112,48 +112,48 @@ return {
 				module = "lazydev.integrations.blink",
 				score_offset = 100,
 			},
-			-- https://linkarzu.com/posts/neovim/blink-cmp-updates/#disabled-lsp-fallbacks
-			--lsp = {
-			--	name = "lsp",
-			--enabled = true
-			-- module = "blink.cmp.sources.lsp",
-			-- kind = "LSP",
-			-- min_keyword_length = 3,
-			-- score_offset = 90,
-			--},
+			--https://linkarzu.com/posts/neovim/blink-cmp-updates/#disabled-lsp-fallbcks
+			-- lsp = {
+			-- 	name = "lsp",
+			-- 	enabled = true,
+			-- 	module = "blink.cmp.sources.lsp",
+			-- 	kind = "LSP",
+			-- 	min_keyword_length = 3,
+			-- 	score_offset = 90,
+			-- },
 			-- snippets = {
-			--	name = "snippets",
-			-- enabled = true,
-			-- max_items = 15,
-			-- min_keyword_length = 3,
-			-- module = "blink.cmp.sources.snippets",
-			-- score_offset = 85,
-			-- should_show_items = function()
-			-- 	local col = vim.api.nvim_win_get_cursor(0)[2]
-			-- 	local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
-			-- 	return before_cursor:match(trigger_text .. "%w*$") ~= nil
-			-- end,
-			-- transform_items = function(_, items)
-			-- 	local col = vim.api.nvim_win_get_cursor(0)[2]
-			-- 	local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
-			-- 	local trigger_pos = before_cursor:find(trigger_text .. "[^" .. trigger_text .. "]*$")
-			-- 	if trigger_pos then
-			-- 		for _, item in ipairs(items) do
-			-- 			item.textEdit = {
-			-- 				newText = item.insertText or item.label,
-			-- 				range = {
-			-- 					start = { line = vim.fn.line(".") - 1, character = trigger_pos - 1 },
-			-- 					["end"] = { line = vim.fn.line(".") - 1, character = col },
-			-- 				},
-			-- 			}
+			-- 	name = "snippets",
+			-- 	enabled = true,
+			-- 	max_items = 15,
+			-- 	min_keyword_length = 2,
+			-- 	module = "blink.cmp.sources.snippets",
+			-- 	score_offset = 85,
+			-- 	should_show_items = function()
+			-- 		local col = vim.api.nvim_win_get_cursor(0)[2]
+			-- 		local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
+			-- 		return before_cursor:match(trigger_text .. "%w*$") ~= nil
+			-- 	end,
+			-- 	transform_items = function(_, items)
+			-- 		local col = vim.api.nvim_win_get_cursor(0)[2]
+			-- 		local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
+			-- 		local trigger_pos = before_cursor:find(trigger_text .. "[^" .. trigger_text .. "]*$")
+			-- 		if trigger_pos then
+			-- 			for _, item in ipairs(items) do
+			-- 				item.textEdit = {
+			-- 					newText = item.insertText or item.label,
+			-- 					range = {
+			-- 						start = { line = vim.fn.line(".") - 1, character = trigger_pos - 1 },
+			-- 						["end"] = { line = vim.fn.line(".") - 1, character = col },
+			-- 					},
+			-- 				}
+			-- 			end
 			-- 		end
-			-- 	end
-			-- 	vim.schedule(function()
-			-- 		require("blink.cmp").reload("snippets")
-			-- 	end)
-			-- 	return items
-			-- end,
-			--},
+			-- 		vim.schedule(function()
+			-- 			require("blink.cmp").reload("snippets")
+			-- 		end)
+			-- 		return items
+			-- 	end,
+			-- },
 			latex = {
 				name = "LaTeX",
 				module = "blink-cmp-latex",
@@ -345,34 +345,37 @@ return {
 	},
 	keymap = {
 		preset = "none",
-		-- ["<Tab>"] = {
-		-- 	function(cmp)
-		-- 		if cmp.snippet_active() then
-		-- 			return cmp.accept()
-		-- 		else
-		-- 			return cmp.select_and_accept()
-		-- 		end
-		-- 	end,
-		-- 	"snippet_forward",
-		-- 	"fallback",
-		-- },
-		["<CR>"] = { "accept", "fallback" },
-		["<Up>"] = { "snippet_forward", "fallback" },
-		["<Down>"] = { "snippet_backward", "fallback" },
-		["<S-Tab>"] = { "select_prev", "fallback" },
-		["<Tab>"] = { "select_next", "fallback" },
+		["<Tab>"] = {
+			function(cmp)
+				if cmp.snippet_active() then
+					return cmp.accept()
+				else
+					return cmp.select_and_accept()
+				end
+			end,
+			"snippet_forward",
+			"fallback",
+		},
+		["<S-Tab>"] = { "snippet_backward", "fallback" },
+		["<Up>"] = { "select_prev", "fallback" },
+		["<Down>"] = { "select_next", "fallback" },
 		["<C-u>"] = { "scroll_documentation_up", "fallback" },
 		["<C-d>"] = { "scroll_documentation_down", "fallback" },
-		["<C-e>"] = { "hide", "fallback" },
 		["<c-g>"] = {
 			function()
 				require("blink-cmp").show({ providers = { "ripgrep" } })
 			end,
 		},
-		-- ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
-		-- ["<C-n>"] = { "select_next", "fallback_to_mappings" },
-		-- ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
-		-- ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+		["<C-p>"] = { "select_prev", "fallback_to_mappings" },
+		["<C-n>"] = { "select_next", "fallback_to_mappings" },
+		["<C-e>"] = { "hide", "fallback" },
+		["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+		-- ["<CR>"] = { "accept", "fallback" },
+		-- ["<Up>"] = { "snippet_forward", "fallback" },
+		-- ["<Down>"] = { "snippet_backward", "fallback" },
+		-- ["<S-Tab>"] = { "select_prev", "fallback" },
+		-- ["<Tab>"] = { "select_next", "fallback" },
 	},
 	--https://github.com/Saghen/blink.cmp/issues/1222
 	config = function(_, opts)

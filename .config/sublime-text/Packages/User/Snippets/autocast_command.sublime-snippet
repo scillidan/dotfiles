@@ -1,9 +1,9 @@
 <snippet>
-  <content><![CDATA[
+	<content><![CDATA[
 - !Command
-  command: "$1"
+	command: "$1"
 ]]></content>
-  <tabTrigger>accmd</tabTrigger>
-  <scope>source.yaml</scope>
-  <description>autocast command</description>
+	<tabTrigger>autocastcommand</tabTrigger>
+	<scope>source.yaml</scope>
+	<description>autocast command</description>
 </snippet>

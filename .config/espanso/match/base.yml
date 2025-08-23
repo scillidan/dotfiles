@@ -33,6 +33,11 @@ matches:
     replace: "^(.*)(\\r?\\n\\1)+$"
   - trigger: ":cjk"
     replace: "[^\\x00-\\xff]+"
+  # Url
+  - trigger: ":dum"
+    replace: "https://dummyimage.com/$1x$2/000/fff"
+  - trigger: ":cheat"
+    replace: "https://scillidan-cheat.vercel.app/$|$.html"
   # Other
   - trigger: ":what"
     replace: "What is $|$? Using metaphors and rhetoric helps me understand."
@@ -40,8 +45,6 @@ matches:
     replace: "What is the difference between $|$?"
   - trigger: ":by"
     replace: "Write by GPT-4o mini?????, scillidan??"
-  - trigger: ":cheat"
-    replace: "https://scillidan-cheat.vercel.app/$|$.html"
   - trigger: ":ce"
     replace: "```sh$|$\n```"
   - trigger: ":g4"

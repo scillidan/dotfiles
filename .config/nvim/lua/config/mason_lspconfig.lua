@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"html",
 		"cssls",
+		"texlab",
 		-- "debugpy",
 		-- "ltex-ls-plus",
 		-- "tailwindcss",
