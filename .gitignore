@@ -141,7 +141,6 @@
 .config/kdenliverc
 .config/kdenlive-layoutsrc
 /.putty
-/.config/yazi
 /.spotdl
 /Game
 /.config/abogen
@@ -153,3 +152,12 @@
 /.config/flacon
 /.config/freac
 /.mono
+/.config/glow
+.cd_history
+/.config/ripgrep-all
+/.duckdb
+.duckdb_history
+.gitconfig.backup
+/.config/yazi/flavors
+.config/yazi/package.toml
+/.config/yazi/plugins
