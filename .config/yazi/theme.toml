@@ -1,0 +1,7 @@
+[flavor]
+light = "flexoki-light"
+dark = "flexoki-dark"
+
+[spot]
+title = { fg = "blue" }
+tbl_col = { fg = "green" }
