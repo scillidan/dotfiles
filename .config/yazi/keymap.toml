@@ -5,27 +5,27 @@ run = "plugin sxiv"
 desc = "Preview images in sxiv"
 
 # https://github.com/wylie102/duckdb.yazi
-[[mgr.prepend_keymap]]
-on = "H"
-run = "plugin duckdb -1"
-desc = "Scroll one column to the left"
-
-[[mgr.prepend_keymap]]
-on = "L"
-run = "plugin duckdb +1"
-desc = "Scroll one column to the right"
-
-[[mgr.prepend_keymap]]
-on = ["d", "o"]
-run = "plugin duckdb -open"
-desc = "open with duckdb"
-
-[[mgr.prepend_keymap]]
-on = ["d", "u"]
-run = "plugin duckdb -ui"
-desc = "open with duckdb ui"
-
+# [[mgr.prepend_keymap]]
+# on = "H"
+# run = "plugin duckdb -1"
+# desc = "Scroll one column to the left"
 #
+# [[mgr.prepend_keymap]]
+# on = "L"
+# run = "plugin duckdb +1"
+# desc = "Scroll one column to the right"
+#
+# [[mgr.prepend_keymap]]
+# on = ["d", "o"]
+# run = "plugin duckdb -open"
+# desc = "open with duckdb"
+#
+# [[mgr.prepend_keymap]]
+# on = ["d", "u"]
+# run = "plugin duckdb -ui"
+# desc = "open with duckdb ui"
+
+# https://github.com/lpnh/fr.yazi
 [[mgr.prepend_keymap]]
 on = ["f", "r"]
 run = "plugin fr rg"

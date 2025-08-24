@@ -1,4 +1,4 @@
-require("duckdb"):setup()
+-- require("duckdb"):setup()
 
 require("custom-shell"):setup({
 	history_path = "default",

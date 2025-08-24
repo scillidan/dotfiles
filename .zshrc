@@ -71,7 +71,7 @@ function zvm_init() {
 	## grc
 	[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 	## tmux
-	export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
+	export TMUXIFIER_LAYOUT_PATH="$HOME/Usr/Git/Shell/_arch/tmuxifier"
 	export TMUXIFIER_TMUX_OPTS=""
 	eval "$(tmuxifier init -)"
 	## zsh

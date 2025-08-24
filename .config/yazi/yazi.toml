@@ -8,12 +8,12 @@ prepend_preloaders = [
   { mime = "application/subrip", run = "mediainfo" },
   { mime = "application/postscript", run = "mediainfo" },
   # https://github.com/wylie102/duckdb.yazi
-  { name = "*.csv", run = "duckdb", multi = false },
-  { name = "*.tsv", run = "duckdb", multi = false },
-  { name = "*.json", run = "duckdb", multi = false },
-  { name = "*.parquet", run = "duckdb", multi = false },
-  { name = "*.txt", run = "duckdb", multi = false },
-  { name = "*.xlsx", run = "duckdb", multi = false },
+  # { name = "*.csv", run = "duckdb", multi = false },
+  # { name = "*.tsv", run = "duckdb", multi = false },
+  # { name = "*.json", run = "duckdb", multi = false },
+  # { name = "*.parquet", run = "duckdb", multi = false },
+  # { name = "*.txt", run = "duckdb", multi = false },
+  # { name = "*.xlsx", run = "duckdb", multi = false },
   # https://github.com/macydnah/office.yazi
   { mime = "application/openxmlformats-officedocument.*", run = "office" },
   { mime = "application/oasis.opendocument.*", run = "office" },
@@ -24,7 +24,7 @@ prepend_preloaders = [
 prepend_previewers = [
   # https://github.com/yazi-rs/plugins/tree/main/piper.yazi
   { name = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
-  # { name = "*.csv", run = 'piper -- bat -p --color=always "$1"' },
+  { name = "*.csv", run = 'piper -- bat -p --color=always "$1"' },
   { name = "*/", run = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
   # { name = "*", run = 'piper -- hexyl --border=none --terminal-width=$w "$1"' },
   # https://github.com/kirasok/epub-preview.yazi?tab=readme-ov-file
@@ -34,14 +34,14 @@ prepend_previewers = [
   { mime = "application/subrip", run = "mediainfo" },
   { mime = "application/postscript", run = "mediainfo" },
   # https://github.com/wylie102/duckdb.yazi
-  { name = "*.csv", run = "duckdb" },
-  { name = "*.tsv", run = "duckdb" },
-  { name = "*.json", run = "duckdb" },
-  { name = "*.parquet", run = "duckdb" },
-  { name = "*.txt", run = "duckdb" },
-  { name = "*.xlsx", run = "duckdb" },
-  { name = "*.db", run = "duckdb" },
-  { name = "*.duckdb", run = "duckdb" },
+  # { name = "*.csv", run = "duckdb" },
+  # { name = "*.tsv", run = "duckdb" },
+  # { name = "*.json", run = "duckdb" },
+  # { name = "*.parquet", run = "duckdb" },
+  # { name = "*.txt", run = "duckdb" },
+  # { name = "*.xlsx", run = "duckdb" },
+  # { name = "*.db", run = "duckdb" },
+  # { name = "*.duckdb", run = "duckdb" },
   # https://github.com/macydnah/office.yazi
   { mime = "application/openxmlformats-officedocument.*", run = "office" },
   { mime = "application/oasis.opendocument.*", run = "office" },
