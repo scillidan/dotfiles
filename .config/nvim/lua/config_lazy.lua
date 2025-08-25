@@ -381,7 +381,7 @@ require("lazy").setup({
 		},
 		config = function()
 			require("luasnip-latex-snippets").setup() -- setup({ use_treesitter = true })
-			require("luasnip").config.setup({ enable_autosnippets = true })
+			require("luasnip").config.setup({ enable_autosnippets = false })
 		end,
 	},
 	{

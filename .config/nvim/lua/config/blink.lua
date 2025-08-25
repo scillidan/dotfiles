@@ -344,38 +344,14 @@ return {
 		enabled = true,
 	},
 	keymap = {
-		preset = "none",
-		["<Tab>"] = {
-			function(cmp)
-				if cmp.snippet_active() then
-					return cmp.accept()
-				else
-					return cmp.select_and_accept()
-				end
-			end,
-			"snippet_forward",
-			"fallback",
-		},
-		["<S-Tab>"] = { "snippet_backward", "fallback" },
-		["<Up>"] = { "select_prev", "fallback" },
-		["<Down>"] = { "select_next", "fallback" },
+		preset = "super-tab",
 		["<C-u>"] = { "scroll_documentation_up", "fallback" },
 		["<C-d>"] = { "scroll_documentation_down", "fallback" },
-		["<c-g>"] = {
+		["<C-g>"] = {
 			function()
 				require("blink-cmp").show({ providers = { "ripgrep" } })
 			end,
 		},
-		["<C-p>"] = { "select_prev", "fallback_to_mappings" },
-		["<C-n>"] = { "select_next", "fallback_to_mappings" },
-		["<C-e>"] = { "hide", "fallback" },
-		["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
-		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-		-- ["<CR>"] = { "accept", "fallback" },
-		-- ["<Up>"] = { "snippet_forward", "fallback" },
-		-- ["<Down>"] = { "snippet_backward", "fallback" },
-		-- ["<S-Tab>"] = { "select_prev", "fallback" },
-		-- ["<Tab>"] = { "select_next", "fallback" },
 	},
 	--https://github.com/Saghen/blink.cmp/issues/1222
 	config = function(_, opts)
