@@ -92,7 +92,7 @@ function zvm_init() {
   	bat -plhelp --paging=always --color=always
 	}
 	### zsh-smart-insert
-	export ZSH_SMART_INSERT_PREFIXES="nvim:subl:less"
+	export ZSH_SMART_INSERT_PREFIXES="nvim:subl"
 	export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
 	## cargo
 	export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
@@ -144,7 +144,7 @@ export OLLAMA_HOST="revios"
 export OLLAMA_ORIGINES="*"
 
 ## sdcv
-export STARDICT_DATA_DIR="$HOME/Usr/Share/file_sdcv"
+export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
 
 ## texlive
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"

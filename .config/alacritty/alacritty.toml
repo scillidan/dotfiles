@@ -15,10 +15,10 @@ padding.y = 5
 startup_mode = "Windowed"
 
 [font]
-normal.family = "IosevkaTerm NFM"
-bold.family = "IosevkaTerm NFM"
-italic.family = "IosevkaTerm NFM"
-bold_italic.family = "IosevkaTerm NFM"
+normal.family = "Sarasa Term SC Nerd"
+bold.family = "Sarasa Term SC Nerd"
+italic.family = "Sarasa Term SC Nerd"
+bold_italic.family = "Sarasa Term SC Nerd"
 size = 10
 
 [selection]
@@ -34,6 +34,6 @@ bindings = [{ mouse = "Right", action = "PasteSelection" }]
 
 [keyboard]
 bindings = [
-  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
-  { key = "Q", mods = "Control|Shift|Alt", action = "Quit" },
+	{ key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+	{ key = "Q", mods = "Control|Shift|Alt", action = "Quit" },
 ]

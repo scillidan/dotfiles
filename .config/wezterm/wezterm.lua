@@ -26,8 +26,8 @@ config.colors = {
 	},
 }
 config.font = wezterm.font_with_fallback({
+	"Sarasa Term SC Nerd",
 	"IosevkaTerm Nerd Font Mono",
-	"Sarasa Term SC Nerd Font",
 })
 config.font_size = 10.0
 config.initial_cols = 151
@@ -42,8 +42,8 @@ config.use_fancy_tab_bar = false
 config.tab_max_width = 25
 config.window_frame = {
 	font = wezterm.font_with_fallback({
-		"IosevkaTerm Nerd From Mono",
-		"Sarasa Term SC Nerd Font",
+		"Sarasa Term SC Nerd",
+		"IosevkaTerm Nerd Font Mono",
 	}),
 	font_size = 9.0,
 	active_titlebar_bg = "#000000",
@@ -63,6 +63,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+config.warn_about_missing_glyphs = false
 
 config.disable_default_key_bindings = true
 config.keys = {

@@ -12,13 +12,13 @@ alias rec='asciinema rec'
 alias scan='clamscan -v -a --max-filesize=1000M --max-scansize=1000M --alert-exceeds-max=yes'
 
 ## deep-translator
-alias c2e='deep-translator --translator google --source "en" --target "zh-CN" --text'
-alias e2c='deep-translator --translator google --source "zh-CN" --target "en" --text'
-alias c2et='deep-translator --translator tencent --source "en" --target "zh" --text'
-alias e2ct='deep-translator --translator tencent --source "zh" --target "en" --text'
+#alias c2e='deep-translator --translator google --source "en" --target "zh-CN" --text'
+#alias e2c='deep-translator --translator google --source "zh-CN" --target "en" --text'
+alias dtc2e='deep-translator --translator tencent --source "en" --target "zh" --text'
+alias dte2c='deep-translator --translator tencent --source "zh" --target "en" --text'
 
 ## dict
-alias dict='dict --host ubuntu22 --port 2528 -d ecdict'
+alias ecdict='dict --host ubuntu22 --port 2528 -d ecdict'
 
 ## erdtree
 alias erd='erd --color auto --hidden --follow --human --disk-usage line --sort name --dir-order first --layout inverted'
@@ -49,7 +49,8 @@ alias mgit='mgitstatus'
 alias chk='pylanguagetool --api-url http://ubuntu22:8040/v2/ --input-type html --lang en-US -c'
 
 ## sdcv
-alias sdcv='sdcv --color --use-dict=JianMingYingHanZiDian'
+alias de2c='sdcv --color --use-dict=JianMingYingHanZiDian'
+alias dc2e='sdcv --color --use-dict=JianMingYingHanZiDian'
 
 ## trashy
 alias rm="trash"

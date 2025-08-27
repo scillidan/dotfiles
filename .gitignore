@@ -161,3 +161,12 @@
 /.config/yazi/flavors
 .config/yazi/package.toml
 /.config/yazi/plugins
+/.config/bunkus.org
+/.config/sqlitebrowser
+/.config/VSCodium
+/.eclipse
+/.links
+/.swt
+/.vscode-oss
+wordy.txt
+words.txt
