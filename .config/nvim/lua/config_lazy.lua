@@ -569,15 +569,15 @@ require("lazy").setup({
 		end,
 	},
 	---Save
-	{
-		"Pocco81/auto-save.nvim",
-		config = function()
-			require("config.auto_save")
-			if require("luasnip").in_snippet() then
-				return false
-			end
-		end,
-	},
+	-- {
+	-- 	"Pocco81/auto-save.nvim",
+	-- 	config = function()
+	-- 		require("config.auto_save")
+	-- 		if require("luasnip").in_snippet() then
+	-- 			return false
+	-- 		end
+	-- 	end,
+	-- },
 	{
 		"vladdoster/remember.nvim",
 		config = function()
@@ -699,6 +699,16 @@ require("lazy").setup({
 		config = function()
 			require("config.devdocs")
 		end,
+	},
+	---Search Tips
+	{
+		"saxon1964/neovim-tips",
+		version = "*",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			--"MeanderingProgrammer/render-markdown.nvim",
+		},
+		opts = require("config.neovim_tips"),
 	},
 	---Project
 	{

@@ -1,8 +1,8 @@
 --nvim-mdlink
-local has_mdlink, mdlink = pcall(require, "nvim-mdlink.cmp")
-if has_mdlink then
-	require("cmp").register_source("mdlink", mdlink.new())
-end
+-- local has_mdlink, mdlink = pcall(require, "nvim-mdlink.cmp")
+-- if has_mdlink then
+-- 	require("cmp").register_source("mdlink", mdlink.new())
+-- end
 
 --blink-cmp-dictionary
 local function inside_comment_block()
@@ -91,9 +91,9 @@ return {
 				"path",
 				"snippets",
 				"latex",
-				--"npm",
-				--"css_vars",
-				"mdlink",
+				-- "npm",
+				-- "css_vars",
+				-- "mdlink",
 				"buffer",
 				"conventional_commits",
 				"gitmoji",
@@ -315,7 +315,7 @@ return {
 	cmdline = {
 		keymap = {
 			preset = "none",
-			["<Right>"] = {
+			["<Tab>"] = {
 				function(cmp)
 					if cmp.snippet_active() then
 						return cmp.accept()
@@ -345,8 +345,6 @@ return {
 	},
 	keymap = {
 		preset = "super-tab",
-		["<C-u>"] = { "scroll_documentation_up", "fallback" },
-		["<C-d>"] = { "scroll_documentation_down", "fallback" },
 		["<C-g>"] = {
 			function()
 				require("blink-cmp").show({ providers = { "ripgrep" } })

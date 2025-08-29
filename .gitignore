@@ -170,3 +170,9 @@
 /.vscode-oss
 wordy.txt
 words.txt
+/.config/icon-explorer
+/.config/tdv
+/.config/xnconvert
+.config/yazi/bookmark
+/.continue
+/.config/nvim/neovim_tips

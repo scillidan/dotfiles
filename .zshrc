@@ -23,17 +23,16 @@ zinit lucid wait for \
   Kikolator/proj-jumper \
   raisedadead/zsh-touchplus \
   vxfemboy/zsh-smart-files \
-  lgdevlop/zsh-smart-insert \
   mass8326/zsh-chezmoi \
   singular0/zsh-env-secrets \
   sunlei/zsh-ssh \
   SckyzO/zsh-sshinfo \
   raisedadead/zsh-snr \
   soimort/translate-shell \
-  pressdarling/codex-zsh-plugin \
   wfxr/forgit \
   Bhupesh-V/ugit \
 	andydecleyre/zpy
+# pressdarling/codex-zsh-plugin \
 
 zi has'zoxide' wait lucid for \
   z-shell/zsh-zoxide
@@ -61,6 +60,7 @@ function zvm_init() {
 	## fzf
 	# export FZF_CTRL_T_COMMAND=""
 	# export FZF_DEFAULT_COMMAND=""
+	export FZF_DEFAULT_OPTS="--bind='ctrl-u:preview-up,ctrl-d:preview-down,ctrl-o:toggle+up,ctrl-i:toggle+down,ctrl-space:toggle-preview'"
 	# export ENHANCD_FILTER="fzy:fzf --height 40%"
 	source <(fzf --zsh)
 	## fzf-tab
@@ -152,10 +152,12 @@ export MANPATH="$TEXLIVE/texmf-dist/doc/man"
 export TEXLIVE="/usr/local/texlive/2025"
 
 # bindkey '^ ' expand-or-complete-prefix
-# bindkey -s '^v' 'nvim $(fzf)\n'
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
+# bindkey -s '^v' 'nvim $(fzf)\n'
+bindkey -s '^[s' 'rfnv\n'
+bindkey -s '^[f' 'rff\n'
 
 zi snippet "$ZSH_CUSTOM/themes/minimal/minimal.zsh"
 

@@ -25,17 +25,6 @@ desc = "Preview images in sxiv"
 # run = "plugin duckdb -ui"
 # desc = "open with duckdb ui"
 
-# https://github.com/lpnh/fr.yazi
-[[mgr.prepend_keymap]]
-on = ["f", "r"]
-run = "plugin fr rg"
-desc = "Search file by content (rg)"
-
-[[mgr.prepend_keymap]]
-on = ["f", "a"]
-run = "plugin fr rga"
-desc = "Search file by content (rga)"
-
 # https://github.com/Lil-Dank/lazygit.yazi
 [[mgr.prepend_keymap]]
 on = ["g", "i"]
@@ -48,23 +37,111 @@ on = ["'", "\\"]
 run = 'plugin custom-shell -- auto --interactive'
 desc = "custom-shell as default, interactive"
 
-# https://github.com/dedukun/bookmarks.yazi
+# https://github.com/lpnh/fr.yazi
 [[mgr.prepend_keymap]]
-on = ["m"]
-run = "plugin bookmarks save"
-desc = "Save current position as a bookmark"
+on = ["f", "r"]
+run = "plugin fr rg"
+desc = "Search file by content (rg)"
 
 [[mgr.prepend_keymap]]
-on = ["b", "j"]
-run = "plugin bookmarks jump"
-desc = "Jump to a bookmark"
+on = ["f", "a"]
+run = "plugin fr rga"
+desc = "Search file by content (rga)"
+
+# https://github.com/WhoSowSee/whoosh.yazi
+[[mgr.prepend_keymap]]
+on = "["
+run = "plugin whoosh jump_by_key"
+desc = "Jump bookmark by key"
+
+# Direct fuzzy search access
+[[mgr.prepend_keymap]]
+on = "}"
+run = "plugin whoosh fuzzy"
+desc = "Direct fuzzy search for bookmarks"
+
+# Basic bookmark operations
+[[mgr.prepend_keymap]]
+on = ["]", "a"]
+run = "plugin whoosh save"
+desc = "Add bookmark (hovered file/directory)"
 
 [[mgr.prepend_keymap]]
-on = ["b", "d"]
-run = "plugin bookmarks delete"
-desc = "Delete a bookmark"
+on = ["]", "A"]
+run = "plugin whoosh save_cwd"
+desc = "Add bookmark (current directory)"
+
+# Temporary bookmarks
+[[mgr.prepend_keymap]]
+on = ["]", "t"]
+run = "plugin whoosh save_temp"
+desc = "Add temporary bookmark (hovered file/directory)"
 
 [[mgr.prepend_keymap]]
-on = ["b", "D"]
-run = "plugin bookmarks delete_all"
-desc = "Delete all bookmarks"
+on = ["]", "T"]
+run = "plugin whoosh save_cwd_temp"
+desc = "Add temporary bookmark (current directory)"
+
+# Jump to bookmarks
+[[mgr.prepend_keymap]]
+on = ["]", "f"]
+run = "plugin whoosh jump_by_fzf"
+desc = "Jump bookmark by fzf"
+
+# Delete bookmarks
+[[mgr.prepend_keymap]]
+on = ["]", "d"]
+run = "plugin whoosh delete_by_key"
+desc = "Delete bookmark by key"
+
+[[mgr.prepend_keymap]]
+on = ["]", "D"]
+run = "plugin whoosh delete_by_fzf"
+desc = "Delete bookmarks by fzf (use TAB to select multiple)"
+
+[[mgr.prepend_keymap]]
+on = ["]", "C"]
+run = "plugin whoosh delete_all"
+desc = "Delete all user bookmarks"
+
+# Rename bookmarks
+[[mgr.prepend_keymap]]
+on = ["]", "r"]
+run = "plugin whoosh rename_by_key"
+desc = "Rename bookmark by key"
+
+[[mgr.prepend_keymap]]
+on = ["]", "R"]
+run = "plugin whoosh rename_by_fzf"
+desc = "Rename bookmark by fzf"
+
+# https://github.com/uhs-robert/recycle-bin.yazi
+[[mgr.prepend_keymap]]
+on = ["g", "t"]
+run = "plugin recycle-bin open"
+desc = "Go to Trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "o"]
+run = "plugin recycle-bin open"
+desc = "Open Trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "e"]
+run = "plugin recycle-bin empty"
+desc = "Empty Trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "d"]
+run = "plugin recycle-bin delete"
+desc = "Delete from Trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "D"]
+run = "plugin recycle-bin emptyDays"
+desc = "Empty by days deleted"
+
+[[mgr.prepend_keymap]]
+on = ["R", "r"]
+run = "plugin recycle-bin restore"
+desc = "Restore from Trash"

@@ -30,7 +30,7 @@
     "open_files_in_new_window": "never",
     "preview_on_click": false,
     "show_git_status": false,
-    "tab_size": 2,
+    // "tab_size": 2,
     "theme": "Adaptive.sublime-theme",
     "vintage_use_clipboard": true,
     "word_wrap": true,

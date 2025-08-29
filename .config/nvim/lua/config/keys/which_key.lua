@@ -123,6 +123,11 @@ wk.add({
 		mode = { "n", "x" },
 		desc = "MultipleCursorsAddMatches",
 	},
+	-- neovim-tips
+	{ "<leader>nto", "<Cmd>NeovimTips<CR>", desc = "NeovimTips", mode = "n" },
+	{ "<leader>nte", "<Cmd>NeovimTipsEdit<CR>", desc = "NeovimTipsEdit", mode = "n" },
+	{ "<leader>nta", "<Cmd>NeovimTipsAdd<CR>", desc = "NeovimTipsEditAdd", mode = "n" },
+	{ "<leader>ntr", "<Cmd>NeovimTipsRandom<CR>", desc = "NeovimTipsRandom", mode = "n" },
 	--oil.nvim
 	{ "-", "<Cmd>Oil<CR>", desc = "Oil", mode = "n" },
 	--sort.nvim
