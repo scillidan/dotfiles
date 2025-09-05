@@ -21,15 +21,26 @@ vim.o.foldenable = true
 vim.o.guifont = "MonaspaceAr Nerd Font Mono"
 vim.o.list = true
 vim.o.listchars = "tab:··,trail:-,nbsp:+"
+vim.o.modeline = false
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.sessionoptions = "localoptions"
 vim.o.shiftwidth = 2
 vim.o.signcolumn = "yes:1"
+vim.o.softtabstop = 2
 vim.o.tabstop = 2
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.lsp.set_log_level("debug")
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "yaml" },
+	callback = function()
+		-- vim.opt.tabstop = 4
+		-- vim.opt.shiftwidth = 4
+		vim.opt.expandtab = false
+	end,
+})
 
 --time-machine.nvim
 vim.o.undofile = true

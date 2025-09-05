@@ -569,15 +569,15 @@ require("lazy").setup({
 		end,
 	},
 	---Save
-	-- {
-	-- 	"Pocco81/auto-save.nvim",
-	-- 	config = function()
-	-- 		require("config.auto_save")
-	-- 		if require("luasnip").in_snippet() then
-	-- 			return false
-	-- 		end
-	-- 	end,
-	-- },
+	{
+		"Pocco81/auto-save.nvim",
+		config = function()
+			require("config.auto_save")
+			if require("luasnip").in_snippet() then
+				return false
+			end
+		end,
+	},
 	{
 		"vladdoster/remember.nvim",
 		config = function()
@@ -659,7 +659,8 @@ require("lazy").setup({
 		},
 	},
 	---Search history
-	{ "nvim-telescope/telescope-frecency.nvim" },
+	-- { "nvim-telescope/telescope-frecency.nvim" },
+	{ "smartpde/telescope-recent-files" },
 	{
 		"jvgrootveld/telescope-zoxide",
 		dependencies = {

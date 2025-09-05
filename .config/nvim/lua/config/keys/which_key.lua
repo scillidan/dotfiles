@@ -236,8 +236,15 @@ wk.add({
 	{ "<leader>br", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file_browser", mode = "n" },
 	--nvim-telescope/telescope-media-files.nvim
 	{ "<leader>mf", "<Cmd>Telescope media_files<CR>", desc = "Telescope media_files", mode = "n" },
+	--smartpde/telescope-recent-files
+	{
+		"<leader>R",
+		"<Cmd>lua require('telescope').extensions.recent_files.pick()<CR>",
+		desc = "Telescope recent_files",
+		mode = "n",
+	},
 	--nvim-telescope/telescope-frecency.nvim
-	{ "<leader>R", "<Cmd>Telescope frecency<CR>", desc = "Telescope frecency", mode = "n" },
+	-- { "<leader>R", "<Cmd>Telescope frecency<CR>", desc = "Telescope frecency", mode = "n" },
 	--jvgrootveld/telescope-zoxide
 	{ "<leader>zi", "<Cmd>Telescope zoxide list<CR>", desc = "Telescope zoxide list", mode = "n" },
 	--jonarrien/telescope-cmdline.nvim

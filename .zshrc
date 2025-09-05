@@ -1,5 +1,5 @@
 export EDITOR="/usr/bin/nvim"
-# export BROWSER="/usr/bin/brave"
+export BROWSER="/usr/bin/librewolf"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -40,8 +40,8 @@ zi has'zoxide' wait lucid for \
 autoload -Uz compinit
 compinit
 
-zi snippet "$HOME/.config/zsh/function.zsh"
-zi snippet "$HOME/.config/zsh/alias.zsh"
+source "$HOME/.config/zsh/function.zsh"
+source "$HOME/.config/zsh/alias.zsh"
 
 export MANPATH="/usr/share/man:$MANPATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
@@ -71,9 +71,9 @@ function zvm_init() {
 	## grc
 	[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 	## tmux
-	export TMUXIFIER_LAYOUT_PATH="$HOME/Usr/Git/Shell/_arch/tmuxifier"
-	export TMUXIFIER_TMUX_OPTS=""
-	eval "$(tmuxifier init -)"
+	# export TMUXIFIER_LAYOUT_PATH="$HOME/Usr/Git/Shell/_arch/tmuxifier"
+	# export TMUXIFIER_TMUX_OPTS=""
+	# eval "$(tmuxifier init -)"
 	## zsh
 	### zsh-env-secrets
 	ENV_SECRETS=(
@@ -156,10 +156,9 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 # bindkey -s '^v' 'nvim $(fzf)\n'
-bindkey -s '^[s' 'rfnv\n'
+bindkey -s '^[s' 'rfs\n'
 bindkey -s '^[f' 'rff\n'
 
 zi snippet "$ZSH_CUSTOM/themes/minimal/minimal.zsh"
 
 # eval "clear"
-

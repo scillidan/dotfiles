@@ -1,5 +1,6 @@
 require("conform").setup({
 	formatters_by_ft = {
+		-- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
 		lua = { "stylua" },
 		python = { "yapf", "isort", "black" },
 		typst = { "typstyle" },
@@ -7,7 +8,7 @@ require("conform").setup({
 		bib = { "bibtex-tidy" },
 		sh = { "shfmt" },
 		json = { "prettierd" },
-		yaml = { "prettierd" },
+		yaml = { "yamlfmt" },
 		toml = { "taplo" },
 		html = { "prettierd" },
 		css = { "prettierd" },
