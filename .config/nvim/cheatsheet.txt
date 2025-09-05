@@ -286,6 +286,12 @@ _declaration     | gpD
 close_all_win    | gP
 _references      | gpr
 
+## neovim-tips
+NeovimTips {n}        | <leader>nto
+NeovimTipsEdit {n}    | <leader>nte
+NeovimTipsEditAdd {n} | <leader>nta
+NeovimTipsRandom {n}  | <leader>ntr
+
 ## nvim-origami
 h {n} | Left
 l {n} | Right
@@ -308,6 +314,9 @@ show_help {n}       | g?
 change_sort {n}     | gs
 open_external       | gx
 toggle_trash {n}    | g\\
+
+## snipe.nvim
+open_buffer_menu | <leader>gb
 
 ## telescope.nvim @telescope
 Telescope keymaps {n}                                | <leader>kk

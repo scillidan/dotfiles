@@ -467,7 +467,12 @@ require("lazy").setup({
 	--
 	--Edit
 	--
-	--Fold
+	---Buffer
+	{
+		"leath-dub/snipe.nvim",
+		opts = {},
+	},
+	---Fold
 	{
 		"chrisgrieser/nvim-origami",
 		event = "VeryLazy",

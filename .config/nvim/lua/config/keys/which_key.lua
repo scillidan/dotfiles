@@ -130,6 +130,8 @@ wk.add({
 	{ "<leader>ntr", "<Cmd>NeovimTipsRandom<CR>", desc = "NeovimTipsRandom", mode = "n" },
 	--oil.nvim
 	{ "-", "<Cmd>Oil<CR>", desc = "Oil", mode = "n" },
+	--snipe.nvim
+	{ "<leader>gb", '<Cmd>lua require("snipe").open_buffer_menu()<CR>', desc = "Open Snipe buffer menu", mode = "n" },
 	--sort.nvim
 	{ "go", "<Cmd>Sort<CR>", desc = "<Cmd>Sort", mode = "n" },
 	{ "go", "<Esc><Cmd>Sort<CR>", desc = "<Esc><Cmd>Sort", mode = "v" },
