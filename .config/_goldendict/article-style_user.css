@@ -1,20 +1,20 @@
 @font-face {
-  font-family: "MonaspaceAr Nerd Font Mono";
+  font-family: "Sarasa Term SC Nerd";
   src:
-    local('MonaspaceAr Nerd Font Mono') format('truetype');
+    local('Sarasa Term SC Nerd') format('truetype');
   font-weight: normal;
   font-style:  normal;
 }
 
 body
 {
-  font-family: "MonaspaceAr Nerd Font Mono", NotoSans;
+  font-family: "Sarasa Term SC Nerd", NotoSans;
   font-size:   10pt;
 }
 
 .dsl_t
 {
-  font-family: "MonaspaceAr Nerd Font Mono", NotoSerif;
+  font-family: "Sarasa Term SC Nerd", NotoSerif;
 }
 
 .gdarticle
