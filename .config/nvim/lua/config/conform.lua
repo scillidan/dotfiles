@@ -4,7 +4,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		python = { "yapf", "isort", "black" },
 		typst = { "typstyle" },
-		tex = { "tex-fmt" },
+		-- tex = { "tex-fmt" },
 		bib = { "bibtex-tidy" },
 		sh = { "shfmt" },
 		json = { "prettierd" },

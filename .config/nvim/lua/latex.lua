@@ -23,6 +23,19 @@ vim.g.vimtex_fold_enabled = true
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<space>", "<nop>", { noremap = true, silent = true })
 
+-- https://jdhao.github.io/2019/03/26/nvim_latex_write_preview/
+
+vim.g.vimtex_toc_config = {
+	name = "TOC",
+	layers = { "content", "todo", "include" },
+	resize = 1,
+	split_width = 50,
+	todo_sorted = 0,
+	show_help = 1,
+	show_numbers = 1,
+	mode = 2,
+}
+
 local env = require("env")
 if env.is_linux then
 	-- vim.g.vimtex_compiler_progname = "nvr"

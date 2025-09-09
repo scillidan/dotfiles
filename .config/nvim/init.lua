@@ -36,9 +36,7 @@ vim.lsp.set_log_level("debug")
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "yaml" },
 	callback = function()
-		-- vim.opt.tabstop = 4
-		-- vim.opt.shiftwidth = 4
-		vim.opt.expandtab = false
+		vim.opt.expandtab = true
 	end,
 })
 

@@ -12,7 +12,7 @@
     "ignored_packages": [
         "Vintage",
     ],
-    "index_files": true,
+    "index_files": false,
     "install_prereleases": [
         "LaTeXTools"
     ],

@@ -166,8 +166,8 @@ wk.add({
 	{ "<leader>zh", "viw:Translate ZH<CR>", desc = "viw:Translate ZH", mode = { "n", "o" } },
 	{ "<leader>zh", "<Cmd>Translate ZH<CR>", desc = "Translate ZH", mode = "v" },
 	--translate-shell.vim
-	{ "<leader>t", "<Esc>:Trans<CR>", desc = "Trans", mode = "i" },
-	{ "<leader>t", "<Cmd>Trans<CR>", desc = "Trans", mode = { "n", "v" } },
+	-- { "<leader>tr", "<Esc>:Trans<CR>", desc = "Trans", mode = "i" },
+	{ "<leader>tr", "<Cmd>Trans<CR>", desc = "Trans", mode = { "n", "v" } },
 	{ "<leader>td", "<Cmd>TransSelectDirection<CR>", desc = "TransSelectDirection", mode = { "n", "v" } },
 	--trouble.nvim
 	{
