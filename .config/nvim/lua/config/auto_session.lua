@@ -7,4 +7,10 @@ require("auto-session").setup({
 		env.home_dir,
 	},
 	-- log_level = "debug"
+	session_lens = {
+		picker = telescope,
+		picker_opts = {
+			border = false,
+		},
+	},
 })

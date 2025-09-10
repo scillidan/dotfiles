@@ -13,6 +13,16 @@
 -- 		"-synctex=1",
 -- 	},
 -- }
+vim.g.vimtex_compiler_latexmk = {
+	build_dir = ".out",
+	options = {
+		"-shell-escape",
+		"-verbose",
+		"-file-line-error",
+		"-interaction=nonstopmode",
+		"-synctex=1",
+	},
+}
 vim.o.expandtab = true
 vim.o.smartindent = false
 vim.api.nvim_set_keymap("n", "<leader>j", "zc", { noremap = true, silent = true })

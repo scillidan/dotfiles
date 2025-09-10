@@ -27,11 +27,12 @@ prepend_previewers = [
   { name = "*.csv", run = 'piper -- bat -p --color=always "$1"' },
   { name = "*/", run = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
   # { name = "*", run = 'piper -- hexyl --border=none --terminal-width=$w "$1"' },
-  # https://github.com/kirasok/epub-preview.yazi?tab=readme-ov-file
+  # https://github.com/kirasok/epub-preview.yazi
   { mime = "application/epub+zip", run = "epub-preview" },
   # https://github.com/boydaihungst/mediainfo.yazi
   { mime = "{audio,video,image}/*", run = "mediainfo" },
   { mime = "application/subrip", run = "mediainfo" },
+  # https://github.com/lihuax-me/hevi.yazi
   { mime = "application/postscript", run = "mediainfo" },
   { name = "*.{bin,exe}", run = "hevi" },
   # https://github.com/wylie102/duckdb.yazi

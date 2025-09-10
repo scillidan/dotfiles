@@ -7,7 +7,7 @@ require("telescope").setup({
 	defaults = {
 		layout_config = {
 			center = {
-				preview_width = 0.5,
+				preview_width = 0.4,
 				prompt_position = "bottom",
 			},
 			-- preview_cutoff = 120,
@@ -24,21 +24,21 @@ require("telescope").setup({
 	},
 	pickers = {
 		find_files = {
-			theme = "ivy",
-			layout_config = {
-				prompt_position = "bottom",
-				height = 0.5,
-				preview_width = 0.5,
-			},
+			-- theme = "ivy",
+			-- layout_config = {
+			-- 	prompt_position = "bottom",
+			-- 	height = 0.5,
+			-- 	preview_width = 0.5,
+			-- },
 			border = false,
 			previewer = true,
 		},
 		live_grep = {
-			theme = "dropdown",
-			layout_config = {
-				width = 0.8,
-				height = 0.2,
-			},
+			-- theme = "dropdown",
+			-- layout_config = {
+			-- 	width = 0.8,
+			-- 	height = 0.2,
+			-- },
 			border = false,
 		},
 	},
@@ -112,7 +112,7 @@ require("telescope").setup({
 			max_results = 100,
 		},
 		file_browser = {
-			theme = "ivy",
+			-- theme = "ivy",
 			border = false,
 		},
 		gitmoji = {},

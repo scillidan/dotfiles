@@ -23,6 +23,19 @@ LaTeX: <Esc> {i}                      | jk
 LaTeX: Fold: "zc" {n}                 | <leader>j
 LaTeX: Fold: "zo" {n}                 | <leader>k
 
+## arrow.nvim
+arrow.nvim      | ;
+edit            | e
+delete_mode     | d
+clear_all_items | C
+toggle          | s
+open_vertical   | v
+open_horizontal | -
+quit            | q
+remove          | x
+next_item       | ]
+prev_item       | ["
+
 ## auto-session
 SessionSearch         | <leader>wr
 SessionSave           | <leader>ws
@@ -46,6 +59,20 @@ select_next, fallback_to_mappings        | C-n
 scroll_documentation_up, fallback        | C-b
 scroll_documentation_down, fallback      | C-f
 show_signature, hide_signature, fallback | C-k
+
+## bookmarks.nvim
+toggle          | TabTab
+close           | q
+add             | \\z
+add_global      | \\g
+jump            | CR
+delete          | dd
+order           | SpcSpc
+delete_on_virt  | \\dd
+show_desc       | \\sd
+focus_tags      | C-j
+focus_bookmarks | C-k
+toogle_focus    | S-Tab
 
 ## cheatsheet.nvim
 select_or_fill_commandline | CR

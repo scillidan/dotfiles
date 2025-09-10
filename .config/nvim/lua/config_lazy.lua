@@ -467,6 +467,25 @@ require("lazy").setup({
 	--
 	--Edit
 	--
+	---Bookmark
+	{
+		"otavioschwanck/arrow.nvim",
+		dependencies = {
+			-- { "nvim-tree/nvim-web-devicons" },
+			{ "echasnovski/mini.icons" },
+		},
+		opts = require("config.arrow"),
+	},
+	{
+		"crusj/bookmarks.nvim",
+		branch = "main",
+		dependencies = { "nvim-web-devicons" },
+		config = function()
+			require("config.bookmarks").setup()
+			require("telescope").load_extension("bookmarks")
+		end,
+		keys = require("config.keys.bookmarks"),
+	},
 	---Buffer
 	{
 		"leath-dub/snipe.nvim",
