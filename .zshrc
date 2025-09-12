@@ -43,7 +43,7 @@ compinit
 source "$HOME/.config/zsh/function.zsh"
 source "$HOME/.config/zsh/alias.zsh"
 
-export MANPATH="/usr/share/man:$MANPATH"
+export MANPATH="/usr/share/man:$$TEXLIVE/texmf-dist/doc/man:MANPATH"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 
 ## zsh-vi-mode
@@ -86,7 +86,7 @@ function zvm_init() {
 	ENV_SECRETS_BACKEND="pass"
 	ENV_SECRETS_QUIET=1
 	### rose-pine-man
-	zi snippet "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
+	source "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
 	### zsh-help
 	help_function() {
   	bat -plhelp --paging=always --color=always
@@ -148,7 +148,6 @@ export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
 
 ## texlive
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
-export MANPATH="$TEXLIVE/texmf-dist/doc/man"
 export TEXLIVE="/usr/local/texlive/2025"
 
 # bindkey '^ ' expand-or-complete-prefix

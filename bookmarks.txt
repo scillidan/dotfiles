@@ -1,0 +1,3 @@
+https://github.com/scillidan/github-search-rss/edit/main/src/RSS.ts
+https://github.com/scillidan/rssTea/edit/main/feeds.txt
+https://github.com/scillidan/excalith-start-page/edit/main/data/settings.json
