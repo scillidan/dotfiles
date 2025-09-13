@@ -8,9 +8,6 @@ alias abbr='abbreviate original'
 alias play='asciinema play'
 alias rec='asciinema rec'
 
-## bookmarks.txt
-alias bkm='bookmarks | fzf | cut -d ' ' -f 1 | xargs librewolf'
-
 ## clamav
 alias scan='clamscan -v -a --max-filesize=1000M --max-scansize=1000M --alert-exceeds-max=yes'
 

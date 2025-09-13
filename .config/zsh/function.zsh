@@ -1,3 +1,8 @@
+## bookmarks.txt
+bkm() {
+  bookmarks | fzf | cut -d' ' -f1 | xargs librewolf
+}
+
 ## fzf
 # https://github.com/argosatcore/Deb_Dots/blob/main/.bash_functions.sh
 fkill() {

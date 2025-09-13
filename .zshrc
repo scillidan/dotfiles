@@ -31,6 +31,7 @@ zinit lucid wait for \
   soimort/translate-shell \
   wfxr/forgit \
   Bhupesh-V/ugit \
+	matthiasha/zsh-uv-env \
 	andydecleyre/zpy
 # pressdarling/codex-zsh-plugin \
 
@@ -44,7 +45,7 @@ source "$HOME/.config/zsh/function.zsh"
 source "$HOME/.config/zsh/alias.zsh"
 
 export MANPATH="/usr/share/man:$$TEXLIVE/texmf-dist/doc/man:MANPATH"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 
 ## zsh-vi-mode
 # ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
