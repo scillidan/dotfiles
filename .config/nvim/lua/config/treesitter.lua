@@ -13,6 +13,7 @@ require("nvim-treesitter.configs").setup({
 		"csv",
 		"desktop",
 		"editorconfig",
+		"gdscript",
 		"gitattributes",
 		"gitignore",
 		"html",

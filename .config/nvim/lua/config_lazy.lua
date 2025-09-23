@@ -271,6 +271,9 @@ require("lazy").setup({
 	{
 		"folke/lazydev.nvim",
 		ft = "lua",
+		dependencies = {
+			{ "DrKJeff16/wezterm-types", lazy = true },
+		},
 		config = function()
 			require("config.lazydev")
 		end,
@@ -321,7 +324,6 @@ require("lazy").setup({
 			require("mason-conform").setup()
 		end,
 	},
-	{ "justinsgithub/wezterm-types" },
 	--Markdown
 	{
 		"Nedra1998/nvim-mdlink",
@@ -835,6 +837,15 @@ require("lazy").setup({
 		"S1M0N38/love2d.nvim",
 		event = "VeryLazy",
 		opts = {},
+	},
+	{
+		"Mathijs-Bakker/godotdev.nvim",
+		dependencies = {
+			"nvim-lspconfig",
+			"nvim-dap",
+			"nvim-dap-ui",
+			"nvim-treesitter",
+		},
 	},
 	--
 	--Other
