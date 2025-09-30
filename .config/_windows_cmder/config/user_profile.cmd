@@ -71,7 +71,7 @@ set FZF_CTRL_T_COMMAND=fzf --preview "bat --style=numbers --theme=base16-256 --c
 
 :: lunarvim
 :: set "XDG_DATA_HOME=%APPDATA%"
-:: set "XDG_CONFIG_HOME=%HOME%\AppData\Local"
+:: set "XDG_CONFIG_HOME=%USERPROFILE%\AppData\Local"
 :: set "XDG_CACHE_HOME=%LocalAppData%\Temp"
 :: set "XDG_RUNTIME_DIR=%LocalAppData%\Temp"
 :: set "LUNARVIM_BASE_DIR=%APPDATA%\lunarvim\lvim"
