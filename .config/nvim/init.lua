@@ -18,7 +18,6 @@ vim.o.clipboard = "unnamedplus"
 vim.o.cmdheight = 1
 vim.o.cursorline = false
 vim.o.foldenable = true
-vim.o.guifont = "MonaspaceAr Nerd Font Mono"
 vim.o.list = true
 vim.o.listchars = "tab:··,trail:-,nbsp:+"
 vim.o.modeline = false
@@ -54,6 +53,18 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.wo.list = true
 		vim.wo.listchars = "tab:··,trail:-,nbsp:+,eol:¬"
+	end,
+})
+
+--godotdev.nvim
+vim.api.nvim_create_augroup("GodotIndent", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = "GodotIndent",
+	pattern = { "gdscript", "cs" },
+	callback = function()
+		vim.bo.tabstop = 4
+		vim.bo.shiftwidth = 4
+		vim.bo.expandtab = true
 	end,
 })
 
