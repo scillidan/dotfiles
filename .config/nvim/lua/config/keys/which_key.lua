@@ -220,6 +220,10 @@ wk.add({
 		{ "<C-M-K>", "<Cmd>WinShift up<CR>", desc = "WinShift up" },
 		{ "<C-M-L>", "<Cmd>WinShift right<CR>", desc = "WinShift right" },
 	},
+	--yazi.nvim
+	{ "<leader>-", "<cmd>Yazi<cr>", desc = "Open yazi at the current file", mode = { "n", "v" } },
+	{ "<leader>cw", "<cmd>Yazi cwd<cr>", desc = "Open the file manager in nvim's working directory" },
+	{ "<C-up>", "<cmd>Yazi toggle<cr>", desc = "Resume the last yazi session" },
 	----telescope.nvim
 	--nvim-telescope/telescope.nvim
 	{ "<leader>kk", "<Cmd>Telescope keymaps<CR>", desc = "Telescope keymaps", mode = "n" },

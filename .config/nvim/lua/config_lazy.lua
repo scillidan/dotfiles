@@ -177,6 +177,19 @@ require("lazy").setup({
 			require("config.oil_git_status")
 		end,
 	},
+	{
+		"mikavilpas/yazi.nvim",
+		version = "*", -- use the latest stable version
+		event = "VeryLazy",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim", lazy = true },
+		},
+		---@type YaziConfig | {}
+		opts = require("config.yazi"),
+		init = function()
+			vim.g.loaded_netrwPlugin = 1
+		end,
+	},
 	---Repo
 	{
 		"moyiz/git-dev.nvim",
@@ -431,7 +444,6 @@ require("lazy").setup({
 		},
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
-		-- opts = require("config.blink"),
 		opts = require("config.blink"),
 	},
 	--Snips

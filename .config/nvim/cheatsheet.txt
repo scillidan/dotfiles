@@ -597,3 +597,15 @@ WinShift down  | C-M-J
 WinShift up    | C-M-K
 WinShift right | C-M-L
 
+## yazi.nvim
+Show the help menu                     | F1
+Open file in tab                       | C-t
+Open file and pick window              | C-o
+Open file in horizontal split          | C-x
+Open file in vertical split            | C-v
+Send to the quickfix list              | C-q
+Search in directory / selected files   | C-s
+Replace in directory / selected files  | C-g
+Cycle open buffers                     | Tab
+Copy relative path to selected file(s) | C-y
+Change cwd to current directory        | C-\\
