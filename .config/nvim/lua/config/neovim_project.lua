@@ -1,10 +1,11 @@
-local env = require("env")
-
 require("neovim-project").setup({
 	projects = {
-		env.home_dir .. "/Git",
-		env.home_dir .. "/Proj",
-		env.home_dir .. "/Fork",
+		(vim.fn.has("unix") == 1 and os.getenv("HOME"))
+			or (vim.fn.has("win32") == 1 and os.getenv("USERPROFILE")) .. "/Git",
+		(vim.fn.has("unix") == 1 and os.getenv("HOME"))
+			or (vim.fn.has("win32") == 1 and os.getenv("USERPROFILE")) .. "/Proj",
+		(vim.fn.has("unix") == 1 and os.getenv("HOME"))
+			or (vim.fn.has("win32") == 1 and os.getenv("USERPROFILE")) .. "/Fork",
 	},
 	datapath = vim.fn.stdpath("data"),
 	last_session_on_startup = true,

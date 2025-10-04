@@ -1,5 +1,3 @@
-local env = require("env")
-
 require("toggleterm").setup({
 	-- insert_mappings = false, -- Relevant
 	-- terminal_mappings = false, --  Relevant
@@ -8,11 +6,10 @@ require("toggleterm").setup({
 	size = vim.o.columns * 0.1,
 	open_mapping = [[<c-\>]],
 	shell = function()
-		if env.is_windows then
-			-- return vim.o.shell .. vim.o.shellcmdflag
-			return "cmd.exe /k C:/Users/User/Usr/Opt/cmder_mini/vendor/init.bat"
-		else
+		if vim.fn.has("unix") == 1 then
 			return vim.o.shell
+		elseif vim.fn.has("win32") == 1 then
+			return "cmd.exe /k %USERPROFILE%/Usr/Opt/cmder_mini/vendor/init.bat"
 		end
 	end,
 })

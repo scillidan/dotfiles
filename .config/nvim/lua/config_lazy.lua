@@ -1,5 +1,3 @@
-local env = require("env")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -585,20 +583,6 @@ require("lazy").setup({
 			require("config.keys.hodur")
 		end,
 	},
-	---Other
-	-- {
-	-- 	"whleucka/reverb.nvim",
-	-- 	event = "BufReadPre",
-	-- 	config = function()
-	-- 		require("config.reverb")
-	-- 	end,
-	-- },
-	{
-		"sQVe/sort.nvim",
-		config = function()
-			require("config.sort")
-		end,
-	},
 	---Replace
 	{
 		"MagicDuck/grug-far.nvim",
@@ -625,6 +609,12 @@ require("lazy").setup({
 		end,
 	},
 	--Sort
+	{
+		"sQVe/sort.nvim",
+		config = function()
+			require("config.sort")
+		end,
+	},
 	{
 		"mtrajano/tssorter.nvim",
 		version = "*",
@@ -667,6 +657,20 @@ require("lazy").setup({
 		"rewhile/fsread.nvim",
 		config = function()
 			require("config.fsread")
+		end,
+	},
+	---Other
+	-- {
+	-- 	"whleucka/reverb.nvim",
+	-- 	event = "BufReadPre",
+	-- 	config = function()
+	-- 		require("config.reverb")
+	-- 	end,
+	-- },
+	{
+		"lewis6991/satellite.nvim",
+		config = function()
+			require("config.satellite")
 		end,
 	},
 	--
@@ -864,6 +868,7 @@ require("lazy").setup({
 	--
 	{
 		"christoomey/vim-tmux-navigator",
+		cond = vim.fn.has("unix") == 1,
 		cmd = {
 			"TmuxNavigateLeft",
 			"TmuxNavigateDown",
@@ -882,15 +887,20 @@ require("lazy").setup({
 	},
 	{
 		"Nealium/dict-popup.nvim",
+		cond = vim.fn.has("unix") == 1,
 		opts = require("config.dict_popup"),
 	},
 	{
 		"uga-rosa/translate.nvim",
+		cond = vim.fn.has("unix") == 1,
 		config = function()
 			require("config.translate")
 		end,
 	},
-	{ "echuraev/translate-shell.vim" },
+	{
+		"echuraev/translate-shell.vim",
+		cond = vim.fn.has("unix") == 1,
+	},
 	{
 		"neo451/feed.nvim",
 		dependencies = { "folke/snacks.nvim", priority = 1000, lazy = false },

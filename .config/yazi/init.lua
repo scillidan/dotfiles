@@ -1,4 +1,4 @@
-require("recycle-bin"):setup()
+local is_unix = (package.config:sub(1, 1) == "/")
 
 -- require("duckdb"):setup()
 
@@ -7,42 +7,12 @@ require("custom-shell"):setup({
 	save_history = true,
 })
 
-require("fr"):setup({
-	fzf = [[--info-command='echo -e "$FZF_INFO 💛"' --no-scrollbar]],
-	rg = "--colors 'line:fg:red' --colors 'match:style:nobold'",
-	bat = "--style 'header,grid'",
-	rga = {
-		"--follow",
-		"--hidden",
-		"--no-ignore",
-		"--glob",
-		"'!.git'",
-		"--glob",
-		"!'.venv'",
-		"--glob",
-		"'!node_modules'",
-		"--glob",
-		"'!.history'",
-		"--glob",
-		"'!.Rproj.user'",
-		"--glob",
-		"'!.ipynb_checkpoints'",
-	},
-	rga_preview = {
-		"--colors 'line:fg:red'"
-			.. " --colors 'match:fg:blue'"
-			.. " --colors 'match:bg:black'"
-			.. " --colors 'match:style:nobold'",
-	},
-})
-
 local bookmarks = {
 	{ tag = "Downloads", path = "~/Downloads", key = { "d", "d" } },
 	{ tag = "Usr", path = "~/Usr", key = { "d", "u" } },
 	{ tag = "nvme1n1p1", path = "/mnt/nvme1n1p1", key = { "d", "n" } },
 	{ tag = "sda2", path = "/mnt/sda2", key = { "d", "s" } },
 }
-
 -- Windows
 if ya.target_family() == "windows" then
 	local home_path = os.getenv("USERPROFILE")
@@ -52,7 +22,6 @@ if ya.target_family() == "windows" then
 		key = "p",
 	})
 end
-
 require("whoosh"):setup({
 	bookmarks = bookmarks,
 	jump_notify = false,
@@ -73,3 +42,35 @@ require("whoosh"):setup({
 	history_fzf_path_truncate_long_names_enabled = false,
 	history_fzf_path_max_folder_name_length = 30,
 })
+
+if is_unix then
+	require("recycle-bin"):setup()
+	require("fr"):setup({
+		fzf = [[--info-command='echo -e "$FZF_INFO 💛"' --no-scrollbar]],
+		rg = "--colors 'line:fg:red' --colors 'match:style:nobold'",
+		bat = "--style 'header,grid'",
+		rga = {
+			"--follow",
+			"--hidden",
+			"--no-ignore",
+			"--glob",
+			"'!.git'",
+			"--glob",
+			"!'.venv'",
+			"--glob",
+			"'!node_modules'",
+			"--glob",
+			"'!.history'",
+			"--glob",
+			"'!.Rproj.user'",
+			"--glob",
+			"'!.ipynb_checkpoints'",
+		},
+		rga_preview = {
+			"--colors 'line:fg:red'"
+				.. " --colors 'match:fg:blue'"
+				.. " --colors 'match:bg:black'"
+				.. " --colors 'match:style:nobold'",
+		},
+	})
+end

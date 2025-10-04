@@ -1,10 +1,10 @@
-# https://github.com/NoponyAsked/sxiv.yazi
+## https://github.com/NoponyAsked/sxiv.yazi
 [[mgr.prepend_keymap]]
 on = ["c", "i"]
 run = "plugin sxiv"
 desc = "Preview images in sxiv"
 
-# https://github.com/wylie102/duckdb.yazi
+## https://github.com/wylie102/duckdb.yazi
 # [[mgr.prepend_keymap]]
 # on = "H"
 # run = "plugin duckdb -1"
@@ -25,13 +25,13 @@ desc = "Preview images in sxiv"
 # run = "plugin duckdb -ui"
 # desc = "open with duckdb ui"
 
-# https://github.com/Lil-Dank/lazygit.yazi
+## https://github.com/Lil-Dank/lazygit.yazi
 [[mgr.prepend_keymap]]
 on = ["g", "i"]
 run = "plugin lazygit"
 desc = "run lazygit"
 
-# https://github.com/AnirudhG07/custom-shell.yazi
+## https://github.com/AnirudhG07/custom-shell.yazi
 [[mgr.prepend_keymap]]
 on = ["'", "\\"]
 run = 'plugin custom-shell -- auto --interactive'
@@ -48,7 +48,7 @@ on = ["f", "a"]
 run = "plugin fr rga"
 desc = "Search file by content (rga)"
 
-# https://github.com/WhoSowSee/whoosh.yazi
+## https://github.com/WhoSowSee/whoosh.yazi
 [[mgr.prepend_keymap]]
 on = "["
 run = "plugin whoosh jump_by_key"
@@ -115,7 +115,7 @@ on = ["]", "R"]
 run = "plugin whoosh rename_by_fzf"
 desc = "Rename bookmark by fzf"
 
-# https://github.com/uhs-robert/recycle-bin.yazi
+## https://github.com/uhs-robert/recycle-bin.yazi
 [[mgr.prepend_keymap]]
 on = ["g", "t"]
 run = "plugin recycle-bin open"

@@ -15,10 +15,10 @@ padding.y = 5
 startup_mode = "Windowed"
 
 [font]
-normal = { family = "IosevkaTerm Nerd Font Mono", style="Regular" }
-bold = { family = "IosevkaTerm Nerd Font Mono", style="Bold" }
-italic = { family = "IosevkaTerm Nerd Font Mono", style="Italic" }
-bold_italic = { family = "IosevkaTerm Nerd Font Mono", style="Bold Italic" }
+normal.family = "Sarasa Term SC Nerd"
+bold.family = "Sarasa Term SC Nerd"
+italic.family = "Sarasa Term SC Nerd"
+bold_italic.family = "Sarasa Term SC Nerd"
 size = 10
 
 [selection]

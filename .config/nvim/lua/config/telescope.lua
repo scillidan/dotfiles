@@ -1,4 +1,3 @@
-local env = require("env")
 local actions = require("telescope.actions")
 local bibtex_actions = require("telescope-bibtex.actions")
 local z_utils = require("telescope._extensions.zoxide.utils")
@@ -217,6 +216,6 @@ for _, extensions in ipairs({
 	require("telescope").load_extension(extensions)
 end
 
-if env.is_windows then
+if vim.fn.has("win32") == 1 then
 	require("telescope").load_extension("everything")
 end

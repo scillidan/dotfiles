@@ -11,6 +11,11 @@ if vim.g.neovide then
 	vim.g.neovide_remember_window_size = true
 	vim.g.neovide_opacity = 1
 	vim.g.transparency = 1
+	--https://github.com/neovide/neovide/issues/1282
+	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
+	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
+	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+	vim.keymap.set("i", "<D-v>", "<C-R>+") -- Paste insert mode
 end
 
 vim.api.nvim_command("language en_US.UTF-8")
@@ -68,21 +73,19 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-local env = require("env")
-
-if env.is_windows then
+if vim.fn.has("win32") == 1 then
 	--https://github.com/nvim-lualine/lualine.nvim/issues/1253
 	-- vim.o.shell = fn.executable("pwsh") and "pwsh" or "powershell"
 	-- vim.opt.shellcmdflag = "-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;"
 	-- vim.o.shell = "cmd.exe"
-	-- vim.o.shellcmdflag = "/k" .. env.home_dir .. "/Usr/Opt/cmder_mini/vendor/init.bat"
+	-- vim.o.shellcmdflag = "/k" .. os.getenv("USERPROFILE") .. "/Usr/Opt/cmder_mini/vendor/init.bat"
 	vim.opt.shellpipe = '2>&1 | %{ "$_" } | Tee-Object %s; exit $LastExitCode'
 	vim.opt.shellquote = ""
 	vim.opt.shellredir = '2>&1 | %{ "$_" } | Out-File %s; exit $LastExitCode'
 	vim.opt.shellxquote = ""
-	vim.g.plenary_curl_bin_path = env.home_dir .. "/Scoop/shims/curl.exe"
-	vim.g.python3_host_prog = env.home_dir .. "/Scoop/apps/python310/current/python.exe"
-	vim.g.sqlite_clib_path = env.home_dir .. "/Usr/Lib/sqlite-dll/sqlite3.dll"
+	vim.g.plenary_curl_bin_path = os.getenv("USERPROFILE") .. "/Scoop/shims/curl.exe"
+	vim.g.python3_host_prog = os.getenv("USERPROFILE") .. "/Scoop/apps/python310/current/python.exe"
+	vim.g.sqlite_clib_path = os.getenv("USERPROFILE") .. "/Usr/Lib/sqlite-dll/sqlite3.dll"
 end
 
 require("config_lazy")

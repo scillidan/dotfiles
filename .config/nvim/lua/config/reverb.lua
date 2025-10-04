@@ -1,5 +1,6 @@
-local env = require("env")
-local sound_dir = env.home_dir .. "/Usr/Asset/sound/kenney_interface-sounds/Audio"
+local sound_dir = (
+	(vim.fn.has("unix") == 1 and os.getenv("HOME")) or (vim.fn.has("win32") == 1 and os.getenv("USERPROFILE"))
+) .. "/Usr/Asset/sound/kenney_interface-sounds/Audio"
 
 require("reverb").setup({
 	player = "paplay",
