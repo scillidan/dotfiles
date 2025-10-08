@@ -682,6 +682,8 @@ local function apply_default_bindings()
 		-- C-Spc
 		rl.setbinding([["\e[27;5;32~"]], [["luafunc:fzf_complete"]])
 		rl.setbinding([["\C-@"]], [["luafunc:fzf_complete"]])
+		-- A-s
+		rl.setbinding([["\M-s"]], [["luafunc:fzf_live_grep"]])
 	end
 end
 
@@ -888,6 +890,100 @@ function fzf_bindings(rl_buffer)
 	end
 end
 
+-- luacheck: globals fzf_live_grep
+function fzf_live_grep(rl_buffer, line_state)
+	local function get_cwd()
+		local p = io.popen("cd")
+		if not p then
+			return "."
+		end
+		local cwd = p:read("*l")
+		p:close()
+		return cwd or "."
+	end
+
+	local cwd = get_cwd()
+	print("Current working directory: " .. cwd)
+
+	local rg = "rg.exe --column --line-number --no-heading --color=always --smart-case {q} || :"
+	local preview = "bat.exe --style=numbers --color=always --highlight-line {2} {1}"
+
+	local cmd = string.format(
+		"fzf.exe --ansi --disabled --multi "
+			.. '--bind "start:reload:%s" '
+			.. '--bind "change:reload:%s" '
+			.. '--bind "enter:accept" '
+			.. "--delimiter : "
+			.. '--preview "%s" '
+			.. "--preview-window=up:60%%:wrap",
+		rg,
+		rg,
+		preview
+	)
+
+	local input_query = rl_buffer:getbuffer()
+	if input_query and #input_query > 0 then
+		cmd = cmd .. ' --query "' .. input_query:gsub('"', '\\"') .. '"'
+	end
+
+	print("Running command: 2>nul " .. cmd)
+
+	local r = io.popen("2>nul " .. cmd)
+	if not r then
+		rl_buffer:ding()
+		return
+	end
+
+	-- Read all selected lines (multi-select supported).
+	local selected = {}
+	for line in r:lines() do
+		-- Remove trailing newline characters and whitespace
+		line = line:gsub("[\r\n]+", "")
+		if #line > 0 then
+			table.insert(selected, line)
+		end
+	end
+	r:close()
+
+	if #selected == 0 then
+		-- No selection made; just refresh prompt line.
+		rl_buffer:refreshline()
+		return
+	end
+
+	rl_buffer:beginundogroup()
+	rl_buffer:remove(0, -1)
+	rl_buffer:endundogroup()
+	rl_buffer:refreshline()
+
+	-- Now open nvim for each selected file.
+	-- Extract filename from the selected lines, since each line includes `file:line:col:...`
+	-- We want just the file path before first colon (usually)
+	local files = {}
+	for _, line in ipairs(selected) do
+		local file = line:match("^(.-):%d+:")
+		if file and #file > 0 then
+			table.insert(files, file)
+		else
+			-- Fallback: use entire line, or ignore invalid lines
+			table.insert(files, line)
+		end
+	end
+
+	if #files > 0 then
+		-- Build the command to launch nvim with all selected files.
+		local nvim_cmd = "nvim"
+		for _, file in ipairs(files) do
+			nvim_cmd = nvim_cmd .. " " .. string.format('"%s"', file)
+		end
+
+		-- OPTIONAL: if you want to open at a specific line from rg output,
+		-- you could parse the line number from the selected line and append +{line}.
+
+		-- Run the editor **after** fzf finishes.
+		os.execute(nvim_cmd)
+	end
+end
 --------------------------------------------------------------------------------
 -- Match generator.
 

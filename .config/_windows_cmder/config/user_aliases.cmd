@@ -119,3 +119,4 @@ et=erd --color auto --hidden --follow --human --disk-usage line --sort name --di
 jqp=jq ".scripts" package.json
 scan=clamscan -v -a --max-filesize=1000M --max-scansize=1000M --alert-exceeds-max=yes $1
 abbr=abbreviate original $*
+pdf2jpg=_bash C:\Users\User\Usr\Git\Shell\_arch\pdf2jpg.sh $*
