@@ -18,16 +18,29 @@ fkill() {
 # https://junegunn.github.io/fzf/tips/ripgrep-integration
 rfs() {
   local RELOAD='reload:rg --column --color=always --smart-case {q} || :'
-  local OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
-                  nvim {1} +{2}
-               else
-                 nvim +cw -q {+f}
-               fi'
-  local OPENER_SUBL='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
-                      subl {1}:{2}
-                    else
-                      subl {+f}
-                    fi'
+	local OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+                nvim {1} +{2}
+             else
+                local cmds=()
+                while read -r line; do
+                  local file=$(echo "$line" | cut -d: -f1)
+                  local lineno=$(echo "$line" | cut -d: -f2)
+                  cmds+=( "+call cursor($lineno,1)" "$file" )
+                done < <(cat {+f})
+                nvim "${cmds[@]}"
+             fi'
+	local OPENER_SUBL='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+                    subl {1}:{2}
+                  else
+                    params=()
+                    while read -r line; do
+                      file=$(echo "$line" | cut -d: -f1)
+                      line_no=$(echo "$line" | cut -d: -f2)
+                      col_no=$(echo "$line" | cut -d: -f3)
+                      params+=( "${file}:${line_no}:${col_no}" )
+                    done < <(cat {+f})
+                    subl "${params[@]}"
+                  fi'
   fzf --disabled --ansi --multi \
       --bind "start:$RELOAD" --bind "change:$RELOAD" \
       --bind "enter:become:$OPENER" \
