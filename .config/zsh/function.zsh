@@ -18,7 +18,7 @@ fkill() {
 # https://junegunn.github.io/fzf/tips/ripgrep-integration
 rfs() {
   local RELOAD='reload:rg --column --color=always --smart-case {q} || :'
-	local OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+  local OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
                 nvim {1} +{2}
              else
                 local cmds=()
@@ -29,7 +29,7 @@ rfs() {
                 done < <(cat {+f})
                 nvim "${cmds[@]}"
              fi'
-	local OPENER_SUBL='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+  local OPENER_SUBL='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
                     subl {1}:{2}
                   else
                     params=()
