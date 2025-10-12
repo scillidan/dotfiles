@@ -838,6 +838,7 @@ require("lazy").setup({
 	},
 	{
 		"mfussenegger/nvim-dap-python",
+		cond = vim.fn.has("unix") == 1,
 		dependencies = {
 			"mfussenegger/nvim-dap",
 			"rcarriga/nvim-dap-ui",
