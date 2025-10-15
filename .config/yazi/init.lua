@@ -1,4 +1,5 @@
 local is_unix = (package.config:sub(1, 1) == "/")
+local is_windows = (package.config:sub(1, 1) == "\\")
 
 -- require("duckdb"):setup()
 
@@ -73,4 +74,6 @@ if is_unix then
 				.. " --colors 'match:style:nobold'",
 		},
 	})
+elseif is_windows then
+	---
 end

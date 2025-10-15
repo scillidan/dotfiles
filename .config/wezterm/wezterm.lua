@@ -155,6 +155,30 @@ config.mouse_bindings = {
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_cwd = "C:\\Users\\User\\Downloads"
 	config.default_prog = { "cmd.exe", "/k C:\\Users\\User\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" }
+	table.insert(config.keys, {
+		key = "h",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.MoveTabRelative(-1),
+	})
+	table.insert(config.keys, {
+		key = "l",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.MoveTabRelative(1),
+	})
+	table.insert(config.keys, {
+		key = "F",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.SpawnCommandInNewTab({
+			args = { "C:\\Users\\User\\Usr\\Git\\Shell\\_windows\\ff.bat" },
+		}),
+	})
+	table.insert(config.keys, {
+		key = "G",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.SpawnCommandInNewTab({
+			args = { "C:\\Users\\User\\Usr\\Git\\Shell\\_windows\\fg.bat" },
+		}),
+	})
 end
 
 return config
