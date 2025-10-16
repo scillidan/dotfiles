@@ -12,8 +12,6 @@ clr=clear
 ipi=ipconfig | findstr /i "ipv4"
 
 ;= rem OS
-_bash=%SCOOP_HOME%\shims\bash.exe $*
-_ssh=%SCOOP_HOME%\apps\git\current\usr\bin\ssh.exe $*
 gunzip=gzip
 
 ;= Rem Lib
@@ -62,10 +60,10 @@ d=dopus "%CD%\$*"
 
 ;= rem Shell
 rfe=%USERPROFILE%\Usr\Shell\RefrEnv\refrenv.bat
-git-sync=_bash %USERPROFILE%\Usr\Shell\git-sync\git-sync $*
-mgit=_bash %USERPROFILE%\Usr\Shell\multi-git-status\mgitstatus
-ugit=_bash %USERPROFILE%\Usr\Shell\ugit\ugit
-pdf2jpg=_bash C:\Users\User\Usr\Git\Shell\_arch\pdf2jpg.sh $*
+git-sync=%BASH% %USERPROFILE%\Usr\Shell\git-sync\git-sync $*
+mgit=%BASH% %USERPROFILE%\Usr\Shell\multi-git-status\mgitstatus
+ugit=%BASH% %USERPROFILE%\Usr\Shell\ugit\ugit
+pdf2jpg=%BASH% C:\Users\User\Usr\Git\Shell\_arch\pdf2jpg.sh $*
 
 ;= rem Bin
 mlbin=mklink %USERPROFILE%\.local\bin\$1 %CD%\$1
