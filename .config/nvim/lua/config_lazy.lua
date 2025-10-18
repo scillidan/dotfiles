@@ -34,16 +34,6 @@ require("lazy").setup({
 	},
 	--
 	--Theme
-	--
-	{
-		"erl-koenig/theme-hub.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("theme-hub").setup({})
-		end,
-	},
 	{
 		"emanuel2718/vanta.nvim",
 		priority = 1000,
@@ -52,6 +42,18 @@ require("lazy").setup({
 			vim.cmd.colorscheme("vanta")
 		end,
 	},
+	{
+		"nishu-murmu/ThemeSwitch.nvim",
+		config = function()
+			require("ThemeSwitch")
+		end,
+	},
+  {
+    "EdenEast/nightfox.nvim",
+    config = function ()
+      require("config.nightfox")
+    end
+  },
 	--
 	--QoL
 	--
