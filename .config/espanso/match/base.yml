@@ -44,7 +44,7 @@ matches:
   - trigger: ":diff"
     replace: "What is the difference between $|$?"
   - trigger: ":be"
-    replace: "Write by GPT-4o mini🧙‍♂️"
+    replace: "Write by GPT-4o mini🧙"
   - trigger: ":by"
     replace: "Write by GPT-4o mini"
   - trigger: ":ce"
