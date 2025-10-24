@@ -4,21 +4,28 @@ autohotkey:: ShortScript                                        | Win-c
 autohotkey:: toggle-screen-autohotkey                           | Win-F2
 autohotkey:: GoldenDictOCR: ToggleMouseTakeWord (Set by user)   | C-A-g
 autohotkey:: Vis2 (Set by user)                                 | Win-S-c
-cmder:: clink-fzf: Complete                                     | C-Spc
-cmder:: clink-fzf: File                                         | C-t
-cmder:: clink-fzf: fzf_complete_force                           | Tab
-cmder:: clink-fzf: fzf_selectcomplete                           | C-Spc
-cmder:: clink-fzf: History                                      | C-r
-cmder:: clink-fzf: Subdirectory                                 | A-c
-cmder:: clink-gizmos: cwdhistory.lua                            | C-A-PgUp
-cmder:: clink-gizmos: i.lua                                     | i <dir> <cmd>
-cmder:: clink-gizmos: z_dir_popup.lua                           | C-PgUP
-cmder:: clink: Complete                                         | Tab
-cmder:: clink: Help                                             | A-h
-cmder:: owl-cmder-tools: Goto git repositories with fzf         | cdg
-cmder:: owl-cmder-tools: Goto recent git repositories with fzf  | cdz
-cmder:: owl-cmder-tools: Open directory with neovim             | nvd
-cmder:: owl-cmder-tools: Open file with neovim                  | nvf
+clink:: clink-fzf: Complete                                     | C-Spc
+clink:: clink-fzf: File                                         | C-t
+clink:: clink-fzf: fzf_complete_force                           | Tab
+clink:: clink-fzf: fzf_selectcomplete                           | C-Spc
+clink:: clink-fzf: History                                      | C-r
+clink:: clink-fzf: Subdirectory                                 | A-c
+clink:: clink-gizmos: cwdhistory.lua                            | C-A-PgUp
+clink:: clink-gizmos: i.lua                                     | i <dir> <cmd>
+clink:: clink-gizmos: z_dir_popup.lua                           | C-PgUP
+clink:: clink-terminal: (yazi)                                  | y
+clink:: clink-terminal: (yazi) exit with changing directory     | q
+clink:: clink-terminal: (yazi) exit without changing directory  | Q
+clink:: clink-terminal: (fzf) explorer                          | C-e
+clink:: clink-terminal: (fzf) git files                         | C-g C-f
+clink:: clink-terminal: (fzf) git stashes                       | C-g C-s
+clink:: clink-terminal: (fzf) git history                       | C-g C-h
+clink:: clink-terminal: (fzf) git branches                      | C-g C-b
+clink:: clink-zoxide: jump                                      | z
+clink:: clink-zoxide: jump to directory                         | z <string>
+clink:: clink-zoxide: jump to directory with fzf                | zi
+clink:: clink: Complete                                         | Tab
+clink:: clink: Help                                             | A-h
 deskpins: Toggle Pin Window                                     | C-F12
 directory-opus: (filetype group) Documents - event - MBtn_L(x2) | `subl {allfilepath}`
 directory-opus: (filetype group) Images - event - C-MBtn_L(x2)  | `imageglass {allfilepath}`
@@ -68,7 +75,7 @@ everything: (Modifier) Match folders only                       | `folder:`
 everything: (Syntax) AND                                        | Spc
 everything: (Syntax) Grouping                                   | <>
 everything: (Syntax) NOT                                        | !
-everything: (Syntax) OR                                         | \|
+everything: (Syntax) OR                                         | \                                                                            |
 everything: (Syntax) Search for an exact phrase                 | "<str>"
 everything: Copy Full Name to Clipboard                         | C-S-c
 everything: Enable/Disable Regex                                | C-r

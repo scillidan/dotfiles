@@ -40,6 +40,10 @@ set "NVCC_FLAGS=-allow-unsupported-compiler"
 :: set "LD_LIBRARY_PATH=TensorRT\8.5.1.7\lib"
 set "_use_new_zipfile_serialization=False"
 
+rem Bin
+:: clink-terminal
+set "CLINK_FZF_PREVIEW_SIXELS=1"
+
 rem Opt
 set "FAST_REFRESH=true"
 

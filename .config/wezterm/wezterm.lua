@@ -159,7 +159,7 @@ config.mouse_bindings = {
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_cwd = "C:\\Users\\User\\Downloads"
-	config.default_prog = { "cmd.exe", "/k C:\\Users\\User\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" }
+	config.default_prog = { "cmd.exe", "/k C:\\Users\\User\\Usr\\Opt\\cmder_mini\\vendor\\init.bat && clink-terminal" }
 	table.insert(config.keys, {
 		key = "h",
 		mods = "CTRL|SHIFT",
