@@ -1,0 +1,51 @@
+{
+	"name": "user-snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"all"
+				],
+				"path": "./user/all.json"
+			},
+			{
+				"language": [
+					"markdown"
+				],
+				"path": "./user/markdown.json"
+			},
+			{
+				"language": [
+					"latex"
+				],
+				"path": "./latex.json"
+			},
+			{
+				"language": [
+					"html",
+					"markdown"
+				],
+				"path": "./user/html.json"
+			},
+			{
+				"language": [
+					"css"
+				],
+				"path": "./user/css.json"
+			},
+			{
+				"language": [
+					"javascript"
+				],
+				"path": "./user/javascript.json"
+			},
+			{
+				"language": [
+					"yaml",
+					"yml"
+				],
+				"path": "./yaml.json"
+			}
+		]
+	}
+}
