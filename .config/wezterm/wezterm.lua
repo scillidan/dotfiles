@@ -173,16 +173,12 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	table.insert(config.keys, {
 		key = "F",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SpawnCommandInNewTab({
-			args = { "C:\\Users\\User\\Usr\\Git\\Shell\\_windows\\ff.bat" },
-		}),
+		action = wezterm.action.SendString("C:\\Users\\User\\Usr\\Git\\Shell\\_windows\\ff.bat\r"),
 	})
 	table.insert(config.keys, {
 		key = "G",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SpawnCommandInNewTab({
-			args = { "C:\\Users\\User\\Usr\\Git\\Shell\\_windows\\fg.bat" },
-		}),
+		action = wezterm.action.SendString("C:\\Users\\User\\Usr\\Git\\Shell\\_windows\\fg.bat\r"),
 	})
 end
 
