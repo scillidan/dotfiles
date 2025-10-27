@@ -481,21 +481,20 @@ require("lazy").setup({
 		"m4xshen/hardtime.nvim",
 		lazy = false,
 		dependencies = { "MunifTanjim/nui.nvim" },
-		opts = {},
 		config = function()
-			require("hardtime").setup()
+			require("config.hardtime")
 		end,
 	},
-	-- {
-	-- 	"timseriakov/spamguard.nvim",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("config.keys.spamguard")
-	-- 	end,
-	-- 	vim.schedule(function()
-	-- 		require("spamguard").enable()
-	-- 	end),
-	-- },
+	{
+		"timseriakov/spamguard.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("config.keys.spamguard")
+		end,
+		vim.schedule(function()
+			require("spamguard").enable()
+		end),
+	},
 	--
 	--Edit
 	--
@@ -692,6 +691,9 @@ require("lazy").setup({
 		config = function()
 			require("config.satellite")
 		end,
+	},
+	{
+		"saghen/filler-begone.nvim",
 	},
 	--
 	--Search
