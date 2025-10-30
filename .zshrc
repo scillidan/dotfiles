@@ -44,8 +44,22 @@ compinit
 source "$HOME/.config/zsh/function.zsh"
 source "$HOME/.config/zsh/alias.zsh"
 
-export MANPATH="/usr/share/man:$$TEXLIVE/texmf-dist/doc/man:MANPATH"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/go/bin:$HOME/Usr/Lib/lua53/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+export MANPATH="/usr/share/man:$TEXLIVE/texmf-dist/doc/man:MANPATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/go/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+
+if [[ -n "$TERMUX_VERSION" ]]; then
+  is_termux=1
+else
+  is_termux=0
+fi
+
+if (( is_termux == 1 )); then
+  export PATH="$HOME/storage/downloads/Usr/Lib/lua53/bin::$PATH"
+  export STARDICT_DATA_DIR="$HOME/storage/downloads/Usr/Data/sdcv"
+else
+	export PATH="$HOME/Usr/Lib/lua53/bin::$PATH"
+  export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
+fi
 
 ## zsh-vi-mode
 # ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
@@ -118,17 +132,18 @@ function zvm_init() {
 		*":$PNPM_HOME:"*) ;;
 		*) export PATH="$PNPM_HOME:$PATH" ;;
 	esac
-	## pyenv
-	export PYENV_ROOT="$HOME/.pyenv"
-	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init - zsh)"
-	# eval "$(pyenv virtualenv-init -)"
 	## python
 	export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
-	## rbenv
-	export FPATH=$HOME/.rbenv/completions:"$FPATH"
-	eval "$(rbenv init -)"
-
+	if (( is_termux == 0 )); then
+		## pyenv
+		export PYENV_ROOT="$HOME/.pyenv"
+		[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+		eval "$(pyenv init - zsh)"
+		# eval "$(pyenv virtualenv-init -)"
+		## rbenv
+		export FPATH=$HOME/.rbenv/completions:"$FPATH"
+		eval "$(rbenv init -)"
+	fi
 	zvm_bindkey viins '^R' atuin-search
 	zvm_bindkey vicmd '^R' atuin-search
 }
@@ -143,9 +158,6 @@ export LIB="$HOME/.local/lib/rime/dist/lib"
 ## ollama
 export OLLAMA_HOST="revios"
 export OLLAMA_ORIGINES="*"
-
-## sdcv
-export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
 
 ## texlive
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
