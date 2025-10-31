@@ -135,12 +135,14 @@ keypirinha:: keypirinha-cvt                                     | `Cvt: <item>`<
 keypirinha:: Keypirinha-Plugin-Kill                             | `Kill:`<Tab>
 keypirinha:: Keypirinha-PuzzTools                               | `Sort`<Tab>
 keypirinha:: keypirinha-shell                                   | `Shell`<Tab>
-keypirinha:: keypirinha-snippets: (Set by user)                 | `snip`<Tab>
+keypirinha:: keypirinha-snippets (Set by user)                  | `snip`<Tab>
 keypirinha:: keypirinha-tldr                                    | `tldr: Search`<Tab>
 keypirinha:: keypirinha-winsys                                  | `Recycle Bin`
 keypirinha:: Keypirinha-Zealous                                 | `<docset> <type> <str>`
 lintalist: Paste Part 2                                         | S-Etr
 lintalist: Toggle Main Window                                   | Win-A-l
+magpie: Fullscreen scaling shortcut                             | A-S-a
+magpie: Toolbar state toggle shortcut (Set by user)             | A-S-t
 rbtray: Minimized to system tray                                | C-A-Down
 rectanglewin: Snap Window                                       | Win-A-Up/Down/Left/Right
 resizer2: autohotkey:: Move Window                              | Win-MBtn_L(drag)

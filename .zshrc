@@ -56,13 +56,7 @@ fi
 if [ "$is_termux" = "1" ]; then
   export PATH="$HOME/storage/downloads/Usr/Lib/lua53/bin:$PATH"
   export STARDICT_DATA_DIR="$HOME/storage/downloads/Usr/Data/sdcv"
-  if [ ! -d "$HOME/luarocks" ]; then
-    git clone https://github.com/luarocks/luarocks.git "$HOME/luarocks"
-  fi
-  (cd "$HOME/luarocks" && \
-    ./configure --rocks-tree=../../usr --prefix=../../usr && \
-    make && make install && make bootstrap
-  )
+  export PREFIX=
 else
   export PATH="$HOME/Usr/Lib/lua53/bin:$PATH"
   export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
