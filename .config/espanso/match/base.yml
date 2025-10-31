@@ -28,6 +28,8 @@ matches:
     replace: "yay -S --noconfirm"
   - trigger: ":lnbin"
     replace: "ln -sfn $(pwd)/$|$ ~/.local/bin/$|$"
+  - trigger: ":mlbin"
+    replace: "mklink %USERPROFILE%\\.local\\bin\\$|$ %CD%\\$|$"
   # Regex
   - trigger: ":dup"
     replace: "^(.*)(\\r?\\n\\1)+$"

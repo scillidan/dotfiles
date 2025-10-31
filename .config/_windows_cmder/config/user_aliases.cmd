@@ -66,7 +66,7 @@ ugit=%BASH% %USERPROFILE%\Usr\Shell\ugit\ugit
 pdf2jpg=%BASH% C:\Users\User\Usr\Git\Shell\_arch\pdf2jpg.sh $*
 
 ;= rem Bin
-mlbin=mklink %USERPROFILE%\.local\bin\$1 %CD%\$2
+mlbin=mklink %USERPROFILE%\.local\bin\$2 %CD%\$1
 
 ;= :: scoop
 ss=scoop search $*
