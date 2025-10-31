@@ -56,6 +56,13 @@ fi
 if (( is_termux == 1 )); then
   export PATH="$HOME/storage/downloads/Usr/Lib/lua53/bin::$PATH"
   export STARDICT_DATA_DIR="$HOME/storage/downloads/Usr/Data/sdcv"
+	if ![ -d ~/luarocks ]; then
+	  git clone https://github.com/luarocks/luarocks.git ~/luarocks
+	fi
+	(cd ~/luarocks && \
+		./configure --rocks-tree=../../usr --prefix=../../usr && \
+		make && make install && make bootstrap
+	)
 else
 	export PATH="$HOME/Usr/Lib/lua53/bin::$PATH"
   export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
@@ -122,19 +129,19 @@ function zvm_init() {
 	# export LUA_PATH="$ROOT/usr/share/lua/5.3/luarocks/?.lua;$ROOT/usr/share/lua/5.3/luarocks/?/init.lua"
 	# export LUA_CPATH="$ROOT/usr/share/lua/5.3/?.so"
 # source "$HOME/Usr/Lib/lua53/bin/activate"  # commented out by conda initialize
-	## miniconda
-	[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-	## nvm
-	source "/usr/share/nvm/init-nvm.sh"
-	## pnpm
-	export PNPM_HOME="$HOME/.local/share/pnpm"
-	case ":$PATH:" in
-		*":$PNPM_HOME:"*) ;;
-		*) export PATH="$PNPM_HOME:$PATH" ;;
-	esac
 	## python
 	export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 	if (( is_termux == 0 )); then
+		## miniconda
+		[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+		## nvm
+		source "/usr/share/nvm/init-nvm.sh"
+		## pnpm
+		export PNPM_HOME="$HOME/.local/share/pnpm"
+		case ":$PATH:" in
+			*":$PNPM_HOME:"*) ;;
+			*) export PATH="$PNPM_HOME:$PATH" ;;
+		esac
 		## pyenv
 		export PYENV_ROOT="$HOME/.pyenv"
 		[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
