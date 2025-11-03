@@ -53,13 +53,16 @@ else
   is_termux=0
 fi
 
-if [ "$is_termux" = "1" ]; then
+if [ "$is_termux" = "0" ]; then
+  export PATH="$HOME/Usr/Lib/lua53/bin:$PATH"
+  export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
+else
   export PATH="$HOME/storage/downloads/Usr/Lib/lua53/bin:$PATH"
   export STARDICT_DATA_DIR="$HOME/storage/downloads/Usr/Data/sdcv"
   export PREFIX=
-else
-  export PATH="$HOME/Usr/Lib/lua53/bin:$PATH"
-  export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
+  export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
 ## zsh-vi-mode
