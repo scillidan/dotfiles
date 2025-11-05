@@ -54,10 +54,9 @@ else
 fi
 
 if [ "$is_termux" = "0" ]; then
-  export PATH="$HOME/Usr/Lib/lua53/bin:$PATH"
   export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
+  export PATH="$HOME/Usr/Lib/lua53/bin:$PATH"
 else
-  export PATH="$HOME/storage/downloads/Usr/Lib/lua53/bin:$PATH"
   export STARDICT_DATA_DIR="$HOME/storage/downloads/Usr/Data/sdcv"
   export PREFIX=
   export NVM_DIR="$HOME/.nvm"
