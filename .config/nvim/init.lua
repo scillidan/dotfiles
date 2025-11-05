@@ -94,13 +94,6 @@ if vim.fn.has("win32") == 1 then
 	vim.g.plenary_curl_bin_path = os.getenv("USERPROFILE") .. "/Scoop/shims/curl.exe"
 	vim.g.python3_host_prog = os.getenv("USERPROFILE") .. "/Scoop/apps/python310/current/python.exe"
 	vim.g.sqlite_clib_path = os.getenv("USERPROFILE") .. "/Usr/Lib/sqlite-dll/sqlite3.dll"
-elseif is_termux then
-	local home = os.getenv("HOME") or ""
-	local nvm_node_bin = home .. "/storage/downloads/Usr/Lib/tex-fmt"
-	local path = vim.env.PATH or ""
-	if not path:match(nvm_node_bin:gsub("%-", "%%-")) then
-		vim.env.PATH = nvm_node_bin .. ":" .. path
-	end
 end
 
 require("config_lazy")
