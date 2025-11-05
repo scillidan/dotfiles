@@ -96,7 +96,7 @@ if vim.fn.has("win32") == 1 then
 	vim.g.sqlite_clib_path = os.getenv("USERPROFILE") .. "/Usr/Lib/sqlite-dll/sqlite3.dll"
 elseif is_termux then
 	local home = os.getenv("HOME") or ""
-	local nvm_node_bin = home .. "/.nvm/versions/node/v25.1.0/bin"
+	local nvm_node_bin = home .. "/storage/downloads/Usr/Lib/tex-fmt"
 	local path = vim.env.PATH or ""
 	if not path:match(nvm_node_bin:gsub("%-", "%%-")) then
 		vim.env.PATH = nvm_node_bin .. ":" .. path
