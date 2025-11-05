@@ -44,8 +44,7 @@ compinit
 source "$HOME/.config/zsh/function.zsh"
 source "$HOME/.config/zsh/alias.zsh"
 
-export MANPATH="/usr/share/man:$TEXLIVE/texmf-dist/doc/man:MANPATH"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/go/bin:$HOME/.tmuxifier/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/go/bin:$PATH"
 
 if [[ -n "$TERMUX_VERSION" ]]; then
   is_termux=1
@@ -55,10 +54,16 @@ fi
 
 if [ "$is_termux" = "0" ]; then
   export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
-  export PATH="$HOME/Usr/Lib/lua53/bin:$PATH"
+  export TEXLIVE="/usr/local/texlive/2025"
+  export MANPATH="/usr/share/man:$TEXLIVE/texmf-dist/doc/man:MANPATH"
+  export PATH="$HOME/Usr/Lib/lua53/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 else
   export STARDICT_DATA_DIR="$HOME/storage/downloads/Usr/Data/sdcv"
+  export TEXLIVE="/data/data/com.termux/files/usr/local/texlive/2025"
+  export MANPATH="/data/data/com.termux/files/usr/share/man:$TEXLIVE/texmf-dist/doc/man:MANPATH"
+  export PATH="$PATH"
   export PREFIX=
+  # nvm
   export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -88,10 +93,6 @@ function zvm_init() {
 	fi
 	## grc
 	[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
-	## tmux
-	# export TMUXIFIER_LAYOUT_PATH="$HOME/Usr/Git/Shell/_arch/tmuxifier"
-	# export TMUXIFIER_TMUX_OPTS=""
-	# eval "$(tmuxifier init -)"
 	## zsh
 	### zsh-env-secrets
 	ENV_SECRETS=(
@@ -124,7 +125,6 @@ function zvm_init() {
 	## lua
 	# export LUA_PATH="$ROOT/usr/share/lua/5.3/luarocks/?.lua;$ROOT/usr/share/lua/5.3/luarocks/?/init.lua"
 	# export LUA_CPATH="$ROOT/usr/share/lua/5.3/?.so"
-# source "$HOME/Usr/Lib/lua53/bin/activate"  # commented out by conda initialize
 	## python
 	export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 	if (( is_termux == 0 )); then
@@ -164,7 +164,6 @@ export OLLAMA_ORIGINES="*"
 
 ## texlive
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
-export TEXLIVE="/usr/local/texlive/2025"
 
 # bindkey '^ ' expand-or-complete-prefix
 bindkey  "^[[H"   beginning-of-line
