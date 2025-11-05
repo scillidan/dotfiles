@@ -52,9 +52,6 @@ alias chk='pylanguagetool --api-url http://ubuntu22:8040/v2/ --input-type html -
 alias de2c='sdcv --color --use-dict=JianMingYingHanZiDian'
 alias dc2e='sdcv --color --use-dict=JianMingYingHanZiDian'
 
-## trashy
-alias rm="trash"
-
 ## yay
 alias yas='yay -S --noconfirm'
 
