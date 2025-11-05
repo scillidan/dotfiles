@@ -1,8 +1,8 @@
 -- For Termux
-local is_termux = false
-local uname = vim.fn.system("uname -a")
-if uname:match("aarch64") or os.getenv("TERMUX_VERSION") then
+if vim.env.TERMUX_VERSION ~= nil then
 	is_termux = true
+else
+	is_termux = false
 end
 
 -- For Neovide

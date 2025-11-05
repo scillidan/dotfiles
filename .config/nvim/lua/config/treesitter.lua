@@ -1,3 +1,66 @@
+local is_termux = vim.env.TERMUX_VERSION ~= nil
+
+local parsers = {
+	"bash",
+	"comment",
+	"css",
+	"csv",
+	"desktop",
+	"editorconfig",
+	"gdscript",
+	"gitattributes",
+	"gitignore",
+	"html",
+	"javascript",
+	"json",
+	"jsonc",
+	"lua",
+	"markdown",
+	"markdown_inline",
+	"muttrc",
+	"python",
+	"query",
+	"rasi",
+	"regex",
+	"rst",
+	"requirements",
+	"tmux",
+	"toml",
+	"tsv",
+	"tsx",
+	"typescript",
+	"typst",
+	"vim",
+	"vimdoc",
+	"xml",
+	"yaml",
+	"zathurarc",
+}
+
+local exclude_parsers = {
+	"json",
+	"jsonc",
+}
+
+local function contains(list, x)
+	for _, v in ipairs(list) do
+		if v == x then
+			return true
+		end
+	end
+	return false
+end
+
+if is_termux then
+	local filtered = {}
+	for _, parser in ipairs(parsers) do
+		if not contains(exclude_parsers, parser) then
+			table.insert(filtered, parser)
+		end
+	end
+	parsers = filtered
+end
+
 require("nvim-treesitter.configs").setup({
 	autotag = {
 		enable = true,
@@ -6,42 +69,7 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		enable_autocmd = false,
 	},
-	ensure_installed = {
-		"bash",
-		"comment",
-		"css",
-		"csv",
-		"desktop",
-		"editorconfig",
-		"gdscript",
-		"gitattributes",
-		"gitignore",
-		"html",
-		"javascript",
-		"json",
-		"jsonc",
-		"lua",
-		"markdown",
-		"markdown_inline",
-		"muttrc",
-		"python",
-		"query",
-		"rasi",
-		"regex",
-		"rst",
-		"requirements",
-		"tmux",
-		"toml",
-		"tsv",
-		"tsx",
-		"typescript",
-		"typst",
-		"vim",
-		"vimdoc",
-		"xml",
-		"yaml",
-		"zathurarc",
-	},
+	ensure_installed = parsers,
 	highlight = {
 		enable = true,
 		disable = { "kdl" },

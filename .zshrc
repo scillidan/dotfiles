@@ -60,7 +60,6 @@ else
   export STARDICT_DATA_DIR="$HOME/storage/downloads/Usr/Data/sdcv"
   export PREFIX=
   export NVM_DIR="$HOME/.nvm"
-  export PATH="$HOME/storage/downloads/Usr/Bin/tex-fmt:$PATH"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
