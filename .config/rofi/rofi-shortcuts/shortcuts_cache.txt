@@ -28,7 +28,7 @@ broot: Terminal                                            | C-t
 broot: toggle_preview                                      | C-p
 fluent reader: Hide this post                              | h
 fluent reader: Open in browser                             | b
-lobe chat: Edit message                                    | A-MBtn(2:)_L
+lobe chat: Edit message                                    | A-MBtn_L(x2)
 lobe chat: Show/Hide assistant panel                       | C-[
 lobe chat: Show/Hide topic panel                           | C-]
 lobe chat: Start a new topic                               | A-n
@@ -47,6 +47,7 @@ renpy: Image load log                                      | F4
 tabby: Close window                                        | C-S-w
 tabby: New window                                          | C-S-Up/Down/Left/Right
 tabby:: quick-restart:                                     | C-S-r
+umi-ocr: Screenshot OCR (Set by user)                      | A-S-u
 vscodium: Add cursors to line ends                         | C-S-l
 vscodium: Close window                                     | C-S-w
 vscodium: explorer                                         | C-S-e
