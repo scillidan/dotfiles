@@ -1,5 +1,6 @@
 local is_unix = (package.config:sub(1, 1) == "/")
 local is_windows = (package.config:sub(1, 1) == "\\")
+local is_termux = os.getenv("TERMUX_VERSION") ~= nil
 
 require("custom-shell"):setup({
 	history_path = "default",
@@ -7,7 +8,10 @@ require("custom-shell"):setup({
 })
 
 if is_unix then
-	require("recycle-bin"):setup()
+	if not is_termux then
+		require("recycle-bin"):setup()
+	end
+
 	require("fr"):setup({
 		fzf = [[--info-command='echo -e "$FZF_INFO 💛"' --no-scrollbar]],
 		rg = "--colors 'line:fg:red' --colors 'match:style:nobold'",
