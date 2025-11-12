@@ -7,13 +7,6 @@ prepend_preloaders = [
   { mime = "{audio,video,image}/*", run = "mediainfo" },
   { mime = "application/subrip", run = "mediainfo" },
   { mime = "application/postscript", run = "mediainfo" },
-  ## https://github.com/wylie102/duckdb.yazi
-  # { name = "*.csv", run = "duckdb", multi = false },
-  # { name = "*.tsv", run = "duckdb", multi = false },
-  # { name = "*.json", run = "duckdb", multi = false },
-  # { name = "*.parquet", run = "duckdb", multi = false },
-  # { name = "*.txt", run = "duckdb", multi = false },
-  # { name = "*.xlsx", run = "duckdb", multi = false },
   ## https://github.com/macydnah/office.yazi
   { mime = "application/openxmlformats-officedocument.*", run = "office" },
   { mime = "application/oasis.opendocument.*", run = "office" },
@@ -35,15 +28,6 @@ prepend_previewers = [
   ## https://github.com/lihuax-me/hevi.yazi
   { mime = "application/postscript", run = "mediainfo" },
   { name = "*.{bin,exe}", run = "hevi" },
-  # https://github.com/wylie102/duckdb.yazi
-  # { name = "*.csv", run = "duckdb" },
-  # { name = "*.tsv", run = "duckdb" },
-  # { name = "*.json", run = "duckdb" },
-  # { name = "*.parquet", run = "duckdb" },
-  # { name = "*.txt", run = "duckdb" },
-  # { name = "*.xlsx", run = "duckdb" },
-  # { name = "*.db", run = "duckdb" },
-  # { name = "*.duckdb", run = "duckdb" },
   ## https://github.com/macydnah/office.yazi
   { mime = "application/openxmlformats-officedocument.*", run = "office" },
   { mime = "application/oasis.opendocument.*", run = "office" },
