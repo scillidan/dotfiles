@@ -39,7 +39,7 @@ matches:
   - trigger: ":dum"
     replace: "https://dummyimage.com/$1x$2/000/fff"
   - trigger: ":cheat"
-    replace: "https://scillidan-cheat.vercel.app/$|$.html"
+    replace: "https://scillidan-cheat.vercel.app/?search="
   # Other
   - trigger: ":what"
     replace: "What is $|$? Using metaphors and rhetoric helps me understand."
