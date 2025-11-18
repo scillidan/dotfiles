@@ -38,13 +38,13 @@ directory-opus: (filetype) bat - event - C-MBtn_L(x2)           | `alacritty --w
 directory-opus: (filetype) cbr - event - C-MBtn_L(x2)           | `mpvc manga {allfilepath}`
 directory-opus: (filetype) cbz - event - C-MBtn_L(x2)           | `mpvc manga {allfilepath}`
 directory-opus: (filetype) epub - event - C-MBtn_L(x2)          | `sigil {allfilepath}`
-directory-opus: (filetype) epub - event - MBtn_L(x2)            | `mupdf {allfilepath}`
+directory-opus: (filetype) epub - event - MBtn_L(x2)            | `sioyek {allfilepath}`
 directory-opus: (filetype) html - event - C-MBtn_L(x2)          | `subl {allfilepath}`
 directory-opus: (filetype) m3u - event - C-MBtn_L(x2)           | `mpvc music {allfilepath}`
 directory-opus: (filetype) m4b - event - C-MBtn_L(x2)           | `mpvc music {allfilepath}`
 directory-opus: (filetype) md - event - MBtn_L(x2)              | `vscodium {allfilepath}`
-directory-opus: (filetype) pdf - event - C-MBtn_L(x2)           | `sioyek {allfilepath}`
-directory-opus: (filetype) pdf - event - MBtn_L(x2)             | `mupdf {allfilepath}`
+directory-opus: (filetype) pdf - event - C-MBtn_L(x2)           | `sumatrapdf {allfilepath}`
+directory-opus: (filetype) pdf - event - MBtn_L(x2)             | `sioyek {allfilepath}`
 directory-opus: (filetype) psd - event - MBtn_L(x2)             | `jpegview {allfilepath}`
 directory-opus: (filetype) srt - event - C-MBtn_L(x2)           | `subtitleedit {allfilepath}`
 directory-opus: (filetype) srt - event - MBtn_L(x2)             | `aegisub {allfilepath}`
