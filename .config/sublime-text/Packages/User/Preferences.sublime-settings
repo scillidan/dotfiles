@@ -35,7 +35,8 @@
     "vintage_use_clipboard": true,
     "word_wrap": true,
     /*"detect_indentation": false*/
-    /*"translate_tabs_to_spaces": true,*/
+    "translate_tabs_to_spaces": true,
+    "expand_tabs_on_save": true,
     "auto_complete_triggers":
     [
 		{
