@@ -74,11 +74,21 @@ focus_tags      | C-j
 focus_bookmarks | C-k
 toogle_focus    | S-Tab
 
+## buffer-sticks.nvim
+Jump to buffer  | <leader>bj
+Close buffer    | <leader>bq
+Buffer picker   | <leader>bp
+
 ## cheatsheet.nvim
 select_or_fill_commandline | CR
 select_or_execute          | A-CR
 copy_cheat_value           | C-y
 edit_user_cheatsheet       | C-e
+
+## convy.nvim
+Convert (interactive selection) {n, v}          | <leader>cc
+Convert to decimal {n, v}                       | <leader>cd
+Set convertion separator (visual selection) {v} | <leader>cs
 
 ## csvview.nvim
 textobject_field_inner {o} {x} | if

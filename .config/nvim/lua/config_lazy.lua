@@ -91,13 +91,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"echasnovski/mini.tabline",
-		version = "*",
-		config = function()
-			require("config.mini_tabline")
-		end,
-	},
-	{
 		"echasnovski/mini.cursorword",
 		version = "*",
 		config = function()
@@ -231,16 +224,16 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- {
-	-- 	"b0o/incline.nvim",
-	-- 	event = "VeryLazy",
-	-- 	dependencies = {
-	-- 		{ "nvim-tree/nvim-web-devicons" },
-	-- 	},
-	-- 	config = function()
-	-- 		require("config.incline")
-	-- 	end,
-	-- },
+	{
+		"b0o/incline.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons" },
+		},
+		config = function()
+			require("config.incline")
+		end,
+	},
 	---Session
 	{
 		"rmagatti/auto-session",
@@ -273,7 +266,9 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		branch = "master",
 		lazy = false,
+		dependencies = { "Hdoc1509/gh-actions.nvim" },
 		config = function()
+			require("gh-actions.tree-sitter").setup()
 			require("config.treesitter")
 		end,
 	},
@@ -286,6 +281,11 @@ require("lazy").setup({
 		config = function()
 			require("config.ibl")
 		end,
+	},
+	{
+		"alexmozaidze/tree-comment.nvim",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		opts = require("config.tree_comment"),
 	},
 	--
 	--LSP
@@ -358,6 +358,14 @@ require("lazy").setup({
 		config = function()
 			require("nvim-toc").setup({
 				toc_header = "Table of Contents",
+			})
+		end,
+	},
+	{
+		"tttol/md-outline.nvim",
+		config = function()
+			require("md-outline").setup({
+				auto_open = false,
 			})
 		end,
 	},
@@ -435,7 +443,7 @@ require("lazy").setup({
 			{ "erooke/blink-cmp-latex" },
 			-- { "jdrupal-dev/css-vars.nvim" },
 			-- { "alexandre-abrioux/blink-cmp-npm.nvim" },
-			{ "disrupted/blink-cmp-conventional-commits" },
+			{ "yus-works/csc.nvim", opts = {} },
 			{
 				"Dynge/gitmoji.nvim",
 				ft = "gitcommit",
@@ -450,6 +458,7 @@ require("lazy").setup({
 			},
 			{ "ribru17/blink-cmp-spell" },
 			{ "mikavilpas/blink-ripgrep.nvim" },
+			{ "mgalliou/blink-cmp-tmux" },
 		},
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
@@ -521,6 +530,20 @@ require("lazy").setup({
 	{
 		"leath-dub/snipe.nvim",
 		opts = {},
+	},
+	{
+		"ahkohd/buffer-sticks.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("config.buffer_sticks")
+		end,
+		keys = require("config.keys.buffer_sticks"),
+	},
+	---Convert
+	{
+		"necrom4/convy.nvim",
+		cmd = { "Convy", "ConvySeparator" },
+		opts = require("config.convy"),
 	},
 	---Fold
 	{
@@ -627,7 +650,7 @@ require("lazy").setup({
 			})
 		end,
 	},
-	--Sort
+	---Sort
 	{
 		"sQVe/sort.nvim",
 		config = function()
@@ -657,7 +680,7 @@ require("lazy").setup({
 			"TimeMachineLogClear",
 		},
 	},
-	--Visual
+	---Visual
 	{
 		"rachartier/tiny-glimmer.nvim",
 		event = "VeryLazy",
@@ -686,6 +709,10 @@ require("lazy").setup({
 	-- 		require("config.reverb")
 	-- 	end,
 	-- },
+	{
+		"qwavies/smart-backspace.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+	},
 	{
 		"lewis6991/satellite.nvim",
 		config = function()
@@ -890,6 +917,38 @@ require("lazy").setup({
 	--Other
 	--
 	{
+		"CrystalDime/epub.nvim",
+		config = function()
+			require("config.epub")
+		end,
+	},
+	{
+		"Nealium/dict-popup.nvim",
+		cond = vim.fn.has("unix") == 1,
+		opts = require("config.dict_popup"),
+	},
+	{
+		"neo451/feed.nvim",
+		dependencies = { "folke/snacks.nvim", priority = 1000, lazy = false },
+		cmd = "Feed",
+		---@module 'feed'
+		---@type feed.config
+		config = function()
+			require("config.feed")
+		end,
+	},
+	{
+		"uga-rosa/translate.nvim",
+		cond = vim.fn.has("unix") == 1,
+		config = function()
+			require("config.translate")
+		end,
+	},
+	{
+		"echuraev/translate-shell.vim",
+		cond = vim.fn.has("unix") == 1,
+	},
+	{
 		"christoomey/vim-tmux-navigator",
 		cond = vim.fn.has("unix") == 1,
 		cmd = {
@@ -907,37 +966,5 @@ require("lazy").setup({
 			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
-	},
-	{
-		"Nealium/dict-popup.nvim",
-		cond = vim.fn.has("unix") == 1,
-		opts = require("config.dict_popup"),
-	},
-	{
-		"uga-rosa/translate.nvim",
-		cond = vim.fn.has("unix") == 1,
-		config = function()
-			require("config.translate")
-		end,
-	},
-	{
-		"echuraev/translate-shell.vim",
-		cond = vim.fn.has("unix") == 1,
-	},
-	{
-		"neo451/feed.nvim",
-		dependencies = { "folke/snacks.nvim", priority = 1000, lazy = false },
-		cmd = "Feed",
-		---@module 'feed'
-		---@type feed.config
-		config = function()
-			require("config.feed")
-		end,
-	},
-	{
-		"CrystalDime/epub.nvim",
-		config = function()
-			require("config.epub")
-		end,
 	},
 })

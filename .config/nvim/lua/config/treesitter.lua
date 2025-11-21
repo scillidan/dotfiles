@@ -9,10 +9,8 @@ local parsers = {
 	"editorconfig",
 	"gdscript",
 	"gitattributes",
-	"gitignore",
 	"html",
 	"javascript",
-	"json",
 	"jsonc",
 	"lua",
 	"markdown",
@@ -22,8 +20,8 @@ local parsers = {
 	"query",
 	"rasi",
 	"regex",
-	"rst",
 	"requirements",
+	"rst",
 	"tmux",
 	"toml",
 	"tsv",
@@ -33,8 +31,12 @@ local parsers = {
 	"vim",
 	"vimdoc",
 	"xml",
-	"yaml",
 	"zathurarc",
+	-- gh-actions.nvim
+	"gh_actions_expressions",
+	"gitignore",
+	"json",
+	"yaml",
 }
 
 local exclude_parsers = {

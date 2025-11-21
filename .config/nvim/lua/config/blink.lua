@@ -95,10 +95,11 @@ return {
 				-- "css_vars",
 				-- "mdlink",
 				"buffer",
-				"conventional_commits",
+				"coc",
 				"gitmoji",
 				"emoji",
 				"ripgrep",
+				"tmux",
 				"spell",
 			}
 			if vim.tbl_contains({ "markdown", "text" }, vim.bo.filetype) or inside_comment_block() then
@@ -203,16 +204,6 @@ return {
 					end,
 				},
 			},
-			conventional_commits = {
-				name = "Conventional Commits",
-				module = "blink-cmp-conventional-commits",
-				enabled = function()
-					return vim.bo.filetype == "gitcommit"
-				end,
-				---@module 'blink-cmp-conventional-commits'
-				---@type blink-cmp-conventional-commits.Options
-				opts = {},
-			},
 			gitmoji = {
 				name = "Gitmoji",
 				module = "gitmoji.blink",
@@ -298,6 +289,17 @@ return {
 				-- 	end
 				-- 	return items
 				-- end,
+			},
+			tmux = {
+				--https://github.com/mgalliou/blink-cmp-tmux?tab=readme-ov-file#installation--configuration
+				module = "blink-cmp-tmux",
+				name = "tmux",
+				opts = {
+					all_panes = false,
+					capture_history = false,
+					triggered_only = false,
+					trigger_chars = { "." },
+				},
 			},
 		},
 	},
