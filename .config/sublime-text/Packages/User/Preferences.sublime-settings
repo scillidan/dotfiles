@@ -34,8 +34,8 @@
     "theme": "Adaptive.sublime-theme",
     "vintage_use_clipboard": true,
     "word_wrap": true,
-    /*"detect_indentation": false*/
-    "translate_tabs_to_spaces": true,
+    // "detect_indentation": false
+    // "translate_tabs_to_spaces": true,
     "expand_tabs_on_save": true,
     "auto_complete_triggers":
     [

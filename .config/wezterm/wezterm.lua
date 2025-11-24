@@ -3,6 +3,9 @@ local act = wezterm.action
 local config = {}
 
 -- config.color_scheme = "VisiBlue (terminal.sexy)"
+local light_scheme = "Windows 10 Light (base16)"
+local is_light = false
+
 config.colors = {
 	tab_bar = {
 		active_tab = {
@@ -68,6 +71,11 @@ config.warn_about_missing_glyphs = false
 config.disable_default_key_bindings = true
 config.keys = {
 	{
+		key = "p",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.Search("CurrentSelectionOrEmptyString"),
+	},
+	{
 		key = "Enter",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ToggleFullScreen,
@@ -126,6 +134,21 @@ config.keys = {
 		key = "w",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
+	},
+	{
+		key = "M",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action_callback(function(window, pane)
+			if is_light then
+				window:set_config_overrides(nil)
+				is_light = false
+			else
+				window:set_config_overrides({
+					color_scheme = light_scheme,
+				})
+				is_light = true
+			end
+		end),
 	},
 }
 
