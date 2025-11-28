@@ -95,7 +95,7 @@ return {
 				-- "css_vars",
 				-- "mdlink",
 				"buffer",
-				"coc",
+				"csc",
 				"gitmoji",
 				"emoji",
 				"ripgrep",

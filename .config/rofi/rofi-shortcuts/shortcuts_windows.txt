@@ -68,8 +68,7 @@ directory-opus:: FastCopy: Move                                 | S-MBtn_L(drag)
 directory-opus:: Link Shell Extension: Create Symlink           | MBtn-R(drag)
 directory-opus:: SmartZip: Decompress                           | C-MBtn_L(x2)
 ditto: Activate                                                 | C-`
-dngrep: Restore dnGrep window                                   | A-r
-dngrep: Search                                                  | C-Etr
+dngrep: Toggle dnGrep window                                    | A-S-r
 everything: (Modifier) Match files only                         | `file:`
 everything: (Modifier) Match folders only                       | `folder:`
 everything: (Syntax) AND                                        | Spc

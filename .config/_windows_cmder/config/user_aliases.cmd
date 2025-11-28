@@ -48,7 +48,7 @@ dga=doggo A $* @1.1.1.1
 dgg=doggo A $* @8.8.8.8
 
 ;= rem erd
-et=erd --color auto --hidden --follow --human --sort name --dir-order first --layout inverted $*
+etree=erd --color auto --hidden --follow --human --sort name --dir-order first --layout inverted $*
 
 ;= rem eza
 ls=eza $*
@@ -107,16 +107,6 @@ uvi=uv pip install $*
 ;= rem CUDA
 cuda11=set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8"
 cuda12=set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3"
-
-;= rem OS
-gunzip=gzip
-
-;= rem Shell
-rfe=%USERPROFILE%\Usr\Shell\RefrEnv\refrenv.bat
-git-sync=%BASH% %USERPROFILE%\Usr\Shell\git-sync\git-sync $*
-mgit=%BASH% %USERPROFILE%\Usr\Shell\multi-git-status\mgitstatus
-ugit=%BASH% %USERPROFILE%\Usr\Shell\ugit\ugit
-pdf2jpg=%BASH% C:\Users\User\Usr\Git\Shell\_arch\pdf2jpg.sh $*
 
 ;= rem Other
 d=dopus "%CD%\$*"

@@ -702,13 +702,6 @@ require("lazy").setup({
 		end,
 	},
 	---Other
-	-- {
-	-- 	"whleucka/reverb.nvim",
-	-- 	event = "BufReadPre",
-	-- 	config = function()
-	-- 		require("config.reverb")
-	-- 	end,
-	-- },
 	{
 		"qwavies/smart-backspace.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },
