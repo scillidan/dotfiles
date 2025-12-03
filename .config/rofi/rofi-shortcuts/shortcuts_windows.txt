@@ -4,6 +4,7 @@ autohotkey:: ShortScript                                        | Win-c
 autohotkey:: toggle-screen-autohotkey                           | Win-F2
 autohotkey:: GoldenDictOCR: ToggleMouseTakeWord (Set by user)   | C-A-g
 autohotkey:: Vis2 (Set by user)                                 | Win-S-c
+## https://chrisant996.github.io/clink/clink.html#gettingstarted_keybindings
 clink:: clink-fzf: Complete                                     | C-Spc
 clink:: clink-fzf: File                                         | C-t
 clink:: clink-fzf: fzf_complete_force                           | Tab
@@ -67,8 +68,11 @@ directory-opus:: FastCopy: Copy                                 | MBtn-R(drag)
 directory-opus:: FastCopy: Move                                 | S-MBtn_L(drag)
 directory-opus:: Link Shell Extension: Create Symlink           | MBtn-R(drag)
 directory-opus:: SmartZip: Decompress                           | C-MBtn_L(x2)
+## https://github.com/sabrogden/Ditto/wiki#key-bindings
 ditto: Activate                                                 | C-`
+## https://github.com/dnGrep/dnGrep/wiki/Keyboard
 dngrep: Toggle dnGrep window                                    | A-S-r
+## https://www.voidtools.com/support/everything/keyboard_shortcuts/
 everything: (Modifier) Match files only                         | `file:`
 everything: (Modifier) Match folders only                       | `folder:`
 everything: (Syntax) AND                                        | Spc
@@ -92,11 +96,12 @@ imageglass: Crop image                                          | c
 imageglass: ExifGlass                                           | x
 imageglass: Frame navigation                                    | p
 imageglass: Magick.NET Lossless Compression                     | A-c
-imageglass: Pan left/right                                      | S-Scroll
-imageglass: Pan up/down                                         | C-Scroll
+imageglass: Pan left/right                                      | S-MWheel
+imageglass: Pan up/down                                         | C-MWheel
 imageglass: Resize iamge                                        | A-r
-imageglass: View next/previous Image                            | A-Scroll
-imageglass: Zoom in/out                                         | Scroll
+imageglass: View next/previous Image                            | A-MWheel
+imageglass: Zoom in/out                                         | MWheel
+## http://irfanview.helpmax.net/en/available-hotkeys/hotkeys/
 irfanview: Negative (Invert image)                              | C-S-n
 jpegview: (Transform image) Rotate +90                          | Down
 jpegview: (Transform image) Rotate -90                          | Up
@@ -104,6 +109,7 @@ jpegview: (Zoom) 100%                                           | Spc
 jpegview: Show/hide help text                                   | F1
 jpegview: Show/hide navigation panel                            | C-n
 jpegview: Show/hide picture info (EXIF)                         | F2
+## https://keypirinha.com/keyboard.html
 keypirinha: (Set by user)                                       | W-A-k
 keypirinha: Apps Package                                        | `<app name>`
 keypirinha: Bookmarks Package (Set by user)                     | `Bookmark:`
@@ -138,20 +144,26 @@ keypirinha:: keypirinha-snippets (Set by user)                  | `snip`<Tab>
 keypirinha:: keypirinha-tldr                                    | `tldr: Search`<Tab>
 keypirinha:: keypirinha-winsys                                  | `Recycle Bin`
 keypirinha:: Keypirinha-Zealous                                 | `<docset> <type> <str>`
+## https://lintalist.github.io/#Shortcuts
 lintalist: Paste Part 2                                         | S-Etr
 lintalist: Toggle Main Window                                   | Win-A-l
 magpie: Fullscreen scaling shortcut                             | A-S-a
 magpie: Toolbar state toggle shortcut (Set by user)             | A-S-t
+## https://github.com/benbuck/rbtray?tab=readme-ov-file#overview
 rbtray: Minimized to system tray                                | C-A-Down
+## https://github.com/ahmetb/RectangleWin?tab=readme-ov-file#keyboard-bindings
 rectanglewin: Snap Window                                       | Win-A-Up/Down/Left/Right
+## https://github.com/alvesvaren/resizer2?tab=readme-ov-file#how-to-use
 resizer2: autohotkey:: Move Window                              | Win-MBtn_L(drag)
 resizer2: Resize Window                                         | Win-MBtn_R(drag)
+## https://github.com/Snipaste/feedback/wiki/Key-Bindings
 snipaste pro: Disable/enable global hotkeys                     | C-A-S-PrtSc
 snipaste pro: Hide/Show all images                              | S-PrtSc
 snipaste pro: Paste                                             | C-PrtSc
 snipaste pro: Scan QRcode                                       | C-A-S-q
 snipaste pro: Snip                                              | PrtSc
 snipaste pro: Snip and pin                                      | Win-C-MBtn_L(drag)
+## https://ugrep.com/
 ugrep: Edit                                                     | F2
 ugrep: Help                                                     | C-z
 ugrep: Quit                                                     | C-q
