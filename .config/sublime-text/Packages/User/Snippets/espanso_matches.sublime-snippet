@@ -1,8 +1,8 @@
 <snippet>
   <content><![CDATA[
-- trigger: "$1"
-  replace: "$2"
-  passive_only: true$3
+  - trigger: "$1"
+    replace: "$2"
+    passive_only: true$3
 ]]></content>
   <tabTrigger>espanso</tabTrigger>
   <scope>source.yaml</scope>

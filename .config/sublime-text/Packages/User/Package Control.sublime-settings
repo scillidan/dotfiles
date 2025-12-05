@@ -69,6 +69,7 @@
 		"StickySearch",
 		"Text Marker",
 		"TrailingSpaces",
+		"Typst",
 		"UnicodeMath",
 	],
 	"bootstrapped": true,

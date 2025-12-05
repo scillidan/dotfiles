@@ -1,57 +1,8 @@
 matches:
-  - regex: ":hi\\((?P<person>.*)\\)"
-    replace: "Hi {{person}}!"
-  # - regex: "=sum\\((?P<num1>.*?),(?P<num2>.*?)\\)"
-  #   replace: "{{result}}"
-  #   vars:
-  #     - name: result
-  #       type: shell
-  #       params:
-  #         cmd: "expr $ESPANSO_NUM1 + $ESPANSO_NUM2"
-  # Character
-  - trigger: ":,"
-    replace: "→"
-  # Command
-  - trigger: ":gc"
-    replace: "git clone --depth=1 "
-  - trigger: ":pv"
-    replace: "python -m venv .venv\nsource .venv/bin/activate"
-  - trigger: ":pvw"
-    replace: "python -m venv .venv\n.venv\\Scripts\\activate.bat"
-  - trigger: ":uv"
-    replace: "uv venv\nsource .venv/bin/activate"
-  - trigger: ":uvw"
-    replace: "uv venv\n.venv\\Scripts\\activate.bat"
-  - trigger: ":torch"
-    replace: "uv pip install torch --index-url https://download.pytorch.org/whl/cu121"
-  - trigger: ":yas"
-    replace: "yay -S --noconfirm"
-  - trigger: ":lnbin"
-    replace: "ln -sfn $(pwd)/$|$ ~/.local/bin/$|$"
-  - trigger: ":mlbin"
-    replace: "mklink %USERPROFILE%\\.local\\bin\\$|$ %CD%\\$|$"
-  # Regex
-  - trigger: ":dup"
-    replace: "^(.*)(\\r?\\n\\1)+$"
-  - trigger: ":cjk"
-    replace: "[^\\x00-\\xff]+"
-  # Url
-  - trigger: ":dum"
-    replace: "https://dummyimage.com/$1x$2/000/fff"
-  - trigger: ":cheat"
-    replace: "https://scillidan-cheat.vercel.app/?search="
-  # Other
-  - trigger: ":what"
-    replace: "What is $|$? Using metaphors and rhetoric helps me understand."
-  - trigger: ":diff"
-    replace: "What is the difference between $|$?"
-  - trigger: ":be"
-    replace: "Write by GPT-4o mini🧙"
-  - trigger: ":by"
-    replace: "Write by GPT-4o mini"
-  - trigger: ":ce"
-    replace: "```sh$|$\n```"
-  - trigger: ":g4"
-    replace: "[GPT-4o mini]"
-  - trigger: ":ppx"
-    replace: "[perplexity.ai]"
+  - trigger: ":now"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"

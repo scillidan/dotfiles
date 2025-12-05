@@ -1,0 +1,18 @@
+matches:
+  - trigger: ":what"
+    replace: "What is $|$? Using metaphors and rhetoric helps me understand."
+
+  - trigger: ":diff"
+    replace: "What is the difference between $|$?"
+
+  - trigger: ":by"
+    replace: "Write by GPT-4o mini🧙‍♂️, scillidan🤡"
+
+  - trigger: ":ce"
+    replace: "```sh$|$\n```"
+
+  - trigger: ":gpt4"
+    replace: "[GPT-4o mini]"
+
+  - trigger: ":perp"
+    replace: "[perplexity.ai]"
