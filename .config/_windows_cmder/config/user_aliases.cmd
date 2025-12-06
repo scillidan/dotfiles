@@ -70,6 +70,9 @@ jqp=jq ".scripts" package.json
 ;= rem lstr
 tree=lstr
 
+;= rem sgpt
+csgpt=cat $* | sgpt --code "Generate comments for each line"
+
 ;= rem Lib
 ;= rem cargo
 cgi=cargo install --force $*
