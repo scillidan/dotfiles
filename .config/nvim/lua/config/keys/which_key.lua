@@ -1,15 +1,15 @@
 local wk = require("which-key")
 wk.add({
-	--auto-session
+	-- auto-session
 	{ "<leader>wr", "<Cmd>SessionSearch<CR>", desc = "SessionSearch" },
 	{ "<leader>ws", "<Cmd>SessionSave<CR>", desc = "SessionSave" },
 	{ "<leader>wa", "<Cmd>SessionToggleAutoSave<CR>", desc = "SessionToggleAutoSave" },
-	--bibcite.nvim
+	-- bibcite.nvim
 	{ "<leader>ci", "<Cmd>CiteInsert<CR>", desc = "CiteInsert" },
 	{ "<leader>cp", "<Cmd>CitePeek<CR>", desc = "CitePeek" },
 	{ "<leader>co", "<Cmd>CiteOpen<CR>", desc = "CiteOpen" },
 	{ "<leader>cn", "<Cmd>CiteNote<CR>", desc = "CiteNote" },
-	--devdocs.nvim
+	-- devdocs.nvim
 	{ "<leader>hg", "<Cmd>DevDocs get<CR>", desc = "DevDocs get", mode = "n" },
 	{ "<leader>hi", "<Cmd>DevDocs install<CR>", desc = "DevDocs install", mode = "n" },
 	{
@@ -22,7 +22,7 @@ wk.add({
 					return
 				end
 				local docDir = devdocs.GetDocDir(selected)
-				--prettify the filename as you wish
+				-- prettify the filename as you wish
 				Snacks.picker.files({ cwd = docDir })
 			end)
 		end,
@@ -30,7 +30,7 @@ wk.add({
 		mode = "n",
 	},
 	{ "<leader>hd", "<Cmd>DevDocs delete<CR>", desc = "DevDocs delete", mode = "n" },
-	--flash.nvim
+	-- flash.nvim
 	{
 		"<leader>s",
 		function()
@@ -71,7 +71,7 @@ wk.add({
 		desc = "Toggle Flash Search",
 		mode = { "c" },
 	},
-	--git-dev.nvim
+	-- git-dev.nvim
 	{
 		"<leader>go",
 		function()
@@ -82,28 +82,28 @@ wk.add({
 		end,
 		desc = "[O]pen a remote git repository",
 	},
-	--glance.nvim
+	-- glance.nvim
 	{ "gR", "<Cmd>Glance references<CR>", desc = "Glance references<CR>", mode = "n" },
 	{ "gD", "<Cmd>Glance definitions<CR>", desc = "Glance definitions<CR>", mode = "n" },
 	{ "gY", "<Cmd>Glance type_definitions<CR>", desc = "Glance type_definitions<CR>", mode = "n" },
 	{ "gM", "<Cmd>Glance implementations<CR>", desc = "Glance implementations<CR>", mode = "n" },
-	--grug-far.nvim
+	-- grug-far.nvim
 	{
 		"<leader>gf",
 		'<Cmd>lua require("grug-far").open({ engine = "astgrep" })<CR>',
 		desc = "grug-far.open",
 		mode = "n",
 	},
-	--love2d.nvim
+	-- love2d.nvim
 	{ "<leader>vv", "<Cmd>LoveRun<CR>", desc = "LoveRun" },
 	{ "<leader>vs", "<Cmd>LoveStop<CR>", desc = "LoveStop" },
-	--luasnip
-	-- { "<C-k>", '<Cmd>lua require("luasnip").expand()<CR>', desc = "luasnip expand", mode = { "i", "s" } },
-	-- { "<C-h>", '<Cmd>lua require("luasnip").jump(-1)<CR>', desc = "luasnip jump(-1)", mode = { "i", "s" } },
-	-- { "<C-l>", '<Cmd>lua require("luasnip").jump(1)<CR>', desc = "luasnip jump(1)", mode = { "i", "s" } },
-	--md-headers
+	-- luasnip
+	--  { "<C-k>", '<Cmd>lua require("luasnip").expand()<CR>', desc = "luasnip expand", mode = { "i", "s" } },
+	--  { "<C-h>", '<Cmd>lua require("luasnip").jump(-1)<CR>', desc = "luasnip jump(-1)", mode = { "i", "s" } },
+	--  { "<C-l>", '<Cmd>lua require("luasnip").jump(1)<CR>', desc = "luasnip jump(1)", mode = { "i", "s" } },
+	-- md-headers
 	{ "<leader>mh", "<Cmd>MDHeadersCurrent<CR>", desc = "MDHeadersCurrent", mode = "n" },
-	--multiple-cursors.nvim
+	-- multiple-cursors.nvim
 	{
 		"<S-Down>",
 		"<Cmd>MultipleCursorsAddDown<CR>",
@@ -128,11 +128,11 @@ wk.add({
 	{ "<leader>nte", "<Cmd>NeovimTipsEdit<CR>", desc = "NeovimTipsEdit", mode = "n" },
 	{ "<leader>nta", "<Cmd>NeovimTipsAdd<CR>", desc = "NeovimTipsEditAdd", mode = "n" },
 	{ "<leader>ntr", "<Cmd>NeovimTipsRandom<CR>", desc = "NeovimTipsRandom", mode = "n" },
-	--oil.nvim
+	-- oil.nvim
 	{ "-", "<Cmd>Oil<CR>", desc = "Oil", mode = "n" },
-	--snipe.nvim
+	-- snipe.nvim
 	{ "<leader>gb", '<Cmd>lua require("snipe").open_buffer_menu()<CR>', desc = "Open Snipe buffer menu", mode = "n" },
-	--sort.nvim
+	-- sort.nvim
 	{ "go", "<Cmd>Sort<CR>", desc = "<Cmd>Sort", mode = "n" },
 	{ "go", "<Esc><Cmd>Sort<CR>", desc = "<Esc><Cmd>Sort", mode = "v" },
 	{ 'go"', 'vi"<Esc><Cmd>Sort<CR>', desc = 'vi"<Esc><Cmd>Sort', mode = "n" },
@@ -141,7 +141,7 @@ wk.add({
 	{ "go[", "vi[<Esc><Cmd>Sort<CR>", desc = "vi[<Esc><Cmd>Sort", mode = "n" },
 	{ "gop", "vip<Esc><Cmd>Sort<CR>", desc = "vip<Esc><Cmd>Sort", mode = "n" },
 	{ "go{", "vi{<Esc><Cmd>Sort<CR>", desc = "vi{<Esc><Cmd>Sort", mode = "n" },
-	--time-machine.nvim
+	-- time-machine.nvim
 	{
 		"<local eader>tm",
 		"<Cmd>TimeMachineToggle<CR>",
@@ -162,14 +162,14 @@ wk.add({
 		"<Cmd>TimeMachineLogShow<CR>",
 		desc = "TimeMachineLogShow",
 	},
-	--translate.nvim
+	-- translate.nvim
 	{ "<leader>zh", "viw:Translate ZH<CR>", desc = "viw:Translate ZH", mode = { "n", "o" } },
 	{ "<leader>zh", "<Cmd>Translate ZH<CR>", desc = "Translate ZH", mode = "v" },
-	--translate-shell.vim
+	-- translate-shell.vim
 	-- { "<leader>tr", "<Esc>:Trans<CR>", desc = "Trans", mode = "i" },
 	{ "<leader>tr", "<Cmd>Trans<CR>", desc = "Trans", mode = { "n", "v" } },
 	{ "<leader>td", "<Cmd>TransSelectDirection<CR>", desc = "TransSelectDirection", mode = { "n", "v" } },
-	--trouble.nvim
+	-- trouble.nvim
 	{
 		"<leader>xx",
 		"<Cmd>Trouble diagnostics toggle<CR>",
@@ -200,17 +200,17 @@ wk.add({
 		"<Cmd>Trouble qflist toggle<CR>",
 		desc = "Trouble qflist toggle",
 	},
-	--tssorter.nvim
+	-- tssorter.nvim
 	{ "<leader>ts", "<Cmd>TSSort list<CR>", desc = "TSSort list", mode = "n" },
 	{ "<leader>ts", "<Esc><Cmd>TSSort list<CR>", desc = "TSSort list", mode = "v" },
-	--which-key.nvim
+	-- which-key.nvim
 	{
 		"<leader>!",
 		'<Cmd>lua require("which-key").show({ global = false })<CR>',
 		desc = "which-key.show",
 		mode = "n",
 	},
-	--winshift.nvim
+	-- winshift.nvim
 	{
 		{ "<C-W><C-M>", "<Cmd>WinShift<CR>", desc = "WinShift" },
 		{ "<C-W>m", "<Cmd>WinShift<CR>", desc = "WinShift" },
@@ -220,49 +220,49 @@ wk.add({
 		{ "<C-M-K>", "<Cmd>WinShift up<CR>", desc = "WinShift up" },
 		{ "<C-M-L>", "<Cmd>WinShift right<CR>", desc = "WinShift right" },
 	},
-	--yazi.nvim
+	-- yazi.nvim
 	{ "<leader>-", "<cmd>Yazi<cr>", desc = "Open yazi at the current file", mode = { "n", "v" } },
 	{ "<leader>cw", "<cmd>Yazi cwd<cr>", desc = "Open the file manager in nvim's working directory" },
 	{ "<C-up>", "<cmd>Yazi toggle<cr>", desc = "Resume the last yazi session" },
-	----telescope.nvim
-	--nvim-telescope/telescope.nvim
+	-- telescope.nvim
+	-- nvim-telescope/telescope.nvim
 	{ "<leader>kk", "<Cmd>Telescope keymaps<CR>", desc = "Telescope keymaps", mode = "n" },
 	{ "<leader>ff", "<Cmd>Telescope find_files<CR>", desc = "Telescope find_files", mode = "n" },
 	{ "<leader>fg", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live_grep", mode = "n" },
 	{ "<leader>fb", "<Cmd>Telescope buffers<CR>", desc = "Telescope buffers", mode = "n" },
 	{ "<leader>ht", "<Cmd>Telescope help_tags<CR>", desc = "Telescope help_tags", mode = "n" },
-	--MaximilianLloyd/adjacent.nvim
+	-- MaximilianLloyd/adjacent.nvim
 	{ "<leader>fa", "<Cmd>Telescope adjacent<CR>", desc = "Telescope adjacent", mode = "n" },
-	--princejoogie/dir-telescope.nvim
+	-- princejoogie/dir-telescope.nvim
 	{ "<leader>dfg", "<Cmd>Telescope dir live_grep<CR>", desc = "Telescope dir live_grep", mode = "n" },
 	{ "<leader>dff", "<Cmd>Telescope dir find_files<CR>", desc = "Telescope dir find_files", mode = "n" },
-	--Verf/telescope-everything.nvim
+	-- Verf/telescope-everything.nvim
 	{ "<leader>es", "<Cmd>Telescope everything<CR>", desc = "Telescope everything", mode = "n" },
-	--nvim-telescope/telescope-file-browser.nvim
+	-- nvim-telescope/telescope-file-browser.nvim
 	{ "<leader>br", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file_browser", mode = "n" },
-	--nvim-telescope/telescope-media-files.nvim
+	-- nvim-telescope/telescope-media-files.nvim
 	{ "<leader>mf", "<Cmd>Telescope media_files<CR>", desc = "Telescope media_files", mode = "n" },
-	--smartpde/telescope-recent-files
+	-- smartpde/telescope-recent-files
 	{
 		"<leader>R",
 		"<Cmd>lua require('telescope').extensions.recent_files.pick()<CR>",
 		desc = "Telescope recent_files",
 		mode = "n",
 	},
-	--nvim-telescope/telescope-frecency.nvim
+	-- nvim-telescope/telescope-frecency.nvim
 	-- { "<leader>R", "<Cmd>Telescope frecency<CR>", desc = "Telescope frecency", mode = "n" },
-	--jvgrootveld/telescope-zoxide
+	-- jvgrootveld/telescope-zoxide
 	{ "<leader>zi", "<Cmd>Telescope zoxide list<CR>", desc = "Telescope zoxide list", mode = "n" },
-	--jonarrien/telescope-cmdline.nvim
+	-- jonarrien/telescope-cmdline.nvim
 	{ "Q", "<Cmd>Telescope cmdline<CR>", desc = "Telescope cmdline", mode = "n" },
-	--nvim-telescope/telescope-dap.nvim
-	--alduraibi/telescope-glyph.nvim
+	-- nvim-telescope/telescope-dap.nvim
+	-- alduraibi/telescope-glyph.nvim
 	{ "<leader>gyp", "<Cmd>Telescope glyph<CR>", desc = "Telescope glyph", mode = "n" },
-	--xiyaowong/telescope-emoji.nvim
+	-- xiyaowong/telescope-emoji.nvim
 	{ "<leader>emj", "<Cmd>Telescope emoji<CR>", desc = "Telescope emoji", mode = "n" },
-	--olacin/telescope-gitmoji.nvim
+	-- olacin/telescope-gitmoji.nvim
 	{ "<leader>gmj", "<Cmd>Telescope gitmoji<CR>", desc = "Telescope gitmoji", mode = "n" },
-	--coffebar/neovim-project
+	-- coffebar/neovim-project
 	{ "<leader>pr", "<Cmd>NeovimProjectLoadRecent<CR>", desc = "NeovimProjectLoadRecent", mode = "n" },
 	{
 		"<leader>pj",
@@ -276,18 +276,18 @@ wk.add({
 		desc = "Telescope neovim-project history",
 		mode = "n",
 	},
-	--piersolenski/telescope-import.nvim
+	-- piersolenski/telescope-import.nvim
 	{ "<leader>imp", "<Cmd>Telescope import<CR>", desc = "Telescope import", mode = "n" },
-	--tsakirist/telescope-lazy.nvim
+	-- tsakirist/telescope-lazy.nvim
 	{ "<leader>lzy", "<Cmd>Telescope lazy<CR>", desc = "Telescope lazy", mode = "n" },
-	--polirritmico/telescope-lazy-plugins.nvim
+	-- polirritmico/telescope-lazy-plugins.nvim
 	{ "<leader>lzp", "<Cmd>Telescope lazy_plugins<CR>", desc = "Telescope lazy_plugins", mode = "n" },
-	--ryanmsnyder/toggleterm-manager.nvim
+	-- ryanmsnyder/toggleterm-manager.nvim
 	{ "<leader>trm", "<Cmd>Telescope toggleterm_manager<CR>", desc = "Telescope toggleterm_manager", mode = "n" },
-	--debugloop/telescope-undo.nvim
+	-- debugloop/telescope-undo.nvim
 	{ "<leader>und", "<Cmd>Telescope undo<CR>", desc = "Telescope undo" },
-	--AckslD/nvim-neoclip.lua
+	-- AckslD/nvim-neoclip.lua
 	{ "<leader>clp", "<Cmd>Telescope neoclip<CR>", desc = "Telescope neoclip" },
-	--nvim-telescope/telescope-bibtex.nvim
+	-- nvim-telescope/telescope-bibtex.nvim
 	{ "<leader>bib", "<Cmd>Telescope bibtex<CR>", desc = "Telescope bibtex" },
 })

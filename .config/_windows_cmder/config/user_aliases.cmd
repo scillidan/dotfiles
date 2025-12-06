@@ -70,6 +70,9 @@ jqp=jq ".scripts" package.json
 ;= rem lstr
 tree=lstr
 
+;= rem ltts
+lttso=ltts $2 -v af_bella -o $1.mp3
+
 ;= rem sgpt
 csgpt=cat $* | sgpt --code "Generate comments for each line"
 

@@ -1,4 +1,4 @@
---mini.trailspace
+-- mini.trailspace
 vim.api.nvim_create_user_command("TrimSpaces", function()
 	require("mini.trailspace").trim()
 end, { desc = "Trim trailing spaces" })

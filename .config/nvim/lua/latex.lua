@@ -1,4 +1,4 @@
---https://github.com/WhiteBlackGoose/nvim-latex-preconfig/blob/master/init.lua
+-- https://github.com/WhiteBlackGoose/nvim-latex-preconfig/blob/master/init.lua
 -- vim.cmd([[
 -- :autocmd BufNewFile,BufRead *.tex VimtexCompile
 -- ]])
@@ -32,7 +32,7 @@ vim.g.vimtex_fold_enabled = true
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<space>", "<nop>", { noremap = true, silent = true })
 
---https://jdhao.github.io/2019/03/26/nvim_latex_write_preview/
+-- https://jdhao.github.io/2019/03/26/nvim_latex_write_preview/
 vim.g.vimtex_toc_config = {
 	name = "TOC",
 	layers = { "content", "todo", "include" },

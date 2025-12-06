@@ -17,7 +17,7 @@ function _G.set_terminal_keymaps()
 end
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
--- ## Sending lines to the terminal
+-- Sending lines to the terminal
 local trim_spaces = true
 vim.keymap.set("n", "<space>e", function()
 	require("toggleterm").send_lines_to_terminal("single_line", trim_spaces, { args = vim.v.count })
@@ -26,7 +26,7 @@ vim.keymap.set("v", "<space>e", function()
 	require("toggleterm").send_lines_to_terminal("visual_selection", trim_spaces, { args = vim.v.count })
 end)
 
--- ## Custom terminal usage
+-- Custom terminal usage
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({
 	cmd = "lazygit",

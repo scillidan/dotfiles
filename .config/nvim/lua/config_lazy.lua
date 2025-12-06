@@ -32,8 +32,7 @@ require("lazy").setup({
 			require("neoconf").setup({})
 		end,
 	},
-	--
-	--Theme
+	-- Theme
 	{
 		"emanuel2718/vanta.nvim",
 		priority = 1000,
@@ -54,9 +53,7 @@ require("lazy").setup({
 			require("config.nightfox")
 		end,
 	},
-	--
 	--QoL
-	--
 	{
 		"nvim-tree/nvim-web-devicons",
 		config = function()
@@ -73,9 +70,7 @@ require("lazy").setup({
 			require("config.snacks")
 		end,
 	},
-	--
-	--mini.nvim
-	--
+	-- mini.nvim
 	{
 		"echasnovski/mini.icons",
 		version = "*",
@@ -161,7 +156,7 @@ require("lazy").setup({
 			require("mini.git").setup()
 		end,
 	},
-	---Explorer
+	---- Explorer
 	{
 		"stevearc/oil.nvim",
 		-- dependencies = { "echasnovski/mini.icons", opts = {} },
@@ -192,7 +187,7 @@ require("lazy").setup({
 			vim.g.loaded_netrwPlugin = 1
 		end,
 	},
-	---Repo
+	---- Repo
 	{
 		"moyiz/git-dev.nvim",
 		event = "VeryLazy",
@@ -209,7 +204,7 @@ require("lazy").setup({
 			require("config.git_dev")
 		end,
 	},
-	---Window
+	---- Window
 	{
 		"sindrets/winshift.nvim",
 		config = function()
@@ -234,7 +229,7 @@ require("lazy").setup({
 			require("config.incline")
 		end,
 	},
-	---Session
+	---- Session
 	{
 		"rmagatti/auto-session",
 		lazy = false,
@@ -251,9 +246,7 @@ require("lazy").setup({
 			require("config.workspaces")
 		end,
 	},
-	--
-	--Synax
-	--
+	-- Synax
 	{
 		"catgoose/nvim-colorizer.lua",
 		event = "BufReadPre",
@@ -261,7 +254,7 @@ require("lazy").setup({
 			require("colorizer").setup()
 		end,
 	},
-	---Treesitter
+	---- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		branch = "master",
@@ -287,9 +280,7 @@ require("lazy").setup({
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		opts = require("config.tree_comment"),
 	},
-	--
-	--LSP
-	--
+	-- LSP
 	{
 		"folke/lazydev.nvim",
 		ft = "lua",
@@ -320,7 +311,7 @@ require("lazy").setup({
 			require("config.lsp_setup")
 		end,
 	},
-	---Linter
+	-- Linter
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
@@ -333,7 +324,7 @@ require("lazy").setup({
 			require("mason-nvim-lint").setup()
 		end,
 	},
-	---Formatter
+	---- Formatter
 	{
 		"stevearc/conform.nvim",
 		config = function()
@@ -346,7 +337,7 @@ require("lazy").setup({
 			require("mason-conform").setup()
 		end,
 	},
-	--Markdown
+	-- Markdown
 	{
 		"Nedra1998/nvim-mdlink",
 		config = function()
@@ -377,7 +368,7 @@ require("lazy").setup({
 			require("config.md_headers")
 		end,
 	},
-	--CSV
+	-- CSV
 	{
 		"hat0uma/csvview.nvim",
 		---@module "csvview"
@@ -391,9 +382,7 @@ require("lazy").setup({
 			"CsvViewToggle",
 		},
 	},
-	--
-	--typst
-	--
+	-- typst
 	{
 		"chomosuke/typst-preview.nvim",
 		ft = "typst",
@@ -402,9 +391,7 @@ require("lazy").setup({
 			require("typst-preview").setup()
 		end,
 	},
-	--
-	--LaTeX
-	--
+	-- LaTeX
 	{
 		"iurimateus/luasnip-latex-snippets.nvim",
 		dependencies = {
@@ -428,9 +415,7 @@ require("lazy").setup({
 			require("config.bibcite")
 		end,
 	},
-	--
-	--CMP
-	--
+	-- CMP
 	{
 		"saghen/blink.cmp",
 		event = { "BufReadPost", "BufNewFile" },
@@ -464,7 +449,7 @@ require("lazy").setup({
 		---@type blink.cmp.Config
 		opts = require("config.blink"),
 	},
-	--Snips
+	-- Snips
 	{
 		"L3MON4D3/LuaSnip",
 		build = vim.fn.has("win32") ~= 0 and "make install_jsregexp" or nil,
@@ -474,9 +459,7 @@ require("lazy").setup({
 		},
 		config = require("config.luasnip"),
 	},
-	--
-	--Key
-	--
+	-- Key
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -504,10 +487,8 @@ require("lazy").setup({
 			require("spamguard").enable()
 		end),
 	},
-	--
-	--Edit
-	--
-	---Bookmark
+	-- Edit
+	---- Bookmark
 	{
 		"otavioschwanck/arrow.nvim",
 		dependencies = {
@@ -526,7 +507,7 @@ require("lazy").setup({
 		end,
 		keys = require("config.keys.bookmarks"),
 	},
-	---Buffer
+	---- Buffer
 	{
 		"leath-dub/snipe.nvim",
 		opts = {},
@@ -539,13 +520,13 @@ require("lazy").setup({
 		end,
 		keys = require("config.keys.buffer_sticks"),
 	},
-	---Convert
+	---- Convert
 	{
 		"necrom4/convy.nvim",
 		cmd = { "Convy", "ConvySeparator" },
 		opts = require("config.convy"),
 	},
-	---Fold
+	---- Fold
 	{
 		"chrisgrieser/nvim-origami",
 		event = "VeryLazy",
@@ -558,14 +539,14 @@ require("lazy").setup({
 			vim.opt.foldlevelstart = 99
 		end,
 	},
-	---Git
+	---- Git
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("config.gitsigns")
 		end,
 	},
-	---Go
+	---- Go
 	{
 		"abecodes/tabout.nvim",
 		lazy = false,
@@ -578,7 +559,7 @@ require("lazy").setup({
 			require("tabout").setup({})
 		end,
 	},
-	---Goto
+	---- Goto
 	{
 		"rmagatti/goto-preview",
 		event = "BufEnter",
@@ -594,7 +575,7 @@ require("lazy").setup({
 		end,
 		cmd = "Glance",
 	},
-	---Jump
+	---- Jump
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
@@ -604,14 +585,14 @@ require("lazy").setup({
 		end,
 		-- stylua: ignore
 	},
-	---Mode
+	---- Mode
 	{
 		"TheBlob42/houdini.nvim",
 		config = function()
 			require("houdini").setup()
 		end,
 	},
-	---Multiple-cursor
+	---- Multiple-cursor
 	{
 		"brenton-leighton/multiple-cursors.nvim",
 		version = "*",
@@ -625,14 +606,14 @@ require("lazy").setup({
 			require("config.keys.hodur")
 		end,
 	},
-	---Replace
+	---- Replace
 	{
 		"MagicDuck/grug-far.nvim",
 		config = function()
 			require("grug-far").setup()
 		end,
 	},
-	---Save
+	---- Save
 	{
 		"Pocco81/auto-save.nvim",
 		config = function()
@@ -650,7 +631,7 @@ require("lazy").setup({
 			})
 		end,
 	},
-	---Sort
+	---- Sort
 	{
 		"sQVe/sort.nvim",
 		config = function()
@@ -666,7 +647,7 @@ require("lazy").setup({
 			require("config.tssorter")
 		end,
 	},
-	---Undo
+	---- Undo
 	{
 		"y3owk1n/time-machine.nvim",
 		config = function()
@@ -680,7 +661,7 @@ require("lazy").setup({
 			"TimeMachineLogClear",
 		},
 	},
-	---Visual
+	---- Visual
 	{
 		"rachartier/tiny-glimmer.nvim",
 		event = "VeryLazy",
@@ -701,7 +682,7 @@ require("lazy").setup({
 			require("config.fsread")
 		end,
 	},
-	---Other
+	---- Other
 	{
 		"qwavies/smart-backspace.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },
@@ -715,12 +696,8 @@ require("lazy").setup({
 	{
 		"saghen/filler-begone.nvim",
 	},
-	--
-	--Search
-	--
-	--
-	--telescope.nvim
-	--
+	-- Search
+	-- telescope.nvim
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
@@ -729,12 +706,12 @@ require("lazy").setup({
 			require("config.telescope")
 		end,
 	},
-	---Search file
+	---- Search file
 	{ "MaximilianLloyd/adjacent.nvim" },
-	---Search file or folder
+	---- Search file or folder
 	{ "Verf/telescope-everything.nvim" },
 	{ "princejoogie/dir-telescope.nvim" },
-	---Explorer
+	---- Explorer
 	{ "nvim-telescope/telescope-file-browser.nvim" },
 	{
 		"nvim-telescope/telescope-media-files.nvim",
@@ -742,7 +719,7 @@ require("lazy").setup({
 			"nvim-lua/popup.nvim",
 		},
 	},
-	---Search history
+	---- Search history
 	-- { "nvim-telescope/telescope-frecency.nvim" },
 	{ "smartpde/telescope-recent-files" },
 	{
@@ -751,10 +728,10 @@ require("lazy").setup({
 			{ "nvim-lua/popup.nvim" },
 		},
 	},
-	---Search command
+	---- Search command
 	{ "jonarrien/telescope-cmdline.nvim" },
 	{ "nvim-telescope/telescope-dap.nvim" },
-	---Search command or cheatsheet
+	---- Search command or cheatsheet
 	{
 		"sudormrfbin/cheatsheet.nvim",
 		dependencies = {
@@ -773,7 +750,7 @@ require("lazy").setup({
 		end,
 	},
 	{ "ghassan0/telescope-glyph.nvim" },
-	---Search docset
+	---- Search docset
 	{
 		"maskudo/devdocs.nvim",
 		lazy = false,
@@ -785,7 +762,7 @@ require("lazy").setup({
 			require("config.devdocs")
 		end,
 	},
-	---Search Tips
+	---- Search Tips
 	{
 		"saxon1964/neovim-tips",
 		version = "*",
@@ -795,7 +772,7 @@ require("lazy").setup({
 		},
 		opts = require("config.neovim_tips"),
 	},
-	---Project
+	---- Project
 	{
 		"coffebar/neovim-project",
 		dependencies = {
@@ -811,7 +788,7 @@ require("lazy").setup({
 		end,
 	},
 	{ "piersolenski/telescope-import.nvim" },
-	---Other
+	---- Other
 	{ "tsakirist/telescope-lazy.nvim" },
 	{ "polirritmico/telescope-lazy-plugins.nvim" },
 	{
@@ -835,10 +812,8 @@ require("lazy").setup({
 	},
 	{ "crispgm/telescope-heading.nvim" },
 	{ "nvim-telescope/telescope-bibtex.nvim" },
-	--
-	--Run
-	--
-	---Console
+	-- Run
+	---- Console
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
@@ -847,13 +822,13 @@ require("lazy").setup({
 			require("config.keys.toggleterm")
 		end,
 	},
-	---Debug
+	---- Debug
 	{
 		"folke/trouble.nvim",
 		opts = {},
 		cmd = "Trouble",
 	},
-	---DAP
+	---- DAP
 	{
 		"mfussenegger/nvim-dap",
 		-- dependencies = { "jbyuki/one-small-step-for-vimkind" },
@@ -891,7 +866,7 @@ require("lazy").setup({
 			require("dap-python").setup(python_path)
 		end,
 	},
-	--Develop
+	-- Develop
 	{
 		"S1M0N38/love2d.nvim",
 		event = "VeryLazy",
@@ -906,9 +881,7 @@ require("lazy").setup({
 			"nvim-treesitter",
 		},
 	},
-	--
-	--Other
-	--
+	-- Other
 	{
 		"CrystalDime/epub.nvim",
 		config = function()

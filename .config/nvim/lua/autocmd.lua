@@ -1,4 +1,4 @@
---conform.nvim
+-- conform.nvim
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function(args)

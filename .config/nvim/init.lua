@@ -19,7 +19,7 @@ if vim.g.neovide then
 	vim.g.neovide_remember_window_size = true
 	vim.g.neovide_opacity = 1
 	vim.g.transparency = 1
-	--https://github.com/neovide/neovide/issues/1282
+	-- https://github.com/neovide/neovide/issues/1282
 	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
 	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
 	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
@@ -52,11 +52,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
---time-machine.nvim
+-- time-machine.nvim
 vim.o.undofile = true
 vim.o.undodir = vim.fn.stdpath("data") .. "/undodir"
 
---blink-cmp-dictionary
+-- blink-cmp-dictionary
 vim.api.nvim_set_hl(0, "BlinkCmpKindDict", { default = false, fg = "#92FFB8" })
 
 vim.api.nvim_create_augroup("MarkdownRstText", { clear = true })
@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
---godotdev.nvim
+-- godotdev.nvim
 vim.api.nvim_create_augroup("GodotIndent", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
 	group = "GodotIndent",
@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 if vim.fn.has("win32") == 1 then
-	--https://github.com/nvim-lualine/lualine.nvim/issues/1253
+	-- https://github.com/nvim-lualine/lualine.nvim/issues/1253
 	-- vim.o.shell = fn.executable("pwsh") and "pwsh" or "powershell"
 	-- vim.opt.shellcmdflag = "-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;"
 	-- vim.o.shell = "cmd.exe"
