@@ -4,3 +4,6 @@ matches:
 
   - trigger: ":cheat"
     replace: "https://scillidan-cheat.vercel.app/?search="
+
+  - trigger: ":ipost"
+    replace: "https://scillidan.github.io/image_post/"
