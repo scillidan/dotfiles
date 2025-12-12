@@ -1,5 +1,6 @@
 #NoEnv
 SetWorkingDir %A_ScriptDir%
-^!+p::Run wezterm start pylanguagetool_en
-^!+c::Run wezterm start ugrep_cheatsheet
-^!+s::Run wezterm start ugrep_shortcut
+^!+c::Run wezterm start pylanguagetool_en
+^!+h::Run wezterm start ugrep_cheatsheet
+^!+?::Run wezterm start ugrep_shortcut
+^!+o::Run wezterm start mineru_imgs --lang ch

@@ -37,9 +37,10 @@ next_item       | ]
 prev_item       | ["
 
 ## auto-session
-SessionSearch         | <leader>wr
-SessionSave           | <leader>ws
-SessionToggleAutoSave | <leader>wa
+AutoSession search | <leader>wr
+AutoSession save   | <leader>ws
+AutoSession toggle | <leader>wa
+AutoSession delete | <leader>wd
 
 ## bibcite.nvim
 CiteInsert | <leader>ci

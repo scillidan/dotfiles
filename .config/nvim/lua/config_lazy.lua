@@ -42,12 +42,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"nishu-murmu/ThemeSwitch.nvim",
-		config = function()
-			require("ThemeSwitch")
-		end,
-	},
-	{
 		"EdenEast/nightfox.nvim",
 		config = function()
 			require("config.nightfox")
@@ -311,6 +305,7 @@ require("lazy").setup({
 			require("config.lsp_setup")
 		end,
 	},
+	{ "mfussenegger/nvim-jdtls" },
 	-- Linter
 	{
 		"mfussenegger/nvim-lint",

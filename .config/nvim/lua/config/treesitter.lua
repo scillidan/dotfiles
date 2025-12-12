@@ -10,6 +10,7 @@ local parsers = {
 	"gdscript",
 	"gitattributes",
 	"html",
+	"java",
 	"javascript",
 	"jsonc",
 	"lua",

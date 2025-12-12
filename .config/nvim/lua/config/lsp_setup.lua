@@ -1,27 +1,6 @@
 require("lsp-setup").setup({
 	servers = {
-		lua_ls = {
-			-- settings = {
-			-- 	Lua = {
-			-- 		diagnostics = { "vim" },
-			-- 		workspace = {
-			-- 			library = vim.api.nvim_get_runtime_file("", true),
-			-- 			checkThirdParty = false,
-			-- 		},
-			-- 		telemetry = {
-			-- 			enable = false,
-			-- 		},
-			-- 	},
-			-- },
-		},
-		pylsp = {},
-		tinymist = {
-			cmd = { "tinymist" },
-			filetypes = { "typst" },
-		},
 		bashls = {},
-		yamlls = {},
-		html = {},
 		cssls = {},
 		harper_ls = {
 			userDictPath = "",
@@ -48,10 +27,32 @@ require("lsp-setup").setup({
 			diagnosticSeverity = "hint",
 			dialect = "American",
 		},
+		html = {},
+		jdtls = {},
 		jsonls = {},
-		-- eslint = {},
-		-- tailwindcss = {},
+		lua_ls = {
+			-- settings = {
+			-- 	Lua = {
+			-- 		diagnostics = { "vim" },
+			-- 		workspace = {
+			-- 			library = vim.api.nvim_get_runtime_file("", true),
+			-- 			checkThirdParty = false,
+			-- 		},
+			-- 		telemetry = {
+			-- 			enable = false,
+			-- 		},
+			-- 	},
+			-- },
+		},
+		pylsp = {},
+		tinymist = {
+			cmd = { "tinymist" },
+			filetypes = { "typst" },
+		},
+		yamlls = {},
 		-- emmet_language_server = {},
+		-- eslint = {},
 		-- nextls = {},
+		-- tailwindcss = {},
 	},
 })

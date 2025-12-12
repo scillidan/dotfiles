@@ -8,6 +8,8 @@ require("mason-lspconfig").setup({
 		"html",
 		"cssls",
 		"texlab",
+		"tinymist",
+		-- "jdtls",
 		-- "debugpy",
 		-- "ltex-ls-plus",
 		-- "tailwindcss",

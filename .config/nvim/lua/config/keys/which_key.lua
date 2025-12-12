@@ -1,9 +1,11 @@
 local wk = require("which-key")
 wk.add({
 	-- auto-session
-	{ "<leader>wr", "<Cmd>SessionSearch<CR>", desc = "SessionSearch" },
-	{ "<leader>ws", "<Cmd>SessionSave<CR>", desc = "SessionSave" },
-	{ "<leader>wa", "<Cmd>SessionToggleAutoSave<CR>", desc = "SessionToggleAutoSave" },
+	-- https://github.com/rmagatti/auto-session?tab=readme-ov-file#-commands
+	{ "<leader>wr", "<Cmd>AutoSession search<CR>", desc = "AutoSession search" },
+	{ "<leader>ws", "<Cmd>AutoSession save<CR>", desc = "AutoSession save" },
+	{ "<leader>wa", "<Cmd>AutoSession toggle<CR>", desc = "AutoSession toggle" },
+	{ "<leader>wd", "<Cmd>AutoSession delete<CR>", desc = "AutoSession delete" },
 	-- bibcite.nvim
 	{ "<leader>ci", "<Cmd>CiteInsert<CR>", desc = "CiteInsert" },
 	{ "<leader>cp", "<Cmd>CitePeek<CR>", desc = "CitePeek" },
@@ -123,6 +125,15 @@ wk.add({
 		mode = { "n", "x" },
 		desc = "MultipleCursorsAddMatches",
 	},
+	-- nvim-jdtls
+	{ "<A-o>", "<Cmd>lua require'jdtls'.organize_imports()<CR>", desc = "organize_imports", mode = "n" },
+	{ "crv", "<Cmd>lua require('jdtls').extract_variable()<CR>", desc = "extract_variable", mode = "n" },
+	{ "crv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", desc = "extract_variable(true)", mode = "v" },
+	{ "crc", "<Cmd>lua require('jdtls').extract_constant()<CR>", desc = "extract_constant", mode = "n" },
+	{ "crc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", desc = "extract_constant(true)", mode = "v" },
+	{ "crm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", desc = "extract_method(true)", mode = "v" },
+	{ "<leader>df", "<Cmd>lua require'jdtls'.test_class()<CR>", desc = "test_class()", mode = "n" },
+	{ "<leader>dn", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", desc = "test_nearest_method()", mode = "n" },
 	-- neovim-tips
 	{ "<leader>nto", "<Cmd>NeovimTips<CR>", desc = "NeovimTips", mode = "n" },
 	{ "<leader>nte", "<Cmd>NeovimTipsEdit<CR>", desc = "NeovimTipsEdit", mode = "n" },
@@ -221,9 +232,9 @@ wk.add({
 		{ "<C-M-L>", "<Cmd>WinShift right<CR>", desc = "WinShift right" },
 	},
 	-- yazi.nvim
-	{ "<leader>-", "<cmd>Yazi<cr>", desc = "Open yazi at the current file", mode = { "n", "v" } },
-	{ "<leader>cw", "<cmd>Yazi cwd<cr>", desc = "Open the file manager in nvim's working directory" },
-	{ "<C-up>", "<cmd>Yazi toggle<cr>", desc = "Resume the last yazi session" },
+	{ "<leader>-", "<Cmd>Yazi<CR>", desc = "Open yazi at the current file", mode = { "n", "v" } },
+	{ "<leader>cw", "<Cmd>Yazi cwd<CR>", desc = "Open the file manager in nvim's working directory" },
+	{ "<C-up>", "<Cmd>Yazi toggle<CR>", desc = "Resume the last yazi session" },
 	-- telescope.nvim
 	-- nvim-telescope/telescope.nvim
 	{ "<leader>kk", "<Cmd>Telescope keymaps<CR>", desc = "Telescope keymaps", mode = "n" },

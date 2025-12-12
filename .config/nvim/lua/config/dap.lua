@@ -1,6 +1,6 @@
 local dap = require("dap")
 
--- lua
+-- Lua
 -- dap.configurations.lua = {
 --   {
 --     type = "nlua",
@@ -13,22 +13,22 @@ local dap = require("dap")
 --   callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
 -- end
 
--- python
+-- Python
 dap.configurations.python = {
-  {
-    type = "python",
-    request = "launch",
-    -- name = "file:args (cwd)",
-    program = "${file}",
-    args = function()
-      local args_string = vim.fn.input("Arguments: ")
-      local utils = require("dap.utils")
-      if utils.splitstr and vim.fn.has("nvim-0.10") == 1 then
-        return utils.splitstr(args_string)
-      end
-      return vim.split(args_string, " +")
-    end,
-    console = "integratedTerminal",
-    cwd = vim.fn.getcwd(),
-  },
+	{
+		type = "python",
+		request = "launch",
+		-- name = "file:args (cwd)",
+		program = "${file}",
+		args = function()
+			local args_string = vim.fn.input("Arguments: ")
+			local utils = require("dap.utils")
+			if utils.splitstr and vim.fn.has("nvim-0.10") == 1 then
+				return utils.splitstr(args_string)
+			end
+			return vim.split(args_string, " +")
+		end,
+		console = "integratedTerminal",
+		cwd = vim.fn.getcwd(),
+	},
 }
