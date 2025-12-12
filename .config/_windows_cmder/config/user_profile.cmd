@@ -52,11 +52,11 @@ rem lstr
 set "LS_COLORS=rs=0:di=01;34:ln=01;36:ex=01;32:*.zip=01;31:*.png=01;35:"
 
 rem alass-cli
-set "ALASS_FFMPEG_PATH=%SCOOP_HOME%\apps\ffmpeg\current\bin\ffmpeg.exe"
-set "ALASS_FFPROBE_PATH=%SCOOP_HOME%\apps\ffmpeg\current\bin\ffprobe.exe"
+set "ALASS_FFMPEG_PATH=%SCOOP%\apps\ffmpeg\current\bin\ffmpeg.exe"
+set "ALASS_FFPROBE_PATH=%SCOOP%\apps\ffmpeg\current\bin\ffprobe.exe"
 
 rem espeak-ng
-set "PHONEMIZER_ESPEAK_LIBRARY=%SCOOP_HOME%\apps\espeak-ng\current\eSpeak NG\libespeak-ng.dll"
+set "PHONEMIZER_ESPEAK_LIBRARY=%SCOOP%\apps\espeak-ng\current\eSpeak NG\libespeak-ng.dll"
 set "PHONEMIZER_ESPEAK_PATH=%USERPROFILE%\Git\cli\espeak-ng.bat"
 
 rem kokoro-tts-cli
