@@ -7,13 +7,13 @@ set "SYS_ARCH=64"
 
 rem Lib
 rem ---
-set "PYENV=%USERPROFILE%\.pyenv\pyenv-win"
-set "PYENV_ROOT=%USERPROFILE%\.pyenv\pyenv-win"
-set "PYENV_HOME=%USERPROFILE%\.pyenv\pyenv-win"
+set "PYENV=%USER%\.pyenv\pyenv-win"
+set "PYENV_ROOT=%USER%\.pyenv\pyenv-win"
+set "PYENV_HOME=%USER%\.pyenv\pyenv-win"
 set "RUSTUP_DIST_SERVER=https://mirror.sjtu.edu.cn/rust-static"
 set "RUSTUP_UPDATE_ROOT=https://mirror.sjtu.edu.cn/rust-static/rustup"
 set "RBENV_USE_MIRROR=CN"
-set "RBENV_ROOT=%USERPROFILE%\Usr\Lib\rbenv"
+set "RBENV_ROOT=%USER%\Usr\Lib\rbenv"
 
 rem Lib for Opt
 rem ---
@@ -28,7 +28,7 @@ set "RUST_BACKTRACE=full"
 set "RUSTFLAGS=--cfg tracing_unstable"
 set "CARGO_HTTP_CHECK_REVOKE=false"
 set "GOSUMDB=sum.golang.org"
-rem set "ANDROID_NDK_HOME=%USERPROFILE%\Usr\Lib\android-ndk"
+rem set "ANDROID_NDK_HOME=%USER%\Usr\Lib\android-ndk"
 
 rem CUDA
 rem ---
@@ -57,14 +57,14 @@ set "ALASS_FFPROBE_PATH=%SCOOP%\apps\ffmpeg\current\bin\ffprobe.exe"
 
 rem espeak-ng
 set "PHONEMIZER_ESPEAK_LIBRARY=%SCOOP%\apps\espeak-ng\current\eSpeak NG\libespeak-ng.dll"
-set "PHONEMIZER_ESPEAK_PATH=%USERPROFILE%\Git\cli\espeak-ng.bat"
+set "PHONEMIZER_ESPEAK_PATH=%USER%\Usr\Git\Shell\_windows\Patch\espeak-ng.bat"
 
 rem kokoro-tts-cli
-set "KOKORO_PATH=%USERPROFILE%\Usr\OptWeb\Kokoro-TTS-Local"
+set "KOKORO_PATH=%USER%\Usr\OptWeb\Kokoro-TTS-Local"
 
 rem Opt
 rem ---
 set "FAST_REFRESH=true"
 
 call "%CMDER_ROOT%\vendor\setpath.bat"
-call "%USERPROFILE%\Usr\Shell\RefrEnv\refrenv.bat"
+call "%USER%\Usr\Shell\RefrEnv\refrenv.bat"

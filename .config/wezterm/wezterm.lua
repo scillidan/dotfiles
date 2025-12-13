@@ -181,9 +181,19 @@ config.mouse_bindings = {
 }
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	config.default_cwd = "C:\\Users\\User\\Downloads"
-	config.default_prog = { "cmd.exe", "/k C:\\Users\\User\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" }
-	-- config.default_prog = { "cmd.exe", "/k C:\\Users\\User\\Usr\\Opt\\cmder_mini\\vendor\\init.bat && clink-terminal" }
+	-- %USERPROFILE% or Customize ENV path
+	local user = os.getenv("USER") or os.getenv("USERPROFILE")
+	config.default_cwd = user .. "\\Downloads"
+	config.default_prog = {
+		"cmd.exe",
+		"/k",
+		user .. "\\Usr\\Opt\\cmder_mini\\vendor\\init.bat",
+	}
+	-- config.default_prog = {
+	-- 	"cmd.exe",
+	-- 	"/k",
+	-- 	user .. "\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" .. " && clink-terminal",
+	-- }
 	table.insert(config.keys, {
 		key = "h",
 		mods = "CTRL|SHIFT",
@@ -197,12 +207,12 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	table.insert(config.keys, {
 		key = "F",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SendString("C:\\Users\\User\\Usr\\Git\\Shell\\_windows\\ff.bat\r"),
+		action = wezterm.action.SendString(user .. "\\Usr\\Git\\Shell\\_windows\\ff.bat\r"),
 	})
 	table.insert(config.keys, {
 		key = "G",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SendString("C:\\Users\\User\\Usr\\Git\\Shell\\_windows\\fg.bat\r"),
+		action = wezterm.action.SendString(user .. "\\Usr\\Git\\Shell\\_windows\\fg.bat\r"),
 	})
 end
 

@@ -52,5 +52,7 @@
 			"selector": "text.tex.latex",
 		}
     ],
-    "color_scheme": "Packages/Mirodark Color Scheme/MirodarkHighContrast.tmTheme",
+    "color_scheme": "auto",
+    "dark_color_scheme": "Packages/Mirodark Color Scheme/MirodarkHighContrast.tmTheme",
+    "light_color_scheme": "Breakers.sublime-color-scheme",
 }
