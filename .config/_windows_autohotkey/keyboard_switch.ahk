@@ -1,4 +1,5 @@
-﻿; https://github.com/xmdn/2_of_3_lang_switch_hotkey
+; Switch between two keyboard layouts—English (US) and Chinese (Simplified, PRC)—using the Caps Lock key.
+; https://github.com/xmdn/2_of_3_lang_switch_hotkey
 
 englishLayout := "00000409"  ; English (United States)
 chineseLayout := "00000804"   ; Chinese (Simplified, PRC)
