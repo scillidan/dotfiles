@@ -1,0 +1,39 @@
+[general]
+import = ["themes/vanta.toml"]
+live_config_reload = true
+# working_directory =
+
+[window]
+decorations = "none"
+dynamic_title = false
+dimensions.columns = 151
+dimensions.lines = 36
+padding.x = 5
+padding.y = 5
+# position.x = 620
+# position.y = 100
+startup_mode = "Windowed"
+
+[font]
+normal.family = "Sarasa Term SC Nerd"
+bold.family = "Sarasa Term SC Nerd"
+italic.family = "Sarasa Term SC Nerd"
+bold_italic.family = "Sarasa Term SC Nerd"
+size = 10
+
+[selection]
+semantic_escape_chars = ",`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+[terminal.shell]
+program = "/usr/bin/zsh"
+args = ["-l"]
+
+[mouse]
+bindings = [{ mouse = "Right", action = "PasteSelection" }]
+
+[keyboard]
+bindings = [
+	{ key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+	{ key = "Q", mods = "Control|Shift|Alt", action = "Quit" },
+]

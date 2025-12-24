@@ -1,0 +1,18 @@
+{
+	"snip": {
+		"prefix": "snip",
+		"body": "<snippet>\n  <content><![CDATA[\n$2\n]]/$1></content>\n  <tabTrigger>$3</tabTrigger>\n  <scope>${5:text.html.markdown}</scope>\n  <description>$4</description>\n</snippet>",
+		"description": "sublimetext snippet"
+	},
+	"batchecho": {
+		"prefix": "batchecho",
+		"body": "echo $1\necho ---\n$2\necho($3",
+		"description": "batch echo"
+	},
+	"m3u": {
+		"prefix": "m3u",
+		"body": "#EXTM3U\n#EXTINF:,$1",
+		"description": "m3u extm3u",
+		"scope": "text.m3u"
+	}
+}

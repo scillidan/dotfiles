@@ -1,0 +1,54 @@
+matches:
+  - trigger: ":pdm"
+    replace: "[Public Domain Mark](https://creativecommons.org/publicdomain/mark/1.0)"
+
+  - trigger: ":cc0"
+    replace: "[Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0)"
+
+  - trigger: ":ccby"
+    replace: "[Creative Commons Attribution]https://creativecommons.org/licenses/by/4.0)"
+
+  - trigger: ":ogaby"
+    replace: "[Open Game Art Attribution](https://opengameart.org/content/oga-by-30-faq)"
+
+  - trigger: ":ccbysa"
+    replace: "[Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0)"
+
+  - trigger: ":ccbync"
+    replace: "[Creative Commons Attribution-NonCommercial](https://creativecommons.org/licenses/by-nc/4.0)"
+
+  - trigger: ":ccbyncsa"
+    replace: "[Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0)"
+
+  - trigger: ":ccbynd"
+    replace: "[Creative Commons Attribution-NoDerivatives](https://creativecommons.org/licenses/by-nd/4.0)"
+
+  - trigger: ":ccbyncnd"
+    replace: "[Creative Commons Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0)"
+
+  - trigger: ":mit"
+    replace: "[MIT License](https://choosealicense.com/licenses/mit)"
+
+  - trigger: ":lil"
+    replace: "[Lil License](https://www.lillicense.org/v1.html)"
+
+  - trigger: ":mpl"
+    replace: "[Mozilla Public License](https://choosealicense.com/licenses/mpl-2.0)"
+
+  - trigger: ":ofl"
+    replace: "[Open Font License](https://openfontlicense.org)"
+
+  - trigger: ":@1001fonts"
+    replace: "[1001 Fonts License](https://www.1001fonts.com/licenses/ffc.html)"
+
+  - trigger: ":doujin"
+    replace: "[Doujin Mark License](https://commonsphere.jp/doujin-license-1)"
+
+  - trigger: ":wtfpl"
+    replace: "[Do What The F*** You Want License](http://www.wtfpl.net/about)"
+
+  - trigger: ":lppl"
+    replace: "[The LaTeX Project Public License](https://www.latex-project.org/lppl.txt)"
+
+  - trigger: ":nolicense"
+    replace: "[No License](https://choosealicense.com/no-permission )"

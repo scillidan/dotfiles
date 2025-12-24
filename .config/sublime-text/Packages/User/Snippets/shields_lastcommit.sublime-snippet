@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+![](https://img.shields.io/github/last-commit/scillidan/$1/main?label=last%20commit%20(fork))
+]]></content>
+  <tabTrigger>lastcommit</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>shields.io last-commit</description>
+</snippet>

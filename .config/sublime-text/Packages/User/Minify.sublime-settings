@@ -1,0 +1,4 @@
+{
+    "cssminifier": "uglifycss",
+    "uglifyjs_command": "terser",
+}

@@ -1,0 +1,57 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"autoupdate": false,
+	"share": "disabled",
+	"theme": "system",
+	"enabled_providers": [
+		"ollama",
+		"openai"
+	],
+	// "model": "ollama/mistral:7b-instruct",
+	"provider": {
+		"ollama": {
+			"npm": "@ai-sdk/openai-compatible",
+			"name": "Ollama (local)",
+			"options": {
+				"baseURL": "http://localhost:11434/v1"
+			},
+			"models": {
+				"mistral:7b-instruct": {
+					"name": "Mistral-7B Instruct"
+				},
+				"llama3.1:8b": {
+					"name": "Llama-3.1-8B"
+				},
+				"qwen3:14b": {
+					"name": "Qwen3-14B"
+				}
+			},
+		},
+		"openai": {
+			"options": {
+				"apikey": "{env:OPENAI_API_KEY}",
+				"baseURL": "{env:OPENAI_API_BASE}"
+			}
+		}
+	},
+	"agent": {
+    "build": {
+      "mode": "primary",
+      // "model": "",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      // "model": "",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    }
+  }
+}

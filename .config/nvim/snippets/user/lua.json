@@ -1,0 +1,7 @@
+{
+	"neovimpcall": {
+		"prefix": "neovimpcall",
+		"body": "local status_ok, $1 = pcall(require, \"$1\")\n\nif not status_ok then\n\treturn\nend\n\n$1.setup()",
+		"description": "neovim pcall"
+	}
+}

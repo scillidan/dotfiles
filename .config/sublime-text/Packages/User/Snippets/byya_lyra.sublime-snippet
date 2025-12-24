@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+---
+weight: $1
+---
+
+]]></content>
+  <tabTrigger>lyra</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>byya lyra weight</description>
+</snippet>

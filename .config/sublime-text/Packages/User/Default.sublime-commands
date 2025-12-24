@@ -1,0 +1,33 @@
+[
+	// RegReplace
+	{
+		"caption": "reg_replace: remove deprecated type attr",
+		"command": "reg_replace",
+		"args": { "replacements": ["html5_remove_deprecated_type_attr"]}
+	},
+	{
+		"caption": "reg_replace: remove json dangling commas",
+		"command": "reg_replace",
+		"args": { "replacements": ["remove_json_dangling_commas"]}
+	},
+	{
+		"caption": "reg_replace: remove html comments",
+		"command": "reg_replace",
+		"args": { "replacements": ["remove_html_comments"]}
+	},
+	{
+		"caption": "reg_replace: remove the trailing spaces",
+		"command": "reg_replace",
+		"args": { "replacements": ["remove_trailing_spaces"]}
+	},
+	{
+		"caption": "reg_replace: delete a comment or comment blocks",
+		"command": "reg_replace",
+		"args": { "replacements": ["remove_comments"]}
+	},
+	{
+		"caption": "reg_replace: find all non ascii chars",
+		"command": "reg_replace",
+		"args": { "replacements": ["non_ascii_chars"]}
+	}
+]

@@ -1,0 +1,4 @@
+{
+    "name": "summarize",
+    "role": "Extract the essential information from the following text and create a concise summary that:\n\n1. Captures the main thesis or central argument\n2. Identifies 3-5 key supporting points or evidence\n3. Highlights any significant conclusions or implications\n4. Preserves the original author's intent without adding personal interpretation\n5. Uses bullet points for clarity and easy scanning\n\nYour summary should be comprehensive yet brief, allowing someone to understand the core message without reading the full text."
+}

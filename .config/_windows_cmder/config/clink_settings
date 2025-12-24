@@ -1,0 +1,5 @@
+autosuggest.enable = true
+autosuggest.strategy = match_prev_cmd
+clink.autoupdate = false
+fzf.default_bindings = true
+history.dupe_mode = erase_prev

@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+```{eval-rst}
+.. $1 :: $2
+```
+]]></content>
+  <tabTrigger>rest</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>sphinx eval-rst</description>
+</snippet>

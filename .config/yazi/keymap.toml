@@ -1,0 +1,59 @@
+## https://github.com/NoponyAsked/sxiv.yazi
+[[mgr.prepend_keymap]]
+on = ["c", "i"]
+run = "plugin sxiv"
+desc = "Preview images in sxiv"
+
+## https://github.com/Lil-Dank/lazygit.yazi
+[[mgr.prepend_keymap]]
+on = ["g", "i"]
+run = "plugin lazygit"
+desc = "run lazygit"
+
+## https://github.com/AnirudhG07/custom-shell.yazi
+[[mgr.prepend_keymap]]
+on = ["'", "\\"]
+run = 'plugin custom-shell -- auto --interactive'
+desc = "custom-shell as default, interactive"
+
+# https://github.com/lpnh/fr.yazi
+[[mgr.prepend_keymap]]
+on = ["f", "r"]
+run = "plugin fr rg"
+desc = "Search file by content (rg)"
+
+[[mgr.prepend_keymap]]
+on = ["f", "a"]
+run = "plugin fr rga"
+desc = "Search file by content (rga)"
+
+## https://github.com/uhs-robert/recycle-bin.yazi
+[[mgr.prepend_keymap]]
+on = ["g", "t"]
+run = "plugin recycle-bin open"
+desc = "Go to Trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "o"]
+run = "plugin recycle-bin open"
+desc = "Open Trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "e"]
+run = "plugin recycle-bin empty"
+desc = "Empty Trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "d"]
+run = "plugin recycle-bin delete"
+desc = "Delete from Trash"
+
+[[mgr.prepend_keymap]]
+on = ["R", "D"]
+run = "plugin recycle-bin emptyDays"
+desc = "Empty by days deleted"
+
+[[mgr.prepend_keymap]]
+on = ["R", "r"]
+run = "plugin recycle-bin restore"
+desc = "Restore from Trash"

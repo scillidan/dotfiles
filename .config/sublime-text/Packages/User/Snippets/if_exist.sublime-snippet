@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+if exist "$1" (
+    echo "$1 already exists. Skipping download."
+) else (
+    $2
+)
+]]></content>
+  <tabTrigger>ifexist</tabTrigger>
+  <scope>source.dosbatch</scope>
+  <description>if-exist</description>
+</snippet>

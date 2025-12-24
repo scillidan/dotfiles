@@ -1,0 +1,22 @@
+require("devdocs").setup({
+  ensure_installed = {
+    -- "lua~5.1",
+    -- "love",
+    "latex",
+    "bash",
+    -- "jq",
+    -- "sqlite",
+    -- "git",
+    -- "man",
+    -- "http",
+    -- "html",
+    -- "css",
+    -- "javascript",
+    -- "tailwindcss",
+    -- "nextjs",
+    -- "typescript",
+    -- "eslint",
+    -- "electron",
+    -- "react~18",
+  },
+})

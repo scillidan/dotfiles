@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+![](https://img.shields.io/badge/GitHub%20Pages-121013?style=for-the-badge&logo=github&logoColor=white)
+]]></content>
+  <tabTrigger>!ghpagesbadge</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>shields.io gh-pages for-the-badge</description>
+</snippet>

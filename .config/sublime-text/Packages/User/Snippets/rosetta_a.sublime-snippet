@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+<a class="gallery-item" data-lg-size="1280-720" data-html="#smp14" data-video='{"source": [{"src":"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.webm", "type":"video/webm"}], "tracks": [{"src": "//raw.githubusercontent.com/scillidan/media_rosetta/main/$2.smp.$3.zho.vtt", "kind":"captions", "srclang": "zh-cn", "label": "Simplified Chinese", "default": "true"},{"src": "//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.${4:eng}.vtt", "kind":"captions", "srclang": "${5:en}", "label": "${5:English}"},{"src": "//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.eng.vtt", "kind":"captions", "srclang": "en", "label": "English"}], "attributes": {"preload": false, "controls": true, "playsinline": true}}' data-sub-html="<h4>$1 SMP01</h4>">
+  <img class="img-responsive" src="//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.jpg" alt="&lt;p&gt;$1 SMP01&lt;/p&gt;" />
+</a>
+]]></content>
+  <tabTrigger>rosettaa</tabTrigger>
+  <scope>text.html</scope>
+  <description>rosetta a-tag</description>
+</snippet>

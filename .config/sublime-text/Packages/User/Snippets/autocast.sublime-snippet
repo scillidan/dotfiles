@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+settings:
+  width: 151
+  height: 36
+  title: $1
+  type-speed: 150ms
+  timeout: 90s
+
+instructions:
+  $2
+]]></content>
+  <tabTrigger>autocastyaml</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>autocast yaml</description>
+</snippet>

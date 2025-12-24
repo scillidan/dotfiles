@@ -1,0 +1,44 @@
+# Refer to https://github.com/Gustice/AHK-KeyMap/blob/master/KeyMap.ahk
+
+matches:
+	- trigger: "#>="
+		replace: "≥"
+
+	- trigger: "#<="
+		replace: "≤"
+
+	- trigger: "#=="
+		replace: "≡"
+
+	- trigger: "#/="
+		replace: "≠"
+
+	- trigger: "#~="
+		replace: "≈"
+
+	- trigger: "#+-"
+		replace: "±"
+
+	- trigger: "#cdot"
+		replace: "∙"
+
+	- trigger: "#hdots"
+		replace: "…"
+
+	- trigger: "#>"
+		replace: "→"
+
+	- trigger: "#<"
+		replace: "←"
+
+	- trigger: "#^"
+		replace: "↑"
+
+	- trigger: "#v"
+		replace: "↓"
+
+	- trigger: "#c1"
+		replace: "⚪"
+
+	- trigger: "#c2"
+		replace: "⚫"

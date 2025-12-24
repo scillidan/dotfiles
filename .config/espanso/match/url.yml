@@ -1,0 +1,15 @@
+matches:
+  - trigger: ":dum"
+    replace: "https://dummyimage.com/$|$/000/fff"
+
+  - trigger: ":cheat"
+    replace: "https://scillidan-cheat.vercel.app/?search="
+
+  - trigger: ":ipost"
+    replace: "https://scillidan.github.io/image_post/"
+
+  - trigger: ":mcheat"
+    replace: "https://github.com/scillidan/mark_cheat/blob/main/"
+
+  - trigger: ":ghi"
+    replace: "https://github.com/scillidan/"

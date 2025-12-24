@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+- !Command
+	command: "$1"
+]]></content>
+	<tabTrigger>autocastcommand</tabTrigger>
+	<scope>source.yaml</scope>
+	<description>autocast command</description>
+</snippet>

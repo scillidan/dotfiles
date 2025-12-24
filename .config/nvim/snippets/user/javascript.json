@@ -1,0 +1,7 @@
+{
+	"cumaeanjson": {
+		"prefix": "cumaeanjson",
+		"body": "{tit:\"$1\", art:\"$3\", play:\"<audio controls preload=\\\"none\\\" src=\\\"media/$1.ogg\\\"></audio>\", src:\"<a href=\\\"https://opengameart.org/content/$2\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Link</a>\", cr:\"<a href=\\\"$4\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">${5:CC }</a>\"},",
+		"description": "cumaean json"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"user": {
+		"live": false,
+		"default_colors": [
+			"darkgoldenrod",
+			"darkmagenta",
+			"darkolivegreen",
+			"darkslateblue",
+			"darkslategray",
+			"darkviolet",
+			"darkblue",
+			"darkturquoise",
+			"darkgray",
+			"darkkhaki",
+			"darkorange",
+			"darksalmon",
+			"darkseagreen",
+			"brown"
+		],
+	}
+}

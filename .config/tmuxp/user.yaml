@@ -1,0 +1,23 @@
+session_name: session
+windows:
+  - window_name: home
+    window_index: 1
+    layout: main-horizontal
+    panes:
+      - start_directory: "~"
+  - window_name: .config
+    window_index: 2
+    panes:
+      - start_directory: "~/.config"
+        shell_command: nvim .
+  - window_name: Usr
+    window_index: 3
+    start_directory: "~/Usr"
+    shell_command_before: nvim .
+    panes:
+      -
+  - window_name: Usr
+    window_index: 4
+    panes:
+      - start_directory: "~/Usr"
+        shell_command: nvim .

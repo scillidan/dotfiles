@@ -1,0 +1,27 @@
+matches:
+  - trigger: ":gc"
+    replace: "git clone --depth=1 "
+
+  - trigger: ":lnbin"
+    replace: "ln -sfn $(pwd)/$|$ ~/.local/bin/$|$"
+
+  - trigger: ":pv"
+    replace: "python -m venv .venv\nsource .venv/bin/activate"
+
+  - trigger: ":torch"
+    replace: "uv pip install torch --index-url https://download.pytorch.org/whl/cu121"
+
+  - trigger: ":uv"
+    replace: "uv venv\nsource .venv/bin/activate"
+
+  - trigger: ":yas"
+    replace: "yay -S --noconfirm"
+
+  - trigger: ":mlbin"
+    replace: "mklink %USERPROFILE%\\.local\\bin\\$|$ %CD%\\$|$"
+
+  - trigger: ":wpv"
+    replace: "python -m venv .venv\n.venv\\Scripts\\activate.bat"
+
+  - trigger: ":wuv"
+    replace: "uv venv\n.venv\\Scripts\\activate.bat"

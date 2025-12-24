@@ -1,0 +1,172 @@
+patch:
+  style:
+    color_scheme: tufte
+    horizontal: true
+    display_tray_icon: false
+    font_face: "Sarasa Term SC Nerd"
+    font_point: 10
+    fullscreen: false
+    inline_preedit: false
+    # preedit_type: composition
+    # label_font_point: 10
+    label_format: "%s"
+    # comment_font_point: 10
+    mouse_hover_ms: 0
+    paging_on_scroll: false
+    shadow_offset_x: 0
+    shadow_offset_y: 0
+    shadow_radius: 0
+    layout:
+      min_width: 70
+      border: 0
+      border_width: 0
+      candidate_spacing: 0
+      hilite_padding: 0
+      hilite_spacing: 0
+      margin_x: 0
+      margin_y: 0
+      round_corner: 0
+      spacing: 0
+      round_corner: 0
+      corner_radius: 0
+  preset_color_schemes:
+    tufte:
+      name: tufte
+      author: scillidan
+      text_color: 0x111111
+      back_color: 0xfffff8
+      hilited_text_color: 0x111111
+      hilited_back_color: 0xfffff8
+      hilited_candidate_text_color: 0xfffff8
+      hilited_candidate_back_color: 0x111111
+      candidate_text_color: 0x111111
+  # easy_en:
+  #   use_wordninja_rs_lua_module: true
+  #   wordninja_rs_lua_module_path: ".../wordninja-rs-lua/wordninja.dll"
+  # app_options:
+  #   alacritty.exe:
+  #     ascii_mode: true
+  #   arch.exe:
+  #     ascii_mode: true
+  #   audacity:
+  #     ascii_mode: true
+  #   bash.exe:
+  #     ascii_mode: true
+  #   blender.exe:
+  #     ascii_mode: true
+  #   brave.exe:
+  #     ascii_mode: true
+  #   broot.exe:
+  #     ascii_mode: true
+  #   calibre.exe:
+  #     ascii_mode: true
+  #   ebook-viewer.exe:
+  #     ascii_mode: true
+  #   ebook-editor.exe:
+  #     ascii_mode: true
+  #   cmd.exe:
+  #     ascii_mode: true
+  #   conemu64.exe:
+  #     ascii_mode: true
+  #   darktable.exe:
+  #     ascii_mode: true
+  #   dbeaver.exe:
+  #     ascii_mode: true
+  #   ditto.exe:
+  #     ascii_mode: true
+  #   dngrep.exe:
+  #     ascii_mode: true
+  #   dopus.exe:
+  #     ascii_mode: true
+  #   dota2.exe:
+  #     ascii_mode: true
+  #   espanso:
+  #     ascii_mode: true
+  #   explorer.exe:
+  #     ascii_mode: true
+  #   everything.exe:
+  #     ascii_mode: true
+  #   freecad:
+  #     ascii_mode: true
+  #   git-bash.exe:
+  #     ascii_mode: true
+  #   githubdesktop.exe:
+  #     ascii_mode: true
+  #   godot.exe:
+  #     ascii_mode: true
+  #   goldendict.exe:
+  #     ascii_mode: true
+  #   gpodder.exe:
+  #     ascii_mode: true
+  #   hydralauncher.exe:
+  #     ascii_mode: true
+  #   inkscape.exe:
+  #     ascii_mode: true
+  #   i_view64.exe:
+  #     ascii_mode: true
+  #   jpegview.exe:
+  #     ascii_mode: true
+  #   keypirinha-x64.exe:
+  #     ascii_mode: true
+  #   kdenlive.exe:
+  #     ascii_mode: true
+  #   kicad.exe:
+  #     ascii_mode: true
+  #   eeschema.exe:
+  #     ascii_mode: true
+  #   pcbnew.exe:
+  #     ascii_mode: true
+  #   krita.exe:
+  #     ascii_mode: true
+  #   mpv.exe:
+  #     ascii_mode: true
+  #   neovide.exe:
+  #     ascii_mode: true
+  #   nvim.exe:
+  #     ascii_mode: true
+  #   lazygit.exe:
+  #     ascii_mode: true
+  #   librewolf-portable.exe:
+  #     ascii_mode: true
+  #   lintalist.exe:
+  #     ascii_mode: true
+  #   obsidian.exe:
+  #     ascii_mode: true
+  #   pegasus-fe.exe:
+  #     ascii_mode: true
+  #   powershell.exe:
+  #     ascii_mode: true
+  #   pureref.exe:
+  #     ascii_mode: true
+  #   pwsh.exe:
+  #     ascii_mode: true
+  #   quiterss.exe:
+  #     ascii_mode: true
+  #   qutebrowser.exe:
+  #     ascii_mode: true
+  #   shotcut.exe:
+  #     ascii_mode: true
+  #   sigil.exe:
+  #     ascii_mode: true
+  #   sioyek.exe:
+  #     ascii_mode: true
+  #   sublime_text.exe:
+  #     ascii_mode: true
+  #   tagspaces.exe:
+  #     ascii_mode: true
+  #   thunderbird.exe:
+  #     ascii_mode: true
+  #   vscodium.exe:
+  #     ascii_mode: true
+  #   wezterm.exe:
+  #     ascii_mode: true
+  #   wezterm-gui.exe:
+  #     ascii_mode: true
+  #   winsshterm.exe:
+  #     ascii_mode: true
+  #   wsl.exe:
+  #     ascii_mode: true
+  #   youtube-music.exe:
+  #     ascii_mode: true
+  #   zeal.exe:
+  #     ascii_mode: true

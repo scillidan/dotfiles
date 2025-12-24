@@ -1,0 +1,40 @@
+[mgr]
+show_hidden = true
+
+[plugin]
+prepend_preloaders = [
+  ## https://github.com/boydaihungst/mediainfo.yazi
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/postscript", run = "mediainfo" },
+  ## https://github.com/macydnah/office.yazi
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+]
+prepend_previewers = [
+  ## https://github.com/yazi-rs/plugins/tree/main/piper.yazi
+  { name = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
+  { name = "*.csv", run = 'piper -- bat -p --color=always "$1"' },
+  { name = "*/", run = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
+  # { name = "*", run = 'piper -- hexyl --border=none --terminal-width=$w "$1"' },
+  ## https://github.com/kirasok/epub-preview.yazi
+  { mime = "application/epub+zip", run = "epub-preview" },
+  ## https://github.com/boydaihungst/mediainfo.yazi
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  ## https://github.com/lihuax-me/hevi.yazi
+  { mime = "application/postscript", run = "mediainfo" },
+  { name = "*.{bin,exe}", run = "hevi" },
+  ## https://github.com/macydnah/office.yazi
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+]
+
+[tasks]
+image_alloc = 1073741824 # = 1024*1024*1024 = 1024MB

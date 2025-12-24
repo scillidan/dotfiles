@@ -1,0 +1,45 @@
+# https://github.com/rafaqz/.dotfiles/blob/master/.config/zathura/zathurarc
+
+set font "IosevkaTerm Nerd Font Mono, 10"
+set default-fg "#111111"
+set default-bg "#fffff8"
+set statusbar-fg "#fffff8"
+set statusbar-bg "#111111"
+set inputbar-fg "#fffff8"
+set inputbar-bg "#111111"
+set notification-error-fg "#111111"
+set notification-error-bg "#AC4142"
+set notification-warning-fg "#111111"
+set notification-warning-bg "#AC4142"
+set highlight-color "rgba(0, 0, 255, 0.3)"
+set highlight-active-color "rgba(0, 0, 255, 0.3)"
+set completion-highlight-fg "#111111"
+set completion-highlight-bg "#90A959"
+set completion-fg "#E0E0E0"
+set completion-bg "#303030"
+set notification-fg "#111111"
+set notification-bg "#90A959"
+set recolor "true"
+set recolor-lightcolor "#fffff8"
+set recolor-darkcolor "#111111"
+set recolor-reverse-video "true"
+set recolor-keephue "true"
+
+set adjust-open "best-fit"
+set pages-per-row 1
+set scroll-page-aware "true"
+set smooth-scroll "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+set zoom-min 10
+set guioptions ""
+set render-loading "false"
+set scroll-step 50
+
+set synctex true
+set synctex-editor-command "nvim --headless -c \"VimtexInverseSearch %{line} '%{input}'\""
+
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+

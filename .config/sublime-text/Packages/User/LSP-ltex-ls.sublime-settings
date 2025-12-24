@@ -1,0 +1,13 @@
+{
+  "settings": {
+    "ltex.enabled": [
+      "bibtex",
+      "context",
+      "context.tex",
+      "latex",
+      "org",
+      "rsweave",
+      "tex"
+    ],
+  }
+}
