@@ -1,98 +1,99 @@
 {
-	// "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
-	// "tabby.endpoint": "http://localhost:8080",
-	// "tabby.settings.advanced": {
-	//     "inlineCompletion.triggerMode": "manual"
-	// },
-	// Layout
-	"chat.commandCenter.enabled": false,
-	"window.commandCenter": false,
-	"workbench.activityBar.location": "top",
-	"workbench.editor.pinnedTabsOnSeparateRow": true,
-	"workbench.startupEditor": "none",
-	// Color Theme
-	"vscode-auto-light-dark-theme.darkTheme": "oxocarbon OLED",
-	"vscode-auto-light-dark-theme.lightTheme": "Default Light Modern",
-	"window.autoDetectColorScheme": false,
-	"workbench.colorCustomizations": {},
-	"workbench.colorTheme": "Default Light Modern",
-	"workbench.preferredDarkColorTheme": "oxocarbon OLED",
-	// Font
-	"chat.editor.fontSize": 13,
-	"csv-edit.fontSizeInPx": 13,
-	"debug.console.fontSize": 13,
-	"editor.fontSize": 13,
-	"editor.minimap.sectionHeaderFontSize": 7,
-	"markdown.preview.fontSize": 13,
-	"scm.inputFontSize": 12,
-	"screencastMode.fontSize": 54,
-	"terminal.integrated.fontSize": 13,
-	"chat.editor.fontFamily": "Sarasa Term SC Nerd",
-	"debug.console.fontFamily": "Sarasa Term SC Nerd",
-	"editor.codeLensFontFamily": "Sarasa Term SC Nerd",
-	"editor.fontFamily": "Sarasa Term SC Nerd",
-	"editor.inlineSuggest.fontFamily": "Sarasa Term SC Nerd",
-	"errorLens.fontFamily": "Sarasa Term SC Nerd",
-	"notebook.markup.fontFamily": "Sarasa Term SC Nerd",
-	"notebook.output.fontFamily": "Sarasa Term SC Nerd",
-	"scm.inputFontFamily": "Sarasa Term SC Nerd",
-	"terminal.integrated.fontFamily": "Sarasa Term SC Nerd Font",
-	// Editor
-	"editor.formatOnSave": true,
-	"editor.formatOnSaveMode": "modifications",
-	"editor.guides.indentation": false,
-	"editor.minimap.enabled": false,
-	"editor.tabSize": 2,
-	"editor.wordWrap": "on",
-	// Terminal
-	"terminal.integrated.defaultProfile.windows": "Cmder",
-	"terminal.integrated.fontWeight": "normal",
-	"terminal.integrated.tabs.enableAnimation": false,
-	"terminal.integrated.profiles.windows": {
-		"Cmder": {
-			"path": [
-				"${env:windir}\\Sysnative\\cmd.exe",
-				"${env:windir}\\System32\\cmd.exe"
-			],
-			"args": [
-				"/k ${env:userhome}\\Usr\\Opt\\cmder_mini\\vendor\\init.bat"
-			]
-		}
-	},
-	// Other
-	"explorer.confirmDelete": false,
-	"git.enableSmartCommit": true,
-	"git.confirmSync": false,
-	"git.openRepositoryInParentFolders": "always",
-	"redhat.telemetry.enabled": false,
-	"files.exclude": {
-		"**/_/": true,
-		"**/.git": true,
-		"**/.venv": true,
-		"**/.node_modules": true,
-		"**/*.rpyc": true,
-		"**/*.rpa": true,
-		"**/*.rpymc": true
-	},
-	"[lua]": {
-		"editor.defaultFormatter": "JohnnyMorganz.stylua"
-	},
-	"yaml.schemas": {
-		"file:///c%3A/Users/User/Scoop/apps/vscodium/1.106.37943/data/extensions/continue.continue-1.2.11-win32-x64/config-yaml-schema.json": [
-			".continue/**/*.yaml"
-		]
-	},
-	// Plugin
-	"cline.vsCodeLmModelSelector": {},
-	"continue.enableTabAutocomplete": false,
-	"continue.showInlineTip": false,
-	"database-client.autoSync": true,
-	"languageToolLinter.external.url": "http://ubuntu22:8040/v2",
-	"ltex.enabled": [
-		"markdown"
-	],
-	"ltex.hiddenFalsePositives": {},
-	"ltex.java.path": "C:\\Users\\User\\Usr\\Bin\\ltex-ls-plus\\jdk-21.0.5+11",
-	"ltex.languageToolHttpServerUri": "http://ubuntu22:8040",
-	"ltex.ltex-ls.path": "C:\\Users\\User\\Usr\\Bin\\ltex-ls-plus",
+    // "githubLocalActions.dockerDesktopPath": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
+    // "tabby.endpoint": "http://localhost:8080",
+    // "tabby.settings.advanced": {
+    //     "inlineCompletion.triggerMode": "manual"
+    // },
+    // Layout
+    "chat.commandCenter.enabled": false,
+    "window.commandCenter": false,
+    "workbench.activityBar.location": "top",
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.startupEditor": "none",
+    // Color Theme
+    "vscode-auto-light-dark-theme.darkTheme": "oxocarbon OLED",
+    "vscode-auto-light-dark-theme.lightTheme": "Light Modern",
+    "window.autoDetectColorScheme": false,
+    "workbench.preferredDarkColorTheme": "oxocarbon OLED",
+    "workbench.preferredLightColorTheme": "Light Modern",
+    "workbench.colorTheme": "Light Modern",
+    // Font
+    "chat.editor.fontSize": 13,
+    "csv-edit.fontSizeInPx": 13,
+    "debug.console.fontSize": 13,
+    "editor.fontSize": 13,
+    "editor.minimap.sectionHeaderFontSize": 7,
+    "markdown.preview.fontSize": 13,
+    "scm.inputFontSize": 12,
+    "screencastMode.fontSize": 54,
+    "terminal.integrated.fontSize": 13,
+    "chat.editor.fontFamily": "Sarasa Term SC Nerd",
+    "debug.console.fontFamily": "Sarasa Term SC Nerd",
+    "editor.codeLensFontFamily": "Sarasa Term SC Nerd",
+    "editor.fontFamily": "Sarasa Term SC Nerd",
+    "editor.inlineSuggest.fontFamily": "Sarasa Term SC Nerd",
+    "errorLens.fontFamily": "Sarasa Term SC Nerd",
+    "notebook.markup.fontFamily": "Sarasa Term SC Nerd",
+    "notebook.output.fontFamily": "Sarasa Term SC Nerd",
+    "scm.inputFontFamily": "Sarasa Term SC Nerd",
+    "terminal.integrated.fontFamily": "Sarasa Term SC Nerd Font",
+    // Editor
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.guides.indentation": false,
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    // Terminal
+    "terminal.integrated.defaultProfile.windows": "Cmder",
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.tabs.enableAnimation": false,
+    "terminal.integrated.profiles.windows": {
+        "Cmder": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [
+                "/k ${env:user}\\Usr\\Opt\\cmder_mini\\vendor\\init.bat"
+            ]
+        }
+    },
+    // Other
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "always",
+    "redhat.telemetry.enabled": false,
+    "files.exclude": {
+        "**/_/": true,
+        "**/.git": true,
+        "**/.venv": true,
+        "**/.node_modules": true,
+        "**/*.rpyc": true,
+        "**/*.rpa": true,
+        "**/*.rpymc": true
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    },
+    "yaml.schemas": {
+        "file:///c%3A/Users/User/Scoop/apps/vscodium/1.106.37943/data/extensions/continue.continue-1.2.11-win32-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ]
+    },
+    // Plugin
+    "cline.vsCodeLmModelSelector": {},
+    "continue.enableTabAutocomplete": false,
+    "continue.showInlineTip": false,
+    "database-client.autoSync": true,
+    "languageToolLinter.external.url": "http://ubuntu22:8040/v2",
+    "ltex.enabled": [
+        "markdown"
+    ],
+    "ltex.hiddenFalsePositives": {},
+    "ltex.java.path": "C:\\Users\\User\\Usr\\Bin\\ltex-ls-plus\\jdk-21.0.5+11",
+    "ltex.languageToolHttpServerUri": "http://ubuntu22:8040",
+    "ltex.ltex-ls.path": "C:\\Users\\User\\Usr\\Bin\\ltex-ls-plus",
+    "workbench.colorCustomizations": {}
 }
