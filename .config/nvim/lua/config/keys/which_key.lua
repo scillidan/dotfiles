@@ -1,5 +1,21 @@
 local wk = require("which-key")
+
 wk.add({
+	-- Switch Light/Dark theme
+	{
+		"<leader>sc",
+		function()
+			if vim.g.current_theme == "vanta" then
+				vim.cmd("colorscheme github_light_colorblind")
+				vim.g.current_theme = "github_light_colorblind"
+			else
+				vim.cmd("colorscheme vanta")
+				vim.g.current_theme = "vanta"
+			end
+		end,
+		desc = "Toggle theme",
+		mode = "n",
+	},
 	-- auto-session
 	-- https://github.com/rmagatti/auto-session?tab=readme-ov-file#-commands
 	{ "<leader>wr", "<Cmd>AutoSession search<CR>", desc = "AutoSession search" },

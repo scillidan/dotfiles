@@ -42,6 +42,12 @@ require("lazy").setup({
 		end,
 	},
 	{
+		"projekt0n/github-nvim-theme",
+		name = "github-theme",
+		lazy = false,
+		priority = 1000,
+	},
+	{
 		"EdenEast/nightfox.nvim",
 		config = function()
 			require("config.nightfox")

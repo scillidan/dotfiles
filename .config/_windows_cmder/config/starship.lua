@@ -1,5 +1,5 @@
 -- %USERPROFILE% or Customize ENV path
-local user = os.getenv("USER") or os.getenv("USERPROFILE")
+local user = os.getenv("USERHOME") or os.getenv("USERPROFILE")
 os.setenv("STARSHIP_CONFIG", user .. "\\Usr\\Git\\dotfiles\\.config\\starship_windows.toml")
 os.setenv("STARSHIP_CACHE", user .. "\\Usr\\Data\\starship")
 

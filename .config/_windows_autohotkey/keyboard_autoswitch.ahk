@@ -1,14 +1,12 @@
 ; Automatically switch the keyboard layout to the English (United States) layout when a user activates a new window.
 ; Authors: perplexity.ai🧙‍♂️, scillidan🤡
+; Usage: autohotkeyu64.exe script.ahk
 
-; ===== SETTINGS =====
 ; Delay (milliseconds) after switching to a new window
-SwitchDelay := 300      ; change as you like, in ms
-
+SwitchDelay := 300
 ; EN‑US layout code (0x0409)
 EN_Code := 0x409
 
-; ===== GLOBALS =====
 lastWinID := 0
 
 #Persistent

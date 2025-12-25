@@ -212,7 +212,7 @@ config.mouse_bindings = {
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	-- %USERPROFILE% or Customize ENV path
-	local user = os.getenv("USER") or os.getenv("USERPROFILE")
+	local user = os.getenv("USERHOME") or os.getenv("USERPROFILE")
 	config.default_cwd = user .. "\\Downloads"
 	config.default_prog = {
 		"cmd.exe",

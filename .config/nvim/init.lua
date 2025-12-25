@@ -11,14 +11,14 @@ if vim.fn.has("win32") == 1 then
 	-- vim.o.shell = fn.executable("pwsh") and "pwsh" or "powershell"
 	-- vim.opt.shellcmdflag = "-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;"
 	-- vim.o.shell = "cmd.exe"
-	-- vim.o.shellcmdflag = "/k" .. os.getenv("USER") .. "/Usr/Opt/cmder_mini/vendor/init.bat"
+	-- vim.o.shellcmdflag = "/k" .. os.getenv("USERHOME") .. "/Usr/Opt/cmder_mini/vendor/init.bat"
 	vim.opt.shellpipe = '2>&1 | %{ "$_" } | Tee-Object %s; exit $LastExitCode'
 	vim.opt.shellquote = ""
 	vim.opt.shellredir = '2>&1 | %{ "$_" } | Out-File %s; exit $LastExitCode'
 	vim.opt.shellxquote = ""
 	vim.g.plenary_curl_bin_path = os.getenv("SCOOP") .. "/apps/git/current/mingw64/bin/curl.exe"
 	vim.g.python3_host_prog = os.getenv("SCOOP") .. "/apps/python310/current/python.exe"
-	vim.g.sqlite_clib_path = os.getenv("USER") .. "/Usr/Lib/sqlite-dll/sqlite3.dll"
+	vim.g.sqlite_clib_path = os.getenv("USERHOME") .. "/Usr/Lib/sqlite-dll/sqlite3.dll"
 end
 
 -- For Neovide

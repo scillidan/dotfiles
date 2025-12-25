@@ -1,9 +1,9 @@
 require("neovim-project").setup({
 	projects = {
 		(vim.fn.has("unix") == 1 and os.getenv("HOME"))
-			or (vim.fn.has("win32") == 1 and os.getenv("USER")) .. "/Usr/Git",
+			or (vim.fn.has("win32") == 1 and os.getenv("USERHOME")) .. "/Usr/Git",
 		(vim.fn.has("unix") == 1 and os.getenv("HOME"))
-			or (vim.fn.has("win32") == 1 and os.getenv("USER")) .. "/Usr/Proj",
+			or (vim.fn.has("win32") == 1 and os.getenv("USERHOME")) .. "/Usr/Proj",
 	},
 	datapath = vim.fn.stdpath("data"),
 	last_session_on_startup = true,
