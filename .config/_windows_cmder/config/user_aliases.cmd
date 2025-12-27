@@ -11,9 +11,6 @@ pwd=cd
 clr=clear
 ipi=ipconfig | findstr /i "ipv4"
 
-;= rem Bin
-mlbin=mklink %USERPROFILE%\.local\bin\$2 %CD%\$1
-
 ;= rem choco
 ch=choco info $*
 cs=choco search $*
@@ -34,7 +31,9 @@ sup=scoop update $*
 sua=scoop update -a -k
 scca=scoop cache rm *
 scua=scoop cleanup *
-sib=scoop install %USERHOME%\Usr\GitFork\Bucket\bucket\$*.json
+sib=scoop install %USERHOME%\Usr\GitFork\scoop-bucket\bucket\$*.json
+rsib=scoop uninstall $1 && scoop install %USERHOME%\Usr\GitFork\scoop-bucket\bucket\$1.json
+fccc=formatjson $1 && checkver $1
 
 ;= rem gh extensions
 ghtd=gh tidy

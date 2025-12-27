@@ -1,0 +1,3 @@
+matches:
+  - trigger: ":prdone"
+    replace: "Completed the PR to bucket Extras$|$ and clean up"

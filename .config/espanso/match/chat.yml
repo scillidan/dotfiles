@@ -8,14 +8,26 @@ matches:
   - trigger: ":match"
     replace: "Used regex, how to match string `$|$`"
 
+  - trigger: ":aut"
+    form: |
+      Authors: [[author]]🧙‍♂️, scillidan🤡
+    form_fields:
+      author:
+        type: choice
+        values:
+          - GPT-4o mini
+          - perplexity.ai
+          - mistral.ai
+
   - trigger: ":by"
-    replace: "Authors: GPT-4o mini🧙‍♂️, scillidan🤡"
+    form: |
+      Authors: [[author]]
+    form_fields:
+      author:
+        type: choice
+        values:
+          - GPT-4o mini
+          - perplexity.ai
 
   - trigger: ":ce"
     replace: "```sh$|$\n```"
-
-  - trigger: ":gpt4"
-    replace: "[GPT-4o mini]"
-
-  - trigger: ":perp"
-    replace: "[perplexity.ai]"

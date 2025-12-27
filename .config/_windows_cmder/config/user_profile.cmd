@@ -46,7 +46,8 @@ set "_use_new_zipfile_serialization=False"
 rem Bin
 rem ---
 rem clink-terminal
-set "CLINK_FZF_PREVIEW_SIXELS=1"
+set "CLINK_INPUTRC=%CMDER_ROOT%\vendor"
+set "CLINK_FZF_PREVIEW_SIXELS=0"
 
 rem lstr
 set "LS_COLORS=rs=0:di=01;34:ln=01;36:ex=01;32:*.zip=01;31:*.png=01;35:"
@@ -57,14 +58,14 @@ set "ALASS_FFPROBE_PATH=%SCOOP%\apps\ffmpeg\current\bin\ffprobe.exe"
 
 rem espeak-ng
 set "PHONEMIZER_ESPEAK_LIBRARY=%SCOOP%\apps\espeak-ng\current\eSpeak NG\libespeak-ng.dll"
-set "PHONEMIZER_ESPEAK_PATH=%USERHOME%\Usr\Git\Shell\_windows\Patch\espeak-ng.bat"
+set "PHONEMIZER_ESPEAK_PATH=%USERHOME%\Usr\Git\Shell\_windows\Patch\espeak-ng.cmd"
 
 rem kokoro-tts-cli
-set "KOKORO_PATH=%USERHOME%\Usr\OptWeb\Kokoro-TTS-Local"
+set "KOKORO_PATH=%USERHOME%\Usr\OptAud\Kokoro-TTS-Local"
 
 rem Opt
 rem ---
 set "FAST_REFRESH=true"
 
 call "%CMDER_ROOT%\vendor\setpath.bat"
-call "%USERHOME%\Usr\Shell\RefrEnv\refrenv.bat"
+call "refrenv"
