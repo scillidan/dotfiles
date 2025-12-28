@@ -1,0 +1,5 @@
+## fzf
+# https://dev.to/helderberto/integrating-tldr-with-fzf-2377
+tldf: tldr --list | fzf --preview "tldr {1}" --preview-window=right,60% | xargs tldr
+## yay
+yas: yay -S --noconfirm

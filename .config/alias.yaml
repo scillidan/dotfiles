@@ -1,0 +1,68 @@
+# Bin
+## alass
+alas: alass $1.$2 $1.$3 $1.alass.$3
+## bat
+more: bat -f -p
+## doggo
+dga: doggo A $* @1.1.1.1
+dgg: doggo A $* @8.8.8.8
+## eza
+ls: eza --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+l: eza --git-ignore --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+ll: eza --all --header --long --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+llm: eza --all --header --long --sort=modified --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+la: eza -lbhHigUmuSa
+lx: eza -lbhHigUmuSa@
+lt: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+tree: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+## forgit
+glo: forgit log
+grl: forgit reflog
+gd: forgit diff
+gso: forgit show
+ga: forgit add
+grh: forgit reset_head
+gi: forgit ignore
+gat: forgit attributes
+gcf: forgit checkout_file
+gcb: forgit checkout_branch
+gsw: forgit switch_branch
+gbd: forgit branch_delete
+gct: forgit checkout_tag
+gco: forgit checkout_commit
+grc: forgit revert_commit
+gclean: forgit clean
+gss: forgit stash_show
+gsp: forgit stash_push
+gcp: forgit cherry_pick
+grb: forgit rebase
+gbl: forgit blamegd
+gfu: forgit fixup
+gsq: forgit squash
+grw: forgit reword
+## gh extensions
+ghtd: gh tidy
+ghorg: gh clone-org
+ghdl: gh download
+## gopencc
+t2c: gopencc -c t2s -i
+c2t: gopencc -c s2t -i
+## jq
+jqp: jq ".scripts" package.json
+## lazygit
+lg: lazygit -sm half
+## ltts
+lttso: ltts $2 -v af_bella -o $1.mp3
+## sgpt
+comment: cat $* | sgpt --code "Generate comments for each line"
+explain: sgpt --model ollama/mistral:7b-instruct --role explain
+optimize: sgpt --model ollama/mistral:7b-instruct --role optimize
+summarize: sgpt --model ollama/mistral:7b-instruct --role summarize
+adcopy: sgpt --model ollama/llama3.1:8b --role adcopy
+
+# Lib
+## cargo
+cgs: cargo search  --registry crates-io
+
+# Shell
+chk: pylanguagetool --api-url http://ubuntu22:8040/v2/ --input-type html --lang en-US -c

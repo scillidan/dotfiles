@@ -1,0 +1,40 @@
+# Path
+_neovide: bash _neovide.sh
+git_init: bash git_init.sh
+git_push: bash git_push.sh
+git_tag: bash git_tag.sh
+magick_annot: bash magick_annot.sh
+magick_gen: bash magick_gen.sh
+magick_gird: bash magick_gird.sh
+magick_halftone: bash magick_halftone.sh
+
+# Bin
+## choco
+ch: choco info
+cs: choco search
+ci: gsudo choco install -y
+cu: gsudo choco uninstall
+cup: gsudo choco upgrade
+cua: gsudo choco upgrade all -y
+cl: choco list
+## scoop
+ss: scoop search
+si: scoop install
+su: scoop uninstall
+sh: scoop home
+sl: scoop list
+sst: scoop status
+sup: scoop update
+sua: scoop update -a -k
+sca: scoop cleanup * && scoop cache rm *
+sib: "scoop install %USERHOME%\\Usr\\GitFork\\scoop-bucket\\bucket\\$*.json"
+rsib: "scoop uninstall $1 && scoop install %USERHOME%\\Usr\\GitFork\\scoop-bucket\\bucket\\$1.json"
+fcc: formatjson $1 && checkver $1 && checkhashes $1
+
+# Opt
+# CUDA
+cuda11: set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8"
+cuda12: set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3"
+# Directory Opus
+do: dopus "%CD%\$*"
+# e: explorer %CD%\$*

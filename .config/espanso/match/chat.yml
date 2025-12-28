@@ -16,17 +16,16 @@ matches:
         type: choice
         values:
           - GPT-4o mini
-          - perplexity.ai
           - mistral.ai
+          - perplexity.ai
 
   - trigger: ":by"
     form: |
-      Authors: [[author]]
+      [[author]]
     form_fields:
       author:
         type: choice
         values:
-          - GPT-4o mini
           - perplexity.ai
 
   - trigger: ":ce"

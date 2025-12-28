@@ -42,9 +42,12 @@ autoload -Uz compinit
 compinit
 
 source "$HOME/.config/zsh/function.zsh"
-source "$HOME/.config/zsh/alias.zsh"
+for config in "${HOME}/.config/zsh/alias"*.yaml; do
+    [[ -f "$config" ]] && source "$config"
+done
 
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/go/bin:$PATH"
+export PATH="$HOME/Usr/Git/Shell/bin:$PATH"
 
 if [[ -n "$TERMUX_VERSION" ]]; then
   is_termux=1
@@ -171,8 +174,8 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 # bindkey -s '^v' 'nvim $(fzf)\n'
-bindkey -s '^[s' 'rfs\n'
-bindkey -s '^[f' 'rff\n'
+bindkey -s '^[s' 'fzf_ripgrep\n'
+bindkey -s '^[f' 'fzf_files\n'
 
 zi snippet "$ZSH_CUSTOM/themes/minimal/minimal.zsh"
 

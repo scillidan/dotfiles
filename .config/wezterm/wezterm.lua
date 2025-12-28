@@ -237,12 +237,12 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	table.insert(config.keys, {
 		key = "F",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SendString("ff\r"),
+		action = wezterm.action.SendString("fzf_files\r"),
 	})
 	table.insert(config.keys, {
 		key = "G",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.SendString("fg\r"),
+		action = wezterm.action.SendString("fzf_ripgrep\r"),
 	})
 end
 
