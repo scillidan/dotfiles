@@ -1,16 +1,11 @@
 {
+    // "auto_complete": true,
+    // "auto_complete_preserve_order": "none",
     "auto_complete_selector": "text, comment, string",
     "close_windows_when_empty": false,
     "font_face": "MonaspaceAr Nerd Font Mono",
-    "font_options": [
-        // "directwrite",
-        // "dwrite_cleartype_natural",
-        // "ss01"
-        "dlig",
-    ],
     "font_size": 8,
-    "ignored_packages": [
-        "Vintage",
+    "ignored_packages": [ "Vintage",
     ],
     "index_files": false,
     "install_prereleases": [
@@ -32,7 +27,7 @@
     "show_git_status": false,
     "tab_size": 2,
     "theme": "Adaptive.sublime-theme",
-    "vintage_use_clipboard": true,
+    // "vintage_use_clipboard": true,
     "word_wrap": true,
     // "detect_indentation": false
     // "translate_tabs_to_spaces": true,

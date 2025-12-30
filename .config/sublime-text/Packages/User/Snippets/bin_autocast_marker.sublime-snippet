@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+- !Marker $1
+]]></content>
+  <tabTrigger>acm</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>autocast marker</description>
+</snippet>

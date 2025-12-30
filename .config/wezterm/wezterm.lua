@@ -1,9 +1,7 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
-
--- config.color_scheme = "VisiBlue (terminal.sexy)"
-local light_scheme = "Windows 10 Light (base16)"
+local light_scheme = "One Light (Gogh)"
 local is_light = false
 
 config.colors = {
@@ -33,16 +31,11 @@ config.font = wezterm.font_with_fallback({
 	"IosevkaTerm Nerd Font Mono",
 })
 config.font_size = 10.0
-config.initial_cols = 151
-config.initial_rows = 36
-config.tab_bar_at_bottom = true
+config.initial_cols = 152
+config.initial_rows = 42
 config.window_background_opacity = 1
 config.window_close_confirmation = "NeverPrompt"
-config.show_tab_index_in_tab_bar = false
 config.window_decorations = "NONE"
-config.hide_tab_bar_if_only_one_tab = true
-config.use_fancy_tab_bar = false
-config.tab_max_width = 25
 config.window_frame = {
 	font = wezterm.font_with_fallback({
 		"Sarasa Term SC Nerd",
@@ -66,25 +59,26 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+config.hide_tab_bar_if_only_one_tab = true
+config.show_tab_index_in_tab_bar = false
+config.tab_bar_at_bottom = true
+config.tab_max_width = 25
+config.use_fancy_tab_bar = false
 config.warn_about_missing_glyphs = false
 
+-- Key
 config.disable_default_key_bindings = true
-config.leader = { key = "a", mods = "CTRL" }
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
+	{
+		key = "F",
+		mods = "LEADER",
+		action = wezterm.action.ToggleFullScreen,
+	},
 	{
 		key = "p",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.Search("CurrentSelectionOrEmptyString"),
-	},
-	{
-		key = "Enter",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.ToggleFullScreen,
-	},
-	{
-		key = "Enter",
-		mods = "SUPER",
-		action = wezterm.action.ToggleFullScreen,
 	},
 	{
 		key = "c",
@@ -182,6 +176,7 @@ config.keys = {
 	{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 }
 
+-- Mouse
 config.mouse_bindings = {
 	{
 		event = { Down = { streak = 1, button = "Right" } },
@@ -210,8 +205,8 @@ config.mouse_bindings = {
 	},
 }
 
+-- For Windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	-- %USERPROFILE% or Customize ENV path
 	local user = os.getenv("USERHOME") or os.getenv("USERPROFILE")
 	config.default_cwd = user .. "\\Downloads"
 	config.default_prog = {
@@ -219,11 +214,6 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		"/k",
 		user .. "\\Usr\\Opt\\cmder_mini\\vendor\\init.bat",
 	}
-	-- config.default_prog = {
-	-- 	"cmd.exe",
-	-- 	"/k",
-	-- 	user .. "\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" .. " && clink-terminal",
-	-- }
 	table.insert(config.keys, {
 		key = "h",
 		mods = "CTRL|SHIFT",

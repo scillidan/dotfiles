@@ -1,0 +1,83 @@
+<snippet>
+  <content><![CDATA[
+{
+    "version": "",
+    "description": "",
+    "homepage": "",
+    "license": "",
+    "notes": "",
+    "depends": "",
+    "suggest": "",
+    "architecture": {
+        "64bit": {
+            "url": "",
+            "hash": ""
+        },
+        "32bit": {
+            "url": "",
+            "hash": ""
+        },
+        "arm64": {
+            "url": "",
+            "hash": ""
+        }
+    },
+    "extract_dir": "",
+    "extract_to": "",
+    "pre_install": "",
+    "installer": {
+        "script": ""
+    },
+    "post_install": [
+        "",
+        ""
+    ],
+    "uninstaller": {
+        "script": ""
+    },
+    "bin": [
+        [
+            "",
+            ""
+        ]
+    ],
+    "shortcuts": [
+        [
+            "",
+            ""
+        ]
+    ],
+    "env_add_path": [
+        ""
+    ],
+    "env_set": "",
+    "persist": [
+        ""
+    ],
+    "checkver": {
+        "url": "",
+        "regex": ""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": ""
+            },
+            "32bit": {
+                "url": ""
+            },
+            "arm64": {
+                "url": ""
+            }
+        },
+        "hash": {
+            "url": "",
+            "regex": ""
+        }
+    }
+}
+]]></content>
+  <tabTrigger>appfull</tabTrigger>
+  <scope>source.json</scope>
+  <description>scoop bucket manifest-full</description>
+</snippet>

@@ -1,3 +1,6 @@
 auto_restart: true
-toggle_key: OFF
+force_mode: clipboard
+input:
+  method: clipboard
 search_shortcut: Alt+Shift+e
+toggle_key: OFF

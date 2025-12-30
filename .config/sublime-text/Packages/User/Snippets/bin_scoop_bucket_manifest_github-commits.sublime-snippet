@@ -1,0 +1,30 @@
+<snippet>
+  <content><![CDATA[
+{
+    "version": "${6:yyyymmdd}",
+    "description": "$1",
+    "homepage": "${3:baseurl}",
+    "license": "${2:Unlicensed license}",
+    "notes": "Recommend adding bash.exe from the manifest main/git to the top of the system environment's PATH.",
+    "url": "${3:baseurl}/archive/${5:branch}.zip",
+    "hash": "${5:sha256}",
+    "extract_dir": "${4:basename}-${5:branch}",
+    "pre_install": [
+        "New-Item -Path \"$dir\\${4:basename}.cmd\" -ItemType File -Force",
+        "Add-Content -Path \"$dir\\${4:basename}.cmd\" -Value \"bash $env:SCOOP\\apps\\${4:basename}\\current\\${4:basename} %*\""
+    ],
+    "bin": "${4:basename}.cmd",
+    "checkver": {
+        "url": "https://api.github.com/repos/simonthum/${4:basename}/commits",
+        "regex": "(\\d+)-(\\d+)-(\\d+)+T",
+        "replace": "$1$2$3"
+    },
+    "autoupdate": {
+        "url": "${3:baseurl}/archive/${5:branch}.zip"
+    }
+}
+]]></content>
+  <tabTrigger>scoopcommmits</tabTrigger>
+  <scope>source.json</scope>
+  <description>scoop bucket github-commits (bash)</description>
+</snippet>

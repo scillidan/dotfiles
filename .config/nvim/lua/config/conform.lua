@@ -3,7 +3,7 @@ require("conform").setup({
 		-- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
 		lua = { "stylua" },
 		python = { "yapf", "isort", "black" },
-		-- typst = { "typstyle" },
+		typst = { "typstyle" },
 		tex = { "tex-fmt" },
 		bib = { "bibtex-tidy" },
 		sh = { "shfmt" },

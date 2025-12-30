@@ -1,0 +1,37 @@
+<snippet>
+  <content><![CDATA[
+{
+    "version": "${4:version}",
+    "description": "$1",
+    "homepage": "${3:baseurl}",
+    "license": "${2:MIT}",
+    "architecture": {
+        "64bit": {
+            "url": "${3:baseurl}/releases/download/${4:version}/${5:basename}",
+            "hash": "${6:sha256}"
+        }
+    },
+    "bin": "${5:basename}",
+    "shortcuts": [
+    	[
+    		"${5:basename}",
+    		"${5:basename}"
+    	]
+    ],
+    "persist": [
+        "${5:basename}"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "${3:baseurl}/releases/download/\$version/${5:basename}"
+            }
+        }
+    }
+}
+]]></content>
+  <tabTrigger>appmin</tabTrigger>
+  <scope>source.json</scope>
+  <description>scoop bucket manifest-mini</description>
+</snippet>

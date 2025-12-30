@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+{% embed ${1:bilibili} id="$2" loading="lazy" %}
+]]></content>
+	<tabTrigger>mdbookembed</tabTrigger>
+	<scope>text.html.markdown</scope>
+	<description>mdbook embed</description>
+</snippet>

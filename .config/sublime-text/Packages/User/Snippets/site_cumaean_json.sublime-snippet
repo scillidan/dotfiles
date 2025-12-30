@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+{tit:"$1", art:"$3", play:"<audio controls preload=\"none\" src=\"media/$1.ogg\"></audio>", src:"<a href=\"https://opengameart.org/content/$2\" target=\"_blank\" rel=\"noopener\">Link</a>", cr:"<a href=\"$4\" target=\"_blank\" rel=\"noopener\">${5:CC }</a>"},
+]]></content>
+  <tabTrigger>cumaeanjson</tabTrigger>
+  <scope>source.js</scope>
+  <description>cumaean json</description>
+</snippet>

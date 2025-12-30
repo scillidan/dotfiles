@@ -1,8 +1,0 @@
-<snippet>
-  <content><![CDATA[
-[$2](https://github.com/$1/$2) by [$3](https://github.com/$1) / [$4](https://github.com/$1/$2/blob/master/LICENSE)  | <img src="https://raw.githubusercontent.com/scillidan/asset/main/lively-wallpaper/$2.png" height="50px"> | [github](https://github.com/scillidan/$2) | [++](https://steamcommunity.com/sharedfiles/filedetails?id=++) ![](https://img.shields.io/steam/subscriptions/++?style=flat-square&label=) ![](https://img.shields.io/steam/downloads/++?style=flat-square&label=)
-]]></content>
-  <tabTrigger>livelywallpaper</tabTrigger>
-  <scope>text.html.markdown</scope>
-  <description>lively wallpaper</description>
-</snippet>

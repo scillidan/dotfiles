@@ -1,5 +1,5 @@
-# Path
-_neovide: bash _neovide.sh
+# Patch
+_neovide: bash _neovide.sh $*
 git_init: bash git_init.sh
 git_push: bash git_push.sh
 git_tag: bash git_tag.sh
@@ -27,8 +27,6 @@ sst: scoop status
 sup: scoop update
 sua: scoop update -a -k
 sca: scoop cleanup * && scoop cache rm *
-sib: "scoop install %USERHOME%\\Usr\\GitFork\\scoop-bucket\\bucket\\$*.json"
-rsib: "scoop uninstall $1 && scoop install %USERHOME%\\Usr\\GitFork\\scoop-bucket\\bucket\\$1.json"
 fcc: formatjson $1 && checkver $1 && checkhashes $1
 
 # Opt

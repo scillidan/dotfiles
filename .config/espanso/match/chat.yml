@@ -16,17 +16,18 @@ matches:
         type: choice
         values:
           - GPT-4o mini
+          - DeepSeek
           - mistral.ai
           - perplexity.ai
+        default: GPT-4o mini
 
   - trigger: ":by"
     form: |
-      [[author]]
+      [[by]]
     form_fields:
-      author:
+      by:
         type: choice
         values:
-          - perplexity.ai
-
-  - trigger: ":ce"
-    replace: "```sh$|$\n```"
+          - '[perplexity.ai]'
+          - '[GPT-4o mini]'
+        default: '[perplexity.ai]'

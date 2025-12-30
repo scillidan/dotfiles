@@ -1,0 +1,29 @@
+<snippet>
+  <content><![CDATA[
+Windows Registry Editor Version 5.00$4
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\\$3]$4
+@="$3 ."
+"Icon"="$1"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\\$3\command]$4
+@="\"$1\" ${2:--working-directory} \"%V"
+
+[HKEY_CLASSES_ROOT\Drive\shell\\$3]$4
+@="$3 ."
+"Icon"="$1"
+
+[HKEY_CLASSES_ROOT\Drive\shell\\$3\command]$4
+@="\"$1\" ${2:--working-directory} \"%V"
+
+[HKEY_CLASSES_ROOT\Directory\shell\\$3]
+@="$3 ."
+"Icon"="$1"
+
+[HKEY_CLASSES_ROOT\Directory\shell\\$3\command]$4
+@="\"$1\" ${2:--working-directory} \"%V"
+]]></content>
+  <tabTrigger>registryinstall</tabTrigger>
+  <scope>text</scope>
+  <description>registry-install</description>
+</snippet>

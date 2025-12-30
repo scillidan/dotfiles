@@ -1,4 +1,4 @@
---nvim-mdlink
+-- nvim-mdlink
 -- local has_mdlink, mdlink = pcall(require, "nvim-mdlink.cmp")
 -- if has_mdlink then
 -- 	require("cmp").register_source("mdlink", mdlink.new())
@@ -114,47 +114,46 @@ return {
 				score_offset = 100,
 			},
 			--https://linkarzu.com/posts/neovim/blink-cmp-updates/#disabled-lsp-fallbcks
-			-- lsp = {
-			-- 	name = "lsp",
-			-- 	enabled = true,
-			-- 	module = "blink.cmp.sources.lsp",
-			-- 	kind = "LSP",
-			-- 	min_keyword_length = 3,
-			-- 	score_offset = 90,
-			-- },
-			-- snippets = {
-			-- 	name = "snippets",
-			-- 	enabled = true,
-			-- 	max_items = 15,
-			-- 	min_keyword_length = 2,
-			-- 	module = "blink.cmp.sources.snippets",
-			-- 	score_offset = 85,
-			-- 	should_show_items = function()
-			-- 		local col = vim.api.nvim_win_get_cursor(0)[2]
-			-- 		local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
-			-- 		return before_cursor:match(trigger_text .. "%w*$") ~= nil
-			-- 	end,
-			-- 	transform_items = function(_, items)
-			-- 		local col = vim.api.nvim_win_get_cursor(0)[2]
-			-- 		local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
-			-- 		local trigger_pos = before_cursor:find(trigger_text .. "[^" .. trigger_text .. "]*$")
-			-- 		if trigger_pos then
-			-- 			for _, item in ipairs(items) do
-			-- 				item.textEdit = {
-			-- 					newText = item.insertText or item.label,
-			-- 					range = {
-			-- 						start = { line = vim.fn.line(".") - 1, character = trigger_pos - 1 },
-			-- 						["end"] = { line = vim.fn.line(".") - 1, character = col },
-			-- 					},
-			-- 				}
-			-- 			end
-			-- 		end
-			-- 		vim.schedule(function()
-			-- 			require("blink.cmp").reload("snippets")
-			-- 		end)
-			-- 		return items
-			-- 	end,
-			-- },
+			lsp = {
+				name = "LSP",
+				enabled = true,
+				module = "blink.cmp.sources.lsp",
+				min_keyword_length = 3,
+				score_offset = 90,
+			},
+			snippets = {
+				name = "snippets",
+				enabled = true,
+				max_items = 15,
+				min_keyword_length = 2,
+				module = "blink.cmp.sources.snippets",
+				score_offset = 85,
+				should_show_items = function()
+					local col = vim.api.nvim_win_get_cursor(0)[2]
+					local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
+					return before_cursor:match("s%w*$") ~= nil -- Simplified trigger check
+				end,
+				transform_items = function(_, items)
+					local col = vim.api.nvim_win_get_cursor(0)[2]
+					local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
+					local trigger_pos = before_cursor:find("s[^s]*$")
+					if trigger_pos then
+						for _, item in ipairs(items) do
+							item.textEdit = {
+								newText = item.insertText or item.label,
+								range = {
+									start = { line = vim.fn.line(".") - 1, character = trigger_pos - 1 },
+									["end"] = { line = vim.fn.line(".") - 1, character = col },
+								},
+							}
+						end
+					end
+					vim.schedule(function()
+						require("blink.cmp").reload("snippets")
+					end)
+					return items
+				end,
+			},
 			latex = {
 				name = "LaTeX",
 				module = "blink-cmp-latex",
@@ -274,21 +273,21 @@ return {
 						on_off = nil,
 						debug = nil,
 					},
-					-- future_features = {
-					-- 	backend = {
-					-- 		use = "ripgrep",
-					-- 	},
-					-- },
+					future_features = {
+						backend = {
+							use = "ripgrep",
+						},
+					},
 					debug = false,
 				},
-				-- transform_items = function(_, items)
-				-- 	for _, item in ipairs(items) do
-				-- 		item.labelDetails = {
-				-- 			description = "(rg)",
-				-- 		}
-				-- 	end
-				-- 	return items
-				-- end,
+				transform_items = function(_, items)
+					for _, item in ipairs(items) do
+						item.labelDetails = {
+							description = "(rg)",
+						}
+					end
+					return items
+				end,
 			},
 			tmux = {
 				--https://github.com/mgalliou/blink-cmp-tmux?tab=readme-ov-file#installation--configuration
@@ -303,19 +302,19 @@ return {
 			},
 		},
 	},
-	-- fuzzy = {
-	-- 	sorts = {
-	-- 		function(a, b)
-	-- 			local sort = require("blink.cmp.fuzzy.sort")
-	-- 			if a.source_id == "spell" and b.source_id == "spell" then
-	-- 				return sort.label(a, b)
-	-- 			end
-	-- 		end,
-	-- 		"score",
-	-- 		"kind",
-	-- 		"label",
-	-- 	},
-	-- },
+	fuzzy = {
+		sorts = {
+			function(a, b)
+				local sort = require("blink.cmp.fuzzy.sort")
+				if a.source_id == "spell" and b.source_id == "spell" then
+					return sort.label(a, b)
+				end
+			end,
+			"score",
+			"kind",
+			"label",
+		},
+	},
 	cmdline = {
 		keymap = {
 			preset = "none",
@@ -355,24 +354,4 @@ return {
 			end,
 		},
 	},
-	--https://github.com/Saghen/blink.cmp/issues/1222
-	config = function(_, opts)
-		local original = require("blink.cmp.completion.list").show
-		---@diagnostic disable-next-line: duplicate-set-field
-		require("blink.cmp.completion.list").show = function(ctx, items_by_source)
-			local seen = {}
-			local function filter(item)
-				if seen[item.label] then
-					return false
-				end
-				seen[item.label] = true
-				return true
-			end
-			for id in vim.iter(opts.sources.priority) do
-				items_by_source[id] = items_by_source[id] and vim.iter(items_by_source[id]):filter(filter):totable()
-			end
-			return original(ctx, items_by_source)
-		end
-		require("blink.cmp").setup(opts)
-	end,
 }

@@ -1,8 +1,0 @@
-<snippet>
-  <content><![CDATA[
-{{footnote: $1 }}
-]]></content>
-  <tabTrigger>mdbookfootnote</tabTrigger>
-  <scope>text.html.markdown</scope>
-  <description>mdbook footnote</description>
-</snippet>

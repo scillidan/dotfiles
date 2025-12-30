@@ -53,16 +53,26 @@ jqp: jq ".scripts" package.json
 lg: lazygit -sm half
 ## ltts
 lttso: ltts $2 -v af_bella -o $1.mp3
+## ollama
+gr: ollama run gnokit/improve-grammar
 ## sgpt
+adcopy: sgpt --model ollama/llama3.1:8b --role adcopy
 comment: cat $* | sgpt --code "Generate comments for each line"
 explain: sgpt --model ollama/mistral:7b-instruct --role explain
+grammar: sgpt --model ollama/llama3.1:8b --role grammer
 optimize: sgpt --model ollama/mistral:7b-instruct --role optimize
 summarize: sgpt --model ollama/mistral:7b-instruct --role summarize
-adcopy: sgpt --model ollama/llama3.1:8b --role adcopy
 
 # Lib
 ## cargo
 cgs: cargo search  --registry crates-io
 
-# Shell
-chk: pylanguagetool --api-url http://ubuntu22:8040/v2/ --input-type html --lang en-US -c
+# Other
+eabbr: $EDITOR "$USERHOME/Usr/File/file_rofi-shortcuts/cheatsheet/abbreviation.conf"
+ealias: $EDITOR "$USERHOME/Usr/Git/dotfiles/.config/_windows_cmder/.alias.yml" "$USERHOME/Usr/Git/dotfiles/.config/alias.yml"
+ebucket: $EDITOR "$USERHOME/Usr/GitFork/scoop-bucket/bucket"
+ecmder: $EDITOR "$USERHOME/Usr/Git/dotfiles/.config/_windows_cmder/config"
+eespanso: $EDITOR "$USERHOME/Usr/Git/dotfiles/.config/espanso"
+erofi-shortcuts: $EDITOR "$USERHOME/Usr/File/file_rofi-shortcuts"
+esnippets: $EDITOR "$USERHOME/Usr/Git/dotfiles/.config/sublime-text/Packages/User/Snippets"
+evscodium: $EDITOR "$USERHOME/Scoop/persist/vscodium/data/user-data/User"

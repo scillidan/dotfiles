@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+      <a href="media/$1.jpg" 
+        data-slide-name="" 
+        data-sub-html="">
+          <img src="media/$1.jpg" />
+      </a>
+]]></content>
+  <tabTrigger>anime3</tabTrigger>
+  <scope>text.html</scope>
+  <description>anime-keyframes-gallery image</description>
+</snippet>

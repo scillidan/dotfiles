@@ -1,0 +1,41 @@
+<snippet>
+  <content><![CDATA[
+#!/bin/bash
+
+set -e
+
+cleanup() {
+    if [[ -n "\$BASE_DIR" ]]; then
+        unset BASE_DIR
+    fi
+    # unset $OTHER_ENV
+}
+trap cleanup EXIT
+
+case "\$OSTYPE" in
+    linux-gnu*)
+        # Arch Linux
+        BASE_DIR="\$USERHOME"
+        ;;
+    termux*)
+        # Termux
+        BASE_DIR="\$USERHOME"
+        ;;
+    msys|cygwin)
+        # Windows (Git Bash or Cygwin)
+        BASE_DIR="/c/Users/\$(whoami)"
+        ;;
+    *)
+        echo "Unsupported OS: \$OSTYPE"
+        exit 1
+        ;;
+esac
+
+${1:Command}
+
+read -p "Press any key to continue..." || exit 1
+]]></content>
+  <tabTrigger>bash</tabTrigger>
+  <scope>source.shell.bash</scope>
+  <description>shell bash</description>
+</snippet>

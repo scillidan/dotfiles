@@ -1,5 +1,8 @@
 [general]
-import = ["themes/vanta.toml"]
+import = [
+    "themes/themes/github_dark_high_contrast.toml",
+    "themes/themes/github_light_colorblind.toml",
+]
 live_config_reload = true
 # working_directory =
 
@@ -27,7 +30,7 @@ save_to_clipboard = true
 
 [terminal.shell]
 program = "cmd"
-args = [ "/k", "C:\\Users\\User\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" ]
+args = [ "/k", "%USERHOME%\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" ]
 
 [mouse]
 bindings = [{ mouse = "Right", action = "PasteSelection" }]

@@ -1,0 +1,18 @@
+matches:
+  - trigger: ":scope"
+    form: |
+      <scope>[[scope]]</scope>
+    form_fields:
+      scope:
+        type: choice
+        values:
+          - source.css
+          - source.js
+          - source.json
+          - source.shell.bash
+          - source.yaml
+          - text.html.markdown
+          - text.html
+          - text.m3u
+          - text
+        default: text

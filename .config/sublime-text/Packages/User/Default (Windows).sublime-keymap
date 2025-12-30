@@ -1,17 +1,13 @@
 [
-    {
-        "keys": ["alt+f"],
-        "command": "toggle_in_selection"
+    { "keys": ["ctrl+alt+`"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+    { "keys": ["alt+f"], "command": "toggle_in_selection" },
+    // DataWizard
+    { "keys": ["alt+\\"], "command": "datawizardjustifycolumns" },
+    { "keys": ["alt+shift+\\"], "command": "datawizardcollapsecolumns"
     },
-    {
-        "keys": ["alt+\\"],
-        "command": "datawizardjustifycolumns"
-    },
-    {
-        "keys": ["alt+shift+\\"],
-        "command": "datawizardcollapsecolumns"
-    },
+    // LaTeXTools
     // https://latextools.readthedocs.io/en/latest/recommended-packages/
+    // AlignTab
     // aligntab in tabular environment (context only available ST build 3127+)
     {
         "keys": ["ctrl+l", "ctrl+alt+f"],
@@ -41,5 +37,18 @@
                 "operand": "text.tex.latex meta.environment.math.block.be"
             }
         ]
+    },
+    // Terminus
+    {
+        "keys": ["ctrl+alt+shift+`"], "command": "toggle_terminus_panel"
+    },
+    {
+        "keys": ["ctrl+alt+shift+t"], "command": "terminus_open", "args": {
+            "cmd": [ "cmd.exe", "/k", "%USERHOME%\\Usr\\Opt\\cmder_mini\\vendor\\init.bat" ],
+            "cwd": "${file_path:${folder}}",
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "down"}]
+            ]
+        }
     }
 ]

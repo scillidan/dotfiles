@@ -1,8 +1,0 @@
-<snippet>
-  <content><![CDATA[
-{aud:"<audio controls preload=\"none\" src=\"https://raw.githubusercontent.com/scillidan/media_podcast/main/$1\"></audio>", stdby:"<a href=\"$2\" target=\"_blank\" rel=\"noopener\">Standby</a>", pod:"$3", ep:"$4", tit:"$5"},
-]]></content>
-  <tabTrigger>podj</tabTrigger>
-  <scope>text.html</scope>
-  <description>podcast json</description>
-</snippet>

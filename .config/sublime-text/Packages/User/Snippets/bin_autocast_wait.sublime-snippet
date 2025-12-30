@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+- !Wait ${1:2}s
+]]></content>
+  <tabTrigger>acw</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>autocast wait</description>
+</snippet>

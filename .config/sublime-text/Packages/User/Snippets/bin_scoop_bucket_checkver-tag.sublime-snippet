@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+"checkver": {
+  "github": "https://github.com/${1:user}/${2:repo}",
+  "regex": "tag/${3:version}([\\d.]+)(?=\")"
+},
+]]></content>
+  <tabTrigger>scooptag</tabTrigger>
+  <scope>source.json</scope>
+  <description>scoop bucket checkver-tag</description>
+</snippet>

@@ -1,0 +1,11 @@
+{
+  "maximum results": 20,
+  "scopes": [ "text", "comment", "string.quoted" ],
+  "minimal length": 4,
+  "languages": {
+    "en_US": {
+      "encoding": "ISO-8859-1",
+      "dictionary" : "Packages/User/large_en.txt",
+    }
+  }
+}

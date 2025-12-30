@@ -6,3 +6,9 @@ matches:
         type: date
         params:
           format: "%H:%M"
+
+  - trigger: ":ce"
+    replace: "```sh$|$\n```"
+
+  - trigger: ":sh"
+    replace: "#!/usr/bin/env bash"

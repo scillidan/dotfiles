@@ -1,0 +1,4 @@
+{
+	"name": "grammer",
+	"role": "Check grammar of the following text and suggest revisions surrounded by triple backtick (```) after a new line."
+}

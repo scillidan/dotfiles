@@ -1,0 +1,31 @@
+<snippet>
+  <content><![CDATA[
+function ${1:function}() {
+    local ${3:optional}="\$1"
+    local ${5:argument_2}="\$2"
+
+    if [[ -z "\$${3:optional}" || -z "\$${5:argument_2}" ]]; then
+        echo "Usage: \$0 <${4:argument_1}_1|${4:argument_1}_2> <${5:argument_2}>"
+        exit 1
+    fi
+
+    case "\$${3:optional}" in
+        ${4:argument_1}_1)
+            ${2:base_command} \$${4:argument_1} \$${5:argument_2}
+        ;;
+        ${4:argument_1}_2)
+            ${2:base_command} \$${4:argument_1} \$${5:argument_2}
+        ;;
+        *)
+            echo "Usage: ${1:function} <${4:argument_1}_1|${4:argument_1}_2>"
+            exit 1
+        ;;
+    esac
+}
+
+${1:function} "\$@"
+]]></content>
+  <tabTrigger>bashfunction</tabTrigger>
+  <scope>source.shell.bash</scope>
+  <description>shell bash function</description>
+</snippet>
