@@ -13,3 +13,6 @@ matches:
 
   - trigger: ":ghi"
     replace: "https://github.com/scillidan/"
+
+  - trigger: ":cref"
+    replace: "[goldendictocr](/?search=goldendictocr)"
