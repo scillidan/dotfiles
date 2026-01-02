@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+read -p "Press any key to continue..." || exit 1
+]]></content>
+  <tabTrigger>bashread</tabTrigger>
+  <scope>source.shell.bash</scope>
+  <description>shell bash read</description>
+</snippet>

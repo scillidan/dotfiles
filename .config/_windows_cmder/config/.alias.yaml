@@ -1,3 +1,5 @@
+sib: scoop_install_local
+
 # Patch
 _neovide: bash _neovide.sh $*
 git_init: bash git_init.sh
@@ -21,13 +23,14 @@ cl: choco list
 ss: scoop search
 si: scoop install
 su: scoop uninstall
+rsi: scoop install $1 && scoop uninstall $1
 sh: scoop home
 sl: scoop list
 sst: scoop status
 sup: scoop update
 sua: scoop update -a -k
 sca: scoop cleanup * && scoop cache rm *
-fcc: formatjson $1 && checkver $1 && checkhashes $1
+fcc: scoop_formatjson $1 && scoop_checkver $1 && scoop_checkhashes $1
 
 # Opt
 # CUDA
@@ -36,3 +39,4 @@ cuda12: set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3"
 # Directory Opus
 do: dopus "%CD%\$*"
 # e: explorer %CD%\$*
+read: mprocs "bash start_openreader-webui.sh" "bash start_kokoro-fastapi.sh"

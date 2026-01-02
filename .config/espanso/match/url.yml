@@ -2,17 +2,17 @@ matches:
   - trigger: ":dum"
     replace: "https://dummyimage.com/$|$/000/fff"
 
-  - trigger: ":cheat"
+  - trigger: ":cdnpost"
+    replace: "https://scillidan.github.io/image_post/"
+
+  - trigger: ":cht"
     replace: "https://scillidan-cheat.vercel.app/?search="
 
-  - trigger: ":mcheat"
-    replace: "https://github.com/scillidan/mark_cheat/blob/main/"
+  - trigger: ":bmain"
+    replace: "https://github.com/scillidan/$|$/blob/main/"
 
-  - trigger: ":ipost"
-    replace: "https://scillidan.github.io/image_post/"
+  - trigger: ":tmain"
+    replace: "https://github.com/scillidan/$|$/tree/main/"
 
   - trigger: ":ghi"
     replace: "https://github.com/scillidan/"
-
-  - trigger: ":cref"
-    replace: "[goldendictocr](/?search=goldendictocr)"
