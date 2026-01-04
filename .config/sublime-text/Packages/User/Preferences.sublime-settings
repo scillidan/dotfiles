@@ -1,53 +1,61 @@
 {
-    // "auto_complete": true,
-    // "auto_complete_preserve_order": "none",
-    "auto_complete_selector": "text, comment, string",
-    "close_windows_when_empty": false,
+    // UI
     "font_face": "MonaspaceAr Nerd Font Mono",
     "font_size": 8,
-    "ignored_packages": [ "Vintage",
+    "line_padding_bottom": 1,
+    "line_padding_top": 1,
+    "theme": "Adaptive.sublime-theme",
+    "color_scheme": "auto",
+    "dark_color_scheme": "Packages/Mirodark Color Scheme/MirodarkHighContrast.tmTheme",
+    "light_color_scheme": "Breakers.sublime-color-scheme",
+    "word_wrap": true,
+    "show_git_status": false,
+    // Edit
+    "close_windows_when_empty": false,
+    "open_files_in_new_window": "never",
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "extensions": {
+        "txt": {
+            "translate_tabs_to_spaces": false,
+        },
+    },
+    // Complete
+    "auto_complete_selector": "text, comment, string",
+    "auto_complete_triggers":
+    [
+        {
+            "characters": "<",
+            "selector": "text.html, text.xml",
+        },
+        {
+            "rhs_empty": true,
+            "selector": "punctuation.accessor",
+        },
+        {
+            "characters": "\\",
+            "selector": "text.tex.latex",
+        }
     ],
-    "index_files": false,
+    // Package
+    "ignored_packages":
+    [
+        "Vintage",
+    ],
+    // LatexTools
     "install_prereleases": [
         "LaTeXTools"
     ],
+    "index_files": true,
+    // keymaps
     "keymaps": {
         "show_pretty_keys": true,
     },
-    "line_padding_bottom": 1,
-    "line_padding_top": 1,
+    // Inline Fold
     "inline_fold.rules": [
         {
             "fold_selector": "string.quoted.single - punctuation.definition.string, string.quoted.double - punctuation.definition.string",
             "preceding_text": "class,className",
         }
-    ],
-    "open_files_in_new_window": "never",
-    "preview_on_click": false,
-    "show_git_status": false,
-    "tab_size": 2,
-    "theme": "Adaptive.sublime-theme",
-    // "vintage_use_clipboard": true,
-    "word_wrap": true,
-    // "detect_indentation": false
-    // "translate_tabs_to_spaces": true,
-    "expand_tabs_on_save": true,
-    "auto_complete_triggers":
-    [
-		{
-			"characters": "<",
-			"selector": "text.html, text.xml",
-		},
-		{
-			"rhs_empty": true,
-			"selector": "punctuation.accessor",
-		},
-		{
-			"characters": "\\",
-			"selector": "text.tex.latex",
-		}
-    ],
-    "color_scheme": "auto",
-    "dark_color_scheme": "Packages/Mirodark Color Scheme/MirodarkHighContrast.tmTheme",
-    "light_color_scheme": "Breakers.sublime-color-scheme",
+    ]
 }

@@ -34,6 +34,10 @@ require("lazy").setup({
 	},
 	-- Theme
 	{
+		"f-person/auto-dark-mode.nvim",
+		opts = {},
+	},
+	{
 		"emanuel2718/vanta.nvim",
 		priority = 1000,
 		config = function()
@@ -46,12 +50,6 @@ require("lazy").setup({
 		name = "github-theme",
 		lazy = false,
 		priority = 1000,
-	},
-	{
-		"EdenEast/nightfox.nvim",
-		config = function()
-			require("config.nightfox")
-		end,
 	},
 	--QoL
 	{
@@ -783,7 +781,9 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 			--"MeanderingProgrammer/render-markdown.nvim",
 		},
-		opts = require("config.neovim_tips"),
+		config = function()
+			require("config.neovim_tips")
+		end,
 	},
 	---- Project
 	{
