@@ -10,7 +10,7 @@ dgg: doggo A $* @8.8.8.8
 ls: eza --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
 l: eza --git-ignore --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
 ll: eza --all --header --long --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
-llm: eza --all --header --long --sort=modified --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+llm: eza --all --header --long --sort modified --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
 la: eza -lbhHigUmuSa
 lx: eza -lbhHigUmuSa@
 lt: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale

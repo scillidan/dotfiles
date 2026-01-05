@@ -5,41 +5,45 @@
 set -e
 
 cleanup() {
-    unset BASE_DIR
-    unset \$VENV_ACT$2
-    unset $3
-    trap - EXIT
+	unset BASE_DIR
+	unset VENV_DIR$2
+	unset VENV_ACT$2
+	unset VENV_CMD$2
+	unset $3
+	trap - EXIT
 }
 trap cleanup EXIT
 
+VENV_DIR=""$2
+VENV_CMD="${1:command}"
+
 case "\$OSTYPE" in
-    linux-gnu*)
-        # Fill the path
-        BASE_DIR="\$HOME"
-        VENV_ACT=".venv/bin/activate"$2
-        ;;
-    msys|cygwin)
-        # Fill the path
-        BASE_DIR="/c/Users/\$(whoami)"
-        VENV_ACT=".venv/Scripts/activate"$2
-        ;;
-    *)
-        echo "Unsupported OS: \$OSTYPE"
-        exit 1
-        ;;
+	linux-gnu*)
+		# Fill the path
+		BASE_DIR="\$HOME$3\$VENV_DIR"
+		VENV_ACT=".venv/bin/activate"$2
+		;;
+	msys|cygwin)
+		# Fill the path
+		BASE_DIR="/c/Users/\$(whoami)$3\$VENV_DIR"
+		VENV_ACT=".venv/Scripts/activate"$2
+		;;
+	*)
+		echo "Unsupported OS: \$OSTYPE"
+		exit 1
+		;;
 esac
 
 pushd "\$BASE_DIR" || exit 1
 
 if [ -f "$VENV_ACT" ]; then
-    source "$VENV_ACT"
+	source "$VENV_ACT"
 else
-    echo "Virtual environment not found at: $VENV_ACT"
-    exit 1
+	echo "Virtual environment not found at: $VENV_ACT"
+	exit 1
 fi
 
-export $3
-${1:Command}
+\$VENV_CMD
 
 popd || exit 1
 ]]></content>

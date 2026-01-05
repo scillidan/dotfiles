@@ -25,11 +25,9 @@ if is_unix then
 				"--glob",
 				"'!node_modules'",
 				"--glob",
-				"'!.history'",
+				"'!public'",
 				"--glob",
-				"'!.Rproj.user'",
-				"--glob",
-				"'!.ipynb_checkpoints'",
+				"'!site'",
 			},
 			rga_preview = {
 				"--colors 'line:fg:red'"
