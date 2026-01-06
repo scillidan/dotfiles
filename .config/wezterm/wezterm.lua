@@ -111,6 +111,12 @@ config.keys = {
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 	{
+		key = "E",
+		mods = "CTRL|SHIFT",
+		-- https://wezterm.org/config/lua/wezterm/on.html#example-opening-whole-scrollback-in-vim
+		action = act.EmitEvent("trigger-vim-with-scrollback"),
+	},
+	{
 		key = "C",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(window, pane)
@@ -227,13 +233,32 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	table.insert(config.keys, {
 		key = "F",
 		mods = "CTRL|SHIFT",
+		-- https://gist.github.com/scillidan/433e72f7ef28f16d2c5e63a37362f632
 		action = wezterm.action.SendString("fzf_files\r"),
 	})
 	table.insert(config.keys, {
 		key = "G",
 		mods = "CTRL|SHIFT",
+		-- https://gist.github.com/scillidan/3f124de66a596b8de98ed76122dc6443
 		action = wezterm.action.SendString("fzf_ripgrep\r"),
 	})
 end
+
+wezterm.on("trigger-vim-with-scrollback", function(window, pane)
+	local text = pane:get_lines_as_text(pane:get_dimensions().scrollback_rows)
+	local name = os.tmpname()
+	local f = io.open(name, "w+")
+	f:write(text)
+	f:flush()
+	f:close()
+	window:perform_action(
+		act.SpawnCommandInNewWindow({
+			args = { "vim", name },
+		}),
+		pane
+	)
+	wezterm.sleep_ms(1000)
+	os.remove(name)
+end)
 
 return config

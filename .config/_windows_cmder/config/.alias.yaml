@@ -1,14 +1,6 @@
+# Alias
+man: fzf_man-db
 sib: scoop_install_local
-
-# Patch
-_neovide: bash _neovide.sh $*
-git_init: bash git_init.sh
-git_push: bash git_push.sh
-git_tag: bash git_tag.sh
-magick_annot: bash magick_annot.sh
-magick_gen: bash magick_gen.sh
-magick_gird: bash magick_gird.sh
-magick_halftone: bash magick_halftone.sh
 
 # Bin
 ## choco
@@ -33,10 +25,17 @@ sca: scoop cleanup * && scoop cache rm *
 fcc: scoop_formatjson $1 && scoop_checkver $1 && scoop_checkhashes $1
 
 # Opt
-# CUDA
-cuda11: set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8"
-cuda12: set "CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3"
 # Directory Opus
 do: dopus "%CD%\$*"
 # e: explorer %CD%\$*
-read: mprocs "bash start_openreader-webui.sh" "bash start_kokoro-fastapi.sh"
+reader: mprocs "bash start_openreader-webui.sh" "bash start_kokoro-fastapi.sh"
+
+# Shell
+_neovide: bash _neovide.sh $*
+git_init: bash git_init.sh
+git_push: bash git_push.sh
+git_tag: bash git_tag.sh
+magick_annot: bash magick_annot.sh
+magick_gen: bash magick_gen.sh
+magick_gird: bash magick_gird.sh
+magick_halftone: bash magick_halftone.sh
