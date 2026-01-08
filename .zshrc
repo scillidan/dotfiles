@@ -87,7 +87,7 @@ function zvm_init() {
 	## fzf
 	# export FZF_CTRL_T_COMMAND=""
 	# export FZF_DEFAULT_COMMAND=""
-	export FZF_DEFAULT_OPTS="--bind='ctrl-u:preview-up,ctrl-d:preview-down,ctrl-o:toggle+up,ctrl-i:toggle+down,ctrl-space:toggle-preview'"
+	export FZF_DEFAULT_OPTS="--bind='ctrl-k:preview-up,ctrl-j:preview-down,ctrl-h:preview-page-up,ctrl-l:preview-page-down,ctrl-t:toggle-preview'"
 	# export ENHANCD_FILTER="fzy:fzf --height 40%"
 	source <(fzf --zsh)
 	## fzf-tab
@@ -156,16 +156,16 @@ function zvm_init() {
 }
 zvm_after_init_commands+=(zvm_init)
 
-## neovim
-### rime-ls
-export LIBRIME_LIB_DIR="$HOME/.local/lib/rime/dist/lib"
-export LIBRIME_INCLUDE_DIR="$HOME/.local/lib/rime/dist/include"
-export LIB="$HOME/.local/lib/rime/dist/lib"
-
+## huggingface
+export HF_MIRROR=https://hf-mirror.com
+export HF_ENDPOINT=https://hf-mirror.com
 ## ollama
 export OLLAMA_HOST="revios"
 export OLLAMA_ORIGINES="*"
-
+## rime-ls
+export LIBRIME_LIB_DIR="$HOME/.local/lib/rime/dist/lib"
+export LIBRIME_INCLUDE_DIR="$HOME/.local/lib/rime/dist/include"
+export LIB="$HOME/.local/lib/rime/dist/lib"
 ## texlive
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
 

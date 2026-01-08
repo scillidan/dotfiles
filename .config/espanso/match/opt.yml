@@ -1,4 +1,5 @@
 matches:
+  # Sublime Text
   - trigger: ":scope"
     form: |
       <scope>[[scope]]</scope>

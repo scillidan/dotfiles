@@ -81,18 +81,18 @@ config.keys = {
 		action = wezterm.action.Search("CurrentSelectionOrEmptyString"),
 	},
 	{
-		key = "c",
-		mods = "CTRL|SHIFT",
+		key = "Insert",
+		mods = "CTRL",
 		action = wezterm.action.CopyTo("Clipboard"),
 	},
 	{
-		key = "v",
-		mods = "CTRL",
+		key = "Insert",
+		mods = "SHIFT",
 		action = wezterm.action.PasteFrom("Clipboard"),
 	},
 	{
 		key = "v",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL",
 		action = wezterm.action.PasteFrom("Clipboard"),
 	},
 	{
@@ -222,12 +222,12 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	}
 	table.insert(config.keys, {
 		key = "h",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|ALT",
 		action = wezterm.action.MoveTabRelative(-1),
 	})
 	table.insert(config.keys, {
 		key = "l",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|ALT",
 		action = wezterm.action.MoveTabRelative(1),
 	})
 	table.insert(config.keys, {

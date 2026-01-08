@@ -8,11 +8,11 @@ matches:
   - trigger: ":cht"
     replace: "https://scillidan-cheat.vercel.app/?search="
 
-  - trigger: ":bmain"
-    replace: "https://github.com/scillidan/$|$/blob/main/"
-
-  - trigger: ":tmain"
-    replace: "https://github.com/scillidan/$|$/tree/main/"
-
   - trigger: ":ghi"
     replace: "https://github.com/scillidan/"
+
+  - trigger: ":blobmain"
+    replace: "https://github.com/scillidan/$|$/blob/main/"
+
+  - trigger: ":treemain"
+    replace: "https://github.com/scillidan/$|$/tree/main/"

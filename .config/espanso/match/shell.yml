@@ -2,17 +2,21 @@ matches:
   - trigger: ":gc"
     replace: "git clone --depth=1 "
 
-  - trigger: ":lnbin"
-    replace: "ln -sfn $(pwd)/$|$ ~/.local/bin/"
-
   - trigger: ":mlbin"
     replace: "mklink %USERPROFILE%\\.local\\bin\\$|$ %CD%\\"
 
+  - trigger: ":yas"
+    replace: "yay -S --noconfirm"
+
+  - trigger: ":lnbin"
+    replace: "ln -sfn $(pwd)/$|$ ~/.local/bin/"
+
+  - trigger: ":sh"
+    replace: "#!/usr/bin/env bash"
+
+  # python
   - trigger: ":pv"
     replace: "python -m venv .venv\nsource .venv/bin/activate"
-
-  - trigger: ":torch"
-    replace: "uv pip install torch --index-url https://download.pytorch.org/whl/cu121"
 
   - trigger: ":uv"
     replace: "uv venv\nsource .venv/bin/activate"
@@ -23,5 +27,8 @@ matches:
   - trigger: ":wuv"
     replace: "uv venv\n.venv\\Scripts\\activate.bat"
 
-  - trigger: ":yas"
-    replace: "yay -S --noconfirm"
+  - trigger: ":ustcn"
+    replace: "--registry https://npmreg.proxy.ustclug.org/"
+
+  - trigger: ":torch"
+    replace: "uv pip install torch --index-url https://download.pytorch.org/whl/cu12"

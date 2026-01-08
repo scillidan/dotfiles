@@ -1,14 +1,48 @@
 matches:
-  - trigger: ":now"
-    replace: "{{mytime}}"
-    vars:
-      - name: mytime
-        type: date
-        params:
-          format: "%H:%M"
+  # Chat
+  - trigger: ":diff"
+    replace: "What is the difference between "
 
+  - trigger: ":howmatch"
+    replace: "Used regex, how to match string `$|$`"
+
+  # Write
   - trigger: ":ce"
     replace: "```sh$|$\n```"
 
-  - trigger: ":sh"
-    replace: "#!/usr/bin/env bash"
+  - trigger: ":aut"
+    form: |
+      Authors: [[author]]🧙‍♂️, scillidan🤡
+    form_fields:
+      author:
+        type: choice
+        values:
+          - GPT-4o mini
+          - DeepSeek
+          - mistral.ai
+          - perplexity.ai
+        default: GPT-4o mini
+
+  - trigger: ":by"
+    form: |
+      [[by]]
+    form_fields:
+      by:
+        type: choice
+        values:
+          - '[perplexity.ai]'
+          - '[GPT-4o mini]'
+        default: '[perplexity.ai]'
+
+  # Commit
+  - trigger: ":thks"
+    replace: "Thanks for your review!"
+
+  - trigger: ":prdone"
+    replace: "Completed the PR to bucket Extras$|$ and clean up"
+
+  - trigger: ":opps"
+    replace: "chore: opps!"
+
+  - trigger: ":stars"
+    replace: "It has $|$ Stars on Github."

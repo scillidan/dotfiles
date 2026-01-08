@@ -1,5 +1,4 @@
 # Refer to https://github.com/Gustice/AHK-KeyMap/blob/master/KeyMap.ahk
-
 matches:
   - trigger: "#>="
     replace: "≥"

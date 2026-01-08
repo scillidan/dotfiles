@@ -42,12 +42,6 @@ REM .
 REM forgit
 set "FORGIT_CHECKOUT_BRANCH_BRANCH_GIT_OPTS=--sort=-committerdate"
 
-REM Opt
-REM .
-set "FAST_REFRESH=true"
-REM kokoro-tts-cli
-set "KOKORO_PATH=%USERHOME%\Usr\OptAud\Kokoro-TTS-Local"
-
 REM clink
 REM .
 REM clink-terminal
