@@ -27,7 +27,7 @@ matches:
   - trigger: ":wuv"
     replace: "uv venv\n.venv\\Scripts\\activate.bat"
 
-  - trigger: ":ustcn"
+  - trigger: ":rnpm"
     replace: "--registry https://npmreg.proxy.ustclug.org/"
 
   - trigger: ":torch"
