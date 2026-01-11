@@ -9,19 +9,16 @@
 	"provider": {
 		"ollama": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "Ollama (local)",
+			"name": "ollama",
 			"options": {
 				"baseURL": "http://localhost:11434/v1"
 			},
 			"models": {
-				"gemma3:12.2b": {
-					"name": "Gemma3 12B",
-				},
 				"mistral:7b-instruct": {
 					"name": "Mistral 7B Instruct"
 				},
-				"llama3.1:8b": {
-					"name": "Llama3.1 8B"
+				"gemma3:12b": {
+					"name": "Gemma3 12B",
 				},
 				"qwen3:14b": {
 					"name": "Qwen3 14B"
@@ -38,7 +35,6 @@
 		},
 		"default": {
 			"mode": "primary",
-			"model": "ollama/mistral:7b-instruct",
 			"tools": {
 				"write": false,
 				"edit": false,
@@ -47,7 +43,6 @@
 		},
 		"coder": {
 			"mode": "primary",
-			"model": "ollama/mistral:7b-instruct",
 			"tools": {
 				"write": true,
 				"edit": true,
