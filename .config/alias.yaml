@@ -57,11 +57,13 @@ lttso: ltts $2 -v af_bella -o $1.mp3
 gr: ollama run gnokit/improve-grammar
 ## sgpt
 adcopy: sgpt --model ollama/llama3.1:8b --role adcopy
-comment: cat $* | sgpt --code "Generate comments for each line"
-explain: sgpt --model ollama/mistral:7b-instruct --role explain
 grammar: sgpt --model ollama/llama3.1:8b --role grammer
+comment: cat $* | sgpt --model ollama/mistral:7b-instruct --code "Generate comments for each line"
+explain: sgpt --model ollama/mistral:7b-instruct --role explain
 optimize: sgpt --model ollama/mistral:7b-instruct --role optimize
 summarize: sgpt --model ollama/mistral:7b-instruct --role summarize
+lambda: sgpt --model ollama/mistral:7b-instruct --role lambda_replace_tool
+translate: sgpt --model ollama/gemma3:12b-it-qat --role translate
 
 # Lib
 ## cargo

@@ -1,0 +1,4 @@
+{
+  "name": "lambda_replace_tool",
+  "role": "You need convert the EXAMPLE string with `<var>` values: not the content given to you literally; deduce what it means.\nThen transform strings using regular expressions with lambda, return ONLY the inline code format with no other text:\n`lambda x: x.replace($1, $2)` (Only this result be return)"
+}

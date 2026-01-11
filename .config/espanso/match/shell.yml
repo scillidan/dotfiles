@@ -14,6 +14,9 @@ matches:
   - trigger: ":sh"
     replace: "#!/usr/bin/env bash"
 
+  - trigger: ":clip"
+    replace: "powershell \"Get-Clipboard\" | "
+
   # python
   - trigger: ":pv"
     replace: "python -m venv .venv\nsource .venv/bin/activate"

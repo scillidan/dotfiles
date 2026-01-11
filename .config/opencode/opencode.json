@@ -4,10 +4,8 @@
 	"share": "disabled",
 	"theme": "system",
 	"enabled_providers": [
-		"ollama",
-		"openai"
+		"ollama"
 	],
-	// "model": "ollama/mistral:7b-instruct",
 	"provider": {
 		"ollama": {
 			"npm": "@ai-sdk/openai-compatible",
@@ -16,42 +14,45 @@
 				"baseURL": "http://localhost:11434/v1"
 			},
 			"models": {
+				"gemma3:12.2b": {
+					"name": "Gemma3 12B",
+				},
 				"mistral:7b-instruct": {
-					"name": "Mistral-7B Instruct"
+					"name": "Mistral 7B Instruct"
 				},
 				"llama3.1:8b": {
-					"name": "Llama-3.1-8B"
+					"name": "Llama3.1 8B"
 				},
 				"qwen3:14b": {
-					"name": "Qwen3-14B"
+					"name": "Qwen3 14B"
 				}
-			},
-		},
-		"openai": {
-			"options": {
-				"apikey": "{env:OPENAI_API_KEY}",
-				"baseURL": "{env:OPENAI_API_BASE}"
 			}
 		}
 	},
 	"agent": {
-    "build": {
-      "mode": "primary",
-      // "model": "",
-      "tools": {
-        "write": true,
-        "edit": true,
-        "bash": true
-      }
-    },
-    "plan": {
-      "mode": "primary",
-      // "model": "",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "bash": false
-      }
-    }
-  }
+		"build": {
+			"mode": "subagent"
+		},
+		"plan": {
+			"mode": "subagent"
+		},
+		"default": {
+			"mode": "primary",
+			"model": "ollama/mistral:7b-instruct",
+			"tools": {
+				"write": false,
+				"edit": false,
+				"bash": false
+			}
+		},
+		"coder": {
+			"mode": "primary",
+			"model": "ollama/mistral:7b-instruct",
+			"tools": {
+				"write": true,
+				"edit": true,
+				"bash": true
+			}
+		}
+	}
 }

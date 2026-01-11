@@ -1,12 +1,12 @@
 ---
 description: Reviews code for quality and best practices
 mode: subagent
-model: mistral:7b-instruct
+model: ollama/mistral:7b-instruct
 temperature: 0.1
 tools:
-  write: false
-  edit: false
-  bash: false
+	write: false
+	edit: false
+	bash: false
 ---
 
 You are in code review mode. Focus on:

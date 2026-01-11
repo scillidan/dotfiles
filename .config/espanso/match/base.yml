@@ -17,8 +17,8 @@ matches:
       author:
         type: choice
         values:
-          - GPT-4o mini
           - DeepSeek
+          - GPT-4o mini
           - mistral.ai
           - perplexity.ai
         default: GPT-4o mini
@@ -30,6 +30,9 @@ matches:
       by:
         type: choice
         values:
+          - '[Gemma3 12B]'
+          - '[Gemma3 Translator 4B]'
+          - '[Qwen3 14B]'
           - '[perplexity.ai]'
           - '[GPT-4o mini]'
         default: '[perplexity.ai]'

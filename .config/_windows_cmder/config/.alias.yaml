@@ -31,7 +31,8 @@ do: dopus "%CD%\$*"
 reader: mprocs "bash start_openreader-webui.sh" "bash start_kokoro-fastapi.sh"
 
 # Shell
-_neovide: bash _neovide.sh $*
+_neovide: bash _neovide.sh
+nv: _nvim
 git_init: bash git_init.sh
 git_push: bash git_push.sh
 git_tag: bash git_tag.sh

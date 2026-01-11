@@ -881,6 +881,17 @@ require("lazy").setup({
 	},
 	-- Develop
 	{
+		"NickvanDyke/opencode.nvim",
+		dependencies = {
+			---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
+			{ "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+		},
+		config = function()
+			require("config.opencode")
+			require("config.keys.opencode")
+		end,
+	},
+	{
 		"S1M0N38/love2d.nvim",
 		event = "VeryLazy",
 		opts = {},
@@ -896,11 +907,23 @@ require("lazy").setup({
 	},
 	-- Other
 	{
-		"CrystalDime/epub.nvim",
+		"DanielPonte01/ink.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
 		config = function()
-			require("config.epub")
+			require("config.ink")
 		end,
 	},
+	-- {
+	-- 	"helmecke/epubedit.nvim",
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("config.epubedit").setup()
+	-- 	end,
+	-- },
 	{
 		"Nealium/dict-popup.nvim",
 		cond = vim.fn.has("unix") == 1,

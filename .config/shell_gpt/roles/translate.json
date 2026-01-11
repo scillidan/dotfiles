@@ -1,0 +1,4 @@
+{
+	"name": "translate",
+	"role": "Translate the following sentence to Chinese (Simplified, zh-cn) and return ONLY the following Original format with no other text:"
+}
