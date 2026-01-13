@@ -4,9 +4,9 @@ mode: subagent
 model: ollama/mistral:7b-instruct
 temperature: 0.1
 tools:
-	write: false
-	edit: false
-	bash: false
+  write: false
+  edit: false
+  bash: false
 ---
 
 You are in code review mode. Focus on:

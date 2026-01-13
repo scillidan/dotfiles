@@ -23,6 +23,7 @@ sup: scoop update
 sua: scoop update -a -k
 sca: scoop cleanup * && scoop cache rm *
 fcc: scoop_formatjson $1 && scoop_checkver $1 && scoop_checkhashes $1
+rsc: fzf_scoop
 
 # Opt
 # Directory Opus

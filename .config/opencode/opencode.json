@@ -4,7 +4,8 @@
 	"share": "disabled",
 	"theme": "system",
 	"enabled_providers": [
-		"ollama"
+		"ollama",
+		"openai"
 	],
 	"provider": {
 		"ollama": {
@@ -17,12 +18,15 @@
 				"mistral:7b-instruct": {
 					"name": "Mistral 7B Instruct"
 				},
-				"gemma3:12b": {
-					"name": "Gemma3 12B",
-				},
 				"qwen3:14b": {
 					"name": "Qwen3 14B"
 				}
+			}
+		},
+		"openai": {
+			"options": {
+				"apikey": "{env:OPENAI_API_KEY}",
+				"baseURL": "{env:OPENAI_API_BASE}"
 			}
 		}
 	},
@@ -35,6 +39,7 @@
 		},
 		"default": {
 			"mode": "primary",
+			"model": "ollama/mistral:7b-instruct",
 			"tools": {
 				"write": false,
 				"edit": false,
@@ -43,6 +48,7 @@
 		},
 		"coder": {
 			"mode": "primary",
+			"model": "ollama/mistral:7b-instruct",
 			"tools": {
 				"write": true,
 				"edit": true,
