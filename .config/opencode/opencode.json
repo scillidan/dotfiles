@@ -5,50 +5,71 @@
 	"theme": "system",
 	"enabled_providers": [
 		"ollama",
+		"aiping"
+	],
+	"disabled_providers": [
 		"openai"
 	],
 	"provider": {
 		"ollama": {
 			"npm": "@ai-sdk/openai-compatible",
-			"name": "ollama",
+			"name": "Ollama",
 			"options": {
 				"baseURL": "http://localhost:11434/v1"
 			},
 			"models": {
+				"ministral-3:8b": {
+					"name": "Ministral3 8B"
+				},
 				"mistral:7b-instruct": {
 					"name": "Mistral 7B Instruct"
 				},
 				"qwen3:14b": {
 					"name": "Qwen3 14B"
 				}
-			}
+			},
+		},
+    "aiping": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "AIPing",
+      "options": {
+        "baseURL": "https://aiping.cn/api/v1",
+        "apiKey": "{env:AIPING_API_KEY}"
+      },
+      "models": {
+        "MiniMax-M2.1": {
+          "name": "MiniMax M2.1"
+        }
+      }
 		},
 		"openai": {
 			"options": {
 				"apikey": "{env:OPENAI_API_KEY}",
 				"baseURL": "{env:OPENAI_API_BASE}"
+			},
+			"models": {
+				"gpt-5.1-codex": {
+					"name": "GPT-5.1 Codex"
+				},
+				"gpt-5-mini": {
+					"name": "GPT-5 mini"
+				}
 			}
 		}
 	},
 	"agent": {
-		"build": {
-			"mode": "subagent"
-		},
 		"plan": {
-			"mode": "subagent"
-		},
-		"default": {
 			"mode": "primary",
-			"model": "ollama/mistral:7b-instruct",
+			"model": "aiping/MiniMax-M2.1",
 			"tools": {
 				"write": false,
 				"edit": false,
 				"bash": false
 			}
 		},
-		"coder": {
+		"build": {
 			"mode": "primary",
-			"model": "ollama/mistral:7b-instruct",
+			"model": "aiping/MiniMax-M2.1",
 			"tools": {
 				"write": true,
 				"edit": true,

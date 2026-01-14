@@ -25,7 +25,7 @@ matches:
     replace: "uv venv\nsource .venv/bin/activate"
 
   - trigger: ":wpv"
-    replace: "python -m venv .venv\n.venv\\Scripts\\activate.bat"
+    replace: "python -m venv .venv\n.venv\\Scripts\\activate"
 
   - trigger: ":wuv"
     replace: "uv venv\n.venv\\Scripts\\activate.bat"

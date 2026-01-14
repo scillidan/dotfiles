@@ -1,12 +1,25 @@
-# Bin
+## Bin
+## .
+
 ## alass
+## https://github.com/kaegi/alass
+## scoop install alass
 alas: alass $1.$2 $1.$3 $1.alass.$3
+
 ## bat
 more: bat -f -p
+
 ## doggo
+## https://github.com/mr-karan/doggo
+## yay -S --noconfirm doggo-bin
+## scoop install doggo
 dga: doggo A $* @1.1.1.1
 dgg: doggo A $* @8.8.8.8
+
 ## eza
+## https://github.com/eza-community/eza
+## sudo pacman -S eza
+## scoop install eza
 ls: eza --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
 l: eza --git-ignore --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
 ll: eza --all --header --long --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
@@ -15,7 +28,9 @@ la: eza -lbhHigUmuSa
 lx: eza -lbhHigUmuSa@
 lt: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
 tree: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+
 ## forgit
+## https://github.com/wfxr/forgit
 glo: forgit log
 grl: forgit reflog
 gd: forgit diff
@@ -40,34 +55,62 @@ gbl: forgit blamegd
 gfu: forgit fixup
 gsq: forgit squash
 grw: forgit reword
+
 ## gh extensions
 ghtd: gh tidy
 ghorg: gh clone-org
 ghdl: gh download
-## gopencc
+
+## Go OpenCC
+## https://github.com/razonyang/gopencc
+## go install -v github.com/razonyang/gopencc@latest
 t2c: gopencc -c t2s -i
 c2t: gopencc -c s2t -i
+
 ## jq
 jqp: jq ".scripts" package.json
+
 ## lazygit
 lg: lazygit -sm half
+
 ## ltts
-lttso: ltts $2 -v af_bella -o $1.mp3
+## https://github.com/fcjr/ltts
+## git clone --depth=1 https://github.com/fcjr/ltts
+## cd ltts
+## uv venv .venv --python 3.12
+## .venv\bin\activate
+## uv pip install hf_transfer hf-xet
+## uv sync
+lttss: ltts $1 -v af_bella --say
+lttso: ltts $1 -v af_bella -o $2.mp3
+
 ## ollama
-gr: ollama run gnokit/improve-grammar
+ogrammar: ollama run gnokit/improve-grammar
+
 ## sgpt
-adcopy: sgpt --model ollama/llama3.1:8b --role adcopy
-grammar: sgpt --model ollama/llama3.1:8b --role grammer
-comment: cat $* | sgpt --model ollama/mistral:7b-instruct --code "Generate comments for each line"
-explain: sgpt --model ollama/mistral:7b-instruct --role explain
-optimize: sgpt --model ollama/mistral:7b-instruct --role optimize
-summarize: sgpt --model ollama/mistral:7b-instruct --role summarize
+comment: powershell "Get-Clipboard" | sgpt --model ollama/mistral:7b-instruct --code "Generate comments for each line"
 lambda: sgpt --model ollama/mistral:7b-instruct --role lambda_replace_tool
+adcopy: sgpt --model ollama/gemma3:12b-it-qat --role adcopy
+grammar: sgpt --model ollama/gemma3:12b-it-qat --role grammer
+explain: sgpt --model ollama/gemma3:12b-it-qat --role explain
+optimize: sgpt --model ollama/gemma3:12b-it-qat --role optimize
+summarize: sgpt --model ollama/gemma3:12b-it-qat --role summarize
 translate: sgpt --model ollama/gemma3:12b-it-qat --role translate
+code-simplifier: powershell "Get-Clipboard" | sgpt --model openai/gpt-5-mini --role code-simplifier --code
+
+## subsetzer
+## https://github.com/githabideri/subsetzer
+## uv tool install subsetzer
+subz: subsetzer --outfile {basename}.{src}2{dst}[{model}].{fmt} --outfmt srt --out . --model gemma3:12b --target Chinese --in
 
 # Lib
 ## cargo
-cgs: cargo search  --registry crates-io
+cgs: cargo search --registry crates-io
+## bun
+buni: bun add --registry https://npmreg.proxy.ustclug.org -g
+bunr: bun remove -g
+## python
+uva: .venv\Scripts\activate
 
 # Other
 eabbr: $EDITOR "$USERHOME/Usr/File/file_rofi-shortcuts/cheatsheet/abbreviation.conf"

@@ -2,14 +2,11 @@ matches:
   # Chat
   - trigger: ":diff"
     replace: "What is the difference between "
-
   - trigger: ":howmatch"
     replace: "Used regex, how to match string `$|$`"
-
   # Write
   - trigger: ":ce"
     replace: "```sh$|$\n```"
-
   - trigger: ":aut"
     form: |
       Authors: [[author]]🧙‍♂️, scillidan🤡
@@ -18,11 +15,9 @@ matches:
         type: choice
         values:
           - DeepSeek
-          - GPT-4o mini
           - mistral.ai
           - perplexity.ai
-        default: GPT-4o mini
-
+        default: DeepSeek
   - trigger: ":by"
     form: |
       [[by]]
@@ -34,18 +29,17 @@ matches:
           - '[Gemma3 Translator 4B]'
           - '[Qwen3 14B]'
           - '[perplexity.ai]'
-          - '[GPT-4o mini]'
         default: '[perplexity.ai]'
-
-  # Commit
-  - trigger: ":thks"
-    replace: "Thanks for your review!"
-
-  - trigger: ":prdone"
-    replace: "Completed the PR to bucket Extras$|$ and clean up"
-
-  - trigger: ":opps"
-    replace: "chore: opps!"
-
-  - trigger: ":stars"
-    replace: "It has $|$ Stars on Github."
+  - trigger: ":cmt"
+    form: |
+      [[commit]]
+    form_fields:
+      commit:
+        type: choice
+        values:
+          - 'chore: .'
+          - 'ci: code simplified'
+          - 'doc: update'
+          - 'It has $|$ Stars on Github.'
+          - 'Thanks for your review!'
+          - 'completed the PR to bucket Extras$|$; clean up'

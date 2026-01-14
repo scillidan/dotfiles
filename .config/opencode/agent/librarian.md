@@ -1,5 +1,5 @@
 ---
-description: Expert Librarian, you can request any topic, author, or book, and it will provide you with all the information you need on that subject
+description: Librarian
 mode: primary
 model: ollama/qwen3:14b
 temperature: 0.8

@@ -69,8 +69,7 @@ function find_subtitles()
 		command = string.format('subliminal download --provider opensubtitles -l en -v "%s"', fp)
 	else
 		-- Linux
-		command =
-			string.format("/home/scillidan/.local/bin/subliminal download --provider opensubtitles -l en -v '%s'", fp)
+		command = string.format("subliminal download --provider opensubtitles -l en -v '%s'", fp)
 	end
 	local ss = os.capture(command)
 	ss = string.gsub(ss, "(Collecting videos)", "")
