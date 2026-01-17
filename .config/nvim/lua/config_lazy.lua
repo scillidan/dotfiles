@@ -763,6 +763,18 @@ require("lazy").setup({
 	{ "ghassan0/telescope-glyph.nvim" },
 	---- Search docset
 	{
+		"emmanueltouzery/apidocs.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-telescope/telescope.nvim",
+			"folke/snacks.nvim",
+		},
+		cmd = { "ApidocsSearch", "ApidocsInstall", "ApidocsOpen", "ApidocsSelect", "ApidocsUninstall" },
+		config = function()
+			require("config.apidocs")
+		end,
+	},
+	{
 		"maskudo/devdocs.nvim",
 		lazy = false,
 		dependencies = {

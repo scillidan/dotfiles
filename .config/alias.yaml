@@ -16,6 +16,15 @@ more: bat -f -p
 dga: doggo A $* @1.1.1.1
 dgg: doggo A $* @8.8.8.8
 
+## edge-tts
+## https://github.com/rany2/edge-tts
+## uv tool install edge-tts
+## edge-tts --list-voices
+edge: edge-playback --voice en-US-AndrewMultilingualNeural --text
+## _annex [example_edge-tts](https://github.com/scillidan/example_edge-tts)
+## _asset [Free Text to Speech Online](https://tts-free.online/en)
+## _guide [How I Used Edge-TTS to Build a Free Online Text-to-Speech Site](https://dev.to/alixwang/how-i-used-edge-tts-to-build-a-free-online-text-to-speech-site-47n9)
+
 ## eza
 ## https://github.com/eza-community/eza
 ## sudo pacman -S eza
@@ -57,6 +66,7 @@ gsq: forgit squash
 grw: forgit reword
 
 ## gh extensions
+ghpr: gh pr list --search "add version" --state merged --limit 200
 ghtd: gh tidy
 ghorg: gh clone-org
 ghdl: gh download
@@ -86,6 +96,7 @@ lttso: ltts $1 -v af_bella -o $2.mp3
 
 ## ollama
 ogrammar: ollama run gnokit/improve-grammar
+otranslate: uv run %USERHOME%\Usr\Git\Shell\lib\python\ollama_trans_gemma3_zh.py --html --original-text
 
 ## sgpt
 comment: powershell "Get-Clipboard" | sgpt --model ollama/mistral:7b-instruct --code "Generate comments for each line"

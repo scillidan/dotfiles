@@ -16,8 +16,9 @@ wk.add({
 		desc = "Toggle theme",
 		mode = "n",
 	},
+	-- apidocs.nvim
+	{ "<leader>sad", "<cmd>ApidocsOpen<cr>", desc = "Search Api Doc" },
 	-- auto-session
-	-- https://github.com/rmagatti/auto-session?tab=readme-ov-file#-commands
 	{ "<leader>wr", "<Cmd>AutoSession search<CR>", desc = "AutoSession search" },
 	{ "<leader>ws", "<Cmd>AutoSession save<CR>", desc = "AutoSession save" },
 	{ "<leader>wa", "<Cmd>AutoSession toggle<CR>", desc = "AutoSession toggle" },

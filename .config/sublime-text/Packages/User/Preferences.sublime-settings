@@ -14,12 +14,7 @@
     "close_windows_when_empty": false,
     "open_files_in_new_window": "never",
     "tab_size": 2,
-    "translate_tabs_to_spaces": true,
-    "extensions": {
-        "txt": {
-            "translate_tabs_to_spaces": false,
-        },
-    },
+    // "translate_tabs_to_spaces": true,
     // Complete
     "auto_complete_selector": "text, comment, string",
     "auto_complete_triggers":

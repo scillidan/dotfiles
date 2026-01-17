@@ -1,5 +1,7 @@
-require("devdocs").setup({
-	ensure_installed = {
+require("apidocs").setup({
+	data_folder = vim.fn.stdpath("data") .. "/apidocs",
+	picker = "snacks",
+	ensure_install = {
 		-- "bash",
 		-- "css",
 		-- "git",
