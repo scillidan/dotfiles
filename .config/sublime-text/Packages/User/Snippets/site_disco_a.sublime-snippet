@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<a class="gallery-item" data-lg-size="1280-720" data-html="#smp$3" data-video='{"source": [{"src":"//raw.githubusercontent.com/scillidan/cdn_media_disco/main/$2.webm", "type":"video/webm"}], "attributes": {"preload": false, "controls": true, "playsinline": true}}' data-sub-html="<h4>$1 SMP01</h4>">
+	<img class="img-responsive" src="//raw.githubusercontent.com/scillidan/disco/main/media/$2.jpg" alt="&lt;p&gt;$1 SMP01&lt;/p&gt;" />
+</a>
+]]></content>
+	<tabTrigger>discoa</tabTrigger>
+	<scope>text.html</scope>
+	<description>disco a</description>
+</snippet>

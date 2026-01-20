@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+(
+  image-path: "$1.jpg",
+  chp-path: "$1.mp3.chp",
+  title: "$1",
+  subtitle: "$2",
+  year: "$3",
+),
+]]></content>
+  <tabTrigger>playlistitem</tabTrigger>
+  <scope>text.typst</scope>
+  <description>playlist items</description>
+</snippet>
