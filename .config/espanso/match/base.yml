@@ -15,8 +15,9 @@ matches:
         type: choice
         values:
           - DeepSeek
-          - mistral.ai
+          - MiniMax-M2.1
           - perplexity.ai
+          - mistral.ai
         default: DeepSeek
   - trigger: ":by"
     form: |

@@ -1,38 +1,53 @@
 {
-	"$schema": "https://opencode.ai/config.json",
-	"plugin": [
-		"@mohak34/opencode-notifier",
-		// "@zenobius/opencode-skillful"
-	],
-	"autoupdate": false,
-	"share": "disabled",
-	"theme": "system",
-	"enabled_providers": [
-		"ollama",
-		"aiping"
-	],
-	"disabled_providers": [
-		"openai"
-	],
-	"provider": {
-		"ollama": {
-			"npm": "@ai-sdk/openai-compatible",
-			"name": "Ollama",
-			"options": {
-				"baseURL": "http://localhost:11434/v1"
-			},
-			"models": {
-				"ministral-3:8b": {
-					"name": "Ministral3 8B"
-				},
-				"mistral:7b-instruct": {
-					"name": "Mistral 7B Instruct"
-				},
-				"qwen3:14b": {
-					"name": "Qwen3 14B"
-				}
-			},
-		},
+  "$schema": "https://opencode.ai/config.json",
+  "keybinds": {
+    "input_move_left": "ctrl+b",
+    "input_move_right": "ctrl+f",
+    "input_word_forward": "alt+f",
+    "input_word_backward": "alt+b",
+    "input_select_word_forward": "alt+shift+f",
+    "input_select_word_backward": "alt+shift+b",
+    "input_backspace": "backspace",
+    "input_delete": "ctrl+d",
+    "input_delete_word_forward": "ctrl+delete",
+    "input_delete_word_backward": "ctrl+backspace",
+    "messages_first": "ctrl+g",
+    "messages_last": "ctrl+alt+g",
+    "input_newline": "shift+return",
+  },
+  "plugin": [
+    "@mohak34/opencode-notifier",
+    // "@zenobius/opencode-skillful"
+  ],
+  "autoupdate": false,
+  "share": "disabled",
+  "theme": "system",
+  "enabled_providers": [
+    "ollama",
+    "aiping"
+  ],
+  "disabled_providers": [
+    "openai"
+  ],
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "ministral-3:8b": {
+          "name": "Ministral3 8B"
+        },
+        "mistral:7b-instruct": {
+          "name": "Mistral 7B Instruct"
+        },
+        "qwen3:14b": {
+          "name": "Qwen3 14B"
+        }
+      },
+    },
     "aiping": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "AIPing",
@@ -45,40 +60,40 @@
           "name": "MiniMax M2.1"
         }
       }
-		},
-		"openai": {
-			"options": {
-				"apikey": "{env:OPENAI_API_KEY}",
-				"baseURL": "{env:OPENAI_API_BASE}"
-			},
-			"models": {
-				"gpt-5.1-codex": {
-					"name": "GPT-5.1 Codex"
-				},
-				"gpt-5-mini": {
-					"name": "GPT-5 mini"
-				}
-			}
-		}
-	},
-	"agent": {
-		"plan": {
-			"mode": "primary",
-			"model": "aiping/MiniMax-M2.1",
-			"tools": {
-				"write": false,
-				"edit": false,
-				"bash": false
-			}
-		},
-		"build": {
-			"mode": "primary",
-			"model": "aiping/MiniMax-M2.1",
-			"tools": {
-				"write": true,
-				"edit": true,
-				"bash": true
-			}
-		}
-	}
+    },
+    "openai": {
+      "options": {
+        "apikey": "{env:OPENAI_API_KEY}",
+        "baseURL": "{env:OPENAI_API_BASE}"
+      },
+      "models": {
+        "gpt-5.1-codex": {
+          "name": "GPT-5.1 Codex"
+        },
+        "gpt-5-mini": {
+          "name": "GPT-5 mini"
+        }
+      }
+    }
+  },
+  "agent": {
+    "plan": {
+      "mode": "primary",
+      "model": "aiping/MiniMax-M2.1",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+    "build": {
+      "mode": "primary",
+      "model": "aiping/MiniMax-M2.1",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    }
+  }
 }
