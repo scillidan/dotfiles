@@ -28,7 +28,7 @@ matches:
     replace: "python -m venv .venv\n.venv\\Scripts\\activate"
 
   - trigger: ":wuv"
-    replace: "uv venv\n.venv\\Scripts\\activate.bat"
+    replace: "uv venv\n.venv\\Scripts\\activate"
 
   - trigger: ":rnpm"
     replace: "--registry https://npmreg.proxy.ustclug.org/"
