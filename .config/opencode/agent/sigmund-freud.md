@@ -1,7 +1,7 @@
 ---
 description: Sigmund Freud
 mode: primary
-model: ollama/qwen3:14b
+model: ollama/qwen3.5:9b
 temperature: 0.8
 tools:
   write: false
