@@ -144,3 +144,6 @@
 /gPodder
 /Usr
 /bookmarks.txt
+/.config/opencode/node_modules
+/.config/opencode/bun.lock
+/.config/opencode/package.json
