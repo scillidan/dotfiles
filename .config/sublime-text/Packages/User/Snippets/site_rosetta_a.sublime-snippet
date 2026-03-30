@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
-<a class="gallery-item" data-lg-size="1280-720" data-html="#smp$3" data-video='{"source": [{"src":"//raw.githubusercontent.com/scillidan/cdn_media_rosetta/main/$2.webm", "type":"video/webm"}], "tracks": [{"src": "//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.eng.vtt", "kind":"captions", "srclang": "en", "label": "English", "default": "true"},{"src": "//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.zho.vtt", "kind":"captions", "srclang": "zh-cn", "label": "Simplified Chinese"}], "attributes": {"preload": false, "controls": true, "playsinline": true}}' data-sub-html="<h4>$1 SMP01</h4>">
-	<img class="img-responsive" src="//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.jpg" alt="&lt;p&gt;$1 SMP01&lt;/p&gt;" />
+<a class="gallery-item" data-lg-size="1280-720" data-html="#smp$1" data-video='{"source": [{"src":"//raw.githubusercontent.com/scillidan/cdn_media_rosetta/main/$2.webm", "type":"video/webm"}], "tracks": [{"src": "//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.eng.vtt", "kind":"captions", "srclang": "en", "label": "English", "default": "true"},{"src": "//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.zho.vtt", "kind":"captions", "srclang": "zh-cn", "label": "Simplified Chinese"}], "attributes": {"preload": false, "controls": true, "playsinline": true}}' data-sub-html="<h4>$2$3 SMP01</h4>">
+	<img class="img-responsive" src="//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.jpg" alt="&lt;p&gt;$2$3 SMP01&lt;/p&gt;" />
 </a>
 ]]></content>
 	<tabTrigger>rosettaa</tabTrigger>
