@@ -1,7 +1,7 @@
 ---
 description: Code simplifier
 mode: subagent
-model: openai/gpt-4o-mini
+model: openai/gpt-5.4-mini
 tools:
   write: false
   edit: false

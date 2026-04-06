@@ -1,7 +1,7 @@
 ---
 description: Librarian
 mode: primary
-model: ollama/qwen3.5:9b
+model: ollama/qwen3:14b
 temperature: 0.8
 tools:
   write: false
