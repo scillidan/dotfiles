@@ -263,6 +263,12 @@ require("lazy").setup({
 			require("config.treesitter")
 		end,
 	},
+	{
+		"romus204/tree-sitter-manager.nvim",
+		config = function()
+			require("config.tree_sitter_manager")
+		end,
+	},
 	{ "nvim-treesitter/nvim-treesitter-context" },
 	{
 		"lukas-reineke/indent-blankline.nvim",
