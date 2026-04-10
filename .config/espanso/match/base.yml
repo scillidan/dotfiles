@@ -14,8 +14,9 @@ matches:
       author:
         type: choice
         values:
+          - GLM-4.7
+          - MiniMax-M2.5
           - DeepSeek
-          - MiniMax-M2.1
           - perplexity.ai
           - mistral.ai
         default: DeepSeek
