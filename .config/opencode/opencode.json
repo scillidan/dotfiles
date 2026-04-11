@@ -1,7 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    "@mohak34/opencode-notifier",
+    "@mohak34/opencode-notifier@latest",
+    // TRANSLATOR_API_KEY=Ollama
+    // TRANSLATOR_BASE_URL=http://127.0.0.1:11434
+    // TRANSLATOR_MODEL=gemma3:12b-it-qat
+    "opencode-input-translator@latest",
     // "@zenobius/opencode-skillful"
   ],
   "autoupdate": false,

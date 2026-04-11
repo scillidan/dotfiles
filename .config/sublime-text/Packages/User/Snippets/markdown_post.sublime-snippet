@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+```
+Title: $1
+Source: $2
+Author: $3
+Date: $4
+Translator: $5
+```
+]]></content>
+  <tabTrigger>post</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>markdown post</description>
+</snippet>
