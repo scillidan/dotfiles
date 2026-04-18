@@ -44,6 +44,9 @@
         "apiKey": "{env:AIPING_API_KEY}"
       },
       "models": {
+        "MiniMax-M2.7": {
+          "name": "MiniMax-M2.7"
+        },
         "MiniMax-M2.5": {
           "name": "MiniMax-M2.5"
         },
@@ -73,7 +76,7 @@
   "agent": {
     "plan": {
       "mode": "primary",
-      "model": "aiping/GLM-4.7",
+      "model": "aiping/MiniMax-M2.7",
       "tools": {
         "write": false,
         "edit": false,
@@ -82,7 +85,7 @@
     },
     "build": {
       "mode": "primary",
-      "model": "aiping/GLM-4.7",
+      "model": "aiping/MiniMax-M2.7",
       "tools": {
         "write": true,
         "edit": true,
