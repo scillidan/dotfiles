@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+just add ${1:portrait} "${2:image}.${3:jpg}" "${4:author}" "${5:date}" "${2:image}" "(0%, 0%)" 100% "(100%, 100%)"
+]]></content>
+	<tabTrigger>justwallpaper</tabTrigger>
+	<scope>text.html.markdown</scope>
+	<description>just image_wallpaper</description>
+</snippet>
