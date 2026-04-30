@@ -1,9 +1,3 @@
-## https://github.com/NoponyAsked/sxiv.yazi
-[[mgr.prepend_keymap]]
-on = ["c", "i"]
-run = "plugin sxiv"
-desc = "Preview images in sxiv"
-
 ## https://github.com/Lil-Dank/lazygit.yazi
 [[mgr.prepend_keymap]]
 on = ["g", "i"]
@@ -15,6 +9,29 @@ desc = "run lazygit"
 on = ["'", "\\"]
 run = 'plugin custom-shell -- auto --interactive'
 desc = "custom-shell as default, interactive"
+
+## https://github.com/Ape/open-with-cmd.yazi
+[[manager.prepend_keymap]]
+on   = "o"
+run  = "plugin open-with-cmd -- block"
+desc = "Open with command in the terminal"
+
+[[manager.prepend_keymap]]
+on   = "O"
+run  = "plugin open-with-cmd"
+desc = "Open with command"
+
+## https://github.com/yazi-rs/plugins/tree/main/toggle-pane.yazi
+[[mgr.prepend_keymap]]
+on   = "T"
+run  = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"
+
+## https://github.com/NoponyAsked/sxiv.yazi
+[[mgr.prepend_keymap]]
+on = ["c", "i"]
+run = "plugin sxiv"
+desc = "Preview images in sxiv"
 
 # https://github.com/lpnh/fr.yazi
 [[mgr.prepend_keymap]]
@@ -57,3 +74,14 @@ desc = "Empty by days deleted"
 on = ["R", "r"]
 run = "plugin recycle-bin restore"
 desc = "Restore from Trash"
+
+## https://github.com/yazi-rs/plugins/tree/main/chmod.yazi
+[[mgr.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
+
+## https://github.com/yazi-rs/plugins/tree/main/mount.yazi
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
