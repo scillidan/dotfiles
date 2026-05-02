@@ -1,14 +1,8 @@
-## https://github.com/Lil-Dank/lazygit.yazi
+## https://github.com/yazi-rs/plugins/tree/main/toggle-pane.yazi
 [[mgr.prepend_keymap]]
-on = ["g", "i"]
-run = "plugin lazygit"
-desc = "run lazygit"
-
-## https://github.com/AnirudhG07/custom-shell.yazi
-[[mgr.prepend_keymap]]
-on = ["'", "\\"]
-run = 'plugin custom-shell -- auto --interactive'
-desc = "custom-shell as default, interactive"
+on   = "T"
+run  = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"
 
 ## https://github.com/Ape/open-with-cmd.yazi
 [[manager.prepend_keymap]]
@@ -21,28 +15,17 @@ on   = "O"
 run  = "plugin open-with-cmd"
 desc = "Open with command"
 
-## https://github.com/yazi-rs/plugins/tree/main/toggle-pane.yazi
+## https://github.com/AnirudhG07/custom-shell.yazi
 [[mgr.prepend_keymap]]
-on   = "T"
-run  = "plugin toggle-pane max-preview"
-desc = "Maximize or restore the preview pane"
+on = ["'", "\\"]
+run = 'plugin custom-shell -- auto --interactive'
+desc = "custom-shell as default, interactive"
 
-## https://github.com/NoponyAsked/sxiv.yazi
+## https://github.com/Lil-Dank/lazygit.yazi
 [[mgr.prepend_keymap]]
-on = ["c", "i"]
-run = "plugin sxiv"
-desc = "Preview images in sxiv"
-
-# https://github.com/lpnh/fr.yazi
-[[mgr.prepend_keymap]]
-on = ["f", "r"]
-run = "plugin fr rg"
-desc = "Search file by content (rg)"
-
-[[mgr.prepend_keymap]]
-on = ["f", "a"]
-run = "plugin fr rga"
-desc = "Search file by content (rga)"
+on = ["g", "i"]
+run = "plugin lazygit"
+desc = "run lazygit"
 
 ## https://github.com/uhs-robert/recycle-bin.yazi
 [[mgr.prepend_keymap]]
@@ -75,6 +58,43 @@ on = ["R", "r"]
 run = "plugin recycle-bin restore"
 desc = "Restore from Trash"
 
+## https://github.com/KKV9/compress.yazi
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "a" ]
+run  = "plugin compress"
+desc = "Archive selected files"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "p" ]
+run  = "plugin compress -p"
+desc = "Archive selected files (password)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "h" ]
+run  = "plugin compress -ph"
+desc = "Archive selected files (password+header)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "l" ]
+run  = "plugin compress -l"
+desc = "Archive selected files (compression level)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "a", "u" ]
+run  = "plugin compress -phl"
+desc = "Archive selected files (password+header+level)"
+
+## https://github.com/lpnh/fr.yazi
+[[mgr.prepend_keymap]]
+on = ["f", "r"]
+run = "plugin fr rg"
+desc = "Search file by content (rg)"
+
+[[mgr.prepend_keymap]]
+on = ["f", "a"]
+run = "plugin fr rga"
+desc = "Search file by content (rga)"
+
 ## https://github.com/yazi-rs/plugins/tree/main/chmod.yazi
 [[mgr.prepend_keymap]]
 on   = [ "c", "m" ]
@@ -85,3 +105,9 @@ desc = "Chmod on selected files"
 [[mgr.prepend_keymap]]
 on  = "M"
 run = "plugin mount"
+
+## https://github.com/NoponyAsked/sxiv.yazi
+[[mgr.prepend_keymap]]
+on = ["c", "i"]
+run = "plugin sxiv"
+desc = "Preview images in sxiv"

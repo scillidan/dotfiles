@@ -20,6 +20,7 @@ require("font-sample"):setup({
 if is_unix then
 	if not is_termux then
 		require("recycle-bin"):setup()
+		require("sshfs"):setup()
 		require("fr"):setup({
 			fzf = [[--info-command='echo -e "$FZF_INFO 💛"' --no-scrollbar]],
 			rg = "--colors 'line:fg:red' --colors 'match:style:nobold'",
