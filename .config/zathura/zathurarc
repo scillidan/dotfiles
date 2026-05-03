@@ -42,4 +42,3 @@ set synctex-editor-command "nvim --headless -c \"VimtexInverseSearch %{line} '%{
 unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
-

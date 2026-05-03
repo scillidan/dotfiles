@@ -1,53 +1,79 @@
+## = Yazi
+## https://github.com/sxyazi/yazi
+## == install
+## sudo pacman -S yazi
+## scoop install yazi
+## == config
+## https://yazi-rs.github.io/docs/configuration/overview/
+## mkdir ~/.config/yazi/
+## mkdir %AppData%\yazi\config
+## == command
+## ya pkg upgrade
+## == cheatsheet
+## ya pkg add gosxrgxx/flexoki-dark
+## ya pkg add gosxrgxx/flexoki-light
+## ya pkg add yazi-rs/plugins:toggle-pane
+## ya pkg add KKV9/compress
+## ya pkg add AnirudhG07/custom-shell
+## ya pkg add Ape/open-with-cmd
+## ya pkg add yazi-rs/plugins:piper
+## ya pkg add yazi-rs/plugins:git
+## ya pkg add Lil-Dank/lazygit
+## ya pkg add AminurAlam/yazi-plugins:font-sample
+## ya pkg add AminurAlam/yazi-plugins:preview-typst
+## ya pkg add kirasok/epub-preview
+## ya pkg add AminurAlam/yazi-plugins:preview-cbz
+## ya pkg add boydaihungst/mediainfo
+## (Arch)
+## ya pkg add uhs-robert/recycle-bin
+## ya pkg add yazi-rs/plugins:chmod
+## ya pkg add yazi-rs/plugins:mount
+## ya pkg add uhs-robert/sshfs
+## ya pkg add lpnh/fr
+## ya pkg add NoponyAsked/sxiv
+## (Cache)
+## https://github.com/boydaihungst/thunar-bulk-rename.yazi
+## https://github.com/KKV9/compress.yazi
+## https://github.com/grimandgreedy/ffmpeg-stats.yazi
+## https://github.com/walldmtd/krita-preview.yazi
+## https://github.com/wylie102/duckdb.yazi
+## https://github.com/macydnah/office.yazi
+
 [mgr]
 show_hidden = true
 
 [plugin]
 prepend_fetchers = [
-	## https://github.com/yazi-rs/plugins/tree/main/git.yazi
 	{id = "git", url = "*", run = "git", group = "git" },
 	{id = "git", url = "*/", run = "git", group = "git" }
 ]
 prepend_preloaders = [
-	## https://github.com/AminurAlam/yazi-plugins/tree/main/font-sample.yazi
   { mime = 'font/*', run = 'font-sample' },
   { mime = 'application/ms-opentype', run = 'font-sample' },
   { url = '*.{otf,ttf,woff,woff2}', run = 'font-sample' },
-	## https://github.com/AminurAlam/yazi-plugins/tree/main/preview-typst.yazi
 	{ url = '*.typ', run = 'preview-typst' },
-	## https://github.com/AminurAlam/yazi-plugins/tree/main/preview-epub.yazi
 	# { mime = '', run = 'preview-epub' },
-  ## https://github.com/AminurAlam/yazi-plugins/tree/main/preview-cbz.yazi
   # { url = '*.cb{z,r}', run = 'preview-cbz' },
-	## https://github.com/AminurAlam/yazi-plugins/tree/main/preview-audio.yazi
 	# { mime = 'audio/mpegurl', run = 'code' },
   # { mime = 'audio/*', run = 'preview-audio' },
-	## https://github.com/boydaihungst/mediainfo.yazi
 	# { mime = "{audio,video,image}/*", run = "mediainfo" },
 	# { mime = "application/subrip", run = "mediainfo" },
 	# { mime = "application/postscript", run = "mediainfo" },
 ]
 prepend_previewers = [
-	## https://github.com/yazi-rs/plugins/tree/main/piper.yazi
 	{ name = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
 	{ name = "*.csv", run = 'piper -- bat -p --color=always "$1"' },
 	{ name = "*/", run = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
 	# { name = "*", run = 'piper -- hexyl --border=none --terminal-width=$w "$1"' },
-	## https://github.com/AminurAlam/yazi-plugins/tree/main/font-sample.yazi
   { mime = 'font/*', run = 'font-sample' },
   { mime = 'application/ms-opentype', run = 'font-sample' },
   { url = '*.{otf,ttf,woff,woff2}', run = 'font-sample' },
-	## https://github.com/AminurAlam/yazi-plugins/tree/main/preview-typst.yazi
 	{ url = '*.typ', run = 'preview-typst' },
-	## https://github.com/kirasok/epub-preview.yazi
 	{ mime = "application/epub+zip", run = "epub-preview" },
-	## https://github.com/AminurAlam/yazi-plugins/tree/main/preview-epub.yazi
 	# { mime = '', run = 'preview-epub' },
-  ## https://github.com/AminurAlam/yazi-plugins/tree/main/preview-cbz.yazi
   # { url = '*.cb{z,r}', run = 'preview-cbz' },
-	## https://github.com/AminurAlam/yazi-plugins/tree/main/preview-audio.yazi
 	# { mime = 'audio/mpegurl', run = 'code' },
   # { mime = 'audio/*', run = 'preview-audio' },
-	## https://github.com/boydaihungst/mediainfo.yazi
 	# { mime = "{audio,video,image}/*", run = "mediainfo" },
 	# { mime = "application/subrip", run = "mediainfo" },
 	# { mime = "application/postscript", run = "mediainfo" },
