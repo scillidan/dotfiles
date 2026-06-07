@@ -1,0 +1,13 @@
+{
+    "break_at_empty_lines": true,
+    "break_at_non_matching_lines": true,
+    "align_chars": [
+        {
+            "char": "|",
+            "alignment":       "left",
+            "spaces_left":     1,
+            "spaces_right":    1,
+            "is_in_scope":  ["source.md"]
+        }
+    ]
+}

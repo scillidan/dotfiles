@@ -1,0 +1,38 @@
+{
+  "lastChangelogVersion": "0.78.0",
+  "defaultProvider": "ollama",
+  "defaultModel": "ministral-3:8b",
+  "defaultThinkingLevel": "minimal",
+  "theme": "dark",
+  "packages": "pi-skills",
+  "skills": [
+    "~/.codex/skills",
+    "caveman",
+    "shellcheck-configuration",
+    "command-creator",
+    "find-skills"
+  ],
+  "extensions": [],
+  "enableSkillCommands": true,
+  "thinkingBudgets": {
+    "minimal": 512,
+    "low": 1024,
+    "medium": 2048,
+    "high": 4096
+  },
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 4096,
+    "keepRecentTokens": 8000
+  },
+  "retry": {
+    "enabled": true,
+    "maxRetries": 5,
+    "baseDelayMs": 1000,
+    "provider": {
+      "timeoutMs": 600000,
+      "maxRetries": 3,
+      "maxRetryDelayMs": 30000
+    }
+  }
+}

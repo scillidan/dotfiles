@@ -1,0 +1,9 @@
+{
+    "debug": true,
+    // "prettier_cli_path": "",
+    // "node_path": "",
+    "prettier_options": {
+        "printWidth": 500,
+        "tabWidth": 2
+    },
+}

@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+      <a class="gallery-item" 
+        data-html="#$1" 
+        data-slide-name="" 
+        data-video='{ "source": [ {"src": "media/$1.mp4", "type": "video/mp4"} ], "attributes": { "preload": false, "controls": false, "playsinline": true, "loop": true } }' 
+        data-sub-html=""
+        data-poster="media/$1_poster.jpg">
+        <img class="img-responsive" src="media/$1_poster.jpg" 
+          alt="&lt;p&gt;&lt;/p&gt;" />
+      </a>
+$2
+]]></content>
+  <tabTrigger>anime2</tabTrigger>
+  <scope>text.html</scope>
+  <description>anime-keyframes-gallery non data-sub-html</description>
+</snippet>

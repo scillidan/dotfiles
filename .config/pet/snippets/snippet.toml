@@ -1,0 +1,548 @@
+## agg
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["agg", "code"]
+	command = "agg --theme asciinema --speed 1.5 --font-family \"Sarasa Term SC Nerd\" --font-size 14 --fps-cap 30 $1 _.gif"
+
+## ASCII Silhouettify
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["ascii-silhouettify", "image"]
+command = "ascii-silhouettify --input $"
+
+## ascii-image-converter
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["ascii-image-converter", "image"]
+	command = "ascii-image-converter $ -C -b --dither -d 100,35"
+
+## ass2srt
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = [""]
+command = "ass2srt $"
+
+## Audio Waveform Image Generator
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["audiowaveform", "audio"]
+command = "audiowaveform -i $ -o \"_.png\" -z auto -w 1920 -h 150 --background-color fffff8 --waveform-color 111111 --axis-label-color fffff8 --border-color fffff8"
+
+## autocrop
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["autocrop", "image"]
+	command = "autocrop -i <input_dir> -o <output_dir> -w 400 -H 400 -e png"
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["autocrop", "image"]
+	command = "autocrop -i <input_dir> -o <output_dir> -w 400 -H 400 -e png"
+
+## AutoTrace
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["autotrace", "image"]
+	command = "magick convert $ -define bmp:format=bmp3 _temp.bmp && autotrace -output-file _.svg -input-format bmp -despeckle-level <level> -color-count <num> _temp.bmp"
+
+## color-matcher
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["color-matcher", "image"]
+	command = "color-matcher -s $1 -r $2"
+
+## F2
+[[Snippets]]
+Description = "Rename photos"
+Output = ""
+Tag = ["f2", "text"]
+command = "f2 -r \"{xt.CreateDate}\" --exiftool-opts \"--dateFormat %Y%m%d_%H_%M_%S\""
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["f2", "text"]
+command = "f2 -r \"{id3.title} - {id3.artist}{ext}\""
+
+##
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["faviator", "image"]
+	command = "faviator --size 512 --text $ --font-size 12 --font-family \"<font>\" --font-color #000 --font-weight 400 --background-color #fff --border-width 0 --border-color 0 --border-radius 0 -o favicon.png"
+
+## fend
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["fend", "tool"]
+command = "(fend) 1 Gib to Mib"
+
+## FFmpeg
+[[Snippets]]
+Description = "Convert AAC to MP3"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $ -codec:a libmp3lame -qscale:a 1 _.mp3"
+[[Snippets]]
+Description = "Convert FLAC to M4B"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $.flac -c:a aac -b:a 128k -minrate 64k -maxrate 192k -ar 44100 _.m4b"
+[[Snippets]]
+Description = "Convert FLACs to one MP3"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "find . -maxdepth 1 -type f -name '*.flac' | sort | sed \"s | ^\\./\\(.*\\)$ | file '\\1' | \" > _.txt ^\n  ffmpeg -f concat -safe 0 -i _.txt -codec:a libmp3lame -qscale:a 1 _.mp3"
+[[Snippets]]
+Description = "Convert GIF/APNG to MP4"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $.gif/apng -movflags faststart -pix_fmt yuv420p -vf \"fps=30,scale=trunc(iw/2)*2:trunc(ih/2)*2\" -c:v libx264 -crf 23 -preset veryslow _.mp4"
+[[Snippets]]
+Description = "Convert M4A to MP3"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $ -vn -c:a libmp3lame -b:a 224K -ac 2 _.mp3"
+[[Snippets]]
+Description = "Convert WAVs/FLACs/M4As to MP3"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "find . -type f \\( -iname \"*.wav\" -o -iname \"*.flac\" -o -iname \"*.m4a\" \\) -print0 | xargs -0 -I {} ffmpeg -i \"{}\" -c:a libmp3lame -ar 44100 -b:a 256k -maxrate 320k -minrate 128k -bufsize 320k \"{.}.mp3\""
+[[Snippets]]
+Description = "Convert audio to OGG for music"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $ -c:a libvorbis -ar 44100 -b:a 256k -maxrate 320k -minrate 128k -bufsize 320k _.ogg"
+[[Snippets]]
+Description = "Convert audio to OGG for voice"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $ -c:a libvorbis -ar 44100 -b:a 128k -maxrate 192k -minrate 64k -bufsize 192k _.ogg"
+[[Snippets]]
+Description = "Convert audio to OGG"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $ -map_metadata -1 -c:a libvorbis -b:a 64k -compression_level 10 -vn _.ogg"
+[[Snippets]]
+Description = "Convert audio to optimized M4B"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $ -map 0:a -map_metadata 0 -c:a aac -b:a 64k -id3v2_version 3 -movflags +faststart _opti.m4b"
+[[Snippets]]
+Description = "Convert video to MP4"
+Output = ""
+Tag = ["ffmpeg", "audio"]
+command = "ffmpeg -i $ -map 0 -c:v copy -c:a ac3 -b:a 256K -ac 2 -c:s copy _.mp4"
+[[Snippets]]
+Description = "Export SRT subtitle"
+Output = ""
+Tag = ["ffmpeg", "video"]
+command = "ffmpeg -i $ -map 0:s:0 _.srt"
+[[Snippets]]
+Description = "Export SUP subtitle"
+Output = ""
+Tag = ["ffmpeg", "video"]
+command = "ffmpeg -i $ -map 0:s:0 -c:s copy _.sup"
+[[Snippets]]
+Description = "Extract audio as MP3"
+Output = ""
+Tag = ["ffmpeg", "video"]
+command = "ffmpeg -i $ -vn -acodec libmp3lame -ab 192k -ar 44100 -y _.mp3"
+[[Snippets]]
+Description = "Extract frame as poster"
+Output = ""
+Tag = ["ffmpeg", "video"]
+command = "ffmpeg -i $.mp4 -vframes 1 _poster.jpg"
+[[Snippets]]
+Description = "Generate MP4 from autocast"
+Output = ""
+Tag = ["ffmpeg", "video"]
+command = "autocast $.yaml _.cast ^\n  agg --theme asciinema --speed 1.5 --font-family \"font: Sarasa Mono SC\" --font-size 14 --fps-cap 30 _.cast _.gif ^\n  ffmpeg -i _.gif -movflags faststart -pix_fmt yuv420p -vf \"scale=trunc(iw/2)*2:trunc(ih/2)*2\" _.mp4"
+[[Snippets]]
+Description = "Generate Video from image (1 sec duration)"
+Output = ""
+Tag = ["ffmpeg", "video"]
+command = "ffmpeg -loop 1 -i $ -vf \"scale=trunc(iw/2)*2:trunc(ih/2)*2\" -c:v libx264 -t 1 -pix_fmt yuv420p _.mp4"
+[[Snippets]]
+Description = "Generate Video from image (1 sec per 30 images)"
+Output = ""
+Tag = ["ffmpeg", "video"]
+command = "ffmpeg -framerate 30 -i $04d.png -c:v libx264 -pix_fmt yuv420p _.mp4"
+[[Snippets]]
+Description = "Generate Video from image (1 sec per image)"
+Output = ""
+Tag = ["ffmpeg", "video"]
+command = "ffmpeg -framerate 1 -i \"$04d.png\" -c:v libx264 -r 30 -pix_fmt yuv420p _.mp4"
+
+## G'MIC
+[[Snippets]]
+Description = "Frame"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ frame_xy 1,1,0 frame_xy 10,5,0,0,0"
+[[Snippets]]
+Description = "Grid"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ grid 10%,16%,0,0,0.2,255"
+[[Snippets]]
+Description = "Kuwahara filter"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ kuwahara 9"
+[[Snippets]]
+Description = "Montage"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ montage H1:V0:VH2:1H0:3"
+[[Snippets]]
+Description = "Patch matching"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $1 $2 +matchpatch[0] [1],3 +warp[-2] [-1],0"
+[[Snippets]]
+Description = "Quantize, blur"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ quantize 6 blur 1 round[-1] quantize_area[-1] 2"
+[[Snippets]]
+Description = "Quantize, split"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ quantize 3 +split_colors , display_rgba"
+[[Snippets]]
+Description = "Topographic map"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ topographic_map 10"
+[[Snippets]]
+Description = "Watershed algorithm"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ segment_watershed 4"
+[[Snippets]]
+Description = "sRGB to Lab color space"
+Output = ""
+Tag = ["gmic", "image"]
+command = "gmic $ +srgb2lab slic[-1] 16 +blend shapeaverage f[-2] \"j(1,0)==i && j(0,1)==i\" *[-1] [-2]"
+
+## HandBrake
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["handbrakecli", "video"]
+command = "handbrakecli --preset-import-file <preset> --input $ --output _.mp4"
+
+## ImageMagick
+[[Snippets]]
+Description = "Border"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $ -bordercolor #000 -border 1 _border.png"
+[[Snippets]]
+Description = "Charcoal effect"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $1 -charcoal 2 $2"
+[[Snippets]]
+Description = "Convert BMP to PNG"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick mogrify -format png $"
+[[Snippets]]
+Description = "Convert to PDF"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert *.{png,jpeg} -quality 100 _output.pdf"
+[[Snippets]]
+Description = "Crop"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $ -crop x1500 _%d.png"
+[[Snippets]]
+Description = "Negate"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $ -channel RGB -negate _negate.png"
+[[Snippets]]
+Description = "Ordered dithering (8 colors)"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $ -ordered-dither h4x4o -colors 8 _dither.png"
+[[Snippets]]
+Description = "Ordered dithering (gray)"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $ -colorspace Gray -ordered-dither o2x2 _dither.png"
+[[Snippets]]
+Description = "Paint effect"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $1 -paint 3 $2"
+[[Snippets]]
+Description = "Resize"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $ -resize x1600 -quality 100 _*.jpg"
+[[Snippets]]
+Description = "Sketch effect"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick convert $ -colorspace gray -sketch 0x10+120 _sketch.png"
+[[Snippets]]
+Description = "Slice"
+Output = ""
+Tag = ["magick", "image"]
+command = "magick montage $ -resize 750x -geometry +0+0 -tile 1x _montage.png"
+
+## marker
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["marker", "pdf"]
+	command = "marker_single $.pdf --output_dir <dir> --page_range 1-5"
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["marker", "pdf"]
+	command = "marker_gui"
+
+## markpdf
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["markpdf", "pdf"]
+	command = "markpdf $ watermark.png --opacity=0.3"
+
+## Movie Thumbnailer (mtn)
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["mtn", "video"]
+command = "mtn -c 4 -r 4 -g 3 -k 000000 -w 1920 -i -t -D 4 -P -o _.png $"
+
+## mt
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["mt", "video"]
+command = "mt -n 16 -c 4 --disable-timestamps --header=false $"
+
+## nomino
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["monimo", "text"]
+command = "nomino -t \"(\\d+).zh*\" \"{:2}.zh-cn\""
+
+## Oxipng
+[[Snippets]]
+Description = "Optimize"
+Output = ""
+Tag = ["oxipng", "image"]
+command = "oxipng -o 4 -i 1 --strip safe $.png"
+
+## Paletter
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["paletter", "image"]
+command = "paletter -colors <num> $"
+
+## PDF ToC
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["pdf-toc", "pdf"]
+command = "pdf-toc -t toc.txt -d _.pdf $"
+
+## percollate
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["percollate", "pdf"]
+command = "percollate pdf 1 -o _.pdf --css \":root { --main-font: 'Sarasa Mono SC';  --code-font: 'MonaspiceNe NFM'; --alt-font: 'Sarasa Mono SC'; }\""
+
+## PgsToSrt
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["pgstosrt", "subtitle"]
+command = "pgstosrt --input <file.sup> --output <file.srt> --tesseractlanguage <lang> --tesseractdata \"<path_to>\\tessdata_fast\""
+
+## png2svg
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["png2svg", "image"]
+command = "png2svg -v -l -o $ _.svg"
+
+## png-to-ico
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["png-to-ico", "png"]
+command = "png-to-ico $ > _.ico"
+
+## Prettier
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["prettier", "text"]
+command = "prettier --write --parser json $"
+
+## pypinyin
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["pypinyin", "text"]
+command = "pypinyin -s NORMAL $"
+
+## rembg
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["rembg", "image"]
+command = "rembg i -a -ae 15 $ _.png"
+
+## Rimage
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["rimage", "image"]
+command = "rimage mozjpeg --resize 1080h $.jpg"
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["rimage", "image"]
+command = "rimage png --resize 1080h $.png"
+
+## sub-batch
+[[Snippets]]
+Description = "Rename"
+Output = ""
+Tag = ["sub-batch", "subtitle"]
+command = "sub-batch rename --subarea \".+\""
+[[Snippets]]
+Description = "Adjust subtitle timings"
+Output = ""
+Tag = ["sub-batch", "subtitle"]
+command = "sub-batch alass"
+[[Snippets]]
+Description = "Adjust subtitle timings interactively with mpv"
+Output = ""
+Tag = ["sub-batch", "subtitle"]
+command = "sub-batch time-mpv"
+
+## split-manga-pages
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["split-manga-pages", "manga"]
+command = "split_manga_pages -d <dir> -m all"
+
+## subsetzer
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["subsetzer", "subtitle"]
+command = "subsetzer --outfile {basename}.{src}2{dst}[{model}].{fmt} --outfmt srt --out . --model gemma3:12b --target Chinese --in $"
+
+## SVG to PNG converter
+[[Snippets]]
+Description = "for docset"
+Output = ""
+Tag = ["svg2png", "svg"]
+command = "svg2png icon.svg -w 16 icon.png"
+[[Snippets]]
+Description = "for docset"
+Output = ""
+Tag = ["svg2png", "svg"]
+command = "svg2png icon.svg -w 32 icon@2x.png"
+
+## Trafilatura
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["trafilatura", "text"]
+command = "trafilatura -u <url>"
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["trafilatura", "text"]
+command = "trafilatura -u <url> > _.txt && sed \"s/$/\n/\" _.txt > _.md"
+
+## vcsi
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["vcsi", "video"]
+command = "vcsi -w 1920 --metadata-position hidden $"
+
+## video-to-ascii
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["video-to-ascii", "video"]
+command = "video-to-ascii -f $ --strategy ascii-color"
+
+## vimg
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["vimg", "video"]
+command = "vimg vcs -c4 -n16 -H270 --avif-fps=20 $"
+
+## vtt_to_srt3
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["vtt_to_srt3", "subtitle"]
+command = "vtt_to_srt $"
+
+## yoga
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["yoga", "image"]
+command = "yoga image --resize 1920 $ _.png"
+
+## yt-dlp
+[[Snippets]]
+Description = "List available"
+Output = ""
+Tag = ["yt-dlp"]
+command = "yt-dlp -F <url_1>"
+[[Snippets]]
+Description = "List playlist"
+Output = ""
+Tag = ["yt-dlp"]
+command = "yt-dlp --flat-playlist --print \"%(webpage_url)s\" <url>"
+[[Snippets]]
+Description = "Download"
+Output = ""
+Tag = ["yt-dlp"]
+command = "yt-dlp -f <video_id>+<audio_id> <url_1>"
+[[Snippets]]
+Description = "Download the best"
+Output = ""
+Tag = ["yt-dlp"]
+command = "yt-dlp -f bestvideo+bestaudio <url_1>"
+[[Snippets]]
+Description = "Download as MP3"
+Output = ""
+Tag = ["yt-dlp"]
+command = "yt-dlp -x --audio-format mp3 --audio-quality 320k -o \"%(title)s.%(ext)s\" <url_1>"
+[[Snippets]]
+Description = "Download subtitle"
+Output = ""
+Tag = ["yt-dlp"]
+command = "yt-dlp --skip-download --write-auto-subs --sub-langs en --convert-subs srt --no-check-certificate <url>"

@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+@import url("https://cdn.jsdelivr.net/gh/scillidan/fonts@latest/serve/${1:noticia-text}.css");
+
+body {
+    font-family: "${2:Noticia Text}";
+    font-style: normal;
+}
+]]></content>
+  <tabTrigger>import</tabTrigger>
+  <scope>source.css</scope>
+  <description>css @import</description>
+</snippet>

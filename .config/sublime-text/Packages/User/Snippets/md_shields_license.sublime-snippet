@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+![](https://img.shields.io/github/license/$1)
+]]></content>
+  <tabTrigger>license</tabTrigger>
+  <scope>text.html.markdown</scope>
+  <description>shields.io license</description>
+</snippet>

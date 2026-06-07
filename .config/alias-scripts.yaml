@@ -1,0 +1,39 @@
+pths: bash paths.sh
+
+## cd
+gfd: bash cds.sh gfold
+gsync: bash cds.sh git-sync
+lg: bash cds.sh lazygit
+mgit: bash cds.sh mgitstatus
+pro: bash cds.sh pro
+rss: bash cds.sh repos status
+rsp: bash cds.sh repos pull
+rse: bash cds.sh repos exec
+rsu: bash cds.sh repos update
+serve: bash cds.sh serve
+rnr: bash cds.sh gsudo renamer --editor nvim *
+rmix: bash cds.sh repomix . --output _repomix.md
+
+## fzf
+ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
+ff-tldr: bash fzf-files.sh "${APPDATA:-$HOME/.config}/tldr/pages"
+ff-devdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs-user-md"
+ff-csv: bash fzf-files.sh "$USERHOME/Local/File/file_csv"
+
+## Git
+git-init: bash git-init.sh
+git-push: bash git-push.sh
+git-retag: bash git-retag.sh
+git-sync-upstream: bash git-sync-upstream.sh
+
+## GitHub CLI
+sip: bash gh-issue-pr.sh
+
+## Neovim
+nv: bash _nvim.sh
+
+## Neovide
+nov: bash _neovide.sh
+
+## yazi
+y: bash yazi-cd.sh

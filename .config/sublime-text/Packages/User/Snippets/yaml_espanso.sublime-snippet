@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+  - trigger: "$2"
+    replace: "$1"
+]]></content>
+  <tabTrigger>espansoyaml</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>espanso yaml</description>
+</snippet>

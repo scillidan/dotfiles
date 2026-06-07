@@ -1,0 +1,49 @@
+[
+	{
+		"keys": ["alt+f"],
+		"command": "toggle_in_selection"
+	},
+	{
+		"keys": ["alt+\\"],
+		"command": "datawizardjustifycolumns"
+	},
+	{
+		"keys": ["alt+shift+\\"],
+		"command": "datawizardcollapsecolumns"
+	},
+	{
+		"keys": ["alt+shift+d"],
+		"command": "open_thunar"
+	},
+	// Reference for LaTeX Tools: https://latextools.readthedocs.io/en/latest/recommended-packages/
+	// Align tab in tabular environments (context only available ST build 3127+)
+	{
+		"keys": ["ctrl+l", "ctrl+alt+f"],
+		"command": "align_tab",
+		"args": {
+			"user_input": "\\&"
+		},
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"operand": "text.tex.latex meta.environment.tabular"
+			}
+		]
+	},
+	// Align tab in math environments (for align)
+	{
+		"keys": ["ctrl+l", "ctrl+alt+f"],
+		"command": "align_tab",
+		"args": {
+			"user_input": "\\&"
+		},
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"operand": "text.tex.latex meta.environment.math.block.be"
+			}
+		]
+	}
+]

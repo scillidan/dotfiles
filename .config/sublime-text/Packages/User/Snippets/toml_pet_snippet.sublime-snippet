@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+[[Snippets]]
+Description = "$3"
+Output = ""
+Tag = ["$2"]
+command = "$1"
+]]></content>
+  <tabTrigger>petsnippet</tabTrigger>
+  <scope>source.toml</scope>
+  <description>pet snippet</description>
+</snippet>

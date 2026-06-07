@@ -1,0 +1,12 @@
+{
+	"font-face": {
+		"prefix": "font-face",
+		"body": "@font-face {\n    font-family: '$2';\n    src:\n        url('src/$1.woff2') format('woff2'),\n        url('src/$1.woff') format('woff');\n    font-weight: normal;\n    font-style: normal;\n    font-display: swap;\n}",
+		"description": "font-face"
+	},
+	"import": {
+		"prefix": "import",
+		"body": "@import url(\"https://cdn.jsdelivr.net/gh/scillidan/fonts@latest/serve/${1:noticia-text}.css\");\n\nbody {\n    font-family: \"${2:Noticia Text}\";\n    font-style: normal;\n}",
+		"description": "css @import"
+	}
+}

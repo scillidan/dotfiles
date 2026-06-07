@@ -1,0 +1,17 @@
+[source.crates-io]
+# registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'ustc'
+
+[http]
+check-revoke = false
+# proxy = "http://127.0.0.1:<port>"
+
+[net]
+git-fetch-with-cli = true
+
+[source.ustc]
+registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+# registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+
+[source.rustcc]
+registry = "https://code.aliyun.com/rustcc/crates.io-index.git"

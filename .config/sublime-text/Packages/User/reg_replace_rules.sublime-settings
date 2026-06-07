@@ -1,0 +1,44 @@
+{
+	"format": "3.0",
+	"replacements": {
+		// remove deprecated type attr
+		"html5_remove_deprecated_type_attr": {
+			"find": "(?i)(<(style|script)[^>]*)\\stype=(\"|')text/(css|javascript)(\"|')([^>]*>)",
+			"replace": "\\1\\6",
+			"greedy": true
+		},
+		// remove_json_dangling_commas
+		"remove_json_dangling_commas": {
+			"find": ",([\\r\\n\\s]*)(\\]|\\})",
+			"replace": "\\1\\2",
+			"greedy": true,
+			"scope_filter": ["-string", "-comment"]
+		},
+		// remove html comments
+		"remove_html_comments": {
+			"find": "<!--[\\s\\S]+?-->",
+			"replace": "",
+			"scope_filter": ["!comment"],
+			"greedy": true
+		},
+		// remove the trailing spaces
+		"remove_trailing_spaces": {
+			"find": "[ \\t]+$",
+			"replace": "",
+			"greedy": true
+		},
+
+		// delete a comment or comment blocks
+		"remove_comments": {
+			"scope": "comment",
+			"find" : "([^\\n\\r]+)",
+			"replace": "",
+			"greedy": true
+		},
+
+		// find all non ascii chars
+		"non_ascii_chars": {
+			"find": "[[:^ascii:]]+"
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"abnn": {
+		"prefix": "abnn",
+		"body": "<a href=\"$1\" target=\"_blank\" rel=\"nofollow noopener\">$2</a>",
+		"description": "html a-tag"
+	},
+	"nnva": {
+		"prefix": "nnva",
+		"body": "\n<a href=\"$11/$1.jpg\"\n    data-sub-html=\"<div class='lightGallery-captions'>\n    <h4>$1 ⚪$9</h4>\n    <p>.img by <a href='$3'>$4</a> on <a href='$5' target='_blank' rel='nofollow noopener'>$6</a> / <a href='$7' target='_blank' rel='nofollow noopener'>$8</a></p>\n    </div>\">\n    <img src=\"$11/$1.jpg\" />\n</a>\n",
+		"description": "byya niveveh a-tag"
+	},
+	"rosettaa": {
+		"prefix": "rosettaa",
+		"body": "<a class=\"gallery-item\" data-lg-size=\"1280-720\" data-html=\"#smp14\" data-video='{\"source\": [{\"src\":\"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.webm\", \"type\":\"video/webm\"}], \"tracks\": [{\"src\": \"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.zho.vtt\", \"kind\":\"captions\", \"srclang\": \"zh-cn\", \"label\": \"Simplified Chinese\", \"default\": \"true\"},{\"src\": \"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.${4:lang}.vtt\", \"kind\":\"captions\", \"srclang\": \"de\", \"label\": \"German\"},{\"src\": \"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.eng.vtt\", \"kind\":\"captions\", \"srclang\": \"en\", \"label\": \"English\"}], \"attributes\": {\"preload\": false, \"controls\": true, \"playsinline\": true}}' data-sub-html=\"<h4>$1 SMP01</h4>\">\n  <img class=\"img-responsive\" src=\"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.jpg\" alt=\"&lt;p&gt;$1 SMP01&lt;/p&gt;\" />\n</a>",
+		"description": "rosetta a-tag"
+	},
+	"htmlfavicon": {
+		"prefix": "htmlfavicon",
+		"body": "<link rel=\"icon\" href=\"asset/favicon.ico\">\n<link rel=\"shortcut icon\" href=\"asset/favicon.ico\">\n<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"asset/favicon-16x16.png\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"asset/favicon-32x32.png\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"asset/favicon-96x96.png\" />\n<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"asset/apple-touch-icon.png\" />\n<link rel=\"manifest\" href=\"asset/site.webmanifest\" />",
+		"description": "html favicon"
+	},
+	"animea": {
+		"prefix": "animea",
+		"body": "      <a class=\"gallery-item\" \n        data-html=\"#$1\" \n        data-slide-name=\"$2$5\" \n        data-video='{ \"source\": [ {\"src\": \"media/$1.mp4\", \"type\": \"video/mp4\"} ], \"attributes\": { \"preload\": false, \"controls\": false, \"playsinline\": true, \"loop\": true } }' \n        data-sub-html=\"<h4>$2$4</h4>\n        <p>$6</p>\"\n        data-poster=\"media/$1_poster.jpg\">\n        <img class=\"img-responsive\" src=\"media/$1_poster.jpg\" \n          alt=\"&lt;p&gt;$2$3&lt;/p&gt;\" />\n      </a>",
+		"description": "AKG a-tag"
+	},
+	"animea2": {
+		"prefix": "animea2",
+		"body": "      <a class=\"gallery-item\" \n        data-html=\"#$1\" \n        data-slide-name=\"\" \n        data-video='{ \"source\": [ {\"src\": \"media/$1.mp4\", \"type\": \"video/mp4\"} ], \"attributes\": { \"preload\": false, \"controls\": false, \"playsinline\": true, \"loop\": true } }' \n        data-sub-html=\"\"\n        data-poster=\"media/$1_poster.jpg\">\n        <img class=\"img-responsive\" src=\"media/$1_poster.jpg\" \n          alt=\"&lt;p&gt;&lt;/p&gt;\" />\n      </a>\n$2",
+		"description": "AKG a-tag sub"
+	},
+	"anime3": {
+		"prefix": "anime3",
+		"body": "      <a href=\"media/$1.jpg\" \n        data-slide-name=\"\" \n        data-sub-html=\"\">\n          <img src=\"media/$1.jpg\" />\n      </a>",
+		"description": "AKG a-tag image"
+	}
+}

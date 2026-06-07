@@ -1,0 +1,7 @@
+{
+	"espanso": {
+		"prefix": "espanso",
+		"body": "- trigger: \"$1\"\n  replace: \"$2\"",
+		"description": "espanso matches"
+	}
+}

@@ -1,0 +1,39 @@
+matches:
+  - trigger: ":ce"
+    replace: "```sh$|$\n```"
+  - trigger: ":aut"
+    form: |
+      Authors: [[author]]🧙‍♂️, scillidan🤡
+    form_fields:
+      author:
+        type: choice
+        values:
+          - GLM-5
+          - Hy3-preview
+          - DeepSeek
+          - Kimi-2.5
+          - MiniMax-M2.7
+        default: GLM-5
+  - trigger: ":by"
+    form: |
+      [[by]]
+    form_fields:
+      by:
+        type: choice
+        values:
+          - '[Gemma3 12B]'
+          - '[Gemma3 Translator 4B]'
+          - '[Qwen3 14B]'
+          - '[perplexity.ai]'
+        default: '[perplexity.ai]'
+  - trigger: ":cmt"
+    form: |
+      [[commit]]
+    form_fields:
+      commit:
+        type: choice
+        values:
+          - 'ci: code simplified'
+          - 'It has $|$ Stars on Github.'
+          - 'Thanks for your review!'
+          - 'completed the PR to bucket Extras$|$; clean up'

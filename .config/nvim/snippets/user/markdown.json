@@ -1,0 +1,102 @@
+{
+	"nnva": {
+		"prefix": "nnva",
+		"body": "<a href=\"$11/$1.jpg\"\n  data-sub-html=\"<div class='lightGallery-captions'>\n  <h4>$1 ⚪$9</h4>\n  <p>.img by <a href='$3'>$4</a> on <a href='$5' target='_blank' rel='nofollow noopener'>$6</a> / <a href='$7' target='_blank' rel='nofollow noopener'>$8</a></p>\n  </div>\">\n    <img src=\"$11/$1.jpg\" />\n</a>",
+		"description": "byya niveveh a-tag"
+	},
+	"lyra": {
+		"prefix": "lyra",
+		"body": "---\nweight: $1\n---",
+		"description": "byya lyra weight"
+	},
+	"isbnchs": {
+		"prefix": "isbnchs",
+		"body": "```\nISBN13: $1\n标题: $2\n副标题: $3\n作者: $4\n译者: $5\n出版年: $6\n```",
+		"description": "byya lyra isbn-chs"
+	},
+	"isbneng": {
+		"prefix": "isbneng",
+		"body": "```\nISBN13: \nTitle: \nSubtitle: \nAuthors: \nPublished: \n```",
+		"description": "byya lyra isbn-eng"
+	},
+	"tower": {
+		"prefix": "tower",
+		"body": "{\n\"Title\": \"$1\"\n}",
+		"description": "byya tower"
+	},
+	"ccbyncsa": {
+		"prefix": "ccbyncsa",
+		"body": "[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]\n\n[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/\n[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png\n[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg",
+		"description": "cc by-nc-sa 4.0"
+	},
+	"livelywallpaper": {
+		"prefix": "livelywallpaper",
+		"body": "[$2](https://github.com/$1/$2) by [$3](https://github.com/$1) / [$4](https://github.com/$1/$2/blob/master/LICENSE)  | <img src=\"https://raw.githubusercontent.com/scillidan/asset/main/lively-wallpaper/$2.png\" height=\"50px\"> | [github](https://github.com/scillidan/$2) | [++](https://steamcommunity.com/sharedfiles/filedetails?id=++) ![](https://img.shields.io/steam/subscriptions/++?style=flat-square&label=) ![](https://img.shields.io/steam/downloads/++?style=flat-square&label=)",
+		"description": "lively wallpaper"
+	},
+	"mdbookembed": {
+		"prefix": "mdbookembed",
+		"body": "{% embed ${1:bilibili} id=\"$2\" loading=\"lazy\" %}",
+		"description": "mdbook embed"
+	},
+	"mdbookfootnote": {
+		"prefix": "mdbookfootnote",
+		"body": "{{footnote: $1 }}",
+		"description": "mdbook footnote"
+	},
+	"qowncomment": {
+		"prefix": "qowncomment",
+		"body": "!!!light @$2 #$3\n$1\n!!!",
+		"description": "pidan comment"
+	},
+	"qown": {
+		"prefix": "qown",
+		"body": "---\nlayout: blog\ntitle: \"\"\ndate: $1-$2-$3\nauthors:\n  - link: https://jandan.net/p/author/bali\n    name: BALI\n    avatar: https://raw.githubusercontent.com/scillidan/PIDAN-journal/main/asset/yafa.png\nsource: https://jandan.net/p/\norigauthor: \norigsource: \norder: $1$2$3\nicon: squirrel\n---",
+		"description": "pidan meta"
+	},
+	"!ghpages": {
+		"prefix": "!ghpages",
+		"body": "![](https://img.shields.io/badge/GitHub%20Pages-121013?logo=github&logoColor=white)",
+		"description": "shields.io gh-pages"
+	},
+	"!ghpagesbadge": {
+		"prefix": "!ghpagesbadge",
+		"body": "![](https://img.shields.io/badge/GitHub%20Pages-121013?style=for-the-badge&logo=github&logoColor=white)",
+		"description": "shields.io gh-pages badge"
+	},
+	"lastcommit": {
+		"prefix": "lastcommit",
+		"body": "![](https://img.shields.io/github/last-commit/scillidan/$1/main?label=last%20commit%20(fork))",
+		"description": "shields.io last-commit"
+	},
+	"license": {
+		"prefix": "license",
+		"body": "![](https://img.shields.io/github/license/$1)",
+		"description": "shields.io license"
+	},
+	"!netlify": {
+		"prefix": "!netlify",
+		"body": "![](https://img.shields.io/static/v1?style=for-the-badge&message=Netlify&color=222222&logo=Netlify&logoColor=00C7B7&label=)",
+		"description": "shields.io netlify badge"
+	},
+	"!tag": {
+		"prefix": "!tag",
+		"body": "[![](https://img.shields.io/github/v/tag/${1:user}/${2:repo}?filter=${3:version})](https://github.com/${1:user}/${2:repo}/tree/${3:version})",
+		"description": "shields.io github tag"
+	},
+	"!vercelbadge": {
+		"prefix": "!vercelbadge",
+		"body": "![](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)",
+		"description": "shields.io vercel for-the-badge"
+	},
+	"!vercelflat": {
+		"prefix": "!vercelflat",
+		"body": "![](https://img.shields.io/badge/Vercel-black?style=flat&logo=Vercel&logoColor=white)",
+		"description": "shields.io vercel flat"
+	},
+	"!ctan": {
+		"prefix": "!ctan",
+		"body": "<a href=\"${1:pdf}\"><img src=\"https://scillidan.github.io/image_latex/${2:pkg}.webp\" width=\"30\"></a>|${3:topic}|[${4:title}](${5:url})|[${2:pkg}](${6:source})|[Readme](${7:readme})|${8:maintainer}",
+		"description": "ctan.md table line"
+	}
+}

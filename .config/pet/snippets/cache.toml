@@ -1,0 +1,32 @@
+## COMBO
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["mdtable2scv", "xsv", "tidy-viewer", "coloro"]
+	command = "curl -k --remote-name-all -o - https://raw.githubusercontent.com/scillidan/color/main/data/{chinese-traditional-colors.md,china-tradition-color-monokuro.md,zhongguose.md,china-tradition-color-320.md,nipponcolors.md} | mdtable2csv | xsv select hex,spelling,name | tidy-viewer -D -a -e | coloro | less -R"
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["sd", "mdtable2scv", "xsv", "csview"]
+	command = "curl -k https://raw.githubusercontent.com/scillidan/WALLPAP-ENG-resource/main/table.md | sd \"\\[\\d{10}\\]\\(\" \"\" | sd \"(\\)\\|\\S+subsc)\" \"|![](//img.shields.io/steam/subsc\" | mdtable2csv | sd \"//steamc\" \"https://steamc\" | xsv select source,version,urlid | csview"
+
+## ki-cli
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["ki-cli"]
+	command = "ki a b c foo.hoge bar.fuga baz.piyo long.long.long.depth | sed \"s/├/-/g; s/│/ /g; s/└/-/g; s/──/--/g\" | sed \"s/-─/-/g\""
+
+## pngquant
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["pngquant", "image"]
+	command = "pngquant --force --ordered --speed=1 --quality=85 $1 $2"
+
+## Silicon
+[[Snippets]]
+	Description = ""
+	Output = ""
+	Tag = ["silicon"]
+	command = "silicon --from-clipboard --language \"<lang>\" --font \"'<font>'=16\" --no-window-controls --pad-horiz 0 --pad-vert 0 --background \"#fffff8\" --tab-width 2 --line-offset 0 --line-pad 4 --output _.png"

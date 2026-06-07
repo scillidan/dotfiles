@@ -1,0 +1,79 @@
+clr: clear
+alas: alass $1.$2 $1.$3 $1.alass.$3
+more: bat -f -p
+
+## bin
+binu: bin remove
+
+## bun
+bunu: bun rm -g
+
+## commandOK
+ok: commandok
+
+## doggo
+dga: doggo A $* @1.1.1.1
+dgg: doggo A $* @8.8.8.8
+
+## eza
+ls: eza --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+l: eza --git-ignore --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+ll: eza --all --header --long --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+llm: eza --all --header --long --sort modified --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+la: eza -lbhHigUmuSa
+lx: eza -lbhHigUmuSa@
+lt: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+tree: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+
+## forgit
+glo: forgit log
+grl: forgit reflog
+gd: forgit diff
+gso: forgit show
+ga: forgit add
+grh: forgit reset_head
+gi: forgit ignore
+gat: forgit attributes
+gcf: forgit checkout_file
+gcb: forgit checkout_branch
+gsw: forgit switch_branch
+gbd: forgit branch_delete
+gct: forgit checkout_tag
+gco: forgit checkout_commit
+grc: forgit revert_commit
+gclean: forgit clean
+gss: forgit stash_show
+gsp: forgit stash_push
+gcp: forgit cherry_pick
+grb: forgit rebase
+gbl: forgit blamegd
+gfu: forgit fixup
+gsq: forgit squash
+grw: forgit reword
+
+## Git
+gs: git status
+gc: git commit
+gcm: git commit -m
+gp: git push
+
+## gli-leaks
+gls: gitleaks dir
+
+## OpenCode
+oc: opencode
+occ: opencode --continue
+oca: opencode --model aiping/glm-5
+
+## OpenCommit
+och: oco hook set
+
+## Pet
+pes: pet search | clip
+
+## trashy
+rmy: trash
+
+## yazi
+yai: ya pkg add
+yau: ya pkg delete

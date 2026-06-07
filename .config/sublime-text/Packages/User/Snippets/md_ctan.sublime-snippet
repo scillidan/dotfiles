@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+<a href="${1:pdf}"><img src="https://scillidan.github.io/image_latex/${2:pkg}.webp" width="30"></a>|${3:topic}|[${4:title}](${5:url})|[${2:pkg}](${6:source})|[Readme](${7:readme})|${8:maintainer}
+]]></content>
+	<tabTrigger>ctan</tabTrigger>
+	<description>ctan.md table line</description>
+</snippet>
