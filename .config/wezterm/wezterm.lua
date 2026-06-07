@@ -65,7 +65,6 @@ config.unzoom_on_switch_pane = true
 config.use_fancy_tab_bar = false
 config.warn_about_missing_glyphs = false
 
--- Key
 config.disable_default_key_bindings = true
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
@@ -130,7 +129,7 @@ config.keys = {
 		-- https://wezterm.org/config/lua/wezterm/on.html#example-opening-whole-scrollback-in-vim
 		action = act.EmitEvent("trigger-vim-with-scrollback"),
 	},
-	---- https://github.com/wezterm/wezterm/discussions/3779
+	-- https://github.com/wezterm/wezterm/discussions/3779
 	{
 		key = "l",
 		mods = "CTRL|SHIFT|ALT",
@@ -180,8 +179,7 @@ config.keys = {
 	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
 }
 
--- Mouse
----- https://github.com/wezterm/wezterm/discussions/3541
+-- https://github.com/wezterm/wezterm/discussions/3541
 config.mouse_bindings = {
 	{
 		event = { Down = { streak = 1, button = "Right" } },

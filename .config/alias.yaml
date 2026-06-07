@@ -68,6 +68,9 @@ oca: opencode --model aiping/glm-5
 ## OpenCommit
 och: oco hook set
 
+## pyLanguagetool
+chk: pylanguagetool --input-type html --lang en-US -c
+
 ## Pet
 pes: pet search | clip
 
