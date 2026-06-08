@@ -261,4 +261,12 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	os.remove(name)
 end)
 
+wezterm.on("format-tab-title", function(tab)
+	local title = tab.active_pane.title
+	if title:match("[\\/]") then
+		title = title:gsub(".*[\\/]", "")
+	end
+	return title
+end)
+
 return config
