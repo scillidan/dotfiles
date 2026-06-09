@@ -1,0 +1,7 @@
+simplified_ui true
+theme "vesper"
+theme_dark "vesper"
+theme_light "everforest-light"
+default_layout "default"
+scrollback_editor "vim"
+default_shell "_clink.cmd"

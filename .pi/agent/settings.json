@@ -6,6 +6,8 @@
   "theme": "dark",
 	"packages": "pi-skills",
 	"skills": [
+		"~/.agents/skills",
+		"~/.agents/personal-skills",
 		"~/.codex/skills",
 		"brave-search",
 		"transcribe"

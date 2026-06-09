@@ -9,6 +9,11 @@
   "plugin": [
   	"@mohak34/opencode-notifier@latest"
   ],
+	"skills": {
+	  "paths": [
+	  	"~/.agents/personal-skills"
+	  ]
+	},
   "enabled_providers": [
     "lkeap",
     "aiping",
@@ -24,17 +29,12 @@
         "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3"
       },
       "models": {
-		    "glm-5": {
-		      "name": "GLM-5",
+		    "glm-5.1": {
+		      "name": "GLM-5.1",
 		      "options": {
 		        "thinking": {
-		          "type": "enabled",
-		          "budgetTokens": 8192
+		          "type": "enabled"
 		        }
-		      },
-		      "limit": {
-		        "context": 200000,
-		        "output": 128000
 		      }
 		    }
       }
@@ -80,7 +80,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "lkeap/glm-5",
+      "model": "lkeap/glm-5.1",
       "tools": {
         "write": true,
         "edit": true,
@@ -94,7 +94,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "lkeap/glm-5",
+      "model": "lkeap/glm-5.1",
       "tools": {
         "write": false,
         "edit": false,
