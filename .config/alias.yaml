@@ -11,6 +11,12 @@ bunu: bun rm -g
 ## commandOK
 ok: commandok
 
+## Miniforge3
+condac: conda create
+condaa: conda activate
+condar: conda remove
+condal: conda list
+
 ## doggo
 dga: doggo A $* @1.1.1.1
 dgg: doggo A $* @8.8.8.8
@@ -61,9 +67,9 @@ gp: git push
 gls: gitleaks dir
 
 ## OpenCode
-oc: opencode
-occ: opencode --continue
-oca: opencode --model aiping/glm-5
+oc: opencode.exe $* & reset
+occ: opencode --continue $* & reset
+oca: opencode --model aiping/glm-5 $* & reset
 
 ## OpenCommit
 och: oco hook set

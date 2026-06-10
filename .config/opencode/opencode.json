@@ -18,6 +18,7 @@
     "lkeap",
     "aiping",
     "openai",
+    "llama-swap",
     "ollama"
   ],
   "provider": {
@@ -61,6 +62,27 @@
       "models": {
         "gpt-5.5": {
           "name": "GPT 5.5"
+        }
+      }
+    },
+    "llama-swap": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llama-swap",
+      "options": {
+        "baseURL": "http://localhost:8010/v1"
+      },
+      "models": {
+        "gemma-3-12b-it": {
+          "name": "Gemma 3 12B IT (Q5_K_M)"
+        },
+        "gemma-3-4b-it-qat": {
+          "name": "Gemma 3 4B IT (Q4_K_M)"
+        },
+        "mistral-7b-instruct-v0.3": {
+          "name": "Mistral 7B Instruct v0.3 (Q5_K_M)"
+        },
+        "qwen3-14b": {
+        	"name": "Qwen3-14B (Q4_K_M)"
         }
       }
     },
@@ -112,6 +134,11 @@
       "type": "local",
       "command": ["fff-mcp"],
       "enabled": true
+    },
+    "gimp-mcp": {
+      "type": "local",
+      "command": ["uv", "run", "--directory", "C:/Users/User/Local/Srv/gimp-mcp", "gimp_mcp_server.py"],
+      "enabled": false
     },
     "godot-mcp": {
       "type": "remote",

@@ -4,6 +4,10 @@ local is_termux = os.getenv("TERMUX_VERSION") ~= nil
 
 require("close-and-restore-tab"):setup()
 require("relative-path").setup()
+require("copy-file-contents"):setup({
+	append_char = "\n",
+	notification = true,
+})
 require("initial-cwd"):setup()
 require("zoxide-add"):setup()
 require("bookmarks"):setup({

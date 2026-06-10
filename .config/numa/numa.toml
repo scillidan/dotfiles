@@ -1,0 +1,5 @@
+[forward]
+upstreams = ["https://doh.pub/dns-query", "https://cloudflare-dns.com/dns-query"]
+
+[filter]
+enabled = true

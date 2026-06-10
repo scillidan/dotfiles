@@ -1,6 +1,5 @@
-pths: bash paths.sh
-
-## cd
+## Scripts
+cds: bash cds.sh
 gfd: bash cds.sh gfold
 gsync: bash cds.sh git-sync
 lg: bash cds.sh lazygit
@@ -13,6 +12,7 @@ rsu: bash cds.sh repos update
 serve: bash cds.sh serve
 rnr: bash cds.sh gsudo renamer --editor nvim *
 rmix: bash cds.sh repomix . --output _repomix.md
+pths: bash paths.sh
 
 ## fzf
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
@@ -36,4 +36,4 @@ nv: bash _nvim.sh
 nov: bash _neovide.sh
 
 ## yazi
-y: bash yazi-cd.sh
+y: bash yazi-cd.sh $* & reset
