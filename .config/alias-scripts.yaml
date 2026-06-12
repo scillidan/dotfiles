@@ -27,7 +27,7 @@ git-retag: bash git-retag.sh
 git-sync-upstream: bash git-sync-upstream.sh
 
 ## GitHub CLI
-sip: bash gh-issue-pr.sh
+ips: bash gh-issue-pr.sh
 
 ## Neovim
 nv: bash _nvim.sh

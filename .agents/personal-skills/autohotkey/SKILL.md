@@ -120,8 +120,6 @@ if (isStartup) {
 } else {
     Menu, Tray, Add, Start with Windows, ToggleStartup
 }
-Menu, Tray, Add, Suspend Hotkeys, SuspendHotkeys
-Menu, Tray, Add, Pause Script, PauseScript
 Menu, Tray, Add, Exit, ExitScript
 Menu, Tray, Tip, %trayTipText%
 if (FileExist(trayIcon))
@@ -139,22 +137,6 @@ ToggleStartup:
         if !ErrorLevel
             Menu, Tray, Check, Start with Windows
     }
-return
-
-SuspendHotkeys:
-    Suspend, Toggle
-    if (A_IsSuspended)
-        Menu, Tray, Check, Suspend Hotkeys
-    else
-        Menu, Tray, Uncheck, Suspend Hotkeys
-return
-
-PauseScript:
-    Pause, Toggle
-    if (A_IsPaused)
-        Menu, Tray, Check, Pause Script
-    else
-        Menu, Tray, Uncheck, Pause Script
 return
 
 ExitScript:

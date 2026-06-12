@@ -1,0 +1,38 @@
+matches:
+  - trigger: ":gc"
+    replace: "git clone --depth=1 "
+  - trigger: ":bini"
+    replace: "bin install github.com/$|$ .exe"
+  - trigger: ":buni"
+    replace: "bun add -g"
+  - trigger: ":yai"
+    replace: "ya pkg add"
+  - trigger: ":bash"
+    replace: "#!/usr/bin/env bash"
+  ## python
+  - trigger: ":uvi"
+    replace: "uv tool install -U"
+  - trigger: ":va"
+    replace: ".venv\\Scripts\\activate"
+  - trigger: ":pva"
+    replace: "python -m venv .venv\n.venv\\Scripts\\activate"
+  - trigger: ":torch"
+    replace: "pip install torch $|$ --index-url https://download.pytorch.org/whl/cu124"
+
+  ## Arch:
+	- trigger: ":spi"
+    replace: "sudo pacman -S"
+  - trigger: ":yas"
+    replace: "yay -S --noconfirm"
+  - trigger: ":lnbin"
+    replace: "ln -sfn $(pwd)/$|$ ~/.local/bin/"
+
+  ## Windows
+	- trigger: ":si"
+    replace: "scoop install"
+	- trigger: ":lsi"
+    replace: "scoop install \"%CD%\\bucket\\$|$.json\""
+  - trigger: ":mklinklbin"
+    replace: "mklink %USERPROFILE%\\.local\\bin\\$|$ %CD%\\"
+  - trigger: ":clip"
+    replace: "powershell \"Get-Clipboard\" | "

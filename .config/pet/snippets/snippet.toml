@@ -303,6 +303,13 @@ Output = ""
 Tag = ["magick", "image"]
 command = "magick montage $ -resize 750x -geometry +0+0 -tile 1x _montage.png"
 
+## img2pdf
+[[Snippets]]
+Description = "Fit"
+Output = ""
+Tag = ["img2pdf", "pdf"]
+command = "img2pdf $ --pagesize A4 --fit into -o _.pdf"
+
 ## marker
 [[Snippets]]
 	Description = ""

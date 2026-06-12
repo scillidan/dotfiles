@@ -6,6 +6,7 @@ more: bat -f -p
 binu: bin remove
 
 ## bun
+buni: bun add --registry https://npmreg.proxy.ustclug.org -g
 bunu: bun rm -g
 
 ## commandOK
@@ -72,7 +73,7 @@ occ: opencode --continue $* & reset
 oca: opencode --model aiping/glm-5 $* & reset
 
 ## OpenCommit
-och: oco hook set
+ocoi: oco hook set
 
 ## pyLanguagetool
 chk: pylanguagetool --input-type html --lang en-US -c
@@ -80,9 +81,11 @@ chk: pylanguagetool --input-type html --lang en-US -c
 ## Pet
 pes: pet search | clip
 
+## scooter
+scoo: scooter
+
 ## trashy
 rmy: trash
 
 ## yazi
-yai: ya pkg add
 yau: ya pkg delete
