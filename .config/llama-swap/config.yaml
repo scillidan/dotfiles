@@ -38,6 +38,22 @@ models:
     aliases:
       - "gemma3:4b"
 
+  gemma-2b-coedit:
+    name: "Gemma 2B CoEdit (Q4_K_M)"
+    cmd: |
+      ${server} \
+        --port ${PORT} \
+        --model ${models_dir}/gemma_2b_coedit-unsloth.Q4_K_M.gguf \
+        --ctx-size 4096 \
+        -ngl 99 \
+        --flash-attn on \
+        --jinja \
+        --cache-type-k q8_0 --cache-type-v q4_0 \
+        --temp 0.7 --top-p 0.9 --top-k 40 --repeat-penalty 1.1
+    ttl: 600
+    aliases:
+      - "gemma:coedit"
+
   mistral-7b-instruct-v0.3:
     name: "Mistral 7B Instruct v0.3 (Q5_K_M)"
     cmd: |

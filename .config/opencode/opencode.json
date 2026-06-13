@@ -7,13 +7,14 @@
     "webfetch": "allow"
   },
   "plugin": [
-  	"@mohak34/opencode-notifier@latest"
+    "@mohak34/opencode-notifier@latest"
   ],
-	"skills": {
-	  "paths": [
-	  	"~/.agents/personal-skills"
-	  ]
-	},
+  "skills": {
+    "paths": [
+      "~/.agents/personal-skills",
+      "~/.codex/skills"
+    ]
+  },
   "enabled_providers": [
     "lkeap",
     "aiping",
@@ -30,14 +31,22 @@
         "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3"
       },
       "models": {
-		    "glm-5.1": {
-		      "name": "GLM-5.1",
-		      "options": {
-		        "thinking": {
-		          "type": "enabled"
-		        }
-		      }
-		    }
+        "glm-5.1": {
+          "name": "GLM-5.1",
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
+        },
+        "hy3-preview": {
+          "name": "Hunyuan Image 3",
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
+        }
       }
     },
     "aiping": {
@@ -82,19 +91,7 @@
           "name": "Mistral 7B Instruct v0.3 (Q5_K_M)"
         },
         "qwen3-14b": {
-        	"name": "Qwen3-14B (Q4_K_M)"
-        }
-      }
-    },
-    "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama",
-      "options": {
-        "baseURL": "http://localhost:11434/v1"
-      },
-      "models": {
-        "mistral:7b-instruct": {
-          "name": "Mistral 7B Instruct"
+          "name": "Qwen3-14B (Q4_K_M)"
         }
       }
     }

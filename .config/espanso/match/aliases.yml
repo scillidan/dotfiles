@@ -20,7 +20,7 @@ matches:
     replace: "pip install torch $|$ --index-url https://download.pytorch.org/whl/cu124"
 
   ## Arch:
-	- trigger: ":spi"
+  - trigger: ":spi"
     replace: "sudo pacman -S"
   - trigger: ":yas"
     replace: "yay -S --noconfirm"
@@ -28,9 +28,9 @@ matches:
     replace: "ln -sfn $(pwd)/$|$ ~/.local/bin/"
 
   ## Windows
-	- trigger: ":si"
+  - trigger: ":si"
     replace: "scoop install"
-	- trigger: ":lsi"
+  - trigger: ":lsi"
     replace: "scoop install \"%CD%\\bucket\\$|$.json\""
   - trigger: ":mklinklbin"
     replace: "mklink %USERPROFILE%\\.local\\bin\\$|$ %CD%\\"

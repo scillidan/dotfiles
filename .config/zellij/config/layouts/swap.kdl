@@ -44,7 +44,7 @@ layout {
   default_tab_template {
     children
     pane size=1 borderless=true {
-      plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+      plugin location="file:$USERHOME/.config/zellij/plugins/zjstatus.wasm" {
         format_left "{mode}{tabs}"
         format_right "#[fg=#0f172a,bold]{session} #[fg=#005F00,bold]{swap_layout}"
 
@@ -63,7 +63,7 @@ layout {
     }
   }
 
-	tab name="~" cwd="~" focus=true {
+	tab name="~" cwd="$USERHOME" focus=true {
 		pane
 	}
 }

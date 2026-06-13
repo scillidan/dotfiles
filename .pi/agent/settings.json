@@ -1,19 +1,19 @@
 {
-  "lastChangelogVersion": "0.78.0",
-  "defaultProvider": "chatanywhere",
-  "defaultModel": "glm-5",
+  "lastChangelogVersion": "0.79.1",
+  "defaultProvider": "aiping",
+  "defaultModel": "HunyuanImage-3.0",
   "defaultThinkingLevel": "medium",
   "theme": "dark",
-	"packages": "pi-skills",
-	"skills": [
-		"~/.agents/skills",
-		"~/.agents/personal-skills",
-		"~/.codex/skills",
-		"brave-search",
-		"transcribe"
-	],
-	"extensions": [],
-	"enableSkillCommands": true,
+  "packages": "pi-skills",
+  "skills": [
+    "~/.agents/skills",
+    "~/.agents/personal-skills",
+    "~/.codex/skills",
+    "brave-search",
+    "transcribe"
+  ],
+  "extensions": [],
+  "enableSkillCommands": true,
   "thinkingBudgets": {
     "minimal": 1024,
     "low": 4096,

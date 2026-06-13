@@ -76,7 +76,7 @@ oca: opencode --model aiping/glm-5 $* & reset
 ocoi: oco hook set
 
 ## pyLanguagetool
-chk: pylanguagetool --input-type html --lang en-US -c
+chk: pylanguagetool --api-url "http://localhost:8040/v2/" --input-type html --lang en-US -c
 
 ## Pet
 pes: pet search | clip

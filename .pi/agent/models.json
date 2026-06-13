@@ -30,14 +30,9 @@
           "maxTokens": 16384
         },
         {
-          "id": "Kimi-2.5",
-          "name": "Kimi 2.5",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 262144,
-          "maxTokens": 32768
+          "id": "hy3-preview",
+          "name": "Hunyuan Image 3",
+          "reasoning": true
         }
       ]
     },
@@ -58,14 +53,9 @@
           "maxTokens": 16384
         },
         {
-          "id": "Kimi-2.5",
-          "name": "Kimi 2.5",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 262144,
-          "maxTokens": 32768
+          "id": "HunyuanImage-3.0",
+          "name": "Hunyuan Image 3",
+          "reasoning": true
         }
       ]
     },
@@ -84,16 +74,6 @@
           ],
           "contextWindow": 202752,
           "maxTokens": 16384
-        },
-        {
-          "id": "Kimi-2.5",
-          "name": "Kimi 2.5",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 262144,
-          "maxTokens": 32768
         }
       ]
     }
