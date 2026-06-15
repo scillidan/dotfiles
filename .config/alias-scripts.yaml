@@ -1,18 +1,18 @@
 ## Scripts
-cds: bash cds.sh
-gfd: bash cds.sh gfold
-gsync: bash cds.sh git-sync
-lg: bash cds.sh lazygit
-mgit: bash cds.sh mgitstatus
-pro: bash cds.sh pro
-rss: bash cds.sh repos status
-rsp: bash cds.sh repos pull
-rse: bash cds.sh repos exec
-rsu: bash cds.sh repos update
-serve: bash cds.sh serve
-rnr: bash cds.sh gsudo renamer --editor nvim *
-rmix: bash cds.sh repomix . --output _repomix.md
-pths: bash paths.sh
+cdx: bash for-cd.sh
+gfd: bash for-cd.sh gfold
+gsync: bash for-cd.sh git-sync
+lg: bash for-cd.sh lazygit
+mgit: bash for-cd.sh mgitstatus
+pro: bash for-cd.sh pro
+rss: bash for-cd.sh repos status
+rsp: bash for-cd.sh repos pull
+rse: bash for-cd.sh repos exec
+rsu: bash for-cd.sh repos update
+serve: bash for-cd.sh serve
+rnr: bash for-cd.sh gsudo renamer --editor nvim *
+rmix: bash for-cd.sh repomix . --output _repomix.md
+patx: bash for-path.sh
 
 ## fzf
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
