@@ -1,3 +1,5 @@
+# GPU: ROG Strix Ge Force RTX 4070 Ti 12G Gaming
+
 health:
   timeout: 150
 
@@ -6,6 +8,7 @@ macros:
   server: "llama-server.exe"
 
 models:
+  # https://huggingface.co/unsloth/gemma-3-12b-it-GGUF
   gemma-3-12b-it:
     name: "Gemma 3 12B IT (Q5_K_M)"
     cmd: |
@@ -22,6 +25,7 @@ models:
     aliases:
       - "gemma3:12b"
 
+  # https://huggingface.co/unsloth/gemma-3-4b-it-qat-GGUF
   gemma-3-4b-it-qat:
     name: "Gemma 3 4B IT (Q4_K_M)"
     cmd: |
@@ -38,6 +42,7 @@ models:
     aliases:
       - "gemma3:4b"
 
+  # https://huggingface.co/gnokit/gemma_2b_coedit
   gemma-2b-coedit:
     name: "Gemma 2B CoEdit (Q4_K_M)"
     cmd: |
@@ -54,6 +59,7 @@ models:
     aliases:
       - "gemma:coedit"
 
+  # https://huggingface.co/MaziyarPanahi/Mistral-7B-Instruct-v0.3-GGUF
   mistral-7b-instruct-v0.3:
     name: "Mistral 7B Instruct v0.3 (Q5_K_M)"
     cmd: |
@@ -69,6 +75,7 @@ models:
     aliases:
       - "mistral:7b"
 
+  # https://huggingface.co/Qwen/Qwen3-14B-GGUF
   qwen3-14b:
     name: "Qwen3-14B (Q4_K_M)"
     cmd: |

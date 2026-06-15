@@ -48,6 +48,11 @@ run  = "plugin fast-enter"
 desc = "Enter the subfolder faster, or open the file directly"
 
 [[mgr.prepend_keymap]]
+on   = "f"
+run  = "plugin sticky-filter"
+desc = "Sticky filter"
+
+[[mgr.prepend_keymap]]
 on   = ["s", "z"]
 run  = "plugin fd-fzf"
 desc = "Jump to directory"

@@ -18,7 +18,7 @@ pths: bash paths.sh
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
 ff-tldr: bash fzf-files.sh "${APPDATA:-$HOME/.config}/tldr/pages"
 ff-devdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs-user-md"
-ff-csv: bash fzf-files.sh "$USERHOME/Local/File/file_csv"
+ff-tables: bash fzf-files.sh "$USERHOME/Local/File/tables"
 
 ## Git
 git-init: bash git-init.sh
