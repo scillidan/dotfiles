@@ -18,14 +18,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
-	opts = {
-		rocks = {
-			enabled = true,
-			root = vim.fn.stdpath("data") .. "/lazy-rocks",
-			server = "https://nvim-neorocks.github.io/rocks-binaries/",
-			hererocks = true,
-		},
-	},
 	{
 		"folke/neoconf.nvim",
 		config = function()
@@ -980,5 +972,9 @@ require("lazy").setup({
 			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
+	},
+}, {
+	rocks = {
+		enabled = false,
 	},
 })

@@ -44,6 +44,20 @@ if vim.g.neovide then
 end
 
 vim.api.nvim_command("language en_US.UTF-8")
+if vim.fn.has("win32") == 1 then
+	vim.g.clipboard = {
+		name = "WindowsClipboard",
+		copy = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe",
+		},
+		paste = {
+			["+"] = 'pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())',
+			["*"] = 'pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())',
+		},
+		cache_enabled = 0,
+	}
+end
 vim.o.clipboard = "unnamedplus"
 vim.o.cmdheight = 1
 vim.o.cursorline = false
@@ -60,7 +74,7 @@ vim.o.signcolumn = "yes:1"
 vim.o.tabstop = 2
 vim.o.timeout = true
 vim.o.timeoutlen = 300
-vim.lsp.set_log_level("debug")
+vim.lsp.log.set_level("debug")
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "yaml" },

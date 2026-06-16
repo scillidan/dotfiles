@@ -11,8 +11,7 @@
   ],
   "skills": {
     "paths": [
-      "~/.agents/personal-skills",
-      "~/.codex/skills"
+      "~/.agents/personal-skills"
     ]
   },
   "enabled_providers": [

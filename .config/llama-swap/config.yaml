@@ -20,7 +20,7 @@ models:
         --flash-attn on \
         --jinja \
         --cache-type-k q8_0 --cache-type-v q4_0 \
-        --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0
+        --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --repeat-penalty 1.1
     ttl: 600
     aliases:
       - "gemma3:12b"
@@ -37,10 +37,27 @@ models:
         --flash-attn on \
         --jinja \
         --cache-type-k q8_0 --cache-type-v q4_0 \
-        --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0
+        --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0 --repeat-penalty 1.1
     ttl: 600
     aliases:
       - "gemma3:4b"
+
+  # https://huggingface.co/google/gemma-3-1b-it-qat-q4_0-gguf/tree/main
+  gemma-3-1b-it-qat:
+    name: "Gemma 3 1B IT (Q4_0)"
+    cmd: |
+      ${server} \
+        --port ${PORT} \
+        --model ${models_dir}/gemma-3-1b-it-q4_0.gguf \
+        --ctx-size 2048 \
+        -ngl 99 \
+        --flash-attn on \
+        --jinja \
+        --cache-type-k q8_0 --cache-type-v q4_0 \
+        --temp 1.0 --top-p 0.95 --top-k 64 --min-p 0.0
+    ttl: 600
+    aliases:
+      - "gemma3:1b"
 
   # https://huggingface.co/gnokit/gemma_2b_coedit
   gemma-2b-coedit:
@@ -57,7 +74,7 @@ models:
         --temp 0.7 --top-p 0.9 --top-k 40 --repeat-penalty 1.1
     ttl: 600
     aliases:
-      - "gemma:coedit"
+      - "gemma2:coedit"
 
   # https://huggingface.co/MaziyarPanahi/Mistral-7B-Instruct-v0.3-GGUF
   mistral-7b-instruct-v0.3:
@@ -69,6 +86,7 @@ models:
         --ctx-size 8192 \
         -ngl 99 \
         --flash-attn on \
+        --jinja \
         --cache-type-k q8_0 --cache-type-v q4_0 \
         --temp 0.7 --top-p 0.9 --top-k 40 --repeat-penalty 1.1
     ttl: 600
@@ -86,13 +104,8 @@ models:
         --n-gpu-layers 99 \
         --flash-attn on \
         --jinja \
-        --cache-type-k q8_0 \
-        --cache-type-v q4_0 \
-        --temp 0.6 \
-        --top-p 0.95 \
-        --top-k 20 \
-        --min-p 0.0 \
-        --repeat-penalty 1.0 \
+        --cache-type-k q8_0 --cache-type-v q4_0 \
+        --temp 0.6 --top-p 0.95 --top-k 20 --min-p 0.0 --repeat-penalty 1.0 \
         --reasoning off
     ttl: 300
     aliases:

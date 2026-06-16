@@ -13,6 +13,7 @@ serve: bash for-cd.sh serve
 rnr: bash for-cd.sh gsudo renamer --editor nvim *
 rmix: bash for-cd.sh repomix . --output _repomix.md
 patx: bash for-path.sh
+abbr: bash llm_abbr.sh
 
 ## fzf
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
@@ -36,4 +37,4 @@ nv: bash _nvim.sh
 nov: bash _neovide.sh
 
 ## yazi
-y: bash yazi-cd.sh $* & reset
+y: yazi-cd $* & reset
