@@ -35,4 +35,5 @@ matches:
           - 'It has $|$ Stars on Github.'
           - 'Thanks for your review!'
           - 'Merge to ScoopInstaller/Extras$|$; Clean up'
+          - '**Full Changelog**: https://github.com/scillidan/$|$/compare/v...v'
           - 'ci: code simplified'
