@@ -1,5 +1,5 @@
 [commandok]
-provider = "ollama"
+provider = "llamacpp"
 system_prompt = """\
 You are a terminal command generator. Given a natural language description, output ONLY \
 the shell command appropriate for the user's OS and shell. No explanation, no markdown, no code blocks, \
@@ -7,6 +7,47 @@ no backticks. Just the raw command.\
 For Windows OS, the user use cmd.exe instead of powershell.\
 """
 
+[llamacpp]
+model = "gemma-3-12b-it"
+api_url = "http://localhost:8010"
+
+[anthropic]
+api_key = ""
+model = "claude-opus-4-6"
+
+[apple_intelligence]
+model = "system"
+
+[google]
+api_key = ""
+model = "gemini-3-flash-preview"
+
+[litert_lm]
+huggingface_repo = "litert-community/gemma-4-E2B-it-litert-lm"
+model = "gemma-4-E2B-it.litertlm"
+
+[lmstudio]
+model = "qwen/qwen3-coder-next"
+
+[mistral]
+api_key = ""
+model = "mistral-small-latest"
+
 [ollama]
-model = "gemma3:12b"
-# api_url = "http://localhost:11434"
+model = "gemma3:1b"
+
+[openai]
+api_key = ""
+model = "gpt-5.4"
+
+[openrouter]
+api_key = ""
+model = "qwen/qwen3.6-plus:free"
+
+[vercel_ai_gateway]
+api_key = ""
+model = "google/gemini-3-flash"
+
+[xai]
+api_key = ""
+model = "grok-4.20-0309-reasoning"
