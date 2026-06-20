@@ -1,34 +1,89 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "lkeap/glm-5.1",
+      "options": {},
+      "permission": {
+        "bash": "allow",
+        "edit": "allow"
+      },
+      "tools": {
+        "bash": true,
+        "edit": true,
+        "write": true
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "lkeap/glm-5.1",
+      "options": {},
+      "permission": {
+        "bash": "deny",
+        "edit": "deny"
+      },
+      "tools": {
+        "bash": false,
+        "edit": false,
+        "write": false
+      }
+    }
+  },
   "autoupdate": false,
-  "share": "disabled",
-  "permission": {
-    "websearch": "allow",
-    "webfetch": "allow"
-  },
-  "plugin": [
-    "@mohak34/opencode-notifier@latest"
-  ],
-  "skills": {
-    "paths": [
-      "~/.agents/personal-skills"
-    ]
-  },
   "enabled_providers": [
-  	"deepseek",
+    "deepseek",
     "lkeap",
     "aiping",
     "openai",
     "llama-swap"
   ],
+  "mcp": {
+    "fff": {
+      "command": [
+        "fff-mcp"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "gimp-mcp": {
+      "command": [
+        "uv",
+        "run",
+        "--directory",
+        "C:/Users/User/Local/Srv/gimp-mcp",
+        "gimp_mcp_server.py"
+      ],
+      "enabled": false,
+      "type": "local"
+    },
+    "godot-mcp": {
+      "type": "remote",
+      "url": "http://localhost:9080/mcp"
+    }
+  },
+  "permission": {
+    "webfetch": "allow",
+    "websearch": "allow"
+  },
+  "plugin": [
+    "@mohak34/opencode-notifier@latest"
+  ],
   "provider": {
-    "deepseek": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "DeepSeek",
-      "options": {
-        "apiKey": "{env:DEEPSEEK_API_KEY}",
-        "baseURL": "https://api.deepseek.com"
+    "aiping": {
+      "models": {
+        "GLM-5": {
+          "name": "GLM 5"
+        }
       },
+      "name": "AIPing",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "{env:AIPING_API_KEY}",
+        "baseURL": "https://aiping.cn/api/v1"
+      }
+    },
+    "deepseek": {
       "models": {
         "deepseek-v4-flash": {
           "name": "DeepSeek V4 Flash",
@@ -46,24 +101,16 @@
             }
           }
         }
-      }
-     },
-    "lkeap": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "LKEAP",
-      "options": {
-        "apiKey": "{env:TENCENT_LKEAP_API_KEY}",
-        "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3"
       },
+      "name": "DeepSeek",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "{env:DEEPSEEK_API_KEY}",
+        "baseURL": "https://api.deepseek.com"
+      }
+    },
+    "lkeap": {
       "models": {
-        "glm-5.1": {
-          "name": "GLM 5.1",
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        },
         "glm-5-turbo": {
           "name": "GLM 5 Turbo",
           "options": {
@@ -71,40 +118,24 @@
               "type": "enabled"
             }
           }
+        },
+        "glm-5.1": {
+          "name": "GLM 5.1",
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
         }
-      }
-    },
-    "aiping": {
+      },
+      "name": "LKEAP",
       "npm": "@ai-sdk/openai-compatible",
-      "name": "AIPing",
       "options": {
-        "apiKey": "{env:AIPING_API_KEY}",
-        "baseURL": "https://aiping.cn/api/v1"
-      },
-      "models": {
-        "GLM-5": {
-          "name": "GLM 5"
-        }
-      }
-    },
-    // ChatAnywhere
-    "openai": {
-      "options": {
-        "apikey": "{env:CHATANYWHERE_API_KEY}",
-        "baseURL": "https://api.chatanywhere.tech/v1"
-      },
-      "models": {
-        "gpt-5.5": {
-          "name": "GPT 5.5"
-        }
+        "apiKey": "{env:TENCENT_LKEAP_API_KEY}",
+        "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3"
       }
     },
     "llama-swap": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "llama-swap",
-      "options": {
-        "baseURL": "http://localhost:8010/v1"
-      },
       "models": {
         "gemma-3-12b-it": {
           "name": "Gemma 3 12B IT (Q5_K_M)"
@@ -118,54 +149,30 @@
         "qwen3-14b": {
           "name": "Qwen3-14B (Q4_K_M)"
         }
-      }
-    }
-  },
-  "agent": {
-    "build": {
-      "mode": "primary",
-      "model": "lkeap/glm-5.1",
-      "tools": {
-        "write": true,
-        "edit": true,
-        "bash": true
       },
-      "options": {},
-      "permission": {
-        "edit": "allow",
-        "bash": "allow"
+      "name": "llama-swap",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://localhost:8010/v1"
       }
     },
-    "plan": {
-      "mode": "primary",
-      "model": "lkeap/glm-5.1",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "bash": false
+    "openai": {
+      "models": {
+        "gpt-5.5": {
+          "name": "GPT 5.5"
+        }
       },
-      "options": {},
-      "permission": {
-        "edit": "deny",
-        "bash": "deny"
+      "options": {
+        "apikey": "{env:CHATANYWHERE_API_KEY}",
+        "baseURL": "https://api.chatanywhere.tech/v1"
       }
     }
   },
-  "mcp": {
-    "fff": {
-      "type": "local",
-      "command": ["fff-mcp"],
-      "enabled": true
-    },
-    "gimp-mcp": {
-      "type": "local",
-      "command": ["uv", "run", "--directory", "C:/Users/User/Local/Srv/gimp-mcp", "gimp_mcp_server.py"],
-      "enabled": false
-    },
-    "godot-mcp": {
-      "type": "remote",
-      "url": "http://localhost:9080/mcp"
-    }
-  },
-  "shell": "cmd"
+  "share": "disabled",
+  "shell": "cmd",
+  "skills": {
+    "paths": [
+      "~/.agents/personal-skills"
+    ]
+  }
 }
