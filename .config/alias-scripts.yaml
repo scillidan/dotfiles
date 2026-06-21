@@ -1,4 +1,4 @@
-## Scripts
+## https://github.com/scillidan/scripts
 cdx: bash for-cd.sh
 gfd: bash for-cd.sh gfold
 gsync: bash for-cd.sh git-sync
@@ -13,7 +13,12 @@ serve: bash for-cd.sh serve
 rnr: bash for-cd.sh gsudo renamer --editor nvim *
 rmix: bash for-cd.sh repomix . --output _repomix.md
 patx: bash for-path.sh
-abbr: bash llm_abbr.sh
+abbr: bash llm_abbreviate.sh
+cmnt: bash llm_comment.sh
+expl: bash llm_explain.sh
+lambda: bash llm_lambda.sh
+sum: bash llm_summarize.sh
+trans: bash llm_translate.sh
 
 ## fzf
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"

@@ -4,14 +4,14 @@ matches:
   - trigger: ":bini"
     replace: "bin install github.com/$|$ .exe"
   - trigger: ":buni"
-    replace: "bun add -g"
+    replace: "bun add -g $|$@latest"
   - trigger: ":yai"
-    replace: "ya pkg add"
+    replace: "ya pkg add "
   - trigger: ":bash"
     replace: "#!/usr/bin/env bash"
   ## python
   - trigger: ":uvi"
-    replace: "uv tool install -U"
+    replace: "uv tool install -U "
   - trigger: ":va"
     replace: ".venv\\Scripts\\activate"
   - trigger: ":pva"
@@ -21,15 +21,15 @@ matches:
 
   ## Arch:
   - trigger: ":spi"
-    replace: "sudo pacman -S"
+    replace: "sudo pacman -S "
   - trigger: ":yas"
-    replace: "yay -S --noconfirm"
+    replace: "yay -S --noconfirm "
   - trigger: ":lnbin"
     replace: "ln -sfn $(pwd)/$|$ ~/.local/bin/"
 
   ## Windows
   - trigger: ":si"
-    replace: "scoop install"
+    replace: "scoop install "
   - trigger: ":lsi"
     replace: "scoop install \"%CD%\\bucket\\$|$.json\""
   - trigger: ":mklinklbin"

@@ -71,7 +71,7 @@ Output = ""
 Tag = ["f2", "text"]
 command = "f2 -r \"{id3.title} - {id3.artist}{ext}\""
 
-##
+## faviator
 [[Snippets]]
 	Description = ""
 	Output = ""
@@ -310,6 +310,13 @@ Output = ""
 Tag = ["img2pdf", "pdf"]
 command = "img2pdf $ --pagesize A4 --fit into -o _.pdf"
 
+## issue2md
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["issue2md", "text"]
+command = "issue2md $url"
+
 ## marker
 [[Snippets]]
 	Description = ""
@@ -356,6 +363,13 @@ Description = "Optimize"
 Output = ""
 Tag = ["oxipng", "image"]
 command = "oxipng -o 4 -i 1 --strip safe $.png"
+
+## page-dewarp
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["page-dewarp", "image"]
+command = "page-dewarp $"
 
 ## Paletter
 [[Snippets]]
