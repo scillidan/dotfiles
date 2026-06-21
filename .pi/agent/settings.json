@@ -4,7 +4,9 @@
   "defaultModel": "HunyuanImage-3.0",
   "defaultThinkingLevel": "medium",
   "theme": "dark",
-  "packages": "pi-skills",
+  "packages": [
+    "npm:@cortexkit/pi-magic-context"
+  ],
   "skills": [
     "~/.agents/skills",
     "~/.agents/personal-skills",

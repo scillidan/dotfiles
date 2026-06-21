@@ -303,6 +303,7 @@ return {
 		},
 	},
 	fuzzy = {
+		implementation = "lua",
 		sorts = {
 			function(a, b)
 				local sort = require("blink.cmp.fuzzy.sort")

@@ -94,27 +94,11 @@ require("telescope").setup({
 			show_preview = true,
 			follow_symlinks = false,
 		},
-		emoji = {
-			action = function(emoji)
-				vim.fn.setreg("*", emoji.value)
-				print([[Press p or "*p to paste this emoji]] .. emoji.value)
-			end,
-		},
-		everything = {
-			es_path = "es",
-			case_sensitity = false,
-			whole_word = false,
-			match_path = false,
-			sort = false,
-			regex = true,
-			offset = 0,
-			max_results = 100,
-		},
 		file_browser = {
 			-- theme = "ivy",
 			border = false,
 		},
-		gitmoji = {},
+
 		heading = {
 			treesitter = true,
 			picker_opts = {
@@ -198,10 +182,7 @@ for _, extensions in ipairs({
 	"cmdline",
 	"dap",
 	"dir",
-	"emoji",
 	"file_browser",
-	-- "frecency",
-	"gitmoji",
 	"glyph",
 	"heading",
 	"import",
@@ -214,8 +195,4 @@ for _, extensions in ipairs({
 	"zoxide",
 }) do
 	require("telescope").load_extension(extensions)
-end
-
-if vim.fn.has("win32") == 1 then
-	require("telescope").load_extension("everything")
 end

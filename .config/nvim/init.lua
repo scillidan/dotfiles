@@ -11,14 +11,14 @@ if vim.fn.has("win32") == 1 then
 	-- vim.o.shell = vim.fn.executable('pwsh') and 'pwsh' or 'powershell'
 	-- vim.o.shellcmdflag =
 	--   '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;'
-	-- vim.opt.shell = "cmd.exe"
-	-- vim.o.shellcmdflag = "/k" .. os.getenv("USERHOME") .. "/Usr/Git/dotfiles/.config/_windows_clink/init.cmd"
-	vim.o.shellpipe = '2>&1 | %{ "$_" } | Tee-Object %s; exit $LastExitCode'
+	vim.opt.shell = "cmd.exe"
+	vim.o.shellcmdflag = "/k" .. os.getenv("USERHOME") .. "/Share/dotfiles.win/Scoop/clink/init.cmd"
+	vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
 	vim.o.shellquote = ""
-	vim.o.shellredir = '2>&1 | %{ "$_" } | Out-File %s; exit $LastExitCode'
+	vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
 	vim.o.shellxquote = ""
 	vim.g.plenary_curl_bin_path = os.getenv("SCOOP") .. "/apps/git/current/mingw64/bin/curl.exe"
-	vim.g.python3_host_prog = os.getenv("SCOOP") .. "/apps/python310/current/python.exe"
+	vim.g.python3_host_prog = os.getenv("SCOOP") .. "/apps/python312/current/python.exe"
 	vim.g.sqlite_clib_path = os.getenv("SCOOP") .. "/apps/sqlite-dll/current/sqlite3.dll"
 end
 
@@ -52,12 +52,13 @@ if vim.fn.has("win32") == 1 then
 			["*"] = "clip.exe",
 		},
 		paste = {
-			["+"] = 'pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())',
-			["*"] = 'pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())',
+			["+"] = "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
+			["*"] = "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
 		},
 		cache_enabled = 0,
 	}
 end
+
 vim.o.clipboard = "unnamedplus"
 vim.o.cmdheight = 1
 vim.o.cursorline = false

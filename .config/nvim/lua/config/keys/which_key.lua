@@ -28,27 +28,6 @@ wk.add({
 	{ "<leader>cp", "<Cmd>CitePeek<CR>", desc = "CitePeek" },
 	{ "<leader>co", "<Cmd>CiteOpen<CR>", desc = "CiteOpen" },
 	{ "<leader>cn", "<Cmd>CiteNote<CR>", desc = "CiteNote" },
-	-- devdocs.nvim
-	{ "<leader>hg", "<Cmd>DevDocs get<CR>", desc = "DevDocs get", mode = "n" },
-	{ "<leader>hi", "<Cmd>DevDocs install<CR>", desc = "DevDocs install", mode = "n" },
-	{
-		"<leader>hv",
-		function()
-			local devdocs = require("devdocs")
-			local installedDocs = devdocs.GetInstalledDocs()
-			vim.ui.select(installedDocs, {}, function(selected)
-				if not selected then
-					return
-				end
-				local docDir = devdocs.GetDocDir(selected)
-				-- prettify the filename as you wish
-				Snacks.picker.files({ cwd = docDir })
-			end)
-		end,
-		desc = "Devdocs by snacks",
-		mode = "n",
-	},
-	{ "<leader>hd", "<Cmd>DevDocs delete<CR>", desc = "DevDocs delete", mode = "n" },
 	-- flash.nvim
 	{
 		"<leader>s",
@@ -89,17 +68,6 @@ wk.add({
 		end,
 		desc = "Toggle Flash Search",
 		mode = { "c" },
-	},
-	-- git-dev.nvim
-	{
-		"<leader>go",
-		function()
-			local repo = vim.fn.input("Repository name / URI: ")
-			if repo ~= "" then
-				require("git-dev").open(repo)
-			end
-		end,
-		desc = "[O]pen a remote git repository",
 	},
 	-- glance.nvim
 	{ "gR", "<Cmd>Glance references<CR>", desc = "Glance references<CR>", mode = "n" },
@@ -190,13 +158,6 @@ wk.add({
 		"<Cmd>TimeMachineLogShow<CR>",
 		desc = "TimeMachineLogShow",
 	},
-	-- translate.nvim
-	{ "<leader>zh", "viw:Translate ZH<CR>", desc = "viw:Translate ZH", mode = { "n", "o" } },
-	{ "<leader>zh", "<Cmd>Translate ZH<CR>", desc = "Translate ZH", mode = "v" },
-	-- translate-shell.vim
-	-- { "<leader>tr", "<Esc>:Trans<CR>", desc = "Trans", mode = "i" },
-	{ "<leader>tr", "<Cmd>Trans<CR>", desc = "Trans", mode = { "n", "v" } },
-	{ "<leader>td", "<Cmd>TransSelectDirection<CR>", desc = "TransSelectDirection", mode = { "n", "v" } },
 	-- trouble.nvim
 	{
 		"<leader>xx",
@@ -252,6 +213,7 @@ wk.add({
 	{ "<leader>-", "<Cmd>Yazi<CR>", desc = "Open yazi at the current file", mode = { "n", "v" } },
 	{ "<leader>cw", "<Cmd>Yazi cwd<CR>", desc = "Open the file manager in nvim's working directory" },
 	{ "<C-up>", "<Cmd>Yazi toggle<CR>", desc = "Resume the last yazi session" },
+
 	-- telescope.nvim
 	-- nvim-telescope/telescope.nvim
 	{ "<leader>kk", "<Cmd>Telescope keymaps<CR>", desc = "Telescope keymaps", mode = "n" },
@@ -264,8 +226,6 @@ wk.add({
 	-- princejoogie/dir-telescope.nvim
 	{ "<leader>dfg", "<Cmd>Telescope dir live_grep<CR>", desc = "Telescope dir live_grep", mode = "n" },
 	{ "<leader>dff", "<Cmd>Telescope dir find_files<CR>", desc = "Telescope dir find_files", mode = "n" },
-	-- Verf/telescope-everything.nvim
-	{ "<leader>es", "<Cmd>Telescope everything<CR>", desc = "Telescope everything", mode = "n" },
 	-- nvim-telescope/telescope-file-browser.nvim
 	{ "<leader>br", "<Cmd>Telescope file_browser<CR>", desc = "Telescope file_browser", mode = "n" },
 	-- nvim-telescope/telescope-media-files.nvim
@@ -277,8 +237,6 @@ wk.add({
 		desc = "Telescope recent_files",
 		mode = "n",
 	},
-	-- nvim-telescope/telescope-frecency.nvim
-	-- { "<leader>R", "<Cmd>Telescope frecency<CR>", desc = "Telescope frecency", mode = "n" },
 	-- jvgrootveld/telescope-zoxide
 	{ "<leader>zi", "<Cmd>Telescope zoxide list<CR>", desc = "Telescope zoxide list", mode = "n" },
 	-- jonarrien/telescope-cmdline.nvim

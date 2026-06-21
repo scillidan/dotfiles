@@ -66,9 +66,6 @@
     "webfetch": "allow",
     "websearch": "allow"
   },
-  "plugin": [
-    "@mohak34/opencode-notifier@latest"
-  ],
   "provider": {
     "aiping": {
       "models": {
@@ -174,5 +171,9 @@
     "paths": [
       "~/.agents/personal-skills"
     ]
+  },
+  "compaction": {
+    "auto": false,
+    "prune": false
   }
 }

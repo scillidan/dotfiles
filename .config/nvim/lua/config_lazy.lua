@@ -18,10 +18,18 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
+	-- Plugin
 	{
-		"folke/neoconf.nvim",
+		"ZWindL/orphans.nvim",
 		config = function()
-			require("neoconf").setup({})
+			require("orphans").setup({})
+		end,
+	},
+	-- Dependency
+	{
+		"nvim-tree/nvim-web-devicons",
+		config = function()
+			require("config.nvim_web_devicons")
 		end,
 	},
 	-- Theme
@@ -43,170 +51,13 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 	},
-	--QoL
+	-- Visual
 	{
-		"nvim-tree/nvim-web-devicons",
-		config = function()
-			require("config.nvim_web_devicons")
-		end,
-	},
-	{
-		"folke/snacks.nvim",
-		priority = 1000,
-		lazy = false,
-		dependencies = { "echasnovski/mini.icons" },
-		---@type snacks.Config
-		config = function()
-			require("config.snacks")
-		end,
-	},
-	-- mini.nvim
-	{
-		"echasnovski/mini.icons",
-		version = "*",
-		config = function()
-			require("mini.icons").setup()
-		end,
-	},
-	{
-		"echasnovski/mini.statusline",
-		version = "*",
-		config = function()
-			require("config.mini_statusline")
-		end,
-	},
-	{
-		"echasnovski/mini.cursorword",
-		version = "*",
-		config = function()
-			require("mini.cursorword").setup()
-		end,
-	},
-	-- {
-	-- 	"echasnovski/mini.pairs",
-	-- 	version = "*",
-	-- 	config = function()
-	-- 		require("config.mini_pairs")
-	-- 	end,
-	-- },
-	{
-		"echasnovski/mini.move",
-		version = "*",
-		config = function()
-			require("config.mini_move")
-		end,
-	},
-	{
-		"echasnovski/mini.align",
-		version = "*",
-		config = function()
-			require("mini.align").setup()
-		end,
-	},
-	{
-		"echasnovski/mini.surround",
-		version = "*",
-		config = function()
-			require("mini.surround").setup()
-		end,
-	},
-	{
-		"echasnovski/mini.comment",
-		version = "*",
-		config = function()
-			require("mini.comment").setup()
-		end,
-	},
-	{
-		"echasnovski/mini.trailspace",
-		version = "*",
-		config = function()
-			require("mini.trailspace").setup()
-		end,
-	},
-	{
-		"echasnovski/mini.splitjoin",
-		version = "*",
-		config = function()
-			require("config.mini_splitjoin")
-		end,
-	},
-	{
-		"echasnovski/mini.diff",
-		version = "*",
-		config = function()
-			require("mini.diff").setup()
-		end,
-	},
-	{
-		"echasnovski/mini-git",
-		version = "*",
-		main = "mini.git",
-		config = function()
-			require("mini.git").setup()
-		end,
-	},
-	---- Explorer
-	{
-		"stevearc/oil.nvim",
-		-- dependencies = { "echasnovski/mini.icons", opts = {} },
-		lazy = false,
-		config = function()
-			require("config.oil")
-		end,
-	},
-	{
-		"refractalize/oil-git-status.nvim",
-		dependencies = {
-			"stevearc/oil.nvim",
-		},
-		config = function()
-			require("config.oil_git_status")
-		end,
-	},
-	{
-		"mikavilpas/yazi.nvim",
-		version = "*", -- use the latest stable version
+		"rachartier/tiny-glimmer.nvim",
 		event = "VeryLazy",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim", lazy = true },
-		},
-		---@type YaziConfig | {}
-		opts = require("config.yazi"),
-		init = function()
-			vim.g.loaded_netrwPlugin = 1
-		end,
-	},
-	---- Repo
-	{
-		"moyiz/git-dev.nvim",
-		event = "VeryLazy",
-		cmd = {
-			"GitDevClean",
-			"GitDevCleanAll",
-			"GitDevCloseBuffers",
-			"GitDevOpen",
-			"GitDevRecents",
-			"GitDevToggleUI",
-			"GitDevXDGHandle",
-		},
+		priority = 10,
 		config = function()
-			require("config.git_dev")
-		end,
-	},
-	---- Window
-	{
-		"sindrets/winshift.nvim",
-		config = function()
-			require("winshift").setup()
-		end,
-	},
-	{
-		"tadaa/vimade",
-		config = function()
-			require("vimade").setup({
-				fadelevel = 0.8,
-			})
+			require("tiny-glimmer").setup()
 		end,
 	},
 	{
@@ -219,24 +70,26 @@ require("lazy").setup({
 			require("config.incline")
 		end,
 	},
-	---- Session
 	{
-		"rmagatti/auto-session",
-		lazy = false,
+		"lewis6991/satellite.nvim",
 		config = function()
-			require("config.auto_session")
-		end,
-		init = function()
-			vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+			require("config.satellite")
 		end,
 	},
 	{
-		"natecraddock/workspaces.nvim",
+		"tadaa/vimade",
 		config = function()
-			require("config.workspaces")
+			require("vimade").setup({
+				fadelevel = 0.8,
+			})
 		end,
 	},
-	-- Synax
+	{
+		"folke/twilight.nvim",
+		config = function()
+			require("config.twilight")
+		end,
+	},
 	{
 		"catgoose/nvim-colorizer.lua",
 		event = "BufReadPre",
@@ -244,7 +97,11 @@ require("lazy").setup({
 			require("colorizer").setup()
 		end,
 	},
-	---- Treesitter
+	{
+		"saghen/filler-begone.nvim",
+	},
+
+	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		branch = "master",
@@ -328,6 +185,51 @@ require("lazy").setup({
 			require("mason-conform").setup()
 		end,
 	},
+	-- CMP/blink
+	{
+		"saghen/blink.cmp",
+		event = { "BufReadPost", "BufNewFile" },
+		version = "1.*",
+		-- build = "cargo build --release",
+		dependencies = {
+			{ "xzbdmw/colorful-menu.nvim", opt = {} },
+			{ "saghen/blink.compat" },
+			{ "rafamadriz/friendly-snippets", version = "v2.*" },
+			{ "erooke/blink-cmp-latex" },
+			-- { "jdrupal-dev/css-vars.nvim" },
+			-- { "alexandre-abrioux/blink-cmp-npm.nvim" },
+			{ "yus-works/csc.nvim", opts = {} },
+			{
+				"Dynge/gitmoji.nvim",
+				ft = "gitcommit",
+				config = function()
+					require("gitmoji").setup({})
+				end,
+			},
+			{ "moyiz/blink-emoji.nvim" },
+			{
+				"Kaiser-Yang/blink-cmp-dictionary",
+				dependencies = { "nvim-lua/plenary.nvim" },
+			},
+			{ "ribru17/blink-cmp-spell" },
+			{ "mikavilpas/blink-ripgrep.nvim" },
+			{ "mgalliou/blink-cmp-tmux" },
+		},
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = require("config.blink"),
+	},
+	-- Snippet
+	{
+		"L3MON4D3/LuaSnip",
+		build = vim.fn.has("win32") ~= 0 and "make install_jsregexp" or nil,
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"benfowler/telescope-luasnip.nvim",
+		},
+		config = require("config.luasnip"),
+	},
+
 	-- Markdown
 	{
 		"Nedra1998/nvim-mdlink",
@@ -373,7 +275,7 @@ require("lazy").setup({
 			"CsvViewToggle",
 		},
 	},
-	-- typst
+	-- Typst
 	{
 		"chomosuke/typst-preview.nvim",
 		ft = "typst",
@@ -406,49 +308,124 @@ require("lazy").setup({
 			require("config.bibcite")
 		end,
 	},
-	-- CMP
+
+	-- Console
 	{
-		"saghen/blink.cmp",
-		event = { "BufReadPost", "BufNewFile" },
-		version = "1.*",
-		-- build = "cargo build --release",
-		dependencies = {
-			{ "xzbdmw/colorful-menu.nvim", opt = {} },
-			{ "saghen/blink.compat" },
-			{ "rafamadriz/friendly-snippets", version = "v2.*" },
-			{ "erooke/blink-cmp-latex" },
-			-- { "jdrupal-dev/css-vars.nvim" },
-			-- { "alexandre-abrioux/blink-cmp-npm.nvim" },
-			{ "yus-works/csc.nvim", opts = {} },
-			{
-				"Dynge/gitmoji.nvim",
-				ft = "gitcommit",
-				config = function()
-					require("gitmoji").setup({})
-				end,
-			},
-			{ "moyiz/blink-emoji.nvim" },
-			{
-				"Kaiser-Yang/blink-cmp-dictionary",
-				dependencies = { "nvim-lua/plenary.nvim" },
-			},
-			{ "ribru17/blink-cmp-spell" },
-			{ "mikavilpas/blink-ripgrep.nvim" },
-			{ "mgalliou/blink-cmp-tmux" },
-		},
-		---@module 'blink.cmp'
-		---@type blink.cmp.Config
-		opts = require("config.blink"),
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = function()
+			require("config.toggleterm")
+			require("config.keys.toggleterm")
+		end,
 	},
-	-- Snips
+	-- Buffer
 	{
-		"L3MON4D3/LuaSnip",
-		build = vim.fn.has("win32") ~= 0 and "make install_jsregexp" or nil,
+		"leath-dub/snipe.nvim",
+		opts = {},
+	},
+	{
+		"ahkohd/buffer-sticks.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("config.buffer_sticks")
+		end,
+		keys = require("config.keys.buffer_sticks"),
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("config.gitsigns")
+		end,
+	},
+	-- DAP
+	{
+		"mfussenegger/nvim-dap",
+		dependencies = { "jbyuki/one-small-step-for-vimkind" },
+		lazy = VaryLazy,
+		config = function()
+			require("config.dap")
+		end,
+	},
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		config = function()
+			require("nvim-dap-virtual-text").setup()
+		end,
+	},
+	{
+		"rcarriga/nvim-dap-ui",
 		dependencies = {
-			"rafamadriz/friendly-snippets",
-			"benfowler/telescope-luasnip.nvim",
+			"mfussenegger/nvim-dap",
+			"nvim-neotest/nvim-nio",
 		},
-		config = require("config.luasnip"),
+		config = function()
+			require("config.dapui")
+		end,
+	},
+	-- Debug
+	{
+		"folke/trouble.nvim",
+		opts = {},
+		cmd = "Trouble",
+	},
+	{
+		"mfussenegger/nvim-dap-python",
+		cond = vim.fn.has("unix") == 1,
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"rcarriga/nvim-dap-ui",
+		},
+		ft = { "python" },
+		config = function()
+			local python_path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+			require("dap-python").setup(python_path)
+		end,
+	},
+	-- Development
+	{
+		"S1M0N38/love2d.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
+	{
+		"Mathijs-Bakker/godotdev.nvim",
+		dependencies = {
+			"nvim-lspconfig",
+			"nvim-dap",
+			"nvim-dap-ui",
+			"nvim-treesitter",
+		},
+	},
+	-- Explorer
+	{
+		"stevearc/oil.nvim",
+		-- dependencies = { "echasnovski/mini.icons", opts = {} },
+		lazy = false,
+		config = function()
+			require("config.oil")
+		end,
+	},
+	{
+		"refractalize/oil-git-status.nvim",
+		dependencies = {
+			"stevearc/oil.nvim",
+		},
+		config = function()
+			require("config.oil_git_status")
+		end,
+	},
+	{
+		"mikavilpas/yazi.nvim",
+		version = "*", -- use the latest stable version
+		event = "VeryLazy",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim", lazy = true },
+		},
+		---@type YaziConfig | {}
+		opts = require("config.yazi"),
+		init = function()
+			vim.g.loaded_netrwPlugin = 1
+		end,
 	},
 	-- Key
 	{
@@ -478,8 +455,32 @@ require("lazy").setup({
 			require("spamguard").enable()
 		end),
 	},
-	-- Edit
-	---- Bookmark
+	-- Session
+	{
+		"rmagatti/auto-session",
+		lazy = false,
+		config = function()
+			require("config.auto_session")
+		end,
+		init = function()
+			vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+		end,
+	},
+	{
+		"natecraddock/workspaces.nvim",
+		config = function()
+			require("config.workspaces")
+		end,
+	},
+	-- Window
+	{
+		"sindrets/winshift.nvim",
+		config = function()
+			require("winshift").setup()
+		end,
+	},
+
+	-- Bookmark
 	{
 		"otavioschwanck/arrow.nvim",
 		dependencies = {
@@ -498,26 +499,13 @@ require("lazy").setup({
 		end,
 		keys = require("config.keys.bookmarks"),
 	},
-	---- Buffer
-	{
-		"leath-dub/snipe.nvim",
-		opts = {},
-	},
-	{
-		"ahkohd/buffer-sticks.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("config.buffer_sticks")
-		end,
-		keys = require("config.keys.buffer_sticks"),
-	},
-	---- Convert
+	-- Convert
 	{
 		"necrom4/convy.nvim",
 		cmd = { "Convy", "ConvySeparator" },
 		opts = require("config.convy"),
 	},
-	---- Fold
+	-- Fold
 	{
 		"chrisgrieser/nvim-origami",
 		event = "VeryLazy",
@@ -530,27 +518,7 @@ require("lazy").setup({
 			vim.opt.foldlevelstart = 99
 		end,
 	},
-	---- Git
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("config.gitsigns")
-		end,
-	},
-	---- Go
-	-- {
-	-- 	"abecodes/tabout.nvim",
-	-- 	lazy = false,
-	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
-	-- 	after = {
-	-- 		"nvim-cmp",
-	-- 		"blink.cmp",
-	-- 	},
-	-- 	config = function()
-	-- 		require("tabout").setup({})
-	-- 	end,
-	-- },
-	---- Goto
+	-- Goto
 	{
 		"rmagatti/goto-preview",
 		event = "BufEnter",
@@ -578,7 +546,7 @@ require("lazy").setup({
 		end,
 		cmd = "Glance",
 	},
-	---- Jump
+	-- Jump
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
@@ -588,14 +556,7 @@ require("lazy").setup({
 		end,
 		-- stylua: ignore
 	},
-	---- Mode
-	{
-		"TheBlob42/houdini.nvim",
-		config = function()
-			require("houdini").setup()
-		end,
-	},
-	---- Multiple-cursor
+	-- Multiple-cursor
 	{
 		"brenton-leighton/multiple-cursors.nvim",
 		version = "*",
@@ -603,20 +564,14 @@ require("lazy").setup({
 			require("config.multiple_cursors")
 		end,
 	},
-	{
-		"vodchella/hodur.nvim",
-		config = function()
-			require("config.keys.hodur")
-		end,
-	},
-	---- Replace
+	-- Replace
 	{
 		"MagicDuck/grug-far.nvim",
 		config = function()
 			require("grug-far").setup()
 		end,
 	},
-	---- Save
+	-- Save
 	{
 		"Pocco81/auto-save.nvim",
 		config = function()
@@ -634,7 +589,7 @@ require("lazy").setup({
 			})
 		end,
 	},
-	---- Sort
+	-- Sort
 	{
 		"sQVe/sort.nvim",
 		config = function()
@@ -650,7 +605,7 @@ require("lazy").setup({
 			require("config.tssorter")
 		end,
 	},
-	---- Undo
+	-- Undo
 	{
 		"y3owk1n/time-machine.nvim",
 		config = function()
@@ -664,42 +619,139 @@ require("lazy").setup({
 			"TimeMachineLogClear",
 		},
 	},
-	---- Visual
+	-- URL
 	{
-		"rachartier/tiny-glimmer.nvim",
-		event = "VeryLazy",
-		priority = 10,
+		"vodchella/hodur.nvim",
 		config = function()
-			require("tiny-glimmer").setup()
+			require("config.keys.hodur")
+		end,
+	},
+
+	-- Epub
+	{
+		"DanielPonte01/ink.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function()
+			require("config.ink")
 		end,
 	},
 	{
-		"folke/twilight.nvim",
+		"christoomey/vim-tmux-navigator",
+		cond = vim.fn.has("unix") == 1,
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+			"TmuxNavigatorProcessList",
+		},
+		keys = {
+			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+		},
+	},
+	-- LLM
+	{
+		"NickvanDyke/opencode.nvim",
 		config = function()
-			require("config.twilight")
+			require("config.opencode")
+			require("config.keys.opencode")
+		end,
+	},
+
+	-- mini.nvim
+	{
+		"echasnovski/mini.icons",
+		version = "*",
+		config = function()
+			require("mini.icons").setup()
 		end,
 	},
 	{
-		"rewhile/fsread.nvim",
+		"echasnovski/mini.statusline",
+		version = "*",
 		config = function()
-			require("config.fsread")
-		end,
-	},
-	---- Other
-	{
-		"qwavies/smart-backspace.nvim",
-		event = { "InsertEnter", "CmdlineEnter" },
-	},
-	{
-		"lewis6991/satellite.nvim",
-		config = function()
-			require("config.satellite")
+			require("config.mini_statusline")
 		end,
 	},
 	{
-		"saghen/filler-begone.nvim",
+		"echasnovski/mini.cursorword",
+		version = "*",
+		config = function()
+			require("mini.cursorword").setup()
+		end,
 	},
-	-- Search
+	{
+		"echasnovski/mini.pairs",
+		version = "*",
+		config = function()
+			require("config.mini_pairs")
+		end,
+	},
+	{
+		"echasnovski/mini.move",
+		version = "*",
+		config = function()
+			require("config.mini_move")
+		end,
+	},
+	{
+		"echasnovski/mini.align",
+		version = "*",
+		config = function()
+			require("mini.align").setup()
+		end,
+	},
+	{
+		"echasnovski/mini.surround",
+		version = "*",
+		config = function()
+			require("mini.surround").setup()
+		end,
+	},
+	{
+		"echasnovski/mini.comment",
+		version = "*",
+		config = function()
+			require("mini.comment").setup()
+		end,
+	},
+	{
+		"echasnovski/mini.trailspace",
+		version = "*",
+		config = function()
+			require("mini.trailspace").setup()
+		end,
+	},
+	{
+		"echasnovski/mini.splitjoin",
+		version = "*",
+		config = function()
+			require("config.mini_splitjoin")
+		end,
+	},
+	{
+		"echasnovski/mini.diff",
+		version = "*",
+		config = function()
+			require("mini.diff").setup()
+		end,
+	},
+	{
+		"echasnovski/mini-git",
+		version = "*",
+		main = "mini.git",
+		config = function()
+			require("mini.git").setup()
+		end,
+	},
+
 	-- telescope.nvim
 	{
 		"nvim-telescope/telescope.nvim",
@@ -709,12 +761,12 @@ require("lazy").setup({
 			require("config.telescope")
 		end,
 	},
-	---- Search file
+	-- telescope - file
 	{ "MaximilianLloyd/adjacent.nvim" },
-	---- Search file or folder
-	{ "Verf/telescope-everything.nvim" },
+	-- telescope - file,folder
+	-- { "Verf/telescope-everything.nvim" },
 	{ "princejoogie/dir-telescope.nvim" },
-	---- Explorer
+	-- telescope - explorer
 	{ "nvim-telescope/telescope-file-browser.nvim" },
 	{
 		"nvim-telescope/telescope-media-files.nvim",
@@ -722,8 +774,7 @@ require("lazy").setup({
 			"nvim-lua/popup.nvim",
 		},
 	},
-	---- Search history
-	-- { "nvim-telescope/telescope-frecency.nvim" },
+	-- telescope - history
 	{ "smartpde/telescope-recent-files" },
 	{
 		"jvgrootveld/telescope-zoxide",
@@ -731,10 +782,10 @@ require("lazy").setup({
 			{ "nvim-lua/popup.nvim" },
 		},
 	},
-	---- Search command
+	-- telescope - cmdline
 	{ "jonarrien/telescope-cmdline.nvim" },
 	{ "nvim-telescope/telescope-dap.nvim" },
-	---- Search command or cheatsheet
+	-- telescope - cheatsheet
 	{
 		"sudormrfbin/cheatsheet.nvim",
 		dependencies = {
@@ -744,39 +795,7 @@ require("lazy").setup({
 			require("config.cheatsheet")
 		end,
 	},
-	{ "xiyaowong/telescope-emoji.nvim" },
-	{
-		"olacin/telescope-gitmoji.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-		config = function()
-			require("telescope").load_extension("gitmoji")
-		end,
-	},
 	{ "ghassan0/telescope-glyph.nvim" },
-	---- Search docset
-	{
-		"emmanueltouzery/apidocs.nvim",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-telescope/telescope.nvim",
-			"folke/snacks.nvim",
-		},
-		cmd = { "ApidocsSearch", "ApidocsInstall", "ApidocsOpen", "ApidocsSelect", "ApidocsUninstall" },
-		config = function()
-			require("config.apidocs")
-		end,
-	},
-	{
-		"maskudo/devdocs.nvim",
-		lazy = false,
-		dependencies = {
-			"folke/snacks.nvim",
-		},
-		cmd = { "DevDocs" },
-		config = function()
-			require("config.devdocs")
-		end,
-	},
 	---- Search Tips
 	{
 		"saxon1964/neovim-tips",
@@ -829,150 +848,6 @@ require("lazy").setup({
 	},
 	{ "crispgm/telescope-heading.nvim" },
 	{ "nvim-telescope/telescope-bibtex.nvim" },
-	-- Run
-	---- Console
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		config = function()
-			require("config.toggleterm")
-			require("config.keys.toggleterm")
-		end,
-	},
-	---- Debug
-	{
-		"folke/trouble.nvim",
-		opts = {},
-		cmd = "Trouble",
-	},
-	---- DAP
-	{
-		"mfussenegger/nvim-dap",
-		-- dependencies = { "jbyuki/one-small-step-for-vimkind" },
-		lazy = VaryLazy,
-		config = function()
-			require("config.dap")
-		end,
-	},
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		config = function()
-			require("nvim-dap-virtual-text").setup()
-		end,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"nvim-neotest/nvim-nio",
-		},
-		config = function()
-			require("config.dapui")
-		end,
-	},
-	{
-		"mfussenegger/nvim-dap-python",
-		cond = vim.fn.has("unix") == 1,
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"rcarriga/nvim-dap-ui",
-		},
-		ft = { "python" },
-		config = function()
-			local python_path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-			require("dap-python").setup(python_path)
-		end,
-	},
-	-- Develop
-	{
-		"NickvanDyke/opencode.nvim",
-		dependencies = {
-			---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
-			{ "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
-		},
-		config = function()
-			require("config.opencode")
-			require("config.keys.opencode")
-		end,
-	},
-	{
-		"S1M0N38/love2d.nvim",
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
-		"Mathijs-Bakker/godotdev.nvim",
-		dependencies = {
-			"nvim-lspconfig",
-			"nvim-dap",
-			"nvim-dap-ui",
-			"nvim-treesitter",
-		},
-	},
-	-- Other
-	{
-		"DanielPonte01/ink.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-		},
-		config = function()
-			require("config.ink")
-		end,
-	},
-	-- {
-	-- 	"helmecke/epubedit.nvim",
-	-- 	dependencies = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 	},
-	-- 	config = function()
-	-- 		require("config.epubedit").setup()
-	-- 	end,
-	-- },
-	{
-		"Nealium/dict-popup.nvim",
-		cond = vim.fn.has("unix") == 1,
-		opts = require("config.dict_popup"),
-	},
-	{
-		"neo451/feed.nvim",
-		dependencies = { "folke/snacks.nvim", priority = 1000, lazy = false },
-		cmd = "Feed",
-		---@module 'feed'
-		---@type feed.config
-		config = function()
-			require("config.feed")
-		end,
-	},
-	{
-		"uga-rosa/translate.nvim",
-		cond = vim.fn.has("unix") == 1,
-		config = function()
-			require("config.translate")
-		end,
-	},
-	{
-		"echuraev/translate-shell.vim",
-		cond = vim.fn.has("unix") == 1,
-	},
-	{
-		"christoomey/vim-tmux-navigator",
-		cond = vim.fn.has("unix") == 1,
-		cmd = {
-			"TmuxNavigateLeft",
-			"TmuxNavigateDown",
-			"TmuxNavigateUp",
-			"TmuxNavigateRight",
-			"TmuxNavigatePrevious",
-			"TmuxNavigatorProcessList",
-		},
-		keys = {
-			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-		},
-	},
 }, {
 	rocks = {
 		enabled = false,

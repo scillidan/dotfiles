@@ -18,5 +18,9 @@
     "input_delete_word_backward": "ctrl+backspace",
     "messages_first": "ctrl+g",
     "messages_last": "ctrl+alt+g"
-  }
+  },
+  "plugin": [
+  	"@mohak34/opencode-notifier@latest",
+    "@cortexkit/opencode-magic-context@latest"
+  ]
 }

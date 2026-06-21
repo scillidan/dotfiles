@@ -56,12 +56,12 @@ else
 fi
 
 if [ "$is_termux" = "0" ]; then
-  export STARDICT_DATA_DIR="$HOME/Usr/Data/sdcv"
+  export STARDICT_DATA_DIR="$HOME/Local/Data/sdcv"
   export TEXLIVE="/usr/local/texlive/2025"
   export MANPATH="/usr/share/man:$TEXLIVE/texmf-dist/doc/man:MANPATH"
   export PATH="$HOME/Usr/Lib/lua53/bin:$TEXLIVE/bin/x86_64-linux:$PATH"
 else
-  export STARDICT_DATA_DIR="$HOME/storage/downloads/Usr/Data/sdcv"
+  export STARDICT_DATA_DIR="$HOME/storage/downloads/Local/Data/sdcv"
   export TEXDIR="/data/data/com.termux/files/usr/local/texlive/2025"
   export TEXLIVE="/data/data/com.termux/files/usr/local/texlive/2025"
   export MANPATH="/data/data/com.termux/files/usr/share/man:$TEXLIVE/texmf-dist/doc/man:MANPATH"
