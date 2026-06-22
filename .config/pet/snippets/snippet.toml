@@ -470,13 +470,6 @@ Output = ""
 Tag = ["split-manga-pages", "manga"]
 command = "split_manga_pages -d <dir> -m all"
 
-## subsetzer
-[[Snippets]]
-Description = ""
-Output = ""
-Tag = ["subsetzer", "subtitle"]
-command = "subsetzer --outfile {basename}.{src}2{dst}[{model}].{fmt} --outfmt srt --out . --model gemma3:12b --target Chinese --in $"
-
 ## SVG to PNG converter
 [[Snippets]]
 Description = "for docset"
