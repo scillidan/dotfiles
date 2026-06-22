@@ -32,7 +32,7 @@ matches:
     replace: "scoop install "
   - trigger: ":lsi"
     replace: "scoop install \"%CD%\\bucket\\$|$.json\""
-  - trigger: ":mklinklbin"
+  - trigger: ":mlbin"
     replace: "mklink %USERPROFILE%\\.local\\bin\\$|$ %CD%\\"
   - trigger: ":clip"
     replace: "powershell \"Get-Clipboard\" | "
