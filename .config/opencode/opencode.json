@@ -3,7 +3,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "lkeap/glm-5.1",
+      "model": "deepseek/deepseek-v4-flash",
       "options": {},
       "permission": {
         "bash": "allow",
@@ -17,7 +17,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "lkeap/glm-5.1",
+      "model": "deepseek/deepseek-v4-flash",
       "options": {},
       "permission": {
         "bash": "deny",
@@ -33,10 +33,10 @@
   "autoupdate": false,
   "enabled_providers": [
     "deepseek",
-    "lkeap",
+    "codebuddy",
+    // "lkeap",
     "aiping",
-    "openai",
-    "llama-swap"
+    "openai"
   ],
   "mcp": {
     "fff": {
@@ -67,31 +67,18 @@
     "websearch": "allow"
   },
   "provider": {
-    "aiping": {
-      "models": {
-        "GLM-5": {
-          "name": "GLM 5"
-        }
-      },
-      "name": "AIPing",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "{env:AIPING_API_KEY}",
-        "baseURL": "https://aiping.cn/api/v1"
-      }
-    },
     "deepseek": {
       "models": {
-        "deepseek-v4-flash": {
-          "name": "DeepSeek V4 Flash",
+        "deepseek-v4-pro": {
+          "name": "DeepSeek V4 Pro",
           "options": {
             "thinking": {
               "type": "enabled"
             }
           }
         },
-        "deepseek-v4-pro": {
-          "name": "DeepSeek V4 Pro",
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash",
           "options": {
             "thinking": {
               "type": "enabled"
@@ -106,18 +93,55 @@
         "baseURL": "https://api.deepseek.com"
       }
     },
-    "lkeap": {
+    "codebuddy": {
       "models": {
-        "glm-5-turbo": {
-          "name": "GLM 5 Turbo",
+        "glm-5.2": {
+          "name": "GLM-5.2",
+          "contextLength": 200000,
           "options": {
             "thinking": {
               "type": "enabled"
             }
           }
         },
-        "glm-5.1": {
-          "name": "GLM 5.1",
+        "glm-5.0-turbo": {
+          "name": "GLM-5.0-Turbo",
+          "contextLength": 200000,
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
+        },
+        "hy3-preview-agent": {
+          "name": "Hy3-preview",
+          "contextLength": 192000,
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
+        }
+      },
+      "name": "CodeBuddy",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "{env:CODEBUDDY_API_KEY}",
+        "baseURL": "https://copilot.tencent.com/v2"
+      }
+    },
+    "lkeap": {
+      "models": {
+        "glm-5.2": {
+          "name": "GLM 5.2",
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
+        },
+        "glm-5-turbo": {
+          "name": "GLM 5 Turbo",
           "options": {
             "thinking": {
               "type": "enabled"
@@ -132,25 +156,17 @@
         "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3"
       }
     },
-    "llama-swap": {
+    "aiping": {
       "models": {
-        "gemma-3-12b-it": {
-          "name": "Gemma 3 12B IT (Q5_K_M)"
-        },
-        "gemma-3-4b-it-qat": {
-          "name": "Gemma 3 4B IT (Q4_K_M)"
-        },
-        "mistral-7b-instruct-v0.3": {
-          "name": "Mistral 7B Instruct v0.3 (Q5_K_M)"
-        },
-        "qwen3-14b": {
-          "name": "Qwen3-14B (Q4_K_M)"
+        "GLM-5": {
+          "name": "GLM 5"
         }
       },
-      "name": "llama-swap",
+      "name": "AIPing",
       "npm": "@ai-sdk/openai-compatible",
       "options": {
-        "baseURL": "http://localhost:8010/v1"
+        "apiKey": "{env:AIPING_API_KEY}",
+        "baseURL": "https://aiping.cn/api/v1"
       }
     },
     "openai": {
