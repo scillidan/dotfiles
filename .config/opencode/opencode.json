@@ -35,7 +35,6 @@
     "deepseek",
     "codebuddy",
     // "lkeap",
-    "aiping",
     "openai"
   ],
   "mcp": {
@@ -154,19 +153,6 @@
       "options": {
         "apiKey": "{env:TENCENT_LKEAP_API_KEY}",
         "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3"
-      }
-    },
-    "aiping": {
-      "models": {
-        "GLM-5": {
-          "name": "GLM 5"
-        }
-      },
-      "name": "AIPing",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "{env:AIPING_API_KEY}",
-        "baseURL": "https://aiping.cn/api/v1"
       }
     },
     "openai": {

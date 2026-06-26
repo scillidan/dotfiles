@@ -1,6 +1,4 @@
 matches:
-  - trigger: ":ce"
-    replace: "```sh$|$\n```"
   - trigger: ":aut"
     form: |
       Authors: [[author]]🧙‍♂️, scillidan🤡
@@ -11,7 +9,7 @@ matches:
           - DeepSeek
           - GLM-5.1
           - Hy3-preview
-        default: GLM-5.1
+        default: DeepSeek
   - trigger: ":by"
     form: |
       [[by]]
@@ -19,10 +17,12 @@ matches:
       by:
         type: choice
         values:
+        	- '[translategemma-12b-it-i1_q4_k_m]'
+        	- '[TranslateGemma 12B IT I1 (Q4_K_M)]'
           - '[Gemma 3 12B IT (Q5_K_M)]'
           - '[Gemma 3 4B IT (Q4_K_M)]'
-          - '[Qwen3-14B (Q4_K_M)]'
           - '[perplexity.ai]'
+          - '[Qwen3-14B (Q4_K_M)]'
         default: '[perplexity.ai]'
   - trigger: ":cmt"
     form: |

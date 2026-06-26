@@ -16,8 +16,6 @@ wk.add({
 		desc = "Toggle theme",
 		mode = "n",
 	},
-	-- apidocs.nvim
-	{ "<leader>sad", "<cmd>ApidocsOpen<cr>", desc = "Search Api Doc" },
 	-- auto-session
 	{ "<leader>wr", "<Cmd>AutoSession search<CR>", desc = "AutoSession search" },
 	{ "<leader>ws", "<Cmd>AutoSession save<CR>", desc = "AutoSession save" },
@@ -244,10 +242,6 @@ wk.add({
 	-- nvim-telescope/telescope-dap.nvim
 	-- alduraibi/telescope-glyph.nvim
 	{ "<leader>gyp", "<Cmd>Telescope glyph<CR>", desc = "Telescope glyph", mode = "n" },
-	-- xiyaowong/telescope-emoji.nvim
-	{ "<leader>emj", "<Cmd>Telescope emoji<CR>", desc = "Telescope emoji", mode = "n" },
-	-- olacin/telescope-gitmoji.nvim
-	{ "<leader>gmj", "<Cmd>Telescope gitmoji<CR>", desc = "Telescope gitmoji", mode = "n" },
 	-- coffebar/neovim-project
 	{ "<leader>pr", "<Cmd>NeovimProjectLoadRecent<CR>", desc = "NeovimProjectLoadRecent", mode = "n" },
 	{
