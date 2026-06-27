@@ -34,8 +34,7 @@
   "enabled_providers": [
     "deepseek",
     "codebuddy",
-    // "lkeap",
-    "openai"
+    // "lkeap"
   ],
   "mcp": {
     "fff": {
@@ -94,8 +93,8 @@
     },
     "codebuddy": {
       "models": {
-        "glm-5.2": {
-          "name": "GLM-5.2",
+        "deepseek-v4-pro": {
+          "name": "DeepSeek V4 Pro",
           "contextLength": 200000,
           "options": {
             "thinking": {
@@ -103,18 +102,9 @@
             }
           }
         },
-        "glm-5.0-turbo": {
-          "name": "GLM-5.0-Turbo",
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash",
           "contextLength": 200000,
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        },
-        "hy3-preview-agent": {
-          "name": "Hy3-preview",
-          "contextLength": 192000,
           "options": {
             "thinking": {
               "type": "enabled"
@@ -131,8 +121,8 @@
     },
     "lkeap": {
       "models": {
-        "glm-5.2": {
-          "name": "GLM 5.2",
+        "glm-5.1": {
+          "name": "GLM 5.1",
           "options": {
             "thinking": {
               "type": "enabled"
@@ -153,17 +143,6 @@
       "options": {
         "apiKey": "{env:TENCENT_LKEAP_API_KEY}",
         "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3"
-      }
-    },
-    "openai": {
-      "models": {
-        "gpt-5.5": {
-          "name": "GPT 5.5"
-        }
-      },
-      "options": {
-        "apikey": "{env:CHATANYWHERE_API_KEY}",
-        "baseURL": "https://api.chatanywhere.tech/v1"
       }
     }
   },

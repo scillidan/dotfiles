@@ -1,79 +1,60 @@
 {
   "providers": {
-    "ollama": {
-      "baseUrl": "http://localhost:11434/v1",
+    "deepseek": {
+    	// https://api-docs.deepseek.com/zh-cn/quick_start/agent_integrations/pi_mono
+      "baseUrl": "https://api.deepseek.com",
       "api": "openai-completions",
-      "apiKey": "ollama",
+      "apiKey": "$DEEPSEEK_API_KEY",
       "models": [
         {
-          "id": "mistral:7b-instruct",
-          "name": "Mistral 7B Instruct",
-          "contextWindow": 32768,
-          "maxTokens": 4096
-        }
-      ]
-    },
-    "lkeap": {
-      "baseUrl": "https://api.lkeap.cloud.tencent.com/plan/v3",
-      "apiKey": "$TENCENT_LKEAP_API_KEY",
-      "api": "openai-completions",
-      "authHeader": true,
-      "models": [
-        {
-          "id": "GLM-5",
-          "name": "GLM 5",
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": ["text"],
           "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 202752,
-          "maxTokens": 16384
+          "cost": {
+            "input": 1.74,
+            "output": 3.48,
+            "cacheRead": 0.145,
+            "cacheWrite": 0
+          },
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "reasoningEffortMap": {
+              "minimal": "high",
+              "low": "high",
+              "medium": "high",
+              "high": "high",
+              "xhigh": "max"
+            }
+          }
         },
         {
-          "id": "hy3-preview",
-          "name": "Hunyuan Image 3",
-          "reasoning": true
-        }
-      ]
-    },
-    "aiping": {
-      "baseUrl": "https://aiping.cn/api/v1",
-      "apiKey": "$AIPING_API_KEY",
-      "api": "openai-completions",
-      "authHeader": true,
-      "models": [
-        {
-          "id": "GLM-5",
-          "name": "GLM 5",
+          "id": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": ["text"],
           "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 202752,
-          "maxTokens": 16384
-        },
-        {
-          "id": "HunyuanImage-3.0",
-          "name": "Hunyuan Image 3",
-          "reasoning": true
-        }
-      ]
-    },
-    "chatanywhere": {
-      "baseUrl": "https://api.chatanywhere.tech/v1",
-      "apiKey": "$CHATANYWHERE_API_KEY",
-      "api": "openai-responses",
-      "authHeader": true,
-      "models": [
-        {
-          "id": "GLM-5",
-          "name": "GLM 5",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 202752,
-          "maxTokens": 16384
+          "cost": {
+            "input": 0.14,
+            "output": 0.28,
+            "cacheRead": 0.028,
+            "cacheWrite": 0
+          },
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "reasoningEffortMap": {
+              "minimal": "high",
+              "low": "high",
+              "medium": "high",
+              "high": "high",
+              "xhigh": "max"
+            }
+          }
         }
       ]
     }

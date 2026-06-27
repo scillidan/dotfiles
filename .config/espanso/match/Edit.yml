@@ -17,13 +17,22 @@ matches:
       by:
         type: choice
         values:
-        	- '[translategemma-12b-it-i1_q4_k_m]'
-        	- '[TranslateGemma 12B IT I1 (Q4_K_M)]'
+          - '[translategemma-12b-it-i1_q4_k_m]'
+          - '[TranslateGemma 12B IT I1 (Q4_K_M)]'
           - '[Gemma 3 12B IT (Q5_K_M)]'
           - '[Gemma 3 4B IT (Q4_K_M)]'
           - '[perplexity.ai]'
           - '[Qwen3-14B (Q4_K_M)]'
         default: '[perplexity.ai]'
+  - trigger: ":cmmt"
+    form: |
+      [[comments]]
+    form_fields:
+      comments:
+        type: choice
+        values:
+          - 'It has $|$ Stars on Github.'
+          - 'Thanks for your review!'
   - trigger: ":cmt"
     form: |
       [[commit]]
@@ -31,9 +40,15 @@ matches:
       commit:
         type: choice
         values:
-          - '(at your option) any later version'
-          - 'It has $|$ Stars on Github.'
-          - 'Thanks for your review!'
-          - 'Merge to ScoopInstaller/Extras$|$; Clean up'
+          - 'merge to ScoopInstaller/Extras$|$; clean up'
           - '**Full Changelog**: https://github.com/scillidan/$|$/compare/v...v'
           - 'ci: code simplified'
+  - trigger: ":lic"
+    form: |
+      [[license]]
+    form_fields:
+      license:
+        type: choice
+        values:
+          - '(at your option) any later version'
+          - 'Incompatible With Secondary Licenses'
