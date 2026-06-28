@@ -1,20 +1,4 @@
-## bookmarks.txt
-bkm() {
-	bookmarks | fzf | cut -d' ' -f1 | xargs librewolf
-}
-
 ## fzf
-## https://github.com/argosatcore/Deb_Dots/blob/main/.bash_functions.sh
-fkill() {
-	local pid
-	pid="$(
-		ps -ef |
-			sed 1d |
-			fzf -e -m --cycle --reverse |
-			awk '{print $2}'
-	)" || return
-	kill -"${1:-9}" "$pid" &>/dev/null
-}
 # https://junegunn.github.io/fzf/tips/ripgrep-integration
 fzf_ripgrep() {
 	local RELOAD='reload:rg --column --color=always --smart-case {q} || :'
@@ -88,19 +72,4 @@ zshgc() {
 		return 1
 	fi
 	git clone --depth=1 "$1" "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/$2"
-}
-
-## yazi
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
-
-lnbin() {
-	local source=$1
-	local target=$2
-	ln -sfn "$(pwd)/$source" ~/.local/bin/"$target"
 }

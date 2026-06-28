@@ -21,8 +21,10 @@ sum: bash llm_summarize.sh
 trans: bash llm_translate.sh
 
 ## fzf
+bkmf: bash fzf-bookmarks.sh
+sdvf: bash fzf-sdcv.sh
+tldf: bash fzf-tldr.sh
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
-ff-tldr: bash fzf-files.sh "${APPDATA:-$HOME/.config}/tldr/pages"
 ff-devdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs-user-md"
 ff-tables: bash fzf-files.sh "$USERHOME/Share/files/tables"
 

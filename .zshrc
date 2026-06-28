@@ -12,28 +12,11 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
-zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
-
 zinit lucid wait for \
   nyoungstudios/zsh-history-on-success \
-  Freed-Wu/zsh-help \
   Aloxaf/fzf-tab \
-  mfaerevaag/wd \
-  Kikolator/proj-jumper \
-  raisedadead/zsh-touchplus \
-  vxfemboy/zsh-smart-files \
-  mass8326/zsh-chezmoi \
-  singular0/zsh-env-secrets \
-  sunlei/zsh-ssh \
-  SckyzO/zsh-sshinfo \
-  raisedadead/zsh-snr \
-  soimort/translate-shell \
   wfxr/forgit \
-  Bhupesh-V/ugit \
-	matthiasha/zsh-uv-env \
-	andydecleyre/zpy
-# pressdarling/codex-zsh-plugin \
+  Bhupesh-V/ugit
 
 zi has'zoxide' wait lucid for \
   z-shell/zsh-zoxide
@@ -73,8 +56,6 @@ else
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
-## zsh-vi-mode
-# ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 function zvm_init() {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 	## atuin
@@ -98,25 +79,10 @@ function zvm_init() {
 	## grc
 	[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 	## zsh
-	### zsh-env-secrets
-	ENV_SECRETS=(
-  	"TENCENT_SECRET_ID"
-  	"TENCENT_SECRET_KEY"
-  	"OPENAI_API_KEY"
-  	"OPENROUTER_API_KEY"
-		"GOWL_TOKEN"
-	)
-	ENV_SECRETS_BACKEND="pass"
-	ENV_SECRETS_QUIET=1
-	### rose-pine-man
-	source "$ZSH_CUSTOM/plugins/rose-pine-man/rose-pine-man.zsh"
 	### zsh-help
 	help_function() {
   	bat -plhelp --paging=always --color=always
 	}
-	### zsh-smart-insert
-	export ZSH_SMART_INSERT_PREFIXES="nvim:subl"
-	export ZSH_SMART_INSERT_IGNOREDIRS=".git/*:node_modules/:dist/:.venv/:public/:site/"
 	## cargo
 	export CARGO_TARGET_DIR="$HOME/.cargo/tmp"
 	export RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"
@@ -159,13 +125,6 @@ zvm_after_init_commands+=(zvm_init)
 ## huggingface
 export HF_MIRROR=https://hf-mirror.com
 export HF_ENDPOINT=https://hf-mirror.com
-## ollama
-export OLLAMA_HOST="revios"
-export OLLAMA_ORIGINES="*"
-## rime-ls
-export LIBRIME_LIB_DIR="$HOME/.local/lib/rime/dist/lib"
-export LIBRIME_INCLUDE_DIR="$HOME/.local/lib/rime/dist/include"
-export LIB="$HOME/.local/lib/rime/dist/lib"
 ## texlive
 export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
 

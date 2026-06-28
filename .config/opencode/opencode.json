@@ -3,7 +3,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "deepseek/deepseek-v4-flash",
+      "model": "codebuddy/deepseek-v4-flash",
       "options": {},
       "permission": {
         "bash": "allow",
@@ -17,7 +17,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "deepseek/deepseek-v4-flash",
+      "model": "codebuddy/deepseek-v4-flash",
       "options": {},
       "permission": {
         "bash": "deny",
