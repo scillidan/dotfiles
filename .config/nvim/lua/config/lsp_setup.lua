@@ -2,7 +2,9 @@ require("lsp-setup").setup({
 	servers = {
 		bashls = {},
 		cssls = {},
+		eslint = {},
 		harper_ls = {
+			filetypes = { "markdown", "md" },
 			userDictPath = "",
 			fileDictPath = "",
 			linters = {
@@ -28,7 +30,6 @@ require("lsp-setup").setup({
 			dialect = "American",
 		},
 		html = {},
-		jdtls = {},
 		jsonls = {},
 		lua_ls = {
 			-- settings = {
@@ -44,15 +45,16 @@ require("lsp-setup").setup({
 			-- 	},
 			-- },
 		},
-		pylsp = {},
-		tinymist = {
-			cmd = { "tinymist" },
-			filetypes = { "typst" },
-		},
+		marksman = {},
+		pyright = {},
+		taplo = {},
+		texlab = {},
+		tinymist = {},
 		yamlls = {},
 		-- emmet_language_server = {},
-		-- eslint = {},
+		-- jdtls = {},
 		-- nextls = {},
 		-- tailwindcss = {},
+		-- typescript_language_server = {},
 	},
 })

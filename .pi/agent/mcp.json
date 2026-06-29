@@ -1,7 +1,26 @@
 {
+  "settings": {
+    "toolPrefix": "mcp",
+    "idleTimeout": 10
+  },
   "mcpServers": {
+    "aginx": {
+      "command": "aginx-mcp",
+      "args": [],
+      "lifecycle": "lazy"
+    },
     "context-mode": {
       "command": "context-mode"
+    },
+    "gimp-mcp": {
+      "command": "uv",
+      "args": ["run", "--directory", "C:/Users/User/Local/Srv/gimp-mcp", "gimp_mcp_server.py"],
+      "lifecycle": "lazy"
+    },
+    "_godot-mcp": {
+      "url": "http://localhost:9080/mcp",
+      "transport": "streamable-http",
+      "lifecycle": "lazy"
     }
   }
 }

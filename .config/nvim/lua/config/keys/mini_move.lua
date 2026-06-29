@@ -1,3 +1,5 @@
+-- https://github.com/nvim-mini/mini.move#default-config
+
 return {
 	left = "<M-H>",
 	right = "<M-L>",

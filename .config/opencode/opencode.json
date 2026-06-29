@@ -31,31 +31,36 @@
     }
   },
   "autoupdate": false,
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+  "formatter": true,
   "enabled_providers": [
     "deepseek",
-    "codebuddy",
-    // "lkeap"
+    "codebuddy"
   ],
+  "lsp": true,
   "mcp": {
+    "aginx": {
+      "command": ["aginx-mcp"],
+      "enabled": true,
+      "type": "local"
+    },
     "fff": {
-      "command": [
-        "fff-mcp"
-      ],
+      "command": ["fff-mcp"],
       "enabled": true,
       "type": "local"
     },
     "gimp-mcp": {
-      "command": [
-        "uv",
-        "run",
-        "--directory",
-        "C:/Users/User/Local/Srv/gimp-mcp",
-        "gimp_mcp_server.py"
-      ],
+      "command": ["uv", "run", "gimp_mcp_server.py"],
+      "cwd": "C:/Users/User/Local/Srv/gimp-mcp",
       "enabled": false,
       "type": "local"
     },
     "godot-mcp": {
+      "enabled": false,
       "type": "remote",
       "url": "http://localhost:9080/mcp"
     }
@@ -117,32 +122,6 @@
       "options": {
         "apiKey": "{env:CODEBUDDY_API_KEY}",
         "baseURL": "https://copilot.tencent.com/v2"
-      }
-    },
-    "lkeap": {
-      "models": {
-        "glm-5.1": {
-          "name": "GLM 5.1",
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        },
-        "glm-5-turbo": {
-          "name": "GLM 5 Turbo",
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        }
-      },
-      "name": "LKEAP",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "{env:TENCENT_LKEAP_API_KEY}",
-        "baseURL": "https://api.lkeap.cloud.tencent.com/plan/v3"
       }
     }
   },

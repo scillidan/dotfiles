@@ -77,43 +77,6 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.lsp.log.set_level("debug")
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "yaml" },
-	callback = function()
-		vim.opt.expandtab = true
-	end,
-})
-
--- blink-cmp-dictionary
-vim.api.nvim_set_hl(0, "BlinkCmpKindDict", { default = false, fg = "#92FFB8" })
-
-vim.api.nvim_create_augroup("MarkdownRstText", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-	group = "MarkdownRstText",
-	pattern = { "markdown", "rst", "text" },
-	callback = function()
-		vim.wo.list = true
-		vim.wo.listchars = "tab:··,trail:-,nbsp:+,eol:¬"
-	end,
-})
-
--- godotdev.nvim
-vim.api.nvim_create_augroup("GodotIndent", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-	group = "GodotIndent",
-	pattern = { "gdscript", "cs" },
-	callback = function()
-		vim.bo.tabstop = 4
-		vim.bo.shiftwidth = 4
-		vim.bo.expandtab = true
-	end,
-})
-
--- time-machine.nvim
-vim.o.undofile = true
-vim.o.undodir = vim.fn.stdpath("data") .. "/undodir"
-
-require("config_lazy")
 require("latex")
-require("user_command")
+require("config_lazy")
 require("autocmd")

@@ -72,7 +72,10 @@ gls: gitleaks dir
 ## OpenCode
 oc: opencode.exe $* & reset
 occ: opencode --continue $* & reset
-oca: opencode --model aiping/glm-5 $* & reset
+occf: opencode --model codebuddy/deepseek-v4-flash $* & reset
+occp: opencode --model codebuddy/deepseek-v4-pro $* & reset
+ocdf: opencode --model deepseek/deepseek-v4-flash $* & reset
+ocdp: opencode --model deepseek/deepseek-v4-pro $* & reset
 
 ## OpenCommit
 ocoi: oco hook set
@@ -84,10 +87,13 @@ chk: pylanguagetool --api-url "http://localhost:8040/v2/" --input-type html --la
 pes: pet search | clip
 
 ## scooter
-scoo: scooter
+scr: scooter
 
 ## trashy
 rmy: trash
+
+## warp-wd
+wd: warp-wd
 
 ## yazi
 yau: ya pkg delete

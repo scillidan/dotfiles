@@ -1,4 +1,5 @@
 -- https://github.com/WhiteBlackGoose/nvim-latex-preconfig/blob/master/init.lua
+
 -- vim.cmd([[
 -- :autocmd BufNewFile,BufRead *.tex VimtexCompile
 -- ]])
@@ -12,6 +13,7 @@
 -- 		"-synctex=1",
 -- 	},
 -- }
+
 vim.g.vimtex_compiler_latexmk = {
 	build_dir = ".out",
 	options = {

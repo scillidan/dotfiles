@@ -1,3 +1,5 @@
+-- https://github.com/nickjvandyke/opencode.nvim#-setup
+
 vim.keymap.set({ "n", "x" }, "<C-a>", function()
 	require("opencode").ask("@this: ", { submit = true })
 end, { desc = "Ask opencode" })

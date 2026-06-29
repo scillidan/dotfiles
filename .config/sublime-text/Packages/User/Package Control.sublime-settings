@@ -1,4 +1,8 @@
 {
+  // "channels": [
+  //       "file:///E://Local/Download/sublime-text/repository.json",
+  //       "file:///E://Local/Download/sublime-text/channel_v3.json"
+	// ],
 	"installed_packages":
 	[
 		"A File Icon",
@@ -11,7 +15,6 @@
 		"Color Highlight",
 		"ColorConverter",
 		"CommandsBrowser",
-		"ComposerPackageInfo",
 		"ConvertFullHalfWidth",
 		"Data Wizard",
 		"DeleteBlankLines",
@@ -21,6 +24,7 @@
 		"FilterPipes",
 		"FindCursor",
 		"FindKeyConflicts",
+		"Formatter",
 		"HyperClick",
 		"ImagePreview",
 		"Inc-Dec-Value",
@@ -41,19 +45,13 @@
 		"M3U Syntax",
 		"Markdown Extended",
 		"MarLant",
-		"Minify",
 		"Mirodark Color Scheme",
 		"Open in Thunar",
 		"OpenUri",
 		"Origami",
 		"Package Control",
 		"PackageDev",
-		"PackagesUI",
 		"PowerShell",
-		"Pretty JSON",
-		"Pretty Lua",
-		"Pretty Shell",
-		"Pretty YAML",
 		"ProjectManager",
 		"rainbow_csv",
 		"RainbowBrackets",
@@ -61,7 +59,6 @@
 		"RestructuredText Improved",
 		"ScopeHunter",
 		"Show Unicode Name",
-		"Simple Fuzzy",
 		"SnippetMaker",
 		"SortBy",
 		"StickySearch",

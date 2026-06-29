@@ -9,7 +9,7 @@ require("toggleterm").setup({
 		if vim.fn.has("unix") == 1 then
 			return vim.o.shell
 		elseif vim.fn.has("win32") == 1 then
-			return "cmd.exe /k %USERPROFILE%/Usr/Git/dotfiles/.config/_windows_clink/init.cmd"
+			return "cmd.exe /k %USERHOME%/Share/dotfiles.win/Scoop/clink/init.cmd"
 		end
 	end,
 })
