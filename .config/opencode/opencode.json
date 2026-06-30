@@ -43,7 +43,7 @@
   ],
   "lsp": true,
   "mcp": {
-    "aginx": {
+    "agnix": {
       "command": ["agnix-mcp"],
       "enabled": true,
       "type": "local"

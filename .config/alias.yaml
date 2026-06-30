@@ -14,12 +14,6 @@ bunu: bun rm -g
 ## commandOK
 ok: commandok
 
-## Miniforge3
-condac: conda create
-condaa: conda activate
-condar: conda remove
-condal: conda list
-
 ## doggo
 dga: doggo A $* @1.1.1.1
 dgg: doggo A $* @8.8.8.8
@@ -60,6 +54,9 @@ gfu: forgit fixup
 gsq: forgit squash
 grw: forgit reword
 
+## gfold
+gfd: gfold
+
 ## Git
 gs: git status
 gc: git commit
@@ -68,6 +65,21 @@ gp: git push
 
 ## gli-leaks
 gls: gitleaks dir
+
+## lazygit
+lg: lazygit
+
+## mgitstatus
+mgit: mgitstatus
+
+## Miniforge3
+condac: conda create
+condaa: conda activate
+condar: conda remove
+condal: conda list
+
+## no-mistakes
+gpn: git push no-mistakes
 
 ## OpenCode
 oc: opencode.exe $* & reset
@@ -80,14 +92,33 @@ ocdp: opencode --model deepseek/deepseek-v4-pro $* & reset
 ## OpenCommit
 ocoi: oco hook set
 
-## pyLanguagetool
-chk: pylanguagetool --api-url "http://localhost:8040/v2/" --input-type html --lang en-US -c
-
 ## Pet
 pes: pet search | clip
 
+## pipe-renamer
+rnr: gsudo renamer --editor nvim *
+
+## pyLanguagetool
+chk: pylanguagetool --api-url "http://localhost:8040/v2/" --input-type html --lang en-US -c
+
+## Repomix
+rmix: repomix . --output _repomix.md
+
+## Repos
+rss: repos status
+rsp: repos pull
+rse: repos exec
+rsu: repos update
+
 ## scooter
 scr: scooter
+
+## Skills
+sks: skills search
+ski: skills add -g
+sku: skills remove -g
+skl: skills list -g
+skup: skills update
 
 ## trashy
 rmy: trash

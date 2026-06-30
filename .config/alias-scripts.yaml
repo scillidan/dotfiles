@@ -1,24 +1,12 @@
 ## https://github.com/scillidan/scripts
-cdx: bash for-cd.sh
-gfd: bash for-cd.sh gfold
-gsync: bash for-cd.sh git-sync
-lg: bash for-cd.sh lazygit
-mgit: bash for-cd.sh mgitstatus
-pro: bash for-cd.sh pro
-rss: bash for-cd.sh repos status
-rsp: bash for-cd.sh repos pull
-rse: bash for-cd.sh repos exec
-rsu: bash for-cd.sh repos update
-serve: bash for-cd.sh serve
-rnr: bash for-cd.sh gsudo renamer --editor nvim *
-rmix: bash for-cd.sh repomix . --output _repomix.md
-patx: bash for-path.sh
 abbr: bash llm_abbreviate.sh
 cmnt: bash llm_comment.sh
 expl: bash llm_explain.sh
 lambda: bash llm_lambda.sh
 sum: bash llm_summarize.sh
 trans: bash llm_translate.sh
+gh-del-workflow-run: bash gh-del-workflow-run.sh
+gh-disable-workflow: bash gh-disable-workflow.sh
 
 ## fzf
 bkmf: bash fzf-bookmarks.sh
