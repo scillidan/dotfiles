@@ -1,27 +1,26 @@
 -- https://github.com/nickjvandyke/opencode.nvim#-setup
-
 vim.keymap.set({ "n", "x" }, "<C-a>", function()
-	require("opencode").ask("@this: ", { submit = true })
+  require("opencode").ask("@this: ", { submit = true })
 end, { desc = "Ask opencode" })
 vim.keymap.set({ "n", "x" }, "<C-x>", function()
-	require("opencode").select()
+  require("opencode").select()
 end, { desc = "Execute opencode action…" })
 vim.keymap.set({ "n", "t" }, "<C-.>", function()
-	require("opencode").toggle()
+  require("opencode").toggle()
 end, { desc = "Toggle opencode" })
 
 vim.keymap.set({ "n", "x" }, "go", function()
-	return require("opencode").operator("@this ")
+  return require("opencode").operator("@this ")
 end, { expr = true, desc = "Add range to opencode" })
 vim.keymap.set("n", "goo", function()
-	return require("opencode").operator("@this ") .. "_"
+  return require("opencode").operator("@this ") .. "_"
 end, { expr = true, desc = "Add line to opencode" })
 
 vim.keymap.set("n", "<S-C-u>", function()
-	require("opencode").command("session.half.page.up")
+  require("opencode").command("session.half.page.up")
 end, { desc = "opencode half page up" })
 vim.keymap.set("n", "<S-C-d>", function()
-	require("opencode").command("session.half.page.down")
+  require("opencode").command("session.half.page.down")
 end, { desc = "opencode half page down" })
 
 -- You may want these if you stick with the opinionated "<C-a>" and "<C-x>" above — otherwise consider "<leader>o".

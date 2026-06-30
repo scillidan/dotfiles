@@ -1,7 +1,7 @@
 require("origami").setup({
   foldtext = {
     padding = {
-    	width = 1,
+      width = 1,
     },
     lineCount = {
       template = " %d ",

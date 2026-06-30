@@ -1,62 +1,62 @@
 -- For Termux
 if vim.env.TERMUX_VERSION ~= nil then
-	is_termux = true
+  is_termux = true
 else
-	is_termux = false
+  is_termux = false
 end
 
 -- For Windows 10
 if vim.fn.has("win32") == 1 then
-	-- https://github.com/nvim-lualine/lualine.nvim/issues/1253
-	-- vim.o.shell = vim.fn.executable('pwsh') and 'pwsh' or 'powershell'
-	-- vim.o.shellcmdflag =
-	--   '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;'
-	vim.opt.shell = "cmd.exe"
-	vim.o.shellcmdflag = "/k" .. os.getenv("USERHOME") .. "/Share/dotfiles.win/Scoop/clink/init.cmd"
-	vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
-	vim.o.shellquote = ""
-	vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
-	vim.o.shellxquote = ""
-	vim.g.plenary_curl_bin_path = os.getenv("SCOOP") .. "/apps/git/current/mingw64/bin/curl.exe"
-	vim.g.python3_host_prog = os.getenv("SCOOP") .. "/apps/python312/current/python.exe"
-	vim.g.sqlite_clib_path = os.getenv("SCOOP") .. "/apps/sqlite-dll/current/sqlite3.dll"
+  -- https://github.com/nvim-lualine/lualine.nvim/issues/1253
+  -- vim.o.shell = vim.fn.executable('pwsh') and 'pwsh' or 'powershell'
+  -- vim.o.shellcmdflag =
+  --   '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;'
+  vim.opt.shell = "cmd.exe"
+  vim.o.shellcmdflag = "/k" .. os.getenv("USERHOME") .. "/Share/dotfiles.win/Scoop/clink/init.cmd"
+  vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
+  vim.o.shellquote = ""
+  vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+  vim.o.shellxquote = ""
+  vim.g.plenary_curl_bin_path = os.getenv("SCOOP") .. "/apps/git/current/mingw64/bin/curl.exe"
+  vim.g.python3_host_prog = os.getenv("SCOOP") .. "/apps/python312/current/python.exe"
+  vim.g.sqlite_clib_path = os.getenv("SCOOP") .. "/apps/sqlite-dll/current/sqlite3.dll"
 end
 
 -- For Neovide
 if vim.g.neovide then
-	vim.g.neovide_cursor_animation_length = 0
-	vim.g.neovide_cursor_trail_size = 0
-	vim.g.neovide_floating_blur_amount_x = 1.0
-	vim.g.neovide_floating_blur_amount_y = 1.0
-	vim.g.neovide_hide_mouse_when_typing = true
-	vim.g.neovide_padding_bottom = 0
-	vim.g.neovide_padding_left = 0
-	vim.g.neovide_padding_right = 0
-	vim.g.neovide_padding_top = 0
-	vim.g.neovide_remember_window_size = true
-	vim.g.neovide_opacity = 1
-	vim.g.transparency = 1
-	-- https://github.com/neovide/neovide/issues/1282
-	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
-	vim.keymap.set("i", "<D-v>", "<C-R>+") -- Paste insert mode
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_cursor_trail_size = 0
+  vim.g.neovide_floating_blur_amount_x = 1.0
+  vim.g.neovide_floating_blur_amount_y = 1.0
+  vim.g.neovide_hide_mouse_when_typing = true
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_left = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_top = 0
+  vim.g.neovide_remember_window_size = true
+  vim.g.neovide_opacity = 1
+  vim.g.transparency = 1
+  -- https://github.com/neovide/neovide/issues/1282
+  vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
+  vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
+  vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+  vim.keymap.set("i", "<D-v>", "<C-R>+") -- Paste insert mode
 end
 
 vim.api.nvim_command("language en_US.UTF-8")
 if vim.fn.has("win32") == 1 then
-	vim.g.clipboard = {
-		name = "WindowsClipboard",
-		copy = {
-			["+"] = "clip.exe",
-			["*"] = "clip.exe",
-		},
-		paste = {
-			["+"] = "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
-			["*"] = "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
-		},
-		cache_enabled = 0,
-	}
+  vim.g.clipboard = {
+    name = "WindowsClipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
+      ["*"] = "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
+    },
+    cache_enabled = 0,
+  }
 end
 
 vim.o.clipboard = "unnamedplus"

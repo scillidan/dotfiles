@@ -1,6 +1,6 @@
 require("twilight").setup({
-	dimming = {
-		color = {},
-		alpha = 0.8,
-	},
+  dimming = {
+    color = {},
+    alpha = 0.8,
+  },
 })

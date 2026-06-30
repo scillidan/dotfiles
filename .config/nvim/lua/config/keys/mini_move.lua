@@ -1,12 +1,11 @@
 -- https://github.com/nvim-mini/mini.move#default-config
-
 return {
-	left = "<M-H>",
-	right = "<M-L>",
-	down = "<M-J>",
-	up = "<M-K>",
-	line_left = "<M-H>",
-	line_right = "<M-L>",
-	line_down = "<M-J>",
-	line_up = "<M-K>",
+  left = "<M-H>",
+  right = "<M-L>",
+  down = "<M-J>",
+  up = "<M-K>",
+  line_left = "<M-H>",
+  line_right = "<M-L>",
+  line_down = "<M-J>",
+  line_up = "<M-K>",
 }

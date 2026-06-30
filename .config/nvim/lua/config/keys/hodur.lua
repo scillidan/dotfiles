@@ -1,3 +1,3 @@
 require("hodur").setup({
-	key = "<C-S-u>",
+  key = "<C-S-u>",
 })

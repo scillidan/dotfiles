@@ -1,4 +1,4 @@
 require("nvim-mdlink").setup({
-	keymap = true,
-	cmp = true,
+  keymap = true,
+  cmp = true,
 })
