@@ -44,7 +44,7 @@
   "lsp": true,
   "mcp": {
     "aginx": {
-      "command": ["aginx-mcp"],
+      "command": ["agnix-mcp"],
       "enabled": true,
       "type": "local"
     },

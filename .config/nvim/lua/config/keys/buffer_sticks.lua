@@ -1,20 +1,20 @@
 return {
   {
-    "<leader>bj",
+    "<leader>bbj",
     function()
       BufferSticks.jump()
     end,
     desc = "Jump to buffer",
   },
   {
-    "<leader>bq",
+    "<leader>bbq",
     function()
       BufferSticks.close()
     end,
     desc = "Close buffer",
   },
   {
-    "<leader>bp",
+    "<leader>bbp",
     function()
       BufferSticks.list({
         action = function(buffer, leave)

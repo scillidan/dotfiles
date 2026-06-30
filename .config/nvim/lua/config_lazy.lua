@@ -19,13 +19,6 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup(
   {
-    -- Dependency
-    {
-      "nvim-tree/nvim-web-devicons",
-      config = function()
-        require("config.nvim_web_devicons")
-      end,
-    },
     -- Theme
     {
       "f-person/auto-dark-mode.nvim",
@@ -57,17 +50,8 @@ require("lazy").setup(
     {
       "b0o/incline.nvim",
       event = "VeryLazy",
-      dependencies = {
-        { "nvim-tree/nvim-web-devicons" },
-      },
       config = function()
         require("config.incline")
-      end,
-    },
-    {
-      "lewis6991/satellite.nvim",
-      config = function()
-        require("config.satellite")
       end,
     },
     {
@@ -117,15 +101,6 @@ require("lazy").setup(
       end,
     },
     { "nvim-treesitter/nvim-treesitter-context" },
-    {
-      "lukas-reineke/indent-blankline.nvim",
-      main = "ibl",
-      ---@module "ibl"
-      ---@type ibl.config
-      config = function()
-        require("config.ibl")
-      end,
-    },
     {
       "alexmozaidze/tree-comment.nvim",
       dependencies = "nvim-treesitter/nvim-treesitter",
@@ -232,7 +207,7 @@ require("lazy").setup(
     -- Snippet
     {
       "L3MON4D3/LuaSnip",
-      build = vim.fn.has("win32") ~= 0 and "make install_jsregexp" or nil,
+      build = "make install_jsregexp",
       dependencies = {
         "rafamadriz/friendly-snippets",
         "benfowler/telescope-luasnip.nvim",
@@ -246,6 +221,10 @@ require("lazy").setup(
       config = function()
         require("config.nvim_mdlink")
       end,
+    },
+    {
+        "rogue-87/inlyne.nvim",
+        opts = {},
     },
     {
       "tttol/md-outline.nvim",
@@ -391,20 +370,33 @@ require("lazy").setup(
     {
       "otavioschwanck/arrow.nvim",
       dependencies = {
-        -- { "nvim-tree/nvim-web-devicons" },
         { "echasnovski/mini.icons" },
       },
       opts = require("config.arrow"),
     },
     {
-      "crusj/bookmarks.nvim",
-      branch = "main",
-      dependencies = { "nvim-web-devicons" },
-      config = function()
-        require("config.bookmarks").setup()
-        require("telescope").load_extension("bookmarks")
-      end,
-      keys = require("config.keys.bookmarks"),
+        "heilgar/bookmarks.nvim",
+        dependencies = {
+            "kkharji/sqlite.lua",
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+          require("config.bookmarks")
+        end,
+        cmd = {
+            "BookmarkAdd",
+            "BookmarkRemove",
+            "Bookmarks"
+        },
+        keys = {
+            { "<leader>bma", "<cmd>BookmarkAdd<cr>", desc = "Add Bookmark" },
+            { "<leader>bmr", "<cmd>BookmarkRemove<cr>", desc = "Remove Bookmark" },
+            { "<leader>bmj", desc = "Jump to Next Bookmark" },
+            { "<leader>bmk", desc = "Jump to Previous Bookmark" },
+            { "<leader>bml", "<cmd>Bookmarks<cr>", desc = "List Bookmarks" },
+            { "<leader>bms", desc = "Switch Bookmark List" },
+        },
     },
     -- Fold
     {
@@ -481,6 +473,13 @@ require("lazy").setup(
       end,
     },
     -- Yank
+    {
+      'nemanjamalesija/smart-paste.nvim',
+      event = 'VeryLazy',
+      config = function()
+      	require('smart-paste').setup()
+      end,
+    },
     {
       "AckslD/nvim-neoclip.lua",
       dependencies = {
@@ -617,6 +616,7 @@ require("lazy").setup(
       config = function()
         require("config.toggleterm")
         require("config.keys.toggleterm")
+        require("config.scooter")
       end,
     },
     -- DAP
@@ -720,6 +720,6 @@ require("lazy").setup(
     },
   },
   {
-      rocks = { enabled = false }
+      rocks = { enabled = true }
   }
 )

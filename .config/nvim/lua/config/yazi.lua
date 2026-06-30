@@ -1,4 +1,4 @@
-local is_windows = package.config:sub(1, 1) == "\\"
+local is_windows = vim.fn.has("win32") == 1
 
 return {
   open_for_directories = false,

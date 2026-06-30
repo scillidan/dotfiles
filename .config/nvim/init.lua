@@ -11,15 +11,18 @@ if vim.fn.has("win32") == 1 then
   -- vim.o.shell = vim.fn.executable('pwsh') and 'pwsh' or 'powershell'
   -- vim.o.shellcmdflag =
   --   '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;'
+  local userhome = os.getenv("USERHOME")
   vim.opt.shell = "cmd.exe"
-  vim.o.shellcmdflag = "/k" .. os.getenv("USERHOME") .. "/Share/dotfiles.win/Scoop/clink/init.cmd"
-  vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
+  vim.o.shellpipe = "2>&1 | Tee-Object %s"
   vim.o.shellquote = ""
-  vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+  vim.o.shellredir = "2>&1 | Out-File %s"
   vim.o.shellxquote = ""
-  vim.g.plenary_curl_bin_path = os.getenv("SCOOP") .. "/apps/git/current/mingw64/bin/curl.exe"
-  vim.g.python3_host_prog = os.getenv("SCOOP") .. "/apps/python312/current/python.exe"
-  vim.g.sqlite_clib_path = os.getenv("SCOOP") .. "/apps/sqlite-dll/current/sqlite3.dll"
+  local scoop = os.getenv("SCOOP")
+  if scoop then
+    vim.g.plenary_curl_bin_path = scoop .. "/apps/git/current/mingw64/bin/curl.exe"
+    vim.g.python3_host_prog = scoop .. "/apps/python312/current/python.exe"
+    vim.g.sqlite_clib_path = scoop .. "/apps/sqlite-dll/current/sqlite3.dll"
+  end
 end
 
 -- For Neovide
@@ -45,6 +48,7 @@ end
 
 vim.api.nvim_command("language en_US.UTF-8")
 if vim.fn.has("win32") == 1 then
+  local has_pwsh = vim.fn.executable("pwsh") == 1
   vim.g.clipboard = {
     name = "WindowsClipboard",
     copy = {
@@ -52,8 +56,8 @@ if vim.fn.has("win32") == 1 then
       ["*"] = "clip.exe",
     },
     paste = {
-      ["+"] = "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
-      ["*"] = "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
+      ["+"] = has_pwsh and "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())" or "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
+      ["*"] = has_pwsh and "pwsh.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())" or "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString())",
     },
     cache_enabled = 0,
   }

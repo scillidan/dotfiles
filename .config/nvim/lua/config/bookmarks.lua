@@ -1,5 +1,6 @@
 require("bookmarks").setup({
-  width = 0.8,
-  height = 0.95,
-  preview_ratio = 0.4,
+    default_mappings = true,
+    db_path = vim.fn.stdpath('data') .. '/bookmarks.db'
 })
+
+require("telescope").load_extension("bookmarks")

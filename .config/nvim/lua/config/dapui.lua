@@ -58,9 +58,8 @@ vim.fn.sign_define("DapBreakpointCondition", {
 vim.fn.sign_define("DapStopped", { text = "-", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" })
 
 vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "DAP: Toggle UI" })
-vim.keymap.set("n", "<leader>ds", dap.continue, { desc = " Start/Continue" })
-vim.keymap.set("n", "<leader>ds", dap.continue, { desc = " Start/Continue" })
-vim.keymap.set("n", "<F1>", dap.continue, { desc = " Start/Continue" })
+vim.keymap.set("n", "<leader>ds", dap.continue, { desc = "Start/Continue" })
+vim.keymap.set("n", "<F1>", dap.continue, { desc = "Start/Continue" })
 vim.keymap.set("n", "<leader>di", dap.step_into, { desc = " Step into" })
 vim.keymap.set("n", "<F2>", dap.step_into, { desc = " Step into" })
 vim.keymap.set("n", "<leader>do", dap.step_over, { desc = " Step over" })

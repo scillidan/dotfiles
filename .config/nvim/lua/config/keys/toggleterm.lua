@@ -1,5 +1,3 @@
-local toggle_term = require("toggleterm")
-toggle_term.setup(opts)
 vim.keymap.set("n", "<leader>t1", "<CMD>:1ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 1" })
 vim.keymap.set("n", "<leader>t2", "<CMD>:2ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 2" })
 vim.keymap.set("n", "<leader>t3", "<CMD>:3ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 3" })

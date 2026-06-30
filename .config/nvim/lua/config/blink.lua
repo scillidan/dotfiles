@@ -243,8 +243,7 @@ return {
         score_offset = 80,
         min_keyword_length = 4,
         opts = {
-          -- dictionary_files = { vim.fn.expand('~/.config/nvim/dictionary/words.dict') },
-          dictionary_directories = { vim.fn.expand("~/.config/nvim/dictionary") },
+          dictionary_directories = { vim.fn.stdpath("config") .. "/dictionary" },
         },
       },
       spell = {
