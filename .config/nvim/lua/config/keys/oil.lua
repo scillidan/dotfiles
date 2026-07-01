@@ -1,3 +1,8 @@
+-- Global keymap to open oil
+vim.keymap.set("n", "-", function()
+  require("oil").open()
+end, { desc = "Open parent directory" })
+
 return {
   ["<C-h>"] = false,
   ["<C-l>"] = false,

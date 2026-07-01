@@ -2,7 +2,7 @@
 -- Ensure NVIM env var is set for scooter's --remote-send
 do
   local pipe = "\\\\.\\pipe\\nvim-scooter"
-  vim.fn.serverstart(pipe)
+  pcall(vim.fn.serverstart, pipe)
   vim.env.NVIM = pipe
 end
 
