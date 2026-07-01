@@ -1,5 +1,4 @@
 -- https://github.com/thomasschafer/scooter#neovim
-
 -- Ensure NVIM env var is set for scooter's --remote-send
 do
   local pipe = "\\\\.\\pipe\\nvim-scooter"

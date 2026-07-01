@@ -20,388 +20,179 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup(
   {
     -- Theme
-    {
-      "f-person/auto-dark-mode.nvim",
-      opts = {},
-    },
-    {
-      "emanuel2718/vanta.nvim",
-      priority = 1000,
+    { "f-person/auto-dark-mode.nvim", opts = {} },
+    { "emanuel2718/vanta.nvim", priority = 1000,
       config = function()
         require("config.vanta")
         vim.cmd.colorscheme("vanta")
-      end,
-    },
-    {
-      "projekt0n/github-nvim-theme",
-      name = "github-theme",
-      lazy = false,
-      priority = 1000,
-    },
+      end },
+    { "projekt0n/github-nvim-theme", name = "github-theme", lazy = false, priority = 1000 },
     -- Visual
-    {
-      "rachartier/tiny-glimmer.nvim",
-      event = "VeryLazy",
-      priority = 10,
-      config = function()
-        require("tiny-glimmer").setup()
-      end,
-    },
-    {
-      "b0o/incline.nvim",
-      event = "VeryLazy",
-      config = function()
-        require("config.incline")
-      end,
-    },
-    {
-      "tadaa/vimade",
-      config = function()
-        require("vimade").setup({
-          fadelevel = 0.8,
-        })
-      end,
-    },
-    {
-      "folke/twilight.nvim",
-      config = function()
-        require("config.twilight")
-      end,
-    },
-    {
-      "catgoose/nvim-colorizer.lua",
-      event = "BufReadPre",
-      config = function()
-        require("colorizer").setup()
-      end,
-    },
-    {
-      "saghen/filler-begone.nvim",
-    },
+    {"rachartier/tiny-glimmer.nvim", event = "VeryLazy", priority = 10, opts= {} },
+    { "b0o/incline.nvim", event = "VeryLazy", opts = {} },
+    { "tadaa/vimade", opts = { fadelevel = 0.8} },
+    { "folke/twilight.nvim", opts = { dimming = { color = {}, alpha = 0.8 } } },
+    { "catgoose/nvim-colorizer.lua", event = "BufReadPre", opts = {} },
+    { "saghen/filler-begone.nvim" },
     -- Key
-    {
-      "folke/which-key.nvim",
-      event = "VeryLazy",
+    { "folke/which-key.nvim", event = "VeryLazy",
       dependencies = { "echasnovski/mini.icons", opts = {} },
       config = function()
         require("config.which_key")
         require("config.keys.which_key")
-      end,
-    },
+      end },
 
-    -- treesitter
-    {
-      "nvim-treesitter/nvim-treesitter",
-      branch = "master",
-      lazy = false,
+    -- Treesitter
+    { "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false,
       dependencies = { "Hdoc1509/gh-actions.nvim" },
       config = function()
         require("gh-actions.tree-sitter").setup()
         require("config.treesitter")
-      end,
-    },
-    { "nvim-treesitter/nvim-treesitter-context" },
-    {
-      "alexmozaidze/tree-comment.nvim",
-      dependencies = "nvim-treesitter/nvim-treesitter",
-      opts = require("config.tree_comment"),
-    },
+      end  },
+    { "nvim-treesitter/nvim-treesitter-context",
+      dependencies = { "nvim-treesitter/nvim-treesitter" } },
+    { "ckolkey/ts-node-action", opts = {} },
     -- LSP
-    {
-      "folke/lazydev.nvim",
-      ft = "lua",
-      dependencies = {
-        { "DrKJeff16/wezterm-types", lazy = true },
-      },
+    { "folke/lazydev.nvim", ft = "lua",
+      dependencies = { { "DrKJeff16/wezterm-types", lazy = true } },
       config = function()
         require("config.lazydev")
-      end,
-    },
+      end },
     { "neovim/nvim-lspconfig" },
-    {
-      "mason-org/mason.nvim",
+    { "mason-org/mason.nvim",
       config = function()
         require("config.mason")
-      end,
-    },
-    {
-      "mason-org/mason-lspconfig.nvim",
-      config = function()
-        require("config.mason_lspconfig")
-      end,
-    },
-    {
-      "junnplus/lsp-setup.nvim",
-      lazy = true,
+      end },
+    { "mason-org/mason-lspconfig.nvim", opts = { ensure_installed = {} } },
+    { "junnplus/lsp-setup.nvim", lazy = true,
       config = function()
         require("config.lsp_setup")
-      end,
-    },
+      end },
     -- Linter
-    {
-      "mfussenegger/nvim-lint",
+    { "mfussenegger/nvim-lint",
       config = function()
         require("config.lint")
-      end,
-    },
-    {
-      "rshkarin/mason-nvim-lint",
+      end },
+    { "rshkarin/mason-nvim-lint",
       dependencies = { "mfussenegger/nvim-lint" },
-      config = function()
-        require("mason-nvim-lint").setup({
-          automatic_installation = true,
-        })
-      end,
-    },
-    ---- Formatter
-    {
-      "stevearc/conform.nvim",
+      opts = { automatic_installation = true } },
+    -- Formatter
+    { "stevearc/conform.nvim",
       config = function()
         require("config.conform")
-      end,
-    },
-    {
-      "zapling/mason-conform.nvim",
-      config = function()
-        require("mason-conform").setup()
-      end,
-    },
+      end  },
+    { "zapling/mason-conform.nvim", opts = {} },
     -- CMP
-    {
-      "saghen/blink.cmp",
-      event = { "BufReadPost", "BufNewFile" },
-      version = "1.*",
+    { "saghen/blink.cmp", event = { "BufReadPost", "BufNewFile" }, version = "1.*",
       -- build = "cargo build --release",
       dependencies = {
         { "xzbdmw/colorful-menu.nvim", opt = {} },
         { "saghen/blink.compat" },
         { "rafamadriz/friendly-snippets", version = "v2.*" },
         { "erooke/blink-cmp-latex" },
-        -- { "jdrupal-dev/css-vars.nvim" },
-        -- { "alexandre-abrioux/blink-cmp-npm.nvim" },
-        { "yus-works/csc.nvim", opts = {} },
-        {
-          "Dynge/gitmoji.nvim",
-          ft = "gitcommit",
+        { "alexandre-abrioux/blink-cmp-npm.nvim" },
+        { "jdrupal-dev/css-vars.nvim" },
+        { "disrupted/blink-cmp-conventional-commits" },
+        { "Dynge/gitmoji.nvim", ft = "gitcommit",
           config = function()
             require("gitmoji").setup({})
-          end,
-        },
+          end },
         { "moyiz/blink-emoji.nvim" },
-        {
-          "Kaiser-Yang/blink-cmp-dictionary",
-          dependencies = { "nvim-lua/plenary.nvim" },
-        },
+        { "Kaiser-Yang/blink-cmp-dictionary",
+          dependencies = { "nvim-lua/plenary.nvim" } },
         { "ribru17/blink-cmp-spell" },
         { "mikavilpas/blink-ripgrep.nvim" },
-        { "mgalliou/blink-cmp-tmux" },
+        { "dynamotn/blink-cmp-zellij" },
+        { "mgalliou/blink-cmp-tmux" }
       },
-      ---@module 'blink.cmp'
-      ---@type blink.cmp.Config
       opts = require("config.blink"),
       config = function(_, opts)
         require("blink.cmp").setup(opts)
         vim.api.nvim_set_hl(0, "BlinkCmpKindDict", { default = false, fg = "#92FFB8" })
-      end,
-    },
+      end },
     -- Snippet
-    {
-      "L3MON4D3/LuaSnip",
+    { "L3MON4D3/LuaSnip",
       build = "make install_jsregexp",
-      dependencies = {
-        "rafamadriz/friendly-snippets",
-        "benfowler/telescope-luasnip.nvim",
-      },
-      config = require("config.luasnip"),
-    },
+      dependencies = { "rafamadriz/friendly-snippets", "benfowler/telescope-luasnip.nvim" },
+      config = require("config.luasnip") },
 
     -- Markdown
-    {
-      "Nedra1998/nvim-mdlink",
-      config = function()
-        require("config.nvim_mdlink")
-      end,
-    },
-    {
-        "rogue-87/inlyne.nvim",
-        opts = {},
-    },
-    {
-      "tttol/md-outline.nvim",
-      config = function()
-        require("md-outline").setup({
-          auto_open = false,
-        })
-      end,
-    },
-    {
-      "AntonVanAssche/md-headers.nvim",
-      version = "*",
-      ft = { "markdown" },
+    { "rogue-87/inlyne.nvim", opts = {} },
+    { "Nedra1998/nvim-mdlink", opts = { keymap = true, cmp = true } },
+    { "tttol/md-outline.nvim", opts = { auto_open = false} },
+    { "AntonVanAssche/md-headers.nvim", version = "*", ft = { "markdown" },
       config = function()
         require("config.md_headers")
-      end,
-    },
+      end },
     -- CSV
-    {
-      "hat0uma/csvview.nvim",
-      ---@module "csvview"
-      ---@type CsvView.Options
-      config = function()
-        require("config.csvview")
-      end,
-      cmd = {
-        "CsvViewEnable",
-        "CsvViewDisable",
-        "CsvViewToggle",
+    { "hat0uma/csvview.nvim",
+      opts = {
+	      parser = { comments = { "#", "//" } },
+        keymaps = require("config.keys.csvview")
       },
-    },
+      cmd = require("config.cmd.csvview") },
     -- Typst
-    {
-      "chomosuke/typst-preview.nvim",
-      ft = "typst",
-      version = "1.*",
+    { "chomosuke/typst-preview.nvim", version = "1.*", ft = "typst",
       config = function()
         require("typst-preview").setup()
-      end,
-    },
+      end },
     -- LaTeX
-    {
-      "iurimateus/luasnip-latex-snippets.nvim",
-      dependencies = {
-        { "L3MON4D3/LuaSnip" },
-        { "lervag/vimtex", lazy = false },
-      },
+    { "iurimateus/luasnip-latex-snippets.nvim",
+      dependencies = { { "L3MON4D3/LuaSnip" }, { "lervag/vimtex", lazy = false } },
       config = function()
         require("luasnip-latex-snippets").setup() -- setup({ use_treesitter = true })
         require("luasnip").config.setup({ enable_autosnippets = false })
-      end,
-    },
-    {
-      "aidavdw/bibcite.nvim",
-      cmd = {
-        "CiteOpen",
-        "CiteInsert",
-        "CitePeek",
-        "CiteNote",
-      },
-      config = function()
-        require("config.bibcite")
-      end,
-    },
-
+      end },
+    { "aidavdw/bibcite.nvim",
+      cmd = require("config.cmd.bibcite") },
 
     -- Explorer
-    {
-      "stevearc/oil.nvim",
-      -- dependencies = { "echasnovski/mini.icons", opts = {} },
-      lazy = false,
+    { "stevearc/oil.nvim", lazy = false,
       config = function()
         require("config.oil")
-      end,
-    },
-    {
-      "refractalize/oil-git-status.nvim",
-      dependencies = {
-        "stevearc/oil.nvim",
-      },
+      end },
+    { "refractalize/oil-git-status.nvim",
+      dependencies = { "stevearc/oil.nvim" },
       config = function()
         require("config.oil_git_status")
-      end,
-    },
-    {
-      "mikavilpas/yazi.nvim",
-      version = "*", -- use the latest stable version
-      event = "VeryLazy",
-      dependencies = {
-        { "nvim-lua/plenary.nvim", lazy = true },
-      },
-      ---@type YaziConfig | {}
+      end },
+    { "mikavilpas/yazi.nvim", version = "*", event = "VeryLazy",
+      dependencies = { { "nvim-lua/plenary.nvim", lazy = true } },
       opts = require("config.yazi"),
       init = function()
         vim.g.loaded_netrwPlugin = 1
-      end,
-    },
+      end  },
     -- Buffer
-    {
-      "leath-dub/snipe.nvim",
-      opts = {},
-    },
-    {
-      "ahkohd/buffer-sticks.nvim",
-      event = "VeryLazy",
-      config = function()
-        require("config.buffer_sticks")
-      end,
-      keys = require("config.keys.buffer_sticks"),
-    },
-    {
-      "lewis6991/gitsigns.nvim",
-      config = function()
-        require("config.gitsigns")
-      end,
-    },
+    { "leath-dub/snipe.nvim", opts = {} },
+    { "lewis6991/gitsigns.nvim", opts = {} },
     -- Window
-    {
-      "sindrets/winshift.nvim",
-      config = function()
-        require("winshift").setup()
-      end,
-    },
+    { "sindrets/winshift.nvim", opts = {} },
     -- Session
-    {
-      "rmagatti/auto-session",
-      lazy = false,
+    { "rmagatti/auto-session", lazy = false,
       config = function()
         require("config.auto_session")
       end,
       init = function()
         vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-      end,
-    },
-    {
-      "natecraddock/workspaces.nvim",
-      config = function()
-        require("config.workspaces")
-      end,
-    },
+      end },
+    { "natecraddock/workspaces.nvim", opts = { hooks = { open = { "Telescope find_files" } } } },
 
     -- Bookmark
-    {
-      "otavioschwanck/arrow.nvim",
-      dependencies = {
-        { "echasnovski/mini.icons" },
-      },
-      opts = require("config.arrow"),
-    },
-    {
-        "heilgar/bookmarks.nvim",
-        dependencies = {
-            "kkharji/sqlite.lua",
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-        },
-        config = function()
-          require("config.bookmarks")
-        end,
-        cmd = {
-            "BookmarkAdd",
-            "BookmarkRemove",
-            "Bookmarks"
-        },
-        keys = {
-            { "<leader>bma", "<cmd>BookmarkAdd<cr>", desc = "Add Bookmark" },
-            { "<leader>bmr", "<cmd>BookmarkRemove<cr>", desc = "Remove Bookmark" },
-            { "<leader>bmj", desc = "Jump to Next Bookmark" },
-            { "<leader>bmk", desc = "Jump to Previous Bookmark" },
-            { "<leader>bml", "<cmd>Bookmarks<cr>", desc = "List Bookmarks" },
-            { "<leader>bms", desc = "Switch Bookmark List" },
-        },
-    },
+    { "otavioschwanck/arrow.nvim",
+      dependencies = {"echasnovski/mini.icons" },
+      opts = require("config.arrow") },
+    { "heilgar/bookmarks.nvim",
+      dependencies = { "kkharji/sqlite.lua", "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+      config = function()
+        require("bookmarks").setup({
+          default_mappings = true,
+          db_path = vim.fn.stdpath('data') .. '/bookmarks.db'
+        })
+        require("telescope").load_extension("bookmarks")
+      end,
+      cmd = require("config.cmd.bookmarks") },
     -- Fold
-    {
-      "chrisgrieser/nvim-origami",
-      event = "VeryLazy",
+    { "chrisgrieser/nvim-origami", event = "VeryLazy",
       dependencies = { "lewis6991/gitsigns.nvim" },
       config = function()
         require("config.origami")
@@ -409,148 +200,72 @@ require("lazy").setup(
       init = function()
         vim.opt.foldlevel = 99
         vim.opt.foldlevelstart = 99
-      end,
-    },
+      end },
     -- Goto
-    {
-      "dnlhc/glance.nvim",
+    { "dnlhc/glance.nvim",
       config = function()
         require("config.glance")
       end,
-      cmd = "Glance",
-    },
+      cmd = "Glance" },
     -- Jump
-    {
-      "folke/flash.nvim",
-      event = "VeryLazy",
-      ---@type Flash.Config
-      config = function()
-        require("flash")
-      end,
-      -- stylua: ignore
-    },
+    { "folke/flash.nvim", event = "VeryLazy", opts = {} },
     -- Multiple-cursor
-    {
-      "brenton-leighton/multiple-cursors.nvim",
-      version = "*",
+    { "brenton-leighton/multiple-cursors.nvim", version = "*",
       config = function()
         require("config.multiple_cursors")
-      end,
-    },
+      end },
     -- Replace
-    {
-      "MagicDuck/grug-far.nvim",
-      config = function()
-        require("grug-far").setup()
-      end,
-    },
+    { "MagicDuck/grug-far.nvim", opts = {} },
     -- Save
-    {
-      "Pocco81/auto-save.nvim",
+    { "Pocco81/auto-save.nvim",
       config = function()
-        require("config.auto_save")
+        require("auto-save").setup({
+          enabled = false,
+        })
         if require("luasnip").in_snippet() then
           return false
         end
-      end,
-    },
-    {
-      "vladdoster/remember.nvim",
-      config = function()
-        require("remember").setup({
-          open_folds = true,
-        })
-      end,
-    },
+      end },
+    { "vladdoster/remember.nvim", opts = { open_folds = true } },
     -- Sort
-    {
-      "mtrajano/tssorter.nvim",
-      version = "*",
-      ---@module "tssorter"
-      ---@type TssorterOpts
-      config = function()
-        require("config.tssorter")
-      end,
-    },
+    { "mtrajano/tssorter.nvim", version = "*", opts = {} },
     -- Yank
-    {
-      'nemanjamalesija/smart-paste.nvim',
-      event = 'VeryLazy',
-      config = function()
-      	require('smart-paste').setup()
-      end,
-    },
-    {
-      "AckslD/nvim-neoclip.lua",
-      dependencies = {
-        { "kkharji/sqlite.lua", module = "sqlite" },
-      },
+    { "nemanjamalesija/smart-paste.nvim", event = "VeryLazy", opts = {} },
+    { "AckslD/nvim-neoclip.lua",
+      dependencies = { { "kkharji/sqlite.lua", module = "sqlite" } },
       config = function()
         require("config.neoclip")
       end,
-      opts = { keys = require("config.keys.neoclip") },
-    },
+      opts = { keys = require("config.keys.neoclip") } },
 
     -- mini.nvim
-    {
-      "echasnovski/mini.icons",
-      version = "*",
-      config = function()
-        require("mini.icons").setup()
-      end,
-    },
-    {
-      "echasnovski/mini.statusline",
-      version = "*",
+    { "echasnovski/mini.icons", version = "*", opts = {} },
+    { "echasnovski/mini.statusline", version = "*",
       config = function()
         require("config.mini_statusline")
-      end,
-    },
-    {
-      "echasnovski/mini.cursorword",
-      version = "*",
-      config = function()
-        require("mini.cursorword").setup()
-      end,
-    },
-    {
-      "echasnovski/mini.pairs",
-      version = "*",
+      end },
+    { "echasnovski/mini.cursorword", version = "*", opts = {} },
+    { "echasnovski/mini.pairs", version = "*",
       config = function()
         require("config.mini_pairs")
-      end,
-    },
-    {
-      "echasnovski/mini.move",
-      version = "*",
-      config = function()
-        require("config.mini_move")
-      end,
-    },
-    {
-      "echasnovski/mini.align",
-      version = "*",
+      end },
+    { "echasnovski/mini.move", version = "*",
+      opts = {
+      	mappings = require("config.keys.mini_move"),
+        options = { reindent_linewise = true } } },
+    { "echasnovski/mini.align", version = "*",
       config = function()
         require("mini.align").setup()
-      end,
-    },
-    {
-      "echasnovski/mini.surround",
-      version = "*",
+      end },
+    { "echasnovski/mini.surround", version = "*",
       config = function()
         require("mini.surround").setup()
-      end,
-    },
-    {
-      "echasnovski/mini.comment",
-      version = "*",
+      end },
+    { "echasnovski/mini.comment", version = "*",
       config = function()
         require("mini.comment").setup()
-      end,
-    },
-    {
-      "echasnovski/mini.trailspace",
-      version = "*",
+      end },
+    { "echasnovski/mini.trailspace", version = "*",
       config = function()
         require("mini.trailspace").setup()
         vim.api.nvim_create_user_command("TrimSpaces", function()
@@ -559,167 +274,91 @@ require("lazy").setup(
         vim.api.nvim_create_user_command("TrimLastLines", function()
           require("mini.trailspace").trim_last_lines()
         end, { desc = "Trim last lines" })
-      end,
-    },
-    {
-      "echasnovski/mini.splitjoin",
-      version = "*",
-      config = function()
-        require("config.mini_splitjoin")
-      end,
-    },
-    {
-      "echasnovski/mini.diff",
-      version = "*",
+      end },
+    { "echasnovski/mini.splitjoin", version = "*",
+      opts = { mappings = require("config.keys.mini_splitjoin") } },
+    { "echasnovski/mini.diff", version = "*",
       config = function()
         require("mini.diff").setup()
-      end,
-    },
-    {
-      "echasnovski/mini-git",
-      version = "*",
-      main = "mini.git",
+      end },
+    { "echasnovski/mini-git", version = "*", main = "mini.git",
       config = function()
         require("mini.git").setup()
-      end,
-    },
+      end },
 
     -- telescope.nvim
-    {
-      "nvim-telescope/telescope.nvim",
-      branch = "0.1.x",
+    { "nvim-telescope/telescope.nvim", branch = "0.1.x",
       dependencies = { "nvim-lua/plenary.nvim" },
       config = function()
         require("config.telescope")
-      end,
-    },
+      end },
     { "MaximilianLloyd/adjacent.nvim" },
     { "jonarrien/telescope-cmdline.nvim" },
     { "princejoogie/dir-telescope.nvim" },
     { "tsakirist/telescope-lazy.nvim" },
     { "polirritmico/telescope-lazy-plugins.nvim" },
     { "smartpde/telescope-recent-files" },
-    {
-      "debugloop/telescope-undo.nvim",
-    {
-      "jvgrootveld/telescope-zoxide",
-      dependencies = {
-        { "nvim-lua/popup.nvim" },
-      },
-    },
-    },
-
+    { "debugloop/telescope-undo.nvim" },
+    { "jvgrootveld/telescope-zoxide",
+    	dependencies = { "nvim-lua/popup.nvim" } },
     -- Console
-    {
-      "akinsho/toggleterm.nvim",
-      version = "*",
+    { "akinsho/toggleterm.nvim", version = "*",
       config = function()
         require("config.toggleterm")
         require("config.keys.toggleterm")
         require("config.scooter")
-      end,
-    },
+      end },
     -- DAP
-    {
-      "mfussenegger/nvim-dap",
-      dependencies = { "jbyuki/one-small-step-for-vimkind" },
-      lazy = VaryLazy,
+    { "mfussenegger/nvim-dap", lazy = VaryLazy,
+    	dependencies = { "jbyuki/one-small-step-for-vimkind" },
       config = function()
         require("config.dap")
-      end,
-    },
-    {
-      "theHamsta/nvim-dap-virtual-text",
-      config = function()
-        require("nvim-dap-virtual-text").setup()
-      end,
-    },
-    {
-      "rcarriga/nvim-dap-ui",
-      dependencies = {
-        "mfussenegger/nvim-dap",
-        "nvim-neotest/nvim-nio",
-      },
+      end },
+    { "theHamsta/nvim-dap-virtual-text", opts = {} },
+    { "rcarriga/nvim-dap-ui",
+      dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
       config = function()
         require("config.dapui")
-      end,
-    },
+      end },
     -- Debug
-    {
-      "folke/trouble.nvim",
-      opts = {},
-      cmd = "Trouble",
-    },
-    {
-      "mfussenegger/nvim-dap-python",
+    { "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
+    { "mfussenegger/nvim-dap-python", ft = { "python" },
       cond = vim.fn.has("unix") == 1,
-      dependencies = {
-        "mfussenegger/nvim-dap",
-        "rcarriga/nvim-dap-ui",
-      },
-      ft = { "python" },
+      dependencies = { "mfussenegger/nvim-dap", "rcarriga/nvim-dap-ui" },
       config = function()
         local python_path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
         require("dap-python").setup(python_path)
-      end,
-    },
+      end },
     -- Development
-    {
-      "S1M0N38/love2d.nvim",
-      event = "VeryLazy",
-      opts = {},
-    },
-    {
-      "Mathijs-Bakker/godotdev.nvim",
-      dependencies = {
-        "nvim-lspconfig",
-        "nvim-dap",
-        "nvim-dap-ui",
-        "nvim-treesitter",
-      },
-    },
+    -- { "S1M0N38/love2d.nvim", event = "VeryLazy", opts = {} },
+    { "Mathijs-Bakker/godotdev.nvim",
+      dependencies = { "nvim-lspconfig", "nvim-dap", "nvim-dap-ui", "nvim-treesitter" } },
+    -- LLM
+    { "nickjvandyke/opencode.nvim",
+      config = function()
+        vim.g.opencode_opts = {}
+        vim.o.autoread = true
+      end },
+    { "TabbyML/vim-tabby", lazy = false,
+      dependencies = { "neovim/nvim-lspconfig" },
+      init = function()
+        -- bun add -g tabby-agent@latest
+        vim.g.tabby_agent_start_command = {"tabby-agent", "--stdio"}
+        vim.g.tabby_inline_completion_trigger = "auto"
+      end },
 
     -- Others
-    {
-      "vodchella/hodur.nvim",
+    { "vodchella/hodur.nvim",
       config = function()
         require("config.keys.hodur")
-      end,
-    },
-    {
-      "ZWindL/orphans.nvim",
-      config = function()
-        require("orphans").setup({})
-      end,
-    },
-    {
-      "nickjvandyke/opencode.nvim",
-      config = function()
-        require("config.opencode")
-        require("config.keys.opencode")
-      end,
-    },
-    {
-      "christoomey/vim-tmux-navigator",
+      end },
+    { "ZWindL/orphans.nvim", opts = {} },
+    { "christoomey/vim-tmux-navigator",
       cond = vim.fn.has("unix") == 1,
-      cmd = {
-        "TmuxNavigateLeft",
-        "TmuxNavigateDown",
-        "TmuxNavigateUp",
-        "TmuxNavigateRight",
-        "TmuxNavigatePrevious",
-        "TmuxNavigatorProcessList",
-      },
-      keys = {
-        { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-        { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-        { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-        { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-        { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-      },
-    },
-  },
-  {
-      rocks = { enabled = true }
+      cmd = require("config.cmd.vim_tmux_navigator"),
+      keys = function()
+        return require("config.keys.vim_tmux_navigator")
+      end },
+    rocks = { enabled = true }
   }
 )

@@ -1,4 +1,5 @@
 local userhome = os.getenv("USERHOME")
+
 require("toggleterm").setup({
   -- insert_mappings = false, -- Relevant
   -- terminal_mappings = false, --  Relevant

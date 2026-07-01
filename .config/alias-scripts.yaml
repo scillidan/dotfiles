@@ -15,6 +15,7 @@ tldf: bash fzf-tldr.sh
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
 ff-devdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs-user-md"
 ff-tables: bash fzf-files.sh "$USERHOME/Share/files/tables"
+ocf: bash fzf-opencode-session.sh
 
 ## Git
 git-init: bash git-init.sh

@@ -85,8 +85,9 @@ return {
         "path",
         "snippets",
         "buffer",
-        "csc",
+        "conventional_commits",
         "ripgrep",
+        "zellij",
         "tmux",
         "spell",
       }
@@ -94,27 +95,21 @@ return {
       if vim.tbl_contains({ "gitcommit", "jj" }, vim.bo.filetype) then
         table.insert(result, "gitmoji")
       end
-
       if vim.tbl_contains({ "gitcommit", "markdown", "text" }, vim.bo.filetype) then
         table.insert(result, "emoji")
       end
-
       if vim.tbl_contains({ "markdown", "text" }, vim.bo.filetype) or inside_comment_block() then
         table.insert(result, "dictionary")
       end
-
       if vim.bo.filetype == "markdown" then
         table.insert(result, "mdlink")
       end
-
       if vim.bo.filetype == "tex" then
         table.insert(result, "latex")
       end
-
       if vim.tbl_contains({ "javascript", "typescript", "javascriptreact", "typescriptreact" }, vim.bo.filetype) then
         table.insert(result, "npm")
       end
-
       if vim.tbl_contains({ "css", "scss", "less", "javascript", "typescript" }, vim.bo.filetype) then
         table.insert(result, "css_vars")
       end
@@ -122,27 +117,24 @@ return {
       return result
     end,
 
+    per_filetype = {
+      opencode_ask = { 'lsp', 'buffer' },
+    },
+
     providers = {
       lazydev = {
         name = "LazyDev",
         module = "lazydev.integrations.blink",
-        score_offset = 100,
       },
       --https://linkarzu.com/posts/neovim/blink-cmp-updates/#disabled-lsp-fallbcks
       lsp = {
         name = "LSP",
-        enabled = true,
         module = "blink.cmp.sources.lsp",
-        min_keyword_length = 3,
-        score_offset = 90,
+        fallbacks = {}
       },
       snippets = {
         name = "snippets",
-        enabled = true,
-        max_items = 15,
-        min_keyword_length = 2,
         module = "blink.cmp.sources.snippets",
-        score_offset = 85,
         should_show_items = function()
           local col = vim.api.nvim_win_get_cursor(0)[2]
           local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
@@ -166,10 +158,42 @@ return {
           return items
         end,
       },
+      buffer = {
+        opts = {
+          get_bufnrs = function()
+            return vim.tbl_filter(function(bufnr)
+              return vim.bo[bufnr].buftype == ""
+            end, vim.api.nvim_list_bufs())
+          end,
+        },
+      },
+      conventional_commits = {
+          name = 'Conventional Commits',
+          module = 'blink-cmp-conventional-commits',
+          enabled = function()
+              return vim.bo.filetype == 'gitcommit'
+          end,
+          ---@module 'blink-cmp-conventional-commits'
+          ---@type blink-cmp-conventional-commits.Options
+          -- https://github.com/disrupted/blink-cmp-conventional-commits#configuration
+          opts = {},
+      },
+      gitmoji = {
+        name = "Gitmoji",
+        module = "gitmoji.blink",
+        opts = {
+          filetypes = { "gitcommit", "jj" },
+        },
+      },
+      mdlink = {
+        name = "mdlink",
+        module = "blink.compat.source",
+      },
       latex = {
         name = "LaTeX",
         module = "blink-cmp-latex",
         opts = {
+        	-- https://github.com/disrupted/blink-cmp-conventional-commits#configuration
           insert_command = function(ctx)
             local ft = vim.api.nvim_get_option_value("filetype", {
               scope = "local",
@@ -182,18 +206,10 @@ return {
           end,
         },
       },
-      css_vars = {
-        name = "CssVars",
-        module = "css-vars.blink",
-        opts = {
-          search_extensions = { ".js", ".ts", ".jsx", ".tsx" },
-        },
-      },
       npm = {
         name = "NPM",
         module = "blink-cmp-npm",
         async = true,
-        score_offset = 100,
         ---@module "blink-cmp-npm"
         ---@type blink-cmp-npm.Options
         opts = {
@@ -202,30 +218,16 @@ return {
           only_latest_version = false,
         },
       },
-      mdlink = {
-        name = "mdlink",
-        module = "blink.compat.source",
-      },
-      buffer = {
+      css_vars = {
+        name = "CssVars",
+        module = "css-vars.blink",
         opts = {
-          get_bufnrs = function()
-            return vim.tbl_filter(function(bufnr)
-              return vim.bo[bufnr].buftype == ""
-            end, vim.api.nvim_list_bufs())
-          end,
-        },
-      },
-      gitmoji = {
-        name = "Gitmoji",
-        module = "gitmoji.blink",
-        opts = {
-          filetypes = { "gitcommit", "jj" },
+          search_extensions = { ".js", ".ts", ".jsx", ".tsx" },
         },
       },
       emoji = {
         module = "blink-emoji",
         name = "Emoji",
-        score_offset = 15,
         opts = {
           insert = true,
           ---@type string|table|fun():table
@@ -234,13 +236,16 @@ return {
           end,
         },
         should_show_items = function()
-          return vim.tbl_contains({ "gitcommit", "markdown", "text" }, vim.o.filetype)
+          return vim.tbl_contains(
+          	{ "gitcommit", "markdown", "text" },
+          	vim.o.filetype
+          )
         end,
       },
       dictionary = {
         module = "blink-cmp-dictionary",
         name = "Dict",
-        score_offset = 80,
+        score_offset = 50,
         min_keyword_length = 4,
         opts = {
           dictionary_directories = { vim.fn.stdpath("config") .. "/dictionary" },
@@ -249,7 +254,7 @@ return {
       spell = {
         name = "Spell",
         module = "blink-cmp-spell",
-        score_offset = 60,
+        score_offset = 40,
         opts = {
           enable_in_context = function()
             local spelllang = vim.opt_local.spelllang:get()
@@ -309,16 +314,17 @@ return {
           return items
         end,
       },
+      zellij = {
+        module = "blink-cmp-zellij",
+        name = "zellij",
+        -- https://github.com/dynamotn/blink-cmp-zellij#installation--configuration
+        opts = {},
+      },
       tmux = {
-        --https://github.com/mgalliou/blink-cmp-tmux?tab=readme-ov-file#installation--configuration
         module = "blink-cmp-tmux",
         name = "tmux",
-        opts = {
-          all_panes = false,
-          capture_history = false,
-          triggered_only = false,
-          trigger_chars = { "." },
-        },
+        --https://github.com/mgalliou/blink-cmp-tmux?tab=readme-ov-file#installation--configuration
+        opts = {},
       },
     },
   },

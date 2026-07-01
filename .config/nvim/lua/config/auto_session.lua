@@ -8,7 +8,7 @@ require("auto-session").setup({
   session_lens = {
     picker = telescope,
     picker_opts = {
-      border = false,
-    },
-  },
+      border = false
+    }
+  }
 })

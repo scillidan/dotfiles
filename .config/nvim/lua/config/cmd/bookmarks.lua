@@ -1,0 +1,5 @@
+return {
+  "BookmarkAdd",
+  "BookmarkRemove",
+  "Bookmarks"
+}

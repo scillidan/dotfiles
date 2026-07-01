@@ -43,5 +43,5 @@ require("lsp-setup").setup({
     -- nextls = {},
     -- tailwindcss = {},
     -- typescript_language_server = {},
-  },
+  }
 })
