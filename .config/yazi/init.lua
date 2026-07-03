@@ -3,6 +3,11 @@ local is_windows = (package.config:sub(1, 1) == "\\")
 local is_termux = os.getenv("TERMUX_VERSION") ~= nil
 
 require("close-and-restore-tab"):setup()
+require("responsive-layout"):setup {
+	wide_min = 90,
+	split    = 0.5,
+	divider  = "─",
+}
 require("relative-path").setup()
 require("copy-file-contents"):setup({
 	append_char = "\n",

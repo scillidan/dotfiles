@@ -98,14 +98,15 @@ require("lazy").setup(
             require("gitmoji").setup({})
           end },
         { "moyiz/blink-emoji.nvim" },
-        { "Kaiser-Yang/blink-cmp-dictionary",
-          dependencies = { "nvim-lua/plenary.nvim" } },
+        { "archie-judd/blink-cmp-words" },
         { "ribru17/blink-cmp-spell" },
         { "mikavilpas/blink-ripgrep.nvim" },
         { "dynamotn/blink-cmp-zellij" },
         { "mgalliou/blink-cmp-tmux" }
       },
-      opts = require("config.blink"),
+      config = function()
+        require("config.blink")
+      end,
       config = function(_, opts)
         require("blink.cmp").setup(opts)
         vim.api.nvim_set_hl(0, "BlinkCmpKindDict", { default = false, fg = "#92FFB8" })
@@ -128,8 +129,7 @@ require("lazy").setup(
     { "hat0uma/csvview.nvim",
       opts = {
 	      parser = { comments = { "#", "//" } },
-        keymaps = require("config.keys.csvview")
-      },
+        keymaps = require("config.keys.csvview") },
       cmd = require("config.cmd.csvview") },
     -- Typst
     { "chomosuke/typst-preview.nvim", version = "1.*", ft = "typst",
@@ -158,7 +158,9 @@ require("lazy").setup(
       end },
     { "mikavilpas/yazi.nvim", version = "*", event = "VeryLazy",
       dependencies = { { "nvim-lua/plenary.nvim", lazy = true } },
-      opts = require("config.yazi"),
+      config = function()
+        require("config.yazi")
+      end,
       init = function()
         vim.g.loaded_netrwPlugin = 1
       end  },
@@ -179,18 +181,22 @@ require("lazy").setup(
 
     -- Bookmark
     { "otavioschwanck/arrow.nvim",
-      dependencies = {"echasnovski/mini.icons" },
-      opts = require("config.arrow") },
+      dependencies = { "echasnovski/mini.icons" },
+      config = function()
+        require("config.arrow")
+      end },
     { "heilgar/bookmarks.nvim",
       dependencies = { "kkharji/sqlite.lua", "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
       config = function()
         require("bookmarks").setup({
           default_mappings = true,
-          db_path = vim.fn.stdpath('data') .. '/bookmarks.db'
+          db_path = vim.fn.stdpath("data") .. "/bookmarks.db"
         })
         require("telescope").load_extension("bookmarks")
       end,
       cmd = require("config.cmd.bookmarks") },
+    -- Diff
+    { "esmuellert/codediff.nvim", cmd = "CodeDiff", opts={} },
     -- Fold
     { "chrisgrieser/nvim-origami", event = "VeryLazy",
       dependencies = { "lewis6991/gitsigns.nvim" },
@@ -202,11 +208,10 @@ require("lazy").setup(
         vim.opt.foldlevelstart = 99
       end },
     -- Goto
-    { "dnlhc/glance.nvim",
+    { "dnlhc/glance.nvim", cmd = "Glance",
       config = function()
         require("config.glance")
-      end,
-      cmd = "Glance" },
+      end },
     -- Jump
     { "folke/flash.nvim", event = "VeryLazy", opts = {} },
     -- Multiple-cursor
@@ -235,8 +240,7 @@ require("lazy").setup(
       dependencies = { { "kkharji/sqlite.lua", module = "sqlite" } },
       config = function()
         require("config.neoclip")
-      end,
-      opts = { keys = require("config.keys.neoclip") } },
+      end },
 
     -- mini.nvim
     { "echasnovski/mini.icons", version = "*", opts = {} },
@@ -292,7 +296,8 @@ require("lazy").setup(
       config = function()
         require("config.telescope")
       end },
-    { "MaximilianLloyd/adjacent.nvim" },
+    { "2kabhishek/seeker.nvim", cmd = { "Seeker" },
+        opts = { picker_provider = "telescope" } },
     { "jonarrien/telescope-cmdline.nvim" },
     { "princejoogie/dir-telescope.nvim" },
     { "tsakirist/telescope-lazy.nvim" },
@@ -330,7 +335,7 @@ require("lazy").setup(
         require("dap-python").setup(python_path)
       end },
     -- Development
-    -- { "S1M0N38/love2d.nvim", event = "VeryLazy", opts = {} },
+    { "S1M0N38/love2d.nvim", enabled = false, event = "VeryLazy", opts = {} },
     { "Mathijs-Bakker/godotdev.nvim",
       dependencies = { "nvim-lspconfig", "nvim-dap", "nvim-dap-ui", "nvim-treesitter" } },
     -- LLM
@@ -339,7 +344,7 @@ require("lazy").setup(
         vim.g.opencode_opts = {}
         vim.o.autoread = true
       end },
-    { "TabbyML/vim-tabby", lazy = false,
+    { "TabbyML/vim-tabby", enabled = false, lazy = false,
       dependencies = { "neovim/nvim-lspconfig" },
       init = function()
         -- bun add -g tabby-agent@latest

@@ -98,19 +98,22 @@ wk.add({
   { "<leader>clp", "<Cmd>Telescope neoclip<CR>", desc = "Telescope neoclip" },
 
   -- telescope.nvim
-  { "<leader>kk", "<Cmd>Telescope keymaps<CR>", desc = "Telescope keymaps", mode = "n" },
-  { "<leader>ff", "<Cmd>Telescope find_files<CR>", desc = "Telescope find_files", mode = "n" },
-  { "<leader>fg", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live_grep", mode = "n" },
+  { "<leader>ft", "<Cmd>Telescope help_tags<CR>", desc = "Telescope help_tags", mode = "n" },
+  { "<leader>fk", "<Cmd>Telescope keymaps<CR>", desc = "Telescope keymaps", mode = "n" },
   { "<leader>fb", "<Cmd>Telescope buffers<CR>", desc = "Telescope buffers", mode = "n" },
-  { "<leader>ht", "<Cmd>Telescope help_tags<CR>", desc = "Telescope help_tags", mode = "n" },
-  { "<leader>fa", "<Cmd>Telescope adjacent<CR>", desc = "Telescope adjacent", mode = "n" },
+  -- { "<leader>ff", "<Cmd>Telescope find_files<CR>", desc = "Telescope find_files", mode = "n" },
+  -- { "<leader>fg", "<Cmd>Telescope live_grep<CR>", desc = "Telescope live_grep", mode = "n" },
+  { "<leader>ff", "<Cmd>Seeker files<CR>", desc = "Seek Files" },
+  { "<leader>sg", "<Cmd>Seeker git_files<CR>", desc = "Seek Git Files" },
+  { "<leader>fg", "<Cmd>Seeker grep<CR>", desc = "Seek Grep" },
+  { "<leader>sw", "<Cmd>Seeker grep_word<CR>", desc = "Seek Grep Word" },
   { "Q", "<Cmd>Telescope cmdline<CR>", desc = "Telescope cmdline", mode = "n" },
   { "<leader>dfg", "<Cmd>Telescope dir live_grep<CR>", desc = "Telescope dir live_grep", mode = "n" },
   { "<leader>dff", "<Cmd>Telescope dir find_files<CR>", desc = "Telescope dir find_files", mode = "n" },
   { "<leader>lzy", "<Cmd>Telescope lazy<CR>", desc = "Telescope lazy", mode = "n" },
   { "<leader>lzp", "<Cmd>Telescope lazy_plugins<CR>", desc = "Telescope lazy_plugins", mode = "n" },
   { "<leader>R", "<Cmd>lua require('telescope').extensions.recent_files.pick()<CR>", desc = "Telescope recent_files", mode = "n" },
-  { "<leader>und", "<Cmd>Telescope undo<CR>", desc = "Telescope undo" },
+  { "<leader>U", "<Cmd>Telescope undo<CR>", desc = "Telescope undo" },
   { "<leader>zi", "<Cmd>Telescope zoxide list<CR>", desc = "Telescope zoxide list", mode = "n" },
 
   -- Debug
