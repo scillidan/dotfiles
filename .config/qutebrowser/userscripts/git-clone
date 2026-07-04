@@ -1,0 +1,11 @@
+#!/bin/sh
+# git clone current page's repo URL into ~/Downloads
+
+CLEAN_URL=$(echo "$QUTE_URL" | sed 's|\(https\?://[^/]*/[^/]*/[^/]*\).*|\1|')
+
+echo "message-info 'cloning $CLEAN_URL ...'" >> "$QUTE_FIFO"
+
+cd ~/Downloads && git clone "$CLEAN_URL"
+
+REPO_NAME=$(basename "$CLEAN_URL" .git)
+echo "message-info 'done: ~/Downloads/$REPO_NAME'" >> "$QUTE_FIFO"

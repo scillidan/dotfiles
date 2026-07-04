@@ -1,0 +1,7 @@
+#!/bin/sh
+
+OUT="$HOME/Downloads/repomix-$(date +%Y%m%d-%H%M%S).xml"
+
+repomix --remote "$QUTE_URL" -o "$OUT" --style xml --remove-comments
+
+echo "message-info 'repomix done: $(basename $OUT)'" >> "$QUTE_FIFO"
