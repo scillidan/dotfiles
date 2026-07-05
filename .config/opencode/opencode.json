@@ -115,6 +115,14 @@
               "type": "enabled"
             }
           }
+        },
+        "glm-5.1": {
+          "name": "GLM 5.1",
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
         }
       },
       "name": "CodeBuddy",

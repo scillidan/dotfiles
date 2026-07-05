@@ -1,8 +1,0 @@
-<snippet>
-  <content><![CDATA[
-![](https://img.shields.io/static/v1?style=for-the-badge&message=Netlify&color=222222&logo=Netlify&logoColor=00C7B7&label=)
-]]></content>
-  <tabTrigger>!netlify</tabTrigger>
-  <scope>text.html.markdown</scope>
-  <description>shields.io netlify badge</description>
-</snippet>

@@ -1,7 +1,7 @@
 <snippet>
   <content><![CDATA[
-  - trigger: "$2"
-    replace: "$1"
+- trigger: "$2"
+  replace: "$1"
 ]]></content>
   <tabTrigger>espansoyaml</tabTrigger>
   <scope>source.yaml</scope>

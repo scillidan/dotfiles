@@ -1,0 +1,52 @@
+<snippet>
+  <content><![CDATA[
+<table>
+  <tr>
+    <th>font-family</th>
+    <th>font-weight</th>
+    <th>font-weight</th>
+  </tr>
+  <tr>
+    <td>
+  	  <span style="font-family:'$2';font-weight:200;font-style:normal">$1</span><br>
+      <span style="font-family:'$2';font-weight:300;font-style:normal">$1</span><br>
+      <span style="font-family:'$2';font-weight:400;font-style:normal">$1</span><br>
+      <span style="font-family:'$2';font-weight:600;font-style:normal">$1</span><br>
+      <span style="font-family:'$2';font-weight:700;font-style:normal">$1</span><br>
+      <span style="font-family:'$2';font-weight:200;font-style:italic">$1</span><br>
+      <span style="font-family:'$2';font-weight:300;font-style:italic">$1</span><br>
+      <span style="font-family:'$2';font-weight:400;font-style:italic">$1</span><br>
+      <span style="font-family:'$2';font-weight:600;font-style:italic">$1</span><br>
+      <span style="font-family:'$2';font-weight:700;font-style:italic">$1</span>
+    </td>
+    <td>
+  	  <span style="font-family:'$2';font-weight:200;font-style:normal">ExtraLight</span><br>
+      <span style="font-family:'$2';font-weight:300;font-style:normal">Light</span><br>
+      <span style="font-family:'$2';font-weight:400;font-style:normal">Regular</span><br>
+      <span style="font-family:'$2';font-weight:600;font-style:normal">SemiBold</span><br>
+      <span style="font-family:'$2';font-weight:700;font-style:normal">Bold</span><br>
+      <span style="font-family:'$2';font-weight:200;font-style:italic">ExtraLight Italic</span><br>
+      <span style="font-family:'$2';font-weight:300;font-style:italic">Light Italic</span><br>
+      <span style="font-family:'$2';font-weight:400;font-style:italic">Italic</span><br>
+      <span style="font-family:'$2';font-weight:600;font-style:italic">SemiBold Italic</span><br>
+      <span style="font-family:'$2';font-weight:700;font-style:italic">Bold Italic</span>
+    </td>
+    <td>
+    	<span style="font-family:'$2';font-weight:200;font-style:normal">200</span><br>
+      <span style="font-family:'$2';font-weight:300;font-style:normal">300</span><br>
+      <span style="font-family:'$2';font-weight:400;font-style:normal">400</span><br>
+      <span style="font-family:'$2';font-weight:600;font-style:normal">600</span><br>
+      <span style="font-family:'$2';font-weight:700;font-style:normal">700</span><br>
+      <span style="font-family:'$2';font-weight:200;font-style:italic">200 Italic</span><br>
+      <span style="font-family:'$2';font-weight:300;font-style:italic">300 Italic</span><br>
+      <span style="font-family:'$2';font-weight:400;font-style:italic">400 Italic</span><br>
+      <span style="font-family:'$2';font-weight:600;font-style:italic">600 Italic</span><br>
+      <span style="font-family:'$2';font-weight:700;font-style:italic">700 Italic</span>
+    </td>
+  </tr>
+</table>
+]]></content>
+  <tabTrigger>fontscdntable</tabTrigger>
+  <scope>text.html</scope>
+  <description>fonts-cdn index.html table</description>
+</snippet>
