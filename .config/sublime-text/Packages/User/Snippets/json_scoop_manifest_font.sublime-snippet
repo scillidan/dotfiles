@@ -5,7 +5,7 @@
 	"description": "$1",
 	"homepage": "${3:baseurl}",
 	"license": "${2:OFL-1.1}",
-	"url": "${3:baseurl}/releases/download/v${4:version}/${5:basename}",
+	"url": "${3:baseurl}/releases/download/${4:version}/${5:basename}",
 	"hash": "${6:sha256}",
 	"installer": {
 		"script": [
@@ -46,6 +46,7 @@
 			"}"
 		]
 	},
+  "post_install": "iwr 'https://raw.githubusercontent.com/$7${3:baseurl}/${4:version}/LICENSE' -OutFile \"$dir\\LICENSE\"",
 	"pre_uninstall": [
 		"\$fontInstallDir = if (\$global) { \"\$env:windir\\\\Fonts\" } else { \"\$env:LOCALAPPDATA\\\\Microsoft\\\\Windows\\\\Fonts\" }",
 		"Get-ChildItem \$dir -Filter '*.ttf' | ForEach-Object {",
@@ -89,7 +90,7 @@
 	},
 	"checkver": "github",
 	"autoupdate": {
-		"url": "${3:baseurl}/releases/download/v\$version/${5:basename}"
+		"url": "${3:baseurl}/releases/download/\$version/${5:basename}"
 	}
 }
 ]]></content>

@@ -16,7 +16,7 @@
 	"autoupdate": {
 		"architecture": {
 			"64bit": {
-				"url": "${3:baseurl}/releases/download/v\$version/${5:basename}"
+				"url": "${3:baseurl}/releases/download/\$version/${5:basename}"
 			}
 		}
 	}
