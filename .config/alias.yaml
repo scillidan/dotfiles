@@ -14,6 +14,9 @@ bunu: bun rm -g
 ## commandOK
 ok: commandok
 
+## Desktop Plus
+dp: desktop-plus-cli
+
 ## doggo
 dga: doggo A $* @1.1.1.1
 dgg: doggo A $* @8.8.8.8

@@ -32,29 +32,43 @@
   },
   "autoupdate": false,
   "compaction": {
-    "auto": true,
-    "prune": true,
-    "reserved": 10000
+    "auto": false,
+    "prune": false
   },
-  "formatter": true,
   "enabled_providers": [
     "deepseek",
     "codebuddy"
   ],
+  "formatter": true,
   "lsp": true,
   "mcp": {
     "agnix": {
-      "command": ["agnix-mcp"],
+      "command": [
+        "agnix-mcp"
+      ],
       "enabled": true,
       "type": "local"
     },
+    "cq": {
+      "command": [
+        "E:\\Scoop\\apps\\cq\\current\\cq.exe",
+        "mcp"
+      ],
+      "type": "local"
+    },
     "fff": {
-      "command": ["fff-mcp"],
+      "command": [
+        "fff-mcp"
+      ],
       "enabled": true,
       "type": "local"
     },
     "gimp-mcp": {
-      "command": ["uv", "run", "gimp_mcp_server.py"],
+      "command": [
+        "uv",
+        "run",
+        "gimp_mcp_server.py"
+      ],
       "cwd": "C:/Users/User/Local/Srv/gimp-mcp",
       "enabled": false,
       "type": "local"
@@ -70,46 +84,20 @@
     "websearch": "allow"
   },
   "provider": {
-    "deepseek": {
-      "models": {
-        "deepseek-v4-pro": {
-          "name": "DeepSeek V4 Pro",
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        },
-        "deepseek-v4-flash": {
-          "name": "DeepSeek V4 Flash",
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        }
-      },
-      "name": "DeepSeek",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "{env:DEEPSEEK_API_KEY}",
-        "baseURL": "https://api.deepseek.com"
-      }
-    },
     "codebuddy": {
       "models": {
-        "deepseek-v4-pro": {
-          "name": "DeepSeek V4 Pro",
+        "deepseek-v4-flash": {
           "contextLength": 200000,
+          "name": "DeepSeek V4 Flash",
           "options": {
             "thinking": {
               "type": "enabled"
             }
           }
         },
-        "deepseek-v4-flash": {
-          "name": "DeepSeek V4 Flash",
+        "deepseek-v4-pro": {
           "contextLength": 200000,
+          "name": "DeepSeek V4 Pro",
           "options": {
             "thinking": {
               "type": "enabled"
@@ -131,6 +119,32 @@
         "apiKey": "{env:CODEBUDDY_API_KEY}",
         "baseURL": "https://copilot.tencent.com/v2"
       }
+    },
+    "deepseek": {
+      "models": {
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash",
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
+        },
+        "deepseek-v4-pro": {
+          "name": "DeepSeek V4 Pro",
+          "options": {
+            "thinking": {
+              "type": "enabled"
+            }
+          }
+        }
+      },
+      "name": "DeepSeek",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "{env:DEEPSEEK_API_KEY}",
+        "baseURL": "https://api.deepseek.com"
+      }
     }
   },
   "share": "disabled",
@@ -139,9 +153,5 @@
     "paths": [
       "~/.agents/personal-skills"
     ]
-  },
-  "compaction": {
-    "auto": false,
-    "prune": false
   }
 }

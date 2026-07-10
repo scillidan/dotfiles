@@ -21,7 +21,6 @@
   },
   "plugin": [
     "@cortexkit/opencode-magic-context@latest",
-    "context-mode",
     "oc-sync"
   ]
 }

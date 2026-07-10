@@ -1,1 +1,242 @@
-url title - tag
+https://scryfall.com - game,data
+https://sketchfab.com - 3d,model
+https://www.behance.net - model
+https://itch.io - game
+https://warpdoor.com - game
+https://www.flickr.com - photo
+https://unsplash.com - photo
+https://www.pixiv.net - image
+https://danbooru.donmai.us/posts?tags=scenery - image,scenery
+https://www.artstation.com - image,cg
+https://www.instructables.com - diy
+https://makerworld.com - 3d-print,model
+https://www.printables.com/model - 3d-print,model
+https://kenney.nl/assets - game,asset
+https://opengameart.org - game,asset
+https://opengameart.org/art-search-advanced?title=&field_art_tags_tid_op=or&field_art_tags_tid=&name=&field_art_type_tid%5B%5D=12&field_art_licenses_tid%5B%5D=2&field_art_licenses_tid%5B%5D=10310&field_art_licenses_tid%5B%5D=31772&field_art_licenses_tid%5B%5D=17981&field_art_licenses_tid%5B%5D=4&field_art_licenses_tid%5B%5D=17982&field_art_licenses_tid%5B%5D=3&sort_by=created&sort_order=DESC&items_per_page=144&Collection= - music,track
+https://platformio.org - develop,hardware
+https://unagino-nedoko.net - store
+https://mahora-stay.com - store
+https://www.duozhuayu.com/book - store
+https://creator.xiaohongshu.com - post
+https://cloud.tencent.com - cloud
+https://developers.weixin.qq.com/miniprogram/dev/framework - develop
+https://www.douban.com/location/chengdu - location
+https://www.zhihu.com - post
+https://bilibili.com - post
+https://www.epicwar.com - game,mod
+https://wc3maps.com - game,mod
+https://www.mobileread.com/forums - forum,book
+https://www.nexusmods.com - game,mod
+https://screenscraper.fr - asset,game
+https://love2d.org/forums - forum,love2d
+https://lemmasoft.renai.us/forums - forum,renpy
+https://www.reddit.com - forum
+https://www.tinkercad.com - lession,hardwave
+https://wokwi.com - lession,hardwave
+https://exercism.org - lession
+https://roadmap.sh - lession
+https://www.ubyte.dev - lession
+https://krasjet.com 「　」 - blog,site
+https://blog.tahnok.ca (Fake) Markov Chains - blog,site
+https://grimgrains.com/site/home.html GrimGrains - blog,site
+https://fiatjaf.com início - blog,site
+https://gitlab.com/joshavanier josh avanier (GitLab) - blog,site
+https://www.jonashietala.se Jonas Hietala - blog,site
+https://leanrada.com leanrada.com - blog,site
+https://solar.lowtechmagazine.com LOW←TECH MAGAZINE - blog,site
+https://n-o-d-e.net N O D E - blog,site
+https://nchrs.xyz nchrs - blog,site
+https://netninja.com Netninja.com - blog,site
+https://nnnnnnnn.co nnnnnnnn.co - blog,site
+https://ralphammer.com Ralph Ammer - blog,site
+https://roberthodgin.com Robert Hodgin – Portfolio v2 - blog,site
+https://simplifier.neocities.org Simplifier - blog,site
+https://rawtext.club/~sloum sloum @ rawtext.club - blog,site
+https://visualrambling.space visualrambling.space - blog,site
+https://www.city17.xyz Waldeinsamkeit - blog,site
+https://wiki.xxiivv.com XXIIVV - blog,site
+https://bandcamp.com - music
+https://music.youtube.com - music
+https://open.spotify.com - music
+https://musescore.com/sheetmusic - mid
+https://musopen.org - mid
+https://emvn.sourceaudio.com - asset,audio
+https://musical-artifacts.com - asset,soundfont
+https://soundbible.com - asset,sound
+https://freesound.org - asset,sound
+https://pdimagearchive.org/galleries/all/random/desc - archive
+https://digitalcollections.nypl.org - archive
+https://archive.org - archive
+https://www.hathitrust.org - archive
+https://www.gutenberg.org - archive
+https://shadowlibraries.github.io/DirectDownloads/libgen - book
+https://www.readbeyond.it/ebooks.html - book,audio
+https://librivox.org - book,audio
+https://shadowlibraries.github.io/DirectDownloads/AnnasArchive - book
+https://zlibrary.st/new-z-library-official-website-links - book
+https://www.shuge.org - book
+https://y2mate.gs - webapp,downloader
+https://icon-sets.iconify.design - asset
+https://muuuuu.org - web
+https://threejs.org - js
+https://openprocessing.org - js
+https://huggingface.co/papers/trending - model
+https://huggingface.co - model
+https://greasyfork.org - userscript
+https://openuserjs.org - userscript
+https://gitlab.com - git
+https://codeberg.org - git
+https://sr.ht - git
+https://github.com - git
+https://www.canirun.ai - webapp,ai
+https://artificialanalysis.ai - ai
+https://photogradient.com - webapp,converter
+https://spotidown.app - webapp,downloader
+https://tableconvert.com - webapp,converter
+https://www.virustotal.com - webapp,other
+https://gname.com - domain
+https://outlook.live.com/mail/0/ - email
+https://mail.zoho.jp/zm/#mail - email
+https://mail.google.com - email
+https://mail.yandex.com - email
+https://vercel.com - cloud
+https://app.netlify.com - cloud
+https://www.cloudflare.com - cloud
+https://aistudio.tencent.com/agent?skill=aiTranslate - aic
+https://ima.qq.com - aic
+https://chat.z.ai - aic
+http://localhost:8080 calibre - webapp,localhost
+http://localhost:5173 kiwix - webapp,localhost
+http://localhost:8501 marker - webapp,localhost
+http://localhost:7860 mineru - webapp,localhost
+http://localhost:8080 string-pdf - webapp,localhost
+https://math-gpt.org - ai
+https://www.firecrawl.dev - ai
+https://openrouter.ai - ai
+https://www.perplexity.ai - ai
+https://scira.ai - ai
+https://bitbucket.org/doggygo/url - vpn
+http://192.168.1.1/cgi-bin/luci - device
+http://192.168.31.1 Redmi - device
+https://scillidan.github.io - scillidan
+https://www.workbuddy.cn/profile/plans-usage - aic
+https://platform.deepseek.com/usage - aic
+https://useful-forks.github.io - webapp,github
+https://asciiflow.com/# - webapp,diagram
+https://viliusle.github.io/miniPaint - webapp,draw
+https://quiver.app - webapp,diagram
+https://www.richardosgood.com/posts/banned-book-library  Banned Book Library - blog
+https://www.isik.dev/posts/Eigentechno.html  Eigentechno - blog,html
+https://pudding.cool/2025/03/language  How do animals sound across languages? - blog,html
+https://pudding.cool/2025/04/music-dna  How Sonic DNA Connects Generations of Music - blog,html
+https://github.com/LPBeaulieu/Book-Generator-PrintABook - blog,source
+https://cheatsheets.zip/regex  Regex - cheatsheet
+https://alacritty.org/config-alacritty.html  Alacritty - config
+https://neovide.dev/config-file.html  Neovide - config
+https://neovide.dev/configuration.html  Neovide - config
+https://yazi-rs.github.io/docs/configuration/overview  Yazi - config
+https://wiki.archlinux.org/title/Newsboat  Newsboat - config,arch
+https://tmuxp.git-pull.com/configuration/index.html  tmuxp - config,arch
+https://chrisant996.github.io/clink/clink.html#clink-settings  Clink - config,windows
+https://alacritty.org/config-alacritty.html  Alacritty - document
+https://manual.audacityteam.org  Audacity - document
+https://darktable-org.github.io/dtdocs/en  Darktable - document
+https://dbeaver.com/docs/dbeaver  DBeaver - document
+https://dandavison.github.io/delta  delta - document
+https://espanso.org/docs/get-started  Espanso - document
+https://everything.curl.dev  everything curl - document
+https://ffmpeg.org/ffmpeg.html  FFmpeg - document
+https://wiki.freecad.org/Manual:Introduction  FreeCAD - document
+https://docs.gimp.org/index.html#gimp-online  GIMP - document
+https://docs.gimp.org/2.4/pdf/en.pdf  GIMP (PDF) - document
+https://git-cliff.org/docs  git-cliff - document
+https://harlequin.sh/docs/getting-started/usage  Harlequin - document
+https://inkscape-manuals.readthedocs.io/en/latest/index.html  Inkscape - document
+https://inkscape-manuals.readthedocs.io/en/latest  Inkscape (PDF) - document
+https://jj-for-everyone.github.io  Jujutsu for everyone - document
+https://docs.kdenlive.org/en/index.html  Kdenlive - document
+https://khal.readthedocs.io/en/latest/index.html  khal - document
+https://docs.kicad.org/7.0/en/getting_started_in_kicad/getting_started_in_kicad.html  KiCad - document
+https://docs.krita.org/en  Krita - document
+https://masscode.io/documentation  massCode - document
+https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Video_codecs  mdn - Web video codec guide - document
+https://mergiraf.org  Mergiraf - document
+https://omegat.sourceforge.io/manual-standard/en/index.html  OmegaT - document
+https://opencode.ai/docs  OpenCode - document
+https://docs.qgis.org/3.44/en/docs/index.html  QGIS - document
+https://docs.qgis.org/3.44/pdf  QGIS (PDF) - document
+https://rclone.org/docs  Rclone - document
+https://github.com/google/re2/wiki/Syntax  Regex - document
+https://download.samba.org/pub/rsync/rsync.1  rsync - document
+https://www.shotcut.org/stockmedia/Shotcut%20User%20Guide.pdf  Shotcut (PDF) - document
+https://sigil-ebook.com/sigil-user-guide/index2.html?epub=epub_content%2Fguide  Sigil - document
+https://sioyek-documentation.readthedocs.io/en/latest  Sioyek - document
+https://docs.syncthing.net/users/syncthing.html  Syncthing - document
+https://man7.org/linux/man-pages/man1/xargs.1.html  xargs - document
+https://yazi-rs.github.io/docs/installation  Yazi - document
+https://wiki.gentoo.org/wiki/Cmus  cmus - Gentoo wiki - document,arch
+https://linux.die.net/man/1/cmus  cmus - Linux man page - document,arch
+https://newsboat.org/releases/2.10/docs/newsboat.html  Newsboat - document,arch
+https://github.com/pwmt/zathura/blob/develop/doc/man/zathura.1.rst  zathura.1.rst - document,arch
+https://www.conventionalcommits.org Conventional Commits - document,git
+https://keepachangelog.com Keep a Changelog - document,git
+https://semver.org Semantic Versioning - document,git
+https://www.autohotkey.com/docs/v2  AutoHotkey - document,windows
+https://chrisant996.github.io/clink/clink.html  Clink - document,windows
+https://github.com/ScoopInstaller/Scoop/wiki  Scoop - document,windows
+https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md  Scoop - Contributing - document,windows
+https://github.com/aelassas/servy/wiki  Servy - document,windows
+https://docs.mp3tag.de/mapping  Tag Field Mappings - document,windows
+https://nchrs.xyz/cmus.html  A command line music player. - guide
+https://shotstack.io/learn/convert-video-gif-ffmpeg  FFmpeg: MP4 to GIF guide - guide
+https://dev.to/alixwang/how-i-used-edge-tts-to-build-a-free-online-text-to-speech-site-47n9  How I Used Edge-TTS to Build a Free Online Text-to-Speech Site - guide
+https://rashil2000.me/blogs/tune-wezterm  How to Obsessively Tune WezTerm - guide
+https://ashishb.net/programming/python-in-production-2  How to run Python in production - guide
+https://composerprogrammer.com/introductiontocomputermusic.pdf  Introduction to Computer Music (PDF) - guide
+https://nielscautaerts.xyz/python-dependency-management-is-a-dumpster-fire.html  Python dependency management is a dumpster fire - guide
+https://docs.stirlingpdf.com/Installation/Unix%20Installation  Stirling-PDF - Unix Installation Guide - guide
+https://www.bilibili.com/opus/758833623770071061  小红书发布的动图为什么不动？ - guide
+https://github.com/jdpieck/Onshape-Boat-Tutorial  Onshape-Boat-Tutorial - guide,source
+https://exceljet.net/formulas  1000 Excel Formulas - lesson
+https://github.com/Asabeneh/30-Days-Of-Python  30 Days Of Python - lesson
+https://realpython.com/asteroids-game-python  Build an Asteroids Game With Python and Pygame - lesson
+https://github.com/Alexandrbig1/py-web  FullStack Web Development with Python - lesson
+https://learningmusic.ableton.com  Learning Music - lesson
+https://primer.prooftrading.com  Market Structure Primer - lesson
+https://github.com/graviraja/MLOps-Basics  MLOps-Basics - lesson
+https://svg-tutorial.com  SVG Tutorial - lesson
+http://midi.teragonaudio.com/tech/midispec.htm  The MIDI Specification - lesson
+https://www.nan.fyi/svg-paths  Understanding SVG Paths - lesson
+https://gchq.github.io/CyberChef - webapp,codec
+https://scillidan.github.io/js-image-carver - webapp,converter
+https://scillidan.github.io/ordered-dither-maker/docs - webapp,converter
+https://scillidan.github.io/qrframe - webapp,qrcode
+https://scillidan.github.io/sketch-to-lineart - webapp,converter
+https://cheatsheets.zip - webapp,dev
+https://dgm.sh - webapp,draw
+https://editor.graphite.art - webapp,draw
+https://excalidraw.com - webapp,draw
+https://svgedit.netlify.app/index.html - webapp,draw
+https://szimek.github.io/signature_pad - webapp,draw
+https://yqnn.github.io/svg-path-editor - webapp,draw,svg
+https://mermaid.live - webapp,editor
+https://mermaid.live - webapp,editor
+https://og-playground.vercel.app - webapp,editor
+https://www.drawdb.app/editor - webapp,editor,database
+https://codi.link - webapp,editor,frontend
+https://jsoncrack.com/editor - webapp,editor,json
+https://signalmidi.app/edit - webapp,editor,midi
+https://www.programmingfonts.org - webapp,font
+https://retroassembly.com/demo - webapp,game
+https://www.bfxr.net - webapp,gamedev,audio
+https://dlaa.me/markdownlint - webapp,linter
+https://prompt.always200.com/#/basic/system - webapp,llm
+https://johnfactotum.github.io/foliate-js/reader.html - webapp,reader
+https://kiwix.github.io/kiwix-js/www/index.html - webapp,reader
+https://reader.ttsu.app/manage - webapp,reader
+https://animes.garden - webapp,torrent
+https://monkeytype.com - webapp,other
+https://renji-xd.github.io/texthooker-ui - webapp,other
+https://vim-master.com - webapp,other
+https://it-tools.tech - webapp,toolkit
