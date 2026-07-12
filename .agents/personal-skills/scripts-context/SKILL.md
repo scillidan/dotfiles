@@ -18,6 +18,7 @@ Projects: ~/scripts/context/ (30+ .sh scripts)
 - **Python helpers:** When a task needs Python, put logic in `lib/<name>.py` (with PEP 723 `# /// script` header for dependencies) and wrap it in a thin `<name>.sh` that calls `python "$script_dir/lib/<name>.py" "$file"`. The .sh follows all shell conventions (error tracking, pause, no-args check); the .py handles the actual work.
 - **Clipboard:** `clip.exe` (Windows) → `xclip` → `xsel`. Always `echo -n`.
 - **Prompts:** `printf` (no trailing newline), default via `${var:-default}`.
+- **Comment placeholders:** In Usage comment blocks, use `script.sh` as the command-line placeholder, not the actual script filename.
 
 ## Key Decisions
 

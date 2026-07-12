@@ -19,7 +19,7 @@ Project: marks-typ
 
 ## Key Decisions
 
-- `MARK_IMAGES_SOURCE` env var for local image resolution. `cdn` prefix = external storage.
+- `POST_IMAGES_SOURCE` env var for local image resolution. Falls back to `post/assets/` when not set.
 - Image upscale via `upscayl-bin` (model `4xLSDIR`) when width < 800px. Pillow for dimension check.
 - Two-column: `#grid(columns: (1fr, 1fr))`. Smart stem: `article.md` + `article.zh-cn.md` → `article_zh-cn`.
 
