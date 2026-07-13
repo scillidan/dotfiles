@@ -2,7 +2,7 @@
 abbr: bash llm_abbreviate.sh
 cmnt: bash llm_comment.sh
 expl: bash llm_explain.sh
-lambda: bash llm_lambda.sh
+lambda: bash llm_lambda_replace.sh
 sum: bash llm_summarize.sh
 trans: bash llm_translate.sh
 gh-del-workflow-run: bash gh-del-workflow-run.sh
