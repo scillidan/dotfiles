@@ -1,7 +1,7 @@
 import os
 
 userhome = os.environ.get("USERHOME")
-downloads_dir = os.path.join(userhome, "Downloads")
+downloads_dir = os.path.join(userhome, "/Downloads")
 
 config.load_autoconfig(False)
 

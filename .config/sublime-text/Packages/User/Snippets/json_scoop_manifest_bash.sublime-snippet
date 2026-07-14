@@ -1,0 +1,39 @@
+<snippet>
+  <content><![CDATA[
+{
+	"version": "${4:version}",
+	"description": "$1",
+	"homepage": "${3:baseurl}",
+	"license": "${2:MIT}",
+	"suggest": {
+		"Git": "main/git"
+	},
+	"notes": [
+		"It must be used inside a Bash/Zsh session,",
+		"The easiest Windows option is Git Bash.",
+		"(Experimental) To keep the right tools first, add these to the TOP of your System PATH",
+		"  \$env:SCOOP\\\\apps\\\\git\\\\current\\\\bin",
+		"  \$env:SCOOP\\\\apps\\\\git\\\\current\\\\usr\\\\bin"
+	],
+	"url": "${3:baseurl}/archive/refs/tags/${4:version}.zip",
+	"hash": "${6:sha256}",
+	"extract_dir": "${5:basename}-${4:version}",
+	"pre_install": [
+		"Remove-Item -Path \\"\$dir\\\\*\\" -Exclude '${5:basename}', 'LICENSE' -Recurse -Force",
+		"New-Item -Path \"\$dir\\\\${5:basename}.cmd\" -ItemType File -Force",
+		"Add-Content -Path \"\$dir\\\\${5:basename}.cmd\" -Value \"bash \$env:SCOOP\\\\apps\\\\${5:basename}\\\\current\\\\${5:basename} %*\""
+	],
+	"bin": "${5:basename}.cmd",
+	"post_install": "iwr 'https://raw.githubusercontent.com/${7:user}/${5:basename}/${4:version}/LICENSE' -OutFile \"\$dir\\\\LICENSE\"",
+	"checkver": "github",
+	"autoupdate": {
+		"url": "${3:baseurl}/archive/refs/tags/v\$version.zip",
+		"extract_dir": "${5:basename}-\$version"
+	}
+}
+
+]]></content>
+  <tabTrigger>appbash</tabTrigger>
+  <scope>source.json</scope>
+  <description>scoop bucket manifest-bash</description>
+</snippet>

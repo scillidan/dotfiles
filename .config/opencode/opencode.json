@@ -3,7 +3,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "codebuddy/deepseek-v4-flash",
+      "model": "deepseek/deepseek-v4-flash",
       "options": {},
       "permission": {
         "bash": "allow",
@@ -17,7 +17,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "codebuddy/deepseek-v4-flash",
+      "model": "deepseek/deepseek-v4-flash",
       "options": {},
       "permission": {
         "bash": "deny",
@@ -51,7 +51,7 @@
     },
     "cq": {
       "command": [
-        "E:\\Scoop\\apps\\cq\\current\\cq.exe",
+        "cq",
         "mcp"
       ],
       "type": "local"

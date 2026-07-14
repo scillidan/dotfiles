@@ -5,6 +5,9 @@
 	"description": "$1",
 	"homepage": "${3:baseurl}",
 	"license": "${2:MIT}",
+  "suggest": {
+      "vcredist": "extras/vcredist2022"
+  },
 	"architecture": {
 		"64bit": {
 			"url": "${3:baseurl}/releases/download/${4:version}/${5:basename}",

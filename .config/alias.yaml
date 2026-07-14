@@ -38,9 +38,11 @@ gd: forgit diff
 gso: forgit show
 ga: forgit add
 grh: forgit reset_head
+grs: forgit restore
 gi: forgit ignore
 gat: forgit attributes
 gcf: forgit checkout_file
+gcff: forgit checkout_file_from_commit
 gcb: forgit checkout_branch
 gsw: forgit switch_branch
 gbd: forgit branch_delete
@@ -52,10 +54,13 @@ gss: forgit stash_show
 gsp: forgit stash_push
 gcp: forgit cherry_pick
 grb: forgit rebase
-gbl: forgit blamegd
+gbl: forgit blame
 gfu: forgit fixup
 gsq: forgit squash
 grw: forgit reword
+gwt: forgit worktree
+gwa: forgit worktree_add
+gwd: forgit worktree_delete
 
 ## gfold
 gfd: gfold
@@ -68,6 +73,12 @@ gp: git push
 
 ## gli-leaks
 gls: gitleaks dir
+
+## git-open
+go: git-open
+
+## git-recent
+gr: git-recent
 
 ## lazygit
 lg: lazygit
@@ -87,9 +98,7 @@ gpn: git push no-mistakes
 ## OpenCode
 oc: opencode.exe $* & reset
 occ: opencode --continue $* & reset
-ocp: opencode --model codebuddy/deepseek-v4-pro $* & reset
-oc2: opencode --model deepseek/deepseek-v4-flash $* & reset
-ocp2: opencode --model deepseek/deepseek-v4-pro $* & reset
+ocp: opencode --model deepseek/deepseek-v4-pro $* & reset
 
 ## OpenCommit
 ocoi: oco hook set

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doublecmd>
+  <History>
+    <Navigation>
+      <Item>E:\Local\Media\</Item>
+      <Item>E:\Local\Media\playlist_weekly_mv\</Item>
+      <Item>E:\Local\Music\</Item>
+      <Item>E:\Local\</Item>
+      <Item>E:\</Item>
+      <Item>E:\Downloads\</Item>
+      <Item>E:\Scoop\</Item>
+      <Item>E:\Scoop\apps\</Item>
+      <Item>E:\Scoop\apps\doublecmd\</Item>
+      <Item>E:\Scoop\apps\doublecmd\current\</Item>
+      <Item>E:\Scoop\apps\doublecmd\current\doc\</Item>
+    </Navigation>
+    <CommandLine>
+      <Item>ls</Item>
+    </CommandLine>
+    <FileMask/>
+    <VolumeSize/>
+    <CreateDirectories/>
+    <SearchText/>
+    <SearchTextPath/>
+    <ReplaceText/>
+    <ReplaceTextPath/>
+    <RenameNameMask/>
+    <RenameExtMask/>
+    <SearchDirectories/>
+    <SearchExcludeFiles/>
+    <SearchExcludeDirectories/>
+  </History>
+</doublecmd>

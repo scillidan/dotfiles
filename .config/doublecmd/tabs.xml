@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doublecmd>
+  <Tabs>
+    <OpenedTabs>
+      <Left>
+        <ActiveTab>2</ActiveTab>
+        <Tab>
+          <FileView Type="brief">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="doc">E:\Scoop\apps\doublecmd\current\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\current\doc\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\current\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\</Path>
+                  <Path Filename="doublecmd">E:\Scoop\apps\</Path>
+                </Paths>
+              </Entry>
+            </History>
+          </FileView>
+        </Tab>
+        <Tab>
+          <FileView Type="brief">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="doc">E:\Scoop\apps\doublecmd\current\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\current\doc\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\current\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\</Path>
+                  <Path Filename="..">E:\Scoop\apps\</Path>
+                  <Path Filename="..">E:\Scoop\</Path>
+                  <Path Filename="Downloads">E:\</Path>
+                  <Path Filename="..">E:\Downloads\</Path>
+                  <Path Filename="Local">E:\</Path>
+                  <Path Filename="Media">E:\Local\</Path>
+                  <Path Filename="playlist_weekly_mv">E:\Local\Media\</Path>
+                  <Path Filename="..">E:\Local\Media\playlist_weekly_mv\</Path>
+                  <Path Filename="podcast_left-right">E:\Local\Media\</Path>
+                </Paths>
+              </Entry>
+            </History>
+          </FileView>
+        </Tab>
+        <Tab>
+          <FileView Type="brief">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="doc">E:\Scoop\apps\doublecmd\current\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\current\doc\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\current\</Path>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\</Path>
+                  <Path Filename="..">E:\Scoop\apps\</Path>
+                  <Path Filename="..">E:\Scoop\</Path>
+                  <Path Filename="Downloads">E:\</Path>
+                  <Path Filename="..">E:\Downloads\</Path>
+                  <Path Filename="Local">E:\</Path>
+                  <Path Filename="Music">E:\Local\</Path>
+                  <Path Filename="..">E:\Local\Music\</Path>
+                </Paths>
+              </Entry>
+            </History>
+          </FileView>
+        </Tab>
+      </Left>
+      <Right>
+        <ActiveTab>0</ActiveTab>
+        <Tab>
+          <FileView Type="brief">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="..">E:\Scoop\apps\doublecmd\current\</Path>
+                </Paths>
+              </Entry>
+            </History>
+          </FileView>
+        </Tab>
+      </Right>
+    </OpenedTabs>
+  </Tabs>
+</doublecmd>
