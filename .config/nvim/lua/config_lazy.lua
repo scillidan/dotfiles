@@ -43,7 +43,7 @@ require("lazy").setup(
       end },
 
     -- Treesitter
-    { "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false,
+    { "nvim-treesitter/nvim-treesitter", branch = "main", lazy = false,
       dependencies = { "Hdoc1509/gh-actions.nvim" },
       config = function()
         require("gh-actions.tree-sitter").setup()
@@ -156,6 +156,11 @@ require("lazy").setup(
       config = function()
         require("config.oil_git_status")
       end },
+    { "ingur/fzf-oil.nvim",
+      dependencies = { "ibhagwan/fzf-lua", "stevearc/oil.nvim" },
+      config = function()
+        require("config.fzf_oil")
+      end },
     { "mikavilpas/yazi.nvim", version = "*", event = "VeryLazy",
       dependencies = { { "nvim-lua/plenary.nvim", lazy = true } },
       config = function()
@@ -212,12 +217,11 @@ require("lazy").setup(
       config = function()
         require("config.glance")
       end },
-    -- Jump
-    { "folke/flash.nvim", event = "VeryLazy", opts = {} },
-    -- Multiple-cursor
-    { "brenton-leighton/multiple-cursors.nvim", version = "*",
+    -- Multiple cursors
+    { "jake-stewart/multicursor.nvim", branch = "1.0",
+      dependencies = { "folke/which-key.nvim" },
       config = function()
-        require("config.multiple_cursors")
+        require("config.multicursor").setup()
       end },
     -- Replace
     { "MagicDuck/grug-far.nvim", opts = {} },
@@ -299,7 +303,6 @@ require("lazy").setup(
     { "2kabhishek/seeker.nvim", cmd = { "Seeker" },
         opts = { picker_provider = "telescope" } },
     { "jonarrien/telescope-cmdline.nvim" },
-    { "princejoogie/dir-telescope.nvim" },
     { "tsakirist/telescope-lazy.nvim" },
     { "polirritmico/telescope-lazy-plugins.nvim" },
     { "smartpde/telescope-recent-files" },

@@ -1,5 +1,5 @@
 require("oil-git-status").setup({
-  --  show_ignored = true
+  -- show_ignored = true,
   symbols = {
     index = {
       ["!"] = "!",
@@ -11,7 +11,7 @@ require("oil-git-status").setup({
       ["R"] = "R",
       ["T"] = "T",
       ["U"] = "U",
-      [" "] = " ",
+      [" "] = " "
     },
     working_tree = {
       ["!"] = "!",
@@ -23,7 +23,7 @@ require("oil-git-status").setup({
       ["R"] = "R",
       ["T"] = "T",
       ["U"] = "U",
-      [" "] = " ",
-    },
-  },
+      [" "] = " "
+    }
+  }
 })

@@ -1,4 +1,5 @@
 local wk = require("which-key")
+local oc = require("opencode")
 
 wk.add({
   -- Theme
@@ -61,21 +62,10 @@ wk.add({
   { "<leader>bl", "<Cmd>Bookmarks<CR>", desc = "List Bookmarks" },
   { "<leader>bs", desc = "Switch Bookmark List" },
   -- Goto
-  { "gR", "<Cmd>Glance references<CR>", desc = "Glance references<CR>", mode = "n" },
-  { "gD", "<Cmd>Glance definitions<CR>", desc = "Glance definitions<CR>", mode = "n" },
-  { "gY", "<Cmd>Glance type_definitions<CR>", desc = "Glance type_definitions<CR>", mode = "n" },
-  { "gM", "<Cmd>Glance implementations<CR>", desc = "Glance implementations<CR>", mode = "n" },
-  -- Jump
-  { "<leader>s", function() require("flash").jump() end, desc = "flash", mode = { "n", "x", "o" } },
-  { "<leader>S", function() require("flash").treesitter() end, desc = "flash treesitter", mode = { "n", "x", "o" } },
-  { "<leader>r", function() require("flash").remote() end, desc = "flash remote", mode = "o" },
-  { "<leader>R", function() require("flash").treesitter_search() end, desc = "flash treesitter_search", mode = { "o", "x" } },
-  { "<C-s>", function() require("flash").toggle() end, desc = "Toggle Flash Search", mode = { "c" } },
-  -- Multiple-cursor
-  { "<Leader>a", "<Cmd>MultipleCursorsAddMatches<CR>", mode = { "n", "x" }, desc = "MultipleCursorsAddMatches" },
-  { "<S-Down>", "<Cmd>MultipleCursorsAddDown<CR>", mode = { "n", "i", "x" }, desc = "MultipleCursorsAddDown" },
-  { "<S-Up>", "<Cmd>MultipleCursorsAddUp<CR>", mode = { "n", "i", "x" }, desc = "MultipleCursorsAddUp" },
-  { "<C-LeftMouse>", "<Cmd>MultipleCursorsMouseAddDelete<CR>", mode = { "n", "i" }, desc = "MultipleCursorsMouseAddDelete" },
+  { "gR", "<Cmd>Glance references<CR>", desc = "Glance references", mode = "n" },
+  { "gD", "<Cmd>Glance definitions<CR>", desc = "Glance definitions", mode = "n" },
+  { "gY", "<Cmd>Glance type_definitions<CR>", desc = "Glance type_definitions", mode = "n" },
+  { "gM", "<Cmd>Glance implementations<CR>", desc = "Glance implementations", mode = "n" },
   -- Replace
   { "<leader>gf", '<Cmd>lua require("grug-far").open({ engine = "astgrep" })<CR>', desc = "grug-far.open", mode = "n" },
   { "<leader>cr", function() require("config.scooter").open_scooter() end, desc = "Open scooter", mode = "n" },
@@ -108,8 +98,6 @@ wk.add({
   { "<leader>fg", "<Cmd>Seeker grep<CR>", desc = "Seek Grep" },
   { "<leader>sw", "<Cmd>Seeker grep_word<CR>", desc = "Seek Grep Word" },
   { "Q", "<Cmd>Telescope cmdline<CR>", desc = "Telescope cmdline", mode = "n" },
-  { "<leader>dfg", "<Cmd>Telescope dir live_grep<CR>", desc = "Telescope dir live_grep", mode = "n" },
-  { "<leader>dff", "<Cmd>Telescope dir find_files<CR>", desc = "Telescope dir find_files", mode = "n" },
   { "<leader>lzy", "<Cmd>Telescope lazy<CR>", desc = "Telescope lazy", mode = "n" },
   { "<leader>lzp", "<Cmd>Telescope lazy_plugins<CR>", desc = "Telescope lazy_plugins", mode = "n" },
   { "<leader>R", "<Cmd>lua require('telescope').extensions.recent_files.pick()<CR>", desc = "Telescope recent_files", mode = "n" },
@@ -148,12 +136,12 @@ wk.add({
   { "<leader>vs", "<Cmd>LoveStop<CR>", desc = "Love Stop" },
   -- LLM
   -- https://github.com/nickjvandyke/opencode.nvim#-setup
-  { "<leader>oa", function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask opencode", mode = { "n", "x" } },
-  { "<leader>os", function() require("opencode").select() end, desc = "Execute opencode action…", mode = { "n", "x" } },
-  { "go", function() return require("opencode").operator("@this ") end, expr = true, desc = "Add range to opencode", mode = { "n", "x" } },
-  { "goo", function() return require("opencode").operator("@this ") .. "_" end, expr = true, desc = "Add line to opencode", mode = "n" },
-  { "<S-C-u>", function() require("opencode").command("session.half.page.up") end, desc = "opencode half page up", mode = "n" },
-  { "<S-C-d>", function() require("opencode").command("session.half.page.down") end, desc = "opencode half page down", mode = "n" },
+  { "<leader>oa", function() oc.ask("@this: ", { submit = true }) end, desc = "Ask opencode", mode = { "n", "x" } },
+  { "<leader>os", function() oc.select() end, desc = "Execute opencode action…", mode = { "n", "x" } },
+  { "go", function() return oc.operator("@this ") end, expr = true, desc = "Add range to opencode", mode = { "n", "x" } },
+  { "goo", function() return oc.operator("@this ") .. "_" end, expr = true, desc = "Add line to opencode", mode = "n" },
+  { "<S-C-u>", function() oc.command("session.half.page.up") end, desc = "opencode half page up", mode = "n" },
+  { "<S-C-d>", function() oc.command("session.half.page.down") end, desc = "opencode half page down", mode = "n" },
 
   -- Others
   { "<c-h>", "<Cmd><C-U>TmuxNavigateLeft<CR>", desc = "Tmux Navigate Left" },
@@ -162,3 +150,4 @@ wk.add({
   { "<c-l>", "<Cmd><C-U>TmuxNavigateRight<CR>", desc = "Tmux Navigate Right" },
   { "<c-\\>", "<Cmd><C-U>TmuxNavigatePrevious<CR>", desc = "Tmux Navigate Previous" },
 })
+

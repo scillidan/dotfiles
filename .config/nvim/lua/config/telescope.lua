@@ -7,23 +7,33 @@ require("telescope").setup({
     previewer = true,
     layout_config = {
     	preview_cutoff = 60,
-    	center = {}
+    	center = { height = 0.99, width = 0.99 },
      },
     multi_icon = "┃",
-    mappings = { i = { ["<esc>"] = actions.close } }
+    mappings = { i = { ["<esc>"] = actions.close } },
+    file_ignore_patterns = { "%.git/", "node_modules/", "site/", "public/", "%.venv/" },
+    vimgrep_arguments = {
+      "rg",
+      "--hidden",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--glob", "!.git/**",
+      "--glob", "!node_modules/**",
+      "--glob", "!site/**",
+      "--glob", "!public/**",
+      "--glob", "!.venv/**",
+    },
   },
   pickers = {
-    find_files = { theme = "ivy", previewer = true, border = false },
-    live_grep = { theme = "ivy", previewer = true, border = false }
+    find_files = { layout_strategy = "center", previewer = true, hidden = true },
+    live_grep = { layout_strategy = "center", previewer = true }
   },
   extensions = {
     cmdline = { picker = { layout_config = { width = 100, height = 25 } } },
-    dir = {
-      hidden = true,
-      no_ignore = false,
-      show_preview = true,
-      follow_symlinks = false,
-    },
     lazy = {
       show_icon = true,
       actions_opts = {
@@ -41,13 +51,12 @@ require("telescope").setup({
     lazy_plugins = { lazy_config = vim.fn.stdpath("config") .. "/lua/config_lazy.lua" },
     recent_files = {},
     undo = { layout_strategy = "vertical", layout_config = { preview_height = 0.8 } },
-    zoxide = { theme = "ivy", border = false }
+    zoxide = { layout_strategy = "center", border = false }
   }
 })
 
 for _, extensions in ipairs({
   "cmdline",
-  "dir",
   "lazy",
   "lazy_plugins",
   "recent_files",

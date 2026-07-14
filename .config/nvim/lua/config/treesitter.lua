@@ -66,10 +66,11 @@ if is_termux then
   parsers = filtered
 end
 
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter.config").setup({
   autotag = {
     enable = true,
   },
+  auto_install = true,
   context_commentstring = {
     enable = true,
     enable_autocmd = false,

@@ -10,6 +10,7 @@ c.content.cookies.store = True
 c.session.default_name = "default"
 c.session.lazy_restore = True
 c.auto_save.session = True
+c.downloads.remove_finished = 0
 
 config.source("themes/city-lights-theme.py")
 c.fonts.default_family = "Sarasa Term SC Nerd"
@@ -22,6 +23,7 @@ c.downloads.location.directory = downloads_dir
 c.downloads.location.suggestion = "filename"
 c.downloads.location.remember = False
 
+c.aliases["op"] = "open"
 c.aliases["ob"] = "open -t -- {clipboard}"
 c.aliases["ss"] = f"screenshot {downloads_dir}/screenshot-$(date +%s).png"
 
