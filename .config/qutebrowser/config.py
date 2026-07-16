@@ -1,7 +1,7 @@
 import os
 
 userhome = os.environ.get("USERHOME")
-downloads_dir = os.path.join(userhome, "/Downloads")
+downloads_dir = os.path.join(userhome, r"Downloads")
 
 config.load_autoconfig(False)
 
@@ -17,7 +17,7 @@ c.fonts.default_family = "Sarasa Term SC Nerd"
 c.window.hide_decoration = True
 c.scrolling.bar = "never"
 c.zoom.default = "80%"
-c.url.default_page = os.path.join('file:///', userhome, 'Share/files/cheatsheets/poster/qutebrowser-default-bindings.png')
+c.url.default_page = os.path.join("file:///", userhome, r"Share/files/cheatsheets/poster/qutebrowser-default-bindings.png")
 
 c.downloads.location.directory = downloads_dir
 c.downloads.location.suggestion = "filename"

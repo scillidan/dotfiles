@@ -51,7 +51,7 @@
     },
     "cq": {
       "command": [
-        "cq",
+        "C:\\Users\\User\\Scoop\\apps\\cq\\current\\cq.exe",
         "mcp"
       ],
       "type": "local"

@@ -8,9 +8,9 @@ The cq skill and `/cq-*` commands describe the protocol using MCP-tool wording; 
 perform every cq action by running the cq CLI through your shell.
 Parse `--format json` output for the commands that support it (query, propose, status); confirm and
 flag return plain text.
-The cq binary is: `E:\Scoop\apps\cq\current\cq.exe`.
+The cq binary is: `%USERHOME%\apps\cq\current\cq.exe`.
 
-### E:\Scoop\apps\cq\current\cq.exe query
+### %USERHOME%\apps\cq\current\cq.exe query
 
 ```
       --domain stringArray      Domain tags to search (required, repeatable)
@@ -21,7 +21,7 @@ The cq binary is: `E:\Scoop\apps\cq\current\cq.exe`.
       --pattern string          Filter by pattern
 ```
 
-### E:\Scoop\apps\cq\current\cq.exe propose
+### %USERHOME%\apps\cq\current\cq.exe propose
 
 ```
       --action string           Recommended action (required)
@@ -34,9 +34,9 @@ The cq binary is: `E:\Scoop\apps\cq\current\cq.exe`.
       --summary string          Brief summary of the insight (required)
 ```
 
-### E:\Scoop\apps\cq\current\cq.exe confirm <unit_id>
+### %USERHOME%\apps\cq\current\cq.exe confirm <unit_id>
 
-### E:\Scoop\apps\cq\current\cq.exe flag <unit_id>
+### %USERHOME%\apps\cq\current\cq.exe flag <unit_id>
 
 ```
       --detail string         Optional detail for why the unit was flagged
@@ -44,7 +44,7 @@ The cq binary is: `E:\Scoop\apps\cq\current\cq.exe`.
       --reason reason         Flag reason (one of: duplicate, incorrect, stale)
 ```
 
-### E:\Scoop\apps\cq\current\cq.exe status
+### %USERHOME%\apps\cq\current\cq.exe status
 
 ```
       --format string   Output format: text or json (default "text")

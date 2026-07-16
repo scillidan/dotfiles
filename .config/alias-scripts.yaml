@@ -25,6 +25,8 @@ git-sync-upstream: bash git-sync-upstream.sh
 
 ## GitHub CLI
 ips: bash gh-issue-pr.sh
+grls: gh release list
+grld: gh release delete v1.2.0 --cleanup-tag -y
 
 ## Neovim
 nv: bash _nvim.sh

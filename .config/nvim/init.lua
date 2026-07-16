@@ -1,3 +1,10 @@
+if vim.env.LUA_PATH then
+  vim.env.LUA_PATH = nil
+  vim.env.LUA_CPATH = nil
+  package.path = ""
+  package.cpath = ""
+end
+
 -- For Termux
 if vim.env.TERMUX_VERSION ~= nil then
   is_termux = true
