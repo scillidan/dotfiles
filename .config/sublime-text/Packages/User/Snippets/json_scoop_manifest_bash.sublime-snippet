@@ -31,7 +31,6 @@
 		"extract_dir": "${5:basename}-\$version"
 	}
 }
-
 ]]></content>
   <tabTrigger>appbash</tabTrigger>
   <scope>source.json</scope>

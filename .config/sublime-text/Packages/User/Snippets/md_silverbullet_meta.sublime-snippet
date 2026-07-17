@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+---
+description: $1
+tags: $2
+---
+
+$3
+]]></content>
+	<tabTrigger>sbmeta</tabTrigger>
+	<scope>text.html.markdown</scope>
+	<description>silverbullet meta</description>
+</snippet>

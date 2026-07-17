@@ -43,7 +43,7 @@ require("lazy").setup(
       end },
 
     -- Treesitter
-    { "nvim-treesitter/nvim-treesitter", branch = "main", lazy = false,
+    { "nvim-treesitter/nvim-treesitter", branch = "main", lazy = false, build = ":TSUpdate",
       dependencies = { "Hdoc1509/gh-actions.nvim" },
       config = function()
         require("gh-actions.tree-sitter").setup()

@@ -2,7 +2,7 @@
 	<content><![CDATA[
 just add ${1:portrait} "${2:image}.${3:jpg}" "${4:author}" "${5:date}" "${2:image}" "(0%, 0%)" 100% "(100%, 100%)"
 ]]></content>
-	<tabTrigger>imagetyp</tabTrigger>
+	<tabTrigger>favoriteimage</tabTrigger>
 	<scope>text.html.markdown</scope>
-	<description>just marks-image-typ</description>
+	<description>marks-typ favorite-image</description>
 </snippet>

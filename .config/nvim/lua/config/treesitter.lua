@@ -17,7 +17,6 @@ local parsers = {
   "ini",
   "javascript",
   "json",
-  "jsonc",
   "just",
   "lua",
   "make",
@@ -66,22 +65,15 @@ if is_termux then
   parsers = filtered
 end
 
-require("nvim-treesitter.configs").setup({
-  autotag = {
-    enable = true,
-  },
-  auto_install = true,
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
-  ensure_installed = parsers,
-  highlight = {
-    enable = true,
-    disable = { "kdl" },
-  },
-  indent = {
-    enable = true,
-    disable = {},
-  },
+require("nvim-treesitter").setup {
+  install_dir = vim.fn.stdpath("data") .. "/site",
+}
+
+require("nvim-treesitter").install(parsers):wait(300000)
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = parsers,
+  callback = function()
+    vim.treesitter.start()
+  end,
 })

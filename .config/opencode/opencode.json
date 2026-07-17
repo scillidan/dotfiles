@@ -37,7 +37,7 @@
   },
   "enabled_providers": [
     "deepseek",
-    "codebuddy"
+    "moonshot"
   ],
   "formatter": true,
   "lsp": true,
@@ -51,7 +51,7 @@
     },
     "cq": {
       "command": [
-        "C:\\Users\\User\\Scoop\\apps\\cq\\current\\cq.exe",
+        "cq",
         "mcp"
       ],
       "type": "local"
@@ -84,28 +84,16 @@
     "websearch": "allow"
   },
   "provider": {
-    "codebuddy": {
+    "moonshot": {
       "models": {
-        "deepseek-v4-flash": {
-          "contextLength": 200000,
-          "name": "DeepSeek V4 Flash",
+        "k3": {
+          "name": "Kimi K3",
           "options": {
-            "thinking": {
-              "type": "enabled"
-            }
+            "thinking": { "type": "enabled", "effort": "max" }
           }
         },
-        "deepseek-v4-pro": {
-          "contextLength": 200000,
-          "name": "DeepSeek V4 Pro",
-          "options": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        },
-        "glm-5.1": {
-          "name": "GLM 5.1",
+        "kimi-for-coding-highspeed": {
+          "name": "Kimi K2.7 Code (HighSpeed)",
           "options": {
             "thinking": {
               "type": "enabled"
@@ -113,11 +101,11 @@
           }
         }
       },
-      "name": "CodeBuddy",
+      "name": "Moonshot",
       "npm": "@ai-sdk/openai-compatible",
       "options": {
-        "apiKey": "{env:CODEBUDDY_API_KEY}",
-        "baseURL": "https://copilot.tencent.com/v2"
+        "apiKey": "{env:MOONSHOT_API_KEY}",
+        "baseURL": "https://api.kimi.com/coding/v1"
       }
     },
     "deepseek": {
