@@ -27,5 +27,5 @@
 ]]></content>
   <tabTrigger>appmin</tabTrigger>
   <scope>source.json</scope>
-  <description>scoop bucket manifest-mini</description>
+  <description>scoop manifest mini</description>
 </snippet>

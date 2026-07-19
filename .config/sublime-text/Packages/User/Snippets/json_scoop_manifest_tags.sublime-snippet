@@ -32,7 +32,7 @@
 	}
 }
 ]]></content>
-  <tabTrigger>appbash</tabTrigger>
+  <tabTrigger>apptags</tabTrigger>
   <scope>source.json</scope>
-  <description>scoop bucket manifest-bash</description>
+  <description>scoop manifest tags</description>
 </snippet>

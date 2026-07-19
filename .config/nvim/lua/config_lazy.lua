@@ -91,7 +91,6 @@ require("lazy").setup(
         { "rafamadriz/friendly-snippets", version = "v2.*" },
         { "erooke/blink-cmp-latex" },
         { "alexandre-abrioux/blink-cmp-npm.nvim" },
-        { "jdrupal-dev/css-vars.nvim" },
         { "disrupted/blink-cmp-conventional-commits" },
         { "Dynge/gitmoji.nvim", ft = "gitcommit",
           config = function()
@@ -102,13 +101,11 @@ require("lazy").setup(
         { "ribru17/blink-cmp-spell" },
         { "mikavilpas/blink-ripgrep.nvim" },
         { "dynamotn/blink-cmp-zellij" },
-        { "mgalliou/blink-cmp-tmux" }
+        { "mgalliou/blink-cmp-tmux" },
+        { "blink-cmp-stardict", dir = "E:/Downloads/proj/blink-cmp-stardict" }
       },
       config = function()
-        require("config.blink")
-      end,
-      config = function(_, opts)
-        require("blink.cmp").setup(opts)
+        require("blink.cmp").setup(require("config.blink"))
         vim.api.nvim_set_hl(0, "BlinkCmpKindDict", { default = false, fg = "#92FFB8" })
       end },
     -- Snippet

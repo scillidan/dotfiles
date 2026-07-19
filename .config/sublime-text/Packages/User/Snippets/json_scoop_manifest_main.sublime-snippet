@@ -1,0 +1,42 @@
+<snippet>
+  <content><![CDATA[
+{
+	"version": "${4:branch}",
+	"description": "$1",
+	"homepage": "${3:baseurl}",
+	"license": "${2:MIT}",
+	"suggest": {
+		"Git": "main/git"
+	},
+	"notes": [
+		"It must be used inside a Bash/Zsh session,",
+		"The easiest Windows option is Git Bash.",
+		"(Experimental) To keep the right tools first, add these to the TOP of your System PATH",
+		"  \$env:SCOOP\\\\apps\\\\git\\\\current\\\\bin",
+		"  \$env:SCOOP\\\\apps\\\\git\\\\current\\\\usr\\\\bin"
+	],
+	"url": "${3:baseurl}/archive/${4:branch}.zip",
+	"hash": "${6:sha256}",
+	"extract_dir": "${5:basename}-${4:branch}",
+	"pre_install": [
+		"Remove-Item -Path \\"\$dir\\\\*\\" -Exclude '${5:basename}', 'LICENSE' -Recurse -Force",
+		"New-Item -Path \"\$dir\\\\${5:basename}.cmd\" -ItemType File -Force",
+		"Add-Content -Path \"\$dir\\\\${5:basename}.cmd\" -Value \"bash \$env:SCOOP\\\\apps\\\\${5:basename}\\\\current\\\\${5:basename} %*\""
+	],
+	"bin": "${5:basename}.cmd",
+	"post_install": "iwr 'https://raw.githubusercontent.com/${7:user}/${5:basename}/${4:branch}/LICENSE' -OutFile \"\$dir\\\\LICENSE\"",
+  "checkver": {
+      "url": "https://api.github.com/repos/${7:user}/${5:basename}/commits?per_page=1",
+      "jsonpath": "\$[0].commit.author.date",
+      "regex": "(\\\\d{4})-(\\\\d{2})-(\\\\d{2}).*",
+      "replace": "$1$2$3"
+  },
+	"autoupdate": {
+		"url": "${3:baseurl}/archive/${4:branch}.zip"
+	}
+}
+]]></content>
+  <tabTrigger>appmain</tabTrigger>
+  <scope>source.json</scope>
+  <description>scoop manifest main</description>
+</snippet>

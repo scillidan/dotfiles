@@ -96,5 +96,5 @@
 ]]></content>
   <tabTrigger>appfont</tabTrigger>
   <scope>source.json</scope>
-  <description>scoop bucket manifest-font</description>
+  <description>scoop manifest font</description>
 </snippet>

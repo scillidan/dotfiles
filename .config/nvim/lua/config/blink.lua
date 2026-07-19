@@ -1,3 +1,18 @@
+---@return boolean
+local function inside_comment_block()
+	local pos = vim.api.nvim_win_get_cursor(0)
+	local ok, captures = pcall(vim.treesitter.get_captures_at_pos, 0, pos[1] - 1, pos[2])
+	if not ok then
+		return false
+	end
+	for _, cap in ipairs(captures) do
+		if cap.capture == "comment" then
+			return true
+		end
+	end
+	return false
+end
+
 return {
 	completion = {
 		-- ghost_text = {
@@ -52,6 +67,7 @@ return {
 				"zellij",
 				"tmux",
 				"spell",
+				"stardict",
 			}
 
 			if vim.tbl_contains({ "gitcommit", "jj" }, vim.bo.filetype) then
@@ -73,9 +89,6 @@ return {
 				vim.tbl_contains({ "javascript", "typescript", "javascriptreact", "typescriptreact" }, vim.bo.filetype)
 			then
 				table.insert(result, "npm")
-			end
-			if vim.tbl_contains({ "css", "scss", "less", "javascript", "typescript" }, vim.bo.filetype) then
-				table.insert(result, "css_vars")
 			end
 
 			return result
@@ -182,13 +195,6 @@ return {
 					only_latest_version = false,
 				},
 			},
-			css_vars = {
-				name = "CssVars",
-				module = "css-vars.blink",
-				opts = {
-					search_extensions = { ".js", ".ts", ".jsx", ".tsx" },
-				},
-			},
 			emoji = {
 				module = "blink-emoji",
 				name = "Emoji",
@@ -207,6 +213,18 @@ return {
 				name = "blink-cmp-words",
 				module = "blink-cmp-words.dictionary",
 				opts = {},
+			},
+			stardict = {
+				name = "StarDict",
+				module = "blink-cmp-stardict",
+				min_keyword_length = 2,
+				opts = {
+					-- dict_dirs = { "~/.stardict/dic" },
+					-- dictionaries = { "WordNet", "GCIDE" },
+					-- max_items = 100,
+					-- sdcv_path = "sdcv",
+					-- ansi_colors = false,
+				},
 			},
 			spell = {
 				name = "Spell",
