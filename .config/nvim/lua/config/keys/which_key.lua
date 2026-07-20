@@ -7,8 +7,8 @@ wk.add({
     "<leader>sth",
     function()
       if vim.g.current_theme == "vanta" then
-        vim.cmd("colorscheme github_light_colorblind")
-        vim.g.current_theme = "github_light_colorblind"
+        vim.cmd("colorscheme lauds")
+        vim.g.current_theme = "lauds"
       else
         vim.cmd("colorscheme vanta")
         vim.g.current_theme = "vanta"

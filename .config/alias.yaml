@@ -98,7 +98,6 @@ gpn: git push no-mistakes
 ## OpenCode
 oc: opencode.exe $* & reset
 occ: opencode --continue $* & reset
-ocp: opencode --model deepseek/deepseek-v4-pro $* & reset
 
 ## OpenCommit
 ocoi: oco hook set

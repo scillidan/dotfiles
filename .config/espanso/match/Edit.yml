@@ -6,7 +6,8 @@ matches:
       author:
         type: choice
         values:
-          - DeepSeek
+          - Kimi-K3
+          - DeepSeek-V4
           - GLM-5.1
           - Hy3-preview
         default: DeepSeek

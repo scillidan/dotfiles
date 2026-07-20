@@ -26,13 +26,12 @@ require("lazy").setup(
         require("config.vanta")
         vim.cmd.colorscheme("vanta")
       end },
-    { "projekt0n/github-nvim-theme", name = "github-theme", lazy = false, priority = 1000 },
+    { "ntk148v/lauds", lazy = false, priority = 1000 },
     -- Visual
     {"rachartier/tiny-glimmer.nvim", event = "VeryLazy", priority = 10, opts= {} },
     { "b0o/incline.nvim", event = "VeryLazy", opts = {} },
     { "tadaa/vimade", opts = { fadelevel = 0.8} },
     { "folke/twilight.nvim", opts = { dimming = { color = {}, alpha = 0.8 } } },
-    { "catgoose/nvim-colorizer.lua", event = "BufReadPre", opts = {} },
     { "saghen/filler-begone.nvim" },
     -- Key
     { "folke/which-key.nvim", event = "VeryLazy",
@@ -98,11 +97,11 @@ require("lazy").setup(
           end },
         { "moyiz/blink-emoji.nvim" },
         { "archie-judd/blink-cmp-words" },
+        { "scillidan/blink-cmp-stardict" },
         { "ribru17/blink-cmp-spell" },
         { "mikavilpas/blink-ripgrep.nvim" },
         { "dynamotn/blink-cmp-zellij" },
-        { "mgalliou/blink-cmp-tmux" },
-        { "blink-cmp-stardict", dir = "E:/Downloads/proj/blink-cmp-stardict" }
+        { "mgalliou/blink-cmp-tmux" }
       },
       config = function()
         require("blink.cmp").setup(require("config.blink"))

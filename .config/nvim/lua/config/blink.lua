@@ -66,8 +66,7 @@ return {
 				"ripgrep",
 				"zellij",
 				"tmux",
-				"spell",
-				"stardict",
+				"spell"
 			}
 
 			if vim.tbl_contains({ "gitcommit", "jj" }, vim.bo.filetype) then
@@ -76,8 +75,11 @@ return {
 			if vim.tbl_contains({ "gitcommit", "markdown", "text" }, vim.bo.filetype) then
 				table.insert(result, "emoji")
 			end
+			-- if vim.tbl_contains({ "markdown", "text" }, vim.bo.filetype) or inside_comment_block() then
+			-- 	table.insert(result, "dictionary")
+			-- end
 			if vim.tbl_contains({ "markdown", "text" }, vim.bo.filetype) or inside_comment_block() then
-				table.insert(result, "dictionary")
+				table.insert(result, "stardict")
 			end
 			if vim.bo.filetype == "markdown" then
 				table.insert(result, "mdlink")
@@ -93,6 +95,8 @@ return {
 
 			return result
 		end,
+
+		min_keyword_length = 2,
 
 		-- per_filetype = {
 		-- 	opencode_ask = { "lsp", "buffer" },
@@ -215,20 +219,20 @@ return {
 				opts = {},
 			},
 			stardict = {
-				name = "StarDict",
+				name = "stardict",
 				module = "blink-cmp-stardict",
-				min_keyword_length = 2,
+				score_offset = 50,
 				opts = {
-					-- dict_dirs = { "~/.stardict/dic" },
-					-- dictionaries = { "WordNet", "GCIDE" },
-					-- max_items = 100,
-					-- sdcv_path = "sdcv",
-					-- ansi_colors = false,
+					include_dictionaries = { "CC-CEDICT", "WordNet", "HanYuDaCiDian" }
 				},
 			},
 			spell = {
 				name = "Spell",
 				module = "blink-cmp-spell",
+				-- stardict covers prose filetypes; spell only fires elsewhere
+				enabled = function()
+					return not vim.tbl_contains({ "markdown", "text" }, vim.bo.filetype)
+				end,
 				score_offset = 40,
 				opts = {
 					enable_in_context = function()

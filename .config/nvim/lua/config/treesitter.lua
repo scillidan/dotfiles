@@ -29,7 +29,6 @@ local parsers = {
   "regex",
   "requirements",
   "rst",
-  "tmux",
   "toml",
   "tsv",
   "typescript",
@@ -37,8 +36,7 @@ local parsers = {
   "vim",
   "vimdoc",
   "xml",
-  "yaml",
-  "zathurarc",
+  "yaml"
 }
 
 local exclude_parsers = {
