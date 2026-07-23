@@ -7,8 +7,9 @@ require("telescope").setup({
     previewer = true,
     layout_config = {
     	preview_cutoff = 60,
-    	center = { height = 0.99, width = 0.99 },
-     },
+    	center = { height = 0.7, width = 0.99, preview_cutoff = 1 },
+    	horizontal = { width = 0.99, height = 0.99, preview_width = 0.5 },
+    },
     multi_icon = "┃",
     mappings = { i = { ["<esc>"] = actions.close } },
     file_ignore_patterns = { "%.git/", "node_modules/", "site/", "public/", "%.venv/" },
@@ -29,8 +30,8 @@ require("telescope").setup({
     },
   },
   pickers = {
-    find_files = { layout_strategy = "center", previewer = true, hidden = true },
-    live_grep = { layout_strategy = "center", previewer = true }
+    find_files = { layout_strategy = "horizontal", previewer = true, hidden = true },
+    live_grep = { layout_strategy = "horizontal", previewer = true }
   },
   extensions = {
     cmdline = { picker = { layout_config = { width = 100, height = 25 } } },

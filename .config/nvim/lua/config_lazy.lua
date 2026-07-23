@@ -357,6 +357,10 @@ require("lazy").setup(
         require("config.keys.hodur")
       end },
     { "ZWindL/orphans.nvim", opts = {} },
+    { "scillidan/stardict.nvim",
+      config = function()
+        require("config.stardict")
+      end },
     { "christoomey/vim-tmux-navigator",
       cond = vim.fn.has("unix") == 1,
       cmd = require("config.cmd.vim_tmux_navigator"),

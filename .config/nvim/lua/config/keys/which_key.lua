@@ -6,12 +6,10 @@ wk.add({
   {
     "<leader>sth",
     function()
-      if vim.g.current_theme == "vanta" then
+      if vim.g.colors_name == "vanta" then
         vim.cmd("colorscheme lauds")
-        vim.g.current_theme = "lauds"
       else
         vim.cmd("colorscheme vanta")
-        vim.g.current_theme = "vanta"
       end
     end,
     desc = "Toggle theme",
@@ -20,12 +18,33 @@ wk.add({
 
   -- Key
   { "<leader>!", '<Cmd>lua require("which-key").show({ global = false })<CR>', desc = "which-key.show", mode = "n" },
+  -- Stardict
+  { "<leader>d", function() require("stardict").lookup() end, desc = "Stardict lookup", mode = "n" },
   -- Snippet
   --  { "<C-k>", '<Cmd>lua require("luasnip").expand()<CR>', desc = "luasnip expand", mode = { "i", "s" } },
   --  { "<C-h>", '<Cmd>lua require("luasnip").jump(-1)<CR>', desc = "luasnip jump(-1)", mode = { "i", "s" } },
   --  { "<C-l>", '<Cmd>lua require("luasnip").jump(1)<CR>', desc = "luasnip jump(1)", mode = { "i", "s" } },
+  -- Hover / documentation
+  {
+    "K",
+    function()
+      if vim.tbl_contains({ "markdown", "text" }, vim.bo.filetype) then
+        -- In prose files, use blink.cmp + stardict to show dictionary docs for the word under cursor
+        require("blink.cmp").show({ providers = { "stardict" } })
+      else
+        -- In code files, use standard LSP hover
+        vim.lsp.buf.hover()
+      end
+    end,
+    desc = "Hover / documentation",
+    mode = "n",
+  },
+
+  -- LSP hover fallback (always available even in markdown/text)
+  { "<leader>K", vim.lsp.buf.hover, desc = "LSP hover", mode = "n" },
+
   -- Treesitter
-  { "K", require("ts-node-action").node_action, desc = "Trigger Node Action", mode = "n" },
+  { "<leader>k", require("ts-node-action").node_action, desc = "Trigger Node Action", mode = "n" },
 
   -- Markdown
   { "<leader>mh", "<Cmd>MDHeadersCurrent<CR>", desc = "MDHeadersCurrent", mode = "n" },
