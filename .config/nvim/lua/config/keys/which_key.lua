@@ -19,15 +19,26 @@ wk.add({
   -- Key
   { "<leader>!", '<Cmd>lua require("which-key").show({ global = false })<CR>', desc = "which-key.show", mode = "n" },
   -- Stardict
-  { "<leader>d", function() require("stardict").lookup() end, desc = "Stardict lookup", mode = "n" },
+  { "<leader>sd", function() require("stardict").lookup() end, desc = "Stardict lookup", mode = { "n", "v" } },
+  -- Docset
+  { "<leader>D", "<Cmd>Docset<CR>", desc = "Docset picker", mode = "n" },
+  { "<leader>d", function() require("docset").lookup() end, desc = "Docset lookup word", mode = "n" },
+  { "<leader>d",
+  	function()
+      local mode = vim.fn.visualmode()
+      local word = vim.fn.getregion(vim.fn.getpos("'<"), vim.fn.getpos("'>"), { type = mode })[1]
+      if word and word ~= "" then
+        require("docset").lookup(word)
+      end
+    end,
+    desc = "Docset lookup selection", mode = "v" },
   -- Snippet
   --  { "<C-k>", '<Cmd>lua require("luasnip").expand()<CR>', desc = "luasnip expand", mode = { "i", "s" } },
   --  { "<C-h>", '<Cmd>lua require("luasnip").jump(-1)<CR>', desc = "luasnip jump(-1)", mode = { "i", "s" } },
   --  { "<C-l>", '<Cmd>lua require("luasnip").jump(1)<CR>', desc = "luasnip jump(1)", mode = { "i", "s" } },
   -- Hover / documentation
-  {
-    "K",
-    function()
+  { "K",
+  	function()
       if vim.tbl_contains({ "markdown", "text" }, vim.bo.filetype) then
         -- In prose files, use blink.cmp + stardict to show dictionary docs for the word under cursor
         require("blink.cmp").show({ providers = { "stardict" } })
@@ -37,8 +48,7 @@ wk.add({
       end
     end,
     desc = "Hover / documentation",
-    mode = "n",
-  },
+    mode = "n" },
 
   -- LSP hover fallback (always available even in markdown/text)
   { "<leader>K", vim.lsp.buf.hover, desc = "LSP hover", mode = "n" },
@@ -163,10 +173,10 @@ wk.add({
   { "<S-C-d>", function() oc.command("session.half.page.down") end, desc = "opencode half page down", mode = "n" },
 
   -- Others
-  { "<c-h>", "<Cmd><C-U>TmuxNavigateLeft<CR>", desc = "Tmux Navigate Left" },
-  { "<c-j>", "<Cmd><C-U>TmuxNavigateDown<CR>", desc = "Tmux Navigate Down" },
-  { "<c-k>", "<Cmd><C-U>TmuxNavigateUp<CR>", desc = "Tmux Navigate Up" },
-  { "<c-l>", "<Cmd><C-U>TmuxNavigateRight<CR>", desc = "Tmux Navigate Right" },
-  { "<c-\\>", "<Cmd><C-U>TmuxNavigatePrevious<CR>", desc = "Tmux Navigate Previous" },
+  -- { "<c-h>", "<Cmd><C-U>TmuxNavigateLeft<CR>", desc = "Tmux Navigate Left" },
+  -- { "<c-j>", "<Cmd><C-U>TmuxNavigateDown<CR>", desc = "Tmux Navigate Down" },
+  -- { "<c-k>", "<Cmd><C-U>TmuxNavigateUp<CR>", desc = "Tmux Navigate Up" },
+  -- { "<c-l>", "<Cmd><C-U>TmuxNavigateRight<CR>", desc = "Tmux Navigate Right" },
+  -- { "<c-\\>", "<Cmd><C-U>TmuxNavigatePrevious<CR>", desc = "Tmux Navigate Previous" },
 })
 

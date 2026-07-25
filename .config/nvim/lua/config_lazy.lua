@@ -96,7 +96,7 @@ require("lazy").setup(
             require("gitmoji").setup({})
           end },
         { "moyiz/blink-emoji.nvim" },
-        { "archie-judd/blink-cmp-words" },
+        -- { "archie-judd/blink-cmp-words" },
         { "scillidan/blink-cmp-stardict" },
         { "ribru17/blink-cmp-spell" },
         { "mikavilpas/blink-ripgrep.nvim" },
@@ -334,6 +334,11 @@ require("lazy").setup(
         require("dap-python").setup(python_path)
       end },
     -- Development
+    { "scillidan/docset.nvim",
+      dependencies = { "ibhagwan/fzf-lua" },
+      config = function()
+        require("config.docset")
+      end },
     { "S1M0N38/love2d.nvim", enabled = false, event = "VeryLazy", opts = {} },
     { "Mathijs-Bakker/godotdev.nvim",
       dependencies = { "nvim-lspconfig", "nvim-dap", "nvim-dap-ui", "nvim-treesitter" } },

@@ -30,6 +30,7 @@ config.font = wezterm.font_with_fallback({
 	"Sarasa Term SC Nerd",
 })
 config.font_size = 10.0
+-- https://help.gnome.org/users/gnome-terminal/stable/app-terminal-sizes.html.en
 config.initial_cols = 152
 config.initial_rows = 42
 config.window_background_opacity = 1

@@ -213,11 +213,11 @@ return {
 					return vim.tbl_contains({ "gitcommit", "markdown", "text" }, vim.o.filetype)
 				end,
 			},
-			dictionary = {
-				name = "blink-cmp-words",
-				module = "blink-cmp-words.dictionary",
-				opts = {},
-			},
+			-- dictionary = {
+			-- 	name = "blink-cmp-words",
+			-- 	module = "blink-cmp-words.dictionary",
+			-- 	opts = {},
+			-- },
 			stardict = {
 				name = "stardict",
 				module = "blink-cmp-stardict",
