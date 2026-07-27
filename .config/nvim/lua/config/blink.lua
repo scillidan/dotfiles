@@ -223,6 +223,7 @@ return {
 				module = "blink-cmp-stardict",
 				score_offset = 50,
 				opts = {
+					dict_dirs = { "~/.stardict/dic" },
 					include_dictionaries = { "CC-CEDICT", "WordNet", "HanYuDaCiDian" }
 				},
 			},

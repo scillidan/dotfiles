@@ -43,6 +43,9 @@ wk.add({
   { "<leader>k", require("ts-node-action").node_action, desc = "Trigger Node Action", mode = "n" },
 
   -- Markdown
+  { "<leader>ie", "<Cmd>Inlyne enable<CR>", desc = "Inlyne Enable" },
+  { "<leader>id", "<Cmd>Inlyne disable<CR>", desc = "Inlyne Disable" },
+  { "<leader>it", "<Cmd>Inlyne toggle<CR>", desc = "Inlyne Toggle" },
   { "<leader>mh", "<Cmd>MDHeadersCurrent<CR>", desc = "MDHeadersCurrent", mode = "n" },
   -- LaTeX
   { "<leader>ci", "<Cmd>CiteInsert<CR>", desc = "CiteInsert" },
