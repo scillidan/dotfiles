@@ -18,20 +18,6 @@ wk.add({
 
   -- Key
   { "<leader>!", '<Cmd>lua require("which-key").show({ global = false })<CR>', desc = "which-key.show", mode = "n" },
-  -- Stardict
-  { "<leader>sd", function() require("stardict").lookup() end, desc = "Stardict lookup", mode = { "n", "v" } },
-  -- Docset
-  { "<leader>D", "<Cmd>Docset<CR>", desc = "Docset picker", mode = "n" },
-  { "<leader>d", function() require("docset").lookup() end, desc = "Docset lookup word", mode = "n" },
-  { "<leader>d",
-  	function()
-      local mode = vim.fn.visualmode()
-      local word = vim.fn.getregion(vim.fn.getpos("'<"), vim.fn.getpos("'>"), { type = mode })[1]
-      if word and word ~= "" then
-        require("docset").lookup(word)
-      end
-    end,
-    desc = "Docset lookup selection", mode = "v" },
   -- Snippet
   --  { "<C-k>", '<Cmd>lua require("luasnip").expand()<CR>', desc = "luasnip expand", mode = { "i", "s" } },
   --  { "<C-h>", '<Cmd>lua require("luasnip").jump(-1)<CR>', desc = "luasnip jump(-1)", mode = { "i", "s" } },
@@ -161,6 +147,28 @@ wk.add({
   { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input("Condition for breakpoint:")) end, desc = "DAP: Conditional BP", mode = "n" },
   { "<leader>dD", function() require("dap").clear_breakpoints() end, desc = "DAP: Clear Breakpoints", mode = "n" },
   -- Development
+  { "<leader>D", "<Cmd>Docset<CR>", desc = "Docset picker", mode = "n" },
+  { "<leader>d", "<Cmd>DocsetLookup<CR>", desc = "Docset lookup word", mode = "n" },
+  { "<leader>d",
+  	function()
+      local mode = vim.fn.visualmode()
+      local word = vim.fn.getregion(vim.fn.getpos("'<"), vim.fn.getpos("'>"), { type = mode })[1]
+      if word and word ~= "" then
+        require("docset").lookup(word)
+      end
+    end,
+    desc = "Docset lookup selection", mode = "v" },
+  { "<leader>DD", "<Cmd>DevDocs<CR>", desc = "DevDocs picker", mode = "n" },
+  { "<leader>dl", "<Cmd>DevDocsLookup<CR>", desc = "DevDocs lookup word", mode = "n" },
+  { "<leader>dl",
+  	function()
+      local mode = vim.fn.visualmode()
+      local word = vim.fn.getregion(vim.fn.getpos("'<"), vim.fn.getpos("'>"), { type = mode })[1]
+      if word and word ~= "" then
+        require("docset").lookup(word)
+      end
+    end,
+    desc = "DevDocs lookup selection", mode = "v" },
   { "<leader>vv", "<Cmd>LoveRun<CR>", desc = "Love Run" },
   { "<leader>vs", "<Cmd>LoveStop<CR>", desc = "Love Stop" },
   -- LLM
@@ -173,10 +181,10 @@ wk.add({
   { "<S-C-d>", function() oc.command("session.half.page.down") end, desc = "opencode half page down", mode = "n" },
 
   -- Others
+  { "<leader>sd", function() require("stardict").lookup() end, desc = "Stardict lookup", mode = { "n", "v" } },
   -- { "<c-h>", "<Cmd><C-U>TmuxNavigateLeft<CR>", desc = "Tmux Navigate Left" },
   -- { "<c-j>", "<Cmd><C-U>TmuxNavigateDown<CR>", desc = "Tmux Navigate Down" },
   -- { "<c-k>", "<Cmd><C-U>TmuxNavigateUp<CR>", desc = "Tmux Navigate Up" },
   -- { "<c-l>", "<Cmd><C-U>TmuxNavigateRight<CR>", desc = "Tmux Navigate Right" },
   -- { "<c-\\>", "<Cmd><C-U>TmuxNavigatePrevious<CR>", desc = "Tmux Navigate Previous" },
 })
-

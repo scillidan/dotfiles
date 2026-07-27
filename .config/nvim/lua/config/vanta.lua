@@ -1,3 +1,5 @@
+vim.o.background = "dark"
+
 require("vanta").setup({
   terminal_colors = true,
   undercurl = false,

@@ -3,7 +3,8 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "moonshot/kimi-for-coding-highspeed",
+      "model": "deepseek/deepseek-v4-flash",
+      // "model": "moonshot/kimi-for-coding-highspeed",
       "options": {},
       "permission": {
         "bash": "allow",
@@ -17,7 +18,8 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "moonshot/kimi-for-coding-highspeed",
+      "model": "deepseek/deepseek-v4-flash",
+      // "model": "moonshot/kimi-for-coding-highspeed",
       "options": {},
       "permission": {
         "bash": "deny",

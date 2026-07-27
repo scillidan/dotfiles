@@ -20,7 +20,6 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup(
   {
     -- Theme
-    { "f-person/auto-dark-mode.nvim", opts = {} },
     { "emanuel2718/vanta.nvim", priority = 1000,
       config = function()
         require("config.vanta")
@@ -338,6 +337,11 @@ require("lazy").setup(
       dependencies = { "ibhagwan/fzf-lua" },
       config = function()
         require("config.docset")
+      end },
+    { "scillidan/devdocs.nvim",
+      dependencies = { "ibhagwan/fzf-lua" },
+      config = function()
+        require("config.devdocs")
       end },
     { "S1M0N38/love2d.nvim", enabled = false, event = "VeryLazy", opts = {} },
     { "Mathijs-Bakker/godotdev.nvim",
