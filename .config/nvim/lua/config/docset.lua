@@ -6,6 +6,6 @@ require("docset").setup({
   },
   include_documents = { "Bash", "LaTeX" },
   exclude_documents = { "Linux Man Pages" },
-  browser = "reader",
+  browser = { "reader", { "links", "-dump" } },
   -- picker = "telescope"
 })

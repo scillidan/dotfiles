@@ -13,7 +13,7 @@ bkmf: bash fzf-bookmarks.sh
 sdvf: bash fzf-sdcv.sh
 tldf: bash fzf-tldr.sh
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
-ff-devdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs-user-md"
+ff-devdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs"
 ff-tables: bash fzf-files.sh "$USERHOME/Share/files/tables"
 ocf: bash fzf-opencode-session.sh
 
