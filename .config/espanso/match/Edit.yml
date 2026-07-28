@@ -6,8 +6,10 @@ matches:
       author:
         type: choice
         values:
+          - Kimi-K2.7-Code
           - Kimi-K3
-          - DeepSeek-V4
+          - DeepSeek-V4-Flash
+          - DeepSeek-V4-Pro
           - GLM-5.1
           - Hy3-preview
         default: DeepSeek
@@ -51,5 +53,5 @@ matches:
       license:
         type: choice
         values:
-          - '(at your option) any later version'
+          - 'any later version'
           - 'Incompatible With Secondary Licenses'
