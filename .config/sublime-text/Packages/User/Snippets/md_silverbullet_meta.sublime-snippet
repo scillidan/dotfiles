@@ -1,11 +1,10 @@
 <snippet>
 	<content><![CDATA[
 ---
-description: $1
-tags: $2
+tags: $1
 ---
 
-$3
+$2
 ]]></content>
 	<tabTrigger>sbmeta</tabTrigger>
 	<scope>text.html.markdown</scope>
