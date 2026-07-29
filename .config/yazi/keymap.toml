@@ -26,7 +26,12 @@ run = "plugin split-tabs spl_preview"
 desc = "Split-tabs: toggle preview pane"
 
 [[mgr.prepend_keymap]]
-on   = "T"
+on   = "R"
+run  = "plugin switch-ratio"
+desc = "Cycle pane ratio"
+
+[[mgr.prepend_keymap]]
+on   = "Z"
 run  = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
 

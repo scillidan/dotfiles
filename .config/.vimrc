@@ -1,3 +1,4 @@
+" https://stackoverflow.com/questions/12584465/how-to-maintain-tabs-when-pasting-in-vim
 set tabstop=4
 set shiftwidth=4
 set noexpandtab

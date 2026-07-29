@@ -75,7 +75,7 @@ gp: git push
 gls: gitleaks dir
 
 ## git-open
-go: git-open
+gop: git-open
 
 ## git-recent
 gr: git-recent

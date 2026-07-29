@@ -8,6 +8,12 @@ require("responsive-layout"):setup {
 	split    = 0.5,
 	divider  = "─",
 }
+require("switch-ratio"):setup {
+	ratios = {
+		{ 1, 4, 3 },
+		{ 0, 1, 1 },
+	},
+}
 require("relative-path").setup()
 require("copy-file-contents"):setup({
 	append_char = "\n",

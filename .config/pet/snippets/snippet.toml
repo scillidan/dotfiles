@@ -329,6 +329,18 @@ command = "issue2md $url"
 	Tag = ["marker", "pdf"]
 	command = "marker_gui"
 
+## MarkItDown
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["markitdown", "pdf"]
+command = "markitdown file.pdf -o file.md"
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["markitdown", "epub"]
+command = "markitdown file.epub -o file.md"
+
 ## markpdf
 [[Snippets]]
 	Description = ""
