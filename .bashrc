@@ -1,3 +1,5 @@
+# ~/.bashrc
+
 export EDITOR="nvim"
 export BROWSER="qutebrowser"
 export LANG="en_US.UTF-8"
@@ -35,18 +37,32 @@ else
   export STARDICT_DATA_DIR="$HOME/storage/downloads/Local/Download/sdcv"
 fi
 
-source <(fzf --bash)
+eval "$(atuin init bash --disable-up-arrow)"
+
+# export CARAPACE_BRIDGES="bash"
+# source <(carapace _carapace)
+
 export FZF_DEFAULT_OPTS="--bind='alt-p:preview-page-up,alt-n:preview-page-down,tab:select+down,btab:deselect+down,ctrl-a:select-all,ctrl-d:deselect-all'"
+eval "$(fzf --bash)"
 
-# Atuin
-eval "$(atuin init bash)"
+eval "$(zoxide init bash)"
 
-# Carapace
-source <(carapace _carapace bash)
+source "$USERHOME/Share/dotfiles/.config/bash/load-aliases.bash"
+load_yaml_file "$USERHOME/Share/dotfiles/.config/alias.yaml"
+load_yaml_file "$USERHOME/Share/dotfiles/.config/alias-scripts.yaml"
 
-if command -v zoxide &> /dev/null; then
-    eval "$(zoxide init bash)"
-fi
+source "$USERHOME/Share/dotfiles/.config/bash/functions.bash"
 
 export HF_MIRROR="https://hf-mirror.com"
 export HF_ENDPOINT="https://hf-mirror.com"
+
+export INFOPATH="$TEXLIVE/texmf-dist/doc/info"
+
+bind '"\C-@": complete'
+bind '"\e[H": beginning-of-line'
+bind '"\e[F": end-of-line'
+bind '"\e[3~": delete-char'
+bind -x '"\ef": fzf_files'
+bind -x '"\eg": fzf_ripgrep'
+
+# eval "clear"
