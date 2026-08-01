@@ -4,15 +4,20 @@
     "idleTimeout": 10
   },
   "mcpServers": {
-    "aginx": {
-      "command": "aginx-mcp",
+    "agnix": {
+      "command": "agnix-mcp",
       "args": [],
       "lifecycle": "lazy"
     },
     "context-mode": {
       "command": "context-mode"
     },
-    "gimp-mcp": {
+    "fff": {
+      "command": "fff-mcp",
+      "args": [],
+      "lifecycle": "lazy"
+    },
+    "_gimp-mcp": {
       "command": "uv",
       "args": ["run", "--directory", "C:/Users/User/Local/Srv/gimp-mcp", "gimp_mcp_server.py"],
       "lifecycle": "lazy"

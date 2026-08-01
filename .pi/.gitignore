@@ -1,5 +1,6 @@
 agent/sessions
 agent/npm
 agent/trust.json
+agent/models-store.json
 context-mode
 npm

@@ -127,3 +127,20 @@ models:
     ttl: 300
     aliases:
       - "qwen3:14b"
+
+  # https://huggingface.co/HauhauCS/Gemma4-12B-QAT-Uncensored-HauhauCS-Balanced
+  gemma4-12b-qat:
+    name: "Gemma 4 12B QAT Uncensored HauhauCS Balanced (Q4_K_M)"
+    cmd: |
+      ${server} \
+        --port ${PORT} \
+        --model ${models_dir}/Gemma4-12B-QAT-Uncensored-HauhauCS-Balanced-Q4_K_M.gguf \
+        --ctx-size 8192 \
+        -ngl 99 \
+        --flash-attn on \
+        --jinja \
+        --cache-type-k q8_0 --cache-type-v q4_0 \
+        --temp 0.6 --top-p 0.9 --top-k 64 --min-p 0.05 --repeat-penalty 1.1
+    ttl: 600
+    aliases:
+      - "gemma4:12b"

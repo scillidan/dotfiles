@@ -13,12 +13,6 @@
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
-          "cost": {
-            "input": 1.74,
-            "output": 3.48,
-            "cacheRead": 0.145,
-            "cacheWrite": 0
-          },
           "compat": {
             "requiresReasoningContentOnAssistantMessages": true,
             "thinkingFormat": "deepseek",
@@ -38,12 +32,6 @@
           "maxTokens": 384000,
           "input": ["text"],
           "reasoning": true,
-          "cost": {
-            "input": 0.14,
-            "output": 0.28,
-            "cacheRead": 0.028,
-            "cacheWrite": 0
-          },
           "compat": {
             "requiresReasoningContentOnAssistantMessages": true,
             "thinkingFormat": "deepseek",
@@ -54,6 +42,62 @@
               "high": "high",
               "xhigh": "max"
             }
+          }
+        }
+      ]
+    },
+    "moonshot": {
+      "baseUrl": "https://api.kimi.com/coding/v1",
+      "api": "openai-completions",
+      "apiKey": "$MOONSHOT_API_KEY",
+      "models": [
+        {
+          "id": "k3",
+          "name": "Kimi K3",
+          "contextWindow": 1048576,
+          "input": ["text", "image"],
+          "reasoning": true,
+          "compat": {
+            "supportsDeveloperRole": false,
+            "thinkingFormat": "openai",
+            "requiresReasoningContentOnAssistantMessages": true,
+            "supportsReasoningEffort": true,
+          },
+          "thinkingLevelMap": {
+            "low": "low",
+            "high": "high",
+            "max": "max"
+          }
+        },
+        {
+          "id": "k3-256k",
+          "name": "Kimi K3-256K",
+          "contextWindow": 262144,
+          "input": ["text", "image"],
+          "reasoning": true,
+          "compat": {
+            "supportsDeveloperRole": false,
+            "thinkingFormat": "openai",
+            "requiresReasoningContentOnAssistantMessages": true,
+            "supportsReasoningEffort": true,
+          },
+          "thinkingLevelMap": {
+            "low": "low",
+            "high": "high",
+            "max": "max"
+          }
+        },
+        {
+          "id": "kimi-for-coding-highspeed",
+          "name": "Kimi K2.7 Code (HighSpeed)",
+          "contextWindow": 262144,
+          "input": ["text", "image"],
+          "reasoning": true,
+          "compat": {
+            "supportsDeveloperRole": false,
+            "thinkingFormat": "deepseek",
+            "requiresReasoningContentOnAssistantMessages": true,
+            "supportsReasoningEffort": true,
           }
         }
       ]

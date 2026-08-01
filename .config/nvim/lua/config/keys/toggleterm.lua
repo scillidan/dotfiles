@@ -1,8 +1,8 @@
-vim.keymap.set("n", "<leader>t1", "<CMD>:1ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 1" })
-vim.keymap.set("n", "<leader>t2", "<CMD>:2ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 2" })
-vim.keymap.set("n", "<leader>t3", "<CMD>:3ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 3" })
-vim.keymap.set("n", "<leader>t4", "<CMD>:4ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 4" })
-vim.keymap.set("n", "<leader>t0", "<CMD>:ToggleTermToggleAll<CR>", { desc = "ToggleTerm: Toggle All" })
+vim.keymap.set("n", "<leader>t1", "<Cmd>:1ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 1" })
+vim.keymap.set("n", "<leader>t2", "<Cmd>:2ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 2" })
+vim.keymap.set("n", "<leader>t3", "<Cmd>:3ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 3" })
+vim.keymap.set("n", "<leader>t4", "<Cmd>:4ToggleTerm direction=horizontal<CR>", { desc = "ToggleTerm: Horizontal 4" })
+vim.keymap.set("n", "<leader>t0", "<Cmd>:ToggleTermToggleAll<CR>", { desc = "ToggleTerm: Toggle All" })
 
 function _G.set_terminal_keymaps()
   local opts = { buffer = 0 }
@@ -35,7 +35,7 @@ local lazygit = Terminal:new({
   },
   on_open = function(term)
     vim.cmd("startinsert!")
-    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<Cmd>close<CR>", { noremap = true, silent = true })
   end,
   on_close = function(term)
     vim.cmd("startinsert!")
@@ -44,4 +44,4 @@ local lazygit = Terminal:new({
 function _lazygit_toggle()
   lazygit:toggle()
 end
-vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>lg", "<Cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })

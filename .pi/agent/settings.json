@@ -1,6 +1,8 @@
 {
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash",
+  // "defaultProvider": "moonshot",
+  // "defaultModel": "kimi-for-coding-highspeed",
   "defaultThinkingLevel": "medium",
   "theme": "dark",
   "packages": [
@@ -12,8 +14,7 @@
   ],
   "skills": [
     "~/.agents/skills",
-    "~/.agents/personal-skills",
-    "transcribe"
+    "~/.agents/personal-skills"
   ],
   "extensions": [],
   "enableSkillCommands": true,
@@ -32,5 +33,6 @@
       "maxRetryDelayMs": 60000
     }
   },
+  "defaultProjectTrust": "always",
   "lastChangelogVersion": "0.80.2"
 }

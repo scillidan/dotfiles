@@ -34,7 +34,7 @@ require("lazy").setup(
     { "saghen/filler-begone.nvim" },
     -- Key
     { "folke/which-key.nvim", event = "VeryLazy",
-      dependencies = { "echasnovski/mini.icons", opts = {} },
+      dependencies = { "nvim-mini/mini.icons", opts = {} },
       config = function()
         require("config.which_key")
         require("config.keys.which_key")
@@ -181,7 +181,7 @@ require("lazy").setup(
 
     -- Bookmark
     { "otavioschwanck/arrow.nvim",
-      dependencies = { "echasnovski/mini.icons" },
+      dependencies = { "nvim-mini/mini.icons" },
       config = function()
         require("config.arrow")
       end },
@@ -242,33 +242,37 @@ require("lazy").setup(
       end },
 
     -- mini.nvim
-    { "echasnovski/mini.icons", version = "*", opts = {} },
-    { "echasnovski/mini.statusline", version = "*",
+    { "nvim-mini/mini.icons", version = "*", opts = {} },
+    { "nvim-mini/mini.statusline", version = "*",
       config = function()
         require("config.mini_statusline")
       end },
-    { "echasnovski/mini.cursorword", version = "*", opts = {} },
-    { "echasnovski/mini.pairs", version = "*",
+    { "nvim-mini/mini.bracketed", version = '*',
+      config = function()
+        require('mini.bracketed').setup()
+      end },
+    { "nvim-mini/mini.cursorword", version = "*", opts = {} },
+    { "nvim-mini/mini.pairs", version = "*",
       config = function()
         require("config.mini_pairs")
       end },
-    { "echasnovski/mini.move", version = "*",
+    { "nvim-mini/mini.move", version = "*",
       opts = {
       	mappings = require("config.keys.mini_move"),
         options = { reindent_linewise = true } } },
-    { "echasnovski/mini.align", version = "*",
+    { "nvim-mini/mini.align", version = "*",
       config = function()
         require("mini.align").setup()
       end },
-    { "echasnovski/mini.surround", version = "*",
+    { "nvim-mini/mini.surround", version = "*",
       config = function()
         require("mini.surround").setup()
       end },
-    { "echasnovski/mini.comment", version = "*",
+    { "nvim-mini/mini.comment", version = "*",
       config = function()
         require("mini.comment").setup()
       end },
-    { "echasnovski/mini.trailspace", version = "*",
+    { "nvim-mini/mini.trailspace", version = "*",
       config = function()
         require("mini.trailspace").setup()
         vim.api.nvim_create_user_command("TrimSpaces", function()
@@ -278,13 +282,13 @@ require("lazy").setup(
           require("mini.trailspace").trim_last_lines()
         end, { desc = "Trim last lines" })
       end },
-    { "echasnovski/mini.splitjoin", version = "*",
+    { "nvim-mini/mini.splitjoin", version = "*",
       opts = { mappings = require("config.keys.mini_splitjoin") } },
-    { "echasnovski/mini.diff", version = "*",
+    { "nvim-mini/mini.diff", version = "*",
       config = function()
         require("mini.diff").setup()
       end },
-    { "echasnovski/mini-git", version = "*", main = "mini.git",
+    { "nvim-mini/mini-git", version = "*", main = "mini.git",
       config = function()
         require("mini.git").setup()
       end },
@@ -351,6 +355,12 @@ require("lazy").setup(
       config = function()
         vim.g.opencode_opts = {}
         vim.o.autoread = true
+      end },
+    { "zgs225/pi2.nvim",
+      -- dependencies = { "MeanderingProgrammer/render-markdown.nvim", "HakonHarnes/img-clip.nvim" },
+      config = function()
+      	require("config.pi")
+      	require("config.keys.pi")
       end },
     { "TabbyML/vim-tabby", enabled = false, lazy = false,
       dependencies = { "neovim/nvim-lspconfig" },
