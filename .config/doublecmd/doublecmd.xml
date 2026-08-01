@@ -158,10 +158,10 @@
   </Toolbars>
   <MainWindow>
     <Position Save="True">
-      <Left>25</Left>
-      <Top>22</Top>
-      <Width>800</Width>
-      <Height>480</Height>
+      <Left>825</Left>
+      <Top>347</Top>
+      <Width>958</Width>
+      <Height>464</Height>
       <PixelsPerInch>96</PixelsPerInch>
       <Maximized>False</Maximized>
       <Splitter>50</Splitter>
@@ -430,7 +430,7 @@
     <SkipFileOpError>False</SkipFileOpError>
     <TypeOfDuplicatedRename>0</TypeOfDuplicatedRename>
     <DefaultDropEffect>True</DefaultDropEffect>
-    <ShowDialogOnDragDrop>True</ShowDialogOnDragDrop>
+    <ShowDialogOnDragDrop>False</ShowDialogOnDragDrop>
     <DragAndDropTextRichtextDesireLevel>0</DragAndDropTextRichtextDesireLevel>
     <DragAndDropTextHtmlDesireLevel>1</DragAndDropTextHtmlDesireLevel>
     <DragAndDropTextUnicodeDesireLevel>2</DragAndDropTextUnicodeDesireLevel>
@@ -442,7 +442,7 @@
     <AutoExtractOpenMask/>
     <SearchDefaultTemplate/>
     <ProgressKind>0</ProgressKind>
-    <Confirmations>15</Confirmations>
+    <Confirmations>4</Confirmations>
     <Options>
       <Symlink>0</Symlink>
       <CorrectLinks>False</CorrectLinks>
