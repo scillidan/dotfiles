@@ -33,6 +33,5 @@
       "maxRetryDelayMs": 60000
     }
   },
-  "defaultProjectTrust": "always",
-  "lastChangelogVersion": "0.80.2"
+  "defaultProjectTrust": "always"
 }

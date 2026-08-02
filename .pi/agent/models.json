@@ -61,7 +61,7 @@
             "supportsDeveloperRole": false,
             "thinkingFormat": "openai",
             "requiresReasoningContentOnAssistantMessages": true,
-            "supportsReasoningEffort": true,
+            "supportsReasoningEffort": true
           },
           "thinkingLevelMap": {
             "low": "low",
@@ -79,7 +79,7 @@
             "supportsDeveloperRole": false,
             "thinkingFormat": "openai",
             "requiresReasoningContentOnAssistantMessages": true,
-            "supportsReasoningEffort": true,
+            "supportsReasoningEffort": true
           },
           "thinkingLevelMap": {
             "low": "low",
@@ -97,7 +97,7 @@
             "supportsDeveloperRole": false,
             "thinkingFormat": "deepseek",
             "requiresReasoningContentOnAssistantMessages": true,
-            "supportsReasoningEffort": true,
+            "supportsReasoningEffort": true
           }
         }
       ]
