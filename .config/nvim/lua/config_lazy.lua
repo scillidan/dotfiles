@@ -120,6 +120,11 @@ require("lazy").setup(
       config = function()
         require("config.md_headers")
       end },
+    { "epwalsh/obsidian.nvim", version = "*", ft = "markdown",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("config.obsidian")
+      end },
     -- CSV
     { "hat0uma/csvview.nvim",
       opts = {
