@@ -3,7 +3,7 @@
   <ExtensionAssociation>
     <FileType>
       <Name>sioyek</Name>
-      <IconFile>E:\Scoop\apps\sioyek\current\sioyek.exe</IconFile>
+      <IconFile>sioyek</IconFile>
       <ExtensionList>epub|pdf</ExtensionList>
       <Actions>
         <Action>
