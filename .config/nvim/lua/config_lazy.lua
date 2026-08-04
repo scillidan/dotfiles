@@ -132,10 +132,7 @@ require("lazy").setup(
         keymaps = require("config.keys.csvview") },
       cmd = require("config.cmd.csvview") },
     -- Typst
-    { "chomosuke/typst-preview.nvim", version = "1.*", ft = "typst",
-      config = function()
-        require("typst-preview").setup()
-      end },
+    { "chomosuke/typst-preview.nvim", version = "1.*", ft = "typst", opts = {} },
     -- LaTeX
     { "iurimateus/luasnip-latex-snippets.nvim",
       dependencies = { { "L3MON4D3/LuaSnip" }, { "lervag/vimtex", lazy = false } },
