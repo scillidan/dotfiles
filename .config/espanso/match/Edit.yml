@@ -12,7 +12,6 @@ matches:
           - DeepSeek-V4-Pro
           - GLM-5.1
           - Hy3-preview
-        default: DeepSeek
   - trigger: ":by"
     form: |
       [[by]]
@@ -20,13 +19,10 @@ matches:
       by:
         type: choice
         values:
-          - '[translategemma-12b-it-i1_q4_k_m]'
-          - '[TranslateGemma 12B IT I1 (Q4_K_M)]'
-          - '[Gemma 3 12B IT (Q5_K_M)]'
-          - '[Gemma 3 4B IT (Q4_K_M)]'
           - '[perplexity.ai]'
-          - '[Qwen3-14B (Q4_K_M)]'
-        default: '[perplexity.ai]'
+          - 'Gemma 3 12B IT (Q5_K_M)'
+          - 'TranslateGemma 12B IT I1 (Q4_K_M)'
+          - 'Gemma 3 4B IT (Q4_K_M)'
   - trigger: ":cmmt"
     form: |
       [[comments]]

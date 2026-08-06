@@ -96,8 +96,9 @@ condal: conda list
 gpn: git push no-mistakes
 
 ## OpenCode
-oc: opencode.exe $* & reset
+oc: opencode $* & reset
 occ: opencode --continue $* & reset
+ocd: opencode --model deepseek/deepseek-v4-flash $* & reset
 
 ## OpenCommit
 ocoi: oco hook set
