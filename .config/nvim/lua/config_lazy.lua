@@ -134,11 +134,14 @@ require("lazy").setup(
     -- Typst
     { "chomosuke/typst-preview.nvim", version = "1.*", ft = "typst",
       opts = {
-        dependencies_bin = {
-          tinymist = vim.fn.exepath("tinymist"),
-        },
+        dependencies_bin = { tinymist = vim.fn.exepath("tinymist") },
       } },
     -- LaTeX
+    { "itsfernn/vimtex-follow", lazy = false,
+      dependencies = { "lervag/vimtex" },
+      config = function()
+        require("config.vimtex_follow")
+      end },
     { "iurimateus/luasnip-latex-snippets.nvim",
       dependencies = { { "L3MON4D3/LuaSnip" }, { "lervag/vimtex", lazy = false } },
       config = function()
