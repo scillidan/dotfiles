@@ -243,6 +243,11 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		mods = "ALT",
 		action = wezterm.action.SendString("tere.bat\r"),
 	})
+	table.insert(config.keys, {
+		key = "f",
+		mods = "LEADER",
+		action = wezterm.action.SendString("bash fzf-files.sh\r"),
+	})
 end
 
 wezterm.on("trigger-vim-with-scrollback", function(window, pane)

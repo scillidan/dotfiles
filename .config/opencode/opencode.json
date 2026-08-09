@@ -83,7 +83,11 @@
   },
   "permission": {
     "webfetch": "allow",
-    "websearch": "allow"
+    "websearch": "allow",
+    "bash": {
+      "*find*": "deny",
+      "*": "allow"
+    }
   },
   "provider": {
     "deepseek": {
