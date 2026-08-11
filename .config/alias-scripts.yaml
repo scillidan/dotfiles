@@ -36,5 +36,8 @@ nv: bash _nvim.sh
 ## Neovide
 nov: bash _neovide.sh
 
+## ugrep
+ugc: bash ugrep-files.sh "$USERHOME/Share/files/cheats"
+
 ## yazi
 y: yazi-cd $* & reset

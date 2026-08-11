@@ -135,6 +135,7 @@ require("lazy").setup(
     { "chomosuke/typst-preview.nvim", version = "1.*", ft = "typst",
       opts = {
         dependencies_bin = { tinymist = vim.fn.exepath("tinymist") },
+        -- dependencies_bin = is_windows and { tinymist = 'tinymist.cmd' } or { tinymist = 'tinymist' },
       } },
     -- LaTeX
     { "itsfernn/vimtex-follow", lazy = false,

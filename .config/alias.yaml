@@ -134,9 +134,6 @@ skup: skills update
 ## trashy
 rmy: trash
 
-## ugrep
-ugc: ugrep -iRQ --fuzzy=best --split "$USERHOME/Share/files/cheats"
-
 ## warp-wd
 wd: warp-wd
 
