@@ -234,14 +234,17 @@ require("lazy").setup(
     -- Save
     { "Pocco81/auto-save.nvim",
       config = function()
-        require("auto-save").setup({
-          enabled = false,
+        local auto_save = require("auto-save")
+        auto_save.setup({
+          condition = function(buf)
+            return not require("luasnip").in_snippet()
+          end,
         })
-        if require("luasnip").in_snippet() then
-          return false
-        end
+        auto_save.off()
       end },
     { "vladdoster/remember.nvim", opts = { open_folds = true } },
+    -- Shift
+    { "DRoma82/add-subtract-ex.nvim", opts= { keys = require("config.keys.add_subtract_ex") } },
     -- Sort
     { "mtrajano/tssorter.nvim", version = "*", opts = {} },
     -- Yank

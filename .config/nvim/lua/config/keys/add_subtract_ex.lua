@@ -1,0 +1,1 @@
+return { increment = "<C-=>", decrement = "<C-->" }
