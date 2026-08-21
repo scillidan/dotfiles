@@ -12,5 +12,5 @@ Title: $1
 ]]></content>
 	<tabTrigger>post</tabTrigger>
 	<scope>text.html.markdown</scope>
-	<description>marks-typ post</description>
+	<description>marks post</description>
 </snippet>

@@ -4,5 +4,5 @@ just polario ${1:portrait} "favorite-image/assets/${2:image}.${3:jpg}" "${4:auth
 ]]></content>
 	<tabTrigger>favoriteimage</tabTrigger>
 	<scope>text.html.markdown</scope>
-	<description>marks-typ favorite-image</description>
+	<description>marks favorite-image</description>
 </snippet>

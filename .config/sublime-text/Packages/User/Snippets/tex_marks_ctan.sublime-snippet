@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+\documentclass{ctan-card}
+
+\renewcommand{\CardImage}{$1.pdf}
+\renewcommand{\CardRows}{%
+CTAN: & \href{https://ctan.org/pkg/$1}{$1 \textendash{} $2} \\\\
+PDF: & {\url{$3}} \\\\
+Source: & {\url{$4}} \\\\
+Readme: & {\url{$5}} \\\\
+Maintainer: & $6 \\\\
+Topic: & $7 \\\\
+}
+
+\begin{document}
+\makectancard
+\end{document}
+
+]]></content>
+	<tabTrigger>ctan</tabTrigger>
+	<scope>text.tex.latex</scope>
+	<description>marks ctan</description>
+</snippet>
