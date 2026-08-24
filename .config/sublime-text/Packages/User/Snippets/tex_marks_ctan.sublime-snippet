@@ -7,7 +7,6 @@
 CTAN: & \href{https://ctan.org/pkg/$1}{$1 \textendash{} $2} \\\\
 PDF: & {\url{$3}} \\\\
 Source: & {\url{$4}} \\\\
-Readme: & {\url{$5}} \\\\
 Maintainer: & $6 \\\\
 Topic: & $7 \\\\
 }
