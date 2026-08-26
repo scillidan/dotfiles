@@ -19,10 +19,10 @@ matches:
       by:
         type: choice
         values:
-          - '[perplexity.ai]'
+          - 'Kimi K2.6'
           - 'Gemma 3 12B IT (Q5_K_M)'
-          - 'TranslateGemma 12B IT I1 (Q4_K_M)'
           - 'Gemma 3 4B IT (Q4_K_M)'
+          - '[perplexity.ai]'
   - trigger: ":cmmt"
     form: |
       [[comments]]
