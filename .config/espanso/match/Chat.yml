@@ -1,0 +1,3 @@
+matches:
+  - trigger: ":sum"
+    replace: "100字介绍$|$是什么"
