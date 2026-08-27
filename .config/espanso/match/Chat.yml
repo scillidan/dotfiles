@@ -1,3 +1,3 @@
 matches:
   - trigger: ":sum"
-    replace: "100字介绍$|$是什么"
+    replace: "100字介绍$|$是什么；使用这个包的必要性在哪里？"
