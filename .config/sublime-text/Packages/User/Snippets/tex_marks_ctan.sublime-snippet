@@ -2,7 +2,7 @@
 	<content><![CDATA[
 \documentclass{ctan-card}
 
-\renewcommand{\CardImage}{$1.pdf}
+\renewcommand{\CardImage}{pdfs/$1.pdf}
 \renewcommand{\CardRows}{%
 CTAN: & \href{https://ctan.org/pkg/$1}{$1 \textendash{} $2} \\\\
 PDF: & {\url{$3}} \\\\
