@@ -1,3 +1,10 @@
 matches:
-  - trigger: ":sum"
-    replace: "100字介绍$|$是什么；使用这个包的必要性在哪里？"
+  - trigger: ":chat"
+    form: |
+      chats: [[chat]]
+    form_fields:
+      chat:
+        type: choice
+        values:
+          - 100字介绍  是什么；使用这个包的必要性在哪里？
+          - 替换这段文本中的糟糕惯例术语如  等（从字面意思看完全莫名其妙），从语源/功能/第一性原理触发，重新翻译专业术语
