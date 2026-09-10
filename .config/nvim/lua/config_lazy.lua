@@ -178,6 +178,10 @@ require("lazy").setup(
     -- Buffer
     { "leath-dub/snipe.nvim", opts = {} },
     { "lewis6991/gitsigns.nvim", opts = {} },
+    { "olivgr/winbarbuf.nvim",
+      config = function()
+        require("winbarbuf").setup()
+      end },
     -- Window
     { "sindrets/winshift.nvim", opts = {} },
     -- Session
