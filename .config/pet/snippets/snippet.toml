@@ -59,6 +59,13 @@ command = "audiowaveform -i $ -o \"_.png\" -z auto -w 1920 -h 150 --background-c
 	Tag = ["color-matcher", "image"]
 	command = "color-matcher -s $1 -r $2"
 
+## epub2text
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["epub2text", "text"]
+command = "epub2text extract $1.epub -c <chapter> -o _.txt"
+
 ## F2
 [[Snippets]]
 Description = "Rename photos"
