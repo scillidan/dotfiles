@@ -1,1 +1,1 @@
-return { increment = "<C-=>", decrement = "<C-->" }
+return { increment = "<M-=>", decrement = "<M-->" }
