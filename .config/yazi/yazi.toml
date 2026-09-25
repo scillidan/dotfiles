@@ -92,8 +92,7 @@ prepend_fetchers = [
 ]
 prepend_preloaders = [
 	{ mime = "{audio,video}/*", run = "mediainfo" },
-	{ mime = "application/subrip", run = "mediainfo" },
-	{ mime = "application/postscript", run = "mediainfo" },
+	{ mime = "application/{subrip,postscript}", run = "mediainfo" },
   { mime = "image/tiff", run = "raw-preview" },
   { url = "*.RW2",  run = "raw-preview" },
 	{ url = "*.typ", run = "preview-typst" },

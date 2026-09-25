@@ -25,10 +25,11 @@ on = "P"
 run = "plugin split-tabs spl_preview"
 desc = "Split-tabs: toggle preview pane"
 
-[[mgr.prepend_keymap]]
-on   = "R"
-run  = "plugin switch-ratio"
-desc = "Cycle pane ratio"
+# switch-ratio.yazi is not installed; install with `ya pkg add towingie/switch-ratio` to restore this binding
+# [[mgr.prepend_keymap]]
+# on   = "R"
+# run  = "plugin switch-ratio"
+# desc = "Cycle pane ratio"
 
 [[mgr.prepend_keymap]]
 on   = "Z"

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "system"
+  },
+  "keybinds": {
+    "session.first": "ctrl+g",
+    "session.last": "ctrl+alt+g",
+    "input.move.left": "ctrl+b",
+    "input.move.right": "ctrl+f",
+    "input.backspace": "backspace",
+    "input.delete": "ctrl+d",
+    "input.word.forward": "alt+f",
+    "input.word.backward": "alt+b",
+    "input.select.word.forward": "alt+shift+f",
+    "input.select.word.backward": "alt+shift+b",
+    "input.delete.word.forward": "ctrl+delete",
+    "input.delete.word.backward": "ctrl+backspace"
+  },
+  "plugins": [
+    "@cortexkit/opencode-magic-context@latest",
+    "@dietrichgebert/ponytail",
+    "oc-sync"
+  ],
+  "attention": {
+    "notifications": true
+  },
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "auto",
+    "scrollbar": false,
+    "thinking": "hide"
+  },
+  "animations": true
+}
