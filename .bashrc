@@ -28,7 +28,7 @@ export PATH="$USERHOME/.local/bin:$CARGO_HOME/bin:$GOPATH/bin:$PIPX_BIN_DIR:$PAT
 export PATH="$USERHOME/Share/scripts:$USERHOME/Share/scripts/arch:$PATH"
 
 source $USERHOME/Local/Source/bash/bash-completion/bash_completion
-source $USERHOME/Local/Source/bash/ble.sh/out/ble.sh
+[[ $- == *i* ]] && source $USERHOME/Local/Source/bash/ble.sh/out/ble.sh
 
 eval "$(atuin init bash --disable-up-arrow)"
 
