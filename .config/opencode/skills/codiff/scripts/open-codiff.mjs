@@ -5,6 +5,7 @@
 //
 // Usage:
 //   node scripts/open-codiff.mjs --file <path> [target]
+//   node scripts/open-codiff.mjs --plan <path> [repository]
 //
 // `--file <path>` is forwarded to Codiff as `--walkthrough-file`. Any non-flag
 // target is forwarded verbatim; when no repository path is given, the current
@@ -12,12 +13,12 @@
 
 import { spawnSync } from 'node:child_process';
 import { accessSync, constants, existsSync, statSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { homedir } from 'node:os';
-import { delimiter, dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
+import { delimiter, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import process from 'node:process';
-import { fileURLToPath } from 'node:url';
 
-const skillRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const skillRoot = resolve(import.meta.dirname, '..');
 const codiffRoot = resolve(skillRoot, '../../..');
 const sessionIdPattern = /^ses_[a-z0-9]{8,}$/i;
 
@@ -159,6 +160,33 @@ const getSessionCwd = () => {
 
 const rawArgs = process.argv.slice(2);
 
+if (rawArgs[0] === '--resolve-plan-comments') {
+  const reviewPath = rawArgs[1] ? resolve(rawArgs[1]) : '';
+  const threadIds = rawArgs.slice(2).filter(Boolean);
+  if (!reviewPath || threadIds.length === 0) {
+    process.stderr.write(
+      'open-codiff: expected --resolve-plan-comments <review-path> <thread-id>... .\n',
+    );
+    process.exit(1);
+  }
+  const require = createRequire(import.meta.url);
+  const { resolvePlanReviewThreadsAtPath } = require(join(codiffRoot, 'electron/plan-review.cjs'));
+  try {
+    const { missingIds, resolvedIds } = await resolvePlanReviewThreadsAtPath(
+      reviewPath,
+      threadIds,
+      'agent-handled',
+    );
+    process.stdout.write(
+      `CODIFF_PLAN_COMMENTS_RESOLVED ${JSON.stringify({ missingIds, resolvedIds })}\n`,
+    );
+  } catch (error) {
+    process.stderr.write(`${error instanceof Error ? error.message : String(error)}\n`);
+    process.exit(1);
+  }
+  process.exit(0);
+}
+
 if (rawArgs.includes('--guide')) {
   const binEntry = join(codiffRoot, 'bin/codiff.js');
   const guide = existsSync(binEntry)
@@ -177,6 +205,7 @@ if (rawArgs.includes('--guide')) {
 
 const forwardedArgs = [];
 let openSharedWalkthrough = false;
+let planFile = '';
 let shareWalkthrough = false;
 let walkthroughFile = '';
 for (let index = 0; index < rawArgs.length; index += 1) {
@@ -190,6 +219,15 @@ for (let index = 0; index < rawArgs.length; index += 1) {
     walkthroughFile = arg.slice('--file='.length);
     continue;
   }
+  if (arg === '--plan') {
+    planFile = rawArgs[index + 1] || '';
+    index += 1;
+    continue;
+  }
+  if (arg.startsWith('--plan=')) {
+    planFile = arg.slice('--plan='.length);
+    continue;
+  }
   if (arg === '--share') {
     shareWalkthrough = true;
     continue;
@@ -201,12 +239,84 @@ for (let index = 0; index < rawArgs.length; index += 1) {
   forwardedArgs.push(arg);
 }
 
+const sessionCwd = getSessionCwd();
+
+if (planFile && shareWalkthrough) {
+  const planFilePath = resolve(sessionCwd, planFile);
+  if (!existsSync(planFilePath) || !/\.md$/i.test(planFilePath)) {
+    process.stderr.write(`open-codiff: plan file not found at ${planFilePath}.\n`);
+    process.exit(1);
+  }
+  const environmentSessionId = process.env.OPENCODE_SESSION_ID || '';
+  const sessionId =
+    (sessionIdPattern.test(environmentSessionId) ? environmentSessionId : '') ||
+    findOpenCodeSessionIdForCwd(sessionCwd) ||
+    '';
+  const shareCommand = getShareCommand();
+  const shareResult = spawnSync(
+    shareCommand.command,
+    [
+      ...shareCommand.args,
+      '--plan',
+      planFilePath,
+      '--agent',
+      'opencode',
+      ...(sessionId ? ['--opencode-session', sessionId] : []),
+      ...(openSharedWalkthrough ? ['--open'] : []),
+      ...forwardedArgs,
+    ],
+    { cwd: sessionCwd, encoding: 'utf8' },
+  );
+  if (shareResult.stdout) {
+    process.stdout.write(shareResult.stdout);
+  }
+  if (shareResult.stderr) {
+    process.stderr.write(shareResult.stderr);
+  }
+  if (shareResult.error) {
+    process.stderr.write(`${shareResult.error.message}\n`);
+    process.exit(1);
+  }
+  process.exit(shareResult.status ?? 0);
+}
+
+if (planFile) {
+  const planFilePath = resolve(sessionCwd, planFile);
+  if (!existsSync(planFilePath) || !/\.md$/i.test(planFilePath)) {
+    process.stderr.write(`open-codiff: plan file not found at ${planFilePath}.\n`);
+    process.exit(1);
+  }
+  const environmentSessionId = process.env.OPENCODE_SESSION_ID || '';
+  const sessionId =
+    (sessionIdPattern.test(environmentSessionId) ? environmentSessionId : '') ||
+    findOpenCodeSessionIdForCwd(sessionCwd) ||
+    '';
+  const codiffCommand = getCodiffCommand();
+  const result = spawnSync(
+    codiffCommand.command,
+    [
+      ...codiffCommand.args,
+      '--plan',
+      planFilePath,
+      '--agent',
+      'opencode',
+      ...(sessionId ? ['--opencode-session', sessionId] : []),
+      ...forwardedArgs,
+    ],
+    { cwd: sessionCwd, encoding: 'utf8', stdio: 'inherit' },
+  );
+  if (result.error) {
+    process.stderr.write(`${result.error.message}\n`);
+    process.exit(1);
+  }
+  process.exit(result.status ?? 0);
+}
+
 if (!walkthroughFile) {
   process.stderr.write('open-codiff: missing --file <path> to the walkthrough JSON.\n');
   process.exit(1);
 }
 
-const sessionCwd = getSessionCwd();
 const walkthroughFilePath = resolve(sessionCwd, walkthroughFile);
 if (!existsSync(walkthroughFilePath)) {
   process.stderr.write(`open-codiff: walkthrough file not found at ${walkthroughFilePath}.\n`);

@@ -24,6 +24,11 @@ c.url.default_page = os.path.join(
     userhome,
     r"Share/files/cheatsheets/poster/qutebrowser-default-bindings.png",
 )
+c.url.searchengines = {
+    'DEFAULT': 'https://www.google.com/search?q={}',
+    'g':       'https://www.google.com/search?q={}',
+    'ddg':     'https://duckduckgo.com/?q={}',
+}
 
 c.downloads.location.directory = downloads_dir
 c.downloads.location.suggestion = "filename"
