@@ -1,8 +1,8 @@
 {
   "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
+  "defaultModel": "deepseek-v4.1-flash",
   // "defaultProvider": "moonshot",
-  // "defaultModel": "kimi-for-coding-highspeed",
+  // "defaultModel": "kimi-k2.7-code-highspeed",
   "defaultThinkingLevel": "medium",
   "theme": "dark",
   "packages": [

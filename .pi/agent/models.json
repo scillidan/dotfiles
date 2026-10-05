@@ -26,8 +26,8 @@
           }
         },
         {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash",
+          "id": "deepseek-v4.1-flash",
+          "name": "DeepSeek V4.1 Flash",
           "contextWindow": 1000000,
           "maxTokens": 384000,
           "input": ["text"],
@@ -52,7 +52,7 @@
       "apiKey": "$MOONSHOT_API_KEY",
       "models": [
         {
-          "id": "k3",
+          "id": "kimi-k3",
           "name": "Kimi K3",
           "contextWindow": 1048576,
           "input": ["text", "image"],
@@ -70,25 +70,7 @@
           }
         },
         {
-          "id": "k3-256k",
-          "name": "Kimi K3-256K",
-          "contextWindow": 262144,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "compat": {
-            "supportsDeveloperRole": false,
-            "thinkingFormat": "openai",
-            "requiresReasoningContentOnAssistantMessages": true,
-            "supportsReasoningEffort": true
-          },
-          "thinkingLevelMap": {
-            "low": "low",
-            "high": "high",
-            "max": "max"
-          }
-        },
-        {
-          "id": "kimi-for-coding-highspeed",
+          "id": "kimi-k2.7-code-highspeed",
           "name": "Kimi K2.7 Code (HighSpeed)",
           "contextWindow": 262144,
           "input": ["text", "image"],

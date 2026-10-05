@@ -3,8 +3,8 @@
   "agent": {
     "build": {
       "mode": "primary",
-      // "model": "deepseek/deepseek-v4-flash",
-      "model": "moonshot/kimi-for-coding-highspeed",
+      // "model": "deepseek/deepseek-v4.1-flash",
+      "model": "moonshot/kimi-k2.7-code-highspeed",
       "options": {},
       "permission": {
         "bash": "allow",
@@ -18,8 +18,8 @@
     },
     "plan": {
       "mode": "primary",
-      // "model": "deepseek/deepseek-v4-flash",
-      "model": "moonshot/kimi-for-coding-highspeed",
+      // "model": "deepseek/deepseek-v4.1-flash",
+      "model": "moonshot/kimi-k2.7-code-highspeed",
       "options": {},
       "permission": {
         "bash": "deny",
@@ -92,8 +92,8 @@
   "provider": {
     "deepseek": {
       "models": {
-        "deepseek-v4-flash": {
-          "name": "DeepSeek V4 Flash",
+        "deepseek-v4.1-flash": {
+          "name": "DeepSeek V4.1 Flash",
           "modalities": { "input": ["text"], "output": ["text"] },
           "options": {
             "thinking": { "type": "enabled", "effort": "high" }
@@ -116,21 +116,14 @@
     },
     "moonshot": {
       "models": {
-        "k3": {
+        "kimi-k3": {
           "name": "Kimi K3",
           "modalities": { "input": ["text"], "output": ["text"] },
           "options": {
             "thinking": { "type": "enabled", "effort": "high" }
           }
         },
-        "k3-256k": {
-          "name": "Kimi K3-256K",
-          "modalities": { "input": ["text"], "output": ["text"] },
-          "options": {
-            "thinking": { "type": "enabled", "effort": "high" }
-          }
-        },
-        "kimi-for-coding-highspeed": {
+        "kimi-k2.7-code-highspeed": {
           "name": "Kimi K2.7 Code (HighSpeed)",
           "modalities": { "input": ["text"], "output": ["text"] },
           "options": {
