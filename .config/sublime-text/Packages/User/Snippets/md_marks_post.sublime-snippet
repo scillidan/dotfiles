@@ -7,7 +7,7 @@ Translator: $3
 Source: $4
 ```
 
-Title: $1
+# $1
 
 ]]></content>
 	<tabTrigger>post</tabTrigger>
