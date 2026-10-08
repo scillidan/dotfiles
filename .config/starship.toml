@@ -1,3 +1,8 @@
+add_newline = false
+
+[line_break]
+disabled = true
+
 ## https://gist.github.com/3ayazaya/d87c70c5f30a6e28f15dfc84ca95fc68
 format = "$all$directory$character"
 
