@@ -8,10 +8,9 @@ matches:
         values:
           - Kimi-K2.7-Code
           - Kimi-K3
-          - DeepSeek-V4-Flash
+          - DeepSeek-V4.1-Flash
           - DeepSeek-V4-Pro
-          - GLM-5.1
-          - Hy3-preview
+          - Hy4-preview
   - trigger: ":by"
     form: |
       [[by]]
@@ -19,9 +18,9 @@ matches:
       by:
         type: choice
         values:
-          - 'Kimi K2.6'
-          - 'Gemma 3 12B IT (Q5_K_M)'
-          - 'Gemma 3 4B IT (Q4_K_M)'
+          - 'Kimi-K2.8'
+          - 'Gemma-3-12B-IT (Q5_K_M)'
+          - 'Gemma-3-4B-IT (Q4_K_M)'
           - '[perplexity.ai]'
   - trigger: ":cmmt"
     form: |
