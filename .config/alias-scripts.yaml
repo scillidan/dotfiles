@@ -15,7 +15,7 @@ tldf: bash fzf-tldr.sh
 ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
 ff-devdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs"
 ff-tables: bash fzf-files.sh "$USERHOME/Share/files/tables"
-ocf: bash fzf-opencode-session.sh
+fg: cd "$USERHOME/Share/files" && clink lua -- "$USERHOME/Share/dotfiles/.config/clink/fzf_rg_wrap.lua" --fromcmdline 2>nul
 
 ## Git
 git-init: bash git-init.sh
@@ -26,7 +26,7 @@ git-sync-upstream: bash git-sync-upstream.sh
 ## GitHub CLI
 ips: bash gh-issue-pr.sh
 ghrs: gh release list
-ghrd: gh release delete v1.2.0 --cleanup-tag -y
+ghrd: gh release delete --cleanup-tag -y
 notify: gh-notify -ap -n 10
 tidy: gh-tidy
 
@@ -36,8 +36,5 @@ nv: bash _nvim.sh
 ## Neovide
 nov: bash _neovide.sh
 
-## ugrep
-ugc: bash ugrep-files.sh "$USERHOME/Share/files/cheats"
-
 ## yazi
-y: yazi-cd $* & reset
+y: yazi-cd $*; reset

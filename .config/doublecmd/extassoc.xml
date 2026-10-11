@@ -61,7 +61,7 @@
       <Actions>
         <Action>
           <Name>Open</Name>
-          <Command>mpv</Command>
+          <Command>mpvc video</Command>
           <Params>%f</Params>
         </Action>
       </Actions>

@@ -171,8 +171,8 @@
     <POFileName>doublecmd.zh_CN.po</POFileName>
   </Language>
   <Behaviours>
-    <GoToRoot>False</GoToRoot>
-    <ShowCurDirTitleBar>False</ShowCurDirTitleBar>
+    <GoToRoot>True</GoToRoot>
+    <ShowCurDirTitleBar>True</ShowCurDirTitleBar>
     <ActiveRight>False</ActiveRight>
     <RunInTerminalStayOpenCmd>wezterm</RunInTerminalStayOpenCmd>
     <RunInTerminalStayOpenParams>start -- {command}</RunInTerminalStayOpenParams>
