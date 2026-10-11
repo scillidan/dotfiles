@@ -157,11 +157,11 @@
     </MiddleToolbar>
   </Toolbars>
   <MainWindow>
-    <Position Save="True">
-      <Left>825</Left>
-      <Top>347</Top>
-      <Width>958</Width>
-      <Height>464</Height>
+    <Position Save="False">
+      <Left>1297</Left>
+      <Top>0</Top>
+      <Width>1247</Width>
+      <Height>668</Height>
       <PixelsPerInch>96</PixelsPerInch>
       <Maximized>False</Maximized>
       <Splitter>50</Splitter>
@@ -174,11 +174,11 @@
     <GoToRoot>False</GoToRoot>
     <ShowCurDirTitleBar>False</ShowCurDirTitleBar>
     <ActiveRight>False</ActiveRight>
-    <RunInTerminalStayOpenCmd>cmd.exe</RunInTerminalStayOpenCmd>
-    <RunInTerminalStayOpenParams>/K {command}</RunInTerminalStayOpenParams>
-    <RunInTerminalCloseCmd>cmd.exe</RunInTerminalCloseCmd>
-    <RunInTerminalCloseParams>/C {command}</RunInTerminalCloseParams>
-    <JustRunTerminal>cmd.exe</JustRunTerminal>
+    <RunInTerminalStayOpenCmd>wezterm</RunInTerminalStayOpenCmd>
+    <RunInTerminalStayOpenParams>start -- {command}</RunInTerminalStayOpenParams>
+    <RunInTerminalCloseCmd>wezterm</RunInTerminalCloseCmd>
+    <RunInTerminalCloseParams>start -- {command}</RunInTerminalCloseParams>
+    <JustRunTerminal>wezterm-gui</JustRunTerminal>
     <JustRunTermParams/>
     <OnlyOneAppInstance>True</OnlyOneAppInstance>
     <LynxLike>True</LynxLike>
@@ -213,7 +213,7 @@
     <CustomColumnsChangeAllColumns>False</CustomColumnsChangeAllColumns>
     <BriefViewFileExtAligned>False</BriefViewFileExtAligned>
     <DateTimeFormat>yyyy/M/d hh:nn:ss</DateTimeFormat>
-    <ColumnsTitleLikeValues>False</ColumnsTitleLikeValues>
+    <ColumnsTitleLikeValues>True</ColumnsTitleLikeValues>
     <CutTextToColumnWidth>True</CutTextToColumnWidth>
     <ExtendCellWidth>False</ExtendCellWidth>
     <ShowSystemFiles>True</ShowSystemFiles>
@@ -231,8 +231,8 @@
       <RunInTerminal>False</RunInTerminal>
       <KeepTerminalOpen>False</KeepTerminalOpen>
     </Viewer>
-    <Editor Enabled="False">
-      <Path/>
+    <Editor Enabled="True">
+      <Path>subl</Path>
       <Parameters/>
       <RunInTerminal>False</RunInTerminal>
       <KeepTerminalOpen>False</KeepTerminalOpen>
@@ -247,67 +247,67 @@
   </Tools>
   <Fonts>
     <Main>
-      <Name>更纱黑体 SC</Name>
-      <Size>8</Size>
+      <Name>Sarasa Term SC Nerd</Name>
+      <Size>9</Size>
       <Style>0</Style>
       <Quality>1</Quality>
     </Main>
     <Editor>
-      <Name>MonaspiceAr NFM</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>10</Size>
       <Style>0</Style>
       <Quality>1</Quality>
     </Editor>
     <Viewer>
-      <Name>MonaspiceAr NFM</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>10</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </Viewer>
     <ViewerBook>
-      <Name>更纱黑体 SC</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>10</Size>
       <Style>0</Style>
       <Quality>1</Quality>
     </ViewerBook>
     <Log>
-      <Name>MonaspiceAr NFM</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>10</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </Log>
     <Console>
-      <Name>MonaspiceAr NFM</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>10</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </Console>
     <PathEdit>
-      <Name>default</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>8</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </PathEdit>
     <FunctionButtons>
-      <Name>default</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>8</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </FunctionButtons>
     <SearchResults>
-      <Name>default</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>8</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </SearchResults>
     <TreeViewMenu>
-      <Name>default</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>8</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </TreeViewMenu>
     <StatusBar>
-      <Name>default</Name>
+      <Name>Sarasa Term SC Nerd</Name>
       <Size>8</Size>
       <Style>0</Style>
       <Quality>0</Quality>
@@ -333,9 +333,9 @@
   </ToolTips>
   <Layout>
     <MainMenu>True</MainMenu>
-    <ButtonBar Enabled="True">
+    <ButtonBar Enabled="False">
       <FlatIcons>True</FlatIcons>
-      <ButtonHeight>24</ButtonHeight>
+      <ButtonHeight>20</ButtonHeight>
       <IconSize>16</IconSize>
       <ShowCaptions>False</ShowCaptions>
       <ReportErrorWithCommands>False</ReportErrorWithCommands>
@@ -351,10 +351,10 @@
       <ReportErrorWithCommands>False</ReportErrorWithCommands>
     </MiddleBar>
     <DriveBar1>False</DriveBar1>
-    <DriveBar2>True</DriveBar2>
+    <DriveBar2>False</DriveBar2>
     <DriveBarFlat>True</DriveBarFlat>
     <DriveBarFreeSpace>False</DriveBarFreeSpace>
-    <DrivesListButton Enabled="False">
+    <DrivesListButton Enabled="True">
       <ShowLabel>True</ShowLabel>
       <ShowFileSystem>True</ShowFileSystem>
       <ShowFreeSpace>True</ShowFreeSpace>
@@ -364,7 +364,7 @@
     <CurrentDirectory>True</CurrentDirectory>
     <TabHeader>True</TabHeader>
     <StatusBar>True</StatusBar>
-    <CmdLine>False</CmdLine>
+    <CmdLine>True</CmdLine>
     <LogWindow>False</LogWindow>
     <TermWindow>False</TermWindow>
     <KeyButtons>False</KeyButtons>
@@ -397,7 +397,7 @@
       <Columns>
         <FixedWidth>100</FixedWidth>
         <FixedCount>2</FixedCount>
-        <AutoSize>2</AutoSize>
+        <AutoSize>1</AutoSize>
       </Columns>
     </BriefView>
     <ExtraLineSpan>2</ExtraLineSpan>
@@ -408,9 +408,9 @@
   <Keyboard>
     <Typing>
       <Actions>
-        <NoModifier>2</NoModifier>
+        <NoModifier>0</NoModifier>
         <Alt>0</Alt>
-        <CtrlAlt>3</CtrlAlt>
+        <CtrlAlt>0</CtrlAlt>
       </Actions>
     </Typing>
   </Keyboard>
@@ -426,7 +426,7 @@
     <WipePassNumber>1</WipePassNumber>
     <DropReadOnlyFlag>False</DropReadOnlyFlag>
     <ProcessComments>False</ProcessComments>
-    <RenameSelOnlyName>False</RenameSelOnlyName>
+    <RenameSelOnlyName>True</RenameSelOnlyName>
     <ShowCopyTabSelectPanel>False</ShowCopyTabSelectPanel>
     <UseTrash>True</UseTrash>
     <SkipFileOpError>False</SkipFileOpError>
@@ -488,14 +488,14 @@
     <FileName>%DC_CONFIG_PATH%\doublecmd.log</FileName>
     <Options>1023</Options>
   </Log>
-  <Configuration Save="True" SortOrder="1" TreeType="0">
+  <Configuration Save="False" SortOrder="1" TreeType="0">
     <FolderTabs Save="True"/>
   </Configuration>
   <History MaxStringItems="50">
-    <SearchReplaceHistory Save="True"/>
-    <DirHistory Save="True" Count="30"/>
-    <CmdLineHistory Save="True"/>
-    <FileMaskHistory Save="True"/>
+    <SearchReplaceHistory Save="False"/>
+    <DirHistory Save="False" Count="30"/>
+    <CmdLineHistory Save="False"/>
+    <FileMaskHistory Save="False"/>
     <VolumeSizeHistory Save="True"/>
     <CreateDirectoriesHistory Save="True"/>
   </History>
@@ -517,7 +517,7 @@
     <DirBrackets>False</DirBrackets>
     <InplaceRename>False</InplaceRename>
     <InplaceRenameButton>True</InplaceRenameButton>
-    <DblClickToParent>False</DblClickToParent>
+    <DblClickToParent>True</DblClickToParent>
     <DoubleClickEditPath>False</DoubleClickEditPath>
     <HotDirAddTargetOrNot>False</HotDirAddTargetOrNot>
     <HotDirFullExpandOrNot>False</HotDirFullExpandOrNot>
@@ -583,7 +583,7 @@
     <TabSpaces>8</TabSpaces>
     <MaxCodeSize>128</MaxCodeSize>
     <MaxTextWidth>1024</MaxTextWidth>
-    <ViewerMode>0</ViewerMode>
+    <ViewerMode>1</ViewerMode>
     <PrintMargins>200|200|200|200</PrintMargins>
     <ShowCaret>False</ShowCaret>
     <WrapText>False</WrapText>
@@ -731,8 +731,8 @@
           <Width>250</Width>
           <Align>0</Align>
           <Font>
-            <Name>更纱黑体 SC</Name>
-            <Size>8</Size>
+            <Name>Sarasa Term SC Nerd</Name>
+            <Size>9</Size>
             <Style>0</Style>
             <Quality>0</Quality>
           </Font>
@@ -747,8 +747,8 @@
           <Width>50</Width>
           <Align>0</Align>
           <Font>
-            <Name>更纱黑体 SC</Name>
-            <Size>8</Size>
+            <Name>Sarasa Term SC Nerd</Name>
+            <Size>9</Size>
             <Style>0</Style>
             <Quality>0</Quality>
           </Font>
@@ -763,8 +763,8 @@
           <Width>70</Width>
           <Align>1</Align>
           <Font>
-            <Name>更纱黑体 SC</Name>
-            <Size>8</Size>
+            <Name>Sarasa Term SC Nerd</Name>
+            <Size>9</Size>
             <Style>0</Style>
             <Quality>0</Quality>
           </Font>
@@ -779,8 +779,8 @@
           <Width>140</Width>
           <Align>1</Align>
           <Font>
-            <Name>更纱黑体 SC</Name>
-            <Size>8</Size>
+            <Name>Sarasa Term SC Nerd</Name>
+            <Size>9</Size>
             <Style>0</Style>
             <Quality>0</Quality>
           </Font>
@@ -795,8 +795,8 @@
           <Width>100</Width>
           <Align>0</Align>
           <Font>
-            <Name>更纱黑体 SC</Name>
-            <Size>8</Size>
+            <Name>Sarasa Term SC Nerd</Name>
+            <Size>9</Size>
             <Style>0</Style>
             <Quality>0</Quality>
           </Font>
@@ -1046,4 +1046,31 @@
     <PluginFilenameStyle>0</PluginFilenameStyle>
     <PluginPathToBeRelativeTo>%COMMANDER_PATH%</PluginPathToBeRelativeTo>
   </Plugins>
+  <MultiRenamePresets>
+    <LastPreset>{BC322BF1-2185-47F6-9F99-D27ED1E23E53}</LastPreset>
+    <Presets>
+      <Preset>
+        <Name>{BC322BF1-2185-47F6-9F99-D27ED1E23E53}</Name>
+        <Filename>[N]</Filename>
+        <Extension>[E]</Extension>
+        <FilenameStyle>0</FilenameStyle>
+        <ExtensionStyle>0</ExtensionStyle>
+        <Find Value="sc"/>
+        <Replace Value=""/>
+        <RepExt>True</RepExt>
+        <RegExp>False</RegExp>
+        <UseSubs>False</UseSubs>
+        <CaseSensitive>False</CaseSensitive>
+        <OnlyFirst>False</OnlyFirst>
+        <Counter>1</Counter>
+        <Interval>1</Interval>
+        <Width>0</Width>
+        <Log>
+          <Enabled>False</Enabled>
+          <Append>False</Append>
+          <File/>
+        </Log>
+      </Preset>
+    </Presets>
+  </MultiRenamePresets>
 </doublecmd>
