@@ -1,0 +1,232 @@
+#!/usr/bin/env python3
+import os, re, subprocess, sys, tempfile, time, ctypes
+from ctypes import wintypes
+
+html = os.environ.get("QUTE_SELECTED_HTML", "")
+text = os.environ.get("QUTE_SELECTED_TEXT", "")
+fifo = os.environ.get("QUTE_FIFO", "")
+mode = os.environ.get("QUTE_MODE", "")
+
+
+def fifo_msg(kind, msg):
+    if fifo:
+        with open(fifo, "a", encoding="utf-8") as f:
+            f.write('%s "%s"\n' % (kind, msg.replace('"', "'")))
+
+
+def win32():
+    user32 = ctypes.WinDLL("user32", use_last_error=True)
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    for name, spec in {
+        "OpenClipboard": ([wintypes.HWND], wintypes.BOOL),
+        "EmptyClipboard": ([], wintypes.BOOL),
+        "CloseClipboard": ([], wintypes.BOOL),
+        "IsClipboardFormatAvailable": ([wintypes.UINT], wintypes.BOOL),
+        "GetClipboardData": ([wintypes.UINT], wintypes.HANDLE),
+        "SetClipboardData": ([wintypes.UINT, wintypes.HANDLE], wintypes.HANDLE),
+        "GetClipboardSequenceNumber": ([], wintypes.DWORD),
+        "RegisterClipboardFormatW": ([wintypes.LPCWSTR], wintypes.UINT),
+    }.items():
+        fn = getattr(user32, name)
+        fn.argtypes, fn.restype = spec
+    for name in ("GlobalAlloc", "GlobalLock", "GlobalUnlock", "GlobalFree"):
+        fn = getattr(kernel32, name)
+        if name == "GlobalAlloc":
+            fn.argtypes, fn.restype = [wintypes.UINT, ctypes.c_size_t], wintypes.HGLOBAL
+        elif name in ("GlobalLock",):
+            fn.argtypes, fn.restype = [wintypes.HGLOBAL], ctypes.c_void_p
+        else:
+            fn.argtypes, fn.restype = [wintypes.HGLOBAL], wintypes.HGLOBAL
+    return user32, kernel32
+
+
+def win_clipboard(s):
+    CF_UNICODETEXT = 13
+    GMEM_MOVEABLE = 0x0002
+    data = s.encode("utf-16-le") + b"\x00\x00"
+    user32, kernel32 = win32()
+
+    h_global = kernel32.GlobalAlloc(GMEM_MOVEABLE, len(data))
+    if not h_global:
+        raise ctypes.WinError(ctypes.get_last_error(), "GlobalAlloc failed")
+    p = kernel32.GlobalLock(h_global)
+    if not p:
+        kernel32.GlobalFree(h_global)
+        raise ctypes.WinError(ctypes.get_last_error(), "GlobalLock failed")
+    ctypes.memmove(p, data, len(data))
+    kernel32.GlobalUnlock(h_global)
+
+    opened = False
+    for _ in range(30):
+        if user32.OpenClipboard(None):
+            opened = True
+            break
+        time.sleep(0.1)
+    if not opened:
+        kernel32.GlobalFree(h_global)
+        raise ctypes.WinError(ctypes.get_last_error(), "OpenClipboard failed after retries")
+    try:
+        user32.EmptyClipboard()
+        if not user32.SetClipboardData(CF_UNICODETEXT, h_global):
+            kernel32.GlobalFree(h_global)
+            raise ctypes.WinError(ctypes.get_last_error(), "SetClipboardData failed")
+    finally:
+        user32.CloseClipboard()
+
+
+def clip(s):
+    if sys.platform == "win32":
+        win_clipboard(s)
+        return
+    for c in (["wl-copy"], ["xclip", "-selection", "clipboard"], ["pbcopy"]):
+        try:
+            subprocess.run(c, input=s.encode(), check=False)
+            return
+        except FileNotFoundError:
+            pass
+
+
+def html_to_md(html_src):
+    # Chromium serializes selections with NBSP around inline boundaries
+    html_src = html_src.replace("\xa0", " ")
+    try:
+        from markdownify import markdownify as md
+
+        return md(html_src, heading_style="ATX")
+    except Exception:
+        r = subprocess.run(
+            ["pandoc", "-f", "html", "-t", "gfm-raw_html", "--wrap=none"],
+            input=html_src,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+        return r.stdout
+
+
+def decode_cf_html(b):
+    m = re.search(br"<!--StartFragment-->([\s\S]*?)<!--EndFragment-->", b)
+    if m:
+        return m.group(1).decode("utf-8", "replace")
+    return b.decode("utf-8", "replace")
+
+
+def read_rich_clipboard(expected_seq, timeout=6.0):
+    """Wait for a fresh clipboard containing HTML or text. Returns (html, text)."""
+    # "HTML Format" ID is assigned at registration time and varies per
+    # machine/session (49483 is only the usual value) — resolve it properly.
+    user32, kernel32 = win32()
+    CF_HTML = user32.RegisterClipboardFormatW("HTML Format")
+    CF_UNICODETEXT = 13
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        seq = user32.GetClipboardSequenceNumber()
+        have_html = user32.IsClipboardFormatAvailable(CF_HTML)
+        have_text = user32.IsClipboardFormatAvailable(CF_UNICODETEXT)
+        if seq != expected_seq and (have_html or have_text):
+            for _ in range(30):
+                if user32.OpenClipboard(None):
+                    break
+                time.sleep(0.1)
+            else:
+                raise ctypes.WinError(5, "clipboard locked")
+            try:
+                html_src, plain = None, None
+                h = user32.GetClipboardData(CF_HTML)
+                if h:
+                    ptr = kernel32.GlobalLock(h)
+                    if ptr:
+                        html_src = decode_cf_html(ctypes.string_at(ptr))
+                        kernel32.GlobalUnlock(h)
+                h = user32.GetClipboardData(CF_UNICODETEXT)
+                if h:
+                    ptr = kernel32.GlobalLock(h)
+                    if ptr:
+                        plain = ctypes.wstring_at(ptr)
+                        kernel32.GlobalUnlock(h)
+                return html_src, plain
+            finally:
+                user32.CloseClipboard()
+        time.sleep(0.05)
+    return None, None
+
+
+def seq_file():
+    return os.path.join(tempfile.gettempdir(), "yank_sel_md_clipseq")
+
+
+def get_seq():
+    try:
+        return int(open(seq_file()).read().strip())
+    except Exception:
+        return None
+
+
+def set_seq():
+    try:
+        user32, _ = win32()
+        with open(seq_file(), "w") as f:
+            f.write(str(user32.GetClipboardSequenceNumber()))
+    except Exception:
+        pass
+
+
+def rich_mode():
+    # second pass: browser has rich-copied the selection; convert to markdown
+    expected = get_seq() or 0
+    if sys.platform == "win32":
+        html_src, plain = read_rich_clipboard(expected)
+    else:
+        html_src, plain = None, None
+        try:
+            r = subprocess.run(
+                ["xclip", "-o", "-selection", "clipboard", "-t", "text/html"],
+                capture_output=True, timeout=5)
+            if r.returncode == 0 and r.stdout:
+                html_src = r.stdout.decode("utf-8", "replace")
+        except Exception:
+            pass
+    if html_src:
+        src = html_to_md(html_src)
+    elif plain:
+        src = plain
+    else:
+        fifo_msg("message-error", "yank_sel_md: no rich text on clipboard")
+        sys.exit(0)
+    try:
+        clip(src)
+        fifo_msg("message-info", "selected markdown copied (%d chars)" % len(src))
+    except Exception as e:
+        fifo_msg("message-error", "yank_sel_md: %s" % e)
+
+
+if "--rich" in sys.argv:
+    rich_mode()
+    sys.exit(0)
+
+if mode == "command":
+    if text:
+        # selection exists: let the browser rich-copy it, second pass converts
+        set_seq()
+        if fifo:
+            with open(fifo, "a", encoding="utf-8") as f:
+                f.write("debug-webaction Copy ;; spawn --userscript yank_sel_md --rich\n")
+    else:
+        # nothing selected yet: let the user pick an element via hints
+        if fifo:
+            with open(fifo, "a", encoding="utf-8") as f:
+                f.write("hint elements userscript yank_sel_md\n")
+    sys.exit(0)
+
+# hints mode: convert the picked element
+src = html or text
+if not src:
+    fifo_msg("message-warning", "yank_sel_md: element has no text")
+    sys.exit(0)
+if html:
+    src = html_to_md(html)
+try:
+    clip(src)
+    fifo_msg("message-info", "selected markdown copied (%d chars)" % len(src))
+except Exception as e:
+    fifo_msg("message-error", "yank_sel_md: %s" % e)

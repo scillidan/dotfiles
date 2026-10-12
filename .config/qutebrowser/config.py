@@ -25,9 +25,9 @@ c.url.default_page = os.path.join(
     r"Share/files/cheatsheets/poster/qutebrowser-default-bindings.png",
 )
 c.url.searchengines = {
-    'DEFAULT': 'https://www.google.com/search?q={}',
-    'g':       'https://www.google.com/search?q={}',
-    'ddg':     'https://duckduckgo.com/?q={}',
+    "DEFAULT": "https://www.google.com/search?q={}",
+    "g": "https://www.google.com/search?q={}",
+    "ddg": "https://duckduckgo.com/?q={}",
 }
 
 c.downloads.location.directory = downloads_dir
@@ -40,3 +40,20 @@ c.aliases["ss"] = f"screenshot {downloads_dir}/screenshot-$(date +%s).png"
 
 config.bind(",gc", "spawn --userscript git-clone")
 config.bind(",rr", "spawn --userscript repomix-remote")
+c.hints.selectors["elements"] = [
+    "p",
+    "li",
+    "blockquote",
+    "pre",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "article",
+    "section",
+    "td",
+    "figcaption",
+]
+config.bind(",ys", "spawn --userscript yank_sel_md")

@@ -21,6 +21,9 @@ dp: desktop-plus-cli
 dga: doggo A $* @1.1.1.1
 dgg: doggo A $* @8.8.8.8
 
+## Double Commander
+db: doublecmd
+
 ## eza
 ls: eza --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
 l: eza --git-ignore --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
