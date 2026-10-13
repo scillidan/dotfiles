@@ -39,10 +39,6 @@
         <Command>cm_FlatViewSel</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+Shift+C</Shortcut>
-        <Command>cm_CopyFullNamesToClip</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Shift+Alt+V</Shortcut>
         <Command>cm_ThumbnailsView</Command>
       </Hotkey>
@@ -85,6 +81,14 @@
       <Hotkey>
         <Shortcut>Ctrl+Q</Shortcut>
         <Command>cm_QuickView</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Shift+C</Shortcut>
+        <Command>cm_CopyFullNamesToClip</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Shift+C</Shortcut>
+        <Command>cm_CopyNamesToClip</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Del</Shortcut>
