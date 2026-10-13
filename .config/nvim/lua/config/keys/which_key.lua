@@ -1,5 +1,5 @@
 local wk = require("which-key")
-local oc = require("opencode")
+-- local oc = require("opencode")
 
 wk.add({
   -- Theme

@@ -369,12 +369,12 @@ require("lazy").setup(
     { "Mathijs-Bakker/godotdev.nvim",
       dependencies = { "nvim-lspconfig", "nvim-dap", "nvim-dap-ui", "nvim-treesitter" } },
     -- LLM
-    { "nickjvandyke/opencode.nvim",
+    { "nickjvandyke/opencode.nvim", enabled = false,
       config = function()
         vim.g.opencode_opts = {}
         vim.o.autoread = true
       end },
-    { "zgs225/pi2.nvim",
+    { "zgs225/pi2.nvim", enabled = false,
       -- dependencies = { "MeanderingProgrammer/render-markdown.nvim", "HakonHarnes/img-clip.nvim" },
       config = function()
       	require("config.pi")
