@@ -6,6 +6,7 @@
     "notifications": true
   },
   "keybinds": {
+    "input_newline": "shift+enter",
     "input_move_left": "ctrl+b",
     "input_move_right": "ctrl+f",
     "input_word_forward": "alt+f",

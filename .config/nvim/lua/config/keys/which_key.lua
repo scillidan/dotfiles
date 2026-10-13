@@ -102,8 +102,6 @@ wk.add({
   -- Sort
   { "<leader>ts", "<Cmd>TSSort list<CR>", desc = "TSSort list", mode = "n" },
   { "<leader>ts", "<Esc><Cmd>TSSort list<CR>", desc = "TSSort list", mode = "v" },
-  -- Yank
-  { "<leader>clp", "<Cmd>Telescope neoclip<CR>", desc = "Telescope neoclip" },
 
   -- telescope.nvim
   { "<leader>ft", "<Cmd>Telescope help_tags<CR>", desc = "Telescope help_tags", mode = "n" },

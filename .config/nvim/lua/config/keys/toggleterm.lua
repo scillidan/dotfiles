@@ -26,12 +26,14 @@ end)
 
 -- Custom terminal usage
 local Terminal = require("toggleterm.terminal").Terminal
+
+-- lazygit
 local lazygit = Terminal:new({
   cmd = "lazygit",
   dir = ".",
   direction = "float",
   float_opts = {
-    border = "single_line",
+    border = "single",
   },
   on_open = function(term)
     vim.cmd("startinsert!")
@@ -45,3 +47,55 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 vim.api.nvim_set_keymap("n", "<leader>lg", "<Cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+
+-- tere
+local tere = Terminal:new({
+  cmd = "tere",
+  direction = "float",
+  shellcmdflag = "/c",
+  close_on_exit = true,
+  on_open = function(term)
+    -- Let Esc reach tere (quit) instead of leaving terminal-mode
+    pcall(vim.keymap.del, "t", "<esc>", { buffer = term.bufnr })
+  end,
+  on_exit = function(term, _, exit_code)
+    if exit_code ~= 0 then return end -- tere cancelled (Esc) without a selection
+    if not vim.api.nvim_buf_is_valid(term.bufnr) then return end
+    local lines = vim.api.nvim_buf_get_lines(term.bufnr, 0, -1, false)
+    for i = #lines, 1, -1 do
+      local dir = vim.trim(lines[i])
+      if dir ~= "" and vim.fn.isdirectory(dir) == 1 then
+        -- Defer until toggleterm has closed the float and focus is back
+        vim.schedule(function()
+          if vim.api.nvim_buf_get_name(0):match("^oil://") then
+            -- oil buffers show the dir encoded in the buffer name, not the cwd
+            require("oil").open(dir)
+          else
+            vim.cmd.lcd(vim.fn.fnameescape(dir))
+          end
+        end)
+        break
+      end
+    end
+  end,
+})
+function _tere_toggle()
+  tere:toggle()
+end
+vim.api.nvim_set_keymap("n", "<leader>tr", "<Cmd>lua _tere_toggle()<CR>", { noremap = true, silent = true })
+
+-- tuicr
+local tuicr = Terminal:new({
+  cmd = "tuicr",
+  direction = "float",
+  shellcmdflag = "/c",
+  close_on_exit = true,
+  on_open = function(term)
+    pcall(vim.keymap.del, "t", "<esc>", { buffer = term.bufnr })
+    pcall(vim.keymap.del, "t", "jk", { buffer = term.bufnr })
+  end,
+})
+function _tuicr_toggle()
+  tuicr:toggle()
+end
+vim.api.nvim_set_keymap("n", "<leader>tc", "<Cmd>lua _tuicr_toggle()<CR>", { noremap = true, silent = true })

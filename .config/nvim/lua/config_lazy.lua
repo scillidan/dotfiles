@@ -120,7 +120,7 @@ require("lazy").setup(
       config = function()
         require("config.md_headers")
       end },
-    { "epwalsh/obsidian.nvim", version = "*", ft = "markdown",
+    { "epwalsh/obsidian.nvim", enabled = false, version = "*", ft = "markdown",
       dependencies = { "nvim-lua/plenary.nvim" },
       config = function()
         require("config.obsidian")
@@ -253,11 +253,6 @@ require("lazy").setup(
     { "mtrajano/tssorter.nvim", version = "*", opts = {} },
     -- Yank
     { "nemanjamalesija/smart-paste.nvim", event = "VeryLazy", opts = {} },
-    { "AckslD/nvim-neoclip.lua",
-      dependencies = { { "kkharji/sqlite.lua", module = "sqlite" } },
-      config = function()
-        require("config.neoclip")
-      end },
 
     -- mini.nvim
     { "nvim-mini/mini.icons", version = "*", opts = {} },
