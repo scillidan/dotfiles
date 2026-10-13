@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doublecmd>
+  <DirectoryHotList>
+    <HotDir Name="-Windows Env" Path=""/>
+    <HotDir Name="%ALLUSERSPROFILE%" Path="C:\ProgramData"/>
+    <HotDir Name="%APPDATA%" Path="C:\Users\User\AppData\Roaming"/>
+    <HotDir Name="%LOCALAPPDATA%" Path="C:\Users\User\AppData\Local"/>
+    <HotDir Name="%PUBLIC%" Path="C:\Users\Public"/>
+    <HotDir Name="%ProgramData%" Path="C:\ProgramData"/>
+    <HotDir Name="%ProgramFiles(x86)%" Path="C:\Program Files (x86)"/>
+    <HotDir Name="%ProgramFiles%" Path="C:\Program Files"/>
+    <HotDir Name="%TMP%" Path="C:\Users\User\AppData\Local\Temp"/>
+    <HotDir Name="%USERPROFILE%" Path="C:\Users\User"/>
+    <HotDir Name="--" Path=""/>
+    <HotDir Name="-Windows User" Path=""/>
+    <HotDir Name="mpv" Path="C:\Users\User\Scoop\apps\mpv\current\portable_config"/>
+    <HotDir Name="--" Path=""/>
+    <HotDir Name="-Windows" Path=""/>
+    <HotDir Name="Desktop" Path="C:\Users\User\Desktop"/>
+    <HotDir Name="Downloads" Path="C:\Users\User\Downloads"/>
+    <HotDir Name="Fonts" Path="C:\Users\User\AppData\Local\Microsoft\Windows\Fonts"/>
+    <HotDir Name="SendTo" Path="C:\Users\User\AppData\Roaming\Microsoft\Windows\SendTo"/>
+    <HotDir Name="Startup" Path="C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"/>
+    <HotDir Name="--" Path=""/>
+  </DirectoryHotList>
+</doublecmd>
