@@ -48,7 +48,6 @@
       "command": [
         "agnix-mcp"
       ],
-      "enabled": true,
       "type": "local"
     },
     "cq": {
@@ -62,7 +61,6 @@
       "command": [
         "fff-mcp"
       ],
-      "enabled": true,
       "type": "local"
     },
     "gimp-mcp": {
@@ -79,6 +77,15 @@
       "enabled": false,
       "type": "remote",
       "url": "http://localhost:9080/mcp"
+    },
+    "windbg": {
+      "type": "local",
+      "command": [
+        "mcp-windbg"
+      ],
+      "environment": {
+        "_NT_SYMBOL_PATH": "SRV*C:\\Symbols*https://msdl.microsoft.com/download/symbols"
+      }
     }
   },
   "permission": {
