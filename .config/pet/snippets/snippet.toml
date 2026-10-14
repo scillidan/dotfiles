@@ -560,7 +560,7 @@ command = "yt-dlp -F <url_1>"
 Description = "List playlist"
 Output = ""
 Tag = []
-command = "yt-dlp --flat-playlist --print \"%(webpage_url)s\" <url>"
+command = "yt-dlp --cookies cookies.txt --flat-playlist --print \"%(webpage_url)s\" <url>"
 [[Snippets]]
 Description = "Download"
 Output = ""
