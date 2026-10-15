@@ -1,7 +1,7 @@
 {
     // UI
     "font_face": "MonaspiceAr NFM",
-    "font_size": 8,
+    "font_size": 10,
     "line_padding_bottom": 1,
     "line_padding_top": 1,
     "theme": "Adaptive.sublime-theme",
