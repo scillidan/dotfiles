@@ -59,7 +59,13 @@ command = "audiowaveform -i $ -o \"_.png\" -z auto -w 1920 -h 150 --background-c
 Description = ""
 Output = ""
 Tag = ["text"]
-command = "epub2text extract $1.epub -c <chapter> -o _.txt"
+command = "epub2text extract $1.epub --output-format markdown -o _.md"
+
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["text"]
+command = "epub2text extract -i $1.epub -o _.txt"
 
 ## Calibre
 [[Snippets]]
