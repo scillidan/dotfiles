@@ -530,7 +530,7 @@
     <DefaultTextEncoding>none</DefaultTextEncoding>
     <DecimalSeparator>�</DecimalSeparator>
   </Miscellaneous>
-  <Thumbnails Save="True">
+  <Thumbnails Save="False">
     <Width>128</Width>
     <Height>128</Height>
   </Thumbnails>
