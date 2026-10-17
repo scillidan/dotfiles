@@ -11,7 +11,7 @@ matches:
     replace: "#!/usr/bin/env bash"
   ## python
   - trigger: ":uvi"
-    replace: "uv tool install -U "
+    replace: "uv tool install --python 3.12 -U "
   - trigger: ":va"
     replace: ".venv\\Scripts\\activate"
   - trigger: ":pva"

@@ -45,44 +45,76 @@
   "lsp": true,
   "mcp": {
     "agnix": {
-      "command": [
-        "agnix-mcp"
-      ],
-      "type": "local"
+      "type": "local",
+      "command": [ "agnix-mcp" ]
     },
     "cq": {
-      "command": [
-        "cq",
-        "mcp"
-      ],
-      "type": "local"
+      "type": "local",
+      "command": [ "cq", "mcp" ]
     },
     "fff": {
-      "command": [
-        "fff-mcp"
-      ],
-      "type": "local"
+      "type": "local",
+      "command": [ "fff-mcp" ]
+    },
+    "blender-mcp": {
+      "type": "local",
+      "command": [ "uvx", "mcp-for-blender" ],
+      "enabled": false,
+      "environment": {
+        "BLENDER_HOST": "localhost",
+        "BLENDER_PORT": "9876"
+      }
+    },
+    "aseprite": {
+        "type": "local",
+        "enabled": false,
+        "command": [
+            "uv",
+            "run",
+            "--python",
+            "3.13",
+            "--module",
+            "aseprite_mcp"
+        ],
+        "cwd": "C:/Users/User/Local/Srv/aseprite-mcp",
+        "env": {
+          "ASEPRITE_PATH": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite",
+        }
     },
     "gimp-mcp": {
-      "command": [
-        "uv",
-        "run",
-        "gimp_mcp_server.py"
-      ],
-      "cwd": "C:/Users/User/Local/Srv/gimp-mcp",
+      "type": "local",
       "enabled": false,
-      "type": "local"
+      "command": [ "uv", "run", "gimp_mcp_server.py" ],
+      "cwd": "C:/Users/User/Local/Srv/gimp-mcp"
+    },
+    "material-maker": {
+    	"enabled": false,
+      "command": "mm-mcp",
+      "env": {
+        "MM_GODOT_BINARY": "C:\\Users\\User\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.7.1-stable_win64_console.exe",
+        "MM_PROJECT_PATH": "C:\\Users\\User\\Scoop\\apps\\material-maker\\current",
+        "MM_OUTPUT_DIR": "C:\\Users\\User\\output_mm",
+        "MM_IDLE_EXIT_MINUTES": "120"
+      }
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "enabled": false,
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {env:OPENCODE_MCP_GITHUB}"
+      }
     },
     "godot-mcp": {
-      "enabled": false,
       "type": "remote",
-      "url": "http://localhost:9080/mcp"
+      "url": "http://localhost:9080/mcp/",
+      "enabled": false,
     },
     "windbg": {
       "type": "local",
-      "command": [
-        "mcp-windbg"
-      ],
+      "command": [ "mcp-windbg" ],
+      "enabled": false,
       "environment": {
         "_NT_SYMBOL_PATH": "SRV*C:\\Symbols*https://msdl.microsoft.com/download/symbols"
       }
