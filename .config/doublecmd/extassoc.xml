@@ -28,7 +28,7 @@
     <FileType>
       <Name>yacreader</Name>
       <IconFile/>
-      <ExtensionList>cbz|cbr</ExtensionList>
+      <ExtensionList>cbz|cbr|cb7</ExtensionList>
       <Actions>
         <Action>
           <Name>Open</Name>
