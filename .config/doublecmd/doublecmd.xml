@@ -990,6 +990,11 @@
         <Path>%commander_path%\plugins\wcx\zip\zip.wcx</Path>
         <Flags>64</Flags>
       </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>cbz</ArchiveExt>
+        <Path>%commander_path%\plugins\wcx\zip\zip.wcx</Path>
+        <Flags>607</Flags>
+      </WcxPlugin>
     </WcxPlugins>
     <WdxPlugins>
       <WdxPlugin>
@@ -1033,8 +1038,8 @@
     </WlxPlugins>
     <TweakPluginWidth0>0</TweakPluginWidth0>
     <TweakPluginHeight0>0</TweakPluginHeight0>
-    <TweakPluginWidth1>0</TweakPluginWidth1>
-    <TweakPluginHeight1>0</TweakPluginHeight1>
+    <TweakPluginWidth1>450</TweakPluginWidth1>
+    <TweakPluginHeight1>320</TweakPluginHeight1>
     <TweakPluginWidth2>0</TweakPluginWidth2>
     <TweakPluginHeight2>0</TweakPluginHeight2>
     <TweakPluginWidth3>0</TweakPluginWidth3>
