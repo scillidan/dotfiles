@@ -431,7 +431,7 @@
     <UseTrash>True</UseTrash>
     <SkipFileOpError>False</SkipFileOpError>
     <TypeOfDuplicatedRename>0</TypeOfDuplicatedRename>
-    <DefaultDropEffect>True</DefaultDropEffect>
+    <DefaultDropEffect>False</DefaultDropEffect>
     <ShowDialogOnDragDrop>False</ShowDialogOnDragDrop>
     <DragAndDropTextRichtextDesireLevel>0</DragAndDropTextRichtextDesireLevel>
     <DragAndDropTextHtmlDesireLevel>1</DragAndDropTextHtmlDesireLevel>

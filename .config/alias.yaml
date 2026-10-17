@@ -119,10 +119,10 @@ chk: pylanguagetool --api-url "http://localhost:8040/v2/" --input-type html --la
 rmix: repomix . --output _repomix.md
 
 ## Repos
-rss: repos status
-rsp: repos pull
-rse: repos exec
-rsu: repos update
+rpss: repos status
+rpsp: repos pull
+rpse: repos exec
+rpsu: repos update
 
 ## scooter
 scr: scooter

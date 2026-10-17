@@ -182,20 +182,25 @@ Output = ""
 Tag = ["video"]
 command = "autocast $.yaml _.cast ^\n  agg --theme asciinema --speed 1.5 --font-family \"font: Sarasa Mono SC\" --font-size 14 --fps-cap 30 _.cast _.gif ^\n  ffmpeg -i _.gif -movflags faststart -pix_fmt yuv420p -vf \"scale=trunc(iw/2)*2:trunc(ih/2)*2\" _.mp4"
 [[Snippets]]
-Description = "Generate Video from image (1 sec duration)"
+Description = "Generate video from image (1 sec duration)"
 Output = ""
 Tag = ["video"]
 command = "ffmpeg -loop 1 -i $ -vf \"scale=trunc(iw/2)*2:trunc(ih/2)*2\" -c:v libx264 -t 1 -pix_fmt yuv420p _.mp4"
 [[Snippets]]
-Description = "Generate Video from image (1 sec per 30 images)"
+Description = "Generate video from image (1 sec per 30 images)"
 Output = ""
 Tag = ["video"]
 command = "ffmpeg -framerate 30 -i $04d.png -c:v libx264 -pix_fmt yuv420p _.mp4"
 [[Snippets]]
-Description = "Generate Video from image (1 sec per image)"
+Description = "Generate video from image (1 sec per image)"
 Output = ""
 Tag = ["video"]
 command = "ffmpeg -framerate 1 -i \"$04d.png\" -c:v libx264 -r 30 -pix_fmt yuv420p _.mp4"
+[[Snippets]]
+Description = "Generate image from video (1 image per frame)"
+Output = ""
+Tag = ["video"]
+command = "ffmpeg -i $1 -fps_mode passthrough %06d.png"
 
 ## G'MIC
 [[Snippets]]
