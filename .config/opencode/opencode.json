@@ -3,7 +3,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      // "model": "deepseek/deepseek-v4.1-flash",
+      // "model": "deepseek/deepseek-flash",
       "model": "moonshot/kimi-k2.7-code-highspeed",
       "options": {},
       "permission": {
@@ -18,7 +18,7 @@
     },
     "plan": {
       "mode": "primary",
-      // "model": "deepseek/deepseek-v4.1-flash",
+      // "model": "deepseek/deepseek-flash",
       "model": "moonshot/kimi-k2.7-code-highspeed",
       "options": {},
       "permission": {
@@ -131,7 +131,7 @@
   "provider": {
     "deepseek": {
       "models": {
-        "deepseek-v4.1-flash": {
+        "deepseek-flash": {
           "name": "DeepSeek V4.1 Flash",
           "modalities": { "input": ["text"], "output": ["text"] },
           "options": {
