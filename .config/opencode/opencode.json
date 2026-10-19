@@ -172,7 +172,8 @@
   ],
   "plugins": [
     "@cortexkit/opencode-magic-context@latest",
-    "@slkiser/opencode-quota@latest"
+    "@slkiser/opencode-quota@latest",
+    "C:\\Users\\User\\Local\\Opt\\ponytail\\.opencode\\plugins"
   ],
   "providers": {
     "deepseek": {
