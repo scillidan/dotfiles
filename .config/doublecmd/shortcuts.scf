@@ -83,11 +83,11 @@
         <Command>cm_QuickView</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Shift+C</Shortcut>
+        <Shortcut>Ctrl+Shift+C</Shortcut>
         <Command>cm_CopyFullNamesToClip</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+Shift+C</Shortcut>
+        <Shortcut>Shift+Alt+C</Shortcut>
         <Command>cm_CopyNamesToClip</Command>
       </Hotkey>
       <Hotkey>

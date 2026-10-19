@@ -1,169 +1,191 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "agent": {
+  "agents": {
     "build": {
       "mode": "primary",
       "model": "moonshot/kimi-k2.7-code-highspeed",
-      "options": {},
-      "permission": {
-        "bash": "allow",
-        "edit": "allow"
-      },
-      "tools": {
-        "bash": true,
-        "edit": true,
-        "write": true
-      }
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ]
     },
     "plan": {
       "mode": "primary",
       "model": "moonshot/kimi-k2.7-code-highspeed",
-      "options": {},
-      "permission": {
-        "bash": "deny",
-        "edit": "deny"
-      },
-      "tools": {
-        "bash": false,
-        "edit": false,
-        "write": false
-      }
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     }
   },
-  "autoupdate": false,
   "compaction": {
-    "auto": false,
-    "prune": false
+    "auto": false
   },
   "enabled_providers": [
     "deepseek",
     "moonshot"
   ],
   "formatter": true,
-  "lsp": true,
   "mcp": {
-    "agnix": {
-      "type": "local",
-      "command": [
-        "agnix-mcp"
-      ]
-    },
-    "cq": {
-      "type": "local",
-      "command": [
-        "cq",
-        "mcp"
-      ]
-    },
-    "fff": {
-      "type": "local",
-      "command": [
-        "fff-mcp"
-      ]
-    },
-    "aseprite": {
-      "type": "local",
-      "enabled": true,
-      "command": [
-        "uv",
-        "run",
-        "--python",
-        "3.13",
-        "--module",
-        "aseprite_mcp"
-      ],
-      "cwd": "C:/Users/User/Local/Srv/aseprite-mcp",
-      "env": {
-        "ASEPRITE_PATH": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite"
-      }
-    },
-    "blender-mcp": {
-      "type": "local",
-      "command": [
-        "uvx",
-        "mcp-for-blender"
-      ],
-      "enabled": true,
-      "environment": {
-        "BLENDER_HOST": "localhost",
-        "BLENDER_PORT": "9876"
-      }
-    },
-    "gimp-mcp": {
-      "type": "local",
-      "enabled": true,
-      "command": [
-        "uv",
-        "run",
-        "gimp_mcp_server.py"
-      ],
-      "cwd": "C:/Users/User/Local/Srv/gimp-mcp"
-    },
-    "material-maker": {
-      "enabled": true,
-      "command": "mm-mcp",
-      "env": {
-        "MM_GODOT_BINARY": "C:\\Users\\User\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.7.1-stable_win64_console.exe",
-        "MM_PROJECT_PATH": "C:\\Users\\User\\Scoop\\apps\\material-maker\\current",
-        "MM_OUTPUT_DIR": "C:\\Users\\User\\output_mm",
-        "MM_IDLE_EXIT_MINUTES": "120"
-      }
-    },
-    "playwright": {
-      "type": "local",
-      "command": [
-        "npx",
-        "@playwright/mcp@latest"
-      ],
-      "enabled": true
-    },
-    "windbg": {
-      "type": "local",
-      "command": [
-        "mcp-windbg"
-      ],
-      "enabled": false,
-      "environment": {
-        "_NT_SYMBOL_PATH": "SRV*C:\\Symbols*https://msdl.microsoft.com/download/symbols"
-      }
-    },
-    "github": {
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "enabled": false,
-      "oauth": false,
-      "headers": {
-        "Authorization": "Bearer {env:OPENCODE_MCP_GITHUB}"
-      }
-    },
-    "godot-mcp": {
-      "type": "remote",
-      "url": "http://localhost:9080/mcp/",
-      "enabled": true
-    },
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "enabled": true,
-      "headers": {
-        "Authorization": "Bearer ctx7sk-36792bf0-daf2-4f11-b296-5e92b7be8ae1"
+    "servers": {
+      "agnix": {
+        "type": "local",
+        "command": [
+          "agnix-mcp"
+        ]
+      },
+      "cq": {
+        "type": "local",
+        "command": [
+          "cq",
+          "mcp"
+        ]
+      },
+      "fff": {
+        "type": "local",
+        "command": [
+          "fff-mcp"
+        ]
+      },
+      "aseprite": {
+        "type": "local",
+        "command": [
+          "uv",
+          "run",
+          "--python",
+          "3.13",
+          "--module",
+          "aseprite_mcp"
+        ],
+        "cwd": "C:/Users/User/Local/Srv/aseprite-mcp",
+        "environment": {
+          "ASEPRITE_PATH": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite"
+        }
+      },
+      "blender-mcp": {
+        "type": "local",
+        "command": [
+          "uvx",
+          "mcp-for-blender"
+        ],
+        "environment": {
+          "BLENDER_HOST": "localhost",
+          "BLENDER_PORT": "9876"
+        }
+      },
+      "gimp-mcp": {
+        "type": "local",
+        "command": [
+          "uv",
+          "run",
+          "gimp_mcp_server.py"
+        ],
+        "cwd": "C:/Users/User/Local/Srv/gimp-mcp"
+      },
+      "material-maker": {
+        "type": "local",
+        "command": [
+          "mm-mcp"
+        ],
+        "environment": {
+          "MM_GODOT_BINARY": "C:\\Users\\User\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.7.1-stable_win64_console.exe",
+          "MM_PROJECT_PATH": "C:\\Users\\User\\Scoop\\apps\\material-maker\\current",
+          "MM_OUTPUT_DIR": "C:\\Users\\User\\output_mm",
+          "MM_IDLE_EXIT_MINUTES": "120"
+        }
+      },
+      "playwright": {
+        "type": "local",
+        "command": [
+          "npx",
+          "@playwright/mcp@latest"
+        ]
+      },
+      "windbg": {
+        "type": "local",
+        "command": [
+          "mcp-windbg"
+        ],
+        "disabled": true,
+        "environment": {
+          "_NT_SYMBOL_PATH": "SRV*C:\\Symbols*https://msdl.microsoft.com/download/symbols"
+        }
+      },
+      "github": {
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp/",
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {env:OPENCODE_MCP_GITHUB}"
+        }
+      },
+      "godot-mcp": {
+        "type": "remote",
+        "url": "http://localhost:9080/mcp/"
+      },
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp",
+        "headers": {
+          "Authorization": "Bearer {env:CONTEXT7_API_KEY}"
+        }
       }
     }
   },
-  "permission": {
-    "webfetch": "allow",
-    "websearch": "allow",
-    "bash": {
-      "*find*": "deny",
-      "*": "allow"
+  "permissions": [
+    {
+      "action": "webfetch",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "websearch",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "*find*",
+      "effect": "deny"
     }
-  },
-  "provider": {
+  ],
+  "plugins": [
+    "@cortexkit/opencode-magic-context@latest",
+    "@slkiser/opencode-quota@latest"
+  ],
+  "providers": {
     "deepseek": {
+      "name": "DeepSeek",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "apiKey": "{env:DEEPSEEK_API_KEY}",
+        "baseURL": "https://api.deepseek.com"
+      },
       "models": {
         "deepseek-flash": {
           "name": "DeepSeek V4.1 Flash",
-          "modalities": {
+          "capabilities": {
             "input": [
               "text"
             ],
@@ -171,7 +193,7 @@
               "text"
             ]
           },
-          "options": {
+          "settings": {
             "thinking": {
               "type": "enabled",
               "effort": "high"
@@ -180,7 +202,7 @@
         },
         "deepseek-v4-pro": {
           "name": "DeepSeek V4 Pro",
-          "modalities": {
+          "capabilities": {
             "input": [
               "text"
             ],
@@ -188,26 +210,26 @@
               "text"
             ]
           },
-          "options": {
+          "settings": {
             "thinking": {
               "type": "enabled",
               "effort": "high"
             }
           }
         }
-      },
-      "name": "DeepSeek",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "{env:DEEPSEEK_API_KEY}",
-        "baseURL": "https://api.deepseek.com"
       }
     },
     "moonshot": {
+      "name": "Moonshot",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "apiKey": "{env:MOONSHOT_API_KEY}",
+        "baseURL": "https://api.kimi.com/coding/v1"
+      },
       "models": {
         "kimi-k3": {
           "name": "Kimi K3",
-          "modalities": {
+          "capabilities": {
             "input": [
               "text"
             ],
@@ -215,7 +237,7 @@
               "text"
             ]
           },
-          "options": {
+          "settings": {
             "thinking": {
               "type": "enabled",
               "effort": "high"
@@ -224,7 +246,7 @@
         },
         "kimi-k2.7-code-highspeed": {
           "name": "Kimi K2.7 Code (HighSpeed)",
-          "modalities": {
+          "capabilities": {
             "input": [
               "text"
             ],
@@ -232,26 +254,18 @@
               "text"
             ]
           },
-          "options": {
+          "settings": {
             "thinking": {
               "type": "enabled"
             }
           }
         }
-      },
-      "name": "Moonshot",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "{env:MOONSHOT_API_KEY}",
-        "baseURL": "https://api.kimi.com/coding/v1"
       }
     }
   },
-  "share": "disabled",
   "shell": "cmd",
-  "skills": {
-    "paths": [
-      "~/.agents/personal-skills"
-    ]
-  }
+  "skills": [
+    "~/.agents/personal-skills"
+  ],
+  "update": "disable"
 }

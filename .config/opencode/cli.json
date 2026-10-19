@@ -8,6 +8,7 @@
     "session.last": "ctrl+alt+g",
     "input.move.left": "ctrl+b",
     "input.move.right": "ctrl+f",
+    "input.newline": "shift+return,alt+return,ctrl+j",
     "input.backspace": "backspace",
     "input.delete": "ctrl+d",
     "input.word.forward": "alt+f",
@@ -19,7 +20,6 @@
   },
   "plugins": [
     "@cortexkit/opencode-magic-context@latest",
-    "@dietrichgebert/ponytail",
     "oc-sync"
   ],
   "attention": {
