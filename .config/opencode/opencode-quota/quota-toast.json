@@ -3,7 +3,10 @@
   "tuiCommandDisplay": "dialog",
   "showSessionTokens": false,
   "sessionTokenScope": "current",
-  "enabledProviders": "auto",
+  "enabledProviders": [
+    "deepseek",
+    "kimi-code-plan-cn"
+  ],
   "formatStyle": "allWindows",
   "percentDisplayMode": "remaining",
   "tuiSidebarPanel": {

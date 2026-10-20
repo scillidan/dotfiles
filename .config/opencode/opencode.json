@@ -101,11 +101,14 @@
       "material-maker": {
         "type": "local",
         "command": [
+          "uv",
+          "run",
           "mm-mcp"
         ],
+        "cwd": "C:/Users/User/Local/Srv/Tool-MaterialMaker-MCP",
         "environment": {
-          "MM_GODOT_BINARY": "C:\\Users\\User\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.7.1-stable_win64_console.exe",
-          "MM_PROJECT_PATH": "C:\\Users\\User\\Scoop\\apps\\material-maker\\current",
+          "MM_GODOT_BINARY": "C:\\Users\\User\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.6.3-stable_win64_console.exe",
+          "MM_PROJECT_PATH": "C:\\Users\\User\\Local\\Srv\\material-maker",
           "MM_OUTPUT_DIR": "C:\\Users\\User\\output_mm",
           "MM_IDLE_EXIT_MINUTES": "120"
         }
@@ -268,5 +271,8 @@
   "skills": [
     "~/.agents/personal-skills"
   ],
-  "update": "disable"
+  "update": "disable",
+  "provider": {
+    "openai": {}
+  }
 }

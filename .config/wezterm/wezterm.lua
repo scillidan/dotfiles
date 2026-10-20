@@ -178,6 +178,8 @@ config.keys = {
 	{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
 	{ key = "7", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
 	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
+	-- Shift+Enter -> CSI-u sequence so opencode can tell it apart from Enter
+	{ key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\x1b[13;2u") },
 }
 
 -- https://github.com/wezterm/wezterm/discussions/3541
