@@ -3,7 +3,7 @@
   "agents": {
     "build": {
       "mode": "primary",
-      "model": "moonshot/kimi-k2.7-code-highspeed",
+      "model": "kimi-code/kimi-k2.7-code-highspeed",
       "permissions": [
         {
           "action": "shell",
@@ -19,7 +19,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "moonshot/kimi-k2.7-code-highspeed",
+      "model": "kimi-code/kimi-k2.7-code-highspeed",
       "permissions": [
         {
           "action": "shell",
@@ -39,7 +39,7 @@
   },
   "enabled_providers": [
     "deepseek",
-    "moonshot"
+    "kimi-code"
   ],
   "formatter": true,
   "mcp": {
@@ -223,11 +223,11 @@
         }
       }
     },
-    "moonshot": {
-      "name": "Moonshot",
+    "kimi-code": {
+      "name": "Kimi Code",
       "package": "aisdk:@ai-sdk/openai-compatible",
       "settings": {
-        "apiKey": "{env:MOONSHOT_API_KEY}",
+        "apiKey": "{env:KIMI_API_KEY}",
         "baseURL": "https://api.kimi.com/coding/v1"
       },
       "models": {
