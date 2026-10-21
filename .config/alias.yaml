@@ -22,7 +22,7 @@ dga: doggo A $* @1.1.1.1
 dgg: doggo A $* @8.8.8.8
 
 ## Double Commander
-db: doublecmd
+db: doublecmd "$CD"
 
 ## eza
 ls: eza --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
@@ -133,6 +133,9 @@ ski: skills add -g
 sku: skills remove -g
 skl: skills list -g
 skup: skills update
+
+## tere
+tr: cd "$USERHOME/Share" && tere.bat
 
 ## trashy
 rmy: trash

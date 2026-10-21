@@ -47,6 +47,13 @@ command = "audiowaveform -i $ -o \"_.png\" -z auto -w 1920 -h 150 --background-c
 	Tag = ["image"]
 	command = "magick convert $ -define bmp:format=bmp3 _temp.bmp && autotrace -output-file _.svg -input-format bmp -despeckle-level <level> -color-count <num> _temp.bmp"
 
+## bat
+[[Snippets]]
+Description = ""
+Output = ""
+Tag = ["code"]
+command = "bat --list-themes | fzf --preview=\"bat --theme={} --color=always<file>\""
+
 ## color-matcher
 [[Snippets]]
 	Description = ""
