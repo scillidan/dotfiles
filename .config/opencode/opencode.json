@@ -35,7 +35,8 @@
     }
   },
   "compaction": {
-    "auto": false
+    "auto": false,
+    "prune": false
   },
   "enabled_providers": [
     "deepseek",
@@ -173,10 +174,10 @@
       "effect": "deny"
     }
   ],
-  "plugins": [
+  "plugin": [
     "@cortexkit/opencode-magic-context@latest",
     "@slkiser/opencode-quota@latest",
-    "C:\\Users\\User\\Local\\Opt\\ponytail\\.opencode\\plugins"
+    "{env:USERHOME}\\Local\\Source\\opencode\\ponytail\\.opencode\\plugins"
   ],
   "providers": {
     "deepseek": {
@@ -265,14 +266,12 @@
           }
         }
       }
-    }
+    },
+    "openai": {}
   },
   "shell": "cmd",
   "skills": [
     "~/.agents/personal-skills"
   ],
-  "update": "disable",
-  "provider": {
-    "openai": {}
-  }
+  "update": "disable"
 }
