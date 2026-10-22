@@ -101,7 +101,7 @@ gpn: git push no-mistakes
 ## OpenCode
 oc: opencode $* & reset
 occ: opencode --continue $* & reset
-ocd: opencode --model deepseek/deepseek-v4.1-flash $* & reset
+ocd: opencode --model deepseek/deepseek-flash $* & reset
 
 ## OpenCommit
 ocoi: oco hook set

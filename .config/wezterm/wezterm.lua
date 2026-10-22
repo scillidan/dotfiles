@@ -4,6 +4,21 @@ local config = wezterm.config_builder()
 local light_scheme = "One Light (Gogh)"
 local is_light = false
 
+-- QuickSelect patterns: tmux-thumbs replacement.
+local quick_select_url_patterns = {
+	[=[https?://[^\s"'<>]+]=],
+}
+local quick_select_path_patterns = {
+	[=[[A-Za-z]:[\\/][^\s:]+(?::\d+){0,2}]=],
+	[=[(?:~|\.{1,2})?/[^\s:]+(?::\d+){0,2}]=],
+	[=[[\w./\\-]+\.[A-Za-z0-9]+(?::\d+){0,2}]=],
+}
+-- Add Windows paths and PDFs to WezTerm's built-in QuickSelect patterns.
+config.quick_select_patterns = {
+	[=[[A-Za-z]:[\\/][^\s:]+(?::\d+){0,2}]=],
+	[=[\S+\.pdf]=],
+}
+
 config.colors = {
 	tab_bar = {
 		active_tab = {
@@ -58,7 +73,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 config.show_tab_index_in_tab_bar = false
 config.tab_bar_at_bottom = true
 config.tab_max_width = 25
@@ -67,7 +82,7 @@ config.use_fancy_tab_bar = false
 config.warn_about_missing_glyphs = false
 
 config.disable_default_key_bindings = true
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 500 }
 config.keys = {
 	{
 		key = "C",
@@ -95,9 +110,51 @@ config.keys = {
 		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
 	{
-		key = "p",
+		key = "F",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.Search("CurrentSelectionOrEmptyString"),
+		action = act.Search("CurrentSelectionOrEmptyString"),
+	},
+	{
+		key = "O",
+		mods = "CTRL|SHIFT",
+		action = act.QuickSelectArgs({
+			label = "open url",
+			patterns = quick_select_url_patterns,
+			action = wezterm.action_callback(function(window, pane)
+				local url = window:get_selection_text_for_pane(pane)
+				if url and url ~= "" then
+					if not pcall(wezterm.open_with, url, "qutebrowser") then
+						pcall(wezterm.open_with, url)
+					end
+				end
+			end),
+		}),
+	},
+	{
+		key = "P",
+		mods = "CTRL|SHIFT",
+		action = act.QuickSelectArgs({
+			label = "copy path",
+			patterns = quick_select_path_patterns,
+			action = wezterm.action_callback(function(window, pane)
+				window:perform_action(act.CopyTo("ClipboardAndPrimarySelection"), pane)
+			end),
+		}),
+	},
+	{
+		key = "S",
+		mods = "CTRL|SHIFT",
+		action = act.QuickSelect,
+	},
+	{
+		key = "Space",
+		mods = "CTRL|SHIFT",
+		action = act.QuickSelect,
+	},
+	{
+		key = "X",
+		mods = "CTRL|SHIFT",
+		action = act.ActivateCopyMode,
 	},
 	{
 		key = "Insert",
@@ -157,8 +214,6 @@ config.keys = {
 	{ key = "\\", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 	{ key = "v", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 	{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
-	-- no cwd given: wezterm spawns in this pane's current directory
-	{ key = "g", mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab({ args = { "lazygit" } }) },
 	{ key = "h", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
 	{ key = "j", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
 	{ key = "k", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
@@ -241,16 +296,6 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		key = "L",
 		mods = "CTRL|ALT",
 		action = wezterm.action.MoveTabRelative(1),
-	})
-	table.insert(config.keys, {
-		key = "c",
-		mods = "ALT",
-		action = wezterm.action.SendString("tere.bat\r"),
-	})
-	table.insert(config.keys, {
-		key = "f",
-		mods = "LEADER",
-		action = wezterm.action.SendString("bash fzf-files.sh\r"),
 	})
 end
 

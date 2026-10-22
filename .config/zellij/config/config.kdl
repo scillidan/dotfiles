@@ -1,7 +1,123 @@
+// Zellij config — migrated from tmux.
+// Prefix model: Ctrl+Space enters the tmux-compatible mode; Alt+* acts directly.
+// Readline keys (Ctrl-h/p/n/o/t/b/q) are unbound in normal mode so the shell gets them.
+//
+// First launch only: click the zjstatus bar at the bottom and press "y" to grant
+// ReadApplicationState / ChangeApplicationState / RunCommands. Zellij 0.45 cannot
+// focus a 1-row permission prompt with the keyboard (upstream issue #4749).
+
 simplified_ui true
 theme "vesper"
 theme_dark "vesper"
 theme_light "everforest-light"
 default_layout "default"
-scrollback_editor "vim"
-default_shell "_clink.cmd"
+default_shell "zellij-shell.cmd"
+scrollback_editor "nvim"
+
+// Session / history
+session_serialization true
+serialize_pane_viewport true
+scroll_buffer_size 100000
+
+// Mouse / clipboard
+mouse_mode true
+copy_on_select true
+
+// 0.45 frame style. zjstatus must use the same value.
+pane_frame_style "full"
+
+keybinds {
+    normal {
+        // give these back to readline / the focused app
+        unbind "Ctrl h" "Ctrl p" "Ctrl n" "Ctrl o" "Ctrl t" "Ctrl b" "Ctrl q"
+        // Alt-f stays free for bash's fzf_files; floating panes move to Alt-w
+        unbind "Alt f"
+
+        bind "Ctrl Space" { SwitchToMode "tmux"; }
+        bind "Ctrl \\" { FocusLastPane; }
+
+        // tmux M-% / M-"
+        bind "Alt %" { NewPane "Right"; }
+        bind "Alt \"" { NewPane "Down"; }
+
+        // tmux M-Q / M-W
+        bind "Alt q" { CloseFocus; }
+        bind "Alt Shift w" { CloseTab; }
+
+        // tmux M-k / M-j (swap pane)
+        bind "Alt Shift k" { MovePane "Up"; }
+        bind "Alt Shift j" { MovePane "Down"; }
+
+        // tmux M-H / M-L (swap window)
+        bind "Alt Shift h" { MoveTab "Left"; }
+        bind "Alt Shift l" { MoveTab "Right"; }
+
+        bind "Alt w" { ToggleFloatingPanes; }
+        bind "Alt z" { ToggleFocusFullscreen; }
+
+        bind "Alt s" {
+            Run "zellij-sessionizer.cmd" {
+                floating true
+                close_on_exit true
+            }
+        }
+
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+        bind "Alt 6" { GoToTab 6; }
+        bind "Alt 7" { GoToTab 7; }
+        bind "Alt 8" { GoToTab 8; }
+        bind "Alt 9" { GoToTab 9; }
+    }
+
+    // Ctrl+Space also works from locked mode.
+    locked {
+        bind "Ctrl Space" { SwitchToMode "tmux"; }
+    }
+
+    // Extend Zellij's built-in tmux mode: Ctrl+Space toggles back to normal.
+    tmux {
+        bind "Ctrl Space" { SwitchToMode "normal"; }
+        bind "w" { SwitchToMode "session"; }
+        bind "t" { SwitchToMode "tab"; }
+        bind "P" { SwitchToMode "pane"; }
+        bind "R" { SwitchToMode "resize"; }
+        bind "g" {
+            Run "lazygit" {
+                floating true
+                close_on_exit true
+            }
+        }
+        bind "s" {
+            Run "zellij-sessionizer.cmd" {
+                floating true
+                close_on_exit true
+            }
+        }
+        bind "T" { ToggleTheme; }
+    }
+}
+
+plugins {
+    about location="zellij:about"
+    compact-bar location="zellij:compact-bar"
+    configuration location="zellij:configuration"
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    plugin-manager location="zellij:plugin-manager"
+    session-manager location="zellij:session-manager"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    tab-bar location="zellij:tab-bar"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+}
+
+load_plugins {
+    zellij:link
+}

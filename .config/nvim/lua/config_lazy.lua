@@ -100,7 +100,6 @@ require("lazy").setup(
         { "ribru17/blink-cmp-spell" },
         { "mikavilpas/blink-ripgrep.nvim" },
         { "dynamotn/blink-cmp-zellij" },
-        { "mgalliou/blink-cmp-tmux" }
       },
       config = function()
         require("blink.cmp").setup(require("config.blink"))
@@ -393,12 +392,13 @@ require("lazy").setup(
       config = function()
         require("config.stardict")
       end },
-    { "christoomey/vim-tmux-navigator",
-      cond = vim.fn.has("unix") == 1,
-      cmd = require("config.cmd.vim_tmux_navigator"),
-      keys = function()
-        return require("config.keys.vim_tmux_navigator")
-      end },
+    { "y2w8/neolij.nvim",
+      cond = function()
+        return os.getenv("ZELLIJ") ~= nil
+      end,
+      event = "VeryLazy",
+      opts = {},
+      keys = require("config.keys.neolij") },
     rocks = { enabled = true }
   }
 )

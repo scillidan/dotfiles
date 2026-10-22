@@ -65,7 +65,6 @@ return {
 				"conventional_commits",
 				"ripgrep",
 				"zellij",
-				"tmux",
 				"spell"
 			}
 
@@ -305,12 +304,7 @@ return {
 				-- https://github.com/dynamotn/blink-cmp-zellij#installation--configuration
 				opts = {},
 			},
-			tmux = {
-				module = "blink-cmp-tmux",
-				name = "tmux",
-				--https://github.com/mgalliou/blink-cmp-tmux?tab=readme-ov-file#installation--configuration
-				opts = {},
-			},
+
 		},
 	},
 	fuzzy = {

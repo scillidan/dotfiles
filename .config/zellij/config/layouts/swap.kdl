@@ -44,21 +44,39 @@ layout {
   default_tab_template {
     children
     pane size=1 borderless=true {
-      plugin location="file:$USERHOME/.config/zellij/plugins/zjstatus.wasm" {
+      plugin location="file:~/Share/dotfiles/.config/zellij/plugins/zjstatus.wasm" {
         format_left "{mode}{tabs}"
-        format_right "#[fg=#0f172a,bold]{session} #[fg=#005F00,bold]{swap_layout}"
+        format_right "{command_sys}#[fg=#22c55e,bold]{session}"
+        format_space ""
 
-        mode_normal        "#[fg=#005F00,bold]{name}"
-        mode_locked        "#[fg=#ef4444,bold]{name}"
-        mode_resize        "#[fg=#fde047,bold]{name}"
-        mode_pane          "#[fg=#808080,bold]{name}"
-        mode_tab           "#[fg=#0f172a,bold]{name}"
-        mode_scroll        "#[fg=#839D48,bold]{name}"
-        mode_session       "#[fg=#fe8019,bold]{name}"
-        mode_move          "#[fg=#808080,bold]{name}"
+        tab_normal "#[fg=#808080]{index}:{name}"
+        tab_active "#[fg=#22c55e,bold]{index}:{name}"
+        tab_separator "  "
+        tab_sync_indicator " <>"
+        tab_fullscreen_indicator " []"
+        tab_floating_indicator " ~"
 
-        tab_normal   "#[fg=#808080,bold] {name}"
-        tab_active   "#[fg=#0f172a,bold] {name}"
+        mode_normal "#[fg=#22c55e,bold]NORMAL "
+        mode_locked "#[fg=#ef4444,bold]LOCKED "
+        mode_resize "#[fg=#e2e8f0,bold]RESIZE "
+        mode_pane "#[fg=#e2e8f0,bold]PANE "
+        mode_tab "#[fg=#e2e8f0,bold]TAB "
+        mode_scroll "#[fg=#808080,bold]SCROLL "
+        mode_enter_search "#[fg=#808080,bold]SEARCH "
+        mode_search "#[fg=#808080,bold]SEARCH "
+        mode_session "#[fg=#e2e8f0,bold]SESSION "
+        mode_move "#[fg=#e2e8f0,bold]MOVE "
+        mode_rename_tab "#[fg=#e2e8f0,bold]RENAME "
+        mode_rename_pane "#[fg=#e2e8f0,bold]RENAME "
+        mode_tmux "#[fg=#22c55e,bold]TMUX "
+
+        command_sys_command "bash -lc 'p=$(command -v python || command -v python3); $p ${USERHOME:-$HOME}/Share/dotfiles/.config/zellij/scripts/sysstat.py'"
+        command_sys_format "#[fg=#808080]{stdout} "
+        command_sys_interval "5"
+        command_sys_rendermode "static"
+
+        pane_frame_style "full"
+        hide_frame_for_single_pane "false"
       }
     }
   }
