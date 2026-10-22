@@ -2,11 +2,12 @@
 abbr: bash llm_abbreviate.sh
 cmnt: bash llm_comment.sh
 expl: bash llm_explain.sh
-lambda: bash llm_lambda_replace.sh
-sum: bash llm_summarize.sh
-trans: bash llm_translate.sh
 gh-del-workflow-run: bash gh-del-workflow-run.sh
 gh-disable-workflow: bash gh-disable-workflow.sh
+lambda: bash llm_lambda_replace.sh
+ob: bash urls_open.sh
+sum: bash llm_summarize.sh
+trans: bash llm_translate.sh
 
 ## fzf
 bkmf: bash fzf-bookmarks.sh
