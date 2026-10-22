@@ -112,6 +112,7 @@ config.keys = {
 	{ key = "S", mods = "CTRL|SHIFT", action = act.QuickSelect },
 	{ key = "Space", mods = "CTRL|SHIFT", action = act.QuickSelect },
 	{ key = "X", mods = "CTRL|SHIFT", action = act.ActivateCopyMode },
+	{ key = "C", mods = "CTRL|SHIFT", action = wezterm.action.CopyTo("Clipboard") },
 	{ key = "Insert", mods = "CTRL", action = wezterm.action.CopyTo("Clipboard") },
 	{ key = "Insert", mods = "SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
