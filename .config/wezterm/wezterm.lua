@@ -29,21 +29,11 @@ config.colors = {
 			fg_color = "#f8fafc",
 			bg_color = "#000000",
 		},
-		inactive_tab_hover = {
-			italic = false,
-			fg_color = "#e2e8f0",
-			bg_color = "#000000",
-		},
-		new_tab_hover = {
-			italic = false,
-			fg_color = "#e2e8f0",
-			bg_color = "#000000",
-		},
-	},
+		inactive_tab_hover = { italic = false, fg_color = "#e2e8f0", bg_color = "#000000" },
+		new_tab_hover = {	italic = false, fg_color = "#e2e8f0", bg_color = "#000000" }
+	}
 }
-config.font = wezterm.font_with_fallback({
-	"Sarasa Term SC Nerd",
-})
+config.font = wezterm.font_with_fallback({ "Sarasa Term SC Nerd" })
 config.font_size = 10.0
 -- https://help.gnome.org/users/gnome-terminal/stable/app-terminal-sizes.html.en
 config.initial_cols = 152
@@ -52,9 +42,7 @@ config.window_background_opacity = 1
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "NONE"
 config.window_frame = {
-	font = wezterm.font_with_fallback({
-		"Sarasa Term SC Nerd",
-	}),
+	font = wezterm.font_with_fallback({ "Sarasa Term SC Nerd" }),
 	font_size = 9.0,
 	active_titlebar_bg = "#000000",
 	active_titlebar_fg = "#f8fafc",
@@ -84,9 +72,7 @@ config.warn_about_missing_glyphs = false
 config.disable_default_key_bindings = true
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 500 }
 config.keys = {
-	{
-		key = "C",
-		mods = "LEADER|SHIFT",
+	{	key = "C", mods = "LEADER|SHIFT",
 		action = wezterm.action_callback(function(window, pane)
 			if is_light then
 				window:set_config_overrides(nil)
@@ -99,40 +85,22 @@ config.keys = {
 			end
 		end),
 	},
-	{
-		key = "f",
-		mods = "LEADER|SHIFT",
-		action = wezterm.action.ToggleFullScreen,
-	},
-	{
-		key = "w",
-		mods = "CTRL|SHIFT|ALT",
-		action = wezterm.action.CloseCurrentTab({ confirm = false }),
-	},
-	{
-		key = "F",
-		mods = "CTRL|SHIFT",
-		action = act.Search("CurrentSelectionOrEmptyString"),
-	},
-	{
-		key = "O",
-		mods = "CTRL|SHIFT",
+	{ key = "f", mods = "LEADER|SHIFT", action = wezterm.action.ToggleFullScreen },
+	{ key = "w", mods = "CTRL|SHIFT|ALT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+	{ key = "F", mods = "CTRL|SHIFT", action = act.Search("CurrentSelectionOrEmptyString") },
+	{	key = "O", mods = "CTRL|SHIFT",
 		action = act.QuickSelectArgs({
 			label = "open url",
 			patterns = quick_select_url_patterns,
 			action = wezterm.action_callback(function(window, pane)
 				local url = window:get_selection_text_for_pane(pane)
 				if url and url ~= "" then
-					if not pcall(wezterm.open_with, url, "qutebrowser") then
-						pcall(wezterm.open_with, url)
-					end
+					wezterm.open_with(url)
 				end
 			end),
 		}),
 	},
-	{
-		key = "P",
-		mods = "CTRL|SHIFT",
+	{ key = "P", mods = "CTRL|SHIFT",
 		action = act.QuickSelectArgs({
 			label = "copy path",
 			patterns = quick_select_path_patterns,
@@ -141,52 +109,17 @@ config.keys = {
 			end),
 		}),
 	},
-	{
-		key = "S",
-		mods = "CTRL|SHIFT",
-		action = act.QuickSelect,
-	},
-	{
-		key = "Space",
-		mods = "CTRL|SHIFT",
-		action = act.QuickSelect,
-	},
-	{
-		key = "X",
-		mods = "CTRL|SHIFT",
-		action = act.ActivateCopyMode,
-	},
-	{
-		key = "Insert",
-		mods = "CTRL",
-		action = wezterm.action.CopyTo("Clipboard"),
-	},
-	{
-		key = "Insert",
-		mods = "SHIFT",
-		action = wezterm.action.PasteFrom("Clipboard"),
-	},
-	{
-		key = "v",
-		mods = "CTRL",
-		action = wezterm.action.PasteFrom("Clipboard"),
-	},
-	{
-		key = "t",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
-	},
-	{
-		key = "n",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.SpawnWindow,
-	},
-	{
-		key = "E",
-		mods = "CTRL|SHIFT",
-		-- https://wezterm.org/config/lua/wezterm/on.html#example-opening-whole-scrollback-in-vim
-		action = act.EmitEvent("trigger-vim-with-scrollback"),
-	},
+	{ key = "S", mods = "CTRL|SHIFT", action = act.QuickSelect },
+	{ key = "Space", mods = "CTRL|SHIFT", action = act.QuickSelect },
+	{ key = "X", mods = "CTRL|SHIFT", action = act.ActivateCopyMode },
+	{ key = "Insert", mods = "CTRL", action = wezterm.action.CopyTo("Clipboard") },
+	{ key = "Insert", mods = "SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
+	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
+	{ key = "t", mods = "CTRL|SHIFT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+	{	key = "n", mods = "CTRL|SHIFT", action = wezterm.action.SpawnWindow },
+	{	key = "g", mods = "LEADER",	action = wezterm.action.SpawnCommandInNewTab({ args = { "lazygit" } }) },
+	-- https://wezterm.org/config/lua/wezterm/on.html#example-opening-whole-scrollback-in-vim
+	{ key = "E", mods = "CTRL|SHIFT", action = act.EmitEvent("trigger-vim-with-scrollback") },
 	-- https://github.com/wezterm/wezterm/discussions/3779
 	{
 		key = "l",
@@ -242,8 +175,7 @@ config.keys = {
 -- https://github.com/wezterm/wezterm/discussions/3541
 config.mouse_bindings = {
 	{
-		event = { Down = { streak = 1, button = "Right" } },
-		mods = "NONE",
+		event = { Down = { streak = 1, button = "Right" } }, mods = "NONE",
 		action = wezterm.action_callback(function(window, pane)
 			local has_selection = window:get_selection_text_for_pane(pane) ~= ""
 			if has_selection then
@@ -254,18 +186,8 @@ config.mouse_bindings = {
 			end
 		end),
 	},
-	{
-		event = {
-			Up = { streak = 1, button = "Left" },
-		},
-		mods = "NONE",
-		action = act.CompleteSelection("ClipboardAndPrimarySelection"),
-	},
-	{
-		event = { Up = { streak = 1, button = "Left" } },
-		mods = "CTRL",
-		action = act.OpenLinkAtMouseCursor,
-	},
+	{	event = { Up = { streak = 1, button = "Left" } },	mods = "NONE", action = act.CompleteSelection("ClipboardAndPrimarySelection") },
+	{	event = { Up = { streak = 1, button = "Left" } }, mods = "CTRL", action = act.OpenLinkAtMouseCursor }
 }
 
 -- For Windows
@@ -277,26 +199,12 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		"/k",
 		user .. "\\Share\\dotfiles.win\\Scoop\\clink\\init.cmd",
 	}
-	table.insert(config.keys, {
-		key = "h",
-		mods = "CTRL|ALT",
-		action = wezterm.action.ActivateTabRelative(-1),
-	})
-	table.insert(config.keys, {
-		key = "l",
-		mods = "CTRL|ALT",
-		action = wezterm.action.ActivateTabRelative(1),
-	})
-	table.insert(config.keys, {
-		key = "H",
-		mods = "CTRL|ALT",
-		action = wezterm.action.MoveTabRelative(-1),
-	})
-	table.insert(config.keys, {
-		key = "L",
-		mods = "CTRL|ALT",
-		action = wezterm.action.MoveTabRelative(1),
-	})
+	table.insert(config.keys, {	key = "h", mods = "CTRL|ALT", 	action = wezterm.action.ActivateTabRelative(-1) })
+	table.insert(config.keys, {	key = "l", mods = "CTRL|ALT", action = wezterm.action.ActivateTabRelative(1) })
+	table.insert(config.keys, { key = "H", mods = "CTRL|ALT",	action = wezterm.action.MoveTabRelative(-1)	})
+	table.insert(config.keys, { key = "L", mods = "CTRL|ALT",	action = wezterm.action.MoveTabRelative(1) })
+	table.insert(config.keys, {	key = "c", mods = "ALT", action = wezterm.action.SendString("tere.bat\r")	})
+	table.insert(config.keys, {	key = "f", mods = "LEADER", action = wezterm.action.SendString("bash fzf-files.sh\r")	})
 end
 
 wezterm.on("trigger-vim-with-scrollback", function(window, pane)
