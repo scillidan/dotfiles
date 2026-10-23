@@ -6,12 +6,12 @@
   },
   "isbnchs": {
     "prefix": "isbnchs",
-    "body": "\n```\nISBN: $1\n标题: $2\n副标题: $3\n作者: $4\n译者: $5\n日期: $6\n```\n",
+    "body": "\n```\nISBN13: $1\n标题: $2\n副标题: $3\n作者: $4\n译者: $5\n出版年: $6\n```\n",
     "description": "byya lyra isbn-chs"
   },
   "isbneng": {
     "prefix": "isbneng",
-    "body": "\n```\nISBN: \nTitle: \nSubtitle: \nCreator: \nDate: \n```\n",
+    "body": "\n```\nISBN13: \nTitle: \nSubtitle: \nAuthors: \nPublished: \n```\n",
     "description": "byya lyra isbn-eng"
   },
   "nnva": {
@@ -31,12 +31,12 @@
   },
   "favoriteimage": {
     "prefix": "favoriteimage",
-    "body": "\njust polario ${1:portrait} \"favorite-image/assets/${2:image}.${3:jpg}\" \"${4:author}\" \"${5:date}\" \"${2:image}\" \"(0%, 0%)\" 100% \"(100%, 100%)\"\n",
+    "body": "\njust polario ${1:portrait} \"image-collect/assets/${2:image}.${3:jpg}\" \"${4:author}\" \"${5:date}\" \"${2:image}\" \"(0%, 0%)\" 100% \"(100%, 100%)\"\n",
     "description": "marks favorite-image"
   },
   "post": {
     "prefix": "post",
-    "body": "\n```\nDate: $2\nAuthor: $3\nTranslator: $4\nSource: $1\n```\n\n# $1\n\n",
+    "body": "\n```\nDate: $2\nCreator: $3\nTranslator: $4\nSource: $1\n```\n\n# $1\n\n",
     "description": "marks post"
   },
   "meta": {

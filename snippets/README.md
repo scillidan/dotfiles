@@ -16,6 +16,5 @@ Commands:
 ```sh
 just          # sync src/ -> both targets
 just list     # show what lives where
-just watch    # re-sync on every change
 just init     # one-time: adopt snippets already sitting in the target dirs
 ```

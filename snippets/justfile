@@ -10,6 +10,3 @@ list:
 
 init:
     {{py}} sync.py init
-
-watch:
-    {{py}} sync.py watch

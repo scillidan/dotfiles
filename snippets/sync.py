@@ -1,23 +1,17 @@
 #!/usr/bin/env python3
-"""Sync editor snippets from src/ into Sublime Text and nvim (LuaSnip) targets.
+"""Sync snippets from src/ into Sublime Text and nvim (LuaSnip) targets.
 
-Layout:
   src/sublime-text/*.sublime-snippet  -> copied to Sublime, converted for nvim
   src/neovim/<ft>.json|.lua           -> nvim only (copied verbatim; ft = filename stem)
   src/neovim/*.sublime-snippet        -> nvim only (converted)
   src/scope-map.toml                  -> sublime <scope> -> vim filetype
 
-Targets (generated, do not edit):
-  ../.config/sublime-text/Packages/User/Snippets/*.sublime-snippet
-  ../.config/nvim/snippets/{package.json,user/<ft>.json,lua/<ft>.lua}
-
-Usage: sync.py [sync|list|init|watch]   (default: sync)
+Targets are generated, do not edit them. Usage: sync.py [sync|list|init]
 """
 
 import json
 import shutil
 import sys
-import time
 import tomllib
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -39,13 +33,11 @@ def load_map():
 
 
 def parse_snippet(path, scope_map):
-    """One .sublime-snippet -> dict(prefix, body, description, fts=[...])."""
     root = ET.parse(path).getroot()
     content = root.find("content")
     trigger = root.findtext("tabTrigger")
     if content is None or not trigger:
         die(f"{path.name}: missing <content> or <tabTrigger>")
-    body = content.text or ""
     scope = root.findtext("scope")
     if not scope:
         die(f"{path.name}: missing <scope> (needed for the nvim side)")
@@ -55,14 +47,13 @@ def parse_snippet(path, scope_map):
         die(f"{path.name}: scope '{sel}' not in scope-map.toml — add it")
     return {
         "prefix": trigger.strip(),
-        "body": body.replace("$SELECTION", "$TM_SELECTED_TEXT"),
+        "body": (content.text or "").replace("$SELECTION", "$TM_SELECTED_TEXT"),
         "description": (root.findtext("description") or "").strip(),
         "ft": ft,
     }
 
 
 def collect_converted(scope_map):
-    """Parse every .sublime-snippet that should reach nvim. Returns (by_ft, errors)."""
     by_ft = {}
     for group in GROUPS:
         for f in sorted((SRC / group).glob("*.sublime-snippet")):
@@ -80,21 +71,20 @@ def collect_converted(scope_map):
 
 
 def cmd_sync():
-    scope_map = load_map()
-    # --- nvim side: converted + passthrough, aggregated per filetype ---
-    by_ft = collect_converted(scope_map)
+    by_ft = collect_converted(load_map())
     lua_files = []
     for f in sorted((SRC / "neovim").iterdir()):
         if f.suffix == ".json":
-            ft = f.stem
             try:
                 data = json.loads(f.read_text(encoding="utf-8"))
             except json.JSONDecodeError as e:
                 die(f"{f.name}: invalid JSON: {e}")
-            bucket = by_ft.setdefault(ft, {})
+            bucket = by_ft.setdefault(f.stem, {})
             for key, entry in data.items():
                 if key in bucket:
-                    print(f"note: neovim/{f.name} overrides converted '{key}' ({ft})")
+                    print(
+                        f"note: neovim/{f.name} overrides converted '{key}' ({f.stem})"
+                    )
                 bucket[key] = entry
         elif f.suffix == ".lua":
             lua_files.append(f)
@@ -129,7 +119,6 @@ def cmd_sync():
         json.dumps(pkg, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
-    # --- Sublime side: plain copies of src/sublime-text/ ---
     sources = {
         f.name: f for f in sorted((SRC / "sublime-text").glob("*.sublime-snippet"))
     }
@@ -164,7 +153,6 @@ def cmd_list():
 
 def cmd_init():
     """Adopt existing snippets from the two target dirs into src/ (run once)."""
-    # 1. sublime -> sublime-text/
     n_sub = 0
     for f in sorted(SUB_DIR.glob("*.sublime-snippet")):
         dst = SRC / "sublime-text" / f.name
@@ -174,20 +162,18 @@ def cmd_init():
         shutil.copy2(f, dst)
         n_sub += 1
 
-    # 2. converted prefixes, for dropping nvim duplicates
     by_ft = collect_converted(load_map())
     global_prefixes = {e["prefix"] for b in by_ft.values() for e in b.values()}
 
-    # 3. nvim user/<ft>.json -> neovim/<ft>.json minus duplicates
     for f in sorted((NVIM_DIR / "user").glob("*.json")):
         ft = f.stem
         data = json.loads(f.read_text(encoding="utf-8"))
         kept, dropped = {}, {}
         for key, entry in data.items():
-            prefixes = entry.get("prefix", "")
-            prefixes = prefixes if isinstance(prefixes, list) else [prefixes]
-            dup = any(p in by_ft.get(ft, {}) for p in prefixes) or (
-                ft == "all" and any(p in global_prefixes for p in prefixes)
+            prefs = entry.get("prefix", "")
+            prefs = prefs if isinstance(prefs, list) else [prefs]
+            dup = any(p in by_ft.get(ft, {}) for p in prefs) or (
+                ft == "all" and any(p in global_prefixes for p in prefs)
             )
             (dropped if dup else kept)[key] = entry
         if kept:
@@ -205,37 +191,11 @@ def cmd_init():
         else:
             print(f"import: {f.name} fully duplicate ({len(dropped)} dropped)")
     for f in sorted((NVIM_DIR / "lua").glob("*.lua")):
-        dst = SRC / "nvim-only" / f.name
+        dst = SRC / "neovim" / f.name
         if not dst.exists():
             shutil.copy2(f, dst)
             print(f"import: neovim/{f.name}")
     print(f"\ninit done: {n_sub} sublime -> sublime-text/. Review, then run: just sync")
-
-
-def snapshot():
-    return {
-        str(f): (f.stat().st_mtime, f.stat().st_size)
-        for group in GROUPS
-        for f in (SRC / group).rglob("*")
-        if f.is_file()
-    }
-
-
-def cmd_watch():
-    print("watching src/ ... Ctrl-C to stop")
-    cmd_sync()
-    last = snapshot()
-    try:
-        while True:
-            time.sleep(1)
-            now = snapshot()
-            if now != last:
-                time.sleep(0.3)  # debounce
-                last = snapshot()
-                print("--- change detected ---")
-                cmd_sync()
-    except KeyboardInterrupt:
-        pass
 
 
 if __name__ == "__main__":
@@ -248,7 +208,5 @@ if __name__ == "__main__":
             cmd_list()
         case "init":
             cmd_init()
-        case "watch":
-            cmd_watch()
         case _:
-            die("usage: sync.py [sync|list|init|watch]")
+            die("usage: sync.py [sync|list|init]")

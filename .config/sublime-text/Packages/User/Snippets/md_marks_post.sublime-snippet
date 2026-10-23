@@ -2,7 +2,7 @@
 	<content><![CDATA[
 ```
 Date: $2
-Author: $3
+Creator: $3
 Translator: $4
 Source: $1
 ```
