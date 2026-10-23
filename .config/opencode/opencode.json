@@ -75,6 +75,7 @@
           "aseprite_mcp"
         ],
         "cwd": "C:/Users/User/Local/Srv/aseprite-mcp",
+        "disabled": true,
         "environment": {
           "ASEPRITE_PATH": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite"
         }
@@ -85,6 +86,7 @@
           "uvx",
           "mcp-for-blender"
         ],
+        "disabled": true,
         "environment": {
           "BLENDER_HOST": "localhost",
           "BLENDER_PORT": "9876"
@@ -97,7 +99,8 @@
           "run",
           "gimp_mcp_server.py"
         ],
-        "cwd": "C:/Users/User/Local/Srv/gimp-mcp"
+        "cwd": "C:/Users/User/Local/Srv/gimp-mcp",
+        "disabled": true
       },
       "material-maker": {
         "type": "local",
@@ -107,6 +110,7 @@
           "mm-mcp"
         ],
         "cwd": "C:/Users/User/Local/Srv/Tool-MaterialMaker-MCP",
+        "disabled": true,
         "environment": {
           "MM_GODOT_BINARY": "C:\\Users\\User\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.6.3-stable_win64_console.exe",
           "MM_PROJECT_PATH": "C:\\Users\\User\\Local\\Srv\\material-maker",
@@ -119,7 +123,8 @@
         "command": [
           "npx",
           "@playwright/mcp@latest"
-        ]
+        ],
+        "disabled": true
       },
       "windbg": {
         "type": "local",
@@ -133,6 +138,7 @@
       },
       "github": {
         "type": "remote",
+        "disabled": true,
         "url": "https://api.githubcopilot.com/mcp/",
         "oauth": false,
         "headers": {
@@ -141,6 +147,7 @@
       },
       "godot-mcp": {
         "type": "remote",
+      	"disabled": true,
         "url": "http://localhost:9080/mcp/"
       },
       "context7": {
