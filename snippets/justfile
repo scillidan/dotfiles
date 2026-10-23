@@ -1,0 +1,15 @@
+py := if os() == 'windows' { 'python' } else { 'python3' }
+
+default: sync
+
+sync:
+    {{py}} sync.py
+
+list:
+    {{py}} sync.py list
+
+init:
+    {{py}} sync.py init
+
+watch:
+    {{py}} sync.py watch

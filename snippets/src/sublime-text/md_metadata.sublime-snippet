@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+---
+$1
+---
+]]></content>
+	<tabTrigger>meta</tabTrigger>
+	<scope>text.html.markdown</scope>
+	<description>sublime metadata</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<p>Source: <a href="https://github.com/$1">$1</a> &middot; License: <a href="https://github.com/$1/blob/${3:main/LICENSE}">${2:OFL-1.1}</a> &middot; Version: <a href="https://github.com/$1/tag/v$4">$4</a></p>
+]]></content>
+	<tabTrigger>fontscdnp</tabTrigger>
+	<scope>text.html</scope>
+	<description>fonts-cdn index.html p</description>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+#EXTM3U
+#PLAYLIST: $1
+
+#EXTINF:,$2
+]]></content>
+	<tabTrigger>m3u</tabTrigger>
+	<scope>text.m3u</scope>
+	<description>m3u extm3u</description>
+</snippet>

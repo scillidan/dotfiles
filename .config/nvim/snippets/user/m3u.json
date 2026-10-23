@@ -1,0 +1,7 @@
+{
+  "m3u": {
+    "prefix": "m3u",
+    "body": "\n#EXTM3U\n#PLAYLIST: $1\n\n#EXTINF:,$2\n",
+    "description": "m3u extm3u"
+  }
+}

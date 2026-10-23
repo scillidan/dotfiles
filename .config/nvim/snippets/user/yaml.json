@@ -1,4 +1,9 @@
 {
+  "espansoyaml": {
+    "prefix": "espansoyaml",
+    "body": "\n- trigger: \"$2\"\n  replace: \"$1\"\n",
+    "description": "espanso yaml"
+  },
   "espanso": {
     "prefix": "espanso",
     "body": "- trigger: \"$1\"\n  replace: \"$2\"",

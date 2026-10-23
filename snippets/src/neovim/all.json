@@ -1,0 +1,7 @@
+{
+  "batchecho": {
+    "prefix": "batchecho",
+    "body": "echo $1\necho ---\n$2\necho($3",
+    "description": "batch echo"
+  }
+}

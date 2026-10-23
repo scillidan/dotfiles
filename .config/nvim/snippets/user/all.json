@@ -1,18 +1,17 @@
 {
   "snip": {
     "prefix": "snip",
-    "body": "<snippet>\n  <content><![CDATA[\n$2\n]]/$1></content>\n  <tabTrigger>$3</tabTrigger>\n  <scope>${5:text.html.markdown}</scope>\n  <description>$4</description>\n</snippet>",
+    "body": "\n<snippet>\n  <content><![CDATA[\n$2\n]]/$1></content>\n  <tabTrigger>$3</tabTrigger>\n  <scope>${5:text.html.markdown}</scope>\n  <description>$4</description>\n</snippet>\n",
     "description": "sublimetext snippet"
+  },
+  "tower": {
+    "prefix": "tower",
+    "body": "\n{\n\"Title\": \"$1\"\n}\n\n",
+    "description": "byya tower"
   },
   "batchecho": {
     "prefix": "batchecho",
     "body": "echo $1\necho ---\n$2\necho($3",
     "description": "batch echo"
-  },
-  "m3u": {
-    "prefix": "m3u",
-    "body": "#EXTM3U\n#EXTINF:,$1",
-    "description": "m3u extm3u",
-    "scope": "text.m3u"
   }
 }

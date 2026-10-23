@@ -1,23 +1,58 @@
 {
+  "lyraweight": {
+    "prefix": "lyraweight",
+    "body": "\n---\nweight: $1\n---\n\n",
+    "description": "byya lyra weight"
+  },
+  "isbnchs": {
+    "prefix": "isbnchs",
+    "body": "\n```\nISBN: $1\n标题: $2\n副标题: $3\n作者: $4\n译者: $5\n日期: $6\n```\n",
+    "description": "byya lyra isbn-chs"
+  },
+  "isbneng": {
+    "prefix": "isbneng",
+    "body": "\n```\nISBN: \nTitle: \nSubtitle: \nCreator: \nDate: \n```\n",
+    "description": "byya lyra isbn-eng"
+  },
   "nnva": {
     "prefix": "nnva",
-    "body": "<a href=\"$11/$1.jpg\"\n  data-sub-html=\"<div class='lightGallery-captions'>\n  <h4>$1 ⚪$9</h4>\n  <p>.img by <a href='$3'>$4</a> on <a href='$5' target='_blank' rel='nofollow noopener'>$6</a> / <a href='$7' target='_blank' rel='nofollow noopener'>$8</a></p>\n  </div>\">\n    <img src=\"$11/$1.jpg\" />\n</a>",
-    "description": "byya niveveh a-tag"
+    "body": "\n<a href=\"$1.jpg\"\n\tdata-sub-html=\"<div class='lightGallery-captions'>\n\t<h4>$1 ⚪$9</h4>\n\t<p>.img by <a href='$3'>$4</a> on <a href='$5' target='_blank' rel='nofollow noopener'>$6</a> / <a href='$7' target='_blank' rel='nofollow noopener'>$8</a></p>\n\t</div>\">\n\t\t<img src=\"$1.jpg\" />\n</a>\n",
+    "description": "byya niveveh a"
+  },
+  "code": {
+    "prefix": "code",
+    "body": "\n```sh\n$1\n```\n",
+    "description": "markdown code block"
+  },
+  "livelywallpaper": {
+    "prefix": "livelywallpaper",
+    "body": "\n[$2](https://github.com/$1/$2) by [$3](https://github.com/$1) / [$4](https://github.com/$1/$2/blob/master/LICENSE)  | <img src=\"https://raw.githubusercontent.com/scillidan/asset/main/lively-wallpaper/$2.png\" height=\"50px\"> | [github](https://github.com/scillidan/$2) | [++](https://steamcommunity.com/sharedfiles/filedetails?id=++) ![](https://img.shields.io/steam/subscriptions/++?style=flat-square&label=) ![](https://img.shields.io/steam/downloads/++?style=flat-square&label=)\n",
+    "description": "lively wallpaper"
+  },
+  "favoriteimage": {
+    "prefix": "favoriteimage",
+    "body": "\njust polario ${1:portrait} \"favorite-image/assets/${2:image}.${3:jpg}\" \"${4:author}\" \"${5:date}\" \"${2:image}\" \"(0%, 0%)\" 100% \"(100%, 100%)\"\n",
+    "description": "marks favorite-image"
+  },
+  "post": {
+    "prefix": "post",
+    "body": "\n```\nDate: $2\nAuthor: $3\nTranslator: $4\nSource: $1\n```\n\n# $1\n\n",
+    "description": "marks post"
+  },
+  "meta": {
+    "prefix": "meta",
+    "body": "\n---\n$1\n---\n",
+    "description": "sublime metadata"
+  },
+  "smbshare": {
+    "prefix": "smbshare",
+    "body": "\n[$1]\ncomment = $1\npath = /mnt/$2/$1\nread only = no\nbrowsable = yes\nwritable = yes\nguest ok = no\n",
+    "description": "samba share"
   },
   "lyra": {
     "prefix": "lyra",
     "body": "---\nweight: $1\n---",
     "description": "byya lyra weight"
-  },
-  "isbnchs": {
-    "prefix": "isbnchs",
-    "body": "```\nISBN13: $1\n标题: $2\n副标题: $3\n作者: $4\n译者: $5\n出版年: $6\n```",
-    "description": "byya lyra isbn-chs"
-  },
-  "isbneng": {
-    "prefix": "isbneng",
-    "body": "```\nISBN13: \nTitle: \nSubtitle: \nAuthors: \nPublished: \n```",
-    "description": "byya lyra isbn-eng"
   },
   "tower": {
     "prefix": "tower",
@@ -28,11 +63,6 @@
     "prefix": "ccbyncsa",
     "body": "[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]\n\n[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/\n[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png\n[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg",
     "description": "cc by-nc-sa 4.0"
-  },
-  "livelywallpaper": {
-    "prefix": "livelywallpaper",
-    "body": "[$2](https://github.com/$1/$2) by [$3](https://github.com/$1) / [$4](https://github.com/$1/$2/blob/master/LICENSE)  | <img src=\"https://raw.githubusercontent.com/scillidan/asset/main/lively-wallpaper/$2.png\" height=\"50px\"> | [github](https://github.com/scillidan/$2) | [++](https://steamcommunity.com/sharedfiles/filedetails?id=++) ![](https://img.shields.io/steam/subscriptions/++?style=flat-square&label=) ![](https://img.shields.io/steam/downloads/++?style=flat-square&label=)",
-    "description": "lively wallpaper"
   },
   "mdbookembed": {
     "prefix": "mdbookembed",

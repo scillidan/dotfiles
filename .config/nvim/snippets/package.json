@@ -10,28 +10,15 @@
       },
       {
         "language": [
-          "markdown"
-        ],
-        "path": "./user/markdown.json"
-      },
-      {
-        "language": [
-          "latex"
-        ],
-        "path": "./latex.json"
-      },
-      {
-        "language": [
-          "html",
-          "markdown"
-        ],
-        "path": "./user/html.json"
-      },
-      {
-        "language": [
           "css"
         ],
         "path": "./user/css.json"
+      },
+      {
+        "language": [
+          "html"
+        ],
+        "path": "./user/html.json"
       },
       {
         "language": [
@@ -41,10 +28,39 @@
       },
       {
         "language": [
-          "yaml",
-          "yml"
+          "json"
         ],
-        "path": "./yaml.json"
+        "path": "./user/json.json"
+      },
+      {
+        "language": [
+          "latex"
+        ],
+        "path": "./user/latex.json"
+      },
+      {
+        "language": [
+          "lua"
+        ],
+        "path": "./user/lua.json"
+      },
+      {
+        "language": [
+          "m3u"
+        ],
+        "path": "./user/m3u.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./user/markdown.json"
+      },
+      {
+        "language": [
+          "yaml"
+        ],
+        "path": "./user/yaml.json"
       }
     ]
   }

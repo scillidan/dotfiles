@@ -1,0 +1,12 @@
+# scope -> vim filetype (LuaSnip), used when converting .sublime-snippet for nvim.
+# Only the first selector of a sublime <scope> is used ("text.html - source.php" -> "text.html").
+# A scope missing here is a hard error — add the mapping.
+[map]
+"text.html.markdown" = "markdown"
+"text.html" = "html"
+"text.tex.latex" = "latex"
+"source.json" = "json"
+"source.yaml" = "yaml"
+"text.m3u" = "m3u"
+# sublime's bare "text" matches any prose buffer; "all" is the closest vim equivalent
+"text" = "all"

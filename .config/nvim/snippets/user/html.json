@@ -1,23 +1,58 @@
 {
   "abnn": {
     "prefix": "abnn",
-    "body": "<a href=\"$1\" target=\"_blank\" rel=\"nofollow noopener\">$2</a>",
-    "description": "html a-tag"
+    "body": "\n<a href=\"$1\" target=\"_blank\" rel=\"nofollow noopener\">$2</a>\n",
+    "description": "html a"
+  },
+  "anime": {
+    "prefix": "anime",
+    "body": "\n      <a class=\"gallery-item\" \n        data-html=\"#$1\" \n        data-slide-name=\"$2$5\" \n        data-video='{ \"source\": [ {\"src\": \"media/$1.mp4\", \"type\": \"video/mp4\"} ], \"attributes\": { \"preload\": false, \"controls\": false, \"playsinline\": true, \"loop\": true } }' \n        data-sub-html=\"<h4>$2$4</h4>\n        <p>$6</p>\"\n        data-poster=\"media/$1_poster.jpg\">\n        <img class=\"img-responsive\" src=\"media/$1_poster.jpg\" \n          alt=\"&lt;p&gt;$2$3&lt;/p&gt;\" />\n      </a>\n",
+    "description": "anime-keyframes-gallery a"
+  },
+  "anime2": {
+    "prefix": "anime2",
+    "body": "\n      <a class=\"gallery-item\" \n        data-html=\"#$1\" \n        data-slide-name=\"\" \n        data-video='{ \"source\": [ {\"src\": \"media/$1.mp4\", \"type\": \"video/mp4\"} ], \"attributes\": { \"preload\": false, \"controls\": false, \"playsinline\": true, \"loop\": true } }' \n        data-sub-html=\"\"\n        data-poster=\"media/$1_poster.jpg\">\n        <img class=\"img-responsive\" src=\"media/$1_poster.jpg\" \n          alt=\"&lt;p&gt;&lt;/p&gt;\" />\n      </a>\n$2\n",
+    "description": "anime-keyframes-gallery non data-sub-html"
+  },
+  "anime3": {
+    "prefix": "anime3",
+    "body": "\n      <a href=\"media/$1.jpg\" \n        data-slide-name=\"\" \n        data-sub-html=\"\">\n          <img src=\"media/$1.jpg\" />\n      </a>\n",
+    "description": "anime-keyframes-gallery image"
+  },
+  "discoa": {
+    "prefix": "discoa",
+    "body": "\n<a class=\"gallery-item\" data-lg-size=\"1280-720\" data-html=\"#smp$3\" data-video='{\"source\": [{\"src\":\"//raw.githubusercontent.com/scillidan/cdn_media_disco/main/$2.webm\", \"type\":\"video/webm\"}], \"attributes\": {\"preload\": false, \"controls\": true, \"playsinline\": true}}' data-sub-html=\"<h4>$1 SMP01</h4>\">\n\t<img class=\"img-responsive\" src=\"//raw.githubusercontent.com/scillidan/disco/main/media/$2.jpg\" alt=\"&lt;p&gt;$1 SMP01&lt;/p&gt;\" />\n</a>\n",
+    "description": "disco a"
+  },
+  "htmlfavicon": {
+    "prefix": "htmlfavicon",
+    "body": "\n<link rel=\"icon\" href=\"asset/favicon.ico\">\n<link rel=\"shortcut icon\" href=\"asset/favicon.ico\">\n<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"asset/favicon-16x16.png\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"asset/favicon-32x32.png\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"asset/favicon-96x96.png\" />\n<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"asset/apple-touch-icon.png\" />\n<link rel=\"manifest\" href=\"asset/site.webmanifest\" />\n",
+    "description": "html favicon"
+  },
+  "fontscdnp": {
+    "prefix": "fontscdnp",
+    "body": "\n<p>Source: <a href=\"https://github.com/$1\">$1</a> &middot; License: <a href=\"https://github.com/$1/blob/${3:main/LICENSE}\">${2:OFL-1.1}</a> &middot; Version: <a href=\"https://github.com/$1/tag/v$4\">$4</a></p>\n",
+    "description": "fonts-cdn index.html p"
+  },
+  "fontscdntable": {
+    "prefix": "fontscdntable",
+    "body": "\n<table>\n  <tr>\n    <th>font-family</th>\n    <th>font-weight</th>\n    <th>font-weight</th>\n  </tr>\n  <tr>\n    <td>\n  \t  <span style=\"font-family:'$2';font-weight:200;font-style:normal\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:300;font-style:normal\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:400;font-style:normal\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:600;font-style:normal\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:700;font-style:normal\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:200;font-style:italic\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:300;font-style:italic\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:400;font-style:italic\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:600;font-style:italic\">$1</span><br>\n      <span style=\"font-family:'$2';font-weight:700;font-style:italic\">$1</span>\n    </td>\n    <td>\n  \t  <span style=\"font-family:'$2';font-weight:200;font-style:normal\">ExtraLight</span><br>\n      <span style=\"font-family:'$2';font-weight:300;font-style:normal\">Light</span><br>\n      <span style=\"font-family:'$2';font-weight:400;font-style:normal\">Regular</span><br>\n      <span style=\"font-family:'$2';font-weight:600;font-style:normal\">SemiBold</span><br>\n      <span style=\"font-family:'$2';font-weight:700;font-style:normal\">Bold</span><br>\n      <span style=\"font-family:'$2';font-weight:200;font-style:italic\">ExtraLight Italic</span><br>\n      <span style=\"font-family:'$2';font-weight:300;font-style:italic\">Light Italic</span><br>\n      <span style=\"font-family:'$2';font-weight:400;font-style:italic\">Italic</span><br>\n      <span style=\"font-family:'$2';font-weight:600;font-style:italic\">SemiBold Italic</span><br>\n      <span style=\"font-family:'$2';font-weight:700;font-style:italic\">Bold Italic</span>\n    </td>\n    <td>\n    \t<span style=\"font-family:'$2';font-weight:200;font-style:normal\">200</span><br>\n      <span style=\"font-family:'$2';font-weight:300;font-style:normal\">300</span><br>\n      <span style=\"font-family:'$2';font-weight:400;font-style:normal\">400</span><br>\n      <span style=\"font-family:'$2';font-weight:600;font-style:normal\">600</span><br>\n      <span style=\"font-family:'$2';font-weight:700;font-style:normal\">700</span><br>\n      <span style=\"font-family:'$2';font-weight:200;font-style:italic\">200 Italic</span><br>\n      <span style=\"font-family:'$2';font-weight:300;font-style:italic\">300 Italic</span><br>\n      <span style=\"font-family:'$2';font-weight:400;font-style:italic\">400 Italic</span><br>\n      <span style=\"font-family:'$2';font-weight:600;font-style:italic\">600 Italic</span><br>\n      <span style=\"font-family:'$2';font-weight:700;font-style:italic\">700 Italic</span>\n    </td>\n  </tr>\n</table>\n",
+    "description": "fonts-cdn index.html table"
+  },
+  "htmlhead": {
+    "prefix": "htmlhead",
+    "body": "\n<meta charset=\"UTF-8\">\n<meta name=\"description\" content=\"\">\n<meta name=\"keywords\" content=\"\">\n<meta name=\"author\" content=\"scillidan\">\n<title></title>\n",
+    "description": "html head"
+  },
+  "rosettaa": {
+    "prefix": "rosettaa",
+    "body": "\n<a\n\tclass=\"gallery-item\"\n\tdata-lg-size=\"1280-720\"\n\tdata-html=\"#smp$1\"\n\tdata-video='{\"source\": [{\"src\":\"//raw.githubusercontent.com/scillidan/cdn_media_rosetta/main/$2.webm\", \"type\":\"video/webm\"}], \"tracks\": [{\"src\": \"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.eng.vtt\", \"kind\":\"captions\", \"srclang\": \"en\", \"label\": \"English\", \"default\": \"true\"},{\"src\": \"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.zho.vtt\", \"kind\":\"captions\", \"srclang\": \"zh-cn\", \"label\": \"Simplified Chinese\"}], \"attributes\": {\"preload\": false, \"controls\": true, \"playsinline\": true}}'\n\tdata-sub-html=\"<h4>$2$3 SMP01</h4>\">\n\t\t<img\n\t\t\tclass=\"img-responsive\"\n\t\t\tsrc=\"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.jpg\"\n\t\t\talt=\"&lt;p&gt;$2$3 SMP01&lt;/p&gt;\"\n\t\t/>\n</a>\n",
+    "description": "rosetta a"
   },
   "nnva": {
     "prefix": "nnva",
     "body": "\n<a href=\"$11/$1.jpg\"\n    data-sub-html=\"<div class='lightGallery-captions'>\n    <h4>$1 ⚪$9</h4>\n    <p>.img by <a href='$3'>$4</a> on <a href='$5' target='_blank' rel='nofollow noopener'>$6</a> / <a href='$7' target='_blank' rel='nofollow noopener'>$8</a></p>\n    </div>\">\n    <img src=\"$11/$1.jpg\" />\n</a>\n",
     "description": "byya niveveh a-tag"
-  },
-  "rosettaa": {
-    "prefix": "rosettaa",
-    "body": "<a class=\"gallery-item\" data-lg-size=\"1280-720\" data-html=\"#smp14\" data-video='{\"source\": [{\"src\":\"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.webm\", \"type\":\"video/webm\"}], \"tracks\": [{\"src\": \"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.zho.vtt\", \"kind\":\"captions\", \"srclang\": \"zh-cn\", \"label\": \"Simplified Chinese\", \"default\": \"true\"},{\"src\": \"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.${4:lang}.vtt\", \"kind\":\"captions\", \"srclang\": \"de\", \"label\": \"German\"},{\"src\": \"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.eng.vtt\", \"kind\":\"captions\", \"srclang\": \"en\", \"label\": \"English\"}], \"attributes\": {\"preload\": false, \"controls\": true, \"playsinline\": true}}' data-sub-html=\"<h4>$1 SMP01</h4>\">\n  <img class=\"img-responsive\" src=\"//raw.githubusercontent.com/scillidan/rosetta/main/media/$2.smp.$3.jpg\" alt=\"&lt;p&gt;$1 SMP01&lt;/p&gt;\" />\n</a>",
-    "description": "rosetta a-tag"
-  },
-  "htmlfavicon": {
-    "prefix": "htmlfavicon",
-    "body": "<link rel=\"icon\" href=\"asset/favicon.ico\">\n<link rel=\"shortcut icon\" href=\"asset/favicon.ico\">\n<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"asset/favicon-16x16.png\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"asset/favicon-32x32.png\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"asset/favicon-96x96.png\" />\n<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"asset/apple-touch-icon.png\" />\n<link rel=\"manifest\" href=\"asset/site.webmanifest\" />",
-    "description": "html favicon"
   },
   "animea": {
     "prefix": "animea",
@@ -28,10 +63,5 @@
     "prefix": "animea2",
     "body": "      <a class=\"gallery-item\" \n        data-html=\"#$1\" \n        data-slide-name=\"\" \n        data-video='{ \"source\": [ {\"src\": \"media/$1.mp4\", \"type\": \"video/mp4\"} ], \"attributes\": { \"preload\": false, \"controls\": false, \"playsinline\": true, \"loop\": true } }' \n        data-sub-html=\"\"\n        data-poster=\"media/$1_poster.jpg\">\n        <img class=\"img-responsive\" src=\"media/$1_poster.jpg\" \n          alt=\"&lt;p&gt;&lt;/p&gt;\" />\n      </a>\n$2",
     "description": "AKG a-tag sub"
-  },
-  "anime3": {
-    "prefix": "anime3",
-    "body": "      <a href=\"media/$1.jpg\" \n        data-slide-name=\"\" \n        data-sub-html=\"\">\n          <img src=\"media/$1.jpg\" />\n      </a>",
-    "description": "AKG a-tag image"
   }
 }

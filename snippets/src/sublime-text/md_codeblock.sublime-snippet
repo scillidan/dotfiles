@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+```sh
+$1
+```
+]]></content>
+	<tabTrigger>code</tabTrigger>
+	<scope>text.html.markdown</scope>
+	<description>markdown code block</description>
+</snippet>
