@@ -10,6 +10,7 @@ config.load_autoconfig(False)
 c.content.cookies.accept = "all"
 c.content.cookies.store = True
 c.session.default_name = "default"
+c.content.javascript.clipboard = 'access'
 c.session.lazy_restore = True
 c.auto_save.session = True
 c.downloads.remove_finished = 0

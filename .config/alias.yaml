@@ -6,6 +6,7 @@ actl: actionlint && zizmor .
 
 ## bin
 binu: bin remove
+binc: bin prune
 
 ## bun
 buni: bun add --registry https://npmreg.proxy.ustclug.org -g
