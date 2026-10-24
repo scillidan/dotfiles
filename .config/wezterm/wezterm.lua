@@ -72,7 +72,7 @@ config.warn_about_missing_glyphs = false
 config.disable_default_key_bindings = true
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 500 }
 config.keys = {
-	{	key = "C", mods = "LEADER|SHIFT",
+	{ key = "C", mods = "LEADER|SHIFT",
 		action = wezterm.action_callback(function(window, pane)
 			if is_light then
 				window:set_config_overrides(nil)
@@ -88,7 +88,7 @@ config.keys = {
 	{ key = "f", mods = "LEADER|SHIFT", action = wezterm.action.ToggleFullScreen },
 	{ key = "w", mods = "CTRL|SHIFT|ALT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
 	{ key = "F", mods = "CTRL|SHIFT", action = act.Search("CurrentSelectionOrEmptyString") },
-	{	key = "O", mods = "CTRL|SHIFT",
+	{ key = "O", mods = "CTRL|SHIFT",
 		action = act.QuickSelectArgs({
 			label = "open url",
 			patterns = quick_select_url_patterns,
@@ -117,14 +117,21 @@ config.keys = {
 	{ key = "Insert", mods = "SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "t", mods = "CTRL|SHIFT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
-	{	key = "n", mods = "CTRL|SHIFT", action = wezterm.action.SpawnWindow },
-	{	key = "g", mods = "LEADER",	action = wezterm.action.SpawnCommandInNewTab({ args = { "lazygit" } }) },
+	{ key = "n", mods = "CTRL|SHIFT", action = wezterm.action.SpawnWindow },
+	{ key = "h", mods = "CTRL|ALT", action = wezterm.action.ActivateTabRelative(-1) },
+	{ key = "l", mods = "CTRL|ALT", action = wezterm.action.ActivateTabRelative(1) },
+	{ key = "H", mods = "CTRL|ALT", action = wezterm.action.MoveTabRelative(-1) },
+	{ key = "L", mods = "CTRL|ALT", action = wezterm.action.MoveTabRelative(1) },
+	{ key = "y", mods = "ALT", action = wezterm.action.SendString("yazi-cd\r") },
+	{ key = "f", mods = "ALT", action = wezterm.action.SendString("bash fzf-files.sh\r") },
+	{ key = "g", mods = "ALT", action = wezterm.action.SendString("bash fzf-ripgrep.sh\r") },
+	{ key = "g", mods = "LEADER",	action = wezterm.action.SpawnCommandInNewTab({ args = { "lazygit" } }) },
+	-- Shift+Enter -> CSI-u sequence so opencode can tell it apart from Enter
+	{ key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\x1b[13;2u") },
 	-- https://wezterm.org/config/lua/wezterm/on.html#example-opening-whole-scrollback-in-vim
 	{ key = "E", mods = "CTRL|SHIFT", action = act.EmitEvent("trigger-vim-with-scrollback") },
 	-- https://github.com/wezterm/wezterm/discussions/3779
-	{
-		key = "l",
-		mods = "CTRL|SHIFT|ALT",
+	{ key = "l", mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action_callback(function(_, pane)
 			local tab = pane:tab()
 			local panes = tab:panes_with_info()
@@ -168,15 +175,12 @@ config.keys = {
 	{ key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
 	{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
 	{ key = "7", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
-	-- Shift+Enter -> CSI-u sequence so opencode can tell it apart from Enter
-	{ key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\x1b[13;2u") },
+	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) }
 }
 
 -- https://github.com/wezterm/wezterm/discussions/3541
 config.mouse_bindings = {
-	{
-		event = { Down = { streak = 1, button = "Right" } }, mods = "NONE",
+	{	event = { Down = { streak = 1, button = "Right" } }, mods = "NONE",
 		action = wezterm.action_callback(function(window, pane)
 			local has_selection = window:get_selection_text_for_pane(pane) ~= ""
 			if has_selection then
@@ -191,6 +195,11 @@ config.mouse_bindings = {
 	{	event = { Up = { streak = 1, button = "Left" } }, mods = "CTRL", action = act.OpenLinkAtMouseCursor }
 }
 
+if wezterm.target_triple == "linux" then
+	config.default_cwd = os.getenv("USERHOME") .. "/Downloads"
+	table.insert(config.keys, { key = "c", mods = "ALT", action = wezterm.action.SendString("tere\r")	})
+end
+
 -- For Windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	local user = os.getenv("USERHOME") or os.getenv("USERPROFILE")
@@ -200,12 +209,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		"/k",
 		user .. "\\Share\\dotfiles.win\\Scoop\\clink\\init.cmd",
 	}
-	table.insert(config.keys, {	key = "h", mods = "CTRL|ALT", 	action = wezterm.action.ActivateTabRelative(-1) })
-	table.insert(config.keys, {	key = "l", mods = "CTRL|ALT", action = wezterm.action.ActivateTabRelative(1) })
-	table.insert(config.keys, { key = "H", mods = "CTRL|ALT",	action = wezterm.action.MoveTabRelative(-1)	})
-	table.insert(config.keys, { key = "L", mods = "CTRL|ALT",	action = wezterm.action.MoveTabRelative(1) })
-	table.insert(config.keys, {	key = "c", mods = "ALT", action = wezterm.action.SendString("tere.bat\r")	})
-	table.insert(config.keys, {	key = "f", mods = "LEADER", action = wezterm.action.SendString("bash fzf-files.sh\r")	})
+	table.insert(config.keys, { key = "c", mods = "ALT", action = wezterm.action.SendString("tere.bat\r")	})
 end
 
 wezterm.on("trigger-vim-with-scrollback", function(window, pane)

@@ -2,6 +2,8 @@ local is_unix = (package.config:sub(1, 1) == "/")
 local is_windows = (package.config:sub(1, 1) == "\\")
 local is_termux = os.getenv("TERMUX_VERSION") ~= nil
 
+ya.emit("plugin", { "bifold", "bf_activate" })
+
 require("close-and-restore-tab"):setup()
 require("responsive-layout"):setup {
 	wide_min = 90,
@@ -36,6 +38,7 @@ require("custom-shell"):setup({
 	history_path = "default",
 	save_history = true,
 })
+require("repo-status"):setup()
 require("git"):setup({
 	order = 1500,
 })

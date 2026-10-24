@@ -68,7 +68,7 @@ bind '"\C-@": complete'
 bind '"\e[H": beginning-of-line'
 bind '"\e[F": end-of-line'
 bind '"\e[3~": delete-char'
-bind -x '"\ef": fzf_files'
-bind -x '"\eg": fzf_ripgrep'
+bind -x '"\ef": fzf-files'
+bind -x '"\eg": fzf-ripgrep'
 
 # eval "clear"

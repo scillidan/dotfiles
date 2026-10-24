@@ -81,7 +81,7 @@ gls: gitleaks dir
 gop: git-open
 
 ## git-recent
-gr: git-recent
+grec: git-recent
 
 ## lazygit
 lg: lazygit
@@ -95,18 +95,12 @@ condaa: conda activate
 condar: conda remove
 condal: conda list
 
-## no-mistakes
-gpn: git push no-mistakes
-
 ## OpenCode
 oc: opencode $* & reset
 occ: opencode --continue $* & reset
 
 ## OpenCommit
 ocoi: oco hook set
-
-## Pet
-pes: pet search | clip
 
 ## pipe-renamer
 rnr: gsudo renamer --editor nvim *
@@ -132,9 +126,6 @@ ski: skills add -g
 sku: skills remove -g
 skl: skills list -g
 skup: skills update
-
-## tere
-td: cd "$USERHOME/Share" && tere.bat
 
 ## trashy
 rmy: trash

@@ -3,6 +3,7 @@ on = "T"
 run = "shell --orphan --confirm 'wezterm cli spawn --cwd .'"
 desc = "Open wezterm at current dir"
 
+## close-and-restore-tab
 [[mgr.prepend_keymap]]
 on   = "<C-w>"
 run  = "close"
@@ -12,6 +13,7 @@ on   = [ "<C-t>" ]
 run  = "plugin close-and-restore-tab restore"
 desc = "Restore the previously closed tab"
 
+## split-tabs
 [[mgr.prepend_keymap]]
 on = "\\"
 run = "plugin split-tabs spl_toggle"
@@ -25,17 +27,48 @@ on = "P"
 run = "plugin split-tabs spl_preview"
 desc = "Split-tabs: toggle preview pane"
 
-# switch-ratio.yazi is not installed; install with `ya pkg add towingie/switch-ratio` to restore this binding
-# [[mgr.prepend_keymap]]
-# on   = "R"
-# run  = "plugin switch-ratio"
-# desc = "Cycle pane ratio"
+## bifold
+## https://github.com/Geronfir/Bifold.yazi#configuration
+[[mgr.prepend_keymap]]
+on = "\\"
+run = "plugin bifold bf_toggle"
+desc = "Bifold: toggle split tabs mode"
+[[mgr.prepend_keymap]]
+on = "<Tab>"
+run = "plugin bifold bf_switch_tab"
+desc = "Bifold: switch to the other pane"
+[[mgr.prepend_keymap]]
+on = "<F5>"
+run = [ "escape --visual", "plugin bifold bf_copy" ]
+desc = "Bifold: copy to the other pane"
+[[mgr.prepend_keymap]]
+on = "<F6>"
+run = [ "escape --visual", "plugin bifold bf_move" ]
+desc = "Bifold: move to the other pane"
+[[mgr.prepend_keymap]]
+on = "b"
+run = "plugin bifold bf_preview"
+desc = "Bifold: toggle preview pane"
+[[mgr.prepend_keymap]]
+on = "F"
+run = "plugin bifold bf_flip"
+desc = "Bifold: flip side-by-side/top-bottom"
+[[mgr.prepend_keymap]]
+on = "<C-Left>"
+run = "plugin bifold bf_resize -5"
+desc = "Bifold: shrink active pane"
+[[mgr.prepend_keymap]]
+on = "<C-Right>"
+run = "plugin bifold bf_resize 5"
+desc = "Bifold: grow active pane"
 
+## toggle-pane
 [[mgr.prepend_keymap]]
 on   = "Z"
 run  = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
 
+## clipboard
 [[mgr.prepend_keymap]]
 on   = "y"
 run  = [ "yank", 'plugin clipboard -- --action=copy' ]
@@ -43,26 +76,31 @@ run  = [ "yank", 'plugin clipboard -- --action=copy' ]
 on   = "<C-p>"
 run  = [ 'plugin clipboard -- --action=paste' ]
 
+## relative-path
 [[mgr.prepend_keymap]]
 on   = [ "c", "r"]
 run  = "plugin relative-path"
 desc = "Copy relative path from the started path"
 
+## copy-file-contents
 [[mgr.prepend_keymap]]
 on   = "<A-y>"
 run  = ["plugin copy-file-contents"]
 desc = "Copy contents of file"
 
+## fast-enter
 [[mgr.prepend_keymap]]
 on   = [ "l" ]
 run  = "plugin fast-enter"
 desc = "Enter the subfolder faster, or open the file directly"
 
+## sticky-filter
 [[mgr.prepend_keymap]]
 on   = "f"
 run  = "plugin sticky-filter"
 desc = "Sticky filter"
 
+## fd-fzf
 [[mgr.prepend_keymap]]
 on   = ["s", "z"]
 run  = "plugin fd-fzf"
@@ -76,16 +114,19 @@ on   = ["s", "p"]
 run  = "plugin fd-fzf preview"
 desc = "Jump to directory (preview)"
 
+## initial-cwd
 [[mgr.prepend_keymap]]
 on   = [ "g", " " ]
 run  = "plugin initial-cwd"
 desc = "Go to initial directory"
 
+## clipboard-jump
 [[mgr.prepend_keymap]]
 on   = [ "g", "p" ]
 run  = "plugin clipboard-jump"
 desc = "Jump to clipboard path"
 
+## bookmarks
 [[mgr.prepend_keymap]]
 on   = [ "m" ]
 run  = "plugin bookmarks save"
@@ -103,6 +144,7 @@ on   = [ "b", "D" ]
 run  = "plugin bookmarks delete_all"
 desc = "Delete all bookmarks"
 
+## compress
 [[mgr.prepend_keymap]]
 on   = [ "c", "a", "a" ]
 run  = "plugin compress"
@@ -124,6 +166,7 @@ on   = [ "c", "a", "u" ]
 run  = "plugin compress -phl"
 desc = "Archive selected files (password+header+level)"
 
+## custom-shell
 [[mgr.prepend_keymap]]
 on   = ["'", ";"]
 run  = 'plugin custom-shell -- auto --interactive'
@@ -133,11 +176,13 @@ on   = [ "'", ":" ]
 run  = 'plugin custom-shell -- auto --interactive --block'
 desc = "custom-shell as default, interactive, block"
 
+## lazygit
 [[mgr.prepend_keymap]]
 on   = ["G", "i"]
 run  = "plugin lazygit"
 desc = "run lazygit"
 
+## makelink
 [[mgr.prepend_keymap]]
 on   = [ "c", "l", "s" ]
 run  = "plugin makelink save"
@@ -155,6 +200,7 @@ on   = [ "c", "l", "c" ]
 run  = "plugin makelink clear"
 desc = "Link: Clear saved paths"
 
+## open-with-cmd
 [[manager.prepend_keymap]]
 on   = "o"
 run  = "plugin open-with-cmd -- block"
@@ -164,6 +210,7 @@ on   = "O"
 run  = "plugin open-with-cmd"
 desc = "Open with command"
 
+## eza-preview
 [[mgr.prepend_keymap]]
 on   = [ "e", "t" ]
 run  = "plugin eza-preview"
@@ -193,20 +240,44 @@ on   = [ "e", "g", "s" ]
 run  = "plugin eza-preview toggle-git-status"
 desc = "Toggle showing git status"
 
+## mediainfo
 [[mgr.prepend_keymap]]
 on   = ["<F3>"]
 run  = "plugin mediainfo -- toggle-metadata"
 desc = "Toggle media preview metadata"
 
+## f3d
+## https://github.com/DervexDev/f3d.yazi#keybindings
+[[mgr.prepend_keymap]]
+on = "<A-l>"
+run = "seek 1"
+desc = "Orbit the 3D preview forward"
+[[mgr.prepend_keymap]]
+on = "<A-h>"
+run = "seek -1"
+desc = "Orbit the 3D preview backward"
+[[mgr.prepend_keymap]]
+on = "+"
+run = "plugin f3d 1"
+desc = "Zoom in hovered file"
+[[mgr.prepend_keymap]]
+on = "-"
+run = "plugin f3d -1"
+desc = "Zoom out hovered file"
+
+## Arch
+## chmod
 [[mgr.prepend_keymap]]
 on   = [ "c", "m" ]
 run  = "plugin chmod"
 desc = "Chmod on selected files"
 
+## mount
 [[mgr.prepend_keymap]]
 on   = "M"
 run  = "plugin mount"
 
+## sxiv
 [[mgr.prepend_keymap]]
 on   = ["P", "s"]
 run  = "plugin sxiv"

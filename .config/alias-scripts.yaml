@@ -1,21 +1,24 @@
 ## https://github.com/scillidan/scripts
-abbr: bash llm_abbreviate.sh
-cmnt: bash llm_comment.sh
-expl: bash llm_explain.sh
+
+abbr: bash llm-abbreviate.sh
+cmnt: bash llm-comment.sh
+expl: bash llm-explain.sh
 gh-del-workflow-run: bash gh-del-workflow-run.sh
 gh-disable-workflow: bash gh-disable-workflow.sh
-lambda: bash llm_lambda_replace.sh
-ob: bash urls_open.sh
-sum: bash llm_summarize.sh
-trans: bash llm_translate.sh
+lambda: bash llm-lambda_replace.sh
+ob: bash urls-open.sh
+sum: bash llm-summarize.sh
+trans: bash llm-translate.sh
+tranx: bash llm-translate-stdin.sh
 
 ## fzf
-bkmf: bash fzf-bookmarks.sh
-sdvf: bash fzf-sdcv.sh
-tldf: bash fzf-tldr.sh
-ff-man: bash fzf-files.sh "$USERHOME/Local/Document/man"
-ff-devdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs"
-ff-tables: bash fzf-files.sh "$USERHOME/Share/files/tables"
+ffbkm: bash fzf-bookmarks.sh
+ffsdcv: bash fzf-sdcv.sh
+fftldr: bash fzf-tldr.sh
+ffman: bash fzf-files.sh "$USERHOME/Local/Document/man"
+ffdevdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs"
+fftables: bash fzf-files.sh "$USERHOME/Share/files/tables"
+fg: bash fzf-ripgrep.sh
 
 ## Git
 git-init: bash git-init.sh
@@ -27,14 +30,11 @@ git-sync-upstream: bash git-sync-upstream.sh
 ips: bash gh-issue-pr.sh
 ghrs: gh release list
 ghrd: gh release delete --cleanup-tag -y
-notify: gh-notify -ap -n 10
+ntfy: gh-notify -ap -n 10
 tidy: gh-tidy
 
 ## Neovim
 nv: bash _nvim.sh
-
-## Neovide
-nov: bash _neovide.sh
 
 ## yazi
 y: yazi-cd $*; reset
