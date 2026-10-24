@@ -7,13 +7,13 @@
       "permissions": [
         {
           "action": "shell",
-          "resource": "*",
-          "effect": "allow"
+          "effect": "allow",
+          "resource": "*"
         },
         {
           "action": "edit",
-          "resource": "*",
-          "effect": "allow"
+          "effect": "allow",
+          "resource": "*"
         }
       ]
     },
@@ -23,13 +23,13 @@
       "permissions": [
         {
           "action": "shell",
-          "resource": "*",
-          "effect": "deny"
+          "effect": "deny",
+          "resource": "*"
         },
         {
           "action": "edit",
-          "resource": "*",
-          "effect": "deny"
+          "effect": "deny",
+          "resource": "*"
         }
       ]
     }
@@ -44,28 +44,21 @@
   ],
   "formatter": true,
   "mcp": {
+    "cq": {
+      "command": [
+        "cq",
+        "mcp"
+      ],
+      "type": "local"
+    },
     "servers": {
       "agnix": {
-        "type": "local",
         "command": [
           "agnix-mcp"
-        ]
-      },
-      "cq": {
-        "type": "local",
-        "command": [
-          "cq",
-          "mcp"
-        ]
-      },
-      "fff": {
-        "type": "local",
-        "command": [
-          "fff-mcp"
-        ]
+        ],
+        "type": "local"
       },
       "aseprite": {
-        "type": "local",
         "command": [
           "uv",
           "run",
@@ -78,10 +71,10 @@
         "disabled": true,
         "environment": {
           "ASEPRITE_PATH": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite"
-        }
+        },
+        "type": "local"
       },
       "blender-mcp": {
-        "type": "local",
         "command": [
           "uvx",
           "mcp-for-blender"
@@ -90,20 +83,54 @@
         "environment": {
           "BLENDER_HOST": "localhost",
           "BLENDER_PORT": "9876"
-        }
+        },
+        "type": "local"
+      },
+      "context7": {
+        "headers": {
+          "Authorization": "Bearer {env:CONTEXT7_API_KEY}"
+        },
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
+      },
+      "cq": {
+        "command": [
+          "cq",
+          "mcp"
+        ],
+        "type": "local"
+      },
+      "fff": {
+        "command": [
+          "fff-mcp"
+        ],
+        "type": "local"
       },
       "gimp-mcp": {
-        "type": "local",
         "command": [
           "uv",
           "run",
           "gimp_mcp_server.py"
         ],
         "cwd": "C:/Users/User/Local/Srv/gimp-mcp",
-        "disabled": true
+        "disabled": true,
+        "type": "local"
+      },
+      "github": {
+        "disabled": true,
+        "headers": {
+          "Authorization": "Bearer {env:OPENCODE_MCP_GITHUB}"
+        },
+        "oauth": false,
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp/"
+      },
+      "godot-mcp": {
+        "disabled": true,
+        "type": "remote",
+        "url": "http://localhost:9080/mcp/"
       },
       "material-maker": {
-        "type": "local",
         "command": [
           "uv",
           "run",
@@ -113,72 +140,52 @@
         "disabled": true,
         "environment": {
           "MM_GODOT_BINARY": "C:\\Users\\User\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.6.3-stable_win64_console.exe",
-          "MM_PROJECT_PATH": "C:\\Users\\User\\Local\\Srv\\material-maker",
+          "MM_IDLE_EXIT_MINUTES": "120",
           "MM_OUTPUT_DIR": "C:\\Users\\User\\output_mm",
-          "MM_IDLE_EXIT_MINUTES": "120"
-        }
+          "MM_PROJECT_PATH": "C:\\Users\\User\\Local\\Srv\\material-maker"
+        },
+        "type": "local"
       },
       "playwright": {
-        "type": "local",
         "command": [
           "npx",
           "@playwright/mcp@latest"
         ],
-        "disabled": true
+        "disabled": true,
+        "type": "local"
       },
       "windbg": {
-        "type": "local",
         "command": [
           "mcp-windbg"
         ],
         "disabled": true,
         "environment": {
           "_NT_SYMBOL_PATH": "SRV*C:\\Symbols*https://msdl.microsoft.com/download/symbols"
-        }
-      },
-      "github": {
-        "type": "remote",
-        "disabled": true,
-        "url": "https://api.githubcopilot.com/mcp/",
-        "oauth": false,
-        "headers": {
-          "Authorization": "Bearer {env:OPENCODE_MCP_GITHUB}"
-        }
-      },
-      "godot-mcp": {
-        "type": "remote",
-      	"disabled": true,
-        "url": "http://localhost:9080/mcp/"
-      },
-      "context7": {
-        "type": "remote",
-        "url": "https://mcp.context7.com/mcp",
-        "headers": {
-          "Authorization": "Bearer {env:CONTEXT7_API_KEY}"
-        }
+        },
+        "type": "local"
       }
     }
   },
   "permissions": [
     {
       "action": "webfetch",
-      "resource": "*",
-      "effect": "allow"
+      "effect": "allow",
+      "resource": "*"
     },
     {
       "action": "websearch",
-      "resource": "*",
-      "effect": "allow"
+      "effect": "allow",
+      "resource": "*"
     },
     {
       "action": "shell",
-      "resource": "*",
-      "effect": "allow"
+      "effect": "allow",
+      "resource": "*"
     },
     {
       "action": "shell",
-      "resource": "*find*",
-      "effect": "deny"
+      "effect": "deny",
+      "resource": "*find*"
     }
   ],
   "plugin": [
@@ -188,90 +195,108 @@
   ],
   "providers": {
     "deepseek": {
+      "models": {
+        "deepseek-flash": {
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "DeepSeek V4.1 Flash",
+          "settings": {
+            "thinking": {
+              "effort": "high",
+              "type": "enabled"
+            }
+          }
+        },
+        "deepseek-v4-pro": {
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "DeepSeek V4 Pro",
+          "settings": {
+            "thinking": {
+              "effort": "high",
+              "type": "enabled"
+            }
+          }
+        }
+      },
       "name": "DeepSeek",
       "package": "aisdk:@ai-sdk/openai-compatible",
       "settings": {
         "apiKey": "{env:DEEPSEEK_API_KEY}",
         "baseURL": "https://api.deepseek.com"
-      },
-      "models": {
-        "deepseek-flash": {
-          "name": "DeepSeek V4.1 Flash",
-          "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          },
-          "settings": {
-            "thinking": {
-              "type": "enabled",
-              "effort": "high"
-            }
-          }
-        },
-        "deepseek-v4-pro": {
-          "name": "DeepSeek V4 Pro",
-          "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          },
-          "settings": {
-            "thinking": {
-              "type": "enabled",
-              "effort": "high"
-            }
-          }
-        }
       }
     },
     "kimi-code": {
+      "models": {
+        "kimi-k2.7-code-highspeed": {
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Kimi K2.7 Code (HighSpeed)",
+          "settings": {
+            "thinking": {
+            	"effort": "high",
+              "type": "enabled"
+            }
+          }
+        },
+        "kimi-k3.1-pro": {
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Kimi K3.1 Pro",
+          "settings": {
+            "thinking": {
+              "effort": "max",
+              "type": "enabled"
+            }
+          }
+        },
+        "kimi-k3.1-pro-highspeed": {
+          "capabilities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Kimi K3.1 Pro Highspeed",
+          "settings": {
+            "thinking": {
+              "effort": "high",
+              "type": "enabled"
+            }
+          }
+        }
+      },
       "name": "Kimi Code",
       "package": "aisdk:@ai-sdk/openai-compatible",
       "settings": {
         "apiKey": "{env:KIMI_API_KEY}",
         "baseURL": "https://api.kimi.com/coding/v1"
-      },
-      "models": {
-        "kimi-k3": {
-          "name": "Kimi K3",
-          "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          },
-          "settings": {
-            "thinking": {
-              "type": "enabled",
-              "effort": "high"
-            }
-          }
-        },
-        "kimi-k2.7-code-highspeed": {
-          "name": "Kimi K2.7 Code (HighSpeed)",
-          "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          },
-          "settings": {
-            "thinking": {
-              "type": "enabled"
-            }
-          }
-        }
       }
     },
     "openai": {}
