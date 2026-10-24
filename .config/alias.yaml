@@ -86,6 +86,7 @@ grec: git-recent
 
 ## lazygit
 lg: lazygit
+lgm: lazygit -sm half
 
 ## mgitstatus
 mgit: mgitstatus
