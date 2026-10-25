@@ -38,6 +38,7 @@ require("custom-shell"):setup({
 	history_path = "default",
 	save_history = true,
 })
+---- https://github.com/ThomasVanRiel/repo-status.yazi#what-is-shown
 require("repo-status"):setup()
 require("git"):setup({
 	order = 1500,
