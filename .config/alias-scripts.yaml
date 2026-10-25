@@ -19,6 +19,7 @@ ffman: bash fzf-files.sh "$USERHOME/Local/Document/man"
 ffdevdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs"
 fftables: bash fzf-files.sh "$USERHOME/Share/files/tables"
 fg: bash fzf-ripgrep.sh
+ffg: cd "$USERHOME/Share/files" && bash fzf-ripgrep.sh
 
 ## Git
 git-init: bash git-init.sh

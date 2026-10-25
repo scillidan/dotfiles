@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    html, body { margin: 0; height: 100%; }
+    body { background: #fff; }
+    body.dark { background: #000; }
+    img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: contain;
+    }
+    #toggle {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        padding: 6px;
+        opacity: 0.3;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    #toggle:hover { opacity: 1; }
+    #toggle img { width: 24px; height: 24px; }
+</style>
+</head>
+<body>
+<img id="poster" src="./qutebrowser-default-bindings.png" alt="qutebrowser default bindings">
+<button id="toggle" title="Switch to day/night"><img id="icon" src="./brightness-4.svg"></button>
+<script>
+    var light = "./qutebrowser-default-bindings.png";
+    var dark = "./qutebrowser-default-bindings_dark.png";
+    var iconLight = "./brightness-4.svg";
+    var iconDark = "./brightness-7.svg";
+    var img = document.getElementById("poster");
+    var icon = document.getElementById("icon");
+    var btn = document.getElementById("toggle");
+    function setMode(isDark) {
+        document.body.classList.toggle("dark", isDark);
+        img.src = isDark ? dark : light;
+        icon.src = isDark ? iconDark : iconLight;
+        localStorage.setItem("poster-dark", isDark ? "1" : "0");
+    }
+    btn.onclick = function () { setMode(img.src.indexOf("_dark") === -1); };
+    if (localStorage.getItem("poster-dark") === "1") setMode(true);
+</script>
+</body>
+</html>

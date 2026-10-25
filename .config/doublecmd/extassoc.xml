@@ -14,18 +14,6 @@
       </Actions>
     </FileType>
     <FileType>
-      <Name>qview</Name>
-      <IconFile/>
-      <ExtensionList>avif</ExtensionList>
-      <Actions>
-        <Action>
-          <Name>Open</Name>
-          <Command>qview</Command>
-          <Params>%f</Params>
-        </Action>
-      </Actions>
-    </FileType>
-    <FileType>
       <Name>yacreader</Name>
       <IconFile/>
       <ExtensionList>cbz|cbr|cb7</ExtensionList>
@@ -40,7 +28,7 @@
     <FileType>
       <Name>Image</Name>
       <IconFile/>
-      <ExtensionList>jpg|jpeg|png|webp|bmp|tiff</ExtensionList>
+      <ExtensionList>jpg|jpeg|png|webp|bmp|tiff|svg|avif</ExtensionList>
       <Actions>
         <Action>
           <Name>Open</Name>
