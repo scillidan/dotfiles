@@ -715,7 +715,7 @@
   <MarkDefaultWantedAttribute/>
   <MarkLastWantedAttribute/>
   <SearchTemplates/>
-  <ColumnsSets DefaultTitleHash="4226688076">
+  <ColumnsSets DefaultTitleHash="540805403">
     <ColumnsSet UseFrameCursor="False">
       <Name>Default</Name>
       <Unique>550838BB-1ED2-45BF-A38E-CD52FAA7F5C7</Unique>
@@ -725,7 +725,7 @@
       <CursorBorder Enabled="False"/>
       <Columns>
         <Column>
-          <Title>名称</Title>
+          <Title>Name</Title>
           <Unique>1D66A9B8-A050-4C94-B11B-5B77CE702674</Unique>
           <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
           <Width>250</Width>
@@ -741,7 +741,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>扩展名</Title>
+          <Title>Ext</Title>
           <Unique>AE1066D0-02F4-4181-8FC7-AC0BF41255CC</Unique>
           <FuncString>[DC().GETFILEEXT{}]</FuncString>
           <Width>50</Width>
@@ -757,7 +757,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>大小</Title>
+          <Title>Size</Title>
           <Unique>112C1C8E-E1FF-4BC6-B5FC-D550007A0900</Unique>
           <FuncString>[DC().GETFILESIZE{}]</FuncString>
           <Width>70</Width>
@@ -773,7 +773,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>日期</Title>
+          <Title>Date</Title>
           <Unique>D029275F-2F57-43C7-92E2-AB5E4291455E</Unique>
           <FuncString>[DC().GETFILETIME{}]</FuncString>
           <Width>140</Width>
@@ -789,7 +789,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>属性</Title>
+          <Title>Attr</Title>
           <Unique>720D7756-FBBD-469A-B01A-3FEEDD99FA75</Unique>
           <FuncString>[DC().GETFILEATTR{}]</FuncString>
           <Width>100</Width>
@@ -1030,17 +1030,22 @@
         <Path>%commander_path%\plugins\wlx\wmp\wmp.wlx</Path>
         <DetectString>(EXT="WAV")|(EXT="MP3")|(EXT="WMA")|(EXT="MP4")|(EXT="AVI")|(EXT="WMV")</DetectString>
       </WlxPlugin>
+      <WlxPlugin Enabled="True">
+        <Name>fileinfo</Name>
+        <Path>%commander_path%\plugins\wlx\fileinfo\fileinfo.wlx64</Path>
+        <DetectString/>
+      </WlxPlugin>
     </WlxPlugins>
     <TweakPluginWidth0>0</TweakPluginWidth0>
     <TweakPluginHeight0>0</TweakPluginHeight0>
     <TweakPluginWidth1>450</TweakPluginWidth1>
     <TweakPluginHeight1>320</TweakPluginHeight1>
-    <TweakPluginWidth2>0</TweakPluginWidth2>
-    <TweakPluginHeight2>0</TweakPluginHeight2>
+    <TweakPluginWidth2>406</TweakPluginWidth2>
+    <TweakPluginHeight2>194</TweakPluginHeight2>
     <TweakPluginWidth3>0</TweakPluginWidth3>
     <TweakPluginHeight3>0</TweakPluginHeight3>
-    <TweakPluginWidth4>0</TweakPluginWidth4>
-    <TweakPluginHeight4>0</TweakPluginHeight4>
+    <TweakPluginWidth4>406</TweakPluginWidth4>
+    <TweakPluginHeight4>194</TweakPluginHeight4>
     <AutoTweak>False</AutoTweak>
     <WCXConfigViewMode>0</WCXConfigViewMode>
     <PluginFilenameStyle>0</PluginFilenameStyle>
