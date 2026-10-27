@@ -6,11 +6,7 @@ wk.add({
   {
     "<leader>sth",
     function()
-      if vim.g.colors_name == "vanta" then
-        vim.cmd("colorscheme lauds")
-      else
-        vim.cmd("colorscheme vanta")
-      end
+      require("config.theme").cycle()
     end,
     desc = "Toggle theme",
     mode = "n",

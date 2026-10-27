@@ -1,4 +1,6 @@
 {
+  "$schema": "https://opencode.ai/tui.json",
+  "theme": "system",
   "plugin": [
     "@cortexkit/opencode-magic-context@latest"
   ]

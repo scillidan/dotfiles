@@ -2,7 +2,57 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 local light_scheme = "One Light (Gogh)"
-local is_light = false
+local dark_scheme = "Builtin Dark"
+local theme_script = wezterm.config_dir .. "/../terminal-theme/terminal-theme.py"
+local state_root
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	state_root = os.getenv("LOCALAPPDATA") or (os.getenv("USERPROFILE") .. "\\AppData\\Local")
+else
+	state_root = os.getenv("XDG_STATE_HOME") or (os.getenv("HOME") .. "/.local/state")
+end
+local theme_state = state_root .. "/terminal-theme/state"
+local last_published
+
+local function read_theme_state()
+	local file = io.open(theme_state, "r")
+	if not file then
+		return "system", nil
+	end
+	local mode = file:read("l")
+	local appearance = file:read("l")
+	file:close()
+	if mode ~= "dark" and mode ~= "light" then
+		mode = "system"
+	end
+	return mode, appearance
+end
+
+local function sync_theme(window)
+	local mode, saved_appearance = read_theme_state()
+	local appearance = mode
+	if mode == "system" then
+		appearance = window:get_appearance():find("Dark") and "dark" or "light"
+	end
+	local scheme = appearance == "light" and light_scheme or dark_scheme
+	local overrides = window:get_config_overrides() or {}
+	if overrides.color_scheme ~= scheme then
+		overrides.color_scheme = scheme
+		window:set_config_overrides(overrides)
+	end
+	local published = mode .. ":" .. appearance
+	if saved_appearance ~= appearance and last_published ~= published then
+		last_published = published
+		wezterm.run_child_process({ "python", theme_script, "refresh" })
+	end
+end
+
+local function cycle_theme(window)
+	local ok, _, stderr = wezterm.run_child_process({ "python", theme_script, "cycle" })
+	if not ok then
+		wezterm.log_error("terminal-theme: " .. stderr)
+	end
+	sync_theme(window)
+end
 
 -- QuickSelect patterns: tmux-thumbs replacement.
 local quick_select_url_patterns = {
@@ -19,6 +69,7 @@ config.quick_select_patterns = {
 	[=[\S+\.pdf]=],
 }
 
+config.color_scheme = dark_scheme
 config.colors = {
 	tab_bar = {
 		active_tab = {
@@ -73,16 +124,8 @@ config.disable_default_key_bindings = true
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 500 }
 config.keys = {
 	{ key = "C", mods = "LEADER|SHIFT",
-		action = wezterm.action_callback(function(window, pane)
-			if is_light then
-				window:set_config_overrides(nil)
-				is_light = false
-			else
-				window:set_config_overrides({
-					color_scheme = light_scheme,
-				})
-				is_light = true
-			end
+		action = wezterm.action_callback(function(window)
+			cycle_theme(window)
 		end),
 	},
 	{ key = "f", mods = "LEADER|SHIFT", action = wezterm.action.ToggleFullScreen },
@@ -211,6 +254,13 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	}
 	table.insert(config.keys, { key = "c", mods = "ALT", action = wezterm.action.SendString("tere.bat\r")	})
 end
+
+wezterm.on("window-config-reloaded", function(window)
+	sync_theme(window)
+end)
+wezterm.on("update-status", function(window)
+	sync_theme(window)
+end)
 
 wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	local text = pane:get_lines_as_text(pane:get_dimensions().scrollback_rows)

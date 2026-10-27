@@ -97,7 +97,13 @@ keybinds {
                 close_on_exit true
             }
         }
-        bind "T" { ToggleTheme; }
+        bind "T" {
+            Run "terminal-theme.cmd" "cycle" {
+                floating true
+                close_on_exit true
+            }
+            SwitchToMode "normal";
+        }
     }
 }
 

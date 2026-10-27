@@ -23,7 +23,7 @@ The choice is cached after that.
 
 | Keys | Action |
 |---|---|
-| `Ctrl+Space` | tmux mode (then `c` new tab, `%` / `"` split, `h/j/k/l` focus, `x` close pane, `z` fullscreen, `d` detach, `[` scroll, `g` lazygit floating, `s` sessionizer, `T` toggle theme) |
+| `Ctrl+Space` | tmux mode (then `c` new tab, `%` / `"` split, `h/j/k/l` focus, `x` close pane, `z` fullscreen, `d` detach, `[` scroll, `g` lazygit floating, `s` sessionizer, `T` cycle all terminal apps through system/dark/light) |
 | `Alt-s` | sessionizer (fzf over zoxide dirs, switch/create project session) |
 | `Alt-%` / `Alt-"` | split right / down |
 | `Alt-q` | close pane |

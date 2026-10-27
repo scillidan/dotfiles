@@ -96,7 +96,7 @@ prepend_preloaders = [
   { url = "*.{cdf,dcm,ex2,exo,mha,mhd,nc,ncdf,nhdr,nrrd,vdb,vti,vtk,vtkhdf,vtm,vtp,vtr,vts,vtu}", run = "f3d" }, # Scientific and volumetric data
 ]
 prepend_previewers = [
-  { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
+  { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=auto "$1"' },
   { url = "*.csv", run = 'piper -- bat -p --color=always "$1"' },
   { url = "*/", run = 'eza-preview' },
   { mime = "application/epub+zip", run = "epub-preview" },

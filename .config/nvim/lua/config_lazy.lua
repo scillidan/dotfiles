@@ -23,7 +23,7 @@ require("lazy").setup(
     { "emanuel2718/vanta.nvim", priority = 1000,
       config = function()
         require("config.vanta")
-        vim.cmd.colorscheme("vanta")
+        require("config.theme").setup()
       end },
     { "ntk148v/lauds", lazy = false, priority = 1000 },
     -- Visual
