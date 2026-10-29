@@ -13,7 +13,7 @@ wk.add({
   },
 
   -- Key
-  { "<leader>!", '<Cmd>lua require("which-key").show({ global = false })<CR>', desc = "which-key.show", mode = "n" },
+  { "<leader>!", '<Cmd>lua require("which-key").show({ mode = "n" })<CR>', desc = "which-key.show", mode = "n" },
   -- Snippet
   --  { "<C-k>", '<Cmd>lua require("luasnip").expand()<CR>', desc = "luasnip expand", mode = { "i", "s" } },
   --  { "<C-h>", '<Cmd>lua require("luasnip").jump(-1)<CR>', desc = "luasnip jump(-1)", mode = { "i", "s" } },

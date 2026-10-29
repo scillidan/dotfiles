@@ -12,6 +12,9 @@ binc: bin prune
 buni: bun add --registry https://npmreg.proxy.ustclug.org -g
 bunu: bun rm -g
 
+## Codemark
+cmt: codemark-tui
+
 ## commandOK
 ok: commandok
 
@@ -24,6 +27,9 @@ dgg: doggo A $* @8.8.8.8
 
 ## Double Commander
 db: doublecmd "$CD"
+
+## envx
+envxt: envx tui
 
 ## eza
 ls: eza --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
@@ -83,6 +89,9 @@ gop: git-open
 
 ## git-recent
 grec: git-recent
+
+## keepkit
+kpt: keepkit
 
 ## lazygit
 lg: lazygit
