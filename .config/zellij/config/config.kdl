@@ -98,7 +98,7 @@ keybinds {
             }
         }
         bind "T" {
-            Run "terminal-theme.cmd" "cycle" {
+            Run "terminal-theme-switch" "cycle" {
                 floating true
                 close_on_exit true
             }
