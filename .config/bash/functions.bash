@@ -26,7 +26,7 @@ fzf_ripgrep() {
 		--query "$*"
 }
 
-opencode() {
+opencode-theme() {
 	if [[ -z "${OPENCODE_CLI_CONFIG_CONTENT:-}" ]]; then
 		local mode
 		mode=$(terminal-theme-switch get 2>/dev/null | awk '{print $2}')
