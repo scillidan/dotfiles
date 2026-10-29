@@ -6,8 +6,16 @@ local dark_scheme = "Builtin Dark"
 -- terminal-theme-switch owns the shared theme state and the cycle key.
 local theme
 do
-	local ok, out, err = wezterm.run_child_process({ "terminal-theme-switch", "path" })
-	if ok and out and out ~= "" then
+	local path_args
+	if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+		path_args = { "cmd.exe", "/c", "terminal-theme-switch", "path" }
+	else
+		path_args = { "terminal-theme-switch", "path" }
+	end
+	local called, ok, out, err = pcall(wezterm.run_child_process, path_args)
+	if not called then
+		wezterm.log_error("terminal-theme-switch: " .. tostring(ok))
+	elseif ok and out and out ~= "" then
 		local loaded, chunk, load_err = pcall(loadfile, out:gsub("%s+$", "") .. "/integrations/wezterm.lua")
 		if loaded and chunk then
 			local ok_chunk, mod = pcall(chunk)
