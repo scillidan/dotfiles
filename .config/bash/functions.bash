@@ -37,3 +37,15 @@ opencode-theme() {
 	fi
 	command opencode "$@"
 }
+
+yazi-theme() {
+	if [[ -z "${YAZI_CONFIG_HOME:-}" ]]; then
+		local home
+		home=$(terminal-theme-switch yazi 2>/dev/null) || home=
+		if [[ -n "$home" ]]; then
+			YAZI_CONFIG_HOME="$home" command yazi "$@"
+			return
+		fi
+	fi
+	command yazi "$@"
+}
