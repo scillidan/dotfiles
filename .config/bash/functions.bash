@@ -25,3 +25,15 @@ fzf_ripgrep() {
 		--preview-window '~1,+{2}+4/3,<80(up)' \
 		--query "$*"
 }
+
+opencode() {
+	if [[ -z "${OPENCODE_CLI_CONFIG_CONTENT:-}" ]]; then
+		local mode
+		mode=$(terminal-theme-switch get 2>/dev/null | awk '{print $2}')
+		if [[ -n "$mode" ]]; then
+			OPENCODE_CLI_CONFIG_CONTENT="{\"theme\":{\"mode\":\"$mode\"}}" command opencode "$@"
+			return
+		fi
+	fi
+	command opencode "$@"
+}
