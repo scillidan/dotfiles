@@ -28,6 +28,9 @@ dgg: doggo A $* @8.8.8.8
 ## Double Commander
 db: doublecmd "$CD"
 
+## eilmeldung
+elm: eilmeldung
+
 ## envx
 envxt: envx tui
 

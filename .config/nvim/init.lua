@@ -46,6 +46,7 @@ if vim.g.neovide then
 	vim.g.neovide_remember_window_size = true
 	vim.g.neovide_opacity = 1
 	vim.g.transparency = 1
+	vim.o.guifont = "Sarasa Term SC Nerd:h9.5"
 	-- https://github.com/neovide/neovide/issues/1282
 	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
 	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode

@@ -34,8 +34,8 @@ ghrd: gh release delete --cleanup-tag -y
 ntfy: gh-notify -ap -n 10
 tidy: gh-tidy
 
-## Neovim
-nv: bash _nvim.sh
+## Neovide
+nvi: neovide --size=1250x720 --frame none --no-tabs --neovim-bin nvim
 
 ## yazi
 y: yazi-cd $*; reset

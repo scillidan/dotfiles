@@ -12,8 +12,8 @@ vsync = true
 wsl = false
 
 [font]
-normal = ["Sarasa Term SC Nerd"]
-size = 10.0
+normal = [ "Sarasa Term SC Nerd" ]
+size = 9.5
 
 [box-drawing]
 # "font-glyph", "native" or "selected-native"

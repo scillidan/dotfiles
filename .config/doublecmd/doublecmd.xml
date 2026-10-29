@@ -715,7 +715,7 @@
   <MarkDefaultWantedAttribute/>
   <MarkLastWantedAttribute/>
   <SearchTemplates/>
-  <ColumnsSets DefaultTitleHash="540805403">
+  <ColumnsSets DefaultTitleHash="4226688076">
     <ColumnsSet UseFrameCursor="False">
       <Name>Default</Name>
       <Unique>550838BB-1ED2-45BF-A38E-CD52FAA7F5C7</Unique>
@@ -725,7 +725,7 @@
       <CursorBorder Enabled="False"/>
       <Columns>
         <Column>
-          <Title>Name</Title>
+          <Title>名称</Title>
           <Unique>1D66A9B8-A050-4C94-B11B-5B77CE702674</Unique>
           <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
           <Width>250</Width>
@@ -741,7 +741,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>Ext</Title>
+          <Title>扩展名</Title>
           <Unique>AE1066D0-02F4-4181-8FC7-AC0BF41255CC</Unique>
           <FuncString>[DC().GETFILEEXT{}]</FuncString>
           <Width>50</Width>
@@ -757,7 +757,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>Size</Title>
+          <Title>大小</Title>
           <Unique>112C1C8E-E1FF-4BC6-B5FC-D550007A0900</Unique>
           <FuncString>[DC().GETFILESIZE{}]</FuncString>
           <Width>70</Width>
@@ -773,7 +773,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>Date</Title>
+          <Title>日期</Title>
           <Unique>D029275F-2F57-43C7-92E2-AB5E4291455E</Unique>
           <FuncString>[DC().GETFILETIME{}]</FuncString>
           <Width>140</Width>
@@ -789,7 +789,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>Attr</Title>
+          <Title>属性</Title>
           <Unique>720D7756-FBBD-469A-B01A-3FEEDD99FA75</Unique>
           <FuncString>[DC().GETFILEATTR{}]</FuncString>
           <Width>100</Width>

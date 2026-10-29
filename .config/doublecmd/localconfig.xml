@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doublecmd>
   <DirectoryHotList>
+    <HotDir Name="-User" Path=""/>
+    <HotDir Name="mpv" Path="C:\Users\User\Scoop\apps\mpv\current\portable_config"/>
+    <HotDir Name="scoop-apps" Path="C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps"/>
+    <HotDir Name="--" Path=""/>
     <HotDir Name="-Windows" Path=""/>
     <HotDir Name="Desktop" Path="C:\Users\User\Desktop"/>
     <HotDir Name="Downloads" Path="C:\Users\User\Downloads"/>
     <HotDir Name="Fonts" Path="C:\Users\User\AppData\Local\Microsoft\Windows\Fonts"/>
+    <HotDir Name="Pictures" Path="C:\Users\User\Pictures"/>
     <HotDir Name="SendTo" Path="C:\Users\User\AppData\Roaming\Microsoft\Windows\SendTo"/>
     <HotDir Name="Startup" Path="C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"/>
+    <HotDir Name="Videos" Path="C:\Users\User\Videos"/>
     <HotDir Name="--" Path=""/>
     <HotDir Name="-Windows Env" Path=""/>
     <HotDir Name="%ALLUSERSPROFILE%" Path="C:\ProgramData"/>
@@ -18,10 +24,6 @@
     <HotDir Name="%ProgramFiles%" Path="C:\Program Files"/>
     <HotDir Name="%TMP%" Path="C:\Users\User\AppData\Local\Temp"/>
     <HotDir Name="%USERPROFILE%" Path="C:\Users\User"/>
-    <HotDir Name="--" Path=""/>
-    <HotDir Name="-Windows User" Path=""/>
-    <HotDir Name="mpv" Path="C:\Users\User\Scoop\apps\mpv\current\portable_config"/>
-    <HotDir Name="scoop-apps" Path="C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps"/>
     <HotDir Name="--" Path=""/>
   </DirectoryHotList>
 </doublecmd>
