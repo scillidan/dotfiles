@@ -109,10 +109,6 @@ condaa: conda activate
 condar: conda remove
 condal: conda list
 
-## OpenCode
-oc: opencode $* & reset
-occ: opencode --continue $* & reset
-
 ## OpenCommit
 ocoi: oco hook set
 
@@ -140,6 +136,9 @@ ski: skills add -g
 sku: skills remove -g
 skl: skills list -g
 skup: skills update
+
+## terminal-theme-switch
+oc: opencode-theme $* & reset
 
 ## trashy
 rmy: trash
