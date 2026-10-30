@@ -1,10 +1,22 @@
 {
   "$schema": "https://raw.githubusercontent.com/cortexkit/magic-context/master/assets/magic-context.schema.json",
   "historian": {
-    "model": "deepseek/deepseek-flash"
+    
+    "opencode": {
+      "model": "deepseek/deepseek-flash"
+    },
+    "pi": {
+      "model": "deepseek/deepseek-flash"
+    }
   },
   "dreamer": {
-    "model": "deepseek/deepseek-flash"
+    
+    "opencode": {
+      "model": "deepseek/deepseek-flash"
+    },
+    "pi": {
+      "model": "deepseek/deepseek-flash"
+    }
   },
   "sidekick": {
     "disable": true
