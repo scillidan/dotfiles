@@ -34,5 +34,8 @@ ghrd: gh release delete --cleanup-tag -y
 ntfy: gh-notify -ap -n 10
 tidy: gh-tidy
 
+## Neovide
+nvd: bash _neovide.sh
+
 ## yazi
 y: yazi-cd $* && reset
