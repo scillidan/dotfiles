@@ -44,12 +44,13 @@ if vim.g.neovide then
 	vim.g.neovide_padding_right = 0
 	vim.g.neovide_padding_top = 0
 	vim.g.neovide_remember_window_size = true
+	vim.o.guifont = "Sarasa Term SC Nerd:h9.5"
 
 	-- https://github.com/neovide/neovide/issues/1282
-	vim.keymap.set("n", "<D-v>", '"+P')
-	vim.keymap.set("v", "<D-v>", '"+P')
-	vim.keymap.set("c", "<D-v>", "<C-R>+")
-	vim.keymap.set("i", "<D-v>", "<C-R>+")
+	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
+	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
+	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+	vim.keymap.set("i", "<D-v>", "<C-R>+") -- Paste insert mode
 end
 
 vim.api.nvim_command("language en_US.UTF-8")
