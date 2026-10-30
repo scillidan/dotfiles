@@ -3,7 +3,7 @@
   "agents": {
     "build": {
       "mode": "primary",
-      "model": "kimi-code/kimi-k2.7-code-highspeed",
+      "model": "kimi-code/k3.1-pro-highspeed",
       "permissions": [
         {
           "action": "shell",
@@ -19,7 +19,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "kimi-code/kimi-k2.7-code-highspeed",
+      "model": "kimi-code/k3.1-pro-highspeed",
       "permissions": [
         {
           "action": "shell",
