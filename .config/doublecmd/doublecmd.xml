@@ -196,8 +196,8 @@
     <PersonalizedGiga>GB</PersonalizedGiga>
     <PersonalizedTera>TB</PersonalizedTera>
     <ConfirmQuit>False</ConfirmQuit>
-    <MinimizeToTray>True</MinimizeToTray>
-    <AlwaysShowTrayIcon>True</AlwaysShowTrayIcon>
+    <MinimizeToTray>False</MinimizeToTray>
+    <AlwaysShowTrayIcon>False</AlwaysShowTrayIcon>
     <Mouse>
       <Selection Enabled="True">
         <Button>0</Button>
