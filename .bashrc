@@ -28,7 +28,9 @@ export PATH="$USERHOME/.local/bin:$CARGO_HOME/bin:$GOPATH/bin:$PIPX_BIN_DIR:$PAT
 export PATH="$USERHOME/Share/scripts:$USERHOME/Share/scripts/arch:$PATH"
 
 source $USERHOME/Local/Source/bash/bash-completion/bash_completion
-[[ $- == *i* ]] && source $USERHOME/Local/Source/bash/ble.sh/out/ble.sh
+# Skip ble.sh when a script is launched with arguments: sourced files inherit "$@",
+# and ble.sh treats the script's file arguments as its own options and cancels init.
+[[ $- == *i* && $# -eq 0 ]] && source $USERHOME/Local/Source/bash/ble.sh/out/ble.sh
 
 eval "$(atuin init bash --disable-up-arrow)"
 
