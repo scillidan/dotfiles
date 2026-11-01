@@ -1,0 +1,34 @@
+# Generated from WezTerm 20240203-110809-5046fc22 scheme: Builtin Dark
+# Regenerate with: wezterm --config-file <this-file> start --always-new-process --no-auto-connect
+
+[colors.primary]
+foreground = "#bbbbbb"
+background = "#000000"
+
+[colors.cursor]
+text = "#ffffff"
+cursor = "#bbbbbb"
+
+[colors.selection]
+text = "#000000"
+background = "#b5d5ff"
+
+[colors.normal]
+black = "#000000"
+red = "#bb0000"
+green = "#00bb00"
+yellow = "#bbbb00"
+blue = "#0000bb"
+magenta = "#bb00bb"
+cyan = "#00bbbb"
+white = "#bbbbbb"
+
+[colors.bright]
+black = "#555555"
+red = "#ff5555"
+green = "#55ff55"
+yellow = "#ffff55"
+blue = "#5555ff"
+magenta = "#ff55ff"
+cyan = "#55ffff"
+white = "#ffffff"

@@ -1,0 +1,48 @@
+# Shared by the Windows and Linux launchers in Share/scripts.
+# Shell, working directory, and the terminal-theme-switch import are launcher options.
+[general]
+live_config_reload = true
+
+[window]
+blur = false
+decorations = "None"
+dynamic_title = false
+opacity = 1.0
+dimensions.columns = 152
+dimensions.lines = 42
+padding.x = 5
+padding.y = 5
+startup_mode = "Windowed"
+
+[font]
+normal.family = "Sarasa Term SC Nerd"
+bold.family = "Sarasa Term SC Nerd"
+italic.family = "Sarasa Term SC Nerd"
+bold_italic.family = "Sarasa Term SC Nerd"
+size = 10.0
+
+[cursor.style]
+shape = "Block"
+blinking = "Never"
+
+[scrolling]
+history = 10000
+
+[selection]
+semantic_escape_chars = ",`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+[keyboard]
+bindings = [
+    { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    { key = "Insert", mods = "Control", action = "Copy" },
+    { key = "Insert", mods = "Shift", action = "Paste" },
+    { key = "F", mods = "Control|Shift", action = "SearchForward" },
+    { key = "X", mods = "Control|Shift", action = "ToggleViMode" },
+    { key = "F11", mods = "None", action = "ToggleFullscreen" },
+    # Shift+Enter -> CSI-u so OpenCode can distinguish it from Enter.
+    { key = "Enter", mods = "Shift", chars = "\u001b[13;2u" },
+    { key = "Q", mods = "Control|Shift|Alt", action = "Quit" },
+]
