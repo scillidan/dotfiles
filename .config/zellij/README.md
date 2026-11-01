@@ -320,22 +320,20 @@ layout；每个 layout 单独启动，确认 cwd、nvim/yazi 退出和 tab 切�
 - 不为了让两边界面相似而在 Alacritty 实现 tab/pane；它们属于 Zellij，WezTerm
   workspace tab 这一层在 Alacritty 中用独立 OS window / session 表达。
 
-## 5. 关联工作：terminal-theme-switch 增加 Alacritty 支持
+## 5. 关联工作的实施状态
 
-该工作属于 `C:\Users\User\Share\projs\terminal-theme-switch`，不阻塞 P0–P4，也不应
-与 Zellij 启动修复混在一个 diff 中。当前项目已有 WezTerm、Zellij、Neovim integration，
-`refresh()` 已同步 Zellij，Yazi 已采用稳定运行时配置路径。
+### Alacritty 与 terminal-theme-switch
 
-建议的最小实现：
+已完成源码和本机部署：唯一共享 TOML、Windows/Linux 启动器、Alacritty dark/light
+主题源、稳定运行时文件，以及 `refresh()` 同步。普通 `terminal-theme-switch cycle`
+也会更新 Alacritty 主题文件。Alacritty 0.17.0 配置解析和主题工具单元测试已通过。
 
-1. 增加 Alacritty dark/light 两份主题源和 `terminal-theme-switch alacritty` 查询命令。
-2. 查询命令返回固定运行时文件，例如 `%LOCALAPPDATA%\terminal-theme\alacritty.toml`
-   或 `${XDG_STATE_HOME:-~/.local/state}/terminal-theme/alacritty.toml`。
-3. `refresh()` 除同步 Zellij 外，按当前 appearance 更新该文件；不写回 dotfiles。
-4. 唯一共享 `alacritty.toml` 不再同时 import dark/light。平台 wrapper 用
-   `--option` 将上述稳定文件加入 `general.import`，继续用 `-e` 选择 shell。
-5. 实测修改运行时文件后，已打开的 Alacritty 是否自动 reload import；若不生效，
-   只调整主题适配层，不引入第二份主配置。
+实际启动参数、共同键位、刻意保留的终端差异和 GUI 验收清单见
+`.config/alacritty/README.md`。已打开窗口的主题热重载、Linux 启动和原始 Start Menu
+shortcut 不视为已验证；shortcut 目前仍会绕过 wrapper。
 
-人工验收：`dark → light → system` 各测一次，检查新窗口和已打开窗口；确认模式状态、
-颜色和失败回退。初始只保证明暗同步，不声称 Alacritty 与 WezTerm 的调色板完全相同。
+### Clink / Bash 异构兼容
+
+讨论方案见 `.config/bash/README.md`：继续共享 alias YAML，对齐 Readline/fzf 的
+用户可见习惯，cmd/Lua 与 Bash 各保留薄实现。C0–C4 先处理启动保护，再迁移 alias
+和键位；本轮没有重写 Bash 启动链，也不在 Zellij shell 基线验证期间并行修改它。

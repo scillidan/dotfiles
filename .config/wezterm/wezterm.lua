@@ -67,6 +67,8 @@ config.font_size = 10.0
 -- https://help.gnome.org/users/gnome-terminal/stable/app-terminal-sizes.html.en
 config.initial_cols = 152
 config.initial_rows = 42
+config.scrollback_lines = 10000
+config.default_cursor_style = "SteadyBlock"
 config.window_background_opacity = 1
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "NONE"
@@ -85,10 +87,10 @@ config.window_frame = {
 	button_hover_fg = "#f8fafc",
 }
 config.window_padding = {
-	left = "1cell",
-	right = "1cell",
-	top = 0,
-	bottom = 0,
+	left = 5,
+	right = 5,
+	top = 5,
+	bottom = 5,
 }
 config.hide_tab_bar_if_only_one_tab = true
 config.show_tab_index_in_tab_bar = false
@@ -101,6 +103,7 @@ config.warn_about_missing_glyphs = false
 config.disable_default_key_bindings = true
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 500 }
 config.keys = {
+	{ key = "F11", mods = "NONE", action = wezterm.action.ToggleFullScreen },
 	{ key = "f", mods = "LEADER|SHIFT", action = wezterm.action.ToggleFullScreen },
 	{ key = "w", mods = "CTRL|SHIFT|ALT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
 	{ key = "F", mods = "CTRL|SHIFT", action = act.Search("CurrentSelectionOrEmptyString") },
