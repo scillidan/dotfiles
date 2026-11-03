@@ -26,9 +26,9 @@ function M.cycle()
   end
 end
 
-function M.setup()
+function M.setup(opts)
   if integration then
-    integration.setup()
+    integration.setup(opts)
   end
 end
 

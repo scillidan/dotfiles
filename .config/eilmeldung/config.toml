@@ -7,24 +7,9 @@ after_sync_commands = [
   "refresh",
 ]
 
-## https://github.com/emanuel2718/vanta.nvim
-[theme.color_palette]
-background = "#000000"
-foreground = "#C4C4C4"
-muted = "#7A7A7A"
-highlight = "#00AAAA"
-flagged = "#fde047"
-accent_primary = "#92FFB8"
-accent_secondary = "#C6CF4C"
-accent_tertiary = "#A2AF49"
-accent_quaternary = "#839D48"
-info = "#22d3ee"
-warning = "#FFD75F"
-error = "#ff0000"
-
-[theme.style_set]
-statusbar = { fg = "foreground", bg = "#141414", mods = ["bold"] }
-command_input = { fg = "foreground", bg = "#1A1A1A" }
+[theme]
+base16_theme = "flexoki-dark"
+# base16_theme = "flexoki-light"
 
 [input_config.mappings]
 "q" = ["quit"]

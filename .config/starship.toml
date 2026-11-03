@@ -4,7 +4,6 @@ add_newline = false
 disabled = true
 
 ## https://gist.github.com/3ayazaya/d87c70c5f30a6e28f15dfc84ca95fc68
-format = "$all$directory$character"
 
 [character]
 success_symbol = "[λ](white)"
@@ -36,15 +35,15 @@ symbol = "git "
 
 [typst]
 symbol = "typ "
-format = "$symbol $version"
+format = "$symbol($version )"
 
 [lua]
 symbol = "lua "
-format = "$symbol $version"
+format = "$symbol($version )"
 
 [python]
 symbol = "py "
-format = '${symbol} (${version} )(\($virtualenv\) )'
+format = '${symbol}\(${version}\)( \(${virtualenv}\)) '
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
@@ -52,30 +51,30 @@ version_format = "v${raw}"
 
 [conda]
 symbol = "conda "
-format = "$symbol $version"
+format = "$symbol($version )"
 
 [rust]
 symbol = "rs "
-format = "$symbol $version"
+format = "$symbol($version )"
 
 [nodejs]
 symbol = "nodejs "
-format = "$symbol $version"
+format = "$symbol($version )"
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
 
 [ruby]
 symbol = "rb "
-format = "$symbol $version"
+format = "$symbol($version )"
 
 [golang]
 symbol = "go "
-format = "$symbol $version"
+format = "$symbol($version )"
 
 [java]
 symbol = "java "
-format = "$symbol $version"
+format = "$symbol($version )"
 
 [cmake]
 symbol = "cmake "
-format = "$symbol $version"
+format = "$symbol($version )"

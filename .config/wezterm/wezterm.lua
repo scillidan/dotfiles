@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 local dark_scheme = "Builtin Dark"
+local light_scheme = "One Light (Gogh)"
 
 -- terminal-theme-switch owns the shared theme state and the cycle key.
 local theme
@@ -257,7 +258,7 @@ wezterm.on("format-tab-title", function(tab)
 end)
 
 if theme then
-	local ok, err = pcall(theme.setup, config)
+	local ok, err = pcall(theme.setup, config, { dark = dark_scheme, light = light_scheme })
 	if not ok then
 		wezterm.log_error("terminal-theme-switch: " .. tostring(err))
 	end
