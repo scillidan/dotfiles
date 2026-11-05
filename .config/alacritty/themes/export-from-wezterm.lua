@@ -1,3 +1,5 @@
+-- wezterm --config-file %USERHOME%/Share/dotfiles/.config/alacritty/themes/export-from-wezterm.lua start --always-new-process --no-auto-connect
+
 local wezterm = require("wezterm")
 
 local function write_scheme(name, target)
