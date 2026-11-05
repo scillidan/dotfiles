@@ -31,6 +31,7 @@ require("lsp-setup").setup({
     },
     html = {},
     jsonls = {},
+    just = {},
     lua_ls = {},
     marksman = {},
     pyright = {},

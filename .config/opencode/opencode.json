@@ -5,81 +5,78 @@
       "mode": "primary",
       "model": "kimi-code/k3.1-pro-highspeed",
       "permissions": [
-        {
-          "action": "shell",
-          "effect": "allow",
-          "resource": "*"
-        },
-        {
-          "action": "edit",
-          "effect": "allow",
-          "resource": "*"
-        }
+        { "action": "shell", "effect": "allow", "resource": "*" },
+        { "action": "edit", "effect": "allow", "resource": "*" }
       ]
     },
     "plan": {
       "mode": "primary",
       "model": "kimi-code/k3.1-pro-highspeed",
       "permissions": [
-        {
-          "action": "shell",
-          "effect": "deny",
-          "resource": "*"
-        },
-        {
-          "action": "edit",
-          "effect": "deny",
-          "resource": "*"
-        }
+        { "action": "shell", "effect": "deny", "resource": "*" },
+        { "action": "edit", "effect": "deny", "resource": "*" }
+      ]
+    },
+    "explore": {
+      "mode": "subagent",
+      "model": "deepseek/deepseek-flash",
+      "permissions": [
+        { "action": "shell", "effect": "deny", "resource": "*" },
+        { "action": "edit", "effect": "deny", "resource": "*" }
+      ]
+    },
+    "review": {
+      "mode": "subagent",
+      "model": "deepseek/deepseek-v4-pro",
+      "permissions": [
+        { "action": "shell", "effect": "deny", "resource": "*" },
+        { "action": "edit", "effect": "deny", "resource": "*" }
+      ]
+    },
+    "research": {
+      "mode": "subagent",
+      "model": "deepseek/deepseek-v4-pro",
+      "permissions": [
+        { "action": "webfetch", "effect": "allow", "resource": "*" },
+        { "action": "websearch", "effect": "allow", "resource": "*" },
+        { "action": "shell", "effect": "deny", "resource": "*" },
+        { "action": "edit", "effect": "deny", "resource": "*" }
       ]
     }
   },
   "compaction": {
-    "auto": false,
-    "prune": false
+    "auto": true,
+    "keep": { "tokens": 40000 },
+    "buffer": 20000
   },
-  "enabled_providers": [
-    "deepseek",
-    "kimi-code"
+  "tool_output": {
+    "max_lines": 2000,
+    "max_bytes": 51200
+  },
+  "policies": [
+    { "action": "provider.use", "resource": "*", "effect": "deny" },
+    { "action": "provider.use", "resource": "deepseek", "effect": "allow" },
+    { "action": "provider.use", "resource": "kimi-code", "effect": "allow" }
   ],
   "formatter": true,
   "mcp": {
-    "cq": {
-      "command": [
-        "cq",
-        "mcp"
-      ],
-      "type": "local"
-    },
     "servers": {
       "agnix": {
-        "command": [
-          "agnix-mcp"
-        ],
+        "command": ["agnix-mcp"],
         "type": "local"
       },
       "aseprite": {
-        "command": [
-          "uv",
-          "run",
-          "--python",
-          "3.13",
-          "--module",
-          "aseprite_mcp"
-        ],
-        "cwd": "C:/Users/User/Local/Srv/aseprite-mcp",
-        "disabled": true,
+        "command": ["uv", "run", "--python", "3.13", "--module", "aseprite_mcp"],
+        "cwd": "{env:USERHOME}/Local/Srv/aseprite-mcp",
+        "enabled": false,
         "environment": {
           "ASEPRITE_PATH": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite"
         },
         "type": "local"
       },
       "blender-mcp": {
-        "command": [
-          "uvx",
-          "mcp-for-blender"
-        ],
-        "disabled": true,
+        "command": ["uvx", "mcp-for-blender"],
+        "enabled": false,
         "environment": {
           "BLENDER_HOST": "localhost",
           "BLENDER_PORT": "9876"
@@ -94,30 +91,21 @@
         "url": "https://mcp.context7.com/mcp"
       },
       "cq": {
-        "command": [
-          "cq",
-          "mcp"
-        ],
+        "command": ["cq", "mcp"],
         "type": "local"
       },
       "fff": {
-        "command": [
-          "fff-mcp"
-        ],
+        "command": ["fff-mcp"],
         "type": "local"
       },
       "gimp-mcp": {
-        "command": [
-          "uv",
-          "run",
-          "gimp_mcp_server.py"
-        ],
-        "cwd": "C:/Users/User/Local/Srv/gimp-mcp",
-        "disabled": true,
+        "command": ["uv", "run", "gimp_mcp_server.py"],
+        "cwd": "{env:USERHOME}/Local/Srv/gimp-mcp",
+        "enabled": false,
         "type": "local"
       },
       "github": {
-        "disabled": true,
+        "enabled": false,
         "headers": {
           "Authorization": "Bearer {env:OPENCODE_MCP_GITHUB}"
         },
@@ -126,39 +114,30 @@
         "url": "https://api.githubcopilot.com/mcp/"
       },
       "godot-mcp": {
-        "disabled": true,
+        "enabled": false,
         "type": "remote",
         "url": "http://localhost:9080/mcp/"
       },
       "material-maker": {
-        "command": [
-          "uv",
-          "run",
-          "mm-mcp"
-        ],
-        "cwd": "C:/Users/User/Local/Srv/Tool-MaterialMaker-MCP",
-        "disabled": true,
+        "command": ["uv", "run", "mm-mcp"],
+        "cwd": "{env:USERHOME}/Local/Srv/Tool-MaterialMaker-MCP",
+        "enabled": false,
         "environment": {
-          "MM_GODOT_BINARY": "C:\\Users\\User\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.6.3-stable_win64_console.exe",
+          "MM_GODOT_BINARY": "{env:USERHOME}\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.6.3-stable_win64_console.exe",
           "MM_IDLE_EXIT_MINUTES": "120",
-          "MM_OUTPUT_DIR": "C:\\Users\\User\\output_mm",
-          "MM_PROJECT_PATH": "C:\\Users\\User\\Local\\Srv\\material-maker"
+          "MM_OUTPUT_DIR": "{env:USERHOME}\\output_mm",
+          "MM_PROJECT_PATH": "{env:USERHOME}\\Local\\Srv\\material-maker"
         },
         "type": "local"
       },
       "playwright": {
-        "command": [
-          "npx",
-          "@playwright/mcp@latest"
-        ],
-        "disabled": true,
+        "command": ["npx", "@playwright/mcp@latest"],
+        "enabled": false,
         "type": "local"
       },
       "windbg": {
-        "command": [
-          "mcp-windbg"
-        ],
-        "disabled": true,
+        "command": ["mcp-windbg"],
+        "enabled": false,
         "environment": {
           "_NT_SYMBOL_PATH": "SRV*C:\\Symbols*https://msdl.microsoft.com/download/symbols"
         },
@@ -167,26 +146,11 @@
     }
   },
   "permissions": [
-    {
-      "action": "webfetch",
-      "effect": "allow",
-      "resource": "*"
-    },
-    {
-      "action": "websearch",
-      "effect": "allow",
-      "resource": "*"
-    },
-    {
-      "action": "shell",
-      "effect": "allow",
-      "resource": "*"
-    },
-    {
-      "action": "shell",
-      "effect": "deny",
-      "resource": "*find*"
-    }
+    { "action": "webfetch", "effect": "allow", "resource": "*" },
+    { "action": "websearch", "effect": "allow", "resource": "*" },
+    { "action": "shell", "effect": "allow", "resource": "*" },
+    { "action": "shell", "effect": "deny", "resource": "*findstr*" },
+    { "action": "shell", "effect": "deny", "resource": "*dir * /s*" }
   ],
   "plugin": [
     "@cortexkit/opencode-magic-context@latest",
@@ -198,12 +162,8 @@
       "models": {
         "deepseek-flash": {
           "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text"],
+            "output": ["text"]
           },
           "name": "DeepSeek V4.1 Flash",
           "settings": {
@@ -215,12 +175,8 @@
         },
         "deepseek-v4-pro": {
           "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text"],
+            "output": ["text"]
           },
           "name": "DeepSeek V4 Pro",
           "settings": {
@@ -242,29 +198,21 @@
       "models": {
         "kimi-k2.7-code-highspeed": {
           "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text"],
+            "output": ["text"]
           },
           "name": "Kimi K2.7 Code (HighSpeed)",
           "settings": {
             "thinking": {
-            	"effort": "high",
+              "effort": "high",
               "type": "enabled"
             }
           }
         },
         "k3.1-pro": {
           "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text"],
+            "output": ["text"]
           },
           "name": "Kimi K3.1 Pro",
           "settings": {
@@ -276,12 +224,8 @@
         },
         "k3.1-pro-highspeed": {
           "capabilities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text"],
+            "output": ["text"]
           },
           "name": "Kimi K3.1 Pro Highspeed",
           "settings": {
@@ -298,8 +242,7 @@
         "apiKey": "{env:KIMI_API_KEY}",
         "baseURL": "https://api.kimi.com/coding/v1"
       }
-    },
-    "openai": {}
+    }
   },
   "shell": "cmd",
   "skills": [

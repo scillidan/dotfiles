@@ -226,6 +226,11 @@ require("lazy").setup(
       config = function()
         require("config.glance")
       end },
+    -- Indent
+    { "nmac427/guess-indent.nvim",
+      config = function()
+        require("guess-indent").setup()
+      end },
     -- Multiple cursors
     { "jake-stewart/multicursor.nvim", branch = "1.0",
       dependencies = { "folke/which-key.nvim" },
