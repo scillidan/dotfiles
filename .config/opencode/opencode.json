@@ -3,7 +3,7 @@
   "agents": {
     "build": {
       "mode": "primary",
-      "model": "kimi-code/k3.1-pro-highspeed",
+      "model": "kimi-code/k3.1-pro",
       "permissions": [
         { "action": "shell", "effect": "allow", "resource": "*" },
         { "action": "edit", "effect": "allow", "resource": "*" }
@@ -11,7 +11,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "kimi-code/k3.1-pro-highspeed",
+      "model": "kimi-code/k3.1-pro",
       "permissions": [
         { "action": "shell", "effect": "deny", "resource": "*" },
         { "action": "edit", "effect": "deny", "resource": "*" }
@@ -27,7 +27,7 @@
     },
     "review": {
       "mode": "subagent",
-      "model": "deepseek/deepseek-v4-pro",
+      "model": "deepseek/deepseek-flash",
       "permissions": [
         { "action": "shell", "effect": "deny", "resource": "*" },
         { "action": "edit", "effect": "deny", "resource": "*" }
@@ -35,7 +35,7 @@
     },
     "research": {
       "mode": "subagent",
-      "model": "deepseek/deepseek-v4-pro",
+      "model": "deepseek/deepseek-flash",
       "permissions": [
         { "action": "webfetch", "effect": "allow", "resource": "*" },
         { "action": "websearch", "effect": "allow", "resource": "*" },
@@ -165,7 +165,6 @@
             "input": ["text"],
             "output": ["text"]
           },
-          "name": "DeepSeek V4.1 Flash",
           "settings": {
             "thinking": {
               "effort": "high",
@@ -178,7 +177,6 @@
             "input": ["text"],
             "output": ["text"]
           },
-          "name": "DeepSeek V4 Pro",
           "settings": {
             "thinking": {
               "effort": "high",
@@ -196,12 +194,12 @@
     },
     "kimi-code": {
       "models": {
-        "kimi-k2.7-code-highspeed": {
+        "kimi-for-coding": {
           "capabilities": {
             "input": ["text"],
             "output": ["text"]
           },
-          "name": "Kimi K2.7 Code (HighSpeed)",
+          "name": "Kimi K2.8 Preview",
           "settings": {
             "thinking": {
               "effort": "high",
@@ -215,19 +213,6 @@
             "output": ["text"]
           },
           "name": "Kimi K3.1 Pro",
-          "settings": {
-            "thinking": {
-              "effort": "high",
-              "type": "enabled"
-            }
-          }
-        },
-        "k3.1-pro-highspeed": {
-          "capabilities": {
-            "input": ["text"],
-            "output": ["text"]
-          },
-          "name": "Kimi K3.1 Pro Highspeed",
           "settings": {
             "thinking": {
               "effort": "high",
