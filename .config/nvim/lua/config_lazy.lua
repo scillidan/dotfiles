@@ -166,7 +166,7 @@ require("lazy").setup(
       config = function()
         require("config.fzf_oil")
       end },
-    { "mikavilpas/yazi.nvim", version = "*", event = "VeryLazy",
+    { "mikavilpas/yazi.nvim", enabled = false, version = "*", event = "VeryLazy",
       dependencies = { { "nvim-lua/plenary.nvim", lazy = true } },
       config = function()
         require("config.yazi")
