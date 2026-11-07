@@ -11,7 +11,7 @@
   },
   "appmin": {
     "prefix": "appmin",
-    "body": "\n{\n\t\"version\": \"${4:version}\",\n\t\"description\": \"$1\",\n\t\"homepage\": \"${3:baseurl}\",\n\t\"license\": \"${2:MIT}\",\n\t\"suggest\": {\n\t\t\"vcredist\": \"extras/vcredist2022\"\n\t},\n\t\"architecture\": {\n\t\t\"64bit\": {\n\t\t\t\"url\": \"${3:baseurl}/releases/download/${4:version}/${5:basename}\",\n\t\t\t\"hash\": \"${6:sha256}\"\n\t\t}\n\t},\n\t\"bin\": \"${5:basename}.exe\",\n\t\"checkver\": \"github\",\n\t\"autoupdate\": {\n\t\t\"architecture\": {\n\t\t\t\"64bit\": {\n\t\t\t\t\"url\": \"${3:baseurl}/releases/download/\\$version/${5:basename}\"\n\t\t\t}\n\t\t}\n\t}\n}\n",
+    "body": "\n{\n\t\"version\": \"v${4:version}\",\n\t\"description\": \"$1\",\n\t\"homepage\": \"${3:baseurl}\",\n\t\"license\": \"${2:MIT}\",\n\t\"suggest\": {\n\t\t\"vcredist\": \"extras/vcredist2022\"\n\t},\n\t\"architecture\": {\n\t\t\"64bit\": {\n\t\t\t\"url\": \"${3:baseurl}/releases/download/v${4:version}/${5:basename}\",\n\t\t\t\"hash\": \"${6:sha256}\"\n\t\t}\n\t},\n\t\"bin\": \"${5:basename}$7.exe\",\n\t\"checkver\": \"github\",\n\t\"autoupdate\": {\n\t\t\"architecture\": {\n\t\t\t\"64bit\": {\n\t\t\t\t\"url\": \"${3:baseurl}/releases/download/v\\$version/${5:basename}\"\n\t\t\t}\n\t\t},\n\t\t\"hash\": {\n\t\t\t\"url\": \"$baseurl/checksums.txt\",\n\t\t\t\"regex\": \"$sha256\\\\s+$basename\"\n\t\t}\n\t}\n}\n",
     "description": "scoop manifest mini"
   },
   "apptags": {

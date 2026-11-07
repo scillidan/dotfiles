@@ -175,6 +175,62 @@ Linux 对应入口可以补齐，但本阶段不得声称已在 Linux 验证。
 停止条件：shell 非交互检查失败时不改 Zellij 其他配置。
 ```
 
+### P3 修订（2026-11-07）：条件 AutoRun，放弃 zellij-shell.cmd
+
+P0–P2 实测结果：清空 `ZELLIJ_CONFIG_FILE` 后 `zellij setup --clean` 正常；live 配置仍是空
+pane。核对 Zellij 0.45.1 源码后确认原 P3 方案不可行：
+
+- `default_shell` 是单个 `PathBuf`，`RunCommand.args` 永远为空，不能写
+  `cmd.exe /k ...`。
+- Windows 用 `CreateProcessW(lpApplicationName=NULL, "\"路径\"")` 启动 shell；
+  PATHEXT 能解析到 `.cmd`，但 CreateProcess 不能直接执行批处理。因此即使补上
+  `zellij-shell.cmd`，结果仍是空 pane。
+
+采用方案：`default_shell "cmd.exe"` 保持不变（cmd 仍是直接子进程，新 pane 的 cwd
+继承正常），Clink 由 cmd.exe 的 AutoRun 条件注入：
+
+- guard：`Share/dotfiles.win/Scoop/clink/zellij-autorun.cmd`
+  - 始终执行原来的 `conda_hook.bat`；
+  - 仅当 `ZELLIJ` 已定义且不是 `cmd /c`（非交互）时，才设置 `CLINK_INPUTRC`、
+    加载 `user_aliases.cmd`、注入 Clink；
+  - 不调用 `init.cmd`：其中的 `user_env.cmd` 会在这个嵌套上下文里重写 PATH，导致
+    `yq`/`refrenv` 失效；
+  - `CLINK_NOAUTORUN` 仍可临时关闭注入。
+- 安装：`clink autorun set C:\Users\User\Share\dotfiles.win\Scoop\clink\zellij-autorun.cmd`
+- 回退（恢复迁移前的 conda-only AutoRun）：
+  `clink autorun set if exist C:\Users\User\Scoop\apps\miniforge3\current\condabin\conda_hook.bat C:\Users\User\Scoop\apps\miniforge3\current\condabin\conda_hook.bat`
+
+已通过的非交互检查：普通 cmd 输出和退出码不变；`ZELLIJ` 定义时的 `cmd /c` 直接跳过、
+输出干净，`cmd /c exit 7` 仍返回 7；`user_aliases.cmd` 能在该上下文加载全部 alias。
+
+物理验证时补的两点：
+
+- `Share/dotfiles.win/Scoop/clink/zellij.lua`：首次 prompt 时若在 Zellij 内，执行一次
+  `cls`，清掉 cmd 的启动 banner（AutoRun 注入不会像 `cmd /k init.cmd` 那样自动清屏）。
+- `_inputrc`：Ctrl-Space 保留 `"\e[27;5;32~"`（Clink 的 modifyOtherKeys 编码），在
+  WezTerm 直连等支持该模式的终端有效。
+- Ctrl-Space 在 Zellij 内**不可达**：Windows 上 NUL 在到达 Zellij 之前就被外层
+  ConPTY 丢弃。用可见动作绑定（`ToggleFocusFullscreen`/`TogglePaneFrames`）实测
+  按 Ctrl-Space 无任何反应，说明不是绑定名或 `Write` 的问题。Zellij 侧无法补救，
+  已移除临时 keybind。
+- 因此补全键增加 `"\e/"`（Alt-/）→ `fzf_complete_force`，作为 Zellij 内可用的替代。
+
+P3 物理验证结果（0.45.1 + WezTerm）：
+- Clink 在首个 pane 和新建 pane 内注入成功；顶部 banner 已清除（`zellij action
+  dump-screen` 确认首屏直接是 prompt）。
+- Alt-/ 触发 fzf 补全成功。
+- Ctrl-Space 在 Zellij 内不可达，改用 Alt-/（原因见上）。
+
+```text
+P3 人工检查（修订版）：
+1. 首个 pane 和 Ctrl-p n 新建 pane 都进入 Clink，而非普通 cmd。
+2. Ctrl-r、Tab、Alt-/、zoxide 目录跳转、一个 alias 各测一次（Ctrl-Space 在 Zellij
+   内不可达，见上）。
+3. echo、exit、pane 关闭正常；连续启动两次结果一致。
+4. 若 Clink 异常：先执行上面的回退命令，确认普通 cmd 恢复；Zellij 因
+   default_shell 仍是 cmd.exe 仍可正常使用。
+```
+
 ## P4 — WezTerm workspace / Spawn 与 Zellij 对照（难度：中）
 
 ```text
