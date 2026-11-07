@@ -12,14 +12,17 @@ trans: bash llm-translate.sh
 tranx: bash llm-translate-stdin.sh
 
 ## fzf
-ffbkm: bash fzf-bookmarks.sh
+fg: bash fzf-ripgrep.sh
+ffg: bash fzf-ripgrep.sh "$USERHOME/Share/files"
+fsdcv: wezterm cli split-pane --right -- bash fzf-sdcv.sh
+ftldr: wezterm cli split-pane --right -- bash fzf-tldr.sh
+fbkm: wezterm cli split-pane --right -- bash fzf-bookmarks.sh
 ffsdcv: bash fzf-sdcv.sh
 fftldr: bash fzf-tldr.sh
+ffbkm: bash fzf-bookmarks.sh
 ffman: bash fzf-files.sh "$USERHOME/Local/Document/man"
 ffdevdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs"
 fftables: bash fzf-files.sh "$USERHOME/Share/files/tables"
-fg: bash fzf-ripgrep.sh
-ffg: bash fzf-ripgrep.sh "$USERHOME/Share/files"
 
 ## Git
 git-init: bash git-init.sh

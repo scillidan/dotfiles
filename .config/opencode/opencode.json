@@ -68,7 +68,7 @@
       "aseprite": {
         "command": ["uv", "run", "--python", "3.13", "--module", "aseprite_mcp"],
         "cwd": "{env:USERHOME}/Local/Srv/aseprite-mcp",
-        "enabled": false,
+        "disabled": true,
         "environment": {
           "ASEPRITE_PATH": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Aseprite"
         },
@@ -76,7 +76,7 @@
       },
       "blender-mcp": {
         "command": ["uvx", "mcp-for-blender"],
-        "enabled": false,
+        "disabled": true,
         "environment": {
           "BLENDER_HOST": "localhost",
           "BLENDER_PORT": "9876"
@@ -101,11 +101,11 @@
       "gimp-mcp": {
         "command": ["uv", "run", "gimp_mcp_server.py"],
         "cwd": "{env:USERHOME}/Local/Srv/gimp-mcp",
-        "enabled": false,
+        "disabled": true,
         "type": "local"
       },
       "github": {
-        "enabled": false,
+        "disabled": true,
         "headers": {
           "Authorization": "Bearer {env:OPENCODE_MCP_GITHUB}"
         },
@@ -114,14 +114,14 @@
         "url": "https://api.githubcopilot.com/mcp/"
       },
       "godot-mcp": {
-        "enabled": false,
+        "disabled": true,
         "type": "remote",
         "url": "http://localhost:9080/mcp/"
       },
       "material-maker": {
         "command": ["uv", "run", "mm-mcp"],
         "cwd": "{env:USERHOME}/Local/Srv/Tool-MaterialMaker-MCP",
-        "enabled": false,
+        "disabled": true,
         "environment": {
           "MM_GODOT_BINARY": "{env:USERHOME}\\Local\\Opt\\Godot_v4.6.3\\Godot_v4.6.3-stable_win64_console.exe",
           "MM_IDLE_EXIT_MINUTES": "120",
@@ -132,12 +132,12 @@
       },
       "playwright": {
         "command": ["npx", "@playwright/mcp@latest"],
-        "enabled": false,
+        "disabled": true,
         "type": "local"
       },
       "windbg": {
         "command": ["mcp-windbg"],
-        "enabled": false,
+        "disabled": true,
         "environment": {
           "_NT_SYMBOL_PATH": "SRV*C:\\Symbols*https://msdl.microsoft.com/download/symbols"
         },

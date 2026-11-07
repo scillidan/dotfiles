@@ -142,9 +142,9 @@ config.keys = {
 	{ key = "l", mods = "CTRL|ALT", action = wezterm.action.ActivateTabRelative(1) },
 	{ key = "H", mods = "CTRL|ALT", action = wezterm.action.MoveTabRelative(-1) },
 	{ key = "L", mods = "CTRL|ALT", action = wezterm.action.MoveTabRelative(1) },
-	{ key = "y", mods = "ALT", action = wezterm.action.SendString("yazi-cd\r") },
 	{ key = "f", mods = "ALT", action = wezterm.action.SendString("bash fzf-files.sh\r") },
 	{ key = "g", mods = "ALT", action = wezterm.action.SendString("bash fzf-ripgrep.sh\r") },
+	{ key = "y", mods = "ALT", action = wezterm.action.SendString("yazi-cd\r") },
 	{ key = "g", mods = "LEADER",	action = wezterm.action.SpawnCommandInNewTab({ args = { "lazygit" } }) },
 	-- Shift+Enter -> CSI-u sequence so opencode can tell it apart from Enter
 	{ key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\x1b[13;2u") },
