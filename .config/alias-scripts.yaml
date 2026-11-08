@@ -11,6 +11,9 @@ sum: bash llm-summarize.sh
 trans: bash llm-translate.sh
 tranx: bash llm-translate-stdin.sh
 
+## eilmeldung
+elm: eilmeldung-theme
+
 ## fzf
 fg: bash fzf-ripgrep.sh
 ffg: bash fzf-ripgrep.sh "$USERHOME/Share/files"
@@ -39,6 +42,9 @@ tidy: gh-tidy
 
 ## Neovide
 nvd: bash _neovide.sh
+
+## terminal-theme-switch
+oc: opencode-theme $* & reset
 
 ## yazi
 y: yazi-cd $* && reset

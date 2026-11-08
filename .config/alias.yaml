@@ -28,9 +28,6 @@ dgg: doggo A $* @8.8.8.8
 ## Double Commander
 db: doublecmd "$CD"
 
-## eilmeldung
-elm: eilmeldung
-
 ## envx
 envxt: envx tui
 
@@ -136,9 +133,6 @@ ski: skills add -g
 sku: skills remove -g
 skl: skills list -g
 skup: skills update
-
-## terminal-theme-switch
-oc: opencode-theme $* & reset
 
 ## trashy
 rmy: trash
