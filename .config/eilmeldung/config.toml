@@ -1,11 +1,5 @@
 startup_commands = ["sync"]
 keep_articles_days = 365
-after_sync_commands = [
-  "query lastsync",
-  'in articles read feed:ctan ~all:/(?i)\b(thesis,university,math,chemical,physics.?letter)\b/',
-  'in articles read feed:typst ~all:/(?i)\b(thesis|resume|cv.?letter)\b/',
-  "refresh",
-]
 
 [theme]
 base16_theme = "flexoki-dark"
