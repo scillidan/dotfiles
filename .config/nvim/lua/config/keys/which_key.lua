@@ -63,10 +63,10 @@ wk.add({
   { "<C-M-k>", "<Cmd>WinShift up<CR>", desc = "WinShift up" },
   { "<C-M-l>", "<Cmd>WinShift right<CR>", desc = "WinShift right" },
   -- Session
-  { "<leader>wr", "<Cmd>AutoSession search<CR>", desc = "AutoSession search" },
-  { "<leader>ws", "<Cmd>AutoSession save<CR>", desc = "AutoSession save" },
-  { "<leader>wa", "<Cmd>AutoSession toggle<CR>", desc = "AutoSession toggle" },
-  { "<leader>wd", "<Cmd>AutoSession delete<CR>", desc = "AutoSession delete" },
+  { "<leader>asr", "<Cmd>AutoSession search<CR>", desc = "AutoSession search" },
+  { "<leader>ass", "<Cmd>AutoSession save<CR>", desc = "AutoSession save" },
+  { "<leader>asa", "<Cmd>AutoSession toggle<CR>", desc = "AutoSession toggle" },
+  { "<leader>asd", "<Cmd>AutoSession delete<CR>", desc = "AutoSession delete" },
 
   -- Bookmarks
   { "<leader>ba", "<Cmd>BookmarkAdd<CR>", desc = "Add Bookmark" },
@@ -169,7 +169,13 @@ wk.add({
   { "<leader>vv", "<Cmd>LoveRun<CR>", desc = "Love Run" },
   { "<leader>vs", "<Cmd>LoveStop<CR>", desc = "Love Stop" },
   -- LLM
-  -- https://github.com/nickjvandyke/opencode.nvim#-setup
+  { "<leader>wd", function() require("wtf").diagnose() end, desc = "Debug diagnostic with AI", mode = { "n", "x" } },
+  { "<leader>wf", function() require("wtf").fix() end, desc = "Fix diagnostic with AI", mode = { "n", "x" } },
+  { "<leader>ws", function() require("wtf").search() end, desc = "Search diagnostic with Google", mode = { "n" } },
+  { "<leader>wp", function() require("wtf").pick_provider() end, desc = "Pick provider", mode = { "n" } },
+  { "<leader>wh", function() require("wtf").history() end, desc = "Populate the quickfix list with previous chat history", mode = { "n" } },
+  { "<leader>wg", function() require("wtf").grep_history() end, desc = "Grep previous chat history with Telescope", mode = { "n" } },
+  { "<leader>wy", function() require("wtf").yank() end, desc = "Yank diagnostic to clipboard", mode = { "n", "x" } },
   { "<leader>oa", function() oc.ask("@this: ", { submit = true }) end, desc = "Ask opencode", mode = { "n", "x" } },
   { "<leader>os", function() oc.select() end, desc = "Execute opencode action…", mode = { "n", "x" } },
   { "go", function() return oc.operator("@this ") end, expr = true, desc = "Add range to opencode", mode = { "n", "x" } },

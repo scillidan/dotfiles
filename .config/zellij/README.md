@@ -231,6 +231,22 @@ P3 人工检查（修订版）：
    default_shell 仍是 cmd.exe 仍可正常使用。
 ```
 
+## P3.5 — 粘贴缺陷（已定性，等上游）
+
+物理验证发现：Zellij pane 内多行粘贴会出现乱码（nvim 首行出现 `AA D73`）和多余 `\r`；
+`_temp2.txt` 落盘为 CRLF。WezTerm 直连 nvim 无此问题。
+
+源码定位：`zellij-client/src/input_handler.rs` 的 `InputEvent::Paste` 把一次粘贴拆成
+**三条独立 `Action::Write`**（起始标记 / 正文 / 结束标记），三者之间没有顺序保证；
+Windows 服务端的 paste 解析把正文里的 `\r` 走成了额外路径，产生截断副本。
+上游 #5333 记录了同类症状，补丁 #5840 仍把 “Windows multi-line bracketed paste”
+列为未修复。0.45.1 无法通过配置规避。
+
+- 复现脚本与期望输出：`config/PASTE-DIAGNOSIS.md`
+- 规避：多行内容先写文件，nvim 内 `:r file`；或多行粘贴改在 Zellij 外的 tab 完成
+- 已观察到的旁支现象（不影响结论）：Zellij 内 nvim 的 `p`/`P` 不可用，
+  `Ctrl-v` 与 `Ctrl-Insert` 可用；`Ctrl-Shift-v` 无响应。
+
 ## P4 — WezTerm workspace / Spawn 与 Zellij 对照（难度：中）
 
 ```text
@@ -286,6 +302,19 @@ WezTerm workspace tab 键长期保留，不作为“重复功能”删除。
 若进程检测不可靠，不猜测：保留显式不同键或手动模式开关，不做自动门控。
 任何键不符就只回退本检查点的 keybind diff。
 ```
+
+## P5 实测结论（5A 已完成）
+
+- 5A 采用 **`Ctrl-g` 作为 Zellij prefix**，WezTerm 保持 `Ctrl-a` leader（外层 workspace）。
+  理由：WezTerm 只要仍存活就优先吃掉 `Ctrl-a`，两层同键需要同时重启两端才能辨别，
+  实测两次都出现“以为在 Zellij 里操作、实际命中 WezTerm”或反之；显式分键没有这个问题。
+- Zellij 的 `keybinds {}` **整体替换**默认键位。默认 `tmux` 块没有数字键，因此
+  `1..9 → GoToTab` 需要显式补上；`Ctrl-g Ctrl-g` 在 tmux 块内写回字面 `Ctrl-g`。
+- 5A 已落地到 live `config.kdl`，覆盖通过：内部 tab 新建/跳转、字面 `Ctrl-g` 回传、
+  `Ctrl-g d` detach、WezTerm `Ctrl-a c` 仍建 workspace tab。
+- `wezterm.lua` 另外补回了被 `disable_default_key_bindings` 吞掉的
+  `Ctrl-c/d/z/\ ] 6 /`（发对应控制字符），已用 `wezterm show-keys` 验证。
+- 5B（pane 键上下文门控）未开始。
 
 ## P6 — session、简单 layout 与启动器（难度：中高）
 

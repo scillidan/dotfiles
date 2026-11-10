@@ -368,6 +368,9 @@ require("lazy").setup(
     { "Mathijs-Bakker/godotdev.nvim",
       dependencies = { "nvim-lspconfig", "nvim-dap", "nvim-dap-ui", "nvim-treesitter" } },
     -- LLM
+    { "piersolenski/wtf.nvim",
+      dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim", "nvim-telescope/telescope.nvim" },
+      opts = {} },
     { "nickjvandyke/opencode.nvim", enabled = false,
       config = function()
         vim.g.opencode_opts = {}

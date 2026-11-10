@@ -7,3 +7,24 @@ session_serialization false
 serialize_pane_viewport false
 show_startup_tips false
 show_release_notes false
+
+// P5 5A: Ctrl-g is the Zellij prefix. The default tmux layer has no digit
+// bindings, so tab jumps are added; its other bindings stay as shipped.
+// WezTerm keeps Ctrl-a as its leader for the outer workspace layer.
+keybinds {
+    shared_except "locked" {
+        bind "Ctrl g" { SwitchToMode "Tmux"; }
+    }
+    tmux {
+        bind "Ctrl g" { Write 7; SwitchToMode "Normal"; }
+        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+    }
+}

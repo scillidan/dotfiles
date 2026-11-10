@@ -103,6 +103,7 @@ config.warn_about_missing_glyphs = false
 
 config.disable_default_key_bindings = true
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 500 }
+
 config.keys = {
 	{ key = "F11", mods = "NONE", action = wezterm.action.ToggleFullScreen },
 	{ key = "f", mods = "LEADER|SHIFT", action = wezterm.action.ToggleFullScreen },
@@ -195,7 +196,14 @@ config.keys = {
 	{ key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
 	{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
 	{ key = "7", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) }
+	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
+	{ key = "c", mods = "CTRL", action = wezterm.action({ SendString = "\x03" }) },
+	{ key = "d", mods = "CTRL", action = wezterm.action({ SendString = "\x04" }) },
+	{ key = "z", mods = "CTRL", action = wezterm.action({ SendString = "\x1a" }) },
+	{ key = "\\", mods = "CTRL", action = wezterm.action({ SendString = "\x1c" }) },
+	{ key = "]", mods = "CTRL", action = wezterm.action({ SendString = "\x1d" }) },
+	{ key = "6", mods = "CTRL", action = wezterm.action({ SendString = "\x1e" }) },
+	{ key = "/", mods = "CTRL", action = wezterm.action({ SendString = "\x1f" }) },
 }
 
 -- https://github.com/wezterm/wezterm/discussions/3541
