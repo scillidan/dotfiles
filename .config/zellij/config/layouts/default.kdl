@@ -1,10 +1,12 @@
+// Default layout: one shell, explicit tab name so the pane title
+// ("cmd.exe - ...zellij-autorun.cmd") never becomes the tab name.
 layout {
     default_tab_template {
         children
         pane size=1 borderless=true {
             plugin location="file:~/Share/dotfiles/.config/zellij/plugins/zjstatus.wasm" {
                 format_left "{mode}{tabs}"
-                format_right "{command_sys}#[fg=#22c55e,bold]{session}"
+                format_right "#[fg=#808080]{session}"
                 format_space ""
 
                 tab_normal "#[fg=#808080]{index}:{name}"
@@ -28,18 +30,13 @@ layout {
                 mode_rename_pane "#[fg=#e2e8f0,bold]RENAME "
                 mode_tmux "#[fg=#22c55e,bold]TMUX "
 
-                command_sys_command "bash -lc 'p=$(command -v python || command -v python3); $p ${USERHOME:-$HOME}/Share/dotfiles/.config/zellij/scripts/sysstat.py'"
-                command_sys_format "#[fg=#808080]{stdout} "
-                command_sys_interval "5"
-                command_sys_rendermode "static"
-
                 pane_frame_style "full"
                 hide_frame_for_single_pane "false"
             }
         }
     }
 
-    tab name="~" cwd="~" focus=true {
+    tab name="shell" cwd="~" focus=true {
         pane
     }
 }

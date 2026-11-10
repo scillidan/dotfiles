@@ -316,6 +316,24 @@ WezTerm workspace tab 键长期保留，不作为“重复功能”删除。
   `Ctrl-c/d/z/\ ] 6 /`（发对应控制字符），已用 `wezterm show-keys` 验证。
 - 5B（pane 键上下文门控）未开始。
 
+## P6 实测结论（6A / 6B 已完成）
+
+- 6A：`Ctrl-g d` detach 后回到 Clink prompt；attach 恢复 tab/cwd/进程；`kill-session`
+  后 session 直接消失，不产生 EXITED 墓碑，`delete-session` 正常。
+- 6B：**zjstatus 保留，只删除 `command_sys_*`（sysstat 每 5 秒的后台进程）**。
+  纯内置状态栏被判定为“没有任何提示”，不可接受。
+- `layouts/swap.kdl` 按 <https://zellij.dev/documentation/swap-layouts.html> 的
+  vertical / horizontal / enlarged 重写。
+- tab 名被 pane 标题覆盖的问题：`tab_name_to_number false` + 每个 layout 显式
+  `tab name=...`。默认 layout 的 tab 名固定为 `shell`。
+- 原文件全部备份为同目录 `*.full.kdl`。
+
+## P6.5 — 与 WezTerm 分层的长期分工（当前决定）
+
+上游在 Windows 上仍有未修复缺陷（多行粘贴 #5333、VT 输入路径只在 main 上），
+因此**长期保留 WezTerm 作为 session/tab 管理层**，Zellij 只负责单个 workspace 内部的
+session/tab/pane。判断何时削减 WezTerm 层，见 README 末尾“上游观察项”。
+
 ## P6 — session、简单 layout 与启动器（难度：中高）
 
 ```text

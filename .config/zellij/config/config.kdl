@@ -7,6 +7,9 @@ session_serialization false
 serialize_pane_viewport false
 show_startup_tips false
 show_release_notes false
+// Keep tab names as authored in layouts instead of the pane title, which for
+// Clink-in-cmd becomes "C:\Windows\system32\cmd.exe - ...zellij-autorun.cmd".
+tab_name_to_number false
 
 // P5 5A: Ctrl-g is the Zellij prefix. The default tmux layer has no digit
 // bindings, so tab jumps are added; its other bindings stay as shipped.
