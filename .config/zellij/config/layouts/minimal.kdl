@@ -1,0 +1,43 @@
+// Minimal layout: zjstatus bar only (mode, tabs, session), no sysstat polling.
+// Nothing else is fixed here, so tabs are opened as needed and keep the tab name
+// from zellij.lua (cwd leaf) unless renamed.
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="file:~/Share/dotfiles/.config/zellij/plugins/zjstatus.wasm" {
+                format_left "{mode}{tabs}"
+                format_right "#[fg=#22c55e,bold]{session}"
+                format_space ""
+
+                tab_normal "#[fg=#808080]{index}:{name}"
+                tab_active "#[fg=#22c55e,bold]{index}:{name}"
+                tab_separator "  "
+                tab_sync_indicator " <>"
+                tab_fullscreen_indicator " []"
+                tab_floating_indicator " ~"
+
+                mode_normal "#[fg=#22c55e,bold]NORMAL "
+                mode_locked "#[fg=#ef4444,bold]LOCKED "
+                mode_resize "#[fg=#e2e8f0,bold]RESIZE "
+                mode_pane "#[fg=#e2e8f0,bold]PANE "
+                mode_tab "#[fg=#e2e8f0,bold]TAB "
+                mode_scroll "#[fg=#808080,bold]SCROLL "
+                mode_enter_search "#[fg=#808080,bold]SEARCH "
+                mode_search "#[fg=#808080,bold]SEARCH "
+                mode_session "#[fg=#e2e8f0,bold]SESSION "
+                mode_move "#[fg=#e2e8f0,bold]MOVE "
+                mode_rename_tab "#[fg=#e2e8f0,bold]RENAME "
+                mode_rename_pane "#[fg=#e2e8f0,bold]RENAME "
+                mode_tmux "#[fg=#22c55e,bold]TMUX "
+
+                pane_frame_style "full"
+                hide_frame_for_single_pane "false"
+            }
+        }
+    }
+
+    tab focus=true {
+        pane cwd="~/Downloads"
+    }
+}
