@@ -1,6 +1,6 @@
-# Neolij probe: two panes side by side, used to test whether Ctrl-h/l cross from
-# Neovim into Zellij. Kept separate from layouts/default.kdl so the daily layout
-# stays a single pane.
+// Neolij probe: two panes side by side, used to test whether Ctrl-h/l cross from
+// Neovim into Zellij. Kept separate from layouts/default.kdl so the daily layout
+// stays a single pane.
 layout {
     tab name="neolij" focus=true {
         pane
