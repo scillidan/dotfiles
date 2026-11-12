@@ -1,7 +1,0 @@
-// Layout used by the Alt-t translation keybind: a fresh tab holding the pane to
-// translate at the top. translate-pane.sh spawns the translation underneath it.
-layout {
-    tab name="translate" focus=true {
-        pane
-    }
-}

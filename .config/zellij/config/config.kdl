@@ -36,12 +36,4 @@ keybinds {
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
     }
-    // Alt-t: translate the focused pane into a pane on the right. The runner is
-    // started with a bare `bash -c` (no login shell, so .bashrc stays out) and
-    // replaces itself with the translation pane.
-    shared_except "locked" "tmux" {
-        bind "Alt t" {
-            Run "bash" "-c" "\"$USERHOME/Share/scripts/zellij-translate/translate-pane.sh\" right";
-        }
-    }
 }
