@@ -44,7 +44,7 @@ tidy: gh-tidy
 nvd: bash _neovide.sh
 
 ## terminal-theme-switch
-oc: opencode-theme $* & reset
+oc: opencode-theme --continue $* & reset
 
 ## yazi
 y: yazi-cd $* && reset

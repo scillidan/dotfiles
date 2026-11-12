@@ -1,0 +1,9 @@
+set show-all-if-ambiguous on
+set menu-complete-display-prefix on
+TAB:menu-complete
+set mark-symlinked-directories on
+
+Control-v:"v \C-t"
+Control-g:unix-filename-rubout
+Control-p:history-search-backward
+Control-n:history-search-forward

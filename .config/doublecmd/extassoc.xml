@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.2.9 gamma">
+<doublecmd DCVersion="1.2.11 gamma">
   <ExtensionAssociation>
     <FileType>
       <Name>sioyek</Name>
@@ -32,7 +32,7 @@
       <Actions>
         <Action>
           <Name>Open</Name>
-          <Command>qview</Command>
+          <Command>imageglass</Command>
           <Params>%f</Params>
         </Action>
         <Action>
