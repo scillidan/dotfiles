@@ -142,3 +142,12 @@ wd: warp-wd
 
 ## yazi
 yau: ya pkg delete
+
+## Zellij
+zj: zellij
+zjm: zellij --layout minimal
+zja: zellij attach $*
+zjl: zellij list-sessions
+zjk: zellij kill-session $*
+zjka: zellij kill-all-sessions -y
+zjs: zellij-session .
