@@ -28,31 +28,48 @@ Alacritty 没有 WezTerm workspace tab 这一层，只负责终端窗口并承�
 
 ## 2. WezTerm → Zellij 迁移确认表
 
-状态全部为**待确认**。原则是动作可以迁移，终端独有的文本与窗口能力不强行迁移。
+状态为**实测结论**（2026-11-12）。原则：动作可以迁移，终端独有的文本与窗口能力
+不强行迁移；**当前不删除任何 WezTerm 能力**，等熟悉 Zellij 后再逐项决定。
 
-| ID | WezTerm 当前能力 | 建议归宿 | 建议 / 需要确认的点 |
+实测出来的三层键位分工：
+
+- `Ctrl-a` = WezTerm leader（外层 workspace/tab）
+- `Ctrl-g` = Zellij prefix（内层 session 的 tab/pane）
+- `Ctrl-Space` = **在 Zellij pane 里根本收不到**（外层 ConPTY 丢弃 NUL），Clink 的
+  fzf 补全因此改用 `Alt-/`
+
+| ID | WezTerm 能力 | 结论 | 说明 |
 |---|---|---|---|
-| M01 | `Ctrl-a` 同时被 WezTerm leader 和候选 Zellij prefix 使用 | 按上下文分流 | **建议 Zellij 内用 `Ctrl-a`**，释放 `Ctrl-Space` 给 Clink/Bash；WezTerm workspace 用直接键，避免两层 leader 同时抢占 |
-| M02 | `Ctrl-Shift-t`、leader `c` 新建 tab | 两层共存 | `Ctrl-Shift-t` 保留为 WezTerm workspace；Zellij 内 leader `c` 新建内部 tab；Spawn 行为先经 P4 对比 |
-| M03 | `Ctrl-Alt-h/l` 前/后 tab | WezTerm workspace | 原键保留切换 workspace；Zellij 内部 tab 建议用 leader `p/n`，避免同名键跨层抢焦点 |
-| M04 | `Ctrl-Alt-H/L` 移动 tab | WezTerm workspace | 原键保留移动 workspace；Zellij 内部 `MoveTab` 另配键，不删除终端层能力 |
-| M05 | leader `1..9` 跳转 tab | 按上下文分流 | Zellij 内跳内部 tab；Zellij 外才跳 WezTerm workspace。若检测不可靠则保留显式不同键，不做全局覆盖 |
-| M06 | `Ctrl-Shift-Alt-w`、leader `Shift-7` 关闭 tab | 两层共存 | 前者关闭 WezTerm workspace，后者可作为 Zellij 内部关闭；必须实测关闭 workspace 后 session 是 detach 还是退出 |
-| M07 | leader `-/s` 下拆，`\\/v` 右拆 | Zellij 内；WezTerm 外备用 | Zellij 内 `NewPane`；未启动 Zellij 时保留 WezTerm split |
-| M08 | leader `h/j/k/l` 聚焦 pane | Zellij 内；WezTerm 外备用 | 按上下文门控；Neovim 边界导航另列后期工作 |
-| M09 | leader `Shift-h/j/k/l` 调整 pane 大小 | Zellij 内；WezTerm 外备用 | 按上下文门控，并人工核对 Zellij 方向与步进 |
-| M10 | leader `z` zoom | Zellij 内；WezTerm 外备用 | Zellij 内 fullscreen；外部保留 WezTerm zoom |
-| M11 | leader `x` 关闭 pane | Zellij 内；WezTerm 外备用 | 按上下文门控；确认是否接受两者不同的关闭确认语义 |
-| M12 | `Ctrl-Shift-Alt-l` 的自定义 split/zoom/focus 状态机 | 仅 WezTerm 外部备用 | 不迁入 Zellij；Zellij 内使用明确的 split / zoom / focus |
-| M13 | leader `g` 在 WezTerm 新 tab 开 lazygit | P4 对比后决定 | 对比 `SpawnCommandInNewTab`、Zellij 内部 tab 和 floating `Run`，不预先认定哪种更快或更合适 |
-| M14 | `Alt-y/f/g` 注入 yazi/fzf/lazygit；`Alt-c` 注入 tere | 从终端层移除 | 文本会注入 Neovim；fzf 归 shell，tere/yazi 手动启动；lazygit 入口由 M13 决定 |
-| M15 | 新 OS 窗口、全屏、默认 cwd、初始 shell | WezTerm / Alacritty | 不迁移；Zellij 新 pane 的 shell 单独验证 |
-| M16 | 搜索、复制模式、剪贴板、鼠标、QuickSelect URL/path | WezTerm / Alacritty | 不迁移；Zellij 不重复实现终端文本选择 |
-| M17 | 在 Vim 中打开整个终端 scrollback | 两者按范围共存 | WezTerm 管终端 scrollback；Zellij `EditScrollback` 管单 pane，后期再验证 |
-| M18 | tab title 格式化、底部 tab bar | 两层分别显示 | WezTerm tab 标题表示 workspace/session；Zellij tab/status 表示内部视图；单个 workspace 时仍可隐藏 WezTerm tab bar |
-| M19 | `terminal-theme-switch` 外观状态 | 外部工具继续拥有状态 | WezTerm / Zellij / Alacritty 各自适配；Alacritty 支持加入 `Share/projs/terminal-theme-switch`，不写入 multiplexer |
-| M20 | session、项目 layout、sessionizer、swap layout | Zellij 新增；WezTerm 负责承载 | 候选模型是一个 WezTerm workspace 承载一个 Zellij session，但是否默认如此由 P4/P6 实测决定 |
-| M21 | WezTerm pane 键及 `unzoom_on_switch_pane` | 长期保留外部备用 | **仅在 Zellij 活跃时禁用/放行冲突的 WezTerm pane 键**；不静态删除外部 fallback |
+| M01 | `Ctrl-a` leader | **WezTerm 保留** | 与 Zellij 的 `Ctrl-g` 不重叠。曾试过两层共用 `Ctrl-a`，会互相抢占，已放弃 |
+| M02 | `Ctrl-Shift-t` / leader `c` 新建 tab | 两层共存 | `Ctrl-Shift-t` 建 WezTerm tab；`Ctrl-g c` 建 Zellij 内部 tab。两者都已实测可用 |
+| M03 | `Ctrl-Alt-h/l` 前后 tab | WezTerm 保留 | 焦点在 Zellij 内时仍有效（已实测）；Zellij 内部切 tab 用 `Ctrl-g p/n` |
+| M04 | `Ctrl-Alt-H/L` 移动 tab | WezTerm 保留 | 未迁移，Zellij 内的 `MoveTab` 未绑定 |
+| M05 | leader `1..9` 跳 tab | 已分流 | WezTerm：`Ctrl-a 1..9`；Zellij：`Ctrl-g 1..9`（5A 补齐了默认层缺失的数字键） |
+| M06 | `Ctrl-Shift-Alt-w` 关闭 tab | 两层共存 | 关闭 WezTerm tab 会连带杀掉 client；`session_serialization true` 后可 attach 恢复 |
+| M07 | leader `-/s`、`\\/v` 拆 pane | WezTerm 保留 | Zellij 内用 `Ctrl-g` 默认层 |
+| M08 | leader `h/j/k/l` 聚焦 pane | **未迁移** | WezTerm 侧保留；Zellij 内用默认方向键 |
+| M09 | leader `Shift-h/j/k/l` 调 pane 大小 | **未迁移** | 同上 |
+| M10 | leader `z` zoom | **未迁移** | WezTerm 保留；Zellij 内可用 `Ctrl-g z` |
+| M11 | leader `x` 关闭 pane | **未迁移** | WezTerm 保留；Zellij 内用 `Ctrl-g x` |
+| M12 | `Ctrl-Shift-Alt-l` split/zoom/focus 状态机 | WezTerm 专用 | 不迁入 Zellij |
+| M13 | leader `g` 在新 tab 开 lazygit | **WezTerm 保留** | P4 结论：WezTerm 的 `SpawnCommandInNewTab` 最快；Zellij 内部 tab / floating 均未采用 |
+| M14 | `Alt-y/f/g` 注入 yazi/fzf/ripgrep；`Alt-c` 注入 tere | **保留，不迁移** | 在 Zellij pane 里会把命令文本打进 pane 再回车执行，能用但会留痕；用户决定保留 |
+| M15 | 新窗口、全屏、默认 cwd、初始 shell | WezTerm / Alacritty | 不迁移 |
+| M16 | 搜索、复制模式、剪贴板、QuickSelect | WezTerm / Alacritty | 不迁移。`Ctrl-v` / `Ctrl-Insert` 粘贴在 Zellij 内正常；`Ctrl-Space` 不可达 |
+| M17 | 在 Vim 打开终端 scrollback | 未迁移 | WezTerm 侧保留 |
+| M18 | tab 标题、底部 tab bar | 两层分别显示 | WezTerm tab = workspace；Zellij tab 名 = 当前目录（`console.settitle`） |
+| M19 | `terminal-theme-switch` | 外部工具 | 未接入 Zellij |
+| M20 | session / layout / sessionizer | **Zellij 侧已定稿** | `zellij`（default）、`zellij --layout minimal`、`zellij-session .`；sessionizer 跳过（P7） |
+| M21 | WezTerm pane 键 | **全部保留** | 不做上下文门控；两层键位不重叠，未发现必须拦截的情况 |
+
+**暂缓迁移的项（熟悉 Zellij 后再评估）**：M08、M09、M10、M11、M04 的 Zellij 侧对应键，
+以及 M14 的文本注入。
+
+### 已确认的 Windows 限制
+
+- `Ctrl-Space` 在 Zellij pane 内不可达 → Clink fzf 补全改用 `Alt-/`（`_inputrc` 两条绑定都在）
+- 多行粘贴在 Zellij 内会拆成普通按键 → 多行编辑在 WezTerm tab 做（`PASTE-DIAGNOSIS.md`）
+- `zellij --session X` 只 attach，**不创建**；创建必须有真实交互终端
 
 目标层级为：
 
