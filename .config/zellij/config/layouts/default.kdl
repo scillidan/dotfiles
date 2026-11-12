@@ -1,42 +1,11 @@
-// Default layout: one shell, explicit tab name so the pane title
-// ("cmd.exe - ...zellij-autorun.cmd") never becomes the tab name.
+// Default layout for Zellij 0.46: one shell in ~/Downloads, day-to-day use.
+// Swap layouts were removed; Ctrl-g Space now does nothing.
 layout {
     default_tab_template {
         children
-        pane size=1 borderless=true {
-            plugin location="file:~/Share/dotfiles/.config/zellij/plugins/zjstatus.wasm" {
-                format_left "{mode}{tabs}"
-                format_right "#[fg=#808080]{session}"
-                format_space ""
-
-                tab_normal "#[fg=#808080]{index}:{name}"
-                tab_active "#[fg=#22c55e,bold]{index}:{name}"
-                tab_separator "  "
-                tab_sync_indicator " <>"
-                tab_fullscreen_indicator " []"
-                tab_floating_indicator " ~"
-
-                mode_normal "#[fg=#22c55e,bold]NORMAL "
-                mode_locked "#[fg=#ef4444,bold]LOCKED "
-                mode_resize "#[fg=#e2e8f0,bold]RESIZE "
-                mode_pane "#[fg=#e2e8f0,bold]PANE "
-                mode_tab "#[fg=#e2e8f0,bold]TAB "
-                mode_scroll "#[fg=#808080,bold]SCROLL "
-                mode_enter_search "#[fg=#808080,bold]SEARCH "
-                mode_search "#[fg=#808080,bold]SEARCH "
-                mode_session "#[fg=#e2e8f0,bold]SESSION "
-                mode_move "#[fg=#e2e8f0,bold]MOVE "
-                mode_rename_tab "#[fg=#e2e8f0,bold]RENAME "
-                mode_rename_pane "#[fg=#e2e8f0,bold]RENAME "
-                mode_tmux "#[fg=#22c55e,bold]TMUX "
-
-                pane_frame_style "full"
-                hide_frame_for_single_pane "false"
-            }
-        }
     }
 
-    tab name="shell" cwd="~" focus=true {
-        pane
+    tab focus=true {
+        pane cwd="~/Downloads"
     }
 }
