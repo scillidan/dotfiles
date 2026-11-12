@@ -376,40 +376,29 @@ layout；每个 layout 单独启动，确认 cwd、nvim/yazi 退出和 tab 切�
 若 serialization 引入卡住，单独关闭它并回退到 6C 已验证状态。
 ```
 
-## P7 — sessionizer 与浮动工具（难度：高）
+## P7 — sessionizer 与浮动工具（**已跳过**）
+
+决定（2026-11-12）：日常只需 `zellij`、`zellij --layout minimal` 和
+`zellij-session .` 三种入口，不需要 fzf 选目录建 session 的流程。
+`zellij_sessionizer.py` / `zellij-sessionizer.cmd` 均未实现；项目变多需要
+在几十个目录间跳转时再回来做。
+
+lazygit 入口（M13）沿用 P4 的结论：在 WezTerm 里直接 `lazygit`，不进 Zellij。
+
+## P8 — zjstatus（**已提前完成，见 P6 结论**）
+
+`layouts/minimal.kdl` 已经是“只显示 mode/tab/session、不含 command_sys”的形态，
+即原计划的检查点 8A。8B（sysstat 的 cpu/ram/gpu）按用户决定**不做**：不需要后台轮询。
+
+原始计划保留在此，供日后想加 sysstat 时参考：
 
 ```text
-任务：恢复 zellij-sessionizer 和 P4 选定的 lazygit 入口；不改 P5 键模型和 P6 基线。
-
-范围：zellij-sessionizer.sh、lib/zellij_sessionizer.py、实际平台入口、对应 keybind。
-先用 --dir 做确定性测试，再测 zoxide+fzf；不得一开始同时调两条路径。
-
-人工检查：
-1. --dir 已存在 session 时 switch，不新建嵌套客户端。
-2. --dir 新目录时以 project layout 创建，cwd 正确。
-3. fzf 取消不改变 session；空 zoxide 结果有明确回退。
-4. lazygit 按 P4 选定方式打开/退出；若选 floating，必须回到原 pane 和 normal mode。
-5. 两个同名目录的 session 冲突被报告；不得静默接到错误项目。
-
-失败时停用对应 keybind，保留脚本和测试证据，不影响基础 session 使用。
-```
-
-## P8 — zjstatus，最后才加（难度：高）
-
-```text
-任务：最后恢复第三方 status；把插件加载、权限和 sysstat 分成两个检查点。
-
-检查点 8A：只加载 zjstatus 的静态 mode/tab/session 显示，不含 command_sys。
-- 保留 P6 简单 layout 的可回退副本。
-- 用户物理处理权限提示；记录鼠标/键盘是否可聚焦，不把旧 issue 当作本机根因。
-- 验证首次启动、第二次启动、detach/attach 和新 tab。
-
-检查点 8B：仅 8A 稳定后加入 command_sys。
+8B：仅 8A 稳定后加入 command_sys。
 - 先独立运行 sysstat.py，核对输出、依赖和超时。
 - 验证命令失败时 status 不阻塞输入；再检查 CPU/RAM/GPU 显示。
 
 人工检查：状态栏与 pane frame 不遮输入，权限只询问预期次数，主题/颜色无卡死。
-回退：8B 失败只移除 command_sys；8A 失败恢复无 zjstatus 的 P6 layout。
+回退：8B 失败只移除 command_sys；8A 失败恢复无 zjstatus 的 default layout。
 ```
 
 ## P9 — 按上下文定稿与文档切换（难度：高）
