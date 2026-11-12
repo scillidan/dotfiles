@@ -53,28 +53,30 @@ One key with a fixed direction is the simplest starting point; a menu key
 
 ## 2. nvim ↔ Zellij pane navigation
 
-tmux had `vim-tmux-navigator`: `Ctrl-h/j/k/l` moved between panes and Neovim
-splits seamlessly, decided by checking whether the pane's foreground process is
-vim.
+**Already configured** — `neolij.nvim` is in `dotfiles/.config/nvim/lua/config_lazy.lua`
+(lazy-loaded, only when `$ZELLIJ` is set) with keys from
+`lua/config/keys/neolij.lua`:
 
-### Zellij options
+| Key | Command |
+|---|---|
+| `Ctrl-h` | `:NeolijLeftTab` |
+| `Ctrl-j` | `:NeolijDown` |
+| `Ctrl-k` | `:NeolijUp` |
+| `Ctrl-l` | `:NeolijRightTab` |
 
-1. **`neolij.nvim`** — the maintained equivalent; it talks to Zellij and turns
-   the same keys into pane moves at the edges of a Neovim window. Needs a
-   Lua plugin entry and a keymap in Neovim.
-2. **Shell-side detection** (what tmux used) — run `ps` on the pane's tty to see
-   if nvim owns it, then decide. Fragile on Windows: CIM/tasklist lookups are
-   slow and the tty mapping is not exposed.
-3. **Static split** — keep Neovim's own `Ctrl-h/j/k/l` for splits and use
-   `Ctrl-g h/j/k/l` for Zellij panes. No plugin, no ambiguity, but two different
-   keys.
+`LeftTab`/`RightTab` (rather than `Left`/`Right`) is what makes the boundary
+cross into the neighbouring Zellij tab as well as the pane.
 
-Recommended: option 1. Option 3 as the fallback if the plugin misbehaves.
+Verify inside a Zellij pane: with a single Neovim window, `Ctrl-h/l` should move
+focus to the neighbouring Zellij pane; with a Neovim split open, it should stay
+inside Neovim.
 
-### Prerequisites
+No shell-side process detection is needed (the tmux approach) because the plugin
+only acts when Neovim cannot move any further.
 
-- Confirm which Neovim plugin manager owns the config (`lazy` vs `vim-plug`).
-- Check whether `blink-cmp` is in use; it needs `blink-cmp-zellij` for the same
-  reason.
-- Verify the keys inside a Zellij pane: `Ctrl-h` currently reaches Neovim fine,
-  so the plugin only has to handle the "no split left" case.
+### Not configured
+
+- `Ctrl-h/j/k/l` for anything else (`Ctrl-k` is Neovim's built-in `gk` there, now
+  taken).
+- Wide-character panes: `Ctrl-\` (the tmux `select-pane -l` equivalent) is free.
+

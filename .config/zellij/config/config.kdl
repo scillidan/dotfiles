@@ -35,5 +35,10 @@ keybinds {
         bind "7" { GoToTab 7; SwitchToMode "Normal"; }
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+        // Translate the focused pane into a pane on the right.
+        bind "t" {
+            Run "bash" "-lc" "zellij action new-pane --direction right -- bash $USERHOME/Share/scripts/translate-pane.sh right";
+            SwitchToMode "Normal";
+        }
     }
 }
