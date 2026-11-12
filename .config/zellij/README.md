@@ -316,17 +316,35 @@ WezTerm workspace tab 键长期保留，不作为“重复功能”删除。
   `Ctrl-c/d/z/\ ] 6 /`（发对应控制字符），已用 `wezterm show-keys` 验证。
 - 5B（pane 键上下文门控）未开始。
 
-## P6 实测结论（6A / 6B 已完成）
+## P6 实测结论（6A / 6B / 6C 已完成）
 
 - 6A：`Ctrl-g d` detach 后回到 Clink prompt；attach 恢复 tab/cwd/进程；`kill-session`
   后 session 直接消失，不产生 EXITED 墓碑，`delete-session` 正常。
-- 6B：**zjstatus 保留，只删除 `command_sys_*`（sysstat 每 5 秒的后台进程）**。
-  纯内置状态栏被判定为“没有任何提示”，不可接受。
-- `layouts/swap.kdl` 按 <https://zellij.dev/documentation/swap-layouts.html> 的
-  vertical / horizontal / enlarged 重写。
-- tab 名被 pane 标题覆盖的问题：`tab_name_to_number false` + 每个 layout 显式
-  `tab name=...`。默认 layout 的 tab 名固定为 `shell`。
-- 原文件全部备份为同目录 `*.full.kdl`。
+- 6B：早期版本曾把 zjstatus 整个删掉，被判为“极简状态下任何提示都没有”，不可接受。
+  现在的形态：`default.kdl` 无插件（日常），`minimal.kdl` 用 zjstatus 只显示
+  `{mode}{tabs}` 与 session 名，**不含 `command_sys_*`**（sysstat 每 5 秒的后台进程）。
+- swap / user / project 三个 layout 已删除：swap 只是一份规则表，不能单独启动；user /
+  project 是预设布局，用户只用 default 与 minimal。
+- 6C：`scripts/win/zellij-session.cmd`。Windows 上 `zellij --session X` 只 attach、
+  **不会创建** session；创建必须有真实交互式客户端，脚本无法代劳。
+- 6D：`session_serialization true` + `serialize_pane_viewport false`。强制关闭 / exit /
+  Ctrl-D 三种死法都能 attach 回来，tab 结构与 cwd 保留，屏幕内容不保留（预期）。
+
+### tab 名的最终解法（Clink + Zellij 0.46）
+
+Zellij 0.46 的 tab 名取自 pane 标题，而 cmd 的默认标题是
+`cmd.exe - ...\zellij-autorun.cmd`。解法在 `dotfiles.win/Scoop/clink/zellij.lua`：
+
+```lua
+console.settitle(cwd_leaf)   -- 全局 console 表，不是 clink.console
+```
+
+- 每次出提示符都设一次，tab 跟着 `cd`；
+- **不要**用 `os.execute('title "x"')`：Clink 的 `title` 内建会给值补双引号，tab 变成
+  `1:"Downloads"`；
+- `clink.console` 在脚本环境里是 `nil`，用 `clink lua -e` 探测也不可信（那个子命令
+  不带 Clink 的交互表）—— 要用 `clink.onbeginedit` 里的探针验证。
+
 
 ## P6.5 — 与 WezTerm 分层的长期分工（当前决定）
 
