@@ -1,8 +1,5 @@
 // P2 baseline: verified minimal behavior from P1.
-// Full pre-migration config is preserved in config.full.kdl; restore that to roll back.
-// Intentionally no zjstatus, layouts, serialization, or custom keybinds yet.
 default_shell "cmd.exe"
-default_layout "compact"
 session_serialization true
 serialize_pane_viewport false
 show_startup_tips false
@@ -16,6 +13,8 @@ tab_name_to_number false
 // would spend its space on the pane title, which is the long cmd path.
 default_tab_bar false
 default_layout "default"
+
+include "themes.kdl"
 
 // Zellij's own mouse handling is off: right-clicking a pane frame popped a menu
 // nobody used, and on Windows the QuickEdit drag-select can freeze or kill the
