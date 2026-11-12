@@ -1,32 +1,32 @@
 <snippet>
   <content><![CDATA[
 {
-	"version": "v${4:version}",
-	"description": "$1",
-	"homepage": "${3:baseurl}",
-	"license": "${2:MIT}",
-	"suggest": {
-		"vcredist": "extras/vcredist2022"
-	},
-	"architecture": {
-		"64bit": {
-			"url": "${3:baseurl}/releases/download/v${4:version}/${5:basename}",
-			"hash": "${6:sha256}"
-		}
-	},
-	"bin": "${5:basename}$7.exe",
-	"checkver": "github",
-	"autoupdate": {
-		"architecture": {
-			"64bit": {
-				"url": "${3:baseurl}/releases/download/v\$version/${5:basename}"
-			}
-		},
-		"hash": {
-			"url": "$baseurl/checksums.txt",
-			"regex": "$sha256\\s+$basename"
-		}
-	}
+  "version": "v${4:version}",
+  "description": "$1",
+  "homepage": "${3:baseurl}",
+  "license": "${2:MIT}",
+  "suggest": {
+    "vcredist": "extras/vcredist2022"
+  },
+  "architecture": {
+    "64bit": {
+      "url": "${3:baseurl}/releases/download/v${4:version}/${5:basename}",
+      "hash": "${6:sha256}"
+    }
+  },
+  "bin": "${5:basename}$7.exe",
+  "checkver": "github",
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "${3:baseurl}/releases/download/v\$version/${5:basename}"
+      }
+    },
+    "hash": {
+      "url": "\$baseurl/checksums.txt",
+      "regex": "\$sha256\\\\s+\$basename"
+    }
+  }
 }
 ]]></content>
   <tabTrigger>appmin</tabTrigger>
