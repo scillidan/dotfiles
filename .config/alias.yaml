@@ -149,5 +149,5 @@ zjm: zellij --layout minimal
 zja: zellij attach $*
 zjl: zellij list-sessions
 zjk: zellij kill-session $*
-zjka: zellij kill-all-sessions -y
+zjka: zellij kill-all-sessions
 zjs: zellij-session .
