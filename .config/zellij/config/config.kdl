@@ -17,6 +17,12 @@ tab_name_to_number false
 default_tab_bar false
 default_layout "default"
 
+// Zellij's own mouse handling is off: right-clicking a pane frame popped a menu
+// nobody used, and on Windows the QuickEdit drag-select can freeze or kill the
+// whole session. Text selection stays with the terminal (WezTerm QuickSelect /
+// copy mode).
+mouse_mode false
+
 // P5 5A: Ctrl-g is the Zellij prefix. The default tmux layer has no digit
 // bindings, so tab jumps are added; its other bindings stay as shipped.
 // WezTerm keeps Ctrl-a as its leader for the outer workspace layer.
