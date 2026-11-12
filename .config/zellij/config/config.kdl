@@ -20,9 +20,19 @@ default_layout "default"
 // P5 5A: Ctrl-g is the Zellij prefix. The default tmux layer has no digit
 // bindings, so tab jumps are added; its other bindings stay as shipped.
 // WezTerm keeps Ctrl-a as its leader for the outer workspace layer.
+//
+// Ctrl-h/j/k/l belong to Neovim (split navigation, then neolij.nvim crosses into
+// Zellij panes at the edge). Zellij's default Move mode is rebound off Ctrl-h so
+// it stops swallowing those keys; Ctrl-g still reaches every mode.
 keybinds {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Tmux"; }
+    }
+    "move" {
+        unbind "Ctrl h"
+        unbind "Ctrl j"
+        unbind "Ctrl k"
+        unbind "Ctrl l"
     }
     tmux {
         bind "Ctrl g" { Write 7; SwitchToMode "Normal"; }
