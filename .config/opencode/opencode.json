@@ -83,6 +83,13 @@
         },
         "type": "local"
       },
+      "comfyui": {
+        "command": ["npx", "-y", "comfyui-mcp@latest"],
+        "environment": {
+          "COMFYUI_URL": "http://127.0.0.1:8188"
+        },
+        "type": "local"
+      },
       "context7": {
         "headers": {
           "Authorization": "Bearer {env:CONTEXT7_API_KEY}"
