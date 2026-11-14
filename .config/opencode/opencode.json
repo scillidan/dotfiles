@@ -85,6 +85,7 @@
       },
       "comfyui": {
         "command": ["npx", "-y", "comfyui-mcp@latest"],
+        "disabled": true,
         "environment": {
           "COMFYUI_URL": "http://127.0.0.1:8188"
         },
