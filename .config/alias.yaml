@@ -140,6 +140,9 @@ rmy: trash
 ## warp-wd
 wd: warp-wd
 
+## WezTerminal
+wssh: wezterm ssh
+
 ## yazi
 yau: ya pkg delete
 

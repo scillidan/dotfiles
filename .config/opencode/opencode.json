@@ -161,6 +161,7 @@
     { "action": "shell", "effect": "deny", "resource": "*dir * /s*" }
   ],
   "plugin": [
+    "@plannotator/opencode@latest",
     "@cortexkit/opencode-magic-context@latest",
     "@slkiser/opencode-quota@latest",
     "{env:USERHOME}\\Local\\Source\\opencode\\ponytail\\.opencode\\plugins"
