@@ -1,9 +1,16 @@
 startup_commands = ["sync"]
 keep_articles_days = 365
 
-[theme]
-base16_theme = "flexoki-dark"
-# base16_theme = "flexoki-light"
+share_targets = [
+  "clipboard", "reddit", "mastodon", "instapaper", "telegram",
+
+  'open-cli open-cli "{url}"',
+  'brave brave "{url}"',
+  'qutebrowser qutebrowser --target tab --untrusted-args "{url}"',
+]
 
 [input_config.mappings]
+"g b" = ["share brave", "read", "nextunread"]
+"g q" = ["share qutebrowser", "read", "nextunread"]
+"o" = ["share open-cli", "read", "nextunread"]
 "q" = ["quit"]
