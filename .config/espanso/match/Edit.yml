@@ -6,8 +6,7 @@ matches:
       author:
         type: choice
         values:
-          - Kimi-K2.7-Code
-          - Kimi-K3
+          - Kimi-K3.1-Pro
           - DeepSeek-V4.1-Flash
           - DeepSeek-V4-Pro
           - Hy4-preview
