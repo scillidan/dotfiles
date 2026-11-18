@@ -1,8 +1,8 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
-local dark_scheme = "Builtin Dark"
-local light_scheme = "One Light (Gogh)"
+local dark_scheme = "Dark"
+local light_scheme = "Selenized Light (Gogh)"
 
 -- terminal-theme-switch owns the shared theme state and the cycle key.
 local theme
@@ -210,7 +210,7 @@ end
 
 -- For Windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	local user = os.getenv("USERHOME") or os.getenv("USERPROFILE")
+	local user = os.getenv("USERHOME")
 	config.default_cwd = user .. "\\Downloads"
 	config.default_prog = {
 		"cmd.exe",

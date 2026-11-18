@@ -43,10 +43,10 @@ local function write_scheme(name, target)
 end
 
 wezterm.on("gui-startup", function()
-  local root = os.getenv("USERPROFILE") or os.getenv("HOME")
+  local root = os.getenv("USERHOME")
   local dir = root .. "/Share/dotfiles/.config/alacritty/themes"
-  write_scheme("Builtin Dark", dir .. "/builtin_dark.toml")
-  write_scheme("One Light (Gogh)", dir .. "/one_light.toml")
+  write_scheme("Dark", dir .. "/dark.toml")
+  write_scheme("Selenized Light (Gogh)", dir .. "/light.toml")
   os.exit(0)
 end)
 

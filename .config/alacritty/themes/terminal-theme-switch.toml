@@ -1,2 +1,2 @@
-dark = "builtin_dark.toml"
-light = "one_light.toml"
+dark = "dark.toml"
+light = "light.toml"

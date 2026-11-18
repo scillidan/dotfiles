@@ -1,0 +1,34 @@
+# Generated from WezTerm 20240203-110809-5046fc22 scheme: Selenized Light (Gogh)
+# Regenerate with: wezterm --config-file <this-file> start --always-new-process --no-auto-connect
+
+[colors.primary]
+foreground = "#53676d"
+background = "#fbf3db"
+
+[colors.cursor]
+text = "#fbf3db"
+cursor = "#53676d"
+
+[colors.selection]
+text = "#53676d"
+background = "#fbf3db"
+
+[colors.normal]
+black = "#fbf3db"
+red = "#d2212d"
+green = "#489100"
+yellow = "#ad8900"
+blue = "#0072d4"
+magenta = "#ca4898"
+cyan = "#009c8f"
+white = "#53676d"
+
+[colors.bright]
+black = "#ece3cc"
+red = "#cc1729"
+green = "#428b00"
+yellow = "#a78300"
+blue = "#006dce"
+magenta = "#c44392"
+cyan = "#00978a"
+white = "#3a4d53"
