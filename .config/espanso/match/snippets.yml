@@ -1,0 +1,15 @@
+matches:
+  - trigger: ":snip"
+    form: |
+      [[snip]]
+    form_fields:
+      snip:
+        type: choice
+        values:
+          - ROG Strix Ge Force RTX 4070 Ti 12G Gaming
+          - Intel Core i7-14700KF 3.40 GHz
+          - i7-14700kf-revios
+          - MSI GTX1060 5G
+          - r7-7840hs-revios
+          - s9110
+        default: text

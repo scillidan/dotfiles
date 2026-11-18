@@ -17,6 +17,7 @@ matches:
       by:
         type: choice
         values:
+          - 'Kimi-K3.1-Pro'
           - 'Kimi-K2.8'
           - 'Gemma-3-12B-IT (Q5_K_M)'
           - 'Gemma-3-4B-IT (Q4_K_M)'
