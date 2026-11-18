@@ -150,6 +150,16 @@
           "_NT_SYMBOL_PATH": "SRV*C:\\Symbols*https://msdl.microsoft.com/download/symbols"
         },
         "type": "local"
+      },
+      "browse": {
+        "command": [ "browse","mcp" ],
+        "cwd": "{env:USERHOME}",
+        "disabled": true,
+        "environment": {
+          "OPENCODE_BROWSER_RUNTIME": "auto-update"
+        },
+        "pool": true,
+        "type": "local"
       }
     }
   },
