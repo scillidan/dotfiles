@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 local dark_scheme = "Dark"
-local light_scheme = "Selenized Light (Gogh)"
+local light_scheme = "flexoki-light"
 
 -- terminal-theme-switch owns the shared theme state and the cycle key.
 local theme
