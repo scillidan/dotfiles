@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.2.9 gamma" ConfigVersion="16">
+<doublecmd DCVersion="1.2.11 gamma" ConfigVersion="16">
   <Toolbars>
     <MainToolbar>
       <Row>
@@ -116,6 +116,15 @@
           <Icon>cm_copyfullnamestoclip</Icon>
           <Command>cm_CopyFullNamesToClip</Command>
         </Command>
+        <Program>
+          <ID>{06AFBB66-C646-44C1-9C05-C472014D2EA3}</ID>
+          <Icon>C:\Users\User\Share\scripts\context\share\sendto.ico</Icon>
+          <Hint>arcs_7zip</Hint>
+          <Command>bash</Command>
+          <Params>
+%"0 arcs_7zip.sh --dc %p{"}{"}</Params>
+          <StartPath>%D</StartPath>
+        </Program>
       </Row>
     </MainToolbar>
     <MiddleToolbar>
@@ -141,7 +150,7 @@
           <Command>cm_Rename</Command>
         </Command>
         <Separator>
-          <Style>True</Style>
+          <Style>1</Style>
         </Separator>
         <Command>
           <ID>{BF29CAF7-6831-4930-AEB6-B874F8A59525}</ID>

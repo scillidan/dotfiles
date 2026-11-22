@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.2.9 gamma">
+<doublecmd DCVersion="1.2.11 gamma">
   <Hotkeys Version="71">
     <Form Name="Main">
       <Hotkey>
@@ -89,6 +89,12 @@
       <Hotkey>
         <Shortcut>Shift+Alt+C</Shortcut>
         <Command>cm_CopyNamesToClip</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+U</Shortcut>
+        <Command>cm_ExecuteToolbarItem</Command>
+        <Param>ToolBarID=TfrmOptionsToolbar</Param>
+        <Param>ToolItemID={06AFBB66-C646-44C1-9C05-C472014D2EA3}</Param>
       </Hotkey>
       <Hotkey>
         <Shortcut>Del</Shortcut>
