@@ -121,8 +121,7 @@
           <Icon>C:\Users\User\Share\scripts\context\share\sendto.ico</Icon>
           <Hint>arcs_7zip</Hint>
           <Command>bash</Command>
-          <Params>
-%"0 arcs_7zip.sh --dc %p{"}{"}</Params>
+          <Params>%"0 arcs_7zip.sh --dc %p{"}{"}</Params>
           <StartPath>%D</StartPath>
         </Program>
       </Row>

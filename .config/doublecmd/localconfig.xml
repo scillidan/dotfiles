@@ -2,8 +2,8 @@
 <doublecmd>
   <DirectoryHotList>
     <HotDir Name="-User" Path=""/>
-    <HotDir Name="Local" Path="C:\Users\User\Local\"/>
-    <HotDir Name="Share" Path="C:\Users\User\Share\"/>
+    <HotDir Name="Local" Path="C:\Users\User\Local"/>
+    <HotDir Name="Share" Path="C:\Users\User\Share"/>
     <HotDir Name="Scoop Apps" Path="C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps"/>
     <HotDir Name="mpv_portable_config" Path="C:\Users\User\Scoop\apps\mpv\current\portable_config"/>
     <HotDir Name="--" Path=""/>

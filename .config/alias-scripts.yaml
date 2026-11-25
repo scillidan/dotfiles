@@ -21,13 +21,14 @@ fg: bash fzf-ripgrep.sh
 ffg: bash fzf-ripgrep.sh "$USERHOME/Share/files"
 fsdcv: wezterm cli split-pane --right -- bash fzf-sdcv.sh
 ftldr: wezterm cli split-pane --right -- bash fzf-tldr.sh
-fbkm: wezterm cli split-pane --right -- bash fzf-bookmarks.sh
 ffsdcv: bash fzf-sdcv.sh
 fftldr: bash fzf-tldr.sh
 ffbkm: bash fzf-bookmarks.sh
 ffman: bash fzf-files.sh "$USERHOME/Local/Document/man"
 ffdevdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs"
 fftables: bash fzf-files.sh "$USERHOME/Share/files/tables"
+fbkm: bash fzf-bookmarks.sh --exclude _cache* --exclude _temp*
+fcht: bash fzf-cheatsheets.sh --exclude _cache* --exclude _temp*
 
 ## Git
 git-init: bash git-init.sh
