@@ -7,6 +7,8 @@ gh-del-workflow-run: bash gh-del-workflow-run.sh
 gh-disable-workflow: bash gh-disable-workflow.sh
 lambda: bash llm-lambda_replace.sh
 ob: bash urls-open.sh
+psort: bash puzz_sort.sh
+ptf: bash puzz_transform.sh
 sum: bash llm-summarize.sh
 trans: bash llm-translate.sh
 tranx: bash llm-translate-stdin.sh
