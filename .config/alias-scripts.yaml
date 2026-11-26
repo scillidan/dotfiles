@@ -23,12 +23,13 @@ fsdcv: wezterm cli split-pane --right -- bash fzf-sdcv.sh
 ftldr: wezterm cli split-pane --right -- bash fzf-tldr.sh
 ffsdcv: bash fzf-sdcv.sh
 fftldr: bash fzf-tldr.sh
-ffbkm: bash fzf-bookmarks.sh
 ffman: bash fzf-files.sh "$USERHOME/Local/Document/man"
 ffdevdocs: bash fzf-files.sh "$USERHOME/Local/Document/devdocs"
 fftables: bash fzf-files.sh "$USERHOME/Share/files/tables"
-fbkm: bash fzf-bookmarks.sh --exclude _cache* --exclude _temp*
-fcht: bash fzf-cheatsheets.sh --exclude _cache* --exclude _temp*
+fbkm: bash fzf-txt.sh bookmarks
+fcht: bash fzf-txt.sh cheatsheets
+fcmd: bash fzf-txt.sh commands
+fsct: bash fzf-txt.sh shortcuts
 
 ## Git
 git-init: bash git-init.sh
