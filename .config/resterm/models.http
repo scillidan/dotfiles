@@ -1,0 +1,9 @@
+### DeepSeek
+# @name dsModels
+GET {{deepseek.base}}/models
+Authorization: Bearer {{deepseek.key}}
+
+### Kimi
+# @name kimiModels
+GET {{kimi.base}}/models
+Authorization: Bearer {{kimi.key}}

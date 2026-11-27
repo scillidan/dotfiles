@@ -1,0 +1,11 @@
+[[group]]
+name = "default"
+hotkey = "alt+shift+z"
+
+[[group]]
+name = "translate"
+hotkey = "alt+shift+x"
+
+[[group]]
+name = "grammar"
+hotkey = "alt+x > alt+x"

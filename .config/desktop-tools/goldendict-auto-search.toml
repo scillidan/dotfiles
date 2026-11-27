@@ -1,0 +1,7 @@
+[goldendict]
+double_click_group = "default"
+clipboard_group = "translate"
+clipboard_hotkey_enabled = true
+
+[settings]
+clipboard_enabled = true

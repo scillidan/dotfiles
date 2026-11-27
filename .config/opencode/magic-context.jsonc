@@ -1,21 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/cortexkit/magic-context/master/assets/magic-context.schema.json",
   "historian": {
-    
     "opencode": {
-      "model": "deepseek/deepseek-flash"
-    },
-    "pi": {
-      "model": "deepseek/deepseek-flash"
+      "model": "kimi-code/kimi-for-coding",
+      "fallback_models": [ "deepseek/deepseek-flash" ],
     }
   },
   "dreamer": {
-    
     "opencode": {
-      "model": "deepseek/deepseek-flash"
-    },
-    "pi": {
-      "model": "deepseek/deepseek-flash"
+      "model": "kimi-code/kimi-for-coding",
+      "fallback_models": [ "deepseek/deepseek-flash" ],
     }
   },
   "sidekick": {

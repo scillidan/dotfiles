@@ -32,14 +32,18 @@ db: doublecmd "$CD"
 envxt: envx tui
 
 ## eza
-ls: eza --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
-l: eza --git-ignore --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
-ll: eza --all --header --long --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
-llm: eza --all --header --long --sort modified --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
-la: eza -lbhHigUmuSa
-lx: eza -lbhHigUmuSa@
-lt: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
-tree: eza --tree --git --icons --classify --group-directories-first --time-style long-iso --group --color-scale
+# grid view
+ls: eza --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale=all
+l: eza --git-ignore --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale=all
+# recursive tree
+lt: eza --tree --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale=all
+tree: eza --tree --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale=all
+# long view
+ll: eza --all --header --long --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale=all
+llm: eza --all --header --long --sort=modified --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale=all
+# maximal long view
+la: eza --long --binary --header --links --inode --group --created --modified --accessed --blocksize --all
+lx: eza --long --binary --header --links --inode --group --created --modified --accessed --blocksize --all --extended
 
 ## forgit
 glo: forgit log
@@ -124,6 +128,9 @@ rpsp: repos pull
 rpse: repos exec
 rpsu: repos update
 
+## Resterm
+rtw: resterm --workspace $USERHOME\Share\dotfiles\.config\resterm
+
 ## scooter
 scr: scooter
 
@@ -136,9 +143,6 @@ skup: skills update
 
 ## trashy
 rmy: trash
-
-## warp-wd
-wd: warp-wd
 
 ## WezTerminal
 wssh: wezterm ssh

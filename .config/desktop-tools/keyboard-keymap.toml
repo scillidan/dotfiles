@@ -1,0 +1,10 @@
+[keymap]
+# https://github.com/Gustice/AHK-KeyMap/blob/master/KeyMap.ahk
+"#>" = "→"
+"#<" = "←"
+"#up" = "↑"
+"#dn" = "↓"
+"#cdot" = "∙"
+"#hdot" = "…"
+"#c1" = "⚪"
+"#c2" = "⚫"
